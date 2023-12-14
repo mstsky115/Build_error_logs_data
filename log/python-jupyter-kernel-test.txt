@@ -1,0 +1,1043 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_8/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_8/root
+[    0s] 
+[    1s] 
+[    1s] lamb28 started "build python-jupyter-kernel-test.spec" at Fri Mar 10 08:52:06 UTC 2023.
+[    1s] 
+[    1s] Building python-jupyter-kernel-test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '322de85fbfe5ca880e115e09300a5477'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_8/.build-srcdir/python-jupyter-kernel-test.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_8/.build-srcdir/python-jupyter-kernel-test.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/8/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_8/.build.rpmlist /var/cache/obs/worker/root_8/.build-srcdir/python-jupyter-kernel-test.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [3085157376d6645e93cf6a1e2eb989a8]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...cycle: jupyter-jupyter-client -> python310-jupyter-client
+[    5s]   breaking dependency python310-jupyter-client -> jupyter-jupyter-client
+[    6s] done
+[    6s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_8/.mount/boot/kernel -initrd /var/cache/obs/worker/root_8/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_8/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_8/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_8/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   12s] ### VM INTERACTION END ###
+[   12s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.2.1-1-default #1 SMP PREEMPT_DYNAMIC Mon Feb 27 11:39:51 UTC 2023 (69e0e95)
+[   12s] Increasing log level from now on...
+[   12s] [    4.901034][  T419] sysrq: Changing Loglevel
+[   12s] [    4.901294][  T419] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   13s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   13s] no label, UUID=9aa7b344-d747-4144-aacd-210d67ea1695
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   14s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/python-jupyter-kernel-test.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-jupyter-kernel-test.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   47s] [1/325] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   47s] [2/325] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   47s] [3/325] preinstalled attr-2.5.1-1.1
+[   47s] [4/325] preinstalled bash-5.2.15-8.1
+[   47s] [5/325] preinstalled bash-sh-5.2.15-8.1
+[   47s] [6/325] preinstalled binutils-2.40-2.1
+[   47s] [7/325] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   47s] [8/325] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   47s] [9/325] preinstalled build-mkbaselibs-20230228-1.1
+[   47s] [10/325] preinstalled bzip2-1.0.8-4.1
+[   47s] [11/325] preinstalled chkstat-1599_20230217-1.1
+[   47s] [12/325] preinstalled compat-usrmerge-build-84.87-5.1
+[   47s] [13/325] preinstalled compat-usrmerge-tools-84.87-5.1
+[   47s] [14/325] preinstalled coreutils-9.1-5.1
+[   47s] [15/325] preinstalled cpio-2.13-5.1
+[   47s] [16/325] preinstalled cpp-12-2.1
+[   47s] [17/325] preinstalled cpp12-12.2.1+git749-4.1
+[   47s] [18/325] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   47s] [19/325] preinstalled debugedit-5.0-5.1
+[   47s] [20/325] preinstalled diffutils-3.9-1.1
+[   47s] [21/325] preinstalled dwz-0.15-2.1
+[   47s] [22/325] preinstalled elfutils-0.189-2.1
+[   47s] [23/325] cumulate fdupes-2.2.1-1.1
+[   47s] [24/325] preinstalled file-5.44-1.2
+[   47s] [25/325] preinstalled file-magic-5.44-1.2
+[   47s] [26/325] preinstalled filesystem-84.87-12.1
+[   47s] [27/325] preinstalled fillup-1.42-279.1
+[   47s] [28/325] preinstalled findutils-4.9.0-2.1
+[   47s] [29/325] preinstalled gawk-5.2.1-2.1
+[   47s] [30/325] preinstalled gcc-12-2.1
+[   47s] [31/325] preinstalled gcc-PIE-12-2.1
+[   47s] [32/325] preinstalled gcc12-12.2.1+git749-4.1
+[   47s] [33/325] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   47s] [34/325] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   47s] [35/325] preinstalled gettext-tools-mini-0.21.1-1.1
+[   47s] [36/325] preinstalled glibc-2.37-1.1
+[   47s] [37/325] preinstalled glibc-devel-2.37-1.1
+[   47s] [38/325] preinstalled glibc-locale-base-2.37-1.1
+[   47s] [39/325] preinstalled grep-3.9-1.1
+[   47s] [40/325] preinstalled gzip-1.12-3.1
+[   47s] [41/325] preinstalled kernel-obs-build-6.2.1-1.1
+[   47s] [42/325] preinstalled libacl1-2.3.1-2.1
+[   47s] [43/325] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   47s] [44/325] preinstalled libasan8-13.0.1+git5428-6.1
+[   47s] [45/325] preinstalled libasm1-0.189-2.1
+[   47s] [46/325] preinstalled libatomic1-13.0.1+git5428-6.1
+[   47s] [47/325] preinstalled libattr1-2.5.1-1.1
+[   47s] [48/325] preinstalled libaudit1-3.0.9-1.1
+[   47s] [49/325] preinstalled libblkid1-2.38.1-9.1
+[   47s] [50/325] preinstalled libbz2-1-1.0.8-4.1
+[   47s] [51/325] preinstalled libcap-ng0-0.8.3-1.1
+[   47s] [52/325] preinstalled libcap2-2.67-1.1
+[   47s] [53/325] preinstalled libcrypt1-4.4.33-1.1
+[   47s] [54/325] preinstalled libctf-nobfd0-2.40-2.1
+[   47s] [55/325] preinstalled libctf0-2.40-2.1
+[   47s] [56/325] preinstalled libdb-4_8-4.8.30-39.1
+[   47s] [57/325] preinstalled libdw1-0.189-2.1
+[   47s] [58/325] preinstalled libeconf0-0.5.1-1.1
+[   47s] [59/325] preinstalled libelf1-0.189-2.1
+[   47s] [60/325] preinstalled libexpat1-2.5.0-2.1
+[   47s] [61/325] preinstalled libfdisk1-2.38.1-9.1
+[   47s] [62/325] preinstalled libffi8-3.4.4-1.1
+[   47s] [63/325] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   47s] [64/325] preinstalled libgcrypt20-1.10.1-1.1
+[   47s] [65/325] preinstalled libgdbm6-1.23-1.1
+[   47s] [66/325] preinstalled libgdbm_compat4-1.23-1.1
+[   47s] [67/325] preinstalled libgmp10-6.2.1-4.1
+[   47s] [68/325] preinstalled libgomp1-13.0.1+git5428-6.1
+[   47s] [69/325] preinstalled libgpg-error0-1.46-1.1
+[   47s] [70/325] preinstalled libisl23-0.25-1.1
+[   47s] [71/325] preinstalled liblua5_4-5-5.4.4-8.1
+[   47s] [72/325] preinstalled liblzma5-5.4.1-1.1
+[   47s] [73/325] preinstalled libmagic1-5.44-1.2
+[   47s] [74/325] preinstalled libmount1-2.38.1-9.1
+[   47s] [75/325] preinstalled libmpc3-1.3.1-1.2
+[   47s] [76/325] preinstalled libmpdec3-2.5.1-2.1
+[   47s] [77/325] preinstalled libmpfr6-4.2.0-1.1
+[   47s] [78/325] preinstalled libncurses6-6.4.20230218-6.1
+[   47s] [79/325] preinstalled libopenssl3-3.0.8-1.1
+[   47s] [80/325] preinstalled libpcre2-8-0-10.42-3.2
+[   47s] [81/325] preinstalled libpkgconf3-1.8.0-2.1
+[   47s] [82/325] preinstalled libpopt0-1.19-1.1
+[   47s] [83/325] preinstalled libpython3_10-1_0-3.10.10-1.2
+[   47s] [84/325] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   47s] [85/325] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   47s] [86/325] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   47s] [87/325] preinstalled libreadline8-8.2-2.1
+[   47s] [88/325] preinstalled librpmbuild9-4.18.0-3.2
+[   47s] [89/325] preinstalled libseccomp2-2.5.4-2.1
+[   47s] [90/325] preinstalled libselinux1-3.5-1.1
+[   47s] [91/325] preinstalled libsemanage-conf-3.5-1.1
+[   47s] [92/325] preinstalled libsemanage2-3.5-1.1
+[   47s] [93/325] preinstalled libsepol2-3.5-1.1
+[   47s] [94/325] preinstalled libsmartcols1-2.38.1-9.1
+[   47s] [95/325] cumulate libsodium23-1.0.18-2.2
+[   47s] [96/325] cumulate libsqlite3-0-3.41.0-1.1
+[   47s] [97/325] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   47s] [98/325] preinstalled libsubid4-4.13-4.1
+[   47s] [99/325] cumulate libsystemd0-mini-252.7-1.1
+[   47s] [100/325] preinstalled libubsan1-13.0.1+git5428-6.1
+[   47s] [101/325] cumulate libunwind8-1.6.2-4.1
+[   47s] [102/325] preinstalled libutempter0-1.2.0-3.2
+[   47s] [103/325] preinstalled libuuid1-2.38.1-9.1
+[   47s] [104/325] preinstalled libxcrypt-devel-4.4.33-1.1
+[   47s] [105/325] preinstalled libz1-1.2.13-3.1
+[   47s] [106/325] preinstalled libzstd1-1.5.4-1.1
+[   47s] [107/325] preinstalled linux-glibc-devel-6.2-1.1
+[   47s] [108/325] preinstalled login_defs-4.13-4.1
+[   47s] [109/325] preinstalled lua54-5.4.4-8.1
+[   47s] [110/325] preinstalled make-4.4.1-1.1
+[   47s] [111/325] preinstalled ncurses-utils-6.4.20230218-6.1
+[   47s] [112/325] preinstalled pam-1.5.2-12.1
+[   47s] [113/325] preinstalled patch-2.7.6-6.1
+[   47s] [114/325] preinstalled perl-5.36.0-4.1
+[   47s] [115/325] preinstalled perl-base-5.36.0-4.1
+[   47s] [116/325] preinstalled permissions-1599_20230217-1.1
+[   47s] [117/325] preinstalled permissions-config-1599_20230217-1.1
+[   47s] [118/325] preinstalled pkgconf-1.8.0-2.1
+[   47s] [119/325] preinstalled pkgconf-m4-1.8.0-2.1
+[   47s] [120/325] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   47s] [121/325] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   47s] [122/325] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   47s] [123/325] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   47s] [124/325] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   47s] [125/325] cumulate python310-attrs-22.2.0-1.2
+[   47s] [126/325] cumulate python310-backcall-0.2.0-1.8
+[   47s] [127/325] preinstalled python310-base-3.10.10-1.2
+[   47s] [128/325] cumulate python310-debugpy-1.6.6-2.2
+[   47s] [129/325] cumulate python310-decorator-5.1.1-1.3
+[   47s] [130/325] cumulate python310-editables-0.3-1.3
+[   47s] [131/325] cumulate python310-entrypoints-0.4-1.2
+[   47s] [132/325] cumulate python310-executing-1.2.0-4.2
+[   47s] [133/325] cumulate python310-jedi-0.18.2-4.2
+[   47s] [134/325] cumulate python310-nest-asyncio-1.5.6-1.2
+[   47s] [135/325] preinstalled python310-packaging-23.0-1.1
+[   47s] [136/325] cumulate python310-parso-0.8.3-2.2
+[   47s] [137/325] cumulate python310-pathspec-0.10.3-1.3
+[   47s] [138/325] cumulate python310-pickleshare-0.7.5-4.2
+[   47s] [139/325] cumulate python310-platformdirs-2.5.2-1.2
+[   47s] [140/325] cumulate python310-pluggy-1.0.0-1.5
+[   47s] [141/325] cumulate python310-ptyprocess-0.7.0-1.6
+[   47s] [142/325] cumulate python310-pure-eval-0.2.2-1.2
+[   47s] [143/325] cumulate python310-pyrsistent-0.19.3-1.2
+[   47s] [144/325] preinstalled python310-setuptools-65.6.3-1.2
+[   47s] [145/325] cumulate python310-six-1.16.0-2.5
+[   48s] [146/325] cumulate python310-tomli-2.0.1-1.3
+[   48s] [147/325] cumulate python310-traitlets-5.9.0-1.2
+[   48s] [148/325] cumulate python310-wcwidth-0.2.6-1.2
+[   48s] [149/325] cumulate python311-attrs-22.2.0-1.2
+[   48s] [150/325] cumulate python311-backcall-0.2.0-1.8
+[   48s] [151/325] preinstalled python311-base-3.11.2-1.2
+[   48s] [152/325] cumulate python311-debugpy-1.6.6-2.2
+[   48s] [153/325] cumulate python311-decorator-5.1.1-1.3
+[   48s] [154/325] cumulate python311-editables-0.3-1.3
+[   48s] [155/325] cumulate python311-entrypoints-0.4-1.2
+[   48s] [156/325] cumulate python311-executing-1.2.0-4.2
+[   48s] [157/325] cumulate python311-jedi-0.18.2-4.2
+[   48s] [158/325] cumulate python311-nest-asyncio-1.5.6-1.2
+[   48s] [159/325] cumulate python311-packaging-23.0-1.2
+[   48s] [160/325] cumulate python311-parso-0.8.3-2.2
+[   48s] [161/325] cumulate python311-pathspec-0.10.3-1.3
+[   48s] [162/325] cumulate python311-pickleshare-0.7.5-4.2
+[   48s] [163/325] cumulate python311-platformdirs-2.5.2-1.2
+[   48s] [164/325] cumulate python311-pluggy-1.0.0-1.5
+[   48s] [165/325] cumulate python311-ptyprocess-0.7.0-1.6
+[   48s] [166/325] cumulate python311-pure-eval-0.2.2-1.2
+[   48s] [167/325] cumulate python311-pyrsistent-0.19.3-1.2
+[   48s] [168/325] preinstalled python311-setuptools-65.6.3-1.2
+[   48s] [169/325] cumulate python311-six-1.16.0-2.5
+[   48s] [170/325] cumulate python311-traitlets-5.9.0-1.2
+[   48s] [171/325] cumulate python311-wcwidth-0.2.6-1.2
+[   48s] [172/325] cumulate python38-attrs-22.2.0-1.2
+[   48s] [173/325] cumulate python38-backcall-0.2.0-1.8
+[   48s] [174/325] preinstalled python38-base-3.8.16-5.1
+[   48s] [175/325] cumulate python38-debugpy-1.6.6-2.2
+[   48s] [176/325] cumulate python38-decorator-5.1.1-1.3
+[   48s] [177/325] cumulate python38-editables-0.3-1.3
+[   48s] [178/325] cumulate python38-entrypoints-0.4-1.2
+[   48s] [179/325] cumulate python38-executing-1.2.0-4.2
+[   48s] [180/325] cumulate python38-jedi-0.18.2-4.2
+[   48s] [181/325] cumulate python38-nest-asyncio-1.5.6-1.2
+[   48s] [182/325] cumulate python38-packaging-23.0-1.2
+[   48s] [183/325] cumulate python38-parso-0.8.3-2.2
+[   48s] [184/325] cumulate python38-pathspec-0.10.3-1.3
+[   48s] [185/325] cumulate python38-pickleshare-0.7.5-4.2
+[   48s] [186/325] cumulate python38-pkgutil-resolve-name-1.3.10-1.2
+[   48s] [187/325] cumulate python38-platformdirs-2.5.2-1.2
+[   48s] [188/325] cumulate python38-pluggy-1.0.0-1.5
+[   48s] [189/325] cumulate python38-ptyprocess-0.7.0-1.6
+[   48s] [190/325] cumulate python38-pure-eval-0.2.2-1.2
+[   48s] [191/325] cumulate python38-pyrsistent-0.19.3-1.2
+[   48s] [192/325] preinstalled python38-setuptools-65.6.3-1.2
+[   48s] [193/325] cumulate python38-six-1.16.0-2.5
+[   48s] [194/325] cumulate python38-tomli-2.0.1-1.3
+[   48s] [195/325] cumulate python38-traitlets-5.9.0-1.2
+[   48s] [196/325] cumulate python38-wcwidth-0.2.6-1.2
+[   48s] [197/325] cumulate python38-zipp-3.8.1-1.2
+[   48s] [198/325] cumulate python39-attrs-22.2.0-1.2
+[   48s] [199/325] cumulate python39-backcall-0.2.0-1.8
+[   48s] [200/325] preinstalled python39-base-3.9.16-5.1
+[   48s] [201/325] cumulate python39-debugpy-1.6.6-2.2
+[   48s] [202/325] cumulate python39-decorator-5.1.1-1.3
+[   48s] [203/325] cumulate python39-editables-0.3-1.3
+[   48s] [204/325] cumulate python39-entrypoints-0.4-1.2
+[   48s] [205/325] cumulate python39-executing-1.2.0-4.2
+[   48s] [206/325] cumulate python39-jedi-0.18.2-4.2
+[   48s] [207/325] cumulate python39-nest-asyncio-1.5.6-1.2
+[   48s] [208/325] cumulate python39-packaging-23.0-1.2
+[   48s] [209/325] cumulate python39-parso-0.8.3-2.2
+[   48s] [210/325] cumulate python39-pathspec-0.10.3-1.3
+[   48s] [211/325] cumulate python39-pickleshare-0.7.5-4.2
+[   48s] [212/325] cumulate python39-platformdirs-2.5.2-1.2
+[   48s] [213/325] cumulate python39-pluggy-1.0.0-1.5
+[   48s] [214/325] cumulate python39-ptyprocess-0.7.0-1.6
+[   48s] [215/325] cumulate python39-pure-eval-0.2.2-1.2
+[   48s] [216/325] cumulate python39-pyrsistent-0.19.3-1.2
+[   48s] [217/325] preinstalled python39-setuptools-65.6.3-1.2
+[   48s] [218/325] cumulate python39-six-1.16.0-2.5
+[   48s] [219/325] cumulate python39-tomli-2.0.1-1.3
+[   48s] [220/325] cumulate python39-traitlets-5.9.0-1.2
+[   48s] [221/325] cumulate python39-wcwidth-0.2.6-1.2
+[   48s] [222/325] preinstalled qemu-linux-user-7.1.0-52.1
+[   48s] [223/325] preinstalled rpm-4.18.0-3.2
+[   48s] [224/325] preinstalled rpm-build-4.18.0-3.2
+[   48s] [225/325] preinstalled rpm-build-perl-4.18.0-3.2
+[   48s] [226/325] preinstalled rpm-config-SUSE-20220926-1.1
+[   48s] [227/325] preinstalled rpmlint-mini-2.4.0+git20230307.1e9f1e0-9.13
+[   48s] [228/325] preinstalled rpmlint-strict-2.4.0+git20230307.1e9f1e0-1.1
+[   48s] [229/325] preinstalled sed-4.9-2.1
+[   48s] [230/325] preinstalled shadow-4.13-4.1
+[   48s] [231/325] preinstalled system-group-hardware-20170617-24.1
+[   48s] [232/325] preinstalled system-user-root-20190513-2.1
+[   48s] [233/325] preinstalled systemd-rpm-macros-19-1.1
+[   48s] [234/325] preinstalled sysuser-shadow-3.1-5.1
+[   48s] [235/325] preinstalled tar-1.34-10.1
+[   48s] [236/325] preinstalled terminfo-base-6.4.20230218-6.1
+[   48s] [237/325] preinstalled update-alternatives-1.21.8-1.1
+[   48s] [238/325] preinstalled util-linux-2.38.1-9.1
+[   48s] [239/325] preinstalled which-2.21-5.1
+[   48s] [240/325] preinstalled xz-5.4.1-1.1
+[   48s] [241/325] cumulate alts-1.2+3.b848aad-3.1
+[   48s] [242/325] cumulate libprocps8-3.3.17-12.1
+[   48s] [243/325] cumulate python310-3.10.10-1.2
+[   48s] [244/325] cumulate python310-asttokens-2.2.1-1.2
+[   48s] [245/325] cumulate python310-comm-0.1.2-1.3
+[   48s] [246/325] cumulate python310-matplotlib-inline-0.1.6-1.2
+[   48s] [247/325] cumulate python310-pexpect-4.8.0-23.1
+[   48s] [248/325] cumulate python310-prompt_toolkit-3.0.36-1.3
+[   48s] [249/325] cumulate python310-python-dateutil-2.8.2-1.5
+[   48s] [250/325] cumulate python311-3.11.2-1.1
+[   48s] [251/325] cumulate python311-asttokens-2.2.1-1.2
+[   48s] [252/325] cumulate python311-comm-0.1.2-1.3
+[   48s] [253/325] cumulate python311-matplotlib-inline-0.1.6-1.2
+[   48s] [254/325] cumulate python311-pexpect-4.8.0-23.1
+[   48s] [255/325] cumulate python311-prompt_toolkit-3.0.36-1.3
+[   48s] [256/325] cumulate python311-python-dateutil-2.8.2-1.5
+[   48s] [257/325] cumulate python38-3.8.16-5.1
+[   48s] [258/325] cumulate python38-asttokens-2.2.1-1.2
+[   48s] [259/325] cumulate python38-comm-0.1.2-1.3
+[   48s] [260/325] cumulate python38-importlib-resources-5.10.2-2.2
+[   48s] [261/325] cumulate python38-matplotlib-inline-0.1.6-1.2
+[   48s] [262/325] cumulate python38-pexpect-4.8.0-23.1
+[   48s] [263/325] cumulate python38-prompt_toolkit-3.0.36-1.3
+[   48s] [264/325] cumulate python38-python-dateutil-2.8.2-1.5
+[   48s] [265/325] cumulate python39-3.9.16-5.1
+[   48s] [266/325] cumulate python39-asttokens-2.2.1-1.2
+[   48s] [267/325] cumulate python39-comm-0.1.2-1.3
+[   48s] [268/325] cumulate python39-matplotlib-inline-0.1.6-1.2
+[   48s] [269/325] cumulate python39-pexpect-4.8.0-23.1
+[   48s] [270/325] cumulate python39-prompt_toolkit-3.0.36-1.3
+[   48s] [271/325] cumulate python39-python-dateutil-2.8.2-1.5
+[   48s] [272/325] cumulate libzmq5-4.3.4-4.1
+[   48s] [273/325] cumulate python310-hatchling-1.13.0-1.2
+[   48s] [274/325] cumulate python311-hatchling-1.13.0-1.2
+[   48s] [275/325] cumulate python38-hatchling-1.13.0-1.2
+[   48s] [276/325] cumulate python39-hatchling-1.13.0-1.2
+[   48s] [277/325] cumulate procps-3.3.17-12.1
+[   48s] [278/325] cumulate python310-Pygments-2.14.0-1.2
+[   48s] [279/325] cumulate python310-pip-22.3.1-1.2
+[   48s] [280/325] cumulate python310-pyzmq-24.0.1-3.2
+[   48s] [281/325] cumulate python310-tornado6-6.2-5.2
+[   48s] [282/325] cumulate python311-Pygments-2.14.0-1.2
+[   48s] [283/325] cumulate python311-pip-22.3.1-1.2
+[   48s] [284/325] cumulate python311-pyzmq-24.0.1-3.2
+[   48s] [285/325] cumulate python311-tornado6-6.2-5.2
+[   48s] [286/325] cumulate python38-Pygments-2.14.0-1.2
+[   48s] [287/325] cumulate python38-pip-22.3.1-1.2
+[   48s] [288/325] cumulate python38-pyzmq-24.0.1-3.2
+[   48s] [289/325] cumulate python38-tornado6-6.2-5.2
+[   48s] [290/325] cumulate python39-Pygments-2.14.0-1.2
+[   48s] [291/325] cumulate python39-pip-22.3.1-1.2
+[   48s] [292/325] cumulate python39-pyzmq-24.0.1-3.2
+[   48s] [293/325] cumulate python39-tornado6-6.2-5.2
+[   48s] [294/325] cumulate python310-jsonschema-4.17.3-2.2
+[   48s] [295/325] cumulate python310-jupyter-core-5.2.0-1.2
+[   48s] [296/325] cumulate python310-stack-data-0.2.0-2.2
+[   48s] [297/325] cumulate python311-jsonschema-4.17.3-2.2
+[   48s] [298/325] cumulate python311-jupyter-core-5.2.0-1.2
+[   48s] [299/325] cumulate python311-stack-data-0.2.0-2.2
+[   48s] [300/325] cumulate python38-jupyter-core-5.2.0-1.2
+[   48s] [301/325] cumulate python38-stack-data-0.2.0-2.2
+[   48s] [302/325] cumulate python39-jsonschema-4.17.3-2.2
+[   48s] [303/325] cumulate python39-jupyter-core-5.2.0-1.2
+[   48s] [304/325] cumulate python39-stack-data-0.2.0-2.2
+[   48s] [305/325] cumulate python38-jsonschema-4.17.3-2.2
+[   48s] [306/325] cumulate python310-psutil-5.9.4-2.2
+[   48s] [307/325] cumulate python310-tornado-6.2-15.5
+[   48s] [308/325] cumulate python311-psutil-5.9.4-2.2
+[   48s] [309/325] cumulate python38-psutil-5.9.4-2.2
+[   48s] [310/325] cumulate python38-tornado-6.2-15.5
+[   48s] [311/325] cumulate python39-psutil-5.9.4-2.2
+[   48s] [312/325] cumulate python39-tornado-6.2-15.5
+[   48s] [313/325] cumulate python310-ipython-8.9.0-1.2
+[   48s] [314/325] cumulate python311-ipython-8.9.0-1.2
+[   48s] [315/325] cumulate python38-ipython-8.9.0-1.2
+[   48s] [316/325] cumulate python39-ipython-8.9.0-1.2
+[   48s] [317/325] cumulate python310-jupyter-client-7.4.9-5.2
+[   48s] [318/325] cumulate jupyter-jupyter-client-7.4.9-5.2
+[   48s] [319/325] cumulate python311-jupyter-client-7.4.9-5.2
+[   48s] [320/325] cumulate python38-jupyter-client-7.4.9-5.2
+[   48s] [321/325] cumulate python39-jupyter-client-7.4.9-5.2
+[   48s] [322/325] cumulate python310-ipykernel-6.21.1-1.2
+[   48s] [323/325] cumulate python311-ipykernel-6.21.1-1.2
+[   48s] [324/325] cumulate python38-ipykernel-6.21.1-1.2
+[   48s] [325/325] cumulate python39-ipykernel-6.21.1-1.2
+[   48s] now installing cumulated packages
+[   49s] Preparing...                          ########################################
+[   50s] Updating / installing...
+[   50s] python39-traitlets-5.9.0-1.2          ########################################
+[   50s] python38-traitlets-5.9.0-1.2          ########################################
+[   50s] python311-traitlets-5.9.0-1.2         ########################################
+[   51s] python310-traitlets-5.9.0-1.2         ########################################
+[   51s] libsqlite3-0-3.41.0-1.1               ########################################
+[   51s] python310-matplotlib-inline-0.1.6-1.2 ########################################
+[   51s] python311-matplotlib-inline-0.1.6-1.2 ########################################
+[   51s] python38-matplotlib-inline-0.1.6-1.2  ########################################
+[   51s] python39-matplotlib-inline-0.1.6-1.2  ########################################
+[   51s] python39-six-1.16.0-2.5               ########################################
+[   51s] python39-packaging-23.0-1.2           ########################################
+[   51s] python39-nest-asyncio-1.5.6-1.2       ########################################
+[   51s] python38-six-1.16.0-2.5               ########################################
+[   51s] python38-packaging-23.0-1.2           ########################################
+[   51s] python38-nest-asyncio-1.5.6-1.2       ########################################
+[   51s] python311-six-1.16.0-2.5              ########################################
+[   51s] python311-packaging-23.0-1.2          ########################################
+[   51s] python311-nest-asyncio-1.5.6-1.2      ########################################
+[   52s] python310-six-1.16.0-2.5              ########################################
+[   52s] python310-nest-asyncio-1.5.6-1.2      ########################################
+[   52s] python310-asttokens-2.2.1-1.2         ########################################
+[   52s] python310-python-dateutil-2.8.2-1.5   ########################################
+[   52s] python311-asttokens-2.2.1-1.2         ########################################
+[   52s] python311-python-dateutil-2.8.2-1.5   ########################################
+[   52s] python38-asttokens-2.2.1-1.2          ########################################
+[   52s] python38-python-dateutil-2.8.2-1.5    ########################################
+[   52s] python39-asttokens-2.2.1-1.2          ########################################
+[   52s] python39-python-dateutil-2.8.2-1.5    ########################################
+[   52s] python310-comm-0.1.2-1.3              ########################################
+[   52s] python311-comm-0.1.2-1.3              ########################################
+[   52s] python38-comm-0.1.2-1.3               ########################################
+[   52s] python39-comm-0.1.2-1.3               ########################################
+[   52s] python39-wcwidth-0.2.6-1.2            ########################################
+[   52s] python39-tomli-2.0.1-1.3              ########################################
+[   52s] python39-pyrsistent-0.19.3-1.2        ########################################
+[   52s] python39-pure-eval-0.2.2-1.2          ########################################
+[   52s] python39-ptyprocess-0.7.0-1.6         ########################################
+[   53s] python39-pexpect-4.8.0-23.1           ########################################
+[   53s] python39-pluggy-1.0.0-1.5             ########################################
+[   53s] python39-platformdirs-2.5.2-1.2       ########################################
+[   53s] python39-pickleshare-0.7.5-4.2        ########################################
+[   53s] python39-pathspec-0.10.3-1.3          ########################################
+[   53s] python39-parso-0.8.3-2.2              ########################################
+[   54s] python39-jedi-0.18.2-4.2              ########################################
+[   54s] python39-executing-1.2.0-4.2          ########################################
+[   54s] python39-entrypoints-0.4-1.2          ########################################
+[   54s] python39-editables-0.3-1.3            ########################################
+[   54s] python39-decorator-5.1.1-1.3          ########################################
+[   55s] python39-debugpy-1.6.6-2.2            ########################################
+[   55s] python39-backcall-0.2.0-1.8           ########################################
+[   55s] python39-attrs-22.2.0-1.2             ########################################
+[   55s] python38-zipp-3.8.1-1.2               ########################################
+[   56s] python38-importlib-resources-5.10.2-2.########################################
+[   56s] python38-wcwidth-0.2.6-1.2            ########################################
+[   56s] python38-tomli-2.0.1-1.3              ########################################
+[   56s] python38-pyrsistent-0.19.3-1.2        ########################################
+[   56s] python38-pure-eval-0.2.2-1.2          ########################################
+[   56s] python38-ptyprocess-0.7.0-1.6         ########################################
+[   56s] python38-pexpect-4.8.0-23.1           ########################################
+[   56s] python38-pluggy-1.0.0-1.5             ########################################
+[   56s] python38-platformdirs-2.5.2-1.2       ########################################
+[   56s] python38-pkgutil-resolve-name-1.3.10-1########################################
+[   56s] python38-pickleshare-0.7.5-4.2        ########################################
+[   56s] python38-pathspec-0.10.3-1.3          ########################################
+[   56s] python38-parso-0.8.3-2.2              ########################################
+[   57s] python38-jedi-0.18.2-4.2              ########################################
+[   57s] python38-executing-1.2.0-4.2          ########################################
+[   57s] python38-entrypoints-0.4-1.2          ########################################
+[   57s] python38-editables-0.3-1.3            ########################################
+[   57s] python38-decorator-5.1.1-1.3          ########################################
+[   59s] python38-debugpy-1.6.6-2.2            ########################################
+[   59s] python38-backcall-0.2.0-1.8           ########################################
+[   59s] python38-attrs-22.2.0-1.2             ########################################
+[   59s] python311-wcwidth-0.2.6-1.2           ########################################
+[   59s] python311-pyrsistent-0.19.3-1.2       ########################################
+[   59s] python311-pure-eval-0.2.2-1.2         ########################################
+[   59s] python311-ptyprocess-0.7.0-1.6        ########################################
+[   59s] python311-pexpect-4.8.0-23.1          ########################################
+[   59s] python311-pluggy-1.0.0-1.5            ########################################
+[   59s] python311-platformdirs-2.5.2-1.2      ########################################
+[   59s] python311-pickleshare-0.7.5-4.2       ########################################
+[   59s] python311-pathspec-0.10.3-1.3         ########################################
+[   59s] python311-parso-0.8.3-2.2             ########################################
+[   60s] python311-jedi-0.18.2-4.2             ########################################
+[   61s] python311-executing-1.2.0-4.2         ########################################
+[   61s] python311-entrypoints-0.4-1.2         ########################################
+[   61s] python311-editables-0.3-1.3           ########################################
+[   61s] python311-decorator-5.1.1-1.3         ########################################
+[   62s] python311-debugpy-1.6.6-2.2           ########################################
+[   62s] python311-backcall-0.2.0-1.8          ########################################
+[   62s] python311-attrs-22.2.0-1.2            ########################################
+[   62s] python310-wcwidth-0.2.6-1.2           ########################################
+[   62s] python310-tomli-2.0.1-1.3             ########################################
+[   62s] python310-pyrsistent-0.19.3-1.2       ########################################
+[   62s] python310-pure-eval-0.2.2-1.2         ########################################
+[   62s] python310-ptyprocess-0.7.0-1.6        ########################################
+[   62s] python310-pexpect-4.8.0-23.1          ########################################
+[   62s] python310-pluggy-1.0.0-1.5            ########################################
+[   62s] python310-platformdirs-2.5.2-1.2      ########################################
+[   62s] python310-pickleshare-0.7.5-4.2       ########################################
+[   62s] python310-pathspec-0.10.3-1.3         ########################################
+[   62s] python310-parso-0.8.3-2.2             ########################################
+[   64s] python310-jedi-0.18.2-4.2             ########################################
+[   64s] python310-executing-1.2.0-4.2         ########################################
+[   64s] python310-entrypoints-0.4-1.2         ########################################
+[   64s] python310-editables-0.3-1.3           ########################################
+[   64s] python310-decorator-5.1.1-1.3         ########################################
+[   65s] python310-debugpy-1.6.6-2.2           ########################################
+[   65s] python310-backcall-0.2.0-1.8          ########################################
+[   65s] python310-attrs-22.2.0-1.2            ########################################
+[   65s] libunwind8-1.6.2-4.1                  ########################################
+[   65s] libsystemd0-mini-252.7-1.1            ########################################
+[   65s] libprocps8-3.3.17-12.1                ########################################
+[   66s] procps-3.3.17-12.1                    ########################################
+[   66s] python310-psutil-5.9.4-2.2            ########################################
+[   66s] python311-psutil-5.9.4-2.2            ########################################
+[   66s] python38-psutil-5.9.4-2.2             ########################################
+[   66s] python39-psutil-5.9.4-2.2             ########################################
+[   66s] libsodium23-1.0.18-2.2                ########################################
+[   67s] libzmq5-4.3.4-4.1                     ########################################
+[   67s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   67s] alts-1.2+3.b848aad-3.1                ########################################
+[   68s] python310-Pygments-2.14.0-1.2         ########################################
+[   70s] python311-Pygments-2.14.0-1.2         ########################################
+[   71s] python38-Pygments-2.14.0-1.2          ########################################
+[   73s] python39-Pygments-2.14.0-1.2          ########################################
+[   73s] python39-prompt_toolkit-3.0.36-1.3    ########################################
+[   73s] python39-stack-data-0.2.0-2.2         ########################################
+[   74s] python38-prompt_toolkit-3.0.36-1.3    ########################################
+[   74s] python38-stack-data-0.2.0-2.2         ########################################
+[   75s] python311-prompt_toolkit-3.0.36-1.3   ########################################
+[   75s] python311-stack-data-0.2.0-2.2        ########################################
+[   75s] python310-prompt_toolkit-3.0.36-1.3   ########################################
+[   75s] python310-stack-data-0.2.0-2.2        ########################################
+[   77s] python310-pip-22.3.1-1.2              ########################################
+[   77s] python310-3.10.10-1.2                 ########################################
+[   78s] python310-tornado6-6.2-5.2            ########################################
+[   78s] python310-pyzmq-24.0.1-3.2            ########################################
+[   78s] jupyter-jupyter-client-7.4.9-5.2      ########################################
+[   78s] python310-jupyter-client-7.4.9-5.2    ########################################
+[   79s] python310-jupyter-core-5.2.0-1.2      ########################################
+[   79s] python310-ipykernel-6.21.1-1.2        ########################################
+[   80s] python310-ipython-8.9.0-1.2           ########################################
+[   82s] python311-pip-22.3.1-1.2              ########################################
+[   82s] python311-3.11.2-1.1                  ########################################
+[   83s] python311-tornado6-6.2-5.2            ########################################
+[   83s] python311-pyzmq-24.0.1-3.2            ########################################
+[   83s] python311-jupyter-client-7.4.9-5.2    ########################################
+[   84s] python311-jupyter-core-5.2.0-1.2      ########################################
+[   84s] python311-ipykernel-6.21.1-1.2        ########################################
+[   85s] python311-ipython-8.9.0-1.2           ########################################
+[   87s] python38-pip-22.3.1-1.2               ########################################
+[   87s] python38-3.8.16-5.1                   ########################################
+[   88s] python38-tornado6-6.2-5.2             ########################################
+[   88s] python38-pyzmq-24.0.1-3.2             ########################################
+[   88s] python38-jupyter-client-7.4.9-5.2     ########################################
+[   89s] python38-jupyter-core-5.2.0-1.2       ########################################
+[   89s] python38-ipykernel-6.21.1-1.2         ########################################
+[   90s] python38-ipython-8.9.0-1.2            ########################################
+[   92s] python39-pip-22.3.1-1.2               ########################################
+[   92s] python39-3.9.16-5.1                   ########################################
+[   93s] python39-tornado6-6.2-5.2             ########################################
+[   93s] python39-pyzmq-24.0.1-3.2             ########################################
+[   93s] python39-jupyter-client-7.4.9-5.2     ########################################
+[   94s] python39-jupyter-core-5.2.0-1.2       ########################################
+[   94s] python39-ipykernel-6.21.1-1.2         ########################################
+[   95s] python39-ipython-8.9.0-1.2            ########################################
+[   95s] python39-tornado-6.2-15.5             ########################################
+[   95s] python38-tornado-6.2-15.5             ########################################
+[   95s] python310-tornado-6.2-15.5            ########################################
+[   95s] python310-jsonschema-4.17.3-2.2       ########################################
+[   96s] python311-jsonschema-4.17.3-2.2       ########################################
+[   96s] python39-jsonschema-4.17.3-2.2        ########################################
+[   97s] python38-jsonschema-4.17.3-2.2        ########################################
+[   97s] python310-hatchling-1.13.0-1.2        ########################################
+[   97s] python311-hatchling-1.13.0-1.2        ########################################
+[   98s] python38-hatchling-1.13.0-1.2         ########################################
+[   98s] python39-hatchling-1.13.0-1.2         ########################################
+[   98s] fdupes-2.2.1-1.1                      ########################################
+[  109s] now finalizing build dir...
+[  109s] ... running 01-add_abuild_user_to_trusted_group
+[  109s] ... running 02-set_timezone_to_utc
+[  109s] ... running 03-set-permissions-secure
+[  110s] ... running 11-hack_uname_version_to_kernel_version
+[  119s] -----------------------------------------------------------------
+[  119s] I have the following modifications for python-jupyter-kernel-test.spec:
+[  120s] 21c21
+[  120s] < Release:        0
+[  120s] ---
+[  120s] > Release:        1.2
+[  127s] build target is riscv64-suse-linux
+[  127s] -----------------------------------------------------------------
+[  127s] ----- building python-jupyter-kernel-test.spec (user abuild)
+[  127s] -----------------------------------------------------------------
+[  127s] -----------------------------------------------------------------
+[  131s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/322de85fbfe5ca880e115e09300a5477-python-jupyter-kernel-test' /home/abuild/rpmbuild/SOURCES/python-jupyter-kernel-test.spec
+[  178s] Building target platforms: riscv64-suse-linux
+[  178s] Building for target riscv64-suse-linux
+[  178s] setting SOURCE_DATE_EPOCH=1675555200
+[  178s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.QlzSql
+[  178s] + umask 022
+[  178s] + cd /home/abuild/rpmbuild/BUILD
+[  179s] + cd /home/abuild/rpmbuild/BUILD
+[  179s] + rm -rf jupyter_kernel_test-0.5.0
+[  179s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/jupyter_kernel_test-0.5.0.tar.gz
+[  179s] + STATUS=0
+[  179s] + '[' 0 -ne 0 ']'
+[  179s] + cd jupyter_kernel_test-0.5.0
+[  179s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  179s] + RPM_EC=0
+[  179s] ++ jobs -p
+[  179s] + exit 0
+[  179s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.1QFTon
+[  179s] + umask 022
+[  179s] + cd /home/abuild/rpmbuild/BUILD
+[  179s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64
+[  179s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64
+[  179s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  179s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64
+[  180s] + cd jupyter_kernel_test-0.5.0
+[  180s] + ref=/usr/lib/rpm
+[  180s] + mints=0
+[  180s] + case $(uname -m) in
+[  180s] ++ uname -m
+[  180s] + mints=20160911
+[  180s] + for s in guess sub
+[  180s] ++ find -maxdepth 8 -name config.guess
+[  180s] + for s in guess sub
+[  180s] ++ find -maxdepth 8 -name config.sub
+[  180s] ++ '[' -f _current_flavor ']'
+[  180s] ++ true
+[  180s] + last_flavor=
+[  180s] + '[' -z '' ']'
+[  180s] + last_flavor=tmp
+[  180s] + '[' tmp '!=' python38 ']'
+[  180s] + '[' -d build ']'
+[  180s] + '[' -d _build.python38 ']'
+[  180s] + echo python38
+[  180s] + python_flavor=python38
+[  180s] + myargs=
+[  180s] + '[' -f './dist/*-none-any.whl' ']'
+[  180s] + /usr/bin/python3.8 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  189s] Processing /home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0
+[  189s]   Preparing metadata (pyproject.toml): started
+[  189s]   Running command Preparing metadata (pyproject.toml)
+[  192s]   Preparing metadata (pyproject.toml): finished with status 'done'
+[  192s] Building wheels for collected packages: jupyter_kernel_test
+[  192s]   Building wheel for jupyter_kernel_test (pyproject.toml): started
+[  192s]   Running command Building wheel for jupyter_kernel_test (pyproject.toml)
+[  193s]   Building wheel for jupyter_kernel_test (pyproject.toml): finished with status 'done'
+[  193s]   Created wheel for jupyter_kernel_test: filename=jupyter_kernel_test-0.5.0-py3-none-any.whl size=9990 sha256=577783782acd419abd2624e72a569f03fb4348063bba8261e55f1421cd5ca77a
+[  193s]   Stored in directory: /home/abuild/.cache/pip/wheels/51/70/4c/cee6e43a2069e5d3451bf47d227a46642996dd046340117345
+[  193s] Successfully built jupyter_kernel_test
+[  193s] + '[' -f ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl ']'
+[  193s] + mkdir -p ./dist
+[  193s] + cp ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl ./dist/
+[  193s] ++ '[' -f _current_flavor ']'
+[  193s] ++ cat _current_flavor
+[  193s] + last_flavor=python38
+[  193s] + '[' -z python38 ']'
+[  193s] + '[' python38 '!=' python39 ']'
+[  193s] + '[' -d build ']'
+[  193s] + mv build _build.python38
+[  193s] + '[' -d _build.python39 ']'
+[  193s] + echo python39
+[  193s] + python_flavor=python39
+[  193s] + myargs=
+[  193s] + '[' -f ./dist/jupyter_kernel_test-0.5.0-py3-none-any.whl ']'
+[  193s] + echo 'Already found a compatible wheel in ./dist'
+[  193s] Already found a compatible wheel in ./dist
+[  193s] + mkdir -p ./build
+[  194s] + cp ./dist/jupyter_kernel_test-0.5.0-py3-none-any.whl ./build/
+[  194s] ++ '[' -f _current_flavor ']'
+[  194s] ++ cat _current_flavor
+[  194s] + last_flavor=python39
+[  194s] + '[' -z python39 ']'
+[  194s] + '[' python39 '!=' python311 ']'
+[  194s] + '[' -d build ']'
+[  194s] + mv build _build.python39
+[  194s] + '[' -d _build.python311 ']'
+[  194s] + echo python311
+[  194s] + python_flavor=python311
+[  194s] + myargs=
+[  194s] + '[' -f ./dist/jupyter_kernel_test-0.5.0-py3-none-any.whl ']'
+[  194s] + echo 'Already found a compatible wheel in ./dist'
+[  194s] Already found a compatible wheel in ./dist
+[  194s] + mkdir -p ./build
+[  194s] + cp ./dist/jupyter_kernel_test-0.5.0-py3-none-any.whl ./build/
+[  194s] ++ '[' -f _current_flavor ']'
+[  194s] ++ cat _current_flavor
+[  194s] + last_flavor=python311
+[  194s] + '[' -z python311 ']'
+[  194s] + '[' python311 '!=' python310 ']'
+[  194s] + '[' -d build ']'
+[  194s] + mv build _build.python311
+[  194s] + '[' -d _build.python310 ']'
+[  194s] + echo python310
+[  194s] + python_flavor=python310
+[  194s] + myargs=
+[  194s] + '[' -f ./dist/jupyter_kernel_test-0.5.0-py3-none-any.whl ']'
+[  194s] + echo 'Already found a compatible wheel in ./dist'
+[  194s] Already found a compatible wheel in ./dist
+[  194s] + mkdir -p ./build
+[  194s] + cp ./dist/jupyter_kernel_test-0.5.0-py3-none-any.whl ./build/
+[  194s] + RPM_EC=0
+[  194s] ++ jobs -p
+[  194s] + exit 0
+[  194s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.ogQNw0
+[  194s] + umask 022
+[  194s] + cd /home/abuild/rpmbuild/BUILD
+[  194s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64
+[  194s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  195s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64
+[  195s] + cd jupyter_kernel_test-0.5.0
+[  195s] ++ '[' -f _current_flavor ']'
+[  195s] ++ cat _current_flavor
+[  195s] + last_flavor=python310
+[  195s] + '[' -z python310 ']'
+[  195s] + '[' python310 '!=' python38 ']'
+[  195s] + '[' -d build ']'
+[  195s] + mv build _build.python310
+[  195s] + '[' -d _build.python38 ']'
+[  195s] + mv _build.python38 build
+[  195s] + echo python38
+[  195s] + python_flavor=python38
+[  195s] + myargs=
+[  195s] + havereq=0
+[  195s] + '[' -n '' ']'
+[  195s] + '[' 0 -eq 0 ']'
+[  195s] + ls ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  195s] ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  195s] + for w in ./build/*.whl
+[  195s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  195s] +++ basename ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  195s] ++ echo jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  195s] + myargs=' jupyter_kernel_test==0.5.0'
+[  195s] + /usr/bin/python3.8 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build jupyter_kernel_test==0.5.0
+[  201s] Using pip 22.3.1 from /usr/lib/python3.8/site-packages/pip (python 3.8)
+[  203s] Looking in links: ./build
+[  203s] Processing ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  203s] Installing collected packages: jupyter_kernel_test
+[  203s] Successfully installed jupyter_kernel_test-0.5.0
+[  203s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.8/site-packages
+[  203s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages ']'
+[  203s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages -iname '*.pyc' -delete
+[  203s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.8 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  203s] Generating cached byte-code for jupyter_kernel_test/__init__.py
+[  204s] Generating cached byte-code for jupyter_kernel_test/msgspec_v5.py
+[  205s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.8/site-packages
+[  205s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.8/site-packages ']'
+[  205s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*
+[  205s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*' ']'
+[  205s] ++ '[' -f _current_flavor ']'
+[  205s] ++ cat _current_flavor
+[  205s] + last_flavor=python38
+[  205s] + '[' -z python38 ']'
+[  205s] + '[' python38 '!=' python39 ']'
+[  205s] + '[' -d build ']'
+[  205s] + mv build _build.python38
+[  205s] + '[' -d _build.python39 ']'
+[  205s] + mv _build.python39 build
+[  205s] + echo python39
+[  205s] + python_flavor=python39
+[  205s] + myargs=
+[  205s] + havereq=0
+[  205s] + '[' -n '' ']'
+[  205s] + '[' 0 -eq 0 ']'
+[  205s] + ls ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  205s] ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  205s] + for w in ./build/*.whl
+[  205s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  205s] +++ basename ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  205s] ++ echo jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  206s] + myargs=' jupyter_kernel_test==0.5.0'
+[  206s] + /usr/bin/python3.9 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build jupyter_kernel_test==0.5.0
+[  211s] Using pip 22.3.1 from /usr/lib/python3.9/site-packages/pip (python 3.9)
+[  212s] Looking in links: ./build
+[  212s] Processing ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  212s] Installing collected packages: jupyter_kernel_test
+[  212s] Successfully installed jupyter_kernel_test-0.5.0
+[  212s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.9/site-packages
+[  212s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages ']'
+[  212s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages -iname '*.pyc' -delete
+[  212s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.9 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  212s] Generating cached byte-code for jupyter_kernel_test/__init__.py
+[  213s] Generating cached byte-code for jupyter_kernel_test/msgspec_v5.py
+[  214s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.9/site-packages
+[  214s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.9/site-packages ']'
+[  214s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*
+[  214s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*' ']'
+[  214s] ++ '[' -f _current_flavor ']'
+[  214s] ++ cat _current_flavor
+[  214s] + last_flavor=python39
+[  214s] + '[' -z python39 ']'
+[  214s] + '[' python39 '!=' python311 ']'
+[  214s] + '[' -d build ']'
+[  214s] + mv build _build.python39
+[  214s] + '[' -d _build.python311 ']'
+[  214s] + mv _build.python311 build
+[  214s] + echo python311
+[  214s] + python_flavor=python311
+[  214s] + myargs=
+[  214s] + havereq=0
+[  214s] + '[' -n '' ']'
+[  214s] + '[' 0 -eq 0 ']'
+[  214s] + ls ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  215s] ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  215s] + for w in ./build/*.whl
+[  215s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  215s] +++ basename ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  215s] ++ echo jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  215s] + myargs=' jupyter_kernel_test==0.5.0'
+[  215s] + /usr/bin/python3.11 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build jupyter_kernel_test==0.5.0
+[  221s] Using pip 22.3.1 from /usr/lib/python3.11/site-packages/pip (python 3.11)
+[  222s] Looking in links: ./build
+[  222s] Processing ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  222s] Installing collected packages: jupyter_kernel_test
+[  222s] Successfully installed jupyter_kernel_test-0.5.0
+[  223s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.11/site-packages
+[  223s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages ']'
+[  223s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages -iname '*.pyc' -delete
+[  223s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.11 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  223s] Generating cached byte-code for jupyter_kernel_test/__init__.py
+[  224s] Generating cached byte-code for jupyter_kernel_test/msgspec_v5.py
+[  225s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.11/site-packages
+[  225s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.11/site-packages ']'
+[  225s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*
+[  225s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*' ']'
+[  225s] ++ '[' -f _current_flavor ']'
+[  225s] ++ cat _current_flavor
+[  225s] + last_flavor=python311
+[  225s] + '[' -z python311 ']'
+[  225s] + '[' python311 '!=' python310 ']'
+[  225s] + '[' -d build ']'
+[  225s] + mv build _build.python311
+[  225s] + '[' -d _build.python310 ']'
+[  225s] + mv _build.python310 build
+[  225s] + echo python310
+[  225s] + python_flavor=python310
+[  225s] + myargs=
+[  225s] + havereq=0
+[  225s] + '[' -n '' ']'
+[  225s] + '[' 0 -eq 0 ']'
+[  225s] + ls ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  225s] ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  225s] + for w in ./build/*.whl
+[  225s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  225s] +++ basename ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  225s] ++ echo jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  225s] + myargs=' jupyter_kernel_test==0.5.0'
+[  225s] + /usr/bin/python3.10 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build jupyter_kernel_test==0.5.0
+[  233s] Using pip 22.3.1 from /usr/lib/python3.10/site-packages/pip (python 3.10)
+[  235s] Looking in links: ./build
+[  235s] Processing ./build/jupyter_kernel_test-0.5.0-py3-none-any.whl
+[  235s] Installing collected packages: jupyter_kernel_test
+[  235s] Successfully installed jupyter_kernel_test-0.5.0
+[  235s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.10/site-packages
+[  235s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages ']'
+[  235s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages -iname '*.pyc' -delete
+[  235s] + find /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.10 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  235s] Generating cached byte-code for jupyter_kernel_test/__init__.py
+[  236s] Generating cached byte-code for jupyter_kernel_test/msgspec_v5.py
+[  237s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.10/site-packages
+[  237s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib64/python3.10/site-packages ']'
+[  237s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*
+[  237s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/bin/*' ']'
+[  237s] ++ '[' -f _current_flavor ']'
+[  237s] ++ cat _current_flavor
+[  238s] + last_flavor=python310
+[  238s] + '[' -z python310 ']'
+[  238s] + '[' python310 '!=' python38 ']'
+[  238s] + '[' -d build ']'
+[  238s] + mv build _build.python310
+[  238s] + '[' -d _build.python38 ']'
+[  238s] + mv _build.python38 build
+[  238s] + echo python38
+[  238s] + python_flavor=python38
+[  238s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-38.pyc
+[  238s] ++ '[' -f _current_flavor ']'
+[  238s] ++ cat _current_flavor
+[  238s] + last_flavor=python38
+[  238s] + '[' -z python38 ']'
+[  238s] + '[' python38 '!=' python39 ']'
+[  238s] + '[' -d build ']'
+[  238s] + mv build _build.python38
+[  238s] + '[' -d _build.python39 ']'
+[  238s] + mv _build.python39 build
+[  238s] + echo python39
+[  238s] + python_flavor=python39
+[  238s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-39.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.9/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-39.pyc
+[  238s] ++ '[' -f _current_flavor ']'
+[  238s] ++ cat _current_flavor
+[  238s] + last_flavor=python39
+[  238s] + '[' -z python39 ']'
+[  238s] + '[' python39 '!=' python311 ']'
+[  238s] + '[' -d build ']'
+[  238s] + mv build _build.python39
+[  238s] + '[' -d _build.python311 ']'
+[  238s] + mv _build.python311 build
+[  238s] + echo python311
+[  238s] + python_flavor=python311
+[  238s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-311.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.11/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-311.pyc
+[  239s] ++ '[' -f _current_flavor ']'
+[  239s] ++ cat _current_flavor
+[  239s] + last_flavor=python311
+[  239s] + '[' -z python311 ']'
+[  239s] + '[' python311 '!=' python310 ']'
+[  239s] + '[' -d build ']'
+[  239s] + mv build _build.python311
+[  239s] + '[' -d _build.python310 ']'
+[  239s] + mv _build.python310 build
+[  239s] + echo python310
+[  239s] + python_flavor=python310
+[  239s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages/jupyter_kernel_test/__pycache__/msgspec_v5.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.10/site-packages/jupyter_kernel_test/__pycache__/__init__.cpython-310.pyc
+[  239s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0
+[  240s] + /usr/lib/rpm/brp-compress
+[  240s] + /usr/lib/rpm/brp-suse
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  241s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.YNOMOl
+[  241s] + umask 022
+[  241s] + cd /home/abuild/rpmbuild/BUILD
+[  241s] + cd jupyter_kernel_test-0.5.0
+[  241s] + set +x
+[  241s] Using libalternatives variant 38 for ipython in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  241s] Using libalternatives variant 38 for ipython3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  241s] Using libalternatives variant 38 for jsonschema in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  241s] Using libalternatives variant 38 for jupyter in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  242s] Using libalternatives variant 38 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  242s] Using libalternatives variant 38 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  242s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  242s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  242s] Using libalternatives variant 38 for pygmentize in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  242s] Using alternative hatchling-3.8 for hatchling in ./build/flavorbin during Python 3.8 expansions.
+[  243s] Using libalternatives variant 39 for ipython in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  243s] Using libalternatives variant 39 for ipython3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  243s] Using libalternatives variant 39 for jsonschema in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using libalternatives variant 39 for jupyter in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using libalternatives variant 39 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using libalternatives variant 39 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using libalternatives variant 39 for pygmentize in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using alternative hatchling-3.9 for hatchling in ./build/flavorbin during Python 3.9 expansions.
+[  245s] Using libalternatives variant 311 for ipython in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  245s] Using libalternatives variant 311 for ipython3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using libalternatives variant 311 for jsonschema in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using libalternatives variant 311 for jupyter in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using libalternatives variant 311 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using libalternatives variant 311 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using libalternatives variant 311 for pygmentize in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  246s] Using alternative hatchling-3.11 for hatchling in ./build/flavorbin during Python 3.11 expansions.
+[  248s] Using alternative hatchling-3.10 for hatchling in ./build/flavorbin during Python 3.10 expansions.
+[  249s] + export PATH=/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  249s] + PATH=/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  249s] ++ '[' -f _current_flavor ']'
+[  249s] ++ cat _current_flavor
+[  249s] + last_flavor=python310
+[  249s] + '[' -z python310 ']'
+[  249s] + '[' python310 '!=' python38 ']'
+[  249s] + '[' -d build ']'
+[  249s] + mv build _build.python310
+[  249s] + '[' -d _build.python38 ']'
+[  249s] + mv _build.python38 build
+[  249s] + echo python38
+[  249s] + python_flavor=python38
+[  249s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-jupyter-kernel-test-0.5.0-1.2.riscv64/usr/lib/python3.8/site-packages
+[  249s] + PYTHONDONTWRITEBYTECODE=1
+[  249s] + python3.8 -m unittest -v
+[  269s] test_clear_output (jupyter_kernel_test.KernelTests) ... skipped 'No code clear output'
+[  269s] test_completion (jupyter_kernel_test.KernelTests) ... skipped 'No completion samples'
+[  269s] test_display_data (jupyter_kernel_test.KernelTests) ... skipped 'No code display data'
+[  269s] test_error (jupyter_kernel_test.KernelTests) ... skipped 'No code generate error'
+[  269s] test_execute_result (jupyter_kernel_test.KernelTests) ... skipped 'No code execute result'
+[  269s] test_execute_stderr (jupyter_kernel_test.KernelTests) ... skipped 'No code stderr'
+[  269s] test_execute_stdout (jupyter_kernel_test.KernelTests) ... skipped 'No code hello world'
+[  269s] test_history (jupyter_kernel_test.KernelTests) ... skipped 'No code execute result'
+[  269s] test_inspect (jupyter_kernel_test.KernelTests) ... skipped 'No code inspect sample'
+[  269s] test_is_complete (jupyter_kernel_test.KernelTests) ... skipped 'Not testing is_complete'
+[  269s] test_kernel_info (jupyter_kernel_test.KernelTests) ... ok
+[  279s] test_pager (jupyter_kernel_test.KernelTests) ... skipped 'No code page something'
+[  280s] test_clear_output (test_ipykernel.IPyKernelTests) ... ok
+[  295s] test_completion (test_ipykernel.IPyKernelTests) ... ok
+[  296s] test_display_data (test_ipykernel.IPyKernelTests) ... ok
+[  311s] test_error (test_ipykernel.IPyKernelTests) ... ERROR
+[  316s] test_execute_result (test_ipykernel.IPyKernelTests) ... test_execute_stderr (test_ipykernel.IPyKernelTests) ... ok
+[  316s] test_execute_stdout (test_ipykernel.IPyKernelTests) ... ok
+[  321s] test_history (test_ipykernel.IPyKernelTests) ... skipped 'History range not supported'
+[  321s] test_inspect (test_ipykernel.IPyKernelTests) ... ok
+[  322s] test_is_complete (test_ipykernel.IPyKernelTests) ... ok
+[  323s] test_kernel_info (test_ipykernel.IPyKernelTests) ... ok
+[  326s] test_pager (test_ipykernel.IPyKernelTests) ... ok
+[  326s] skipped 'No ir kernel installed'
+[  326s] skipped 'Xeus-Cling Kernel not installed'
+[  326s] 
+[  326s] ======================================================================
+[  326s] ERROR: test_error (test_ipykernel.IPyKernelTests)
+[  326s] ----------------------------------------------------------------------
+[  326s] Traceback (most recent call last):
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/__init__.py", line 217, in test_error
+[  326s]     reply, output_msgs = self.execute_helper(self.code_generate_error)
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/__init__.py", line 78, in execute_helper
+[  326s]     reply = self.get_non_kernel_info_reply(timeout=timeout)
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/__init__.py", line 145, in get_non_kernel_info_reply
+[  326s]     reply = self.kc.get_shell_msg(timeout=timeout)
+[  326s]   File "/usr/lib/python3.8/site-packages/jupyter_client/utils.py", line 30, in wrapped
+[  326s]     raise e
+[  326s]   File "/usr/lib/python3.8/site-packages/jupyter_client/utils.py", line 27, in wrapped
+[  326s]     return loop.run_until_complete(future)
+[  326s]   File "/usr/lib/python3.8/site-packages/nest_asyncio.py", line 90, in run_until_complete
+[  326s]     return f.result()
+[  326s]   File "/usr/lib64/python3.8/asyncio/futures.py", line 178, in result
+[  326s]     raise self._exception
+[  326s]   File "/usr/lib64/python3.8/asyncio/tasks.py", line 280, in __step
+[  326s]     result = coro.send(None)
+[  326s]   File "/usr/lib/python3.8/site-packages/jupyter_client/client.py", line 143, in _async_get_shell_msg
+[  326s]     return await self.shell_channel.get_msg(*args, **kwargs)
+[  326s]   File "/usr/lib/python3.8/site-packages/jupyter_client/channels.py", line 230, in get_msg
+[  326s]     raise Empty
+[  326s] _queue.Empty
+[  326s] 
+[  326s] ======================================================================
+[  326s] ERROR: test_execute_result (test_ipykernel.IPyKernelTests) (code='1+2+3')
+[  326s] ----------------------------------------------------------------------
+[  326s] Traceback (most recent call last):
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/__init__.py", line 232, in test_execute_result
+[  326s]     reply, output_msgs = self.execute_helper(sample["code"])
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/__init__.py", line 79, in execute_helper
+[  326s]     validate_message(reply, "execute_reply", msg_id)
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/msgspec_v5.py", line 142, in validate_message
+[  326s]     raise ValidationError("Parent header does not match expected")
+[  326s] jsonschema.exceptions.ValidationError: Parent header does not match expected
+[  326s] 
+[  326s] ======================================================================
+[  326s] ERROR: test_execute_result (test_ipykernel.IPyKernelTests) (code='[n*n for n in range(1, 4)]')
+[  326s] ----------------------------------------------------------------------
+[  326s] Traceback (most recent call last):
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/__init__.py", line 230, in test_execute_result
+[  326s]     self.flush_channels()
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/__init__.py", line 51, in flush_channels
+[  326s]     validate_message(msg)
+[  326s]   File "/home/abuild/rpmbuild/BUILD/jupyter_kernel_test-0.5.0/jupyter_kernel_test/msgspec_v5.py", line 157, in validate_message
+[  326s]     raise ValidationError(f"status {status!r} should be ok/error/abort")
+[  326s] jsonschema.exceptions.ValidationError: status 'aborted' should be ok/error/abort
+[  326s] 
+[  326s] ----------------------------------------------------------------------
+[  326s] Ran 24 tests in 73.341s
+[  326s] 
+[  326s] FAILED (errors=3, skipped=14)
+[  326s] error: Bad exit status from /var/tmp/rpm-tmp.YNOMOl (%check)
+[  326s] 
+[  326s] RPM build errors:
+[  326s]     Bad exit status from /var/tmp/rpm-tmp.YNOMOl (%check)
+[  327s] ### VM INTERACTION START ###
+[  328s] [  320.215516][    T1] sysrq: Power Off
+[  328s] [  320.218879][  T102] reboot: Power down
+[  328s] ### VM INTERACTION END ###
+[  328s] 
+[  328s] lamb28 failed "build python-jupyter-kernel-test.spec" at Fri Mar 10 08:57:33 UTC 2023.
+[  328s] 

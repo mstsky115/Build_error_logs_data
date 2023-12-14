@@ -1,0 +1,590 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_8/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_8/root
+[    0s] 
+[    0s] 
+[    0s] lamb15 started "build boost.spec" at Mon Mar 20 20:55:30 UTC 2023.
+[    0s] 
+[    0s] Building boost:gnu-openmpi4-hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '8883a1225525f63353fb09ccd3ce9b9a'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_8/.build-srcdir/boost.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_8/.build-srcdir/boost.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/8/build/configs --cachedir /var/cache/build --prepare --buildflavor gnu-openmpi4-hpc --clean --rpmlist /var/cache/obs/worker/root_8/.build.rpmlist /var/cache/obs/worker/root_8/.build-srcdir/boost.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [068b7acb454ec5ffeefe0cf546ee1d7f]
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...cycle: libefa1 -> libibverbs1 -> libibverbs
+[    4s]   breaking dependency libibverbs -> libefa1
+[    4s] cycle: libibverbs1 -> libibverbs
+[    4s]   breaking dependency libibverbs -> libibverbs1
+[    4s] cycle: libibverbs1 -> libibverbs -> libmlx4-1
+[    4s]   breaking dependency libibverbs -> libmlx4-1
+[    4s] cycle: libibverbs1 -> libibverbs -> libmlx5-1
+[    4s]   breaking dependency libmlx5-1 -> libibverbs1
+[    4s] cycle: libpython3_10-1_0 -> python310-base
+[    4s]   breaking dependency python310-base -> libpython3_10-1_0
+[    4s] cycle: libpmix2 -> pmix-plugins
+[    4s]   breaking dependency pmix-plugins -> libpmix2
+[    4s] cycle: openmpi_4_1_4-gnu-hpc -> libopenmpi_4_1_4-gnu-hpc
+[    4s]   breaking dependency libopenmpi_4_1_4-gnu-hpc -> openmpi_4_1_4-gnu-hpc
+[    4s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_8/.mount/boot/kernel -initrd /var/cache/obs/worker/root_8/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_8/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_8/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_8/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   10s] ### VM INTERACTION END ###
+[   10s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   11s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   11s] Increasing log level from now on...
+[   11s] [    4.833116][  T410] sysrq: Changing Loglevel
+[   11s] [    4.833262][  T410] sysrq: Loglevel set to 4
+[   11s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=8852e1a4-5eca-40f7-851a-b04e76866ee3
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/boost.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor gnu-openmpi4-hpc /.build-srcdir/boost.spec build ...
+[   13s] initializing rpm db...
+[   13s] querying package ids...
+[   41s] [1/227] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   41s] [2/227] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   41s] [3/227] preinstalled attr-2.5.1-1.1
+[   41s] [4/227] preinstalled bash-5.2.15-8.1
+[   41s] [5/227] preinstalled bash-sh-5.2.15-8.1
+[   41s] [6/227] preinstalled binutils-2.40-2.1
+[   41s] [7/227] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   41s] [8/227] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   41s] [9/227] preinstalled build-mkbaselibs-20230314-1.1
+[   41s] [10/227] preinstalled bzip2-1.0.8-5.1
+[   41s] [11/227] preinstalled chkstat-1599_20230217-1.1
+[   41s] [12/227] preinstalled compat-usrmerge-build-84.87-5.1
+[   41s] [13/227] preinstalled compat-usrmerge-tools-84.87-5.1
+[   41s] [14/227] preinstalled coreutils-9.1-5.1
+[   41s] [15/227] preinstalled cpio-2.13-5.1
+[   41s] [16/227] preinstalled cpp-13-1.1
+[   41s] [17/227] preinstalled cpp13-13.0.1+git6669-7.1
+[   41s] [18/227] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   41s] [19/227] preinstalled debugedit-5.0-5.1
+[   41s] [20/227] preinstalled diffutils-3.9-1.1
+[   41s] [21/227] cumulate dos2unix-7.4.4-1.1
+[   41s] [22/227] preinstalled dwz-0.15-2.1
+[   41s] [23/227] preinstalled elfutils-0.189-2.1
+[   41s] [24/227] cumulate fdupes-2.2.1-1.1
+[   41s] [25/227] preinstalled file-5.44-1.2
+[   41s] [26/227] preinstalled file-magic-5.44-1.2
+[   41s] [27/227] preinstalled filesystem-84.87-12.1
+[   41s] [28/227] preinstalled fillup-1.42-279.1
+[   41s] [29/227] preinstalled findutils-4.9.0-2.1
+[   41s] [30/227] preinstalled gawk-5.2.1-2.1
+[   41s] [31/227] preinstalled gcc-13-1.1
+[   41s] [32/227] preinstalled gcc-PIE-13-1.1
+[   41s] [33/227] preinstalled gcc13-13.0.1+git6669-7.1
+[   41s] [34/227] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   41s] [35/227] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   41s] [36/227] preinstalled gettext-tools-mini-0.21.1-1.1
+[   41s] [37/227] preinstalled glibc-2.37-1.1
+[   41s] [38/227] preinstalled glibc-devel-2.37-1.1
+[   41s] [39/227] preinstalled glibc-locale-base-2.37-1.1
+[   41s] [40/227] preinstalled grep-3.9-1.1
+[   41s] [41/227] preinstalled gzip-1.12-3.1
+[   41s] [42/227] cumulate hwloc-data-2.9.0-2.1
+[   41s] [43/227] preinstalled kernel-obs-build-6.2.6-1.2
+[   41s] [44/227] preinstalled libacl1-2.3.1-2.1
+[   41s] [45/227] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   41s] [46/227] preinstalled libasan8-13.0.1+git6669-7.1
+[   41s] [47/227] preinstalled libasm1-0.189-2.1
+[   41s] [48/227] preinstalled libatomic1-13.0.1+git6669-7.1
+[   41s] [49/227] preinstalled libattr1-2.5.1-1.1
+[   41s] [50/227] preinstalled libaudit1-3.0.9-1.1
+[   41s] [51/227] preinstalled libblkid1-2.38.1-10.1
+[   41s] [52/227] preinstalled libbz2-1-1.0.8-5.1
+[   41s] [53/227] cumulate libbz2-devel-1.0.8-5.1
+[   41s] [54/227] preinstalled libcap-ng0-0.8.3-1.1
+[   41s] [55/227] preinstalled libcap2-2.67-1.1
+[   41s] [56/227] cumulate libcbor0_10-0.10.2-1.1
+[   41s] [57/227] cumulate libcom_err2-1.46.5-4.1
+[   41s] [58/227] preinstalled libcrypt1-4.4.33-2.1
+[   41s] [59/227] preinstalled libctf-nobfd0-2.40-2.1
+[   41s] [60/227] preinstalled libctf0-2.40-2.1
+[   41s] [61/227] preinstalled libdb-4_8-4.8.30-40.1
+[   42s] [62/227] preinstalled libdw1-0.189-2.1
+[   42s] [63/227] preinstalled libeconf0-0.5.1-1.1
+[   42s] [64/227] cumulate libedit0-20210910.3.1-1.1
+[   42s] [65/227] preinstalled libelf1-0.189-2.1
+[   42s] [66/227] cumulate libexpat1-2.5.0-2.1
+[   42s] [67/227] preinstalled libfdisk1-2.38.1-10.1
+[   42s] [68/227] cumulate libffi8-3.4.4-1.1
+[   42s] [69/227] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   42s] [70/227] preinstalled libgcrypt20-1.10.1-2.1
+[   42s] [71/227] preinstalled libgdbm6-1.23-1.1
+[   42s] [72/227] preinstalled libgdbm_compat4-1.23-1.1
+[   42s] [73/227] cumulate libgfortran5-13.0.1+git6669-7.1
+[   42s] [74/227] preinstalled libgmp10-6.2.1-4.1
+[   42s] [75/227] cumulate libgmpxx4-6.2.1-4.1
+[   42s] [76/227] preinstalled libgomp1-13.0.1+git6669-7.1
+[   42s] [77/227] preinstalled libgpg-error0-1.46-1.1
+[   42s] [78/227] cumulate libibumad3-42.0-2.1
+[   42s] [79/227] cumulate libicu72-ledata-72.1-2.1
+[   42s] [80/227] preinstalled libisl23-0.25-1.1
+[   42s] [81/227] preinstalled libitm1-13.0.1+git6669-7.1
+[   42s] [82/227] cumulate libkeyutils1-1.6.3-5.1
+[   42s] [83/227] preinstalled liblua5_4-5-5.4.4-8.1
+[   42s] [84/227] preinstalled liblzma5-5.4.1-2.1
+[   42s] [85/227] preinstalled libmagic1-5.44-1.2
+[   42s] [86/227] cumulate libmca_common_dstore1-3.2.3-7.1
+[   42s] [87/227] preinstalled libmount1-2.38.1-10.1
+[   42s] [88/227] preinstalled libmpc3-1.3.1-1.2
+[   42s] [89/227] cumulate libmpdec3-2.5.1-2.1
+[   42s] [90/227] preinstalled libmpfr6-4.2.0-1.1
+[   42s] [91/227] preinstalled libncurses6-6.4.20230311-8.1
+[   42s] [92/227] cumulate libnl-config-3.7.0-1.1
+[   42s] [93/227] cumulate libpciaccess0-0.17-1.1
+[   42s] [94/227] preinstalled libpcre2-8-0-10.42-3.2
+[   42s] [95/227] preinstalled libpkgconf3-1.8.0-2.1
+[   42s] [96/227] preinstalled libpopt0-1.19-1.1
+[   42s] [97/227] preinstalled libreadline8-8.2-2.1
+[   42s] [98/227] preinstalled librpmbuild9-4.18.0-3.2
+[   42s] [99/227] preinstalled libseccomp2-2.5.4-2.1
+[   42s] [100/227] preinstalled libselinux1-3.5-1.1
+[   42s] [101/227] preinstalled libsemanage-conf-3.5-1.1
+[   42s] [102/227] preinstalled libsemanage2-3.5-1.1
+[   42s] [103/227] preinstalled libsepol2-3.5-1.1
+[   42s] [104/227] preinstalled libsmartcols1-2.38.1-10.1
+[   42s] [105/227] cumulate libsqlite3-0-3.41.0-2.1
+[   42s] [106/227] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   42s] [107/227] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   42s] [108/227] preinstalled libsubid4-4.13-4.1
+[   42s] [109/227] cumulate libsystemd0-mini-253.1-2.1
+[   42s] [110/227] preinstalled libubsan1-13.0.1+git6669-7.1
+[   42s] [111/227] cumulate libudev-mini1-253.1-2.1
+[   42s] [112/227] preinstalled libutempter0-1.2.0-3.2
+[   42s] [113/227] preinstalled libuuid1-2.38.1-10.1
+[   42s] [114/227] cumulate libverto1-0.3.2-1.1
+[   42s] [115/227] preinstalled libxcrypt-devel-4.4.33-2.1
+[   42s] [116/227] cumulate libxml2-2-2.10.3-3.1
+[   42s] [117/227] preinstalled libz1-1.2.13-3.1
+[   42s] [118/227] cumulate libzstd-devel-1.5.4-2.1
+[   42s] [119/227] preinstalled libzstd1-1.5.4-2.1
+[   42s] [120/227] preinstalled linux-glibc-devel-6.2-1.1
+[   42s] [121/227] preinstalled login_defs-4.13-4.1
+[   42s] [122/227] preinstalled lua54-5.4.4-8.1
+[   42s] [123/227] cumulate lua54-luafilesystem-1.8.0-6.1
+[   42s] [124/227] cumulate lua54-luaposix-35.1-2.1
+[   42s] [125/227] cumulate lua54-luaterm-0.07-8.1
+[   42s] [126/227] preinstalled make-4.4.1-1.1
+[   42s] [127/227] preinstalled ncurses-utils-6.4.20230311-8.1
+[   42s] [128/227] cumulate openmpi4-config-4.1.4-2.1
+[   42s] [129/227] preinstalled pam-1.5.2-13.1
+[   42s] [130/227] preinstalled patch-2.7.6-6.1
+[   42s] [131/227] preinstalled perl-5.36.0-4.1
+[   42s] [132/227] preinstalled perl-base-5.36.0-4.1
+[   42s] [133/227] preinstalled permissions-1599_20230217-1.1
+[   42s] [134/227] preinstalled permissions-config-1599_20230217-1.1
+[   42s] [135/227] preinstalled pkgconf-1.8.0-2.1
+[   42s] [136/227] preinstalled pkgconf-m4-1.8.0-2.1
+[   42s] [137/227] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   42s] [138/227] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   42s] [139/227] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   42s] [140/227] cumulate python-rpm-macros-20230304.050c1a4-1.1
+[   42s] [141/227] preinstalled qemu-linux-user-7.1.0-54.1
+[   42s] [142/227] preinstalled rpm-4.18.0-3.2
+[   42s] [143/227] preinstalled rpm-build-4.18.0-3.2
+[   42s] [144/227] preinstalled rpm-build-perl-4.18.0-3.2
+[   42s] [145/227] preinstalled rpm-config-SUSE-20220926-1.1
+[   42s] [146/227] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.18
+[   42s] [147/227] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   42s] [148/227] preinstalled sed-4.9-2.1
+[   42s] [149/227] preinstalled shadow-4.13-4.1
+[   42s] [150/227] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   42s] [151/227] cumulate suse-module-tools-16.0.30-1.1
+[   42s] [152/227] preinstalled system-group-hardware-20170617-24.1
+[   42s] [153/227] cumulate system-group-kvm-20170617-24.1
+[   42s] [154/227] preinstalled system-user-root-20190513-2.1
+[   42s] [155/227] cumulate systemd-mini-253.1-2.1
+[   42s] [156/227] preinstalled systemd-rpm-macros-19-1.1
+[   42s] [157/227] preinstalled sysuser-shadow-3.1-5.1
+[   42s] [158/227] preinstalled tar-1.34-10.1
+[   42s] [159/227] cumulate tcl-8.6.13-4.1
+[   42s] [160/227] preinstalled terminfo-base-6.4.20230311-8.1
+[   42s] [161/227] cumulate timezone-2022g-3.1
+[   42s] [162/227] preinstalled update-alternatives-1.21.8-1.1
+[   42s] [163/227] preinstalled util-linux-2.38.1-10.1
+[   42s] [164/227] preinstalled which-2.21-5.1
+[   42s] [165/227] preinstalled xz-5.4.1-2.1
+[   42s] [166/227] cumulate xz-devel-5.4.1-2.1
+[   42s] [167/227] cumulate zlib-devel-1.2.13-3.1
+[   42s] [168/227] cumulate alts-1.2+3.b848aad-3.1
+[   42s] [169/227] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   42s] [170/227] cumulate gcc13-fortran-13.0.1+git6669-7.1
+[   42s] [171/227] cumulate gmp-devel-6.2.1-4.1
+[   42s] [172/227] cumulate libblas3-3.9.0-8.1
+[   42s] [173/227] cumulate libexpat-devel-2.5.0-2.1
+[   42s] [174/227] cumulate libhidapi-hidraw0-0.13.1-1.1
+[   42s] [175/227] cumulate libibmad5-42.0-2.1
+[   42s] [176/227] cumulate libnl3-200-3.7.0-1.1
+[   42s] [177/227] cumulate libopenssl3-3.0.8-2.1
+[   42s] [178/227] cumulate libicu72-72.1-2.1
+[   42s] [179/227] cumulate krb5-mini-1.20.1-4.1
+[   42s] [180/227] cumulate libhwloc15-2.9.0-2.1
+[   42s] [181/227] cumulate lua-lmod-8.7.17-2.1
+[   42s] [182/227] cumulate blas-devel-3.9.0-8.1
+[   42s] [183/227] cumulate gcc-c++-13-1.1
+[   42s] [184/227] cumulate gcc-fortran-13-1.1
+[   42s] [185/227] cumulate gnu-compilers-hpc-1.4-10.2
+[   42s] [186/227] cumulate libcblas3-3.9.0-8.1
+[   42s] [187/227] cumulate libevent-2_1-7-2.1.12-3.2
+[   42s] [188/227] cumulate libicu-devel-72.1-2.1
+[   42s] [189/227] cumulate openssh-common-8.9p1-7.3
+[   42s] [190/227] cumulate kmod-30-2.2
+[   42s] [191/227] cumulate libibnetdisc5-42.0-2.1
+[   42s] [192/227] cumulate liblapack3-3.9.0-8.1
+[   42s] [193/227] cumulate libfido2-1-1.13.0-1.1
+[   42s] [194/227] cumulate cblas-devel-3.9.0-8.1
+[   42s] [195/227] cumulate lapack-devel-3.9.0-8.1
+[   42s] [196/227] cumulate infiniband-diags-42.0-2.1
+[   42s] [197/227] cumulate udev-mini-253.1-2.1
+[   42s] [198/227] cumulate gnu-compilers-hpc-devel-1.4-10.2
+[   42s] [199/227] cumulate openssh-clients-8.9p1-7.3
+[   42s] [200/227] cumulate openssh-server-8.9p1-7.3
+[   42s] [201/227] cumulate gnu-compilers-hpc-macros-devel-1.4-10.2
+[   42s] [202/227] cumulate openssh-8.9p1-7.3
+[   42s] [203/227] cumulate rdma-core-42.0-2.1
+[   42s] [204/227] cumulate libmlx5-1-42.0-2.1
+[   42s] [205/227] cumulate pmix-plugins-3.2.3-7.1
+[   42s] [206/227] cumulate python310-base-3.10.10-2.1
+[   42s] [207/227] cumulate libpython3_10-1_0-3.10.10-2.1
+[   42s] [208/227] cumulate python310-packaging-23.0-2.1
+[   42s] [209/227] cumulate python310-3.10.10-2.1
+[   42s] [210/227] cumulate libpmix2-3.2.3-7.1
+[   42s] [211/227] cumulate libibverbs-42.0-2.1
+[   42s] [212/227] cumulate python310-numpy-1.24.1-4.1
+[   42s] [213/227] cumulate libibverbs1-42.0-2.1
+[   42s] [214/227] cumulate python310-devel-3.10.10-2.1
+[   42s] [215/227] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   42s] [216/227] cumulate libefa1-42.0-2.1
+[   42s] [217/227] cumulate libmlx4-1-42.0-2.1
+[   42s] [218/227] cumulate librdmacm1-42.0-2.1
+[   42s] [219/227] cumulate python310-numpy-devel-1.24.1-4.1
+[   42s] [220/227] cumulate rsocket-42.0-2.1
+[   42s] [221/227] cumulate libfabric1-1.16.1-2.1
+[   42s] [222/227] cumulate libopenmpi_4_1_4-gnu-hpc-4.1.4-2.1
+[   42s] [223/227] cumulate rdma-core-devel-42.0-2.1
+[   42s] [224/227] cumulate openmpi_4_1_4-gnu-hpc-4.1.4-2.1
+[   42s] [225/227] cumulate openmpi_4_1_4-gnu-hpc-devel-4.1.4-2.1
+[   42s] [226/227] cumulate openmpi_4_1_4-gnu-hpc-macros-devel-4.1.4-2.1
+[   42s] [227/227] cumulate openmpi4-gnu-hpc-macros-devel-4.1.4-2.1
+[   42s] now installing cumulated packages
+[   43s] Preparing...                          ########################################
+[   43s] Updating / installing...
+[   43s] libibumad3-42.0-2.1                   ########################################
+[   43s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[   43s] libblas3-3.9.0-8.1                    ########################################
+[   44s] update-alternatives: using /usr/lib64/blas/libblas.so.3 to provide /usr/lib64/libblas.so.3 (libblas.so.3_riscv64) in auto mode
+[   44s] blas-devel-3.9.0-8.1                  ########################################
+[   44s] libcblas3-3.9.0-8.1                   ########################################
+[   44s] update-alternatives: using /usr/lib64/blas/libcblas.so.3 to provide /usr/lib64/libcblas.so.3 (libcblas.so.3_riscv64) in auto mode
+[   45s] liblapack3-3.9.0-8.1                  ########################################
+[   45s] update-alternatives: using /usr/lib64/lapack/liblapack.so.3 to provide /usr/lib64/liblapack.so.3 (liblapack.so.3_riscv64) in auto mode
+[   58s] gcc13-fortran-13.0.1+git6669-7.1      ########################################
+[   58s] libibmad5-42.0-2.1                    ########################################
+[   58s] systemd-mini-253.1-2.1                warning: group systemd-journal does not exist - using root
+[   60s] ########################################
+[   60s] Creating group 'systemd-journal' with GID 486.
+[   60s] Creating group 'systemd-timesync' with GID 485.
+[   60s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   61s] Running in chroot, ignoring command 'daemon-reexec'
+[   61s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   61s] All rules containing unresolvable specifiers will be skipped.
+[   62s] libudev-mini1-253.1-2.1               ########################################
+[   62s] libexpat1-2.5.0-2.1                   ########################################
+[   62s] libcom_err2-1.46.5-4.1                ########################################
+[   62s] libhidapi-hidraw0-0.13.1-1.1          ########################################
+[   63s] libibnetdisc5-42.0-2.1                ########################################
+[   63s] infiniband-diags-42.0-2.1             ########################################
+[   63s] gcc-fortran-13-1.1                    ########################################
+[   63s] lapack-devel-3.9.0-8.1                ########################################
+[   63s] cblas-devel-3.9.0-8.1                 ########################################
+[   63s] timezone-2022g-3.1                    ########################################
+[   65s] tcl-8.6.13-4.1                        ########################################
+[   65s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-group-kvm.conf -
+[   66s] Creating group 'kvm' with GID 36.
+[   66s] system-group-kvm-20170617-24.1        ########################################
+[   66s] python-rpm-macros-20230304.050c1a4-1.1########################################
+[   66s] openmpi4-config-4.1.4-2.1             ########################################
+[   66s] lua54-luaterm-0.07-8.1                ########################################
+[   66s] lua54-luaposix-35.1-2.1               ########################################
+[   66s] lua54-luafilesystem-1.8.0-6.1         ########################################
+[   66s] lua-lmod-8.7.17-2.1                   ########################################
+[   66s] gnu-compilers-hpc-1.4-10.2            ########################################
+[   66s] libxml2-2-2.10.3-3.1                  ########################################
+[   66s] libverto1-0.3.2-1.1                   ########################################
+[   67s] libsystemd0-mini-253.1-2.1            ########################################
+[   83s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[   88s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[   88s] gcc-c++-13-1.1                        ########################################
+[   88s] gnu-compilers-hpc-devel-1.4-10.2      ########################################
+[   88s] libsqlite3-0-3.41.0-2.1               ########################################
+[   88s] libpciaccess0-0.17-1.1                ########################################
+[   88s] libnl-config-3.7.0-1.1                ########################################
+[   88s] libnl3-200-3.7.0-1.1                  ########################################
+[   88s] libmpdec3-2.5.1-2.1                   ########################################
+[   88s] libmca_common_dstore1-3.2.3-7.1       ########################################
+[   88s] libkeyutils1-1.6.3-5.1                ########################################
+[   89s] krb5-mini-1.20.1-4.1                  ########################################
+[   90s] Updating /etc/sysconfig/kadmind ...
+[   90s] Updating /etc/sysconfig/krb5kdc ...
+[   95s] libicu72-ledata-72.1-2.1              ########################################
+[   95s] libicu72-72.1-2.1                     ########################################
+[   95s] libgmpxx4-6.2.1-4.1                   ########################################
+[   96s] libffi8-3.4.4-1.1                     ########################################
+[   96s] libedit0-20210910.3.1-1.1             ########################################
+[   96s] libcbor0_10-0.10.2-1.1                ########################################
+[   96s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   96s] alts-1.2+3.b848aad-3.1                ########################################
+[   96s] hwloc-data-2.9.0-2.1                  ########################################
+[   96s] libhwloc15-2.9.0-2.1                  ########################################
+[   96s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   97s] libopenssl3-3.0.8-2.1                 ########################################
+[   97s] libpython3_10-1_0-3.10.10-2.1         ########################################
+[   97s] python310-3.10.10-2.1                 ########################################
+[  101s] python310-base-3.10.10-2.1            ########################################
+[  102s] libevent-2_1-7-2.1.12-3.2             ########################################
+[  102s] suse-module-tools-16.0.30-1.1         ########################################
+[  103s] kmod-30-2.2                           ########################################
+[  103s] openssh-common-8.9p1-7.3              ########################################
+[  103s] libfido2-1-1.13.0-1.1                 ########################################
+[  103s] openssh-clients-8.9p1-7.3             ########################################
+[  104s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/sshd.conf -
+[  104s] Creating group 'sshd' with GID 484.
+[  104s] Creating user 'sshd' (SSH daemon) with UID 484 and GID 484.
+[  104s] openssh-server-8.9p1-7.3              ########################################
+[  104s] Updating /etc/sysconfig/ssh ...
+[  104s] openssh-8.9p1-7.3                     ########################################
+[  106s] udev-mini-253.1-2.1                   ########################################
+[  114s] Failed to preset unit, unit remote-cryptsetup.target does not exist.
+[  114s] rdma-core-42.0-2.1                    ########################################
+[  115s] libmlx5-1-42.0-2.1                    ########################################
+[  115s] libefa1-42.0-2.1                      ########################################
+[  115s] libmlx4-1-42.0-2.1                    ########################################
+[  115s] libibverbs1-42.0-2.1                  ########################################
+[  115s] libibverbs-42.0-2.1                   ########################################
+[  115s] librdmacm1-42.0-2.1                   ########################################
+[  115s] libfabric1-1.16.1-2.1                 ########################################
+[  115s] rsocket-42.0-2.1                      ########################################
+[  115s] rdma-core-devel-42.0-2.1              ########################################
+[  115s] pmix-plugins-3.2.3-7.1                ########################################
+[  116s] libpmix2-3.2.3-7.1                    ########################################
+[  116s] libopenmpi_4_1_4-gnu-hpc-4.1.4-2.1    ########################################
+[  116s] openmpi_4_1_4-gnu-hpc-4.1.4-2.1       ########################################
+[  117s] openmpi_4_1_4-gnu-hpc-devel-4.1.4-2.1 ########################################
+[  117s] openmpi_4_1_4-gnu-hpc-macros-devel-4.1########################################
+[  117s] python310-packaging-23.0-2.1          ########################################
+[  120s] python310-numpy-1.24.1-4.1            ########################################
+[  120s] python310-devel-3.10.10-2.1           ########################################
+[  120s] python310-numpy-devel-1.24.1-4.1      ########################################
+[  120s] python-rpm-packaging-20210526+a18ca48-########################################
+[  120s] openmpi4-gnu-hpc-macros-devel-4.1.4-2.########################################
+[  120s] gmp-devel-6.2.1-4.1                   ########################################
+[  121s] libicu-devel-72.1-2.1                 ########################################
+[  121s] gnu-compilers-hpc-macros-devel-1.4-10.########################################
+[  121s] libexpat-devel-2.5.0-2.1              ########################################
+[  121s] zlib-devel-1.2.13-3.1                 ########################################
+[  121s] xz-devel-5.4.1-2.1                    ########################################
+[  121s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[  121s] libzstd-devel-1.5.4-2.1               ########################################
+[  121s] libbz2-devel-1.0.8-5.1                ########################################
+[  121s] fdupes-2.2.1-1.1                      ########################################
+[  122s] dos2unix-7.4.4-1.1                    ########################################
+[  122s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  123s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  128s] now finalizing build dir...
+[  129s] ... running 01-add_abuild_user_to_trusted_group
+[  129s] ... running 02-set_timezone_to_utc
+[  129s] ... running 03-set-permissions-secure
+[  129s] ... running 11-hack_uname_version_to_kernel_version
+[  132s] sh: line 1: /usr/bin/ps: No such file or directory
+[  138s] Warning: spec file parser line 1371: can't expand %(...)
+[  138s] Warning: spec file parser line 1375: can't expand %(...)
+[  138s] -----------------------------------------------------------------
+[  138s] I have the following modifications for boost.spec:
+[  138s] 20c20
+[  138s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  138s] ---
+[  138s] > %global flavor gnu-openmpi4-hpc%{nil}
+[  138s] 47,48c47,48
+[  138s] < # We can't have these inside the "@BUILD_FLAVOR@" because then quilt
+[  138s] < # can't understand the spec file. If only @BUILD_FLAVOR@ was a normal macro....
+[  138s] ---
+[  138s] > # We can't have these inside the "gnu-openmpi4-hpc" because then quilt
+[  138s] > # can't understand the spec file. If only gnu-openmpi4-hpc was a normal macro....
+[  138s] 239c239
+[  138s] < Release:        0
+[  138s] ---
+[  138s] > Release:        2.2
+[  144s] build target is riscv64-suse-linux
+[  144s] -----------------------------------------------------------------
+[  144s] ----- building boost.spec (user abuild)
+[  144s] -----------------------------------------------------------------
+[  144s] -----------------------------------------------------------------
+[  148s] sh: line 1: /usr/bin/ps: No such file or directory
+[  148s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/8883a1225525f63353fb09ccd3ce9b9a-boost:gnu-openmpi4-hpc' /home/abuild/rpmbuild/SOURCES/boost.spec
+[  149s] Building target platforms: riscv64-suse-linux
+[  149s] Building for target riscv64-suse-linux
+[  149s]  Building for gnu 
+[  149s]  hpc_gnu_init 
+[  150s] warning: line 420: It's not recommended to have unversioned Obsoletes: Obsoletes:      boost_1_66-jam
+[  165s] setting SOURCE_DATE_EPOCH=1678233600
+[  166s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.jInyWI
+[  166s] + umask 022
+[  166s] + cd /home/abuild/rpmbuild/BUILD
+[  166s] + cd /home/abuild/rpmbuild/BUILD
+[  166s] + rm -rf boost_1_81_0
+[  166s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/boost_1_56_pdf.tar.bz2
+[  193s] + STATUS=0
+[  193s] + '[' 0 -ne 0 ']'
+[  193s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/boost_1_81_0.tar.bz2
+[  292s] + STATUS=0
+[  292s] + '[' 0 -ne 0 ']'
+[  292s] + cd boost_1_81_0
+[  292s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  294s] + find -type f '!' '(' -name '*.sh' -o -name '*.py' -o -name '*.pl' ')' -exec chmod -x '{}' +
+[  302s] + echo 'Patch #1 (boost-thread.patch):'
+[  302s] Patch #1 (boost-thread.patch):
+[  302s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  302s] patching file boost/config/compiler/gcc.hpp
+[  302s] + echo 'Patch #2 (boost-no_type_punning.patch):'
+[  302s] Patch #2 (boost-no_type_punning.patch):
+[  302s] + /usr/bin/patch --no-backup-if-mismatch -f -p0 --fuzz=0
+[  302s] patching file libs/python/src/dict.cpp
+[  302s] patching file libs/python/src/list.cpp
+[  302s] patching file libs/python/src/long.cpp
+[  302s] patching file libs/python/src/object/class.cpp
+[  302s] patching file libs/python/src/str.cpp
+[  302s] patching file libs/python/src/tuple.cpp
+[  302s] + echo 'Patch #3 (boost-phoenix-revert-std-tuple-support.patch):'
+[  302s] Patch #3 (boost-phoenix-revert-std-tuple-support.patch):
+[  302s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  302s] patching file boost/phoenix/stl/tuple.hpp
+[  302s] + echo 'Patch #4 (boost-pool_check_overflow.patch):'
+[  302s] Patch #4 (boost-pool_check_overflow.patch):
+[  302s] + /usr/bin/patch --no-backup-if-mismatch -f -p0 --fuzz=0
+[  303s] patching file boost/pool/pool.hpp
+[  303s] + echo 'Patch #5 (boost-strict_aliasing.patch):'
+[  303s] Patch #5 (boost-strict_aliasing.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p0 --fuzz=0
+[  303s] patching file libs/python/build/Jamfile
+[  303s] + echo 'Patch #6 (boost-use_std_xml_catalog.patch):'
+[  303s] Patch #6 (boost-use_std_xml_catalog.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file tools/build/src/tools/boostbook.jam
+[  303s] + echo 'Patch #7 (boost-rpmoptflags-only.patch):'
+[  303s] Patch #7 (boost-rpmoptflags-only.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p0 --fuzz=0
+[  303s] patching file tools/build/src/tools/gcc.jam
+[  303s] Hunk #1 succeeded at 624 (offset 1 line).
+[  303s] + echo 'Patch #9 (boost-aarch64-flags.patch):'
+[  303s] Patch #9 (boost-aarch64-flags.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file tools/build/src/tools/gcc.jam
+[  303s] + echo 'Patch #15 (boost-1.57.0-python-abi_letters.patch):'
+[  303s] Patch #15 (boost-1.57.0-python-abi_letters.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file tools/build/src/tools/python.jam
+[  303s] + echo 'Patch #16 (boost-1.55.0-python-test-PyImport_AppendInittab.patch):'
+[  303s] Patch #16 (boost-1.55.0-python-test-PyImport_AppendInittab.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file libs/python/test/exec.cpp
+[  303s] + echo 'Patch #17 (python_mpi.patch):'
+[  303s] Patch #17 (python_mpi.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file libs/mpi/build/__init__.py
+[  303s] + echo 'Patch #18 (dynamic_linking.patch):'
+[  303s] Patch #18 (dynamic_linking.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file libs/test/build/Jamfile.v2
+[  303s] patching file libs/exception/build/Jamfile.v2
+[  303s] patching file libs/chrono/build/Jamfile.v2
+[  303s] patching file libs/system/build/Jamfile.v2
+[  303s] patching file libs/timer/build/Jamfile.v2
+[  303s] patching file libs/filesystem/build/Jamfile.v2
+[  303s] + echo 'Patch #20 (python_library_name.patch):'
+[  303s] Patch #20 (python_library_name.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file boostcpp.jam
+[  303s] + echo 'Patch #21 (boost-remove-cmakedir.patch):'
+[  303s] Patch #21 (boost-remove-cmakedir.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  303s] patching file tools/boost_install/boost-install.jam
+[  303s] + echo 'Patch #22 (boost-process.patch):'
+[  303s] Patch #22 (boost-process.patch):
+[  303s] + /usr/bin/patch --no-backup-if-mismatch -f -p2 --fuzz=0
+[  303s] patching file boost/process/detail/traits/wchar_t.hpp
+[  303s] Hunk #1 succeeded at 14 (offset 2 lines).
+[  303s] + RPM_EC=0
+[  303s] ++ jobs -p
+[  303s] + exit 0
+[  303s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.PFaNOA
+[  304s] + umask 022
+[  304s] + cd /home/abuild/rpmbuild/BUILD
+[  304s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/boost_1_81_0-gnu-openmpi4-hpc-1.81.0-2.2.riscv64
+[  304s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/boost_1_81_0-gnu-openmpi4-hpc-1.81.0-2.2.riscv64
+[  304s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  304s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/boost_1_81_0-gnu-openmpi4-hpc-1.81.0-2.2.riscv64
+[  304s] + cd boost_1_81_0
+[  304s] + ref=/usr/lib/rpm
+[  304s] + mints=0
+[  304s] + case $(uname -m) in
+[  304s] ++ uname -m
+[  304s] + mints=20160911
+[  304s] + for s in guess sub
+[  304s] ++ find -maxdepth 8 -name config.guess
+[  305s] + for s in guess sub
+[  305s] ++ find -maxdepth 8 -name config.sub
+[  306s] + find . -type f -exec chmod u+w '{}' +
+[  314s] + cat
+[  314s] + cat
+[  314s] + module load gnu openmpi
+[  314s] + '[' -z '' ']'
+[  314s] + case "$-" in
+[  314s] + __lmod_sh_dbg=x
+[  314s] + '[' -n x ']'
+[  314s] + set +x
+[  314s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  314s] sh: line 1: /usr/bin/ps: No such file or directory
+[  317s] Lmod has detected the following error: The following module(s) are unknown:
+[  317s] "openmpi"
+[  317s] 
+[  317s] Please check the spelling or version number. Also try "module spider ..."
+[  317s] It is also possible your cache file is out-of-date; it may help to try:
+[  317s]   $ module --ignore_cache load "openmpi"
+[  317s] 
+[  317s] Also make sure that all modulefiles written in TCL start with the string
+[  317s] #%Module
+[  317s] 
+[  317s] 
+[  317s] 
+[  317s] Shell debugging restarted
+[  317s] + unset __lmod_sh_dbg
+[  317s] + return 1
+[  317s] error: Bad exit status from /var/tmp/rpm-tmp.PFaNOA (%build)
+[  317s] 
+[  317s] RPM build warnings:
+[  317s]     line 420: It's not recommended to have unversioned Obsoletes: Obsoletes:      boost_1_66-jam
+[  317s] 
+[  317s] RPM build errors:
+[  317s]     Bad exit status from /var/tmp/rpm-tmp.PFaNOA (%build)
+[  318s] ### VM INTERACTION START ###
+[  318s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[  318s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[  318s] Powering off.
+[  318s] [  312.412249][ T5014] reboot: Power down
+[  318s] ### VM INTERACTION END ###
+[  318s] 
+[  318s] lamb15 failed "build boost.spec" at Mon Mar 20 21:00:48 UTC 2023.
+[  318s] 

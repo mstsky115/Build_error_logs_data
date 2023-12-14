@@ -1,0 +1,1061 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] build73 started "build slurm.spec" at Fri Mar 17 18:32:46 UTC 2023.
+[    0s] 
+[    0s] Building slurm for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '394c567a5df0c8421de98c15bf54fdee'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/slurm.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/slurm.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/slurm.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-gtk2-devel [80fa56c666a1a511d2cb34824921b7e6]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...cycle: libefa1 -> libibverbs1 -> libibverbs
+[    5s]   breaking dependency libibverbs -> libefa1
+[    5s] cycle: libibverbs1 -> libibverbs
+[    5s]   breaking dependency libibverbs -> libibverbs1
+[    5s] cycle: libibverbs1 -> libibverbs -> libmlx4-1
+[    5s]   breaking dependency libibverbs -> libmlx4-1
+[    5s] cycle: libibverbs1 -> libibverbs -> libmlx5-1
+[    5s]   breaking dependency libmlx5-1 -> libibverbs1
+[    5s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    5s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    5s] cycle: openssl -> openssl-3
+[    5s]   breaking dependency openssl-3 -> openssl
+[    5s] cycle: mozilla-nss -> libsoftokn3
+[    5s]   breaking dependency mozilla-nss -> libsoftokn3
+[    5s] done
+[    5s] Detected virtio-serial support
+[    9s] booting kvm...
+[    9s] ### VM INTERACTION START ###
+[    9s] Using virtio-serial support
+[    9s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 7250 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 3
+[   14s] ### VM INTERACTION END ###
+[   14s] 2nd stage started in virtual machine
+[   14s] machine type: riscv64
+[   14s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   14s] Increasing log level from now on...
+[   14s] [    4.916817][  T359] sysrq: Changing Loglevel
+[   14s] [    4.916949][  T359] sysrq: Loglevel set to 4
+[   14s] Enable sysrq operations
+[   15s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   15s] no label, UUID=64b8d172-08d0-42fc-904c-782e4b8a56bb
+[   15s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   15s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   15s] swapon /dev/vdb
+[   15s] WARNING: udev not running, creating extra device nodes
+[   15s] logging output to //.build.log...
+[   16s] processing recipe /.build-srcdir/slurm.spec ...
+[   16s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/slurm.spec build ...
+[   16s] initializing rpm db...
+[   17s] querying package ids...
+[   54s] [1/445] preinstalled Mesa-23.0.0-354.1
+[   54s] [2/445] preinstalled Mesa-KHR-devel-23.0.0-354.1
+[   54s] [3/445] preinstalled Mesa-dri-23.0.0-354.1
+[   54s] [4/445] preinstalled Mesa-libEGL-devel-23.0.0-354.1
+[   54s] [5/445] preinstalled Mesa-libEGL1-23.0.0-354.1
+[   54s] [6/445] preinstalled Mesa-libGL-devel-23.0.0-354.1
+[   54s] [7/445] preinstalled Mesa-libGL1-23.0.0-354.1
+[   54s] [8/445] preinstalled Mesa-libglapi0-23.0.0-354.1
+[   54s] [9/445] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   54s] [10/445] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   54s] [11/445] preinstalled alts-1.2+3.b848aad-3.1
+[   54s] [12/445] cumulate apache-rpm-macros-control-20151110-3.2
+[   54s] [13/445] preinstalled at-spi2-core-2.46.0-2.1
+[   54s] [14/445] preinstalled at-spi2-core-devel-2.46.0-2.1
+[   54s] [15/445] preinstalled attr-2.5.1-1.1
+[   54s] [16/445] preinstalled bash-5.2.15-8.1
+[   54s] [17/445] preinstalled bash-sh-5.2.15-8.1
+[   54s] [18/445] preinstalled binutils-2.40-2.1
+[   54s] [19/445] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   54s] [20/445] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   54s] [21/445] preinstalled build-mkbaselibs-20230314-1.1
+[   54s] [22/445] preinstalled bzip2-1.0.8-5.1
+[   54s] [23/445] preinstalled cairo-devel-1.17.6-1.1
+[   54s] [24/445] preinstalled chkstat-1599_20230217-1.1
+[   54s] [25/445] preinstalled compat-usrmerge-build-84.87-5.1
+[   54s] [26/445] preinstalled compat-usrmerge-tools-84.87-5.1
+[   54s] [27/445] preinstalled coreutils-9.1-5.1
+[   54s] [28/445] preinstalled cpio-2.13-5.1
+[   54s] [29/445] preinstalled cpp-12-2.1
+[   54s] [30/445] preinstalled cpp12-12.2.1+git749-4.1
+[   54s] [31/445] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   54s] [32/445] preinstalled cups-config-2.4.2-4.2
+[   54s] [33/445] preinstalled dbus-1-1.14.6-2.1
+[   54s] [34/445] preinstalled dbus-1-common-1.14.6-2.1
+[   54s] [35/445] preinstalled dbus-1-daemon-1.14.6-2.1
+[   54s] [36/445] preinstalled dbus-1-devel-1.14.6-2.1
+[   54s] [37/445] preinstalled dbus-1-tools-1.14.6-2.1
+[   54s] [38/445] preinstalled debugedit-5.0-5.1
+[   54s] [39/445] preinstalled diffutils-3.9-1.1
+[   54s] [40/445] preinstalled dwz-0.15-2.1
+[   54s] [41/445] preinstalled elfutils-0.189-2.1
+[   54s] [42/445] cumulate fdupes-2.2.1-1.1
+[   54s] [43/445] preinstalled file-5.44-1.2
+[   54s] [44/445] preinstalled file-magic-5.44-1.2
+[   54s] [45/445] preinstalled filesystem-84.87-12.1
+[   54s] [46/445] preinstalled fillup-1.42-279.1
+[   54s] [47/445] preinstalled findutils-4.9.0-2.1
+[   54s] [48/445] preinstalled fontconfig-2.14.2-1.1
+[   54s] [49/445] preinstalled fontconfig-devel-2.14.2-1.1
+[   54s] [50/445] preinstalled freetype2-devel-2.13.0-1.1
+[   54s] [51/445] preinstalled fribidi-devel-1.0.12-1.1
+[   54s] [52/445] preinstalled gawk-5.2.1-2.1
+[   54s] [53/445] preinstalled gcc-12-2.1
+[   54s] [54/445] preinstalled gcc-PIE-12-2.1
+[   54s] [55/445] preinstalled gcc12-12.2.1+git749-4.1
+[   54s] [56/445] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   54s] [57/445] cumulate gcc12-c++-12.2.1+git749-4.1
+[   54s] [58/445] preinstalled gdk-pixbuf-devel-2.42.10-1.2
+[   54s] [59/445] preinstalled gdk-pixbuf-query-loaders-2.42.10-1.2
+[   54s] [60/445] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   54s] [61/445] preinstalled gettext-tools-mini-0.21.1-1.1
+[   54s] [62/445] preinstalled gio-branding-upstream-2.74.6-1.1
+[   54s] [63/445] preinstalled girepository-1_0-1.74.0-2.1
+[   54s] [64/445] preinstalled glib2-devel-2.74.6-1.1
+[   54s] [65/445] preinstalled glib2-tools-2.74.6-1.1
+[   54s] [66/445] preinstalled glibc-2.37-1.1
+[   54s] [67/445] preinstalled glibc-devel-2.37-1.1
+[   54s] [68/445] preinstalled glibc-locale-base-2.37-1.1
+[   54s] [69/445] preinstalled graphite2-devel-1.3.14-3.1
+[   54s] [70/445] preinstalled grep-3.9-1.1
+[   54s] [71/445] preinstalled gtk2-devel-2.24.33-4.1
+[   54s] [72/445] preinstalled gtk2-tools-2.24.33-4.1
+[   54s] [73/445] preinstalled gzip-1.12-3.1
+[   54s] [74/445] preinstalled harfbuzz-devel-7.1.0-1.1
+[   54s] [75/445] cumulate hdf5-devel-data-1.12.2-4.1
+[   54s] [76/445] preinstalled hicolor-icon-theme-0.17-4.1
+[   54s] [77/445] cumulate hwloc-data-2.9.0-2.1
+[   54s] [78/445] preinstalled kernel-obs-build-6.2.6-1.1
+[   54s] [79/445] preinstalled krb5-mini-1.20.1-4.1
+[   54s] [80/445] preinstalled libLLVM15-15.0.7-2.1
+[   54s] [81/445] preinstalled libX11-6-1.8.4-1.1
+[   54s] [82/445] preinstalled libX11-data-1.8.4-1.1
+[   54s] [83/445] preinstalled libX11-devel-1.8.4-1.1
+[   54s] [84/445] preinstalled libX11-xcb1-1.8.4-1.1
+[   54s] [85/445] preinstalled libXau-devel-1.0.11-1.1
+[   54s] [86/445] preinstalled libXau6-1.0.11-1.1
+[   54s] [87/445] preinstalled libXcomposite1-0.4.6-1.1
+[   54s] [88/445] preinstalled libXcursor1-1.2.1-1.1
+[   54s] [89/445] preinstalled libXdamage1-1.1.6-1.2
+[   54s] [90/445] preinstalled libXext-devel-1.3.5-1.1
+[   54s] [91/445] preinstalled libXext6-1.3.5-1.1
+[   54s] [92/445] preinstalled libXfixes-devel-6.0.0-2.1
+[   54s] [93/445] preinstalled libXfixes3-6.0.0-2.1
+[   54s] [94/445] preinstalled libXft-devel-2.3.7-1.1
+[   54s] [95/445] preinstalled libXft2-2.3.7-1.1
+[   54s] [96/445] preinstalled libXi-devel-1.8-1.1
+[   54s] [97/445] preinstalled libXi6-1.8-1.1
+[   54s] [98/445] preinstalled libXinerama1-1.1.5-1.1
+[   54s] [99/445] preinstalled libXrandr2-1.5.3-1.1
+[   54s] [100/445] preinstalled libXrender-devel-0.9.11-1.1
+[   54s] [101/445] preinstalled libXrender1-0.9.11-1.1
+[   54s] [102/445] preinstalled libXtst-devel-1.2.4-1.1
+[   54s] [103/445] preinstalled libXtst6-1.2.4-1.1
+[   54s] [104/445] preinstalled libXxf86vm1-1.1.5-1.1
+[   54s] [105/445] preinstalled libacl1-2.3.1-2.1
+[   54s] [106/445] preinstalled libalternatives1-1.2+3.b848aad-3.1
+[   54s] [107/445] cumulate libapr1-0-1.7.2-1.1
+[   54s] [108/445] preinstalled libasan8-13.0.1+git5428-6.1
+[   54s] [109/445] preinstalled libasm1-0.189-2.1
+[   54s] [110/445] preinstalled libatk-1_0-0-2.46.0-2.1
+[   54s] [111/445] preinstalled libatk-bridge-2_0-0-2.46.0-2.1
+[   54s] [112/445] preinstalled libatomic1-13.0.1+git5428-6.1
+[   54s] [113/445] preinstalled libatspi0-2.46.0-2.1
+[   54s] [114/445] preinstalled libattr1-2.5.1-1.1
+[   54s] [115/445] preinstalled libaudit1-3.0.9-1.1
+[   54s] [116/445] preinstalled libavahi-client3-0.8-22.3
+[   54s] [117/445] preinstalled libavahi-common3-0.8-22.3
+[   54s] [118/445] cumulate libbitmask1-2.0-29.1
+[   54s] [119/445] preinstalled libblkid-devel-2.38.1-10.1
+[   54s] [120/445] preinstalled libblkid1-2.38.1-10.1
+[   54s] [121/445] preinstalled libbrotli-devel-1.0.9-3.1
+[   54s] [122/445] preinstalled libbrotlicommon1-1.0.9-3.1
+[   54s] [123/445] preinstalled libbrotlidec1-1.0.9-3.1
+[   54s] [124/445] preinstalled libbrotlienc1-1.0.9-3.1
+[   54s] [125/445] preinstalled libbz2-1-1.0.8-5.1
+[   54s] [126/445] preinstalled libbz2-devel-1.0.8-5.1
+[   54s] [127/445] preinstalled libcairo-gobject2-1.17.6-1.1
+[   54s] [128/445] preinstalled libcairo-script-interpreter2-1.17.6-1.1
+[   54s] [129/445] preinstalled libcairo2-1.17.6-1.1
+[   54s] [130/445] preinstalled libcap-ng0-0.8.3-1.1
+[   54s] [131/445] preinstalled libcap2-2.67-1.1
+[   54s] [132/445] preinstalled libcom_err2-1.46.5-4.1
+[   54s] [133/445] preinstalled libcrypt1-4.4.33-2.1
+[   54s] [134/445] preinstalled libctf-nobfd0-2.40-2.1
+[   54s] [135/445] preinstalled libctf0-2.40-2.1
+[   55s] [136/445] preinstalled libcups2-2.4.2-4.2
+[   55s] [137/445] preinstalled libdatrie-devel-0.2.13-1.1
+[   55s] [138/445] preinstalled libdatrie1-0.2.13-1.1
+[   55s] [139/445] preinstalled libdb-4_8-4.8.30-40.1
+[   55s] [140/445] cumulate libdbi3-0.9.0.g33-4.1
+[   55s] [141/445] preinstalled libdbus-1-3-1.14.6-2.1
+[   55s] [142/445] preinstalled libdrm2-2.4.115-2.1
+[   55s] [143/445] preinstalled libdrm_amdgpu1-2.4.115-2.1
+[   55s] [144/445] preinstalled libdrm_nouveau2-2.4.115-2.1
+[   55s] [145/445] preinstalled libdrm_radeon1-2.4.115-2.1
+[   55s] [146/445] preinstalled libdw1-0.189-2.1
+[   55s] [147/445] preinstalled libeconf0-0.5.1-1.1
+[   55s] [148/445] preinstalled libedit0-20210910.3.1-1.1
+[   55s] [149/445] preinstalled libelf1-0.189-2.1
+[   55s] [150/445] cumulate libevent-2_1-7-2.1.12-3.2
+[   55s] [151/445] preinstalled libexpat-devel-2.5.0-2.1
+[   55s] [152/445] preinstalled libexpat1-2.5.0-2.1
+[   55s] [153/445] preinstalled libfdisk1-2.38.1-10.1
+[   55s] [154/445] preinstalled libffi-devel-3.4.4-1.1
+[   55s] [155/445] preinstalled libffi8-3.4.4-1.1
+[   55s] [156/445] preinstalled libfontconfig1-2.14.2-1.1
+[   55s] [157/445] cumulate libfreebl3-3.88.1-1.1
+[   55s] [158/445] preinstalled libfreetype6-2.13.0-1.1
+[   55s] [159/445] preinstalled libfribidi0-1.0.12-1.1
+[   55s] [160/445] preinstalled libgbm1-23.0.0-354.1
+[   55s] [161/445] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   55s] [162/445] preinstalled libgcrypt20-1.10.1-2.1
+[   55s] [163/445] preinstalled libgdbm6-1.23-1.1
+[   55s] [164/445] preinstalled libgdbm_compat4-1.23-1.1
+[   55s] [165/445] preinstalled libgdk_pixbuf-2_0-0-2.42.10-1.2
+[   55s] [166/445] cumulate libgfortran5-13.0.1+git5428-6.1
+[   55s] [167/445] preinstalled libgio-2_0-0-2.74.6-1.1
+[   55s] [168/445] preinstalled libgirepository-1_0-1-1.74.0-2.1
+[   55s] [169/445] preinstalled libglib-2_0-0-2.74.6-1.1
+[   55s] [170/445] preinstalled libglvnd-1.6.0-1.1
+[   55s] [171/445] preinstalled libglvnd-devel-1.6.0-1.1
+[   55s] [172/445] preinstalled libgmodule-2_0-0-2.74.6-1.1
+[   55s] [173/445] preinstalled libgmp10-6.2.1-4.1
+[   55s] [174/445] preinstalled libgnutls30-3.7.9-1.1
+[   55s] [175/445] preinstalled libgobject-2_0-0-2.74.6-1.1
+[   55s] [176/445] preinstalled libgomp1-13.0.1+git5428-6.1
+[   55s] [177/445] preinstalled libgpg-error0-1.46-1.1
+[   55s] [178/445] preinstalled libgraphite2-3-1.3.14-3.1
+[   55s] [179/445] preinstalled libgthread-2_0-0-2.74.6-1.1
+[   55s] [180/445] preinstalled libgtk-2_0-0-2.24.33-4.1
+[   55s] [181/445] preinstalled libharfbuzz-gobject0-7.1.0-1.1
+[   55s] [182/445] preinstalled libharfbuzz-icu0-7.1.0-1.1
+[   55s] [183/445] preinstalled libharfbuzz-subset0-7.1.0-1.1
+[   55s] [184/445] preinstalled libharfbuzz0-7.1.0-1.1
+[   55s] [185/445] cumulate libhdf5-200-1.12.2-4.1
+[   55s] [186/445] preinstalled libhogweed6-3.8.1-2.1
+[   55s] [187/445] cumulate libhttp_parser2_9-2.9.4-1.2
+[   55s] [188/445] cumulate libibumad3-42.0-2.1
+[   55s] [189/445] preinstalled libicu-devel-72.1-2.1
+[   55s] [190/445] preinstalled libicu72-72.1-2.1
+[   55s] [191/445] preinstalled libicu72-ledata-72.1-2.1
+[   55s] [192/445] preinstalled libidn2-0-2.3.4-1.1
+[   55s] [193/445] preinstalled libisl23-0.25-1.1
+[   55s] [194/445] cumulate libjansson4-2.14-1.1
+[   55s] [195/445] preinstalled libjbig2-2.1-4.1
+[   55s] [196/445] preinstalled libjitterentropy3-3.4.1-1.1
+[   55s] [197/445] preinstalled libjpeg8-8.2.2-74.1
+[   55s] [198/445] preinstalled libjpeg8-devel-8.2.2-74.1
+[   55s] [199/445] cumulate libjson-c5-0.16-1.3
+[   55s] [200/445] preinstalled libkeyutils1-1.6.3-5.1
+[   55s] [201/445] preinstalled liblua5_4-5-5.4.4-8.1
+[   55s] [202/445] cumulate liblz4-1-1.9.4-2.1
+[   55s] [203/445] preinstalled liblzma5-5.4.1-2.1
+[   55s] [204/445] preinstalled libmagic1-5.44-1.2
+[   55s] [205/445] cumulate libmariadb3-3.3.4-1.1
+[   55s] [206/445] cumulate libmca_common_dstore1-3.2.3-7.1
+[   55s] [207/445] cumulate libmnl0-1.0.5-1.1
+[   55s] [208/445] preinstalled libmount-devel-2.38.1-10.1
+[   55s] [209/445] preinstalled libmount1-2.38.1-10.1
+[   55s] [210/445] preinstalled libmpc3-1.3.1-1.2
+[   55s] [211/445] preinstalled libmpdec3-2.5.1-2.1
+[   55s] [212/445] preinstalled libmpfr6-4.2.0-1.1
+[   55s] [213/445] cumulate libmunge2-0.5.15-2.2
+[   55s] [214/445] preinstalled libncurses6-6.4.20230311-8.1
+[   55s] [215/445] preinstalled libnettle8-3.8.1-2.1
+[   55s] [216/445] cumulate libnghttp2-14-1.51.0-7.2
+[   55s] [217/445] cumulate libnl-config-3.7.0-1.1
+[   55s] [218/445] preinstalled libopenssl3-3.0.8-2.1
+[   55s] [219/445] preinstalled libp11-kit0-0.24.1-2.1
+[   55s] [220/445] preinstalled libpango-1_0-0-1.50.14-1.1
+[   55s] [221/445] cumulate libpciaccess0-0.17-1.1
+[   55s] [222/445] preinstalled libpcre2-16-0-10.42-3.2
+[   55s] [223/445] preinstalled libpcre2-32-0-10.42-3.2
+[   55s] [224/445] preinstalled libpcre2-8-0-10.42-3.2
+[   55s] [225/445] preinstalled libpcre2-posix3-10.42-3.2
+[   55s] [226/445] preinstalled libpixman-1-0-0.42.2-1.1
+[   55s] [227/445] preinstalled libpixman-1-0-devel-0.42.2-1.1
+[   55s] [228/445] preinstalled libpkgconf3-1.8.0-2.1
+[   55s] [229/445] preinstalled libpng16-16-1.6.39-2.1
+[   55s] [230/445] preinstalled libpng16-compat-devel-1.6.39-2.1
+[   55s] [231/445] preinstalled libpng16-devel-1.6.39-2.1
+[   55s] [232/445] preinstalled libpopt0-1.19-1.1
+[   55s] [233/445] cumulate libpsl5-0.21.2-1.1
+[   55s] [234/445] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   55s] [235/445] preinstalled libreadline8-8.2-2.1
+[   55s] [236/445] preinstalled librpmbuild9-4.18.0-3.2
+[   55s] [237/445] cumulate libsasl2-3-2.1.28-4.2
+[   55s] [238/445] preinstalled libseccomp2-2.5.4-2.1
+[   55s] [239/445] preinstalled libselinux-devel-3.5-1.1
+[   55s] [240/445] preinstalled libselinux1-3.5-1.1
+[   55s] [241/445] preinstalled libsemanage-conf-3.5-1.1
+[   55s] [242/445] preinstalled libsemanage2-3.5-1.1
+[   55s] [243/445] preinstalled libsepol-devel-3.5-1.1
+[   55s] [244/445] preinstalled libsepol2-3.5-1.1
+[   55s] [245/445] preinstalled libsmartcols1-2.38.1-10.1
+[   55s] [246/445] cumulate libsqlite3-0-3.41.0-2.1
+[   55s] [247/445] cumulate libssh-config-0.10.4-1.2
+[   55s] [248/445] cumulate libssh2-1-1.10.0-1.2
+[   55s] [249/445] preinstalled libstdc++-devel-12-2.1
+[   55s] [250/445] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   55s] [251/445] preinstalled libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   55s] [252/445] preinstalled libsubid4-4.13-4.1
+[   55s] [253/445] preinstalled libsystemd0-mini-253.1-2.1
+[   55s] [254/445] preinstalled libtasn1-6-4.19.0-1.1
+[   55s] [255/445] preinstalled libthai-data-0.1.29-1.1
+[   55s] [256/445] preinstalled libthai-devel-0.1.29-1.1
+[   55s] [257/445] preinstalled libthai0-0.1.29-1.1
+[   55s] [258/445] preinstalled libtiff-devel-4.5.0-3.1
+[   55s] [259/445] preinstalled libtiff6-4.5.0-3.1
+[   55s] [260/445] preinstalled libturbojpeg0-8.2.2-74.1
+[   55s] [261/445] preinstalled libubsan1-13.0.1+git5428-6.1
+[   55s] [262/445] cumulate libudev-mini1-253.1-2.1
+[   55s] [263/445] preinstalled libunistring5-1.1-1.1
+[   55s] [264/445] preinstalled libutempter0-1.2.0-3.2
+[   55s] [265/445] preinstalled libuuid1-2.38.1-10.1
+[   55s] [266/445] preinstalled libverto1-0.3.2-1.1
+[   55s] [267/445] preinstalled libwayland-client0-1.21.0-4.2
+[   55s] [268/445] preinstalled libwayland-server0-1.21.0-4.2
+[   55s] [269/445] preinstalled libxcb-composite0-1.15-2.1
+[   55s] [270/445] preinstalled libxcb-damage0-1.15-2.1
+[   55s] [271/445] preinstalled libxcb-devel-1.15-2.1
+[   55s] [272/445] preinstalled libxcb-dpms0-1.15-2.1
+[   55s] [273/445] preinstalled libxcb-dri2-0-1.15-2.1
+[   55s] [274/445] preinstalled libxcb-dri3-0-1.15-2.1
+[   55s] [275/445] preinstalled libxcb-glx0-1.15-2.1
+[   55s] [276/445] preinstalled libxcb-present0-1.15-2.1
+[   55s] [277/445] preinstalled libxcb-randr0-1.15-2.1
+[   55s] [278/445] preinstalled libxcb-record0-1.15-2.1
+[   55s] [279/445] preinstalled libxcb-render0-1.15-2.1
+[   55s] [280/445] preinstalled libxcb-res0-1.15-2.1
+[   55s] [281/445] preinstalled libxcb-screensaver0-1.15-2.1
+[   55s] [282/445] preinstalled libxcb-shape0-1.15-2.1
+[   55s] [283/445] preinstalled libxcb-shm0-1.15-2.1
+[   55s] [284/445] preinstalled libxcb-sync1-1.15-2.1
+[   55s] [285/445] preinstalled libxcb-xf86dri0-1.15-2.1
+[   55s] [286/445] preinstalled libxcb-xfixes0-1.15-2.1
+[   55s] [287/445] preinstalled libxcb-xinerama0-1.15-2.1
+[   55s] [288/445] preinstalled libxcb-xinput0-1.15-2.1
+[   55s] [289/445] preinstalled libxcb-xkb1-1.15-2.1
+[   55s] [290/445] preinstalled libxcb-xtest0-1.15-2.1
+[   55s] [291/445] preinstalled libxcb-xv0-1.15-2.1
+[   55s] [292/445] preinstalled libxcb-xvmc0-1.15-2.1
+[   55s] [293/445] preinstalled libxcb1-1.15-2.1
+[   55s] [294/445] preinstalled libxcrypt-devel-4.4.33-2.1
+[   55s] [295/445] preinstalled libxml2-2-2.10.3-3.1
+[   55s] [296/445] cumulate libxml2-tools-2.10.3-3.1
+[   55s] [297/445] preinstalled libxshmfence1-1.3.2-1.1
+[   55s] [298/445] cumulate libyaml-0-2-0.2.5-2.1
+[   55s] [299/445] preinstalled libz1-1.2.13-3.1
+[   55s] [300/445] preinstalled libzstd-devel-1.5.4-2.1
+[   55s] [301/445] preinstalled libzstd1-1.5.4-2.1
+[   55s] [302/445] preinstalled linux-glibc-devel-6.2-1.1
+[   55s] [303/445] preinstalled login_defs-4.13-4.1
+[   55s] [304/445] cumulate lua-macros-20210827-3.1
+[   55s] [305/445] preinstalled lua54-5.4.4-8.1
+[   55s] [306/445] cumulate m4-1.4.18-7.1
+[   55s] [307/445] preinstalled make-4.4.1-1.1
+[   55s] [308/445] cumulate mozilla-nspr-4.35-1.1
+[   55s] [309/445] cumulate ncurses-devel-6.4.20230311-8.1
+[   55s] [310/445] preinstalled ncurses-utils-6.4.20230311-8.1
+[   55s] [311/445] preinstalled pam-1.5.2-12.1
+[   55s] [312/445] cumulate pam-devel-1.5.2-12.1
+[   55s] [313/445] preinstalled pango-devel-1.50.14-1.1
+[   55s] [314/445] preinstalled patch-2.7.6-6.1
+[   55s] [315/445] preinstalled pcre2-devel-10.42-3.2
+[   55s] [316/445] preinstalled perl-5.36.0-4.1
+[   55s] [317/445] preinstalled perl-base-5.36.0-4.1
+[   55s] [318/445] preinstalled permissions-1599_20230217-1.1
+[   55s] [319/445] preinstalled permissions-config-1599_20230217-1.1
+[   55s] [320/445] preinstalled pkgconf-1.8.0-2.1
+[   55s] [321/445] preinstalled pkgconf-m4-1.8.0-2.1
+[   55s] [322/445] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   55s] [323/445] cumulate pmix-headers-3.2.3-7.1
+[   55s] [324/445] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   55s] [325/445] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   55s] [326/445] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   55s] [327/445] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   55s] [328/445] cumulate python3-nftables-1.0.7-1.1
+[   55s] [329/445] preinstalled python310-base-3.10.10-2.1
+[   55s] [330/445] cumulate python310-decorator-5.1.1-1.3
+[   55s] [331/445] cumulate python310-gobject-3.42.2-1.2
+[   55s] [332/445] preinstalled python310-packaging-23.0-2.1
+[   55s] [333/445] cumulate python310-six-1.16.0-2.5
+[   55s] [334/445] preinstalled qemu-linux-user-7.1.0-53.1
+[   55s] [335/445] preinstalled rpm-4.18.0-3.2
+[   55s] [336/445] preinstalled rpm-build-4.18.0-3.2
+[   55s] [337/445] preinstalled rpm-build-perl-4.18.0-3.2
+[   55s] [338/445] preinstalled rpm-config-SUSE-20220926-1.1
+[   55s] [339/445] preinstalled rpmlint-mini-2.4.0+git20230307.1e9f1e0-9.16
+[   55s] [340/445] preinstalled rpmlint-strict-2.4.0+git20230307.1e9f1e0-1.1
+[   55s] [341/445] preinstalled sed-4.9-2.1
+[   55s] [342/445] preinstalled shadow-4.13-4.1
+[   55s] [343/445] preinstalled shared-mime-info-2.2-1.1
+[   55s] [344/445] cumulate suse-module-tools-16.0.30-1.1
+[   55s] [345/445] preinstalled system-group-hardware-20170617-24.1
+[   55s] [346/445] cumulate system-group-kvm-20170617-24.1
+[   55s] [347/445] preinstalled system-user-lp-20170617-24.1
+[   55s] [348/445] preinstalled system-user-root-20190513-2.1
+[   55s] [349/445] cumulate system-user-wwwrun-20170617-24.1
+[   55s] [350/445] cumulate systemd-mini-253.1-2.1
+[   55s] [351/445] preinstalled systemd-rpm-macros-19-1.1
+[   55s] [352/445] preinstalled sysuser-shadow-3.1-5.1
+[   55s] [353/445] cumulate sysuser-tools-3.1-5.1
+[   55s] [354/445] preinstalled tar-1.34-10.1
+[   55s] [355/445] cumulate tcl-8.6.13-4.1
+[   55s] [356/445] preinstalled terminfo-base-6.4.20230311-8.1
+[   55s] [357/445] preinstalled timezone-2022g-3.1
+[   55s] [358/445] preinstalled typelib-1_0-Atk-1_0-2.46.0-2.1
+[   55s] [359/445] preinstalled typelib-1_0-Atspi-2_0-2.46.0-2.1
+[   55s] [360/445] preinstalled typelib-1_0-GdkPixbuf-2_0-2.42.10-1.2
+[   55s] [361/445] preinstalled typelib-1_0-GdkPixdata-2_0-2.42.10-1.2
+[   55s] [362/445] preinstalled typelib-1_0-Gtk-2_0-2.24.33-4.1
+[   55s] [363/445] preinstalled typelib-1_0-HarfBuzz-0_0-7.1.0-1.1
+[   55s] [364/445] preinstalled typelib-1_0-Pango-1_0-1.50.14-1.1
+[   55s] [365/445] preinstalled update-alternatives-1.21.8-1.1
+[   55s] [366/445] preinstalled util-linux-2.38.1-10.1
+[   55s] [367/445] preinstalled which-2.21-5.1
+[   55s] [368/445] preinstalled xorgproto-devel-2022.2-2.1
+[   55s] [369/445] preinstalled xz-5.4.1-2.1
+[   55s] [370/445] preinstalled xz-devel-5.4.1-2.1
+[   55s] [371/445] preinstalled zlib-devel-1.2.13-3.1
+[   55s] [372/445] cumulate apache-rpm-macros-20201124-1.2
+[   55s] [373/445] cumulate autoconf-2.71-2.1
+[   55s] [374/445] cumulate expect-5.45.4-6.1
+[   55s] [375/445] cumulate gcc-c++-12-2.1
+[   55s] [376/445] cumulate http-parser-devel-2.9.4-1.2
+[   55s] [377/445] cumulate kmod-30-2.2
+[   55s] [378/445] cumulate libbitmask-devel-2.0-29.1
+[   55s] [379/445] cumulate libcpuset1-1.0-36.3
+[   55s] [380/445] cumulate libevent-devel-2.1.12-3.2
+[   55s] [381/445] cumulate libhdf5_cpp200-1.12.2-4.1
+[   55s] [382/445] cumulate libhdf5_hl200-1.12.2-4.1
+[   55s] [383/445] cumulate libibmad5-42.0-2.1
+[   55s] [384/445] cumulate libjson-c-devel-0.16-1.3
+[   55s] [385/445] cumulate libldap2-2.6.3-3.2
+[   55s] [386/445] cumulate liblz4-devel-1.9.4-2.1
+[   55s] [387/445] cumulate libnftnl11-1.2.5-1.1
+[   55s] [388/445] cumulate libnl3-200-3.7.0-1.1
+[   55s] [389/445] cumulate libpciaccess-devel-0.17-1.1
+[   55s] [390/445] cumulate librrd8-1.8.0-2.5
+[   55s] [391/445] cumulate libssh4-0.10.4-1.2
+[   55s] [392/445] cumulate libyaml-devel-0.2.5-2.1
+[   55s] [393/445] cumulate lua54-devel-5.4.4-8.1
+[   55s] [394/445] cumulate mozilla-nss-certs-3.88.1-1.1
+[   55s] [395/445] cumulate munge-devel-0.5.15-2.2
+[   55s] [396/445] cumulate python310-3.10.10-2.1
+[   55s] [397/445] cumulate python310-dbus-python-1.3.2-1.2
+[   55s] [398/445] cumulate python310-slip-0.6.5-6.10
+[   55s] [399/445] cumulate readline-devel-8.2-2.1
+[   55s] [400/445] cumulate libhdf5_fortran200-1.12.2-4.1
+[   55s] [401/445] cumulate libhwloc15-2.9.0-2.1
+[   55s] [402/445] cumulate automake-1.16.5-3.1
+[   55s] [403/445] cumulate libcpuset-devel-1.0-36.3
+[   55s] [404/445] cumulate libhdf5_hl_cpp200-1.12.2-4.1
+[   55s] [405/445] cumulate rrdtool-devel-1.8.0-2.5
+[   55s] [406/445] cumulate sudo-1.9.13p3-2.1
+[   55s] [407/445] cumulate dejagnu-1.6.3-1.1
+[   55s] [408/445] cumulate libapr-util1-0-1.6.3-1.1
+[   55s] [409/445] cumulate libibnetdisc5-42.0-2.1
+[   55s] [410/445] cumulate libxml2-devel-2.10.3-3.1
+[   55s] [411/445] cumulate libnftables1-1.0.7-1.1
+[   55s] [412/445] cumulate udev-mini-253.1-2.1
+[   55s] [413/445] cumulate libcurl4-7.88.1-1.1
+[   55s] [414/445] cumulate libhdf5hl_fortran200-1.12.2-4.1
+[   55s] [415/445] cumulate python310-slip-dbus-0.6.5-6.10
+[   55s] [416/445] cumulate libcurl-devel-7.88.1-1.1
+[   55s] [417/445] cumulate nftables-1.0.7-1.1
+[   55s] [418/445] cumulate hwloc-devel-2.9.0-2.1
+[   55s] [419/445] cumulate infiniband-diags-42.0-2.1
+[   55s] [420/445] cumulate apache2-prefork-2.4.56-1.1
+[   55s] [421/445] cumulate rdma-core-42.0-2.1
+[   55s] [422/445] cumulate hdf5-1.12.2-4.1
+[   55s] [423/445] cumulate apache2-2.4.56-1.1
+[   55s] [424/445] cumulate pmix-devel-3.2.3-7.1
+[   55s] [425/445] cumulate hdf5-devel-1.12.2-4.1
+[   55s] [426/445] cumulate libmlx5-1-42.0-2.1
+[   55s] [427/445] cumulate openssl-3-3.0.8-2.1
+[   55s] [428/445] cumulate mozilla-nss-3.88.1-1.1
+[   55s] [429/445] cumulate openssl-3.0.8-1.1
+[   55s] [430/445] cumulate libnm0-1.42.4-1.1
+[   55s] [431/445] cumulate libsoftokn3-3.88.1-1.1
+[   55s] [432/445] cumulate libibverbs-42.0-2.1
+[   55s] [433/445] cumulate typelib-1_0-NM-1_0-1.42.4-1.1
+[   55s] [434/445] cumulate libibverbs1-42.0-2.1
+[   55s] [435/445] cumulate libopenssl-devel-3.0.8-1.1
+[   55s] [436/445] cumulate libefa1-42.0-2.1
+[   55s] [437/445] cumulate libmlx4-1-42.0-2.1
+[   55s] [438/445] cumulate libopenssl-3-devel-3.0.8-2.1
+[   55s] [439/445] cumulate librdmacm1-42.0-2.1
+[   55s] [440/445] cumulate python3-firewall-1.3.0-1.1
+[   55s] [441/445] cumulate rsocket-42.0-2.1
+[   55s] [442/445] cumulate libmariadb-devel-3.3.4-1.1
+[   55s] [443/445] cumulate libssh2-devel-1.10.0-1.2
+[   55s] [444/445] cumulate firewalld-1.3.0-1.1
+[   55s] [445/445] cumulate rdma-core-devel-42.0-2.1
+[   55s] now installing cumulated packages
+[   56s] Preparing...                          ########################################
+[   56s] Updating / installing...
+[   57s] libhdf5-200-1.12.2-4.1                ########################################
+[   57s] python310-gobject-3.42.2-1.2          ########################################
+[   57s] libhdf5_hl200-1.12.2-4.1              ########################################
+[   58s] systemd-mini-253.1-2.1                warning: group systemd-journal does not exist - using root
+[   59s] ########################################
+[   60s] Creating group 'systemd-journal' with GID 486.
+[   60s] Creating group 'systemd-timesync' with GID 485.
+[   60s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   60s] Running in chroot, ignoring command 'daemon-reexec'
+[   60s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   60s] All rules containing unresolvable specifiers will be skipped.
+[   61s] mozilla-nspr-4.35-1.1                 ########################################
+[   61s] libibumad3-42.0-2.1                   ########################################
+[   62s] libibmad5-42.0-2.1                    ########################################
+[   62s] libhdf5_hl_cpp200-1.12.2-4.1          ########################################
+[   62s] python310-dbus-python-1.3.2-1.2       ########################################
+[   62s] libhdf5_cpp200-1.12.2-4.1             ########################################
+[   62s] openssl-3.0.8-1.1                     ########################################
+[   63s] openssl-3-3.0.8-2.1                   ########################################
+[   64s] tcl-8.6.13-4.1                        ########################################
+[   64s] python310-six-1.16.0-2.5              ########################################
+[   65s] python310-decorator-5.1.1-1.3         ########################################
+[   65s] libsqlite3-0-3.41.0-2.1               ########################################
+[   65s] libpciaccess0-0.17-1.1                ########################################
+[   65s] libnghttp2-14-1.51.0-7.2              ########################################
+[   65s] libmnl0-1.0.5-1.1                     ########################################
+[   65s] libgfortran5-13.0.1+git5428-6.1       ########################################
+[   66s] libhdf5_fortran200-1.12.2-4.1         ########################################
+[   66s] libhdf5hl_fortran200-1.12.2-4.1       ########################################
+[   66s] libfreebl3-3.88.1-1.1                 ########################################
+[   66s] libbitmask1-2.0-29.1                  ########################################
+[   66s] libapr1-0-1.7.2-1.1                   ########################################
+[   66s] libcpuset1-1.0-36.3                   ########################################
+[   67s] hdf5-1.12.2-4.1                       ########################################
+[   67s] libnftnl11-1.2.5-1.1                  ########################################
+[   67s] libpciaccess-devel-0.17-1.1           ########################################
+[   67s] python310-slip-0.6.5-6.10             ########################################
+[   67s] python310-slip-dbus-0.6.5-6.10        ########################################
+[   67s] expect-5.45.4-6.1                     ########################################
+[   70s] libopenssl-3-devel-3.0.8-2.1          ########################################
+[   73s] libopenssl-devel-3.0.8-1.1            ########################################
+[   73s] libibnetdisc5-42.0-2.1                ########################################
+[   73s] infiniband-diags-42.0-2.1             ########################################
+[   73s] mozilla-nss-certs-3.88.1-1.1          ########################################
+[   73s] mozilla-nss-3.88.1-1.1                ########################################
+[   74s] libsoftokn3-3.88.1-1.1                ########################################
+[   74s] kmod-30-2.2                           ########################################
+[   74s] suse-module-tools-16.0.30-1.1         ########################################
+[   75s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-user-wwwrun.conf -
+[   75s] Creating group 'www' with GID 484.
+[   75s] Creating group 'wwwrun' with GID 483.
+[   75s] Creating user 'wwwrun' (WWW daemon apache) with UID 483 and GID 483.
+[   75s] system-user-wwwrun-20170617-24.1      ########################################
+[   75s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-group-kvm.conf -
+[   75s] Creating group 'kvm' with GID 36.
+[   75s] system-group-kvm-20170617-24.1        ########################################
+[   77s] udev-mini-253.1-2.1                   ########################################
+[   86s] Failed to preset unit, unit remote-cryptsetup.target does not exist.
+[   87s] python3-nftables-1.0.7-1.1            ########################################
+[   87s] pmix-headers-3.2.3-7.1                ########################################
+[   88s] ncurses-devel-6.4.20230311-8.1        ########################################
+[   89s] readline-devel-8.2-2.1                ########################################
+[   89s] m4-1.4.18-7.1                         ########################################
+[   89s] autoconf-2.71-2.1                     ########################################
+[   89s] lua-macros-20210827-3.1               ########################################
+[   89s] libyaml-0-2-0.2.5-2.1                 ########################################
+[   89s] libxml2-tools-2.10.3-3.1              ########################################
+[   89s] libxml2-devel-2.10.3-3.1              ########################################
+[   89s] libudev-mini1-253.1-2.1               ########################################
+[   90s] libnm0-1.42.4-1.1                     ########################################
+[   90s] typelib-1_0-NM-1_0-1.42.4-1.1         ########################################
+[   90s] python3-firewall-1.3.0-1.1            ########################################
+[   91s] libssh2-1-1.10.0-1.2                  ########################################
+[   91s] libssh-config-0.10.4-1.2              ########################################
+[   91s] libssh4-0.10.4-1.2                    ########################################
+[   91s] libsasl2-3-2.1.28-4.2                 ########################################
+[   91s] libldap2-2.6.3-3.2                    ########################################
+[   91s] libapr-util1-0-1.6.3-1.1              ########################################
+[   92s] apache2-prefork-2.4.56-1.1            ########################################
+[  100s] libpsl5-0.21.2-1.1                    ########################################
+[  100s] libcurl4-7.88.1-1.1                   ########################################
+[  100s] libnl-config-3.7.0-1.1                ########################################
+[  100s] libnl3-200-3.7.0-1.1                  ########################################
+[  100s] rdma-core-42.0-2.1                    ########################################
+[  101s] libmlx5-1-42.0-2.1                    ########################################
+[  101s] libefa1-42.0-2.1                      ########################################
+[  101s] libibverbs-42.0-2.1                   ########################################
+[  101s] libibverbs1-42.0-2.1                  ########################################
+[  101s] libmlx4-1-42.0-2.1                    ########################################
+[  101s] librdmacm1-42.0-2.1                   ########################################
+[  101s] rsocket-42.0-2.1                      ########################################
+[  101s] libmunge2-0.5.15-2.2                  ########################################
+[  101s] libmca_common_dstore1-3.2.3-7.1       ########################################
+[  102s] libmariadb3-3.3.4-1.1                 ########################################
+[  102s] liblz4-1-1.9.4-2.1                    ########################################
+[  102s] libjson-c5-0.16-1.3                   ########################################
+[  102s] libjansson4-2.14-1.1                  ########################################
+[  102s] libnftables1-1.0.7-1.1                ########################################
+[  102s] nftables-1.0.7-1.1                    ########################################
+[  102s] libhttp_parser2_9-2.9.4-1.2           ########################################
+[  103s] libevent-2_1-7-2.1.12-3.2             ########################################
+[  103s] libevent-devel-2.1.12-3.2             ########################################
+[  103s] libdbi3-0.9.0.g33-4.1                 ########################################
+[  103s] librrd8-1.8.0-2.5                     ########################################
+[  103s] hwloc-data-2.9.0-2.1                  ########################################
+[  103s] libhwloc15-2.9.0-2.1                  ########################################
+[  103s] hwloc-devel-2.9.0-2.1                 ########################################
+[  103s] hdf5-devel-data-1.12.2-4.1            ########################################
+[  108s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[  108s] apache-rpm-macros-control-20151110-3.2########################################
+[  108s] apache-rpm-macros-20201124-1.2        ########################################
+[  108s] gcc-c++-12-2.1                        ########################################
+[  109s] hdf5-devel-1.12.2-4.1                 ########################################
+[  109s] pmix-devel-3.2.3-7.1                  ########################################
+[  109s] rrdtool-devel-1.8.0-2.5               ########################################
+[  109s] http-parser-devel-2.9.4-1.2           ########################################
+[  109s] firewalld-1.3.0-1.1                   ########################################
+[  110s] Updating /etc/sysconfig/firewalld ...
+[  110s] libjson-c-devel-0.16-1.3              ########################################
+[  110s] liblz4-devel-1.9.4-2.1                ########################################
+[  110s] libmariadb-devel-3.3.4-1.1            ########################################
+[  110s] munge-devel-0.5.15-2.2                ########################################
+[  110s] rdma-core-devel-42.0-2.1              ########################################
+[  111s] libcurl-devel-7.88.1-1.1              ########################################
+[  112s] apache2-2.4.56-1.1                    ########################################
+[  113s] Please check /etc/permissions.local for settings of /usr/sbin/suexec .
+[  113s] Updating /etc/sysconfig/apache2 ...
+[  118s] sudo-1.9.13p3-2.1                     ########################################
+[  119s] libssh2-devel-1.10.0-1.2              ########################################
+[  119s] libyaml-devel-0.2.5-2.1               ########################################
+[  119s] lua54-devel-5.4.4-8.1                 ########################################
+[  119s] update-alternatives: using /usr/lib64/liblua5.4.so to provide /usr/lib64/liblua.so (liblua.so) in auto mode
+[  120s] automake-1.16.5-3.1                   ########################################
+[  120s] dejagnu-1.6.3-1.1                     ########################################
+[  120s] libcpuset-devel-1.0-36.3              ########################################
+[  120s] libbitmask-devel-2.0-29.1             ########################################
+[  120s] python310-3.10.10-2.1                 ########################################
+[  120s] sysuser-tools-3.1-5.1                 ########################################
+[  120s] pam-devel-1.5.2-12.1                  ########################################
+[  120s] fdupes-2.2.1-1.1                      ########################################
+[  121s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  121s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  127s] now finalizing build dir...
+[  127s] ... running 01-add_abuild_user_to_trusted_group
+[  128s] ... running 02-set_timezone_to_utc
+[  128s] ... running 03-set-permissions-secure
+[  128s] ... running 11-hack_uname_version_to_kernel_version
+[  134s] Running build time source services...
+[  138s] Warning: spec file parser line 278: can't expand %(...)
+[  138s] Warning: spec file parser line 279: can't expand %(...)
+[  139s] -----------------------------------------------------------------
+[  139s] I have the following modifications for slurm.spec:
+[  139s] 128c128
+[  139s] < Release:        0
+[  139s] ---
+[  139s] > Release:        5.1
+[  147s] build target is riscv64-suse-linux
+[  147s] -----------------------------------------------------------------
+[  147s] ----- building slurm.spec (user abuild)
+[  147s] -----------------------------------------------------------------
+[  147s] -----------------------------------------------------------------
+[  151s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/394c567a5df0c8421de98c15bf54fdee-slurm' /home/abuild/rpmbuild/SOURCES/slurm.spec
+[  152s] warning: Macro expanded in comment on line 25: %{?rc_v:-%rc_v}
+[  152s] 
+[  152s] warning: Macro expanded in comment on line 134: %{pname}-%{dl_ver}.tar.gz
+[  152s] 
+[  157s] Building target platforms: riscv64-suse-linux
+[  157s] Building for target riscv64-suse-linux
+[  157s] setting SOURCE_DATE_EPOCH=1678924800
+[  157s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.R6kwB2
+[  157s] + umask 022
+[  157s] + cd /home/abuild/rpmbuild/BUILD
+[  157s] + cd /home/abuild/rpmbuild/BUILD
+[  157s] + rm -rf slurm-23.02.0
+[  157s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/slurm-23.02.0.tar.bz2
+[  163s] + STATUS=0
+[  163s] + '[' 0 -ne 0 ']'
+[  163s] + cd slurm-23.02.0
+[  163s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  163s] + echo 'Patch #0 (Remove-rpath-from-build.patch):'
+[  163s] Patch #0 (Remove-rpath-from-build.patch):
+[  163s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  163s] patching file contribs/perlapi/libslurm/perl/Makefile.PL.in
+[  163s] patching file contribs/perlapi/libslurmdb/perl/Makefile.PL.in
+[  163s] + echo 'Patch #2 (pam_slurm-Initialize-arrays-and-pass-sizes.patch):'
+[  163s] Patch #2 (pam_slurm-Initialize-arrays-and-pass-sizes.patch):
+[  163s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  163s] patching file contribs/pam/pam_slurm.c
+[  163s] + echo 'Patch #3 (right-pmix-path.patch):'
+[  163s] Patch #3 (right-pmix-path.patch):
+[  163s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  163s] patching file src/plugins/mpi/pmix/mpi_pmix.c
+[  163s] + echo 'Patch #10 (Fix-test-21.41.patch):'
+[  163s] Patch #10 (Fix-test-21.41.patch):
+[  163s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  163s] patching file testsuite/expect/test21.41
+[  163s] + echo 'Patch #11 (Fix-test-38.11.patch):'
+[  163s] Patch #11 (Fix-test-38.11.patch):
+[  163s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  164s] patching file testsuite/expect/test38.11
+[  164s] + echo 'Patch #12 (Fix-test-32.8.patch):'
+[  164s] Patch #12 (Fix-test-32.8.patch):
+[  164s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  164s] patching file testsuite/expect/test32.8
+[  164s] + echo 'Patch #13 (Fix-test-3.13.patch):'
+[  164s] Patch #13 (Fix-test-3.13.patch):
+[  164s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  164s] patching file testsuite/expect/test3.13
+[  164s] + echo 'Patch #14 (Keep-logs-of-skipped-test-when-running-test-cases-sequentially.patch):'
+[  164s] Patch #14 (Keep-logs-of-skipped-test-when-running-test-cases-sequentially.patch):
+[  164s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  164s] patching file testsuite/expect/regression.py
+[  164s] + echo 'Patch #15 (Fix-test7.2-to-find-libpmix-under-lib64-as-well.patch):'
+[  164s] Patch #15 (Fix-test7.2-to-find-libpmix-under-lib64-as-well.patch):
+[  164s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  164s] patching file testsuite/expect/test7.2
+[  164s] + RPM_EC=0
+[  164s] ++ jobs -p
+[  164s] + exit 0
+[  164s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.YdXhwy
+[  164s] + umask 022
+[  164s] + cd /home/abuild/rpmbuild/BUILD
+[  164s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/slurm-23.02.0-5.1.riscv64
+[  164s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/slurm-23.02.0-5.1.riscv64
+[  164s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  164s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/slurm-23.02.0-5.1.riscv64
+[  164s] + cd slurm-23.02.0
+[  164s] + ref=/usr/lib/rpm
+[  164s] + mints=0
+[  164s] + case $(uname -m) in
+[  164s] ++ uname -m
+[  164s] + mints=20160911
+[  164s] + for s in guess sub
+[  164s] ++ find -maxdepth 8 -name config.guess
+[  164s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  164s] + grep -q config-patches@ ./auxdir/config.guess
+[  165s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./auxdir/config.guess
+[  165s] + timestamp=20220109
+[  165s] + test -n 20220109
+[  165s] + test 20220109 -ge 20160911
+[  165s] + for s in guess sub
+[  165s] ++ find -maxdepth 8 -name config.sub
+[  165s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  165s] + grep -q config-patches@ ./auxdir/config.sub
+[  165s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./auxdir/config.sub
+[  165s] + timestamp=20220103
+[  165s] + test -n 20220103
+[  165s] + test 20220103 -ge 20160911
+[  165s] + export SUSE_ZNOW=0
+[  165s] + SUSE_ZNOW=0
+[  165s] + autoreconf
+[  220s] configure.ac:268: warning: The macro `AC_TRY_RUN' is obsolete.
+[  220s] configure.ac:268: You should run autoupdate.
+[  220s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  220s] aclocal.m4:250: AM_PATH_GTK_2_0 is expanded from...
+[  220s] configure.ac:268: the top level
+[  220s] configure.ac:268: warning: The macro `AC_TRY_LINK' is obsolete.
+[  220s] configure.ac:268: You should run autoupdate.
+[  220s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  220s] aclocal.m4:250: AM_PATH_GTK_2_0 is expanded from...
+[  220s] configure.ac:268: the top level
+[  368s] ++ pwd
+[  368s] + '[' -e /home/abuild/rpmbuild/BUILD/slurm-23.02.0/mybin ']'
+[  368s] + CONFIG_SHELL=/usr/bin/bash
+[  368s] + export CONFIG_SHELL
+[  368s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g'
+[  368s] + export CFLAGS
+[  368s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g'
+[  368s] + export CXXFLAGS
+[  368s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g '
+[  368s] + export FFLAGS
+[  368s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g '
+[  368s] + export FCFLAGS
+[  368s] + LDFLAGS='-flto=auto -ffat-lto-objects'
+[  368s] + export LDFLAGS
+[  368s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --enable-shared --disable-static --without-rpath --without-datawarp --with-shared-libslurm --with-pam_dir=/usr/lib64/security --with-pmix=/usr/ --with-yaml --without-netloc --sysconfdir=/etc/slurm
+[  374s] checking build system type... riscv64-suse-linux-gnu
+[  374s] checking host system type... riscv64-suse-linux-gnu
+[  374s] checking target system type... riscv64-suse-linux-gnu
+[  375s] checking for a BSD-compatible install... /usr/bin/install -c
+[  375s] checking whether build environment is sane... yes
+[  376s] checking for a race-free mkdir -p... /usr/bin/mkdir -p
+[  376s] checking for gawk... gawk
+[  376s] checking whether make sets $(MAKE)... yes
+[  376s] checking whether make supports nested variables... yes
+[  376s] checking whether to enable maintainer-specific portions of Makefiles... no
+[  376s] checking whether to include rpath in build... no
+[  377s] checking whether make supports the include directive... yes (GNU style)
+[  377s] checking for riscv64-suse-linux-gnu-gcc... no
+[  377s] checking for gcc... gcc
+[  381s] checking whether the C compiler works... yes
+[  381s] checking for C compiler default output file name... a.out
+[  384s] checking for suffix of executables... 
+[  387s] checking whether we are cross compiling... no
+[  388s] checking for suffix of object files... o
+[  389s] checking whether the compiler supports GNU C... yes
+[  390s] checking whether gcc accepts -g... yes
+[  392s] checking for gcc option to enable C11 features... none needed
+[  393s] checking whether gcc understands -c and -o together... yes
+[  393s] checking dependency style of gcc... none
+[  393s] checking for mysql_config... /usr/bin/mysql_config
+[  397s] MySQL 10.8.7 test program built properly.
+[  397s] checking for riscv64-suse-linux-gnu-gcc... gcc
+[  398s] checking whether the compiler supports GNU C... (cached) yes
+[  398s] checking whether gcc accepts -g... (cached) yes
+[  398s] checking for gcc option to enable C11 features... (cached) none needed
+[  398s] checking whether gcc understands -c and -o together... (cached) yes
+[  398s] checking dependency style of gcc... (cached) none
+[  398s] checking for riscv64-suse-linux-gnu-g++... no
+[  398s] checking for riscv64-suse-linux-gnu-c++... no
+[  398s] checking for riscv64-suse-linux-gnu-gpp... no
+[  398s] checking for riscv64-suse-linux-gnu-aCC... no
+[  398s] checking for riscv64-suse-linux-gnu-CC... no
+[  398s] checking for riscv64-suse-linux-gnu-cxx... no
+[  398s] checking for riscv64-suse-linux-gnu-cc++... no
+[  398s] checking for riscv64-suse-linux-gnu-cl.exe... no
+[  398s] checking for riscv64-suse-linux-gnu-FCC... no
+[  398s] checking for riscv64-suse-linux-gnu-KCC... no
+[  398s] checking for riscv64-suse-linux-gnu-RCC... no
+[  398s] checking for riscv64-suse-linux-gnu-xlC_r... no
+[  398s] checking for riscv64-suse-linux-gnu-xlC... no
+[  398s] checking for riscv64-suse-linux-gnu-clang++... no
+[  398s] checking for g++... g++
+[  400s] checking whether the compiler supports GNU C++... yes
+[  401s] checking whether g++ accepts -g... yes
+[  405s] checking for g++ option to enable C++11 features... none needed
+[  405s] checking dependency style of g++... none
+[  405s] checking whether make sets $(MAKE)... (cached) yes
+[  405s] checking how to print strings... printf
+[  405s] checking for a sed that does not truncate output... /usr/bin/sed
+[  405s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  405s] checking for egrep... /usr/bin/grep -E
+[  405s] checking for fgrep... /usr/bin/grep -F
+[  406s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  406s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  406s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  407s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  407s] checking whether ln -s works... yes
+[  407s] checking the maximum length of command line arguments... 1572864
+[  407s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  407s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  407s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  407s] checking for riscv64-suse-linux-gnu-objdump... no
+[  407s] checking for objdump... objdump
+[  407s] checking how to recognize dependent libraries... pass_all
+[  407s] checking for riscv64-suse-linux-gnu-dlltool... no
+[  407s] checking for dlltool... no
+[  407s] checking how to associate runtime and link libraries... printf %s\n
+[  407s] checking for riscv64-suse-linux-gnu-ar... no
+[  407s] checking for ar... ar
+[  408s] checking for archiver @FILE support... @
+[  409s] checking for riscv64-suse-linux-gnu-strip... no
+[  409s] checking for strip... strip
+[  409s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  409s] checking for ranlib... ranlib
+[  413s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  413s] checking for sysroot... no
+[  413s] checking for a working dd... /usr/bin/dd
+[  413s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[  413s] checking for riscv64-suse-linux-gnu-mt... no
+[  413s] checking for mt... no
+[  413s] checking if : is a manifest tool... no
+[  415s] checking for stdio.h... yes
+[  416s] checking for stdlib.h... yes
+[  417s] checking for string.h... yes
+[  418s] checking for inttypes.h... yes
+[  419s] checking for stdint.h... yes
+[  420s] checking for strings.h... yes
+[  422s] checking for sys/stat.h... yes
+[  423s] checking for sys/types.h... yes
+[  424s] checking for unistd.h... yes
+[  426s] checking for dlfcn.h... yes
+[  426s] checking for objdir... .libs
+[  429s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  429s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  430s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  431s] checking if gcc static flag -static works... no
+[  432s] checking if gcc supports -c -o file.o... yes
+[  432s] checking if gcc supports -c -o file.o... (cached) yes
+[  432s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  434s] checking whether -lc should be explicitly linked in... no
+[  437s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  437s] checking how to hardcode library paths into programs... immediate
+[  437s] checking whether stripping libraries is possible... yes
+[  437s] checking if libtool supports shared libraries... yes
+[  437s] checking whether to build shared libraries... yes
+[  437s] checking whether to build static libraries... no
+[  437s] checking how to run the C++ preprocessor... g++ -E
+[  442s] checking for ld used by g++... /usr/riscv64-suse-linux/bin/ld
+[  442s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  442s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  442s] /usr/bin/grep: warning: stray \ before -
+[  443s] checking for g++ option to produce PIC... -fPIC -DPIC
+[  444s] checking if g++ PIC flag -fPIC -DPIC works... yes
+[  445s] checking if g++ static flag -static works... no
+[  446s] checking if g++ supports -c -o file.o... yes
+[  446s] checking if g++ supports -c -o file.o... (cached) yes
+[  446s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  446s] checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+[  446s] checking how to hardcode library paths into programs... immediate
+[  446s] checking for riscv64-suse-linux-gnu-pkg-config... /usr/bin/riscv64-suse-linux-gnu-pkg-config
+[  446s] checking pkg-config is at least version 0.9.0... yes
+[  446s] checking for -objcopy... no
+[  446s] checking for objcopy... objcopy
+[  446s] checking for sleep... /usr/bin/sleep
+[  446s] checking for su... /usr/bin/su
+[  449s] checking for library containing socket... none required
+[  451s] checking for library containing gethostbyname... none required
+[  453s] checking for library containing hstrerror... none required
+[  457s] checking for library containing kstat_open... no
+[  462s] checking for library containing ns_initparse... -lresolv
+[  468s] checking for library containing log... -lm
+[  471s] checking for library containing lrint... none required
+[  473s] checking for library containing timer_create... none required
+[  476s] checking for library containing dlopen... none required
+[  477s] checking for mcheck.h... yes
+[  478s] checking for values.h... yes
+[  479s] checking for socket.h... no
+[  480s] checking for sys/socket.h... yes
+[  480s] checking for stdbool.h... yes
+[  482s] checking for sys/ipc.h... yes
+[  483s] checking for sys/shm.h... yes
+[  484s] checking for sys/sem.h... yes
+[  485s] checking for errno.h... yes
+[  485s] checking for stdlib.h... (cached) yes
+[  486s] checking for dirent.h... yes
+[  487s] checking for pthread.h... yes
+[  488s] checking for sys/prctl.h... yes
+[  489s] checking for sysint.h... no
+[  489s] checking for inttypes.h... (cached) yes
+[  490s] checking for termcap.h... yes
+[  491s] checking for netdb.h... yes
+[  491s] checking for sys/socket.h... (cached) yes
+[  492s] checking for sys/systemcfg.h... no
+[  493s] checking for sys/dr.h... no
+[  494s] checking for sys/vfs.h... yes
+[  495s] checking for pam/pam_appl.h... no
+[  497s] checking for security/pam_appl.h... yes
+[  498s] checking for sys/sysctl.h... no
+[  499s] checking for pty.h... yes
+[  500s] checking for utmp.h... yes
+[  501s] checking for sys/syslog.h... yes
+[  502s] checking for linux/sched.h... yes
+[  504s] checking for kstat.h... no
+[  505s] checking for paths.h... yes
+[  506s] checking for limits.h... yes
+[  507s] checking for sys/statfs.h... yes
+[  508s] checking for sys/ptrace.h... yes
+[  509s] checking for float.h... yes
+[  510s] checking for sys/statvfs.h... yes
+[  511s] checking for sys/wait.h that is POSIX.1 compatible... yes
+[  512s] checking for sys/mkdev.h... no
+[  513s] checking for sys/sysmacros.h... yes
+[  516s] checking for program_invocation_name... yes
+[  519s] checking for ptrace64... no
+[  521s] checking for numa_available in -lnuma... no
+[  521s] configure: WARNING: unable to locate NUMA memory affinity functions
+[  521s] checking whether to enable PAM support... yes
+[  523s] checking for pam_get_user in -lpam... yes
+[  526s] checking for misc_conv in -lpam_misc... yes
+[  526s] checking Link to libslurm.so instead of libslurm.o... shared
+[  526s] checking whether sbatch --get-user-env option should load .login... no
+[  528s] checking whether byte ordering is bigendian... no
+[  529s] checking for C99 support... yes
+[  529s] checking whether C compiler accepts -fno-omit-frame-pointer... yes
+[  532s] checking for uid_t and gid_t data sizes)... yes
+[  534s] checking for json installation... /usr
+[  535s] checking for jwt.h... no
+[  537s] checking for jwt_add_header in -ljwt... no
+[  537s] configure: WARNING: unable to locate jwt library
+[  539s] checking for http-parser installation... /usr
+[  541s] checking for libyaml installation... /usr
+[  542s] checking how to run the C preprocessor... gcc -E
+[  544s] checking whether gcc needs -traditional... no
+[  546s] checking for __builtin_clzll... yes
+[  550s] checking for __builtin_ctzll... yes
+[  553s] checking for __builtin_popcountll... yes
+[  555s] checking for gcc options needed to detect all undeclared functions... none needed
+[  556s] checking whether strerror_r is declared... yes
+[  557s] checking whether strerror_r returns char *... no
+[  559s] checking for fdatasync... yes
+[  562s] checking for hstrerror... yes
+[  565s] checking for strerror... yes
+[  568s] checking for mtrace... yes
+[  571s] checking for strndup... yes
+[  574s] checking for strlcpy... no
+[  578s] checking for strsignal... yes
+[  581s] checking for inet_aton... yes
+[  586s] checking for inet_ntop... yes
+[  589s] checking for inet_pton... yes
+[  592s] checking for setproctitle... no
+[  596s] checking for sysctlbyname... no
+[  599s] checking for cfmakeraw... yes
+[  603s] checking for setresuid... yes
+[  606s] checking for get_current_dir_name... yes
+[  610s] checking for faccessat... yes
+[  613s] checking for eaccess... yes
+[  616s] checking for statvfs... yes
+[  619s] checking for statfs... yes
+[  623s] checking for memfd_create... yes
+[  626s] checking for getrandom... yes
+[  628s] checking whether hstrerror is declared... no
+[  630s] checking whether strsignal is declared... yes
+[  631s] checking whether sys_siglist is declared... no
+[  632s] checking whether gcc is Clang... no
+[  637s] checking whether pthreads work with "-pthread" and "-lpthread"... yes
+[  640s] checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+[  640s] checking whether more special flags are required for pthreads... no
+[  643s] checking for PTHREAD_PRIO_INHERIT... yes
+[  643s] checking System dimensions... not set
+[  650s] checking for ofed installation... /usr
+[  650s] checking for h5cc... /usr/bin/h5cc
+[  650s] checking for HDF5 type... serial
+[  652s] checking for HDF5 libraries... yes (version 1.12.2)
+[  654s] checking for hdf5.h... yes
+[  658s] checking for H5Fcreate in -lhdf5... yes
+[  661s] checking for main in -lhdf5_hl... yes
+[  661s] checking for matching HDF5 Fortran wrapper... /usr/bin/h5fc
+[  666s] checking if lz4 is wanted... checking for LZ4_compress_destSize in -llz4... yes
+[  667s] checking for lz4.h... yes
+[  667s] LZ4 test program built properly.
+[  670s] checking for hwloc installation... /usr
+[  671s] checking for nvml.h... no
+[  673s] checking for nvmlInit in -lnvidia-ml... no
+[  673s] configure: WARNING: unable to locate libnvidia-ml.so and/or nvml.h
+[  673s] checking whether RSMI/ROCm in installed in this system... 
+[  674s] checking for rocm_smi/rocm_smi.h... no
+[  676s] checking for rsmi_init in -lrocm_smi64... no
+[  678s] checking for rsmi_dev_drm_render_minor_get in -lrocm_smi64... no
+[  678s] checking for rocm_smi/rocm_smi.h... (cached) no
+[  679s] checking for rsmi_init in -lrocm_smi64... no
+[  679s] checking for rsmi_dev_drm_render_minor_get in -lrocm_smi64... (cached) no
+[  679s] configure: WARNING: unable to locate librocm_smi64.so and/or rocm_smi.h
+[  679s] checking whether oneAPI in installed in this system... 
+[  681s] checking for ze_api.h... no
+[  681s] configure: WARNING: unable to locate libze_loader.so and/or ze_api.h
+[  683s] checking for pmix installation... configure: WARNING: unable to locate pmix installation
+[  684s] configure: WARNING: unable to locate pmix installation
+[  684s] 
+[  684s] configure: error: unable to locate pmix installation
+[  686s] error: Bad exit status from /var/tmp/rpm-tmp.YdXhwy (%build)
+[  686s] 
+[  686s] RPM build warnings:
+[  686s]     Macro expanded in comment on line 25: %{?rc_v:-%rc_v}
+[  686s] 
+[  686s]     Macro expanded in comment on line 134: %{pname}-%{dl_ver}.tar.gz
+[  686s] 
+[  686s] 
+[  686s] RPM build errors:
+[  686s]     Bad exit status from /var/tmp/rpm-tmp.YdXhwy (%build)
+[  686s] ### VM INTERACTION START ###
+[  686s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[  686s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[  686s] Powering off.
+[  686s] [  676.898785][T15504] reboot: Power down
+[  686s] ### VM INTERACTION END ###
+[  686s] 
+[  686s] build73 failed "build slurm.spec" at Fri Mar 17 18:44:12 UTC 2023.
+[  686s] 

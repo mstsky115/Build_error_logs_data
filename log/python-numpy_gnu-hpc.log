@@ -1,0 +1,597 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_11/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_11/root
+[    0s] 
+[    1s] 
+[    1s] lamb23 started "build python-numpy.spec" at Mon Mar 20 13:16:59 UTC 2023.
+[    1s] 
+[    1s] Building python-numpy:gnu-hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '26e3d3138027b72773d5c2b60e162402'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_11/.build-srcdir/python-numpy.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_11/.build-srcdir/python-numpy.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/11/build/configs --cachedir /var/cache/build --prepare --buildflavor gnu-hpc --clean --rpmlist /var/cache/obs/worker/root_11/.build.rpmlist /var/cache/obs/worker/root_11/.build-srcdir/python-numpy.spec build ...
+[    2s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [9836100f62e2be5fd334502a21b9610c]
+[    7s] 
+[    7s] copying packages...
+[    8s] reordering...cycle: fontconfig -> libfontconfig1
+[    8s]   breaking dependency libfontconfig1 -> fontconfig
+[    8s] done
+[    8s] Detected virtio-serial support
+[   10s] booting kvm...
+[   10s] ### VM INTERACTION START ###
+[   10s] Using virtio-serial support
+[   10s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_11/.mount/boot/kernel -initrd /var/cache/obs/worker/root_11/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_11/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_11/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_11/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   22s] ### VM INTERACTION END ###
+[   22s] 2nd stage started in virtual machine
+[   22s] machine type: riscv64
+[   23s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   23s] Increasing log level from now on...
+[   23s] [   11.605722][  T416] sysrq: Changing Loglevel
+[   23s] [   11.605956][  T416] sysrq: Loglevel set to 4
+[   23s] Enable sysrq operations
+[   24s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   24s] no label, UUID=c166e6fb-4cb4-43c2-917b-298469189a50
+[   24s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   24s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   24s] swapon /dev/vdb
+[   24s] WARNING: udev not running, creating extra device nodes
+[   26s] logging output to //.build.log...
+[   26s] processing recipe /.build-srcdir/python-numpy.spec ...
+[   26s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor gnu-hpc /.build-srcdir/python-numpy.spec build ...
+[   27s] initializing rpm db...
+[   29s] querying package ids...
+[   90s] [1/261] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   90s] [2/261] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   90s] [3/261] preinstalled attr-2.5.1-1.1
+[   90s] [4/261] preinstalled bash-5.2.15-8.1
+[   90s] [5/261] preinstalled bash-sh-5.2.15-8.1
+[   90s] [6/261] preinstalled binutils-2.40-2.1
+[   90s] [7/261] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   90s] [8/261] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   90s] [9/261] preinstalled build-mkbaselibs-20230314-1.1
+[   90s] [10/261] preinstalled bzip2-1.0.8-5.1
+[   90s] [11/261] preinstalled chkstat-1599_20230217-1.1
+[   90s] [12/261] preinstalled compat-usrmerge-build-84.87-5.1
+[   90s] [13/261] preinstalled compat-usrmerge-tools-84.87-5.1
+[   90s] [14/261] preinstalled coreutils-9.1-5.1
+[   90s] [15/261] preinstalled cpio-2.13-5.1
+[   90s] [16/261] preinstalled cpp-13-1.1
+[   90s] [17/261] preinstalled cpp13-13.0.1+git6669-7.1
+[   90s] [18/261] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   90s] [19/261] preinstalled debugedit-5.0-5.1
+[   90s] [20/261] preinstalled diffutils-3.9-1.1
+[   90s] [21/261] preinstalled dwz-0.15-2.1
+[   90s] [22/261] preinstalled elfutils-0.189-2.1
+[   90s] [23/261] cumulate fdupes-2.2.1-1.1
+[   90s] [24/261] preinstalled file-5.44-1.2
+[   90s] [25/261] preinstalled file-magic-5.44-1.2
+[   90s] [26/261] preinstalled filesystem-84.87-12.1
+[   90s] [27/261] preinstalled fillup-1.42-279.1
+[   90s] [28/261] preinstalled findutils-4.9.0-2.1
+[   90s] [29/261] preinstalled gawk-5.2.1-2.1
+[   90s] [30/261] preinstalled gcc-13-1.1
+[   90s] [31/261] preinstalled gcc-PIE-13-1.1
+[   90s] [32/261] preinstalled gcc13-13.0.1+git6669-7.1
+[   90s] [33/261] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   90s] [34/261] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   90s] [35/261] preinstalled gettext-tools-mini-0.21.1-1.1
+[   90s] [36/261] preinstalled glibc-2.37-1.1
+[   90s] [37/261] preinstalled glibc-devel-2.37-1.1
+[   90s] [38/261] preinstalled glibc-locale-base-2.37-1.1
+[   90s] [39/261] preinstalled grep-3.9-1.1
+[   90s] [40/261] preinstalled gzip-1.12-3.1
+[   90s] [41/261] preinstalled kernel-obs-build-6.2.6-1.2
+[   90s] [42/261] cumulate libX11-data-1.8.4-1.1
+[   90s] [43/261] cumulate libXau6-1.0.11-1.1
+[   90s] [44/261] preinstalled libacl1-2.3.1-2.1
+[   90s] [45/261] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   90s] [46/261] preinstalled libasan8-13.0.1+git6669-7.1
+[   90s] [47/261] preinstalled libasm1-0.189-2.1
+[   90s] [48/261] preinstalled libatomic1-13.0.1+git6669-7.1
+[   90s] [49/261] preinstalled libattr1-2.5.1-1.1
+[   90s] [50/261] preinstalled libaudit1-3.0.9-1.1
+[   90s] [51/261] preinstalled libblkid1-2.38.1-10.1
+[   90s] [52/261] cumulate libbrotlicommon1-1.0.9-3.1
+[   90s] [53/261] preinstalled libbz2-1-1.0.8-5.1
+[   90s] [54/261] preinstalled libcap-ng0-0.8.3-1.1
+[   90s] [55/261] preinstalled libcap2-2.67-1.1
+[   90s] [56/261] preinstalled libcrypt1-4.4.33-2.1
+[   90s] [57/261] preinstalled libctf-nobfd0-2.40-2.1
+[   90s] [58/261] preinstalled libctf0-2.40-2.1
+[   90s] [59/261] preinstalled libdb-4_8-4.8.30-40.1
+[   90s] [60/261] preinstalled libdw1-0.189-2.1
+[   90s] [61/261] preinstalled libeconf0-0.5.1-1.1
+[   90s] [62/261] preinstalled libelf1-0.189-2.1
+[   90s] [63/261] preinstalled libexpat1-2.5.0-2.1
+[   90s] [64/261] preinstalled libfdisk1-2.38.1-10.1
+[   90s] [65/261] preinstalled libffi8-3.4.4-1.1
+[   90s] [66/261] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   90s] [67/261] preinstalled libgcrypt20-1.10.1-2.1
+[   90s] [68/261] preinstalled libgdbm6-1.23-1.1
+[   90s] [69/261] preinstalled libgdbm_compat4-1.23-1.1
+[   90s] [70/261] cumulate libgfortran5-13.0.1+git6669-7.1
+[   90s] [71/261] preinstalled libgmp10-6.2.1-4.1
+[   90s] [72/261] preinstalled libgomp1-13.0.1+git6669-7.1
+[   90s] [73/261] preinstalled libgpg-error0-1.46-1.1
+[   90s] [74/261] preinstalled libisl23-0.25-1.1
+[   90s] [75/261] preinstalled libitm1-13.0.1+git6669-7.1
+[   90s] [76/261] preinstalled liblua5_4-5-5.4.4-8.1
+[   90s] [77/261] preinstalled liblzma5-5.4.1-2.1
+[   90s] [78/261] preinstalled libmagic1-5.44-1.2
+[   90s] [79/261] preinstalled libmount1-2.38.1-10.1
+[   90s] [80/261] preinstalled libmpc3-1.3.1-1.2
+[   90s] [81/261] preinstalled libmpdec3-2.5.1-2.1
+[   90s] [82/261] preinstalled libmpfr6-4.2.0-1.1
+[   90s] [83/261] preinstalled libncurses6-6.4.20230311-8.1
+[   90s] [84/261] preinstalled libopenssl3-3.0.8-2.1
+[   90s] [85/261] preinstalled libpcre2-8-0-10.42-3.2
+[   90s] [86/261] preinstalled libpkgconf3-1.8.0-2.1
+[   90s] [87/261] cumulate libpng16-16-1.6.39-2.1
+[   90s] [88/261] preinstalled libpopt0-1.19-1.1
+[   90s] [89/261] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   90s] [90/261] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   90s] [91/261] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   90s] [92/261] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   90s] [93/261] preinstalled libreadline8-8.2-2.1
+[   90s] [94/261] preinstalled librpmbuild9-4.18.0-3.2
+[   90s] [95/261] preinstalled libseccomp2-2.5.4-2.1
+[   90s] [96/261] preinstalled libselinux1-3.5-1.1
+[   90s] [97/261] preinstalled libsemanage-conf-3.5-1.1
+[   90s] [98/261] preinstalled libsemanage2-3.5-1.1
+[   90s] [99/261] preinstalled libsepol2-3.5-1.1
+[   90s] [100/261] preinstalled libsmartcols1-2.38.1-10.1
+[   90s] [101/261] cumulate libsqlite3-0-3.41.0-2.1
+[   90s] [102/261] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   90s] [103/261] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   90s] [104/261] preinstalled libsubid4-4.13-4.1
+[   90s] [105/261] preinstalled libubsan1-13.0.1+git6669-7.1
+[   90s] [106/261] preinstalled libutempter0-1.2.0-3.2
+[   90s] [107/261] preinstalled libuuid1-2.38.1-10.1
+[   90s] [108/261] preinstalled libxcrypt-devel-4.4.33-2.1
+[   90s] [109/261] preinstalled libz1-1.2.13-3.1
+[   90s] [110/261] preinstalled libzstd1-1.5.4-2.1
+[   90s] [111/261] preinstalled linux-glibc-devel-6.2-1.1
+[   90s] [112/261] preinstalled login_defs-4.13-4.1
+[   90s] [113/261] preinstalled lua54-5.4.4-8.1
+[   90s] [114/261] cumulate lua54-luafilesystem-1.8.0-6.1
+[   90s] [115/261] cumulate lua54-luaposix-35.1-2.1
+[   90s] [116/261] cumulate lua54-luaterm-0.07-8.1
+[   90s] [117/261] preinstalled make-4.4.1-1.1
+[   90s] [118/261] preinstalled ncurses-utils-6.4.20230311-8.1
+[   90s] [119/261] preinstalled pam-1.5.2-13.1
+[   90s] [120/261] preinstalled patch-2.7.6-6.1
+[   90s] [121/261] preinstalled perl-5.36.0-4.1
+[   90s] [122/261] preinstalled perl-base-5.36.0-4.1
+[   90s] [123/261] preinstalled permissions-1599_20230217-1.1
+[   90s] [124/261] preinstalled permissions-config-1599_20230217-1.1
+[   90s] [125/261] preinstalled pkgconf-1.8.0-2.1
+[   90s] [126/261] preinstalled pkgconf-m4-1.8.0-2.1
+[   90s] [127/261] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   90s] [128/261] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   90s] [129/261] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   90s] [130/261] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   90s] [131/261] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   90s] [132/261] cumulate python310-attrs-22.2.0-1.2
+[   90s] [133/261] preinstalled python310-base-3.10.10-2.1
+[   90s] [134/261] cumulate python310-devel-3.10.10-2.1
+[   90s] [135/261] cumulate python310-exceptiongroup-1.1.1-1.1
+[   90s] [136/261] cumulate python310-execnet-1.9.0-2.2
+[   90s] [137/261] cumulate python310-iniconfig-2.0.0-1.1
+[   90s] [138/261] preinstalled python310-packaging-23.0-2.1
+[   90s] [139/261] cumulate python310-pluggy-1.0.0-1.5
+[   90s] [140/261] preinstalled python310-setuptools-65.6.3-1.2
+[   90s] [141/261] cumulate python310-sortedcontainers-2.4.0-1.5
+[   90s] [142/261] cumulate python310-tomli-2.0.1-1.3
+[   90s] [143/261] cumulate python310-typing_extensions-4.5.0-1.1
+[   90s] [144/261] cumulate python310-zipp-3.8.1-1.2
+[   90s] [145/261] cumulate python311-attrs-22.2.0-1.2
+[   90s] [146/261] preinstalled python311-base-3.11.2-1.2
+[   90s] [147/261] cumulate python311-devel-3.11.2-1.2
+[   90s] [148/261] cumulate python311-exceptiongroup-1.1.1-1.1
+[   90s] [149/261] cumulate python311-execnet-1.9.0-2.2
+[   90s] [150/261] cumulate python311-iniconfig-2.0.0-1.1
+[   90s] [151/261] cumulate python311-packaging-23.0-2.1
+[   90s] [152/261] cumulate python311-pluggy-1.0.0-1.5
+[   90s] [153/261] preinstalled python311-setuptools-65.6.3-1.2
+[   90s] [154/261] cumulate python311-sortedcontainers-2.4.0-1.5
+[   90s] [155/261] cumulate python311-tomli-2.0.1-1.3
+[   90s] [156/261] cumulate python311-typing_extensions-4.5.0-1.1
+[   90s] [157/261] cumulate python311-zipp-3.8.1-1.2
+[   90s] [158/261] cumulate python38-attrs-22.2.0-1.2
+[   90s] [159/261] preinstalled python38-base-3.8.16-5.1
+[   90s] [160/261] cumulate python38-devel-3.8.16-5.1
+[   90s] [161/261] cumulate python38-exceptiongroup-1.1.1-1.1
+[   90s] [162/261] cumulate python38-execnet-1.9.0-2.2
+[   90s] [163/261] cumulate python38-iniconfig-2.0.0-1.1
+[   90s] [164/261] cumulate python38-packaging-23.0-2.1
+[   90s] [165/261] cumulate python38-pluggy-1.0.0-1.5
+[   90s] [166/261] preinstalled python38-setuptools-65.6.3-1.2
+[   90s] [167/261] cumulate python38-sortedcontainers-2.4.0-1.5
+[   90s] [168/261] cumulate python38-tomli-2.0.1-1.3
+[   90s] [169/261] cumulate python38-typing_extensions-4.5.0-1.1
+[   90s] [170/261] cumulate python38-zipp-3.8.1-1.2
+[   90s] [171/261] cumulate python39-attrs-22.2.0-1.2
+[   90s] [172/261] preinstalled python39-base-3.9.16-5.1
+[   90s] [173/261] cumulate python39-devel-3.9.16-5.1
+[   90s] [174/261] cumulate python39-exceptiongroup-1.1.1-1.1
+[   90s] [175/261] cumulate python39-execnet-1.9.0-2.2
+[   90s] [176/261] cumulate python39-iniconfig-2.0.0-1.1
+[   90s] [177/261] cumulate python39-packaging-23.0-2.1
+[   90s] [178/261] cumulate python39-pluggy-1.0.0-1.5
+[   90s] [179/261] preinstalled python39-setuptools-65.6.3-1.2
+[   90s] [180/261] cumulate python39-sortedcontainers-2.4.0-1.5
+[   90s] [181/261] cumulate python39-tomli-2.0.1-1.3
+[   90s] [182/261] cumulate python39-typing_extensions-4.5.0-1.1
+[   90s] [183/261] cumulate python39-zipp-3.8.1-1.2
+[   90s] [184/261] preinstalled qemu-linux-user-7.1.0-54.1
+[   90s] [185/261] preinstalled rpm-4.18.0-3.2
+[   90s] [186/261] preinstalled rpm-build-4.18.0-3.2
+[   90s] [187/261] preinstalled rpm-build-perl-4.18.0-3.2
+[   90s] [188/261] preinstalled rpm-config-SUSE-20220926-1.1
+[   90s] [189/261] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.18
+[   90s] [190/261] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   90s] [191/261] preinstalled sed-4.9-2.1
+[   90s] [192/261] preinstalled shadow-4.13-4.1
+[   90s] [193/261] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   90s] [194/261] preinstalled system-group-hardware-20170617-24.1
+[   90s] [195/261] preinstalled system-user-root-20190513-2.1
+[   90s] [196/261] preinstalled systemd-rpm-macros-19-1.1
+[   90s] [197/261] preinstalled sysuser-shadow-3.1-5.1
+[   90s] [198/261] preinstalled tar-1.34-10.1
+[   90s] [199/261] cumulate tcl-8.6.13-4.1
+[   90s] [200/261] preinstalled terminfo-base-6.4.20230311-8.1
+[   90s] [201/261] preinstalled update-alternatives-1.21.8-1.1
+[   90s] [202/261] preinstalled util-linux-2.38.1-10.1
+[   90s] [203/261] preinstalled which-2.21-5.1
+[   90s] [204/261] preinstalled xz-5.4.1-2.1
+[   90s] [205/261] cumulate alts-1.2+3.b848aad-3.1
+[   90s] [206/261] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   90s] [207/261] cumulate gcc13-fortran-13.0.1+git6669-7.1
+[   90s] [208/261] cumulate libbrotlidec1-1.0.9-3.1
+[   90s] [209/261] cumulate libxcb1-1.15-2.1
+[   90s] [210/261] cumulate python310-3.10.10-2.1
+[   90s] [211/261] cumulate python310-Cython-0.29.33-1.2
+[   90s] [212/261] cumulate python310-hypothesis-6.61.2-24.1
+[   90s] [213/261] cumulate python310-importlib-metadata-6.0.0-1.2
+[   90s] [214/261] cumulate python311-3.11.2-1.1
+[   90s] [215/261] cumulate python311-Cython-0.29.33-1.2
+[   90s] [216/261] cumulate python311-hypothesis-6.61.2-24.1
+[   90s] [217/261] cumulate python311-importlib-metadata-6.0.0-1.2
+[   90s] [218/261] cumulate python38-3.8.16-5.1
+[   90s] [219/261] cumulate python38-Cython-0.29.33-1.2
+[   90s] [220/261] cumulate python38-hypothesis-6.61.2-24.1
+[   90s] [221/261] cumulate python38-importlib-metadata-6.0.0-1.2
+[   90s] [222/261] cumulate python39-3.9.16-5.1
+[   90s] [223/261] cumulate python39-Cython-0.29.33-1.2
+[   90s] [224/261] cumulate python39-hypothesis-6.61.2-24.1
+[   90s] [225/261] cumulate python39-importlib-metadata-6.0.0-1.2
+[   90s] [226/261] cumulate lua-lmod-8.7.17-2.1
+[   90s] [227/261] cumulate gcc-c++-13-1.1
+[   90s] [228/261] cumulate gcc-fortran-13-1.1
+[   90s] [229/261] cumulate gnu-compilers-hpc-1.4-10.2
+[   90s] [230/261] cumulate libX11-6-1.8.4-1.1
+[   90s] [231/261] cumulate libfreetype6-2.13.0-1.1
+[   90s] [232/261] cumulate python310-pytest-7.2.0-3.1
+[   90s] [233/261] cumulate python311-pytest-7.2.0-3.1
+[   90s] [234/261] cumulate python38-pytest-7.2.0-3.1
+[   90s] [235/261] cumulate python39-pytest-7.2.0-3.1
+[   90s] [236/261] cumulate libXext6-1.3.5-1.1
+[   90s] [237/261] cumulate libXmuu1-1.1.4-1.1
+[   90s] [238/261] cumulate libXrender1-0.9.11-1.1
+[   90s] [239/261] cumulate python310-pytest-xdist-3.0.2-1.2
+[   90s] [240/261] cumulate python311-pytest-xdist-3.0.2-1.2
+[   90s] [241/261] cumulate python38-pytest-xdist-3.0.2-1.2
+[   90s] [242/261] cumulate python39-pytest-xdist-3.0.2-1.2
+[   90s] [243/261] cumulate libopenblas_0_3_21-gnu-hpc-0.3.21-5.1
+[   90s] [244/261] cumulate gnu-compilers-hpc-devel-1.4-10.2
+[   90s] [245/261] cumulate gnu-compilers-hpc-macros-devel-1.4-10.2
+[   90s] [246/261] cumulate libXss1-1.2.4-1.1
+[   90s] [247/261] cumulate xhost-1.0.9-1.1
+[   90s] [248/261] cumulate libopenblas_0_3_21-gnu-hpc-devel-0.3.21-5.1
+[   90s] [249/261] cumulate libopenblas-gnu-hpc-devel-0.3.21-5.1
+[   90s] [250/261] cumulate libfontconfig1-2.14.2-1.1
+[   90s] [251/261] cumulate fontconfig-2.14.2-1.1
+[   90s] [252/261] cumulate libXft2-2.3.7-1.1
+[   91s] [253/261] cumulate tk-8.6.13-1.1
+[   91s] [254/261] cumulate python310-tk-3.10.10-2.1
+[   91s] [255/261] cumulate python311-tk-3.11.2-1.1
+[   91s] [256/261] cumulate python38-tk-3.8.16-5.1
+[   91s] [257/261] cumulate python39-tk-3.9.16-5.1
+[   91s] [258/261] cumulate python310-testsuite-3.10.10-2.1
+[   91s] [259/261] cumulate python311-testsuite-3.11.2-1.2
+[   91s] [260/261] cumulate python38-testsuite-3.8.16-5.1
+[   91s] [261/261] cumulate python39-testsuite-3.9.16-5.1
+[   91s] now installing cumulated packages
+[   92s] Preparing...                          ########################################
+[   93s] Updating / installing...
+[   94s] tcl-8.6.13-4.1                        ########################################
+[   95s] libsqlite3-0-3.41.0-2.1               ########################################
+[   95s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[  107s] gcc13-fortran-13.0.1+git6669-7.1      ########################################
+[  107s] python310-3.10.10-2.1                 ########################################
+[  107s] python311-3.11.2-1.1                  ########################################
+[  107s] python38-3.8.16-5.1                   ########################################
+[  107s] python39-3.9.16-5.1                   ########################################
+[  107s] python39-exceptiongroup-1.1.1-1.1     ########################################
+[  107s] python39-attrs-22.2.0-1.2             ########################################
+[  107s] python38-exceptiongroup-1.1.1-1.1     ########################################
+[  108s] python38-attrs-22.2.0-1.2             ########################################
+[  108s] python311-exceptiongroup-1.1.1-1.1    ########################################
+[  108s] python311-attrs-22.2.0-1.2            ########################################
+[  108s] python310-exceptiongroup-1.1.1-1.1    ########################################
+[  108s] python310-attrs-22.2.0-1.2            ########################################
+[  108s] gcc-fortran-13-1.1                    ########################################
+[  108s] python39-zipp-3.8.1-1.2               ########################################
+[  108s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[  108s] python39-tomli-2.0.1-1.3              ########################################
+[  108s] python39-sortedcontainers-2.4.0-1.5   ########################################
+[  108s] python39-pluggy-1.0.0-1.5             ########################################
+[  108s] python39-packaging-23.0-2.1           ########################################
+[  108s] python39-iniconfig-2.0.0-1.1          ########################################
+[  108s] python39-execnet-1.9.0-2.2            ########################################
+[  108s] python39-devel-3.9.16-5.1             ########################################
+[  108s] python38-zipp-3.8.1-1.2               ########################################
+[  108s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[  108s] python38-tomli-2.0.1-1.3              ########################################
+[  108s] python38-sortedcontainers-2.4.0-1.5   ########################################
+[  108s] python38-pluggy-1.0.0-1.5             ########################################
+[  109s] python38-packaging-23.0-2.1           ########################################
+[  109s] python38-iniconfig-2.0.0-1.1          ########################################
+[  109s] python38-execnet-1.9.0-2.2            ########################################
+[  109s] python38-devel-3.8.16-5.1             ########################################
+[  109s] python311-zipp-3.8.1-1.2              ########################################
+[  109s] python311-importlib-metadata-6.0.0-1.2########################################
+[  109s] python311-tomli-2.0.1-1.3             ########################################
+[  109s] python311-sortedcontainers-2.4.0-1.5  ########################################
+[  109s] python311-pluggy-1.0.0-1.5            ########################################
+[  109s] python311-packaging-23.0-2.1          ########################################
+[  109s] python311-iniconfig-2.0.0-1.1         ########################################
+[  109s] python311-execnet-1.9.0-2.2           ########################################
+[  109s] python311-devel-3.11.2-1.2            ########################################
+[  109s] python310-zipp-3.8.1-1.2              ########################################
+[  110s] python310-importlib-metadata-6.0.0-1.2########################################
+[  110s] python310-tomli-2.0.1-1.3             ########################################
+[  110s] python310-sortedcontainers-2.4.0-1.5  ########################################
+[  110s] python310-pluggy-1.0.0-1.5            ########################################
+[  110s] python310-iniconfig-2.0.0-1.1         ########################################
+[  110s] python310-execnet-1.9.0-2.2           ########################################
+[  110s] python310-devel-3.10.10-2.1           ########################################
+[  110s] lua54-luaterm-0.07-8.1                ########################################
+[  110s] lua54-luaposix-35.1-2.1               ########################################
+[  110s] lua54-luafilesystem-1.8.0-6.1         ########################################
+[  110s] lua-lmod-8.7.17-2.1                   ########################################
+[  110s] gnu-compilers-hpc-1.4-10.2            ########################################
+[  112s] libopenblas_0_3_21-gnu-hpc-0.3.21-5.1 ########################################
+[  132s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[  139s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[  139s] gcc-c++-13-1.1                        ########################################
+[  139s] gnu-compilers-hpc-devel-1.4-10.2      ########################################
+[  139s] libopenblas_0_3_21-gnu-hpc-devel-0.3.2########################################
+[  139s] libpng16-16-1.6.39-2.1                ########################################
+[  140s] libbrotlicommon1-1.0.9-3.1            ########################################
+[  140s] libbrotlidec1-1.0.9-3.1               ########################################
+[  140s] libfreetype6-2.13.0-1.1               ########################################
+[  141s] libfontconfig1-2.14.2-1.1             ########################################
+[  141s] fontconfig-2.14.2-1.1                 ########################################
+[  141s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  141s] alts-1.2+3.b848aad-3.1                ########################################
+[  142s] python310-pytest-7.2.0-3.1            ########################################
+[  143s] python311-pytest-7.2.0-3.1            ########################################
+[  144s] python38-pytest-7.2.0-3.1             ########################################
+[  145s] python39-pytest-7.2.0-3.1             ########################################
+[  145s] libXau6-1.0.11-1.1                    ########################################
+[  145s] libxcb1-1.15-2.1                      ########################################
+[  146s] libX11-data-1.8.4-1.1                 ########################################
+[  146s] libX11-6-1.8.4-1.1                    ########################################
+[  146s] libXext6-1.3.5-1.1                    ########################################
+[  146s] libXss1-1.2.4-1.1                     ########################################
+[  146s] libXmuu1-1.1.4-1.1                    ########################################
+[  146s] xhost-1.0.9-1.1                       ########################################
+[  146s] libXrender1-0.9.11-1.1                ########################################
+[  147s] libXft2-2.3.7-1.1                     ########################################
+[  148s] tk-8.6.13-1.1                         ########################################
+[  148s] python310-tk-3.10.10-2.1              ########################################
+[  148s] python311-tk-3.11.2-1.1               ########################################
+[  149s] python38-tk-3.8.16-5.1                ########################################
+[  149s] python39-tk-3.9.16-5.1                ########################################
+[  161s] python39-testsuite-3.9.16-5.1         ########################################
+[  175s] python38-testsuite-3.8.16-5.1         ########################################
+[  196s] python311-testsuite-3.11.2-1.2        ########################################
+[  205s] python310-testsuite-3.10.10-2.1       ########################################
+[  206s] python39-hypothesis-6.61.2-24.1       ########################################
+[  206s] python39-pytest-xdist-3.0.2-1.2       ########################################
+[  207s] python38-hypothesis-6.61.2-24.1       ########################################
+[  207s] python38-pytest-xdist-3.0.2-1.2       ########################################
+[  208s] python311-hypothesis-6.61.2-24.1      ########################################
+[  208s] python311-pytest-xdist-3.0.2-1.2      ########################################
+[  209s] python310-hypothesis-6.61.2-24.1      ########################################
+[  209s] python310-pytest-xdist-3.0.2-1.2      ########################################
+[  209s] libopenblas-gnu-hpc-devel-0.3.21-5.1  ########################################
+[  209s] gnu-compilers-hpc-macros-devel-1.4-10.########################################
+[  211s] python310-Cython-0.29.33-1.2          ########################################
+[  214s] python311-Cython-0.29.33-1.2          ########################################
+[  217s] python38-Cython-0.29.33-1.2           ########################################
+[  219s] python39-Cython-0.29.33-1.2           ########################################
+[  219s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[  219s] python39-typing_extensions-4.5.0-1.1  ########################################
+[  219s] python38-typing_extensions-4.5.0-1.1  ########################################
+[  220s] python311-typing_extensions-4.5.0-1.1 ########################################
+[  220s] python310-typing_extensions-4.5.0-1.1 ########################################
+[  220s] fdupes-2.2.1-1.1                      ########################################
+[  228s] now finalizing build dir...
+[  228s] ... running 01-add_abuild_user_to_trusted_group
+[  229s] ... running 02-set_timezone_to_utc
+[  229s] ... running 03-set-permissions-secure
+[  230s] ... running 11-hack_uname_version_to_kernel_version
+[  234s] sh: line 1: /usr/bin/ps: No such file or directory
+[  241s] Warning: spec file parser line 258: can't expand %(...)
+[  241s] Warning: spec file parser line 259: can't expand %(...)
+[  242s] -----------------------------------------------------------------
+[  242s] I have the following modifications for python-numpy.spec:
+[  242s] 19c19
+[  242s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  242s] ---
+[  242s] > %global flavor gnu-hpc%{nil}
+[  242s] 78c78
+[  242s] < Release:        0
+[  242s] ---
+[  242s] > Release:        4.2
+[  250s] build target is riscv64-suse-linux
+[  250s] -----------------------------------------------------------------
+[  250s] ----- building python-numpy.spec (user abuild)
+[  250s] -----------------------------------------------------------------
+[  250s] -----------------------------------------------------------------
+[  256s] sh: line 1: /usr/bin/ps: No such file or directory
+[  256s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/26e3d3138027b72773d5c2b60e162402-python-numpy:gnu-hpc' /home/abuild/rpmbuild/SOURCES/python-numpy.spec
+[  257s] Building target platforms: riscv64-suse-linux
+[  257s] Building for target riscv64-suse-linux
+[  257s]  Building for gnu 
+[  257s]  hpc_gnu_init 
+[  258s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  258s] pname python38-numpy
+[  258s] %{hpc_master_package -L -a -P python38}
+[  258s] 
+[  262s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  262s] pname python38-numpy
+[  262s] %{hpc_master_package -a devel -P python38}
+[  262s] 
+[  290s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  290s] pname python39-numpy
+[  290s] %{hpc_master_package -L -a -P python39}
+[  290s] 
+[  294s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  294s] pname python39-numpy
+[  294s] %{hpc_master_package -a devel -P python39}
+[  294s] 
+[  329s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  329s] pname python311-numpy
+[  329s] %{hpc_master_package -L -a -P python311}
+[  329s] 
+[  333s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  333s] pname python311-numpy
+[  333s] %{hpc_master_package -a devel -P python311}
+[  333s] 
+[  364s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  364s] pname python310-numpy
+[  364s] %{hpc_master_package -L -a -P python310}
+[  364s] 
+[  367s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  367s] pname python310-numpy
+[  367s] %{hpc_master_package -a devel -P python310}
+[  367s] 
+[  371s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 152: Macro %_name defined but not used within scope
+[  372s] warning: /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 177: Macro %_name defined but not used within scope
+[  388s] setting SOURCE_DATE_EPOCH=1678406400
+[  389s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Wnu51l
+[  389s] + umask 022
+[  389s] + cd /home/abuild/rpmbuild/BUILD
+[  389s] + cd /home/abuild/rpmbuild/BUILD
+[  389s] + rm -rf numpy-1.24.1
+[  389s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/numpy-1.24.1.tar.gz
+[  391s] + STATUS=0
+[  391s] + '[' 0 -ne 0 ']'
+[  391s] + cd numpy-1.24.1
+[  391s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  391s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/numpy-buildfix.patch
+[  391s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  392s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  392s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/numpy-1.9.0-remove-__declspec.patch
+[  392s] + sed -i '1s/^#!.*$//' numpy/compat/setup.py numpy/random/_examples/cython/setup.py numpy/distutils/conv_template.py numpy/distutils/cpuinfo.py numpy/distutils/exec_command.py numpy/distutils/from_template.py numpy/distutils/setup.py numpy/distutils/system_info.py numpy/f2py/__init__.py numpy/f2py/auxfuncs.py numpy/f2py/capi_maps.py numpy/f2py/cb_rules.py numpy/f2py/cfuncs.py numpy/f2py/common_rules.py numpy/f2py/crackfortran.py numpy/f2py/diagnose.py numpy/f2py/f2py2e.py numpy/f2py/f90mod_rules.py numpy/f2py/func2subr.py numpy/f2py/rules.py numpy/f2py/setup.py numpy/f2py/use_rules.py numpy/ma/setup.py numpy/ma/bench.py numpy/matrixlib/setup.py numpy/setup.py numpy/testing/print_coercion_tables.py numpy/testing/setup.py
+[  392s] + sed -i '1s/^#!.*$//' numpy/random/_examples/cython/extending.pyx numpy/random/_examples/cython/extending_distributions.pyx
+[  392s] + rm -f PKG-INFO
+[  392s] + RPM_EC=0
+[  392s] ++ jobs -p
+[  392s] + exit 0
+[  392s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.rDJQiX
+[  393s] + umask 022
+[  393s] + cd /home/abuild/rpmbuild/BUILD
+[  393s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-numpy_1_24_1-gnu-hpc-1.24.1-4.2.riscv64
+[  393s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-numpy_1_24_1-gnu-hpc-1.24.1-4.2.riscv64
+[  393s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  393s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-numpy_1_24_1-gnu-hpc-1.24.1-4.2.riscv64
+[  393s] + cd numpy-1.24.1
+[  393s] + ref=/usr/lib/rpm
+[  393s] + mints=0
+[  393s] + case $(uname -m) in
+[  393s] ++ uname -m
+[  393s] + mints=20160911
+[  393s] + for s in guess sub
+[  393s] ++ find -maxdepth 8 -name config.guess
+[  393s] + for s in guess sub
+[  393s] ++ find -maxdepth 8 -name config.sub
+[  393s] + module purge
+[  393s] + '[' -z '' ']'
+[  393s] + case "$-" in
+[  393s] + __lmod_sh_dbg=x
+[  393s] + '[' -n x ']'
+[  393s] + set +x
+[  393s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  394s] sh: line 1: /usr/bin/ps: No such file or directory
+[  394s] Shell debugging restarted
+[  394s] + unset __lmod_sh_dbg
+[  394s] + return 0
+[  394s] + export CC=gcc
+[  394s] + CC=gcc
+[  394s] + export CXX=g++
+[  394s] + CXX=g++
+[  394s] + export FC=gfortran
+[  394s] + FC=gfortran
+[  394s] + export F77=gfortran
+[  394s] + F77=gfortran
+[  394s] + module load gnu/13
+[  394s] + '[' -z '' ']'
+[  394s] + case "$-" in
+[  394s] + __lmod_sh_dbg=x
+[  394s] + '[' -n x ']'
+[  394s] + set +x
+[  394s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  395s] sh: line 1: /usr/bin/ps: No such file or directory
+[  396s] Shell debugging restarted
+[  396s] + unset __lmod_sh_dbg
+[  396s] + return 0
+[  396s] + module load openblas
+[  396s] + '[' -z '' ']'
+[  396s] + case "$-" in
+[  396s] + __lmod_sh_dbg=x
+[  396s] + '[' -n x ']'
+[  396s] + set +x
+[  396s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  397s] sh: line 1: /usr/bin/ps: No such file or directory
+[  401s] Lmod has detected the following error: The following module(s) are unknown:
+[  401s] "openblas"
+[  401s] 
+[  401s] Please check the spelling or version number. Also try "module spider ..."
+[  401s] It is also possible your cache file is out-of-date; it may help to try:
+[  401s]   $ module --ignore_cache load "openblas"
+[  401s] 
+[  401s] Also make sure that all modulefiles written in TCL start with the string
+[  401s] #%Module
+[  401s] 
+[  401s] 
+[  401s] 
+[  401s] Shell debugging restarted
+[  401s] + unset __lmod_sh_dbg
+[  401s] + return 1
+[  401s] error: Bad exit status from /var/tmp/rpm-tmp.rDJQiX (%build)
+[  401s] 
+[  401s] RPM build warnings:
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 138: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 152: Macro %_name defined but not used within scope
+[  401s]     /home/abuild/rpmbuild/SOURCES/python-numpy.spec: line 177: Macro %_name defined but not used within scope
+[  401s] 
+[  401s] RPM build errors:
+[  401s]     Bad exit status from /var/tmp/rpm-tmp.rDJQiX (%build)
+[  402s] ### VM INTERACTION START ###
+[  402s] [  390.819255][    T1] sysrq: Power Off
+[  402s] [  390.823434][   T18] reboot: Power down
+[  402s] ### VM INTERACTION END ###
+[  402s] 
+[  402s] lamb23 failed "build python-numpy.spec" at Mon Mar 20 13:23:40 UTC 2023.
+[  402s] 

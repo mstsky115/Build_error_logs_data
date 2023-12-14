@@ -1,0 +1,1191 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] lamb13 started "build python-txZMQ.spec" at Sun Mar 12 03:11:16 UTC 2023.
+[    0s] 
+[    0s] Building python-txZMQ for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f9d35eebe1618abd85498afa050da728'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/python-txZMQ.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/python-txZMQ.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/python-txZMQ.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [0c452640c0a37de5a26562a93acdb387]
+[    5s] 
+[    5s] copying packages...
+[    6s] reordering...cycle: python310-Twisted-tls -> python310-Twisted
+[    6s]   breaking dependency python310-Twisted-tls -> python310-Twisted
+[    6s] cycle: python311-Twisted-tls -> python311-Twisted
+[    6s]   breaking dependency python311-Twisted-tls -> python311-Twisted
+[    6s] cycle: python38-Twisted-tls -> python38-Twisted
+[    6s]   breaking dependency python38-Twisted-tls -> python38-Twisted
+[    6s] cycle: python39-Twisted-tls -> python39-Twisted
+[    6s]   breaking dependency python39-Twisted-tls -> python39-Twisted
+[    6s] done
+[    6s] Detected virtio-serial support
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using virtio-serial support
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   15s] machine type: riscv64
+[   16s] Linux version: 6.2.2-1-default #1 SMP PREEMPT_DYNAMIC Thu Mar 9 06:06:13 UTC 2023 (44ca817)
+[   16s] Increasing log level from now on...
+[   16s] [    7.487528][  T413] sysrq: Changing Loglevel
+[   16s] [    7.487704][  T413] sysrq: Loglevel set to 4
+[   16s] Enable sysrq operations
+[   16s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   16s] no label, UUID=e4ff876e-70ec-4979-93cd-98b255db1267
+[   16s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   16s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   16s] swapon /dev/vdb
+[   17s] WARNING: udev not running, creating extra device nodes
+[   17s] logging output to //.build.log...
+[   18s] processing recipe /.build-srcdir/python-txZMQ.spec ...
+[   18s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-txZMQ.spec build ...
+[   18s] initializing rpm db...
+[   19s] querying package ids...
+[   60s] [1/264] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   60s] [2/264] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   60s] [3/264] preinstalled attr-2.5.1-1.1
+[   60s] [4/264] preinstalled bash-5.2.15-8.1
+[   60s] [5/264] preinstalled bash-sh-5.2.15-8.1
+[   60s] [6/264] preinstalled binutils-2.40-2.1
+[   60s] [7/264] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   60s] [8/264] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   60s] [9/264] preinstalled build-mkbaselibs-20230228-1.1
+[   60s] [10/264] preinstalled bzip2-1.0.8-5.1
+[   60s] [11/264] preinstalled chkstat-1599_20230217-1.1
+[   60s] [12/264] preinstalled compat-usrmerge-build-84.87-5.1
+[   60s] [13/264] preinstalled compat-usrmerge-tools-84.87-5.1
+[   60s] [14/264] preinstalled coreutils-9.1-5.1
+[   60s] [15/264] preinstalled cpio-2.13-5.1
+[   60s] [16/264] preinstalled cpp-12-2.1
+[   60s] [17/264] preinstalled cpp12-12.2.1+git749-4.1
+[   60s] [18/264] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   60s] [19/264] preinstalled debugedit-5.0-5.1
+[   60s] [20/264] preinstalled diffutils-3.9-1.1
+[   60s] [21/264] preinstalled dwz-0.15-2.1
+[   60s] [22/264] preinstalled elfutils-0.189-2.1
+[   60s] [23/264] cumulate fdupes-2.2.1-1.1
+[   60s] [24/264] preinstalled file-5.44-1.2
+[   60s] [25/264] preinstalled file-magic-5.44-1.2
+[   60s] [26/264] preinstalled filesystem-84.87-12.1
+[   60s] [27/264] preinstalled fillup-1.42-279.1
+[   60s] [28/264] preinstalled findutils-4.9.0-2.1
+[   60s] [29/264] preinstalled gawk-5.2.1-2.1
+[   60s] [30/264] preinstalled gcc-12-2.1
+[   60s] [31/264] preinstalled gcc-PIE-12-2.1
+[   60s] [32/264] preinstalled gcc12-12.2.1+git749-4.1
+[   60s] [33/264] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   60s] [34/264] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   60s] [35/264] preinstalled gettext-tools-mini-0.21.1-1.1
+[   60s] [36/264] preinstalled glibc-2.37-1.1
+[   60s] [37/264] preinstalled glibc-devel-2.37-1.1
+[   60s] [38/264] preinstalled glibc-locale-base-2.37-1.1
+[   60s] [39/264] preinstalled grep-3.9-1.1
+[   60s] [40/264] preinstalled gzip-1.12-3.1
+[   60s] [41/264] preinstalled kernel-obs-build-6.2.2-1.1
+[   60s] [42/264] preinstalled libacl1-2.3.1-2.1
+[   60s] [43/264] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   60s] [44/264] preinstalled libasan8-13.0.1+git5428-6.1
+[   60s] [45/264] preinstalled libasm1-0.189-2.1
+[   60s] [46/264] preinstalled libatomic1-13.0.1+git5428-6.1
+[   60s] [47/264] preinstalled libattr1-2.5.1-1.1
+[   60s] [48/264] preinstalled libaudit1-3.0.9-1.1
+[   60s] [49/264] preinstalled libblkid1-2.38.1-9.1
+[   60s] [50/264] preinstalled libbz2-1-1.0.8-5.1
+[   60s] [51/264] preinstalled libcap-ng0-0.8.3-1.1
+[   60s] [52/264] preinstalled libcap2-2.67-1.1
+[   60s] [53/264] preinstalled libcrypt1-4.4.33-1.1
+[   60s] [54/264] preinstalled libctf-nobfd0-2.40-2.1
+[   60s] [55/264] preinstalled libctf0-2.40-2.1
+[   60s] [56/264] preinstalled libdb-4_8-4.8.30-39.1
+[   60s] [57/264] preinstalled libdw1-0.189-2.1
+[   60s] [58/264] preinstalled libeconf0-0.5.1-1.1
+[   60s] [59/264] preinstalled libelf1-0.189-2.1
+[   60s] [60/264] preinstalled libexpat1-2.5.0-2.1
+[   60s] [61/264] preinstalled libfdisk1-2.38.1-9.1
+[   60s] [62/264] preinstalled libffi8-3.4.4-1.1
+[   60s] [63/264] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   60s] [64/264] preinstalled libgcrypt20-1.10.1-1.1
+[   60s] [65/264] preinstalled libgdbm6-1.23-1.1
+[   60s] [66/264] preinstalled libgdbm_compat4-1.23-1.1
+[   60s] [67/264] preinstalled libgmp10-6.2.1-4.1
+[   60s] [68/264] preinstalled libgomp1-13.0.1+git5428-6.1
+[   60s] [69/264] preinstalled libgpg-error0-1.46-1.1
+[   60s] [70/264] preinstalled libisl23-0.25-1.1
+[   60s] [71/264] preinstalled liblua5_4-5-5.4.4-8.1
+[   60s] [72/264] preinstalled liblzma5-5.4.1-1.1
+[   60s] [73/264] preinstalled libmagic1-5.44-1.2
+[   60s] [74/264] preinstalled libmount1-2.38.1-9.1
+[   60s] [75/264] preinstalled libmpc3-1.3.1-1.2
+[   60s] [76/264] preinstalled libmpdec3-2.5.1-2.1
+[   60s] [77/264] preinstalled libmpfr6-4.2.0-1.1
+[   60s] [78/264] preinstalled libncurses6-6.4.20230225-7.1
+[   60s] [79/264] preinstalled libopenssl3-3.0.8-1.1
+[   60s] [80/264] preinstalled libpcre2-8-0-10.42-3.2
+[   60s] [81/264] preinstalled libpkgconf3-1.8.0-2.1
+[   60s] [82/264] preinstalled libpopt0-1.19-1.1
+[   60s] [83/264] preinstalled libpython3_10-1_0-3.10.10-1.2
+[   60s] [84/264] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   60s] [85/264] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   60s] [86/264] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   60s] [87/264] preinstalled libreadline8-8.2-2.1
+[   60s] [88/264] preinstalled librpmbuild9-4.18.0-3.2
+[   60s] [89/264] preinstalled libseccomp2-2.5.4-2.1
+[   60s] [90/264] preinstalled libselinux1-3.5-1.1
+[   60s] [91/264] preinstalled libsemanage-conf-3.5-1.1
+[   60s] [92/264] preinstalled libsemanage2-3.5-1.1
+[   60s] [93/264] preinstalled libsepol2-3.5-1.1
+[   60s] [94/264] preinstalled libsmartcols1-2.38.1-9.1
+[   60s] [95/264] cumulate libsodium23-1.0.18-2.2
+[   60s] [96/264] cumulate libsqlite3-0-3.41.0-1.1
+[   60s] [97/264] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   60s] [98/264] preinstalled libsubid4-4.13-4.1
+[   60s] [99/264] preinstalled libubsan1-13.0.1+git5428-6.1
+[   60s] [100/264] cumulate libunwind8-1.6.2-4.1
+[   60s] [101/264] preinstalled libutempter0-1.2.0-3.2
+[   60s] [102/264] preinstalled libuuid1-2.38.1-9.1
+[   60s] [103/264] preinstalled libxcrypt-devel-4.4.33-1.1
+[   60s] [104/264] preinstalled libz1-1.2.13-3.1
+[   60s] [105/264] preinstalled libzstd1-1.5.4-1.1
+[   60s] [106/264] preinstalled linux-glibc-devel-6.2-1.1
+[   60s] [107/264] preinstalled login_defs-4.13-4.1
+[   60s] [108/264] preinstalled lua54-5.4.4-8.1
+[   60s] [109/264] preinstalled make-4.4.1-1.1
+[   60s] [110/264] preinstalled ncurses-utils-6.4.20230225-7.1
+[   60s] [111/264] preinstalled pam-1.5.2-12.1
+[   60s] [112/264] preinstalled patch-2.7.6-6.1
+[   60s] [113/264] preinstalled perl-5.36.0-4.1
+[   60s] [114/264] preinstalled perl-base-5.36.0-4.1
+[   60s] [115/264] preinstalled permissions-1599_20230217-1.1
+[   60s] [116/264] preinstalled permissions-config-1599_20230217-1.1
+[   60s] [117/264] preinstalled pkgconf-1.8.0-2.1
+[   60s] [118/264] preinstalled pkgconf-m4-1.8.0-2.1
+[   60s] [119/264] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   60s] [120/264] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   60s] [121/264] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   60s] [122/264] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   60s] [123/264] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   60s] [124/264] cumulate python310-attrs-22.2.0-1.2
+[   60s] [125/264] preinstalled python310-base-3.10.10-1.2
+[   60s] [126/264] cumulate python310-constantly-15.1.0-2.11
+[   60s] [127/264] cumulate python310-exceptiongroup-1.1.0-1.2
+[   60s] [128/264] cumulate python310-idna-3.4-1.2
+[   60s] [129/264] cumulate python310-incremental-22.10.0-1.2
+[   60s] [130/264] cumulate python310-iniconfig-2.0.0-1.1
+[   60s] [131/264] preinstalled python310-packaging-23.0-1.1
+[   60s] [132/264] cumulate python310-pluggy-1.0.0-1.5
+[   60s] [133/264] cumulate python310-pyasn1-0.4.8-2.5
+[   60s] [134/264] cumulate python310-pycparser-2.21-1.5
+[   60s] [135/264] preinstalled python310-setuptools-65.6.3-1.2
+[   60s] [136/264] cumulate python310-six-1.16.0-2.5
+[   60s] [137/264] cumulate python310-tomli-2.0.1-1.3
+[   60s] [138/264] cumulate python310-typing_extensions-4.5.0-1.1
+[   60s] [139/264] cumulate python310-zipp-3.8.1-1.2
+[   60s] [140/264] cumulate python310-zope.interface-5.5.2-1.2
+[   60s] [141/264] cumulate python311-attrs-22.2.0-1.2
+[   60s] [142/264] preinstalled python311-base-3.11.2-1.2
+[   60s] [143/264] cumulate python311-constantly-15.1.0-2.11
+[   60s] [144/264] cumulate python311-exceptiongroup-1.1.0-1.2
+[   60s] [145/264] cumulate python311-idna-3.4-1.2
+[   60s] [146/264] cumulate python311-incremental-22.10.0-1.2
+[   60s] [147/264] cumulate python311-iniconfig-2.0.0-1.1
+[   60s] [148/264] cumulate python311-packaging-23.0-1.2
+[   60s] [149/264] cumulate python311-pluggy-1.0.0-1.5
+[   60s] [150/264] cumulate python311-pyasn1-0.4.8-2.5
+[   60s] [151/264] cumulate python311-pycparser-2.21-1.5
+[   60s] [152/264] preinstalled python311-setuptools-65.6.3-1.2
+[   60s] [153/264] cumulate python311-six-1.16.0-2.5
+[   60s] [154/264] cumulate python311-tomli-2.0.1-1.3
+[   60s] [155/264] cumulate python311-typing_extensions-4.5.0-1.1
+[   60s] [156/264] cumulate python311-zipp-3.8.1-1.2
+[   60s] [157/264] cumulate python311-zope.interface-5.5.2-1.2
+[   60s] [158/264] cumulate python38-attrs-22.2.0-1.2
+[   60s] [159/264] preinstalled python38-base-3.8.16-5.1
+[   60s] [160/264] cumulate python38-constantly-15.1.0-2.11
+[   60s] [161/264] cumulate python38-exceptiongroup-1.1.0-1.2
+[   60s] [162/264] cumulate python38-idna-3.4-1.2
+[   60s] [163/264] cumulate python38-incremental-22.10.0-1.2
+[   60s] [164/264] cumulate python38-iniconfig-2.0.0-1.1
+[   60s] [165/264] cumulate python38-packaging-23.0-1.2
+[   60s] [166/264] cumulate python38-pluggy-1.0.0-1.5
+[   60s] [167/264] cumulate python38-pyasn1-0.4.8-2.5
+[   60s] [168/264] cumulate python38-pycparser-2.21-1.5
+[   60s] [169/264] preinstalled python38-setuptools-65.6.3-1.2
+[   60s] [170/264] cumulate python38-six-1.16.0-2.5
+[   60s] [171/264] cumulate python38-tomli-2.0.1-1.3
+[   60s] [172/264] cumulate python38-typing_extensions-4.5.0-1.1
+[   60s] [173/264] cumulate python38-zipp-3.8.1-1.2
+[   60s] [174/264] cumulate python38-zope.interface-5.5.2-1.2
+[   60s] [175/264] cumulate python39-attrs-22.2.0-1.2
+[   60s] [176/264] preinstalled python39-base-3.9.16-5.1
+[   60s] [177/264] cumulate python39-constantly-15.1.0-2.11
+[   60s] [178/264] cumulate python39-exceptiongroup-1.1.0-1.2
+[   60s] [179/264] cumulate python39-idna-3.4-1.2
+[   60s] [180/264] cumulate python39-incremental-22.10.0-1.2
+[   60s] [181/264] cumulate python39-iniconfig-2.0.0-1.1
+[   60s] [182/264] cumulate python39-packaging-23.0-1.2
+[   60s] [183/264] cumulate python39-pluggy-1.0.0-1.5
+[   60s] [184/264] cumulate python39-pyasn1-0.4.8-2.5
+[   60s] [185/264] cumulate python39-pycparser-2.21-1.5
+[   60s] [186/264] preinstalled python39-setuptools-65.6.3-1.2
+[   60s] [187/264] cumulate python39-six-1.16.0-2.5
+[   60s] [188/264] cumulate python39-tomli-2.0.1-1.3
+[   60s] [189/264] cumulate python39-typing_extensions-4.5.0-1.1
+[   60s] [190/264] cumulate python39-zipp-3.8.1-1.2
+[   60s] [191/264] cumulate python39-zope.interface-5.5.2-1.2
+[   60s] [192/264] preinstalled qemu-linux-user-7.1.0-53.1
+[   60s] [193/264] preinstalled rpm-4.18.0-3.2
+[   60s] [194/264] preinstalled rpm-build-4.18.0-3.2
+[   60s] [195/264] preinstalled rpm-build-perl-4.18.0-3.2
+[   60s] [196/264] preinstalled rpm-config-SUSE-20220926-1.1
+[   60s] [197/264] preinstalled rpmlint-mini-2.4.0+git20230307.1e9f1e0-9.14
+[   60s] [198/264] preinstalled rpmlint-strict-2.4.0+git20230307.1e9f1e0-1.1
+[   60s] [199/264] preinstalled sed-4.9-2.1
+[   60s] [200/264] preinstalled shadow-4.13-4.1
+[   60s] [201/264] preinstalled system-group-hardware-20170617-24.1
+[   60s] [202/264] preinstalled system-user-root-20190513-2.1
+[   60s] [203/264] preinstalled systemd-rpm-macros-19-1.1
+[   60s] [204/264] preinstalled sysuser-shadow-3.1-5.1
+[   60s] [205/264] preinstalled tar-1.34-10.1
+[   60s] [206/264] preinstalled terminfo-base-6.4.20230225-7.1
+[   60s] [207/264] preinstalled update-alternatives-1.21.8-1.1
+[   60s] [208/264] preinstalled util-linux-2.38.1-9.1
+[   60s] [209/264] preinstalled which-2.21-5.1
+[   60s] [210/264] preinstalled xz-5.4.1-1.1
+[   60s] [211/264] cumulate alts-1.2+3.b848aad-3.1
+[   60s] [212/264] cumulate python310-3.10.10-1.2
+[   60s] [213/264] cumulate python310-Automat-22.10.0-1.2
+[   60s] [214/264] cumulate python310-cffi-1.15.1-3.2
+[   60s] [215/264] cumulate python310-hyperlink-21.0.0-1.6
+[   60s] [216/264] cumulate python310-importlib-metadata-6.0.0-1.2
+[   60s] [217/264] cumulate python310-pyasn1-modules-0.2.8-1.10
+[   60s] [218/264] cumulate python311-3.11.2-1.1
+[   60s] [219/264] cumulate python311-Automat-22.10.0-1.2
+[   60s] [220/264] cumulate python311-cffi-1.15.1-3.2
+[   60s] [221/264] cumulate python311-hyperlink-21.0.0-1.6
+[   60s] [222/264] cumulate python311-importlib-metadata-6.0.0-1.2
+[   60s] [223/264] cumulate python311-pyasn1-modules-0.2.8-1.10
+[   60s] [224/264] cumulate python38-3.8.16-5.1
+[   60s] [225/264] cumulate python38-Automat-22.10.0-1.2
+[   60s] [226/264] cumulate python38-cffi-1.15.1-3.2
+[   60s] [227/264] cumulate python38-hyperlink-21.0.0-1.6
+[   60s] [228/264] cumulate python38-importlib-metadata-6.0.0-1.2
+[   60s] [229/264] cumulate python38-pyasn1-modules-0.2.8-1.10
+[   60s] [230/264] cumulate python39-3.9.16-5.1
+[   60s] [231/264] cumulate python39-Automat-22.10.0-1.2
+[   60s] [232/264] cumulate python39-cffi-1.15.1-3.2
+[   60s] [233/264] cumulate python39-hyperlink-21.0.0-1.6
+[   60s] [234/264] cumulate python39-importlib-metadata-6.0.0-1.2
+[   60s] [235/264] cumulate python39-pyasn1-modules-0.2.8-1.10
+[   60s] [236/264] cumulate libzmq5-4.3.4-4.1
+[   60s] [237/264] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   60s] [238/264] cumulate python310-pyzmq-24.0.1-3.2
+[   60s] [239/264] cumulate python311-pyOpenSSL-23.0.0-1.2
+[   60s] [240/264] cumulate python311-pyzmq-24.0.1-3.2
+[   60s] [241/264] cumulate python38-pyOpenSSL-23.0.0-1.2
+[   60s] [242/264] cumulate python38-pyzmq-24.0.1-3.2
+[   60s] [243/264] cumulate python39-pyOpenSSL-23.0.0-1.2
+[   60s] [244/264] cumulate python39-pyzmq-24.0.1-3.2
+[   60s] [245/264] cumulate python310-cryptography-39.0.1-1.2
+[   60s] [246/264] cumulate python311-cryptography-39.0.1-1.2
+[   60s] [247/264] cumulate python38-cryptography-39.0.1-1.2
+[   60s] [248/264] cumulate python39-cryptography-39.0.1-1.2
+[   60s] [249/264] cumulate python310-pytest-7.2.0-2.2
+[   60s] [250/264] cumulate python311-pytest-7.2.0-2.2
+[   60s] [251/264] cumulate python38-pytest-7.2.0-2.2
+[   60s] [252/264] cumulate python39-pytest-7.2.0-2.2
+[   60s] [253/264] cumulate python310-service_identity-21.1.0-2.1
+[   60s] [254/264] cumulate python311-service_identity-21.1.0-2.1
+[   60s] [255/264] cumulate python38-service_identity-21.1.0-2.1
+[   60s] [256/264] cumulate python39-service_identity-21.1.0-2.1
+[   60s] [257/264] cumulate python310-Twisted-tls-22.10.0-4.2
+[   60s] [258/264] cumulate python311-Twisted-tls-22.10.0-4.2
+[   60s] [259/264] cumulate python38-Twisted-tls-22.10.0-4.2
+[   60s] [260/264] cumulate python39-Twisted-tls-22.10.0-4.2
+[   60s] [261/264] cumulate python310-Twisted-22.10.0-4.2
+[   60s] [262/264] cumulate python311-Twisted-22.10.0-4.2
+[   60s] [263/264] cumulate python38-Twisted-22.10.0-4.2
+[   60s] [264/264] cumulate python39-Twisted-22.10.0-4.2
+[   60s] now installing cumulated packages
+[   61s] Preparing...                          ########################################
+[   62s] Updating / installing...
+[   62s] python39-attrs-22.2.0-1.2             ########################################
+[   62s] python38-attrs-22.2.0-1.2             ########################################
+[   62s] python311-attrs-22.2.0-1.2            ########################################
+[   63s] python310-attrs-22.2.0-1.2            ########################################
+[   63s] libsqlite3-0-3.41.0-1.1               ########################################
+[   63s] python39-idna-3.4-1.2                 ########################################
+[   63s] python38-idna-3.4-1.2                 ########################################
+[   63s] python311-idna-3.4-1.2                ########################################
+[   63s] python310-idna-3.4-1.2                ########################################
+[   63s] python39-pyasn1-0.4.8-2.5             ########################################
+[   64s] python38-pyasn1-0.4.8-2.5             ########################################
+[   64s] python311-pyasn1-0.4.8-2.5            ########################################
+[   64s] python310-pyasn1-0.4.8-2.5            ########################################
+[   64s] python310-pyasn1-modules-0.2.8-1.10   ########################################
+[   65s] python311-pyasn1-modules-0.2.8-1.10   ########################################
+[   65s] python38-pyasn1-modules-0.2.8-1.10    ########################################
+[   65s] python39-pyasn1-modules-0.2.8-1.10    ########################################
+[   65s] python310-hyperlink-21.0.0-1.6        ########################################
+[   65s] python311-hyperlink-21.0.0-1.6        ########################################
+[   66s] python38-hyperlink-21.0.0-1.6         ########################################
+[   66s] python39-hyperlink-21.0.0-1.6         ########################################
+[   66s] python310-3.10.10-1.2                 ########################################
+[   66s] python311-3.11.2-1.1                  ########################################
+[   66s] python38-3.8.16-5.1                   ########################################
+[   66s] python39-3.9.16-5.1                   ########################################
+[   66s] python39-zope.interface-5.5.2-1.2     ########################################
+[   66s] python39-zipp-3.8.1-1.2               ########################################
+[   66s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   66s] python39-typing_extensions-4.5.0-1.1  ########################################
+[   66s] python39-tomli-2.0.1-1.3              ########################################
+[   66s] python39-six-1.16.0-2.5               ########################################
+[   67s] python39-pycparser-2.21-1.5           ########################################
+[   67s] python39-cffi-1.15.1-3.2              ########################################
+[   68s] python39-cryptography-39.0.1-1.2      ########################################
+[   68s] python39-pyOpenSSL-23.0.0-1.2         ########################################
+[   68s] python39-service_identity-21.1.0-2.1  ########################################
+[   68s] python39-pluggy-1.0.0-1.5             ########################################
+[   68s] python39-packaging-23.0-1.2           ########################################
+[   68s] python39-iniconfig-2.0.0-1.1          ########################################
+[   68s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   68s] python39-constantly-15.1.0-2.11       ########################################
+[   68s] python39-incremental-22.10.0-1.2      ########################################
+[   68s] python39-Automat-22.10.0-1.2          ########################################
+[   73s] python39-Twisted-22.10.0-4.2          ########################################
+[   73s] update-alternatives: error: no alternatives for cftp
+[   73s] update-alternatives: error: no alternatives for ckeygen
+[   73s] update-alternatives: error: no alternatives for conch
+[   74s] update-alternatives: error: no alternatives for pyhtmlizer
+[   74s] update-alternatives: error: no alternatives for tkconch
+[   74s] update-alternatives: error: no alternatives for trial
+[   74s] update-alternatives: error: no alternatives for twist
+[   74s] python39-Twisted-tls-22.10.0-4.2      ########################################
+[   74s] python38-zope.interface-5.5.2-1.2     ########################################
+[   74s] python38-zipp-3.8.1-1.2               ########################################
+[   74s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   74s] python38-typing_extensions-4.5.0-1.1  ########################################
+[   74s] python38-tomli-2.0.1-1.3              ########################################
+[   75s] python38-six-1.16.0-2.5               ########################################
+[   75s] python38-pycparser-2.21-1.5           ########################################
+[   75s] python38-cffi-1.15.1-3.2              ########################################
+[   76s] python38-cryptography-39.0.1-1.2      ########################################
+[   76s] python38-pyOpenSSL-23.0.0-1.2         ########################################
+[   76s] python38-service_identity-21.1.0-2.1  ########################################
+[   76s] python38-pluggy-1.0.0-1.5             ########################################
+[   76s] python38-packaging-23.0-1.2           ########################################
+[   76s] python38-iniconfig-2.0.0-1.1          ########################################
+[   76s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   76s] python38-constantly-15.1.0-2.11       ########################################
+[   76s] python38-incremental-22.10.0-1.2      ########################################
+[   76s] python38-Automat-22.10.0-1.2          ########################################
+[   81s] python38-Twisted-22.10.0-4.2          ########################################
+[   81s] update-alternatives: error: no alternatives for cftp
+[   81s] update-alternatives: error: no alternatives for ckeygen
+[   81s] update-alternatives: error: no alternatives for conch
+[   81s] update-alternatives: error: no alternatives for pyhtmlizer
+[   81s] update-alternatives: error: no alternatives for tkconch
+[   81s] update-alternatives: error: no alternatives for trial
+[   81s] update-alternatives: error: no alternatives for twist
+[   82s] python38-Twisted-tls-22.10.0-4.2      ########################################
+[   82s] python311-zope.interface-5.5.2-1.2    ########################################
+[   82s] python311-zipp-3.8.1-1.2              ########################################
+[   82s] python311-importlib-metadata-6.0.0-1.2########################################
+[   82s] python311-typing_extensions-4.5.0-1.1 ########################################
+[   82s] python311-tomli-2.0.1-1.3             ########################################
+[   82s] python311-six-1.16.0-2.5              ########################################
+[   83s] python311-pycparser-2.21-1.5          ########################################
+[   83s] python311-cffi-1.15.1-3.2             ########################################
+[   84s] python311-cryptography-39.0.1-1.2     ########################################
+[   84s] python311-pyOpenSSL-23.0.0-1.2        ########################################
+[   84s] python311-service_identity-21.1.0-2.1 ########################################
+[   84s] python311-pluggy-1.0.0-1.5            ########################################
+[   84s] python311-packaging-23.0-1.2          ########################################
+[   84s] python311-iniconfig-2.0.0-1.1         ########################################
+[   84s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   84s] python311-constantly-15.1.0-2.11      ########################################
+[   84s] python311-incremental-22.10.0-1.2     ########################################
+[   84s] python311-Automat-22.10.0-1.2         ########################################
+[   89s] python311-Twisted-22.10.0-4.2         ########################################
+[   89s] update-alternatives: error: no alternatives for cftp
+[   89s] update-alternatives: error: no alternatives for ckeygen
+[   89s] update-alternatives: error: no alternatives for conch
+[   89s] update-alternatives: error: no alternatives for pyhtmlizer
+[   90s] update-alternatives: error: no alternatives for tkconch
+[   90s] update-alternatives: error: no alternatives for trial
+[   90s] update-alternatives: error: no alternatives for twist
+[   90s] python311-Twisted-tls-22.10.0-4.2     ########################################
+[   90s] python310-zope.interface-5.5.2-1.2    ########################################
+[   90s] python310-zipp-3.8.1-1.2              ########################################
+[   90s] python310-importlib-metadata-6.0.0-1.2########################################
+[   90s] python310-typing_extensions-4.5.0-1.1 ########################################
+[   90s] python310-tomli-2.0.1-1.3             ########################################
+[   90s] python310-six-1.16.0-2.5              ########################################
+[   91s] python310-pycparser-2.21-1.5          ########################################
+[   91s] python310-cffi-1.15.1-3.2             ########################################
+[   92s] python310-cryptography-39.0.1-1.2     ########################################
+[   92s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[   92s] python310-service_identity-21.1.0-2.1 ########################################
+[   92s] python310-pluggy-1.0.0-1.5            ########################################
+[   92s] python310-iniconfig-2.0.0-1.1         ########################################
+[   92s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   92s] python310-constantly-15.1.0-2.11      ########################################
+[   92s] python310-incremental-22.10.0-1.2     ########################################
+[   92s] python310-Automat-22.10.0-1.2         ########################################
+[   96s] python310-Twisted-22.10.0-4.2         ########################################
+[   96s] update-alternatives: error: no alternatives for cftp
+[   96s] update-alternatives: error: no alternatives for ckeygen
+[   97s] update-alternatives: error: no alternatives for conch
+[   97s] update-alternatives: error: no alternatives for pyhtmlizer
+[   97s] update-alternatives: error: no alternatives for tkconch
+[   97s] update-alternatives: error: no alternatives for trial
+[   97s] update-alternatives: error: no alternatives for twist
+[   97s] python310-Twisted-tls-22.10.0-4.2     ########################################
+[   97s] libunwind8-1.6.2-4.1                  ########################################
+[   97s] libsodium23-1.0.18-2.2                ########################################
+[   97s] libzmq5-4.3.4-4.1                     ########################################
+[   97s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   97s] alts-1.2+3.b848aad-3.1                ########################################
+[   98s] python310-pytest-7.2.0-2.2            ########################################
+[   99s] python311-pytest-7.2.0-2.2            ########################################
+[  100s] python38-pytest-7.2.0-2.2             ########################################
+[  101s] python39-pytest-7.2.0-2.2             ########################################
+[  101s] python310-pyzmq-24.0.1-3.2            ########################################
+[  102s] python311-pyzmq-24.0.1-3.2            ########################################
+[  103s] python38-pyzmq-24.0.1-3.2             ########################################
+[  103s] python39-pyzmq-24.0.1-3.2             ########################################
+[  103s] fdupes-2.2.1-1.1                      ########################################
+[  110s] now finalizing build dir...
+[  110s] ... running 01-add_abuild_user_to_trusted_group
+[  111s] ... running 02-set_timezone_to_utc
+[  111s] ... running 03-set-permissions-secure
+[  111s] ... running 11-hack_uname_version_to_kernel_version
+[  121s] -----------------------------------------------------------------
+[  121s] I have the following modifications for python-txZMQ.spec:
+[  122s] 22c22
+[  122s] < Release:        0
+[  122s] ---
+[  122s] > Release:        1.2
+[  130s] build target is riscv64-suse-linux
+[  130s] -----------------------------------------------------------------
+[  130s] ----- building python-txZMQ.spec (user abuild)
+[  130s] -----------------------------------------------------------------
+[  130s] -----------------------------------------------------------------
+[  134s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f9d35eebe1618abd85498afa050da728-python-txZMQ' /home/abuild/rpmbuild/SOURCES/python-txZMQ.spec
+[  174s] Building target platforms: riscv64-suse-linux
+[  174s] Building for target riscv64-suse-linux
+[  174s] setting SOURCE_DATE_EPOCH=1665446400
+[  175s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Fv0u6j
+[  175s] + umask 022
+[  175s] + cd /home/abuild/rpmbuild/BUILD
+[  175s] + cd /home/abuild/rpmbuild/BUILD
+[  175s] + rm -rf txZMQ-1.0.0
+[  175s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/txZMQ-1.0.0.tar.gz
+[  175s] + STATUS=0
+[  175s] + '[' 0 -ne 0 ']'
+[  175s] + cd txZMQ-1.0.0
+[  175s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  175s] + RPM_EC=0
+[  175s] ++ jobs -p
+[  175s] + exit 0
+[  175s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.kjVBYs
+[  176s] + umask 022
+[  176s] + cd /home/abuild/rpmbuild/BUILD
+[  176s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64
+[  176s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64
+[  176s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  176s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64
+[  176s] + cd txZMQ-1.0.0
+[  176s] + ref=/usr/lib/rpm
+[  176s] + mints=0
+[  176s] + case $(uname -m) in
+[  176s] ++ uname -m
+[  176s] + mints=20160911
+[  176s] + for s in guess sub
+[  176s] ++ find -maxdepth 8 -name config.guess
+[  176s] + for s in guess sub
+[  176s] ++ find -maxdepth 8 -name config.sub
+[  176s] ++ '[' -f _current_flavor ']'
+[  176s] ++ true
+[  176s] + last_flavor=
+[  176s] + '[' -z '' ']'
+[  176s] + last_flavor=tmp
+[  176s] + '[' tmp '!=' python38 ']'
+[  176s] + '[' -d build ']'
+[  176s] + '[' -d _build.python38 ']'
+[  176s] + echo python38
+[  176s] + python_flavor=python38
+[  176s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  181s] running build
+[  181s] running build_py
+[  181s] creating build
+[  181s] creating build/lib
+[  181s] creating build/lib/txzmq
+[  181s] copying txzmq/__init__.py -> build/lib/txzmq
+[  181s] copying txzmq/compat.py -> build/lib/txzmq
+[  181s] copying txzmq/connection.py -> build/lib/txzmq
+[  181s] copying txzmq/factory.py -> build/lib/txzmq
+[  181s] copying txzmq/pubsub.py -> build/lib/txzmq
+[  181s] copying txzmq/pushpull.py -> build/lib/txzmq
+[  181s] copying txzmq/req_rep.py -> build/lib/txzmq
+[  181s] copying txzmq/router_dealer.py -> build/lib/txzmq
+[  181s] creating build/lib/txzmq/test
+[  181s] copying txzmq/test/__init__.py -> build/lib/txzmq/test
+[  181s] copying txzmq/test/test_connection.py -> build/lib/txzmq/test
+[  181s] copying txzmq/test/test_factory.py -> build/lib/txzmq/test
+[  181s] copying txzmq/test/test_pubsub.py -> build/lib/txzmq/test
+[  181s] copying txzmq/test/test_reactor_shutdown.py -> build/lib/txzmq/test
+[  181s] copying txzmq/test/test_reqrep.py -> build/lib/txzmq/test
+[  181s] copying txzmq/test/test_router_dealer.py -> build/lib/txzmq/test
+[  181s] ++ '[' -f _current_flavor ']'
+[  181s] ++ cat _current_flavor
+[  181s] + last_flavor=python38
+[  181s] + '[' -z python38 ']'
+[  181s] + '[' python38 '!=' python39 ']'
+[  181s] + '[' -d build ']'
+[  181s] + mv build _build.python38
+[  181s] + '[' -d _build.python39 ']'
+[  181s] + echo python39
+[  181s] + python_flavor=python39
+[  181s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  184s] running build
+[  184s] running build_py
+[  185s] creating build
+[  185s] creating build/lib
+[  185s] creating build/lib/txzmq
+[  185s] copying txzmq/__init__.py -> build/lib/txzmq
+[  185s] copying txzmq/compat.py -> build/lib/txzmq
+[  185s] copying txzmq/connection.py -> build/lib/txzmq
+[  185s] copying txzmq/factory.py -> build/lib/txzmq
+[  185s] copying txzmq/pubsub.py -> build/lib/txzmq
+[  185s] copying txzmq/pushpull.py -> build/lib/txzmq
+[  185s] copying txzmq/req_rep.py -> build/lib/txzmq
+[  185s] copying txzmq/router_dealer.py -> build/lib/txzmq
+[  185s] creating build/lib/txzmq/test
+[  185s] copying txzmq/test/__init__.py -> build/lib/txzmq/test
+[  185s] copying txzmq/test/test_connection.py -> build/lib/txzmq/test
+[  185s] copying txzmq/test/test_factory.py -> build/lib/txzmq/test
+[  185s] copying txzmq/test/test_pubsub.py -> build/lib/txzmq/test
+[  185s] copying txzmq/test/test_reactor_shutdown.py -> build/lib/txzmq/test
+[  185s] copying txzmq/test/test_reqrep.py -> build/lib/txzmq/test
+[  185s] copying txzmq/test/test_router_dealer.py -> build/lib/txzmq/test
+[  185s] ++ '[' -f _current_flavor ']'
+[  185s] ++ cat _current_flavor
+[  185s] + last_flavor=python39
+[  185s] + '[' -z python39 ']'
+[  185s] + '[' python39 '!=' python311 ']'
+[  185s] + '[' -d build ']'
+[  185s] + mv build _build.python39
+[  185s] + '[' -d _build.python311 ']'
+[  185s] + echo python311
+[  185s] + python_flavor=python311
+[  185s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  189s] running build
+[  189s] running build_py
+[  189s] creating build
+[  189s] creating build/lib
+[  189s] creating build/lib/txzmq
+[  189s] copying txzmq/__init__.py -> build/lib/txzmq
+[  189s] copying txzmq/compat.py -> build/lib/txzmq
+[  189s] copying txzmq/connection.py -> build/lib/txzmq
+[  189s] copying txzmq/factory.py -> build/lib/txzmq
+[  189s] copying txzmq/pubsub.py -> build/lib/txzmq
+[  189s] copying txzmq/pushpull.py -> build/lib/txzmq
+[  189s] copying txzmq/req_rep.py -> build/lib/txzmq
+[  189s] copying txzmq/router_dealer.py -> build/lib/txzmq
+[  189s] creating build/lib/txzmq/test
+[  189s] copying txzmq/test/__init__.py -> build/lib/txzmq/test
+[  189s] copying txzmq/test/test_connection.py -> build/lib/txzmq/test
+[  189s] copying txzmq/test/test_factory.py -> build/lib/txzmq/test
+[  189s] copying txzmq/test/test_pubsub.py -> build/lib/txzmq/test
+[  189s] copying txzmq/test/test_reactor_shutdown.py -> build/lib/txzmq/test
+[  189s] copying txzmq/test/test_reqrep.py -> build/lib/txzmq/test
+[  189s] copying txzmq/test/test_router_dealer.py -> build/lib/txzmq/test
+[  189s] ++ '[' -f _current_flavor ']'
+[  189s] ++ cat _current_flavor
+[  189s] + last_flavor=python311
+[  189s] + '[' -z python311 ']'
+[  189s] + '[' python311 '!=' python310 ']'
+[  189s] + '[' -d build ']'
+[  189s] + mv build _build.python311
+[  189s] + '[' -d _build.python310 ']'
+[  189s] + echo python310
+[  189s] + python_flavor=python310
+[  189s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  193s] running build
+[  193s] running build_py
+[  193s] creating build
+[  193s] creating build/lib
+[  193s] creating build/lib/txzmq
+[  193s] copying txzmq/__init__.py -> build/lib/txzmq
+[  193s] copying txzmq/compat.py -> build/lib/txzmq
+[  193s] copying txzmq/connection.py -> build/lib/txzmq
+[  193s] copying txzmq/factory.py -> build/lib/txzmq
+[  193s] copying txzmq/pubsub.py -> build/lib/txzmq
+[  193s] copying txzmq/pushpull.py -> build/lib/txzmq
+[  193s] copying txzmq/req_rep.py -> build/lib/txzmq
+[  193s] copying txzmq/router_dealer.py -> build/lib/txzmq
+[  193s] creating build/lib/txzmq/test
+[  193s] copying txzmq/test/__init__.py -> build/lib/txzmq/test
+[  193s] copying txzmq/test/test_connection.py -> build/lib/txzmq/test
+[  193s] copying txzmq/test/test_factory.py -> build/lib/txzmq/test
+[  193s] copying txzmq/test/test_pubsub.py -> build/lib/txzmq/test
+[  193s] copying txzmq/test/test_reactor_shutdown.py -> build/lib/txzmq/test
+[  193s] copying txzmq/test/test_reqrep.py -> build/lib/txzmq/test
+[  193s] copying txzmq/test/test_router_dealer.py -> build/lib/txzmq/test
+[  193s] + RPM_EC=0
+[  193s] ++ jobs -p
+[  193s] + exit 0
+[  193s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.ZzU9mi
+[  193s] + umask 022
+[  193s] + cd /home/abuild/rpmbuild/BUILD
+[  193s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64
+[  193s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  193s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64
+[  193s] + cd txZMQ-1.0.0
+[  193s] ++ '[' -f _current_flavor ']'
+[  193s] ++ cat _current_flavor
+[  193s] + last_flavor=python310
+[  193s] + '[' -z python310 ']'
+[  193s] + '[' python310 '!=' python38 ']'
+[  193s] + '[' -d build ']'
+[  193s] + mv build _build.python310
+[  193s] + '[' -d _build.python38 ']'
+[  193s] + mv _build.python38 build
+[  194s] + echo python38
+[  194s] + python_flavor=python38
+[  194s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64 --prefix /usr
+[  197s] running install
+[  198s] running install_lib
+[  198s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr
+[  198s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib
+[  198s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8
+[  198s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages
+[  198s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/pushpull.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/req_rep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] copying build/lib/txzmq/router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq
+[  198s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] copying build/lib/txzmq/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] copying build/lib/txzmq/test/test_connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] copying build/lib/txzmq/test/test_factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] copying build/lib/txzmq/test/test_pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] copying build/lib/txzmq/test/test_reactor_shutdown.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] copying build/lib/txzmq/test/test_reqrep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] copying build/lib/txzmq/test/test_router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__init__.py to __init__.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/compat.py to compat.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/connection.py to connection.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/factory.py to factory.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/pubsub.py to pubsub.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/pushpull.py to pushpull.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/req_rep.py to req_rep.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/router_dealer.py to router_dealer.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__init__.py to __init__.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/test_connection.py to test_connection.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/test_factory.py to test_factory.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/test_pubsub.py to test_pubsub.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/test_reactor_shutdown.py to test_reactor_shutdown.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/test_reqrep.py to test_reqrep.cpython-38.pyc
+[  198s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/test_router_dealer.py to test_router_dealer.cpython-38.pyc
+[  198s] writing byte-compilation script '/tmp/tmpq7ev9n1w.py'
+[  198s] /usr/bin/python3.8 /tmp/tmpq7ev9n1w.py
+[  202s] removing /tmp/tmpq7ev9n1w.py
+[  202s] running install_egg_info
+[  202s] running egg_info
+[  202s] writing txZMQ.egg-info/PKG-INFO
+[  202s] writing dependency_links to txZMQ.egg-info/dependency_links.txt
+[  202s] writing requirements to txZMQ.egg-info/requires.txt
+[  202s] writing top-level names to txZMQ.egg-info/top_level.txt
+[  202s] reading manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  202s] reading manifest template 'MANIFEST.in'
+[  202s] adding license file 'LICENSE.txt'
+[  202s] adding license file 'AUTHORS.txt'
+[  202s] writing manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  202s] Copying txZMQ.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txZMQ-1.0.0-py3.8.egg-info
+[  202s] running install_scripts
+[  202s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  202s]   warnings.warn(
+[  203s] ++ '[' -f _current_flavor ']'
+[  203s] ++ cat _current_flavor
+[  203s] + last_flavor=python38
+[  203s] + '[' -z python38 ']'
+[  203s] + '[' python38 '!=' python39 ']'
+[  203s] + '[' -d build ']'
+[  203s] + mv build _build.python38
+[  203s] + '[' -d _build.python39 ']'
+[  203s] + mv _build.python39 build
+[  203s] + echo python39
+[  203s] + python_flavor=python39
+[  203s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64 --prefix /usr
+[  206s] running install
+[  206s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  206s]   warnings.warn(
+[  207s] running install_lib
+[  207s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9
+[  207s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages
+[  207s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/pushpull.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/req_rep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] copying build/lib/txzmq/router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq
+[  207s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] copying build/lib/txzmq/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] copying build/lib/txzmq/test/test_connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] copying build/lib/txzmq/test/test_factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] copying build/lib/txzmq/test/test_pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] copying build/lib/txzmq/test/test_reactor_shutdown.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] copying build/lib/txzmq/test/test_reqrep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] copying build/lib/txzmq/test/test_router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__init__.py to __init__.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/compat.py to compat.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/connection.py to connection.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/factory.py to factory.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/pubsub.py to pubsub.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/pushpull.py to pushpull.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/req_rep.py to req_rep.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/router_dealer.py to router_dealer.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__init__.py to __init__.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/test_connection.py to test_connection.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/test_factory.py to test_factory.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/test_pubsub.py to test_pubsub.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/test_reactor_shutdown.py to test_reactor_shutdown.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/test_reqrep.py to test_reqrep.cpython-39.pyc
+[  207s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/test_router_dealer.py to test_router_dealer.cpython-39.pyc
+[  207s] writing byte-compilation script '/tmp/tmphwbn08hv.py'
+[  207s] /usr/bin/python3.9 /tmp/tmphwbn08hv.py
+[  210s] removing /tmp/tmphwbn08hv.py
+[  210s] running install_egg_info
+[  210s] running egg_info
+[  210s] writing txZMQ.egg-info/PKG-INFO
+[  210s] writing dependency_links to txZMQ.egg-info/dependency_links.txt
+[  211s] writing requirements to txZMQ.egg-info/requires.txt
+[  211s] writing top-level names to txZMQ.egg-info/top_level.txt
+[  211s] reading manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  211s] reading manifest template 'MANIFEST.in'
+[  211s] adding license file 'LICENSE.txt'
+[  211s] adding license file 'AUTHORS.txt'
+[  211s] writing manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  211s] Copying txZMQ.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txZMQ-1.0.0-py3.9.egg-info
+[  211s] running install_scripts
+[  211s] ++ '[' -f _current_flavor ']'
+[  211s] ++ cat _current_flavor
+[  211s] + last_flavor=python39
+[  211s] + '[' -z python39 ']'
+[  211s] + '[' python39 '!=' python311 ']'
+[  211s] + '[' -d build ']'
+[  211s] + mv build _build.python39
+[  211s] + '[' -d _build.python311 ']'
+[  211s] + mv _build.python311 build
+[  211s] + echo python311
+[  211s] + python_flavor=python311
+[  211s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64 --prefix /usr
+[  214s] running install
+[  214s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  214s]   warnings.warn(
+[  215s] running install_lib
+[  215s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11
+[  215s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages
+[  215s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/pushpull.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/req_rep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] copying build/lib/txzmq/router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq
+[  215s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] copying build/lib/txzmq/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] copying build/lib/txzmq/test/test_connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] copying build/lib/txzmq/test/test_factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] copying build/lib/txzmq/test/test_pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] copying build/lib/txzmq/test/test_reactor_shutdown.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] copying build/lib/txzmq/test/test_reqrep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] copying build/lib/txzmq/test/test_router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__init__.py to __init__.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/compat.py to compat.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/connection.py to connection.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/factory.py to factory.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/pubsub.py to pubsub.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/pushpull.py to pushpull.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/req_rep.py to req_rep.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/router_dealer.py to router_dealer.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__init__.py to __init__.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/test_connection.py to test_connection.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/test_factory.py to test_factory.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/test_pubsub.py to test_pubsub.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/test_reactor_shutdown.py to test_reactor_shutdown.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/test_reqrep.py to test_reqrep.cpython-311.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/test_router_dealer.py to test_router_dealer.cpython-311.pyc
+[  215s] writing byte-compilation script '/tmp/tmpb5n4js_l.py'
+[  215s] /usr/bin/python3.11 /tmp/tmpb5n4js_l.py
+[  218s] removing /tmp/tmpb5n4js_l.py
+[  218s] running install_egg_info
+[  218s] running egg_info
+[  218s] writing txZMQ.egg-info/PKG-INFO
+[  218s] writing dependency_links to txZMQ.egg-info/dependency_links.txt
+[  218s] writing requirements to txZMQ.egg-info/requires.txt
+[  218s] writing top-level names to txZMQ.egg-info/top_level.txt
+[  218s] reading manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  218s] reading manifest template 'MANIFEST.in'
+[  218s] adding license file 'LICENSE.txt'
+[  218s] adding license file 'AUTHORS.txt'
+[  218s] writing manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  218s] Copying txZMQ.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txZMQ-1.0.0-py3.11.egg-info
+[  218s] running install_scripts
+[  219s] ++ '[' -f _current_flavor ']'
+[  219s] ++ cat _current_flavor
+[  219s] + last_flavor=python311
+[  219s] + '[' -z python311 ']'
+[  219s] + '[' python311 '!=' python310 ']'
+[  219s] + '[' -d build ']'
+[  219s] + mv build _build.python311
+[  219s] + '[' -d _build.python310 ']'
+[  219s] + mv _build.python310 build
+[  219s] + echo python310
+[  219s] + python_flavor=python310
+[  219s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64 --prefix /usr
+[  223s] running install
+[  223s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  223s]   warnings.warn(
+[  223s] running install_lib
+[  223s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10
+[  223s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages
+[  223s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/pushpull.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/req_rep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] copying build/lib/txzmq/router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq
+[  223s] creating /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] copying build/lib/txzmq/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] copying build/lib/txzmq/test/test_connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] copying build/lib/txzmq/test/test_factory.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] copying build/lib/txzmq/test/test_pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] copying build/lib/txzmq/test/test_reactor_shutdown.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] copying build/lib/txzmq/test/test_reqrep.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] copying build/lib/txzmq/test/test_router_dealer.py -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__init__.py to __init__.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/compat.py to compat.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/connection.py to connection.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/factory.py to factory.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/pubsub.py to pubsub.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/pushpull.py to pushpull.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/req_rep.py to req_rep.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/router_dealer.py to router_dealer.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__init__.py to __init__.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/test_connection.py to test_connection.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/test_factory.py to test_factory.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/test_pubsub.py to test_pubsub.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/test_reactor_shutdown.py to test_reactor_shutdown.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/test_reqrep.py to test_reqrep.cpython-310.pyc
+[  223s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/test_router_dealer.py to test_router_dealer.cpython-310.pyc
+[  223s] writing byte-compilation script '/tmp/tmpxetgfe2d.py'
+[  223s] /usr/bin/python3.10 /tmp/tmpxetgfe2d.py
+[  227s] removing /tmp/tmpxetgfe2d.py
+[  227s] running install_egg_info
+[  227s] running egg_info
+[  227s] writing txZMQ.egg-info/PKG-INFO
+[  227s] writing dependency_links to txZMQ.egg-info/dependency_links.txt
+[  227s] writing requirements to txZMQ.egg-info/requires.txt
+[  227s] writing top-level names to txZMQ.egg-info/top_level.txt
+[  227s] reading manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  227s] reading manifest template 'MANIFEST.in'
+[  227s] adding license file 'LICENSE.txt'
+[  227s] adding license file 'AUTHORS.txt'
+[  227s] writing manifest file 'txZMQ.egg-info/SOURCES.txt'
+[  227s] Copying txZMQ.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txZMQ-1.0.0-py3.10.egg-info
+[  227s] running install_scripts
+[  228s] ++ '[' -f _current_flavor ']'
+[  228s] ++ cat _current_flavor
+[  228s] + last_flavor=python310
+[  228s] + '[' -z python310 ']'
+[  228s] + '[' python310 '!=' python38 ']'
+[  228s] + '[' -d build ']'
+[  228s] + mv build _build.python310
+[  228s] + '[' -d _build.python38 ']'
+[  228s] + mv _build.python38 build
+[  228s] + echo python38
+[  228s] + python_flavor=python38
+[  228s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/req_rep.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/req_rep.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/pushpull.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/pushpull.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/pubsub.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/pubsub.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/factory.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/factory.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/router_dealer.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/router_dealer.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/compat.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/compat.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/__init__.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/connection.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/__pycache__/connection.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_factory.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_factory.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/__init__.cpython-38.pyc
+[  228s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_connection.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages/txzmq/test/__pycache__/test_connection.cpython-38.pyc
+[  228s] ++ '[' -f _current_flavor ']'
+[  228s] ++ cat _current_flavor
+[  228s] + last_flavor=python38
+[  228s] + '[' -z python38 ']'
+[  228s] + '[' python38 '!=' python39 ']'
+[  228s] + '[' -d build ']'
+[  228s] + mv build _build.python38
+[  228s] + '[' -d _build.python39 ']'
+[  228s] + mv _build.python39 build
+[  228s] + echo python39
+[  228s] + python_flavor=python39
+[  228s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/req_rep.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/req_rep.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/pushpull.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/pushpull.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/pubsub.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/pubsub.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/factory.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/factory.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/router_dealer.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/router_dealer.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/compat.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/compat.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/__init__.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/connection.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/__pycache__/connection.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_factory.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_factory.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/__init__.cpython-39.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_connection.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.9/site-packages/txzmq/test/__pycache__/test_connection.cpython-39.pyc
+[  229s] ++ '[' -f _current_flavor ']'
+[  229s] ++ cat _current_flavor
+[  229s] + last_flavor=python39
+[  229s] + '[' -z python39 ']'
+[  229s] + '[' python39 '!=' python311 ']'
+[  229s] + '[' -d build ']'
+[  229s] + mv build _build.python39
+[  229s] + '[' -d _build.python311 ']'
+[  229s] + mv _build.python311 build
+[  229s] + echo python311
+[  229s] + python_flavor=python311
+[  229s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/req_rep.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/req_rep.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/pushpull.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/pushpull.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/pubsub.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/pubsub.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/factory.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/factory.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/connection.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/connection.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/compat.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/compat.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/__init__.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/router_dealer.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/__pycache__/router_dealer.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_factory.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_factory.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/__init__.cpython-311.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_connection.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.11/site-packages/txzmq/test/__pycache__/test_connection.cpython-311.pyc
+[  229s] ++ '[' -f _current_flavor ']'
+[  229s] ++ cat _current_flavor
+[  229s] + last_flavor=python311
+[  229s] + '[' -z python311 ']'
+[  229s] + '[' python311 '!=' python310 ']'
+[  229s] + '[' -d build ']'
+[  229s] + mv build _build.python311
+[  229s] + '[' -d _build.python310 ']'
+[  229s] + mv _build.python310 build
+[  229s] + echo python310
+[  229s] + python_flavor=python310
+[  229s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/req_rep.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/req_rep.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/pushpull.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/pushpull.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/pubsub.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/pubsub.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/factory.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/factory.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/connection.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/connection.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/compat.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/compat.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/__init__.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/router_dealer.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/__pycache__/router_dealer.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_reqrep.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_router_dealer.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_pubsub.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_factory.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_factory.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_reactor_shutdown.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/__init__.cpython-310.pyc
+[  229s] Linking /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_connection.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.10/site-packages/txzmq/test/__pycache__/test_connection.cpython-310.pyc
+[  229s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/txZMQ-1.0.0
+[  230s] + /usr/lib/rpm/brp-compress
+[  230s] + /usr/lib/rpm/brp-suse
+[  230s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  230s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  231s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  231s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  231s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  231s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.PlwpiG
+[  231s] + umask 022
+[  231s] + cd /home/abuild/rpmbuild/BUILD
+[  231s] + cd txZMQ-1.0.0
+[  231s] + set +x
+[  232s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  232s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  232s] Using alternative automat-visualize-3.8 for automat-visualize in ./build/flavorbin during Python 3.8 expansions.
+[  232s] Using alternative cftp-3.8 for cftp in ./build/flavorbin during Python 3.8 expansions.
+[  232s] Using alternative ckeygen-3.8 for ckeygen in ./build/flavorbin during Python 3.8 expansions.
+[  233s] Using alternative conch-3.8 for conch in ./build/flavorbin during Python 3.8 expansions.
+[  233s] Using alternative pyhtmlizer-3.8 for pyhtmlizer in ./build/flavorbin during Python 3.8 expansions.
+[  233s] Using alternative tkconch-3.8 for tkconch in ./build/flavorbin during Python 3.8 expansions.
+[  233s] Using alternative trial-3.8 for trial in ./build/flavorbin during Python 3.8 expansions.
+[  233s] Using alternative twist-3.8 for twist in ./build/flavorbin during Python 3.8 expansions.
+[  234s] Using alternative twistd-3.8 for twistd in ./build/flavorbin during Python 3.8 expansions.
+[  234s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  234s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  234s] Using alternative automat-visualize-3.9 for automat-visualize in ./build/flavorbin during Python 3.9 expansions.
+[  234s] Using alternative cftp-3.9 for cftp in ./build/flavorbin during Python 3.9 expansions.
+[  235s] Using alternative ckeygen-3.9 for ckeygen in ./build/flavorbin during Python 3.9 expansions.
+[  235s] Using alternative conch-3.9 for conch in ./build/flavorbin during Python 3.9 expansions.
+[  235s] Using alternative pyhtmlizer-3.9 for pyhtmlizer in ./build/flavorbin during Python 3.9 expansions.
+[  235s] Using alternative tkconch-3.9 for tkconch in ./build/flavorbin during Python 3.9 expansions.
+[  236s] Using alternative trial-3.9 for trial in ./build/flavorbin during Python 3.9 expansions.
+[  236s] Using alternative twist-3.9 for twist in ./build/flavorbin during Python 3.9 expansions.
+[  236s] Using alternative twistd-3.9 for twistd in ./build/flavorbin during Python 3.9 expansions.
+[  236s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  236s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  237s] Using alternative automat-visualize-3.11 for automat-visualize in ./build/flavorbin during Python 3.11 expansions.
+[  237s] Using alternative cftp-3.11 for cftp in ./build/flavorbin during Python 3.11 expansions.
+[  237s] Using alternative ckeygen-3.11 for ckeygen in ./build/flavorbin during Python 3.11 expansions.
+[  237s] Using alternative conch-3.11 for conch in ./build/flavorbin during Python 3.11 expansions.
+[  237s] Using alternative pyhtmlizer-3.11 for pyhtmlizer in ./build/flavorbin during Python 3.11 expansions.
+[  238s] Using alternative tkconch-3.11 for tkconch in ./build/flavorbin during Python 3.11 expansions.
+[  238s] Using alternative trial-3.11 for trial in ./build/flavorbin during Python 3.11 expansions.
+[  238s] Using alternative twist-3.11 for twist in ./build/flavorbin during Python 3.11 expansions.
+[  238s] Using alternative twistd-3.11 for twistd in ./build/flavorbin during Python 3.11 expansions.
+[  239s] Using alternative automat-visualize-3.10 for automat-visualize in ./build/flavorbin during Python 3.10 expansions.
+[  239s] Using alternative cftp-3.10 for cftp in ./build/flavorbin during Python 3.10 expansions.
+[  239s] Using alternative ckeygen-3.10 for ckeygen in ./build/flavorbin during Python 3.10 expansions.
+[  239s] Using alternative conch-3.10 for conch in ./build/flavorbin during Python 3.10 expansions.
+[  239s] Using alternative pyhtmlizer-3.10 for pyhtmlizer in ./build/flavorbin during Python 3.10 expansions.
+[  240s] Using alternative tkconch-3.10 for tkconch in ./build/flavorbin during Python 3.10 expansions.
+[  240s] Using alternative trial-3.10 for trial in ./build/flavorbin during Python 3.10 expansions.
+[  240s] Using alternative twist-3.10 for twist in ./build/flavorbin during Python 3.10 expansions.
+[  240s] Using alternative twistd-3.10 for twistd in ./build/flavorbin during Python 3.10 expansions.
+[  240s] + export PATH=/home/abuild/rpmbuild/BUILD/txZMQ-1.0.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  240s] + PATH=/home/abuild/rpmbuild/BUILD/txZMQ-1.0.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  240s] ++ '[' -f _current_flavor ']'
+[  240s] ++ cat _current_flavor
+[  240s] + last_flavor=python310
+[  240s] + '[' -z python310 ']'
+[  240s] + '[' python310 '!=' python38 ']'
+[  240s] + '[' -d build ']'
+[  240s] + mv build _build.python310
+[  240s] + '[' -d _build.python38 ']'
+[  240s] + mv _build.python38 build
+[  240s] + echo python38
+[  240s] + python_flavor=python38
+[  240s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-txZMQ-1.0.0-1.2.riscv64/usr/lib/python3.8/site-packages
+[  240s] + PYTHONDONTWRITEBYTECODE=1
+[  240s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  244s] ============================= test session starts ==============================
+[  244s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  244s] cachedir: .pytest_cache
+[  244s] rootdir: /home/abuild/rpmbuild/BUILD/txZMQ-1.0.0
+[  249s] collecting ... collected 39 items
+[  249s] 
+[  249s] txzmq/test/test_connection.py::ZmqConnectionTestCase::test_addEndpoints PASSED [  2%]
+[  249s] txzmq/test/test_connection.py::ZmqConnectionTestCase::test_init PASSED   [  5%]
+[  249s] txzmq/test/test_connection.py::ZmqConnectionTestCase::test_interfaces PASSED [  7%]
+[  249s] txzmq/test/test_connection.py::ZmqConnectionTestCase::test_repr PASSED   [ 10%]
+[  249s] txzmq/test/test_connection.py::ZmqConnectionTestCase::test_send_recv PASSED [ 12%]
+[  250s] txzmq/test/test_connection.py::ZmqConnectionTestCase::test_send_recv_tcp FAILED [ 15%]
+[  250s] txzmq/test/test_connection.py::ZmqConnectionTestCase::test_send_recv_tcp_large PASSED [ 17%]
+[  250s] txzmq/test/test_factory.py::ZmqFactoryTestCase::test_shutdown PASSED     [ 20%]
+[  250s] txzmq/test/test_pubsub.py::ZmqConnectionTestCase::test_send_recv PASSED  [ 23%]
+[  251s] txzmq/test/test_pubsub.py::ZmqConnectionTestCase::test_send_recv_multiple_endpoints PASSED [ 25%]
+[  251s] txzmq/test/test_pubsub.py::ZmqConnectionTestCase::test_send_recv_pgm SKIPPED [ 28%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_SelectReactorTests::test_reactor_and_factory_shutdown PASSED [ 30%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_SelectReactorTests::test_reactor_shutdown PASSED [ 33%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_Glib2ReactorTests::test_reactor_and_factory_shutdown SKIPPED [ 35%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_Glib2ReactorTests::test_reactor_shutdown SKIPPED [ 38%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_Gtk2ReactorTests::test_reactor_and_factory_shutdown SKIPPED [ 41%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_Gtk2ReactorTests::test_reactor_shutdown SKIPPED [ 43%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_GIReactorTests::test_reactor_and_factory_shutdown SKIPPED [ 46%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_GIReactorTests::test_reactor_shutdown SKIPPED [ 48%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_Gtk3ReactorTests::test_reactor_and_factory_shutdown SKIPPED [ 51%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_Gtk3ReactorTests::test_reactor_shutdown SKIPPED [ 53%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_AsyncioSelectorReactorTests::test_reactor_and_factory_shutdown PASSED [ 56%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_AsyncioSelectorReactorTests::test_reactor_shutdown PASSED [ 58%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_PollReactorTests::test_reactor_and_factory_shutdown PASSED [ 61%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_PollReactorTests::test_reactor_shutdown PASSED [ 64%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_EPollReactorTests::test_reactor_and_factory_shutdown PASSED [ 66%]
+[  251s] txzmq/test/test_reactor_shutdown.py::ZmqReactorShutdownTestCase_EPollReactorTests::test_reactor_shutdown PASSED [ 69%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_cancel PASSED [ 71%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_cancel_with_timeout PASSED [ 74%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_cleanup_requests PASSED [ 76%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_getNextId PASSED [ 79%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_lot_send_recv_reply PASSED [ 82%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_releaseId PASSED [ 84%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_send_recv PASSED [ 87%]
+[  251s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_send_recv_reply PASSED [ 89%]
+[  252s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_send_timeout_fail PASSED [ 92%]
+[  252s] txzmq/test/test_reqrep.py::ZmqREQREPConnectionTestCase::test_send_timeout_ok PASSED [ 94%]
+[  274s] txzmq/test/test_reqrep.py::ZmqREQREPTwoFactoryConnectionTestCase::test_start PASSED [ 97%]
+[  297s] txzmq/test/test_router_dealer.py::ZmqRouterDealerTwoFactoryConnectionTestCase::test_start PASSED [100%]
+[  297s] 
+[  297s] =================================== FAILURES ===================================
+[  297s] ___________________ ZmqConnectionTestCase.test_send_recv_tcp ___________________
+[  297s] 
+[  297s] ignore = None
+[  297s] 
+[  297s]     def check(ignore):
+[  297s]         result = getattr(r, 'messages', [])
+[  297s]         expected = [[str(i).encode()] for i in range(100)]
+[  297s] >       self.failUnlessEqual(
+[  297s]             result, expected, "Messages should have been received")
+[  297s] 
+[  297s] txzmq/test/test_connection.py:107: 
+[  297s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  297s] /usr/lib/python3.8/site-packages/twisted/trial/_synctest.py:441: in assertEqual
+[  297s]     super().assertEqual(first, second, msg)
+[  297s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  297s] 
+[  297s] self = <txzmq.test.test_connection.ZmqConnectionTestCase testMethod=test_send_recv_tcp>
+[  297s] msg = "Lists differ: [] != [[b'0'], [b'1'], [b'2'], [b'3'], [b'4'], [[843 chars]99']]\n\nSecond list contains 100 additional...t 0:\n[b'0']\n\nDiff is 1195 characters long. Set self.maxDiff to None to see it. : Messages should have been received"
+[  297s] 
+[  297s]     def fail(self, msg: Optional[object] = None) -> NoReturn:
+[  297s]         """
+[  297s]         Absolutely fail the test.  Do not pass go, do not collect $200.
+[  297s]     
+[  297s]         @param msg: the message that will be displayed as the reason for the
+[  297s]         failure
+[  297s]         """
+[  297s] >       raise self.failureException(msg)
+[  297s] E       twisted.trial.unittest.FailTest: Lists differ: [] != [[b'0'], [b'1'], [b'2'], [b'3'], [b'4'], [[843 chars]99']]
+[  297s] E       
+[  297s] E       Second list contains 100 additional elements.
+[  297s] E       First extra element 0:
+[  297s] E       [b'0']
+[  297s] E       
+[  297s] E       Diff is 1195 characters long. Set self.maxDiff to None to see it. : Messages should have been received
+[  297s] 
+[  297s] /usr/lib/python3.8/site-packages/twisted/trial/_synctest.py:378: FailTest
+[  297s] =========================== short test summary info ============================
+[  297s] FAILED txzmq/test/test_connection.py::ZmqConnectionTestCase::test_send_recv_tcp
+[  297s] =================== 1 failed, 29 passed, 9 skipped in 52.62s ===================
+[  297s] error: Bad exit status from /var/tmp/rpm-tmp.PlwpiG (%check)
+[  297s] 
+[  297s] RPM build errors:
+[  297s]     Bad exit status from /var/tmp/rpm-tmp.PlwpiG (%check)
+[  298s] ### VM INTERACTION START ###
+[  298s] [  289.724569][    T1] sysrq: Power Off
+[  298s] [  289.726919][    T7] reboot: Power down
+[  298s] ### VM INTERACTION END ###
+[  298s] 
+[  298s] lamb13 failed "build python-txZMQ.spec" at Sun Mar 12 03:16:14 UTC 2023.
+[  298s] 

@@ -1,0 +1,1314 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_5/root
+[    0s] 
+[    0s] 
+[    0s] lamb09 started "build python-yappi.spec" at Thu Feb 23 19:11:26 UTC 2023.
+[    0s] 
+[    0s] Building python-yappi for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '3c12560ddf6fd633144f82239f478c4f'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/python-yappi.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/python-yappi.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/python-yappi.spec build ...
+[    2s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [964206ac31520f573cadb3d0156bd06d]
+[    7s] 
+[    7s] copying packages...
+[    8s] reordering...done
+[    8s] Detected virtio-serial support
+[   10s] booting kvm...
+[   10s] ### VM INTERACTION START ###
+[   10s] Using virtio-serial support
+[   10s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_5/.mount/boot/kernel -initrd /var/cache/obs/worker/root_5/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_5/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_5/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_5/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   17s] ### VM INTERACTION END ###
+[   17s] 2nd stage started in virtual machine
+[   17s] machine type: riscv64
+[   18s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   18s] Increasing log level from now on...
+[   18s] [    7.458607][  T414] sysrq: Changing Loglevel
+[   18s] [    7.459268][  T414] sysrq: Loglevel set to 4
+[   18s] Enable sysrq operations
+[   18s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   18s] no label, UUID=a93768d6-286b-4e57-b047-6e87f9d904d5
+[   18s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   18s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   18s] swapon /dev/vdb
+[   19s] WARNING: udev not running, creating extra device nodes
+[   19s] logging output to //.build.log...
+[   20s] processing recipe /.build-srcdir/python-yappi.spec ...
+[   20s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-yappi.spec build ...
+[   20s] initializing rpm db...
+[   21s] querying package ids...
+[   70s] [1/311] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   70s] [2/311] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   70s] [3/311] preinstalled attr-2.5.1-1.1
+[   70s] [4/311] preinstalled bash-5.2.15-8.1
+[   70s] [5/311] preinstalled bash-sh-5.2.15-8.1
+[   70s] [6/311] preinstalled binutils-2.40-1.1
+[   70s] [7/311] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   70s] [8/311] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   70s] [9/311] preinstalled build-mkbaselibs-20230215-1.1
+[   70s] [10/311] preinstalled bzip2-1.0.8-4.1
+[   70s] [11/311] preinstalled chkstat-1599_20230217-1.1
+[   70s] [12/311] preinstalled compat-usrmerge-build-84.87-5.1
+[   70s] [13/311] preinstalled compat-usrmerge-tools-84.87-5.1
+[   70s] [14/311] preinstalled coreutils-9.1-5.1
+[   70s] [15/311] preinstalled cpio-2.13-5.1
+[   70s] [16/311] preinstalled cpp-12-2.1
+[   70s] [17/311] preinstalled cpp12-12.2.1+git749-4.1
+[   70s] [18/311] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   70s] [19/311] preinstalled debugedit-5.0-5.1
+[   70s] [20/311] preinstalled diffutils-3.9-1.1
+[   70s] [21/311] preinstalled dwz-0.15-2.1
+[   70s] [22/311] preinstalled elfutils-0.188-4.1
+[   70s] [23/311] cumulate fdupes-2.2.1-1.1
+[   70s] [24/311] preinstalled file-5.44-1.2
+[   70s] [25/311] preinstalled file-magic-5.44-1.2
+[   70s] [26/311] preinstalled filesystem-84.87-12.1
+[   70s] [27/311] preinstalled fillup-1.42-279.1
+[   70s] [28/311] preinstalled findutils-4.9.0-2.1
+[   70s] [29/311] preinstalled gawk-5.2.1-2.1
+[   70s] [30/311] preinstalled gcc-12-2.1
+[   70s] [31/311] preinstalled gcc-PIE-12-2.1
+[   70s] [32/311] preinstalled gcc12-12.2.1+git749-4.1
+[   70s] [33/311] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   70s] [34/311] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   70s] [35/311] preinstalled gettext-tools-mini-0.21.1-1.1
+[   70s] [36/311] preinstalled glibc-2.37-1.1
+[   70s] [37/311] preinstalled glibc-devel-2.37-1.1
+[   70s] [38/311] preinstalled glibc-locale-base-2.37-1.1
+[   70s] [39/311] preinstalled grep-3.8-3.1
+[   70s] [40/311] preinstalled gzip-1.12-3.1
+[   70s] [41/311] preinstalled kernel-obs-build-6.1.12-1.1
+[   70s] [42/311] preinstalled libacl1-2.3.1-2.1
+[   70s] [43/311] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   70s] [44/311] preinstalled libasan8-13.0.1+git5428-6.1
+[   70s] [45/311] preinstalled libasm1-0.188-4.1
+[   70s] [46/311] preinstalled libatomic1-13.0.1+git5428-6.1
+[   70s] [47/311] preinstalled libattr1-2.5.1-1.1
+[   70s] [48/311] preinstalled libaudit1-3.0.9-1.1
+[   70s] [49/311] preinstalled libblkid1-2.38.1-7.1
+[   70s] [50/311] preinstalled libbz2-1-1.0.8-4.1
+[   70s] [51/311] preinstalled libcap-ng0-0.8.3-1.1
+[   70s] [52/311] preinstalled libcap2-2.67-1.1
+[   70s] [53/311] preinstalled libcrypt1-4.4.33-1.1
+[   70s] [54/311] preinstalled libctf-nobfd0-2.40-1.1
+[   70s] [55/311] preinstalled libctf0-2.40-1.1
+[   70s] [56/311] preinstalled libdb-4_8-4.8.30-39.1
+[   70s] [57/311] preinstalled libdw1-0.188-4.1
+[   70s] [58/311] preinstalled libeconf0-0.5.1-1.1
+[   70s] [59/311] preinstalled libelf1-0.188-4.1
+[   70s] [60/311] cumulate libev4-4.33-1.2
+[   70s] [61/311] preinstalled libexpat1-2.5.0-2.1
+[   70s] [62/311] preinstalled libfdisk1-2.38.1-7.1
+[   70s] [63/311] preinstalled libffi8-3.4.4-1.1
+[   70s] [64/311] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   70s] [65/311] preinstalled libgcrypt20-1.10.1-1.1
+[   70s] [66/311] preinstalled libgdbm6-1.23-1.1
+[   70s] [67/311] preinstalled libgdbm_compat4-1.23-1.1
+[   70s] [68/311] preinstalled libgmp10-6.2.1-4.1
+[   70s] [69/311] preinstalled libgomp1-13.0.1+git5428-6.1
+[   70s] [70/311] preinstalled libgpg-error0-1.46-1.1
+[   70s] [71/311] preinstalled libisl23-0.25-1.1
+[   70s] [72/311] preinstalled liblua5_4-5-5.4.4-8.1
+[   70s] [73/311] preinstalled liblzma5-5.4.1-1.1
+[   70s] [74/311] preinstalled libmagic1-5.44-1.2
+[   70s] [75/311] preinstalled libmount1-2.38.1-7.1
+[   70s] [76/311] preinstalled libmpc3-1.3.1-1.2
+[   70s] [77/311] preinstalled libmpdec3-2.5.1-2.1
+[   70s] [78/311] preinstalled libmpfr6-4.2.0-1.1
+[   70s] [79/311] preinstalled libncurses6-6.4.20230218-6.1
+[   70s] [80/311] cumulate libnss_usrfiles2-2.27-3.1
+[   70s] [81/311] preinstalled libopenssl3-3.0.8-1.1
+[   70s] [82/311] cumulate libp11-kit0-0.24.1-2.1
+[   70s] [83/311] preinstalled libpcre2-8-0-10.42-3.2
+[   70s] [84/311] preinstalled libpkgconf3-1.8.0-2.1
+[   70s] [85/311] preinstalled libpopt0-1.19-1.1
+[   70s] [86/311] preinstalled libpython3_10-1_0-3.10.9-3.1
+[   70s] [87/311] preinstalled libpython3_11-1_0-3.11.1-5.1
+[   70s] [88/311] preinstalled libpython3_8-1_0-3.8.16-4.1
+[   70s] [89/311] preinstalled libpython3_9-1_0-3.9.16-4.1
+[   70s] [90/311] preinstalled libreadline8-8.2-2.1
+[   70s] [91/311] preinstalled librpmbuild9-4.18.0-3.2
+[   70s] [92/311] preinstalled libseccomp2-2.5.4-2.1
+[   70s] [93/311] preinstalled libselinux1-3.4-2.1
+[   70s] [94/311] preinstalled libsemanage-conf-3.4-1.1
+[   70s] [95/311] preinstalled libsemanage2-3.4-1.1
+[   70s] [96/311] preinstalled libsepol2-3.4-1.1
+[   70s] [97/311] preinstalled libsmartcols1-2.38.1-7.1
+[   70s] [98/311] cumulate libsqlite3-0-3.41.0-1.1
+[   70s] [99/311] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   70s] [100/311] preinstalled libsubid4-4.13-4.1
+[   70s] [101/311] cumulate libtasn1-6-4.19.0-1.1
+[   70s] [102/311] preinstalled libubsan1-13.0.1+git5428-6.1
+[   70s] [103/311] preinstalled libutempter0-1.2.0-3.2
+[   70s] [104/311] preinstalled libuuid1-2.38.1-7.1
+[   70s] [105/311] preinstalled libxcrypt-devel-4.4.33-1.1
+[   70s] [106/311] preinstalled libz1-1.2.13-2.1
+[   70s] [107/311] preinstalled libzstd1-1.5.2-2.1
+[   70s] [108/311] preinstalled linux-glibc-devel-6.1-1.1
+[   70s] [109/311] preinstalled login_defs-4.13-4.1
+[   70s] [110/311] preinstalled lua54-5.4.4-8.1
+[   70s] [111/311] preinstalled make-4.4-2.1
+[   70s] [112/311] preinstalled ncurses-utils-6.4.20230218-6.1
+[   70s] [113/311] preinstalled pam-1.5.2-12.1
+[   70s] [114/311] preinstalled patch-2.7.6-6.1
+[   70s] [115/311] preinstalled perl-5.36.0-4.1
+[   70s] [116/311] preinstalled perl-base-5.36.0-4.1
+[   70s] [117/311] preinstalled permissions-1599_20230217-1.1
+[   70s] [118/311] preinstalled permissions-config-1599_20230217-1.1
+[   70s] [119/311] preinstalled pkgconf-1.8.0-2.1
+[   70s] [120/311] preinstalled pkgconf-m4-1.8.0-2.1
+[   70s] [121/311] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   70s] [122/311] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   70s] [123/311] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   70s] [124/311] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   70s] [125/311] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   70s] [126/311] cumulate python310-apipkg-3.0.1-1.2
+[   70s] [127/311] cumulate python310-attrs-22.2.0-1.2
+[   70s] [128/311] preinstalled python310-base-3.10.9-3.1
+[   70s] [129/311] cumulate python310-charset-normalizer-3.0.1-1.2
+[   70s] [130/311] cumulate python310-devel-3.10.9-3.1
+[   70s] [131/311] cumulate python310-exceptiongroup-1.1.0-1.2
+[   70s] [132/311] cumulate python310-greenlet-1.1.3-2.2
+[   70s] [133/311] cumulate python310-h11-0.14.0-1.2
+[   70s] [134/311] cumulate python310-idna-3.4-1.2
+[   70s] [135/311] cumulate python310-immutables-0.19-1.2
+[   70s] [136/311] cumulate python310-iniconfig-1.1.1-3.2
+[   70s] [137/311] preinstalled python310-packaging-23.0-1.1
+[   70s] [138/311] cumulate python310-pluggy-1.0.0-1.5
+[   70s] [139/311] cumulate python310-pycparser-2.21-1.5
+[   70s] [140/311] cumulate python310-rfc3986-2.0.0-1.2
+[   70s] [141/311] preinstalled python310-setuptools-65.6.3-1.2
+[   70s] [142/311] cumulate python310-six-1.16.0-2.5
+[   70s] [143/311] cumulate python310-sniffio-1.3.0-1.2
+[   70s] [144/311] cumulate python310-tomli-2.0.1-1.3
+[   70s] [145/311] cumulate python310-zipp-3.8.1-1.2
+[   70s] [146/311] cumulate python310-zope.event-4.6-1.1
+[   70s] [147/311] cumulate python310-zope.interface-5.5.2-1.2
+[   70s] [148/311] cumulate python311-apipkg-3.0.1-1.2
+[   70s] [149/311] cumulate python311-attrs-22.2.0-1.2
+[   70s] [150/311] preinstalled python311-base-3.11.1-5.1
+[   70s] [151/311] cumulate python311-charset-normalizer-3.0.1-1.2
+[   70s] [152/311] cumulate python311-devel-3.11.1-5.1
+[   70s] [153/311] cumulate python311-exceptiongroup-1.1.0-1.2
+[   70s] [154/311] cumulate python311-greenlet-1.1.3-2.2
+[   70s] [155/311] cumulate python311-h11-0.14.0-1.2
+[   70s] [156/311] cumulate python311-idna-3.4-1.2
+[   70s] [157/311] cumulate python311-immutables-0.19-1.2
+[   70s] [158/311] cumulate python311-iniconfig-1.1.1-3.2
+[   70s] [159/311] cumulate python311-packaging-23.0-1.2
+[   70s] [160/311] cumulate python311-pluggy-1.0.0-1.5
+[   70s] [161/311] cumulate python311-pycparser-2.21-1.5
+[   70s] [162/311] cumulate python311-rfc3986-2.0.0-1.2
+[   70s] [163/311] preinstalled python311-setuptools-65.6.3-1.2
+[   70s] [164/311] cumulate python311-six-1.16.0-2.5
+[   70s] [165/311] cumulate python311-sniffio-1.3.0-1.2
+[   70s] [166/311] cumulate python311-tomli-2.0.1-1.3
+[   70s] [167/311] cumulate python311-zipp-3.8.1-1.2
+[   70s] [168/311] cumulate python311-zope.event-4.6-1.1
+[   70s] [169/311] cumulate python311-zope.interface-5.5.2-1.2
+[   70s] [170/311] cumulate python38-apipkg-3.0.1-1.2
+[   70s] [171/311] cumulate python38-attrs-22.2.0-1.2
+[   70s] [172/311] preinstalled python38-base-3.8.16-4.1
+[   70s] [173/311] cumulate python38-charset-normalizer-3.0.1-1.2
+[   70s] [174/311] cumulate python38-devel-3.8.16-4.1
+[   70s] [175/311] cumulate python38-exceptiongroup-1.1.0-1.2
+[   70s] [176/311] cumulate python38-greenlet-1.1.3-2.2
+[   70s] [177/311] cumulate python38-h11-0.14.0-1.2
+[   71s] [178/311] cumulate python38-idna-3.4-1.2
+[   71s] [179/311] cumulate python38-immutables-0.19-1.2
+[   71s] [180/311] cumulate python38-iniconfig-1.1.1-3.2
+[   71s] [181/311] cumulate python38-packaging-23.0-1.2
+[   71s] [182/311] cumulate python38-pluggy-1.0.0-1.5
+[   71s] [183/311] cumulate python38-pycparser-2.21-1.5
+[   71s] [184/311] cumulate python38-rfc3986-2.0.0-1.2
+[   71s] [185/311] preinstalled python38-setuptools-65.6.3-1.2
+[   71s] [186/311] cumulate python38-six-1.16.0-2.5
+[   71s] [187/311] cumulate python38-sniffio-1.3.0-1.2
+[   71s] [188/311] cumulate python38-tomli-2.0.1-1.3
+[   71s] [189/311] cumulate python38-zipp-3.8.1-1.2
+[   71s] [190/311] cumulate python38-zope.event-4.6-1.1
+[   71s] [191/311] cumulate python38-zope.interface-5.5.2-1.2
+[   71s] [192/311] cumulate python39-apipkg-3.0.1-1.2
+[   71s] [193/311] cumulate python39-attrs-22.2.0-1.2
+[   71s] [194/311] preinstalled python39-base-3.9.16-4.1
+[   71s] [195/311] cumulate python39-charset-normalizer-3.0.1-1.2
+[   71s] [196/311] cumulate python39-devel-3.9.16-4.1
+[   71s] [197/311] cumulate python39-exceptiongroup-1.1.0-1.2
+[   71s] [198/311] cumulate python39-greenlet-1.1.3-2.2
+[   71s] [199/311] cumulate python39-h11-0.14.0-1.2
+[   71s] [200/311] cumulate python39-idna-3.4-1.2
+[   71s] [201/311] cumulate python39-immutables-0.19-1.2
+[   71s] [202/311] cumulate python39-iniconfig-1.1.1-3.2
+[   71s] [203/311] cumulate python39-packaging-23.0-1.2
+[   71s] [204/311] cumulate python39-pluggy-1.0.0-1.5
+[   71s] [205/311] cumulate python39-pycparser-2.21-1.5
+[   71s] [206/311] cumulate python39-rfc3986-2.0.0-1.2
+[   71s] [207/311] preinstalled python39-setuptools-65.6.3-1.2
+[   71s] [208/311] cumulate python39-six-1.16.0-2.5
+[   71s] [209/311] cumulate python39-sniffio-1.3.0-1.2
+[   71s] [210/311] cumulate python39-tomli-2.0.1-1.3
+[   71s] [211/311] cumulate python39-zipp-3.8.1-1.2
+[   71s] [212/311] cumulate python39-zope.event-4.6-1.1
+[   71s] [213/311] cumulate python39-zope.interface-5.5.2-1.2
+[   71s] [214/311] preinstalled qemu-linux-user-7.1.0-50.1
+[   71s] [215/311] preinstalled rpm-4.18.0-3.2
+[   71s] [216/311] preinstalled rpm-build-4.18.0-3.2
+[   71s] [217/311] preinstalled rpm-build-perl-4.18.0-3.2
+[   71s] [218/311] preinstalled rpm-config-SUSE-20220926-1.1
+[   71s] [219/311] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.7
+[   71s] [220/311] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   71s] [221/311] preinstalled sed-4.9-2.1
+[   71s] [222/311] preinstalled shadow-4.13-4.1
+[   71s] [223/311] preinstalled system-group-hardware-20170617-24.1
+[   71s] [224/311] preinstalled system-user-root-20190513-2.1
+[   71s] [225/311] preinstalled systemd-rpm-macros-19-1.1
+[   71s] [226/311] preinstalled sysuser-shadow-3.1-5.1
+[   71s] [227/311] preinstalled tar-1.34-9.1
+[   71s] [228/311] preinstalled terminfo-base-6.4.20230218-6.1
+[   71s] [229/311] preinstalled update-alternatives-1.21.8-1.1
+[   71s] [230/311] preinstalled util-linux-2.38.1-7.1
+[   71s] [231/311] preinstalled which-2.21-5.1
+[   71s] [232/311] preinstalled xz-5.4.1-1.1
+[   71s] [233/311] cumulate alts-1.2+3.b848aad-3.1
+[   71s] [234/311] cumulate netcfg-11.6-10.1
+[   71s] [235/311] cumulate python310-3.10.9-3.1
+[   71s] [236/311] cumulate python310-cffi-1.15.1-3.2
+[   71s] [237/311] cumulate python310-contextvars-2.4-3.2
+[   71s] [238/311] cumulate python310-importlib-metadata-6.0.0-1.2
+[   71s] [239/311] cumulate python311-3.11.1-5.1
+[   71s] [240/311] cumulate python311-cffi-1.15.1-3.2
+[   71s] [241/311] cumulate python311-contextvars-2.4-3.2
+[   71s] [242/311] cumulate python311-importlib-metadata-6.0.0-1.2
+[   71s] [243/311] cumulate python38-3.8.16-4.1
+[   71s] [244/311] cumulate python38-cffi-1.15.1-3.2
+[   71s] [245/311] cumulate python38-contextvars-2.4-3.2
+[   71s] [246/311] cumulate python38-importlib-metadata-6.0.0-1.2
+[   71s] [247/311] cumulate python39-3.9.16-4.1
+[   71s] [248/311] cumulate python39-cffi-1.15.1-3.2
+[   71s] [249/311] cumulate python39-contextvars-2.4-3.2
+[   71s] [250/311] cumulate python39-importlib-metadata-6.0.0-1.2
+[   71s] [251/311] cumulate p11-kit-0.24.1-2.1
+[   71s] [252/311] cumulate p11-kit-tools-0.24.1-2.1
+[   71s] [253/311] cumulate python310-anyio-3.6.2-2.3
+[   71s] [254/311] cumulate python310-py-1.11.0-3.2
+[   71s] [255/311] cumulate python311-anyio-3.6.2-2.3
+[   71s] [256/311] cumulate python311-py-1.11.0-3.2
+[   71s] [257/311] cumulate python38-anyio-3.6.2-2.3
+[   71s] [258/311] cumulate python38-py-1.11.0-3.2
+[   71s] [259/311] cumulate python39-anyio-3.6.2-2.3
+[   71s] [260/311] cumulate python39-py-1.11.0-3.2
+[   71s] [261/311] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   71s] [262/311] cumulate python311-pyOpenSSL-23.0.0-1.2
+[   71s] [263/311] cumulate python38-pyOpenSSL-23.0.0-1.2
+[   71s] [264/311] cumulate python39-pyOpenSSL-23.0.0-1.2
+[   71s] [265/311] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   71s] [266/311] cumulate libcares2-1.19.0-2.1
+[   71s] [267/311] cumulate python310-cryptography-39.0.1-1.2
+[   71s] [268/311] cumulate python311-cryptography-39.0.1-1.2
+[   71s] [269/311] cumulate python38-cryptography-39.0.1-1.2
+[   71s] [270/311] cumulate python39-cryptography-39.0.1-1.2
+[   71s] [271/311] cumulate python310-pytest-7.2.0-2.2
+[   71s] [272/311] cumulate python311-pytest-7.2.0-2.2
+[   71s] [273/311] cumulate python38-pytest-7.2.0-2.2
+[   71s] [274/311] cumulate python39-pytest-7.2.0-2.2
+[   71s] [275/311] cumulate ca-certificates-mozilla-2.60-1.2
+[   71s] [276/311] cumulate python310-pytest-asyncio-0.20.3-1.2
+[   71s] [277/311] cumulate python311-pytest-asyncio-0.20.3-1.2
+[   71s] [278/311] cumulate python38-pytest-asyncio-0.20.3-1.2
+[   71s] [279/311] cumulate python39-pytest-asyncio-0.20.3-1.2
+[   71s] [280/311] cumulate python310-certifi-2022.9.24-1.2
+[   71s] [281/311] cumulate python311-certifi-2022.9.24-1.2
+[   71s] [282/311] cumulate python38-certifi-2022.9.24-1.2
+[   71s] [283/311] cumulate python39-certifi-2022.9.24-1.2
+[   71s] [284/311] cumulate python310-httpcore-0.16.3-1.3
+[   71s] [285/311] cumulate python311-httpcore-0.16.3-1.3
+[   71s] [286/311] cumulate python38-httpcore-0.16.3-1.3
+[   71s] [287/311] cumulate python39-httpcore-0.16.3-1.3
+[   71s] [288/311] cumulate python310-urllib3-1.26.14-1.2
+[   71s] [289/311] cumulate python311-urllib3-1.26.14-1.2
+[   71s] [290/311] cumulate python38-urllib3-1.26.14-1.2
+[   71s] [291/311] cumulate python39-urllib3-1.26.14-1.2
+[   71s] [292/311] cumulate python310-httpx-0.23.3-1.2
+[   71s] [293/311] cumulate python311-httpx-0.23.3-1.2
+[   71s] [294/311] cumulate python38-httpx-0.23.3-1.2
+[   71s] [295/311] cumulate python39-httpx-0.23.3-1.2
+[   71s] [296/311] cumulate python310-requests-2.28.2-1.2
+[   71s] [297/311] cumulate python311-requests-2.28.2-1.2
+[   71s] [298/311] cumulate python38-requests-2.28.2-1.2
+[   71s] [299/311] cumulate python39-requests-2.28.2-1.2
+[   71s] [300/311] cumulate python310-requests-toolbelt-0.9.1-7.2
+[   71s] [301/311] cumulate python311-requests-toolbelt-0.9.1-7.2
+[   71s] [302/311] cumulate python38-requests-toolbelt-0.9.1-7.2
+[   71s] [303/311] cumulate python39-requests-toolbelt-0.9.1-7.2
+[   71s] [304/311] cumulate python310-dnspython-2.3.0-1.2
+[   71s] [305/311] cumulate python311-dnspython-2.3.0-1.2
+[   71s] [306/311] cumulate python38-dnspython-2.3.0-1.2
+[   71s] [307/311] cumulate python39-dnspython-2.3.0-1.2
+[   71s] [308/311] cumulate python310-gevent-22.10.1-5.2
+[   71s] [309/311] cumulate python311-gevent-22.10.1-5.2
+[   71s] [310/311] cumulate python38-gevent-22.10.1-5.2
+[   71s] [311/311] cumulate python39-gevent-22.10.1-5.2
+[   71s] now installing cumulated packages
+[   73s] Preparing...                          ########################################
+[   73s] Updating / installing...
+[   73s] python39-idna-3.4-1.2                 ########################################
+[   73s] python38-idna-3.4-1.2                 ########################################
+[   74s] python311-idna-3.4-1.2                ########################################
+[   74s] python310-idna-3.4-1.2                ########################################
+[   74s] python39-sniffio-1.3.0-1.2            ########################################
+[   74s] python38-sniffio-1.3.0-1.2            ########################################
+[   74s] python311-sniffio-1.3.0-1.2           ########################################
+[   74s] python310-sniffio-1.3.0-1.2           ########################################
+[   74s] libsqlite3-0-3.41.0-1.1               ########################################
+[   74s] libev4-4.33-1.2                       ########################################
+[   75s] python310-3.10.9-3.1                  ########################################
+[   75s] python311-3.11.1-5.1                  ########################################
+[   75s] python38-3.8.16-4.1                   ########################################
+[   75s] python39-3.9.16-4.1                   ########################################
+[   75s] python39-iniconfig-1.1.1-3.2          ########################################
+[   75s] python38-iniconfig-1.1.1-3.2          ########################################
+[   75s] python311-iniconfig-1.1.1-3.2         ########################################
+[   75s] python310-iniconfig-1.1.1-3.2         ########################################
+[   75s] libtasn1-6-4.19.0-1.1                 ########################################
+[   75s] libp11-kit0-0.24.1-2.1                ########################################
+[   76s] libnss_usrfiles2-2.27-3.1             ########################################
+[   76s] netcfg-11.6-10.1                      ########################################
+[   76s] warning: /etc/hosts created as /etc/hosts.rpmnew
+[   76s] libcares2-1.19.0-2.1                  ########################################
+[   76s] p11-kit-0.24.1-2.1                    ########################################
+[   76s] p11-kit-tools-0.24.1-2.1              ########################################
+[   76s] ca-certificates-2+git20211004.3efbea9-########################################
+[   79s] ca-certificates-mozilla-2.60-1.2      ########################################
+[   86s] python310-certifi-2022.9.24-1.2       ########################################
+[   86s] python311-certifi-2022.9.24-1.2       ########################################
+[   86s] python38-certifi-2022.9.24-1.2        ########################################
+[   86s] python39-certifi-2022.9.24-1.2        ########################################
+[   86s] python310-anyio-3.6.2-2.3             ########################################
+[   86s] python311-anyio-3.6.2-2.3             ########################################
+[   86s] python38-anyio-3.6.2-2.3              ########################################
+[   86s] python39-anyio-3.6.2-2.3              ########################################
+[   86s] python39-zope.interface-5.5.2-1.2     ########################################
+[   86s] python39-zope.event-4.6-1.1           ########################################
+[   86s] python39-zipp-3.8.1-1.2               ########################################
+[   87s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   87s] python39-tomli-2.0.1-1.3              ########################################
+[   87s] python39-six-1.16.0-2.5               ########################################
+[   87s] python39-rfc3986-2.0.0-1.2            ########################################
+[   87s] python39-pycparser-2.21-1.5           ########################################
+[   87s] python39-cffi-1.15.1-3.2              ########################################
+[   88s] python39-cryptography-39.0.1-1.2      ########################################
+[   88s] python39-pyOpenSSL-23.0.0-1.2         ########################################
+[   88s] python39-urllib3-1.26.14-1.2          ########################################
+[   88s] python39-pluggy-1.0.0-1.5             ########################################
+[   88s] python39-packaging-23.0-1.2           ########################################
+[   88s] python39-immutables-0.19-1.2          ########################################
+[   88s] python39-h11-0.14.0-1.2               ########################################
+[   89s] python39-httpcore-0.16.3-1.3          ########################################
+[   89s] python39-httpx-0.23.3-1.2             ########################################
+[   89s] python39-greenlet-1.1.3-2.2           ########################################
+[   89s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   89s] python39-charset-normalizer-3.0.1-1.2 ########################################
+[   89s] python39-attrs-22.2.0-1.2             ########################################
+[   89s] python39-apipkg-3.0.1-1.2             ########################################
+[   90s] python39-py-1.11.0-3.2                ########################################
+[   90s] python39-requests-2.28.2-1.2          ########################################
+[   90s] python39-requests-toolbelt-0.9.1-7.2  ########################################
+[   90s] python39-dnspython-2.3.0-1.2          ########################################
+[   90s] python38-zope.interface-5.5.2-1.2     ########################################
+[   90s] python38-zope.event-4.6-1.1           ########################################
+[   90s] python38-zipp-3.8.1-1.2               ########################################
+[   90s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   90s] python38-tomli-2.0.1-1.3              ########################################
+[   91s] python38-six-1.16.0-2.5               ########################################
+[   91s] python38-rfc3986-2.0.0-1.2            ########################################
+[   91s] python38-pycparser-2.21-1.5           ########################################
+[   91s] python38-cffi-1.15.1-3.2              ########################################
+[   92s] python38-cryptography-39.0.1-1.2      ########################################
+[   92s] python38-pyOpenSSL-23.0.0-1.2         ########################################
+[   93s] python38-urllib3-1.26.14-1.2          ########################################
+[   93s] python38-pluggy-1.0.0-1.5             ########################################
+[   93s] python38-packaging-23.0-1.2           ########################################
+[   93s] python38-immutables-0.19-1.2          ########################################
+[   93s] python38-h11-0.14.0-1.2               ########################################
+[   93s] python38-httpcore-0.16.3-1.3          ########################################
+[   93s] python38-httpx-0.23.3-1.2             ########################################
+[   94s] python38-greenlet-1.1.3-2.2           ########################################
+[   94s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   94s] python38-charset-normalizer-3.0.1-1.2 ########################################
+[   94s] python38-attrs-22.2.0-1.2             ########################################
+[   94s] python38-apipkg-3.0.1-1.2             ########################################
+[   94s] python38-py-1.11.0-3.2                ########################################
+[   94s] python38-requests-2.28.2-1.2          ########################################
+[   95s] python38-requests-toolbelt-0.9.1-7.2  ########################################
+[   95s] python38-dnspython-2.3.0-1.2          ########################################
+[   95s] python311-zope.interface-5.5.2-1.2    ########################################
+[   95s] python311-zope.event-4.6-1.1          ########################################
+[   95s] python311-zipp-3.8.1-1.2              ########################################
+[   95s] python311-importlib-metadata-6.0.0-1.2########################################
+[   95s] python311-tomli-2.0.1-1.3             ########################################
+[   96s] python311-six-1.16.0-2.5              ########################################
+[   96s] python311-rfc3986-2.0.0-1.2           ########################################
+[   96s] python311-pycparser-2.21-1.5          ########################################
+[   96s] python311-cffi-1.15.1-3.2             ########################################
+[   97s] python311-cryptography-39.0.1-1.2     ########################################
+[   97s] python311-pyOpenSSL-23.0.0-1.2        ########################################
+[   97s] python311-urllib3-1.26.14-1.2         ########################################
+[   98s] python311-pluggy-1.0.0-1.5            ########################################
+[   98s] python311-packaging-23.0-1.2          ########################################
+[   98s] python311-immutables-0.19-1.2         ########################################
+[   98s] python311-h11-0.14.0-1.2              ########################################
+[   98s] python311-httpcore-0.16.3-1.3         ########################################
+[   98s] python311-httpx-0.23.3-1.2            ########################################
+[   98s] python311-greenlet-1.1.3-2.2          ########################################
+[   99s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   99s] python311-charset-normalizer-3.0.1-1.2########################################
+[   99s] python311-attrs-22.2.0-1.2            ########################################
+[   99s] python311-apipkg-3.0.1-1.2            ########################################
+[   99s] python311-py-1.11.0-3.2               ########################################
+[   99s] python311-requests-2.28.2-1.2         ########################################
+[   99s] python311-requests-toolbelt-0.9.1-7.2 ########################################
+[  100s] python311-dnspython-2.3.0-1.2         ########################################
+[  100s] python310-zope.interface-5.5.2-1.2    ########################################
+[  100s] python310-zope.event-4.6-1.1          ########################################
+[  100s] python310-zipp-3.8.1-1.2              ########################################
+[  100s] python310-importlib-metadata-6.0.0-1.2########################################
+[  100s] python310-tomli-2.0.1-1.3             ########################################
+[  101s] python310-six-1.16.0-2.5              ########################################
+[  101s] python310-rfc3986-2.0.0-1.2           ########################################
+[  101s] python310-pycparser-2.21-1.5          ########################################
+[  101s] python310-cffi-1.15.1-3.2             ########################################
+[  102s] python310-cryptography-39.0.1-1.2     ########################################
+[  102s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[  102s] python310-urllib3-1.26.14-1.2         ########################################
+[  102s] python310-pluggy-1.0.0-1.5            ########################################
+[  102s] python310-immutables-0.19-1.2         ########################################
+[  102s] python310-h11-0.14.0-1.2              ########################################
+[  102s] python310-httpcore-0.16.3-1.3         ########################################
+[  102s] python310-httpx-0.23.3-1.2            ########################################
+[  103s] python310-greenlet-1.1.3-2.2          ########################################
+[  103s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[  103s] python310-charset-normalizer-3.0.1-1.2########################################
+[  103s] python310-attrs-22.2.0-1.2            ########################################
+[  103s] python310-apipkg-3.0.1-1.2            ########################################
+[  104s] python310-py-1.11.0-3.2               ########################################
+[  104s] python310-requests-2.28.2-1.2         ########################################
+[  104s] python310-requests-toolbelt-0.9.1-7.2 ########################################
+[  104s] python310-dnspython-2.3.0-1.2         ########################################
+[  104s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  104s] alts-1.2+3.b848aad-3.1                ########################################
+[  105s] python310-pytest-7.2.0-2.2            ########################################
+[  106s] python311-pytest-7.2.0-2.2            ########################################
+[  107s] python38-pytest-7.2.0-2.2             ########################################
+[  107s] python39-pytest-7.2.0-2.2             ########################################
+[  107s] python39-pytest-asyncio-0.20.3-1.2    ########################################
+[  107s] python38-pytest-asyncio-0.20.3-1.2    ########################################
+[  107s] python311-pytest-asyncio-0.20.3-1.2   ########################################
+[  107s] python310-pytest-asyncio-0.20.3-1.2   ########################################
+[  109s] python310-gevent-22.10.1-5.2          ########################################
+[  109s] python310-contextvars-2.4-3.2         ########################################
+[  110s] python311-gevent-22.10.1-5.2          ########################################
+[  110s] python311-contextvars-2.4-3.2         ########################################
+[  111s] python38-gevent-22.10.1-5.2           ########################################
+[  111s] python38-contextvars-2.4-3.2          ########################################
+[  112s] python39-gevent-22.10.1-5.2           ########################################
+[  112s] python39-contextvars-2.4-3.2          ########################################
+[  113s] python39-devel-3.9.16-4.1             ########################################
+[  113s] python38-devel-3.8.16-4.1             ########################################
+[  113s] python311-devel-3.11.1-5.1            ########################################
+[  113s] python310-devel-3.10.9-3.1            ########################################
+[  113s] fdupes-2.2.1-1.1                      ########################################
+[  128s] now finalizing build dir...
+[  128s] ... running 01-add_abuild_user_to_trusted_group
+[  129s] ... running 02-set_timezone_to_utc
+[  129s] ... running 03-set-permissions-secure
+[  129s] ... running 11-hack_uname_version_to_kernel_version
+[  139s] -----------------------------------------------------------------
+[  139s] I have the following modifications for python-yappi.spec:
+[  139s] 24c24
+[  139s] < Release:        0
+[  139s] ---
+[  139s] > Release:        2.2
+[  147s] build target is riscv64-suse-linux
+[  147s] -----------------------------------------------------------------
+[  147s] ----- building python-yappi.spec (user abuild)
+[  147s] -----------------------------------------------------------------
+[  147s] -----------------------------------------------------------------
+[  151s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/3c12560ddf6fd633144f82239f478c4f-python-yappi' /home/abuild/rpmbuild/SOURCES/python-yappi.spec
+[  230s] Building target platforms: riscv64-suse-linux
+[  230s] Building for target riscv64-suse-linux
+[  230s] setting SOURCE_DATE_EPOCH=1670371200
+[  231s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.PmukRs
+[  231s] + umask 022
+[  231s] + cd /home/abuild/rpmbuild/BUILD
+[  231s] + cd /home/abuild/rpmbuild/BUILD
+[  231s] + rm -rf yappi-1.4.0
+[  231s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/yappi-1.4.0.tar.gz
+[  231s] + STATUS=0
+[  231s] + '[' 0 -ne 0 ']'
+[  231s] + cd yappi-1.4.0
+[  231s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  231s] + RPM_EC=0
+[  231s] ++ jobs -p
+[  231s] + exit 0
+[  232s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.e3YREK
+[  232s] + umask 022
+[  232s] + cd /home/abuild/rpmbuild/BUILD
+[  232s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64
+[  232s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64
+[  232s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  232s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64
+[  232s] + cd yappi-1.4.0
+[  232s] + ref=/usr/lib/rpm
+[  232s] + mints=0
+[  232s] + case $(uname -m) in
+[  232s] ++ uname -m
+[  232s] + mints=20160911
+[  232s] + for s in guess sub
+[  232s] ++ find -maxdepth 8 -name config.guess
+[  232s] + for s in guess sub
+[  232s] ++ find -maxdepth 8 -name config.sub
+[  232s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  232s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  233s] ++ '[' -f _current_flavor ']'
+[  233s] ++ true
+[  233s] + last_flavor=
+[  233s] + '[' -z '' ']'
+[  233s] + last_flavor=tmp
+[  233s] + '[' tmp '!=' python38 ']'
+[  233s] + '[' -d build ']'
+[  233s] + '[' -d _build.python38 ']'
+[  233s] + echo python38
+[  233s] + python_flavor=python38
+[  233s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  238s] /tmp/timer_createqh7u4em9.c: In function ‘main’:
+[  238s] /tmp/timer_createqh7u4em9.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  238s]     2 |     timer_create();
+[  238s]       |     ^~~~~~~~~~~~
+[  240s] running build
+[  240s] running build_py
+[  240s] creating build
+[  240s] creating build/lib.linux-riscv64-cpython-38
+[  240s] copying yappi/yappi.py -> build/lib.linux-riscv64-cpython-38
+[  240s] running build_ext
+[  240s] building '_yappi' extension
+[  240s] creating build/temp.linux-riscv64-cpython-38
+[  240s] creating build/temp.linux-riscv64-cpython-38/yappi
+[  240s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.8 -c yappi/_yappi.c -o build/temp.linux-riscv64-cpython-38/yappi/_yappi.o
+[  246s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.8 -c yappi/callstack.c -o build/temp.linux-riscv64-cpython-38/yappi/callstack.o
+[  250s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.8 -c yappi/freelist.c -o build/temp.linux-riscv64-cpython-38/yappi/freelist.o
+[  254s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.8 -c yappi/hashtab.c -o build/temp.linux-riscv64-cpython-38/yappi/hashtab.o
+[  259s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.8 -c yappi/mem.c -o build/temp.linux-riscv64-cpython-38/yappi/mem.o
+[  262s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.8 -c yappi/timing.c -o build/temp.linux-riscv64-cpython-38/yappi/timing.o
+[  266s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.8 -c yappi/tls.c -o build/temp.linux-riscv64-cpython-38/yappi/tls.o
+[  270s] gcc -shared -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g build/temp.linux-riscv64-cpython-38/yappi/_yappi.o build/temp.linux-riscv64-cpython-38/yappi/callstack.o build/temp.linux-riscv64-cpython-38/yappi/freelist.o build/temp.linux-riscv64-cpython-38/yappi/hashtab.o build/temp.linux-riscv64-cpython-38/yappi/mem.o build/temp.linux-riscv64-cpython-38/yappi/timing.o build/temp.linux-riscv64-cpython-38/yappi/tls.o -L/usr/lib64 -lrt -o build/lib.linux-riscv64-cpython-38/_yappi.cpython-38-riscv64-linux-gnu.so
+[  292s] ++ '[' -f _current_flavor ']'
+[  292s] ++ cat _current_flavor
+[  292s] + last_flavor=python38
+[  292s] + '[' -z python38 ']'
+[  292s] + '[' python38 '!=' python39 ']'
+[  292s] + '[' -d build ']'
+[  292s] + mv build _build.python38
+[  292s] + '[' -d _build.python39 ']'
+[  292s] + echo python39
+[  292s] + python_flavor=python39
+[  292s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  300s] /tmp/timer_creategxv2t20m.c: In function ‘main’:
+[  300s] /tmp/timer_creategxv2t20m.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  300s]     2 |     timer_create();
+[  300s]       |     ^~~~~~~~~~~~
+[  303s] running build
+[  303s] running build_py
+[  303s] creating build
+[  303s] creating build/lib.linux-riscv64-cpython-39
+[  303s] copying yappi/yappi.py -> build/lib.linux-riscv64-cpython-39
+[  303s] running build_ext
+[  303s] building '_yappi' extension
+[  303s] creating build/temp.linux-riscv64-cpython-39
+[  303s] creating build/temp.linux-riscv64-cpython-39/yappi
+[  303s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.9 -c yappi/_yappi.c -o build/temp.linux-riscv64-cpython-39/yappi/_yappi.o
+[  311s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.9 -c yappi/callstack.c -o build/temp.linux-riscv64-cpython-39/yappi/callstack.o
+[  318s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.9 -c yappi/freelist.c -o build/temp.linux-riscv64-cpython-39/yappi/freelist.o
+[  324s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.9 -c yappi/hashtab.c -o build/temp.linux-riscv64-cpython-39/yappi/hashtab.o
+[  330s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.9 -c yappi/mem.c -o build/temp.linux-riscv64-cpython-39/yappi/mem.o
+[  335s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.9 -c yappi/timing.c -o build/temp.linux-riscv64-cpython-39/yappi/timing.o
+[  341s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.9 -c yappi/tls.c -o build/temp.linux-riscv64-cpython-39/yappi/tls.o
+[  345s] gcc -shared -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g build/temp.linux-riscv64-cpython-39/yappi/_yappi.o build/temp.linux-riscv64-cpython-39/yappi/callstack.o build/temp.linux-riscv64-cpython-39/yappi/freelist.o build/temp.linux-riscv64-cpython-39/yappi/hashtab.o build/temp.linux-riscv64-cpython-39/yappi/mem.o build/temp.linux-riscv64-cpython-39/yappi/timing.o build/temp.linux-riscv64-cpython-39/yappi/tls.o -L/usr/lib64 -lrt -o build/lib.linux-riscv64-cpython-39/_yappi.cpython-39-riscv64-linux-gnu.so
+[  368s] ++ '[' -f _current_flavor ']'
+[  368s] ++ cat _current_flavor
+[  368s] + last_flavor=python39
+[  368s] + '[' -z python39 ']'
+[  368s] + '[' python39 '!=' python311 ']'
+[  368s] + '[' -d build ']'
+[  368s] + mv build _build.python39
+[  368s] + '[' -d _build.python311 ']'
+[  368s] + echo python311
+[  368s] + python_flavor=python311
+[  368s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  375s] /tmp/timer_createbu9gewjr.c: In function ‘main’:
+[  375s] /tmp/timer_createbu9gewjr.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  375s]     2 |     timer_create();
+[  375s]       |     ^~~~~~~~~~~~
+[  377s] running build
+[  377s] running build_py
+[  377s] creating build
+[  377s] creating build/lib.linux-riscv64-cpython-311
+[  377s] copying yappi/yappi.py -> build/lib.linux-riscv64-cpython-311
+[  377s] running build_ext
+[  377s] building '_yappi' extension
+[  377s] creating build/temp.linux-riscv64-cpython-311
+[  377s] creating build/temp.linux-riscv64-cpython-311/yappi
+[  377s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.11 -c yappi/_yappi.c -o build/temp.linux-riscv64-cpython-311/yappi/_yappi.o
+[  386s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.11 -c yappi/callstack.c -o build/temp.linux-riscv64-cpython-311/yappi/callstack.o
+[  392s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.11 -c yappi/freelist.c -o build/temp.linux-riscv64-cpython-311/yappi/freelist.o
+[  397s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.11 -c yappi/hashtab.c -o build/temp.linux-riscv64-cpython-311/yappi/hashtab.o
+[  403s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.11 -c yappi/mem.c -o build/temp.linux-riscv64-cpython-311/yappi/mem.o
+[  408s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.11 -c yappi/timing.c -o build/temp.linux-riscv64-cpython-311/yappi/timing.o
+[  411s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.11 -c yappi/tls.c -o build/temp.linux-riscv64-cpython-311/yappi/tls.o
+[  415s] gcc -shared -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g build/temp.linux-riscv64-cpython-311/yappi/_yappi.o build/temp.linux-riscv64-cpython-311/yappi/callstack.o build/temp.linux-riscv64-cpython-311/yappi/freelist.o build/temp.linux-riscv64-cpython-311/yappi/hashtab.o build/temp.linux-riscv64-cpython-311/yappi/mem.o build/temp.linux-riscv64-cpython-311/yappi/timing.o build/temp.linux-riscv64-cpython-311/yappi/tls.o -L/usr/lib64 -lrt -o build/lib.linux-riscv64-cpython-311/_yappi.cpython-311-riscv64-linux-gnu.so
+[  433s] ++ '[' -f _current_flavor ']'
+[  433s] ++ cat _current_flavor
+[  433s] + last_flavor=python311
+[  433s] + '[' -z python311 ']'
+[  433s] + '[' python311 '!=' python310 ']'
+[  433s] + '[' -d build ']'
+[  433s] + mv build _build.python311
+[  433s] + '[' -d _build.python310 ']'
+[  433s] + echo python310
+[  433s] + python_flavor=python310
+[  433s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  438s] /tmp/timer_createk3xewm9d.c: In function ‘main’:
+[  438s] /tmp/timer_createk3xewm9d.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  438s]     2 |     timer_create();
+[  438s]       |     ^~~~~~~~~~~~
+[  439s] running build
+[  439s] running build_py
+[  439s] creating build
+[  439s] creating build/lib.linux-riscv64-cpython-310
+[  439s] copying yappi/yappi.py -> build/lib.linux-riscv64-cpython-310
+[  439s] running build_ext
+[  439s] building '_yappi' extension
+[  439s] creating build/temp.linux-riscv64-cpython-310
+[  439s] creating build/temp.linux-riscv64-cpython-310/yappi
+[  439s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.10 -c yappi/_yappi.c -o build/temp.linux-riscv64-cpython-310/yappi/_yappi.o
+[  446s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.10 -c yappi/callstack.c -o build/temp.linux-riscv64-cpython-310/yappi/callstack.o
+[  449s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.10 -c yappi/freelist.c -o build/temp.linux-riscv64-cpython-310/yappi/freelist.o
+[  453s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.10 -c yappi/hashtab.c -o build/temp.linux-riscv64-cpython-310/yappi/hashtab.o
+[  458s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.10 -c yappi/mem.c -o build/temp.linux-riscv64-cpython-310/yappi/mem.o
+[  465s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.10 -c yappi/timing.c -o build/temp.linux-riscv64-cpython-310/yappi/timing.o
+[  470s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -DLIB_RT_AVAILABLE=1 -I/usr/include/python3.10 -c yappi/tls.c -o build/temp.linux-riscv64-cpython-310/yappi/tls.o
+[  474s] gcc -shared -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g build/temp.linux-riscv64-cpython-310/yappi/_yappi.o build/temp.linux-riscv64-cpython-310/yappi/callstack.o build/temp.linux-riscv64-cpython-310/yappi/freelist.o build/temp.linux-riscv64-cpython-310/yappi/hashtab.o build/temp.linux-riscv64-cpython-310/yappi/mem.o build/temp.linux-riscv64-cpython-310/yappi/timing.o build/temp.linux-riscv64-cpython-310/yappi/tls.o -L/usr/lib64 -lrt -o build/lib.linux-riscv64-cpython-310/_yappi.cpython-310-riscv64-linux-gnu.so
+[  495s] + RPM_EC=0
+[  495s] ++ jobs -p
+[  495s] + exit 0
+[  496s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.QIstoD
+[  496s] + umask 022
+[  496s] + cd /home/abuild/rpmbuild/BUILD
+[  496s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64
+[  496s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  496s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64
+[  496s] + cd yappi-1.4.0
+[  496s] ++ '[' -f _current_flavor ']'
+[  496s] ++ cat _current_flavor
+[  496s] + last_flavor=python310
+[  496s] + '[' -z python310 ']'
+[  496s] + '[' python310 '!=' python38 ']'
+[  496s] + '[' -d build ']'
+[  496s] + mv build _build.python310
+[  496s] + '[' -d _build.python38 ']'
+[  496s] + mv _build.python38 build
+[  496s] + echo python38
+[  496s] + python_flavor=python38
+[  496s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64 --prefix /usr
+[  504s] /tmp/timer_createm6z1zn65.c: In function ‘main’:
+[  504s] /tmp/timer_createm6z1zn65.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  504s]     2 |     timer_create();
+[  504s]       |     ^~~~~~~~~~~~
+[  506s] running install
+[  507s] running install_lib
+[  507s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr
+[  507s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64
+[  507s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8
+[  507s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages
+[  507s] copying build/lib.linux-riscv64-cpython-38/yappi.py -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages
+[  507s] copying build/lib.linux-riscv64-cpython-38/_yappi.cpython-38-riscv64-linux-gnu.so -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages
+[  507s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages/yappi.py to yappi.cpython-38.pyc
+[  507s] writing byte-compilation script '/tmp/tmpk2nmcb15.py'
+[  507s] /usr/bin/python3.8 /tmp/tmpk2nmcb15.py
+[  513s] removing /tmp/tmpk2nmcb15.py
+[  513s] running install_egg_info
+[  513s] running egg_info
+[  513s] writing yappi/yappi.egg-info/PKG-INFO
+[  513s] writing dependency_links to yappi/yappi.egg-info/dependency_links.txt
+[  513s] writing entry points to yappi/yappi.egg-info/entry_points.txt
+[  513s] writing requirements to yappi/yappi.egg-info/requires.txt
+[  513s] writing top-level names to yappi/yappi.egg-info/top_level.txt
+[  514s] reading manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  514s] reading manifest template 'MANIFEST.in'
+[  514s] adding license file 'LICENSE'
+[  514s] writing manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  514s] Copying yappi/yappi.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages/yappi-1.4.0-py3.8.egg-info
+[  514s] running install_scripts
+[  514s] Installing yappi script to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin
+[  514s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  514s]   warnings.warn(
+[  515s] ++ '[' -f _current_flavor ']'
+[  515s] ++ cat _current_flavor
+[  515s] + last_flavor=python38
+[  515s] + '[' -z python38 ']'
+[  515s] + '[' python38 '!=' python39 ']'
+[  515s] + '[' -d build ']'
+[  515s] + mv build _build.python38
+[  515s] + '[' -d _build.python39 ']'
+[  515s] + mv _build.python39 build
+[  515s] + echo python39
+[  515s] + python_flavor=python39
+[  515s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64 --prefix /usr
+[  521s] /tmp/timer_createaqqxv8p7.c: In function ‘main’:
+[  521s] /tmp/timer_createaqqxv8p7.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  521s]     2 |     timer_create();
+[  521s]       |     ^~~~~~~~~~~~
+[  523s] running install
+[  523s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  523s]   warnings.warn(
+[  523s] running install_lib
+[  523s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9
+[  523s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages
+[  523s] copying build/lib.linux-riscv64-cpython-39/yappi.py -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages
+[  523s] copying build/lib.linux-riscv64-cpython-39/_yappi.cpython-39-riscv64-linux-gnu.so -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages
+[  523s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages/yappi.py to yappi.cpython-39.pyc
+[  523s] writing byte-compilation script '/tmp/tmpu_my5o81.py'
+[  523s] /usr/bin/python3.9 /tmp/tmpu_my5o81.py
+[  529s] removing /tmp/tmpu_my5o81.py
+[  529s] running install_egg_info
+[  529s] running egg_info
+[  529s] writing yappi/yappi.egg-info/PKG-INFO
+[  529s] writing dependency_links to yappi/yappi.egg-info/dependency_links.txt
+[  529s] writing entry points to yappi/yappi.egg-info/entry_points.txt
+[  529s] writing requirements to yappi/yappi.egg-info/requires.txt
+[  529s] writing top-level names to yappi/yappi.egg-info/top_level.txt
+[  529s] reading manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  529s] reading manifest template 'MANIFEST.in'
+[  529s] adding license file 'LICENSE'
+[  529s] writing manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  529s] Copying yappi/yappi.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages/yappi-1.4.0-py3.9.egg-info
+[  529s] running install_scripts
+[  530s] Installing yappi script to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin
+[  530s] ++ '[' -f _current_flavor ']'
+[  530s] ++ cat _current_flavor
+[  530s] + last_flavor=python39
+[  530s] + '[' -z python39 ']'
+[  530s] + '[' python39 '!=' python311 ']'
+[  530s] + '[' -d build ']'
+[  530s] + mv build _build.python39
+[  531s] + '[' -d _build.python311 ']'
+[  531s] + mv _build.python311 build
+[  531s] + echo python311
+[  531s] + python_flavor=python311
+[  531s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64 --prefix /usr
+[  536s] /tmp/timer_creategg8j72cg.c: In function ‘main’:
+[  536s] /tmp/timer_creategg8j72cg.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  536s]     2 |     timer_create();
+[  536s]       |     ^~~~~~~~~~~~
+[  539s] running install
+[  539s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  539s]   warnings.warn(
+[  539s] running install_lib
+[  539s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11
+[  539s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages
+[  539s] copying build/lib.linux-riscv64-cpython-311/yappi.py -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages
+[  539s] copying build/lib.linux-riscv64-cpython-311/_yappi.cpython-311-riscv64-linux-gnu.so -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages
+[  539s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages/yappi.py to yappi.cpython-311.pyc
+[  539s] writing byte-compilation script '/tmp/tmpu68g2ysg.py'
+[  539s] /usr/bin/python3.11 /tmp/tmpu68g2ysg.py
+[  544s] removing /tmp/tmpu68g2ysg.py
+[  544s] running install_egg_info
+[  545s] running egg_info
+[  545s] writing yappi/yappi.egg-info/PKG-INFO
+[  545s] writing dependency_links to yappi/yappi.egg-info/dependency_links.txt
+[  545s] writing entry points to yappi/yappi.egg-info/entry_points.txt
+[  545s] writing requirements to yappi/yappi.egg-info/requires.txt
+[  545s] writing top-level names to yappi/yappi.egg-info/top_level.txt
+[  545s] reading manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  545s] reading manifest template 'MANIFEST.in'
+[  545s] adding license file 'LICENSE'
+[  545s] writing manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  545s] Copying yappi/yappi.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages/yappi-1.4.0-py3.11.egg-info
+[  545s] running install_scripts
+[  545s] Installing yappi script to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin
+[  546s] ++ '[' -f _current_flavor ']'
+[  546s] ++ cat _current_flavor
+[  546s] + last_flavor=python311
+[  546s] + '[' -z python311 ']'
+[  546s] + '[' python311 '!=' python310 ']'
+[  546s] + '[' -d build ']'
+[  546s] + mv build _build.python311
+[  546s] + '[' -d _build.python310 ']'
+[  546s] + mv _build.python310 build
+[  546s] + echo python310
+[  546s] + python_flavor=python310
+[  546s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64 --prefix /usr
+[  552s] /tmp/timer_create_ewawle5.c: In function ‘main’:
+[  552s] /tmp/timer_create_ewawle5.c:2:5: warning: implicit declaration of function ‘timer_create’ [-Wimplicit-function-declaration]
+[  552s]     2 |     timer_create();
+[  552s]       |     ^~~~~~~~~~~~
+[  554s] running install
+[  554s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  554s]   warnings.warn(
+[  554s] running install_lib
+[  554s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10
+[  554s] creating /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10/site-packages
+[  554s] copying build/lib.linux-riscv64-cpython-310/yappi.py -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10/site-packages
+[  554s] copying build/lib.linux-riscv64-cpython-310/_yappi.cpython-310-riscv64-linux-gnu.so -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10/site-packages
+[  554s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10/site-packages/yappi.py to yappi.cpython-310.pyc
+[  555s] writing byte-compilation script '/tmp/tmp3h95azqw.py'
+[  555s] /usr/bin/python3.10 /tmp/tmp3h95azqw.py
+[  561s] removing /tmp/tmp3h95azqw.py
+[  561s] running install_egg_info
+[  561s] running egg_info
+[  561s] writing yappi/yappi.egg-info/PKG-INFO
+[  561s] writing dependency_links to yappi/yappi.egg-info/dependency_links.txt
+[  561s] writing entry points to yappi/yappi.egg-info/entry_points.txt
+[  561s] writing requirements to yappi/yappi.egg-info/requires.txt
+[  561s] writing top-level names to yappi/yappi.egg-info/top_level.txt
+[  561s] reading manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  561s] reading manifest template 'MANIFEST.in'
+[  561s] adding license file 'LICENSE'
+[  561s] writing manifest file 'yappi/yappi.egg-info/SOURCES.txt'
+[  561s] Copying yappi/yappi.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10/site-packages/yappi-1.4.0-py3.10.egg-info
+[  561s] running install_scripts
+[  562s] Installing yappi script to /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin
+[  562s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.8
+[  562s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.8
+[  562s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.9
+[  563s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.9
+[  563s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.11
+[  563s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.11
+[  563s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.10
+[  563s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi-3.10
+[  563s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi
+[  563s] + alternative_target=/usr/bin/yappi
+[  563s] + [[ /usr/bin/yappi == /usr/share/man* ]]
+[  563s] + '[' 0 -eq 1 ']'
+[  563s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/etc/alternatives
+[  563s] + touch /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/etc/alternatives/yappi
+[  563s] + ln -sf /etc/alternatives/yappi /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/bin/yappi
+[  563s] ++ '[' -f _current_flavor ']'
+[  563s] ++ cat _current_flavor
+[  563s] + last_flavor=python310
+[  563s] + '[' -z python310 ']'
+[  563s] + '[' python310 '!=' python38 ']'
+[  563s] + '[' -d build ']'
+[  563s] + mv build _build.python310
+[  563s] + '[' -d _build.python38 ']'
+[  563s] + mv _build.python38 build
+[  564s] + echo python38
+[  564s] + python_flavor=python38
+[  564s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages
+[  564s] ++ '[' -f _current_flavor ']'
+[  564s] ++ cat _current_flavor
+[  564s] + last_flavor=python38
+[  564s] + '[' -z python38 ']'
+[  564s] + '[' python38 '!=' python39 ']'
+[  564s] + '[' -d build ']'
+[  564s] + mv build _build.python38
+[  564s] + '[' -d _build.python39 ']'
+[  564s] + mv _build.python39 build
+[  564s] + echo python39
+[  564s] + python_flavor=python39
+[  564s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages
+[  564s] ++ '[' -f _current_flavor ']'
+[  564s] ++ cat _current_flavor
+[  564s] + last_flavor=python39
+[  564s] + '[' -z python39 ']'
+[  564s] + '[' python39 '!=' python311 ']'
+[  564s] + '[' -d build ']'
+[  564s] + mv build _build.python39
+[  564s] + '[' -d _build.python311 ']'
+[  564s] + mv _build.python311 build
+[  564s] + echo python311
+[  564s] + python_flavor=python311
+[  564s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages
+[  565s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages/__pycache__/yappi.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages/__pycache__/yappi.cpython-311.pyc
+[  565s] ++ '[' -f _current_flavor ']'
+[  565s] ++ cat _current_flavor
+[  565s] + last_flavor=python311
+[  565s] + '[' -z python311 ']'
+[  565s] + '[' python311 '!=' python310 ']'
+[  565s] + '[' -d build ']'
+[  565s] + mv build _build.python311
+[  565s] + '[' -d _build.python310 ']'
+[  565s] + mv _build.python310 build
+[  565s] + echo python310
+[  565s] + python_flavor=python310
+[  565s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10/site-packages
+[  565s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/yappi-1.4.0
+[  568s] extracting debug info from /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages/_yappi.cpython-38-riscv64-linux-gnu.so
+[  568s] extracting debug info from /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.10/site-packages/_yappi.cpython-310-riscv64-linux-gnu.so
+[  568s] extracting debug info from /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.11/site-packages/_yappi.cpython-311-riscv64-linux-gnu.so
+[  568s] extracting debug info from /home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages/_yappi.cpython-39-riscv64-linux-gnu.so
+[  571s] original debug info size: 624kB, size after compression: 580kB
+[  571s] /usr/lib/rpm/sepdebugcrcfix: Updated 4 CRC32s, 0 CRC32s did match.
+[  571s] 142 blocks
+[  572s] + /usr/lib/rpm/brp-compress
+[  573s] + /usr/lib/rpm/brp-suse
+[  573s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  573s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  574s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  574s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  574s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  575s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.1eGH5b
+[  575s] + umask 022
+[  575s] + cd /home/abuild/rpmbuild/BUILD
+[  575s] + cd yappi-1.4.0
+[  575s] + export PYTHONPATH=tests/
+[  575s] + PYTHONPATH=tests/
+[  575s] + skip_tests='not test_basic_old_style and not test_basic'
+[  575s] + skip_tests='not test_basic_old_style and not test_basic and not test_context_cbks_reset_to_default'
+[  575s] + skip_tests='not test_basic_old_style and not test_basic and not test_context_cbks_reset_to_default and not test_run_as_script'
+[  575s] + set +x
+[  576s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  576s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  576s] Using alternative httpx-3.8 for httpx in ./build/flavorbin during Python 3.8 expansions.
+[  577s] Using alternative normalizer-3.8 for normalizer in ./build/flavorbin during Python 3.8 expansions.
+[  577s] Using alternative yappi-3.8 for yappi in ./build/flavorbin during Python 3.8 expansions.
+[  578s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  578s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  579s] Using alternative httpx-3.9 for httpx in ./build/flavorbin during Python 3.9 expansions.
+[  579s] Using alternative normalizer-3.9 for normalizer in ./build/flavorbin during Python 3.9 expansions.
+[  580s] Using alternative yappi-3.9 for yappi in ./build/flavorbin during Python 3.9 expansions.
+[  581s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  581s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  581s] Using alternative httpx-3.11 for httpx in ./build/flavorbin during Python 3.11 expansions.
+[  582s] Using alternative normalizer-3.11 for normalizer in ./build/flavorbin during Python 3.11 expansions.
+[  583s] Using alternative yappi-3.11 for yappi in ./build/flavorbin during Python 3.11 expansions.
+[  584s] Using alternative httpx-3.10 for httpx in ./build/flavorbin during Python 3.10 expansions.
+[  584s] Using alternative normalizer-3.10 for normalizer in ./build/flavorbin during Python 3.10 expansions.
+[  585s] Using alternative yappi-3.10 for yappi in ./build/flavorbin during Python 3.10 expansions.
+[  585s] + export PATH=/home/abuild/rpmbuild/BUILD/yappi-1.4.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  585s] + PATH=/home/abuild/rpmbuild/BUILD/yappi-1.4.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  585s] ++ '[' -f _current_flavor ']'
+[  585s] ++ cat _current_flavor
+[  585s] + last_flavor=python310
+[  585s] + '[' -z python310 ']'
+[  585s] + '[' python310 '!=' python38 ']'
+[  585s] + '[' -d build ']'
+[  585s] + mv build _build.python310
+[  585s] + '[' -d _build.python38 ']'
+[  585s] + mv _build.python38 build
+[  585s] + echo python38
+[  585s] + python_flavor=python38
+[  585s] + PYTHONPATH=tests/:/home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.8/site-packages
+[  585s] + PYTHONDONTWRITEBYTECODE=1
+[  585s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not test_basic_old_style and not test_basic and not test_context_cbks_reset_to_default and not test_run_as_script'
+[  595s] ============================= test session starts ==============================
+[  595s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  595s] cachedir: .pytest_cache
+[  595s] rootdir: /home/abuild/rpmbuild/BUILD/yappi-1.4.0
+[  595s] plugins: anyio-3.6.2, asyncio-0.20.3
+[  595s] asyncio: mode=strict
+[  599s] collecting ... collected 98 items / 7 deselected / 91 selected
+[  599s] 
+[  607s] tests/test_asyncio.py::SingleThreadTests::test_issue58 PASSED            [  1%]
+[  608s] tests/test_asyncio.py::SingleThreadTests::test_recursive_coroutine PASSED [  2%]
+[  609s] tests/test_asyncio_context_vars.py::AsyncUsage::test_async_cpu PASSED    [  3%]
+[  609s] tests/test_asyncio_context_vars.py::AsyncUsage::test_async_wall PASSED   [  4%]
+[  610s] tests/test_asyncio_context_vars.py::AsyncUsageWithContextvars::test_async_cpu PASSED [  5%]
+[  610s] tests/test_asyncio_context_vars.py::AsyncUsageWithContextvars::test_async_wall PASSED [  6%]
+[  611s] tests/test_asyncio_context_vars.py::AsyncUsageThreaded::test_async_cpu PASSED [  7%]
+[  612s] tests/test_asyncio_context_vars.py::AsyncUsageThreaded::test_async_wall PASSED [  8%]
+[  614s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvars::test_async_cpu PASSED [  9%]
+[  616s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvars::test_async_wall PASSED [ 10%]
+[  618s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvarsSelfContained::test_async_cpu PASSED [ 12%]
+[  620s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvarsSelfContained::test_async_wall PASSED [ 13%]
+[  621s] tests/test_functionality.py::BasicUsage::test_builtin_profiling PASSED   [ 14%]
+[  621s] tests/test_functionality.py::BasicUsage::test_callback_function_int_return_overflow PASSED [ 15%]
+[  621s] tests/test_functionality.py::BasicUsage::test_children_stat_functions PASSED [ 16%]
+[  621s] tests/test_functionality.py::BasicUsage::test_clear_stats_while_running PASSED [ 17%]
+[  621s] tests/test_functionality.py::BasicUsage::test_filter PASSED              [ 18%]
+[  623s] tests/test_functionality.py::BasicUsage::test_filter_callback PASSED     [ 19%]
+[  624s] tests/test_functionality.py::BasicUsage::test_generator PASSED           [ 20%]
+[  624s] tests/test_functionality.py::BasicUsage::test_get_clock PASSED           [ 21%]
+[  624s] tests/test_functionality.py::BasicUsage::test_issue54 PASSED             [ 23%]
+[  624s] tests/test_functionality.py::BasicUsage::test_issue60 PASSED             [ 24%]
+[  625s] tests/test_functionality.py::BasicUsage::test_lambda PASSED              [ 25%]
+[  625s] tests/test_functionality.py::BasicUsage::test_module_stress PASSED       [ 26%]
+[  625s] tests/test_functionality.py::BasicUsage::test_no_stats_different_clock_type_load PASSED [ 27%]
+[  625s] tests/test_functionality.py::BasicUsage::test_print_formatting PASSED    [ 28%]
+[  625s] tests/test_functionality.py::BasicUsage::test_profile_decorator PASSED   [ 29%]
+[  625s] tests/test_functionality.py::BasicUsage::test_run PASSED                 [ 30%]
+[  625s] tests/test_functionality.py::BasicUsage::test_run_recursive PASSED       [ 31%]
+[  626s] tests/test_functionality.py::BasicUsage::test_singlethread_profiling PASSED [ 32%]
+[  636s] tests/test_functionality.py::BasicUsage::test_slice_child_stats_and_strip_dirs PASSED [ 34%]
+[  636s] tests/test_functionality.py::BasicUsage::test_start_flags PASSED         [ 35%]
+[  636s] tests/test_functionality.py::BasicUsage::test_stat_sorting PASSED        [ 36%]
+[  636s] tests/test_functionality.py::BasicUsage::test_strip_dirs PASSED          [ 37%]
+[  636s] tests/test_functionality.py::BasicUsage::test_subsequent_profile PASSED  [ 38%]
+[  640s] tests/test_functionality.py::BasicUsage::test_yappi_overhead PASSED      [ 39%]
+[  640s] tests/test_functionality.py::StatSaveScenarios::test_merge_aabab_aabbc PASSED [ 40%]
+[  641s] tests/test_functionality.py::StatSaveScenarios::test_merge_load_different_clock_types PASSED [ 41%]
+[  641s] tests/test_functionality.py::StatSaveScenarios::test_merge_multithreaded_stats PASSED [ 42%]
+[  641s] tests/test_functionality.py::StatSaveScenarios::test_merge_stats PASSED  [ 43%]
+[  642s] tests/test_functionality.py::StatSaveScenarios::test_pstats_conversion PASSED [ 45%]
+[  643s] tests/test_functionality.py::MultithreadedScenarios::test_barrier PASSED [ 46%]
+[  644s] tests/test_functionality.py::MultithreadedScenarios::test_concurrent_futures PASSED [ 47%]
+[  646s] tests/test_functionality.py::MultithreadedScenarios::test_ctx_stats PASSED [ 48%]
+[  647s] tests/test_functionality.py::MultithreadedScenarios::test_ctx_stats_cpu PASSED [ 49%]
+[  647s] tests/test_functionality.py::MultithreadedScenarios::test_issue_32 PASSED [ 50%]
+[  654s] tests/test_functionality.py::MultithreadedScenarios::test_producer_consumer_with_queues PASSED [ 51%]
+[  655s] tests/test_functionality.py::MultithreadedScenarios::test_signals_with_blocking_calls PASSED [ 52%]
+[  656s] tests/test_functionality.py::MultithreadedScenarios::test_subsequent_profile PASSED [ 53%]
+[  658s] tests/test_functionality.py::MultithreadedScenarios::test_temporary_lock_waiting PASSED [ 54%]
+[  658s] tests/test_functionality.py::NonRecursiveFunctions::test_abcd PASSED     [ 56%]
+[  658s] tests/test_functionality.py::NonRecursiveFunctions::test_stop_in_middle PASSED [ 57%]
+[  658s] tests/test_functionality.py::RecursiveFunctions::test_aaaa PASSED        [ 58%]
+[  658s] tests/test_functionality.py::RecursiveFunctions::test_aaab PASSED        [ 59%]
+[  658s] tests/test_functionality.py::RecursiveFunctions::test_aabb PASSED        [ 60%]
+[  658s] tests/test_functionality.py::RecursiveFunctions::test_aabccb PASSED      [ 61%]
+[  658s] tests/test_functionality.py::RecursiveFunctions::test_abaa PASSED        [ 62%]
+[  659s] tests/test_functionality.py::RecursiveFunctions::test_abab PASSED        [ 63%]
+[  659s] tests/test_functionality.py::RecursiveFunctions::test_abbb PASSED        [ 64%]
+[  659s] tests/test_functionality.py::RecursiveFunctions::test_abcabc PASSED      [ 65%]
+[  659s] tests/test_functionality.py::RecursiveFunctions::test_abcadc PASSED      [ 67%]
+[  659s] tests/test_functionality.py::RecursiveFunctions::test_abcbca PASSED      [ 68%]
+[  660s] tests/test_functionality.py::RecursiveFunctions::test_fibonacci PASSED   [ 69%]
+[  660s] tests/test_gevent.py::TestAPI::test_context_change_exception PASSED      [ 70%]
+[  660s] tests/test_gevent.py::TestAPI::test_get_context_stat_exception PASSED    [ 71%]
+[  661s] tests/test_gevent.py::TestAPI::test_start_flags PASSED                   [ 72%]
+[  661s] tests/test_gevent.py::SingleThreadTests::test_default_context_name_cbk PASSED [ 73%]
+[  662s] tests/test_gevent.py::SingleThreadTests::test_exception_raised PASSED    [ 74%]
+[  663s] tests/test_gevent.py::SingleThreadTests::test_greenlets_spawned_before_profile PASSED [ 75%]
+[  666s] tests/test_gevent.py::SingleThreadTests::test_many_context_switches PASSED [ 76%]
+[  668s] tests/test_gevent.py::SingleThreadTests::test_recursive_function PASSED  [ 78%]
+[  669s] tests/test_gevent.py::SingleThreadTests::test_recursive_greenlet PASSED  [ 79%]
+[  669s] tests/test_gevent.py::MultiThreadTests::test_default_ctx_name_callback PASSED [ 80%]
+[  671s] tests/test_gevent.py::MultiThreadTests::test_profile_greenlets_false PASSED [ 81%]
+[  671s] tests/test_hooks.py::ContextIdCallbackTest::test_bad_input PASSED        [ 82%]
+[  671s] tests/test_hooks.py::ContextIdCallbackTest::test_callback PASSED         [ 83%]
+[  671s] tests/test_hooks.py::ContextIdCallbackTest::test_callback_error PASSED   [ 84%]
+[  671s] tests/test_hooks.py::ContextIdCallbackTest::test_callback_non_integer PASSED [ 85%]
+[  671s] tests/test_hooks.py::ContextIdCallbackTest::test_clear_callback PASSED   [ 86%]
+[  672s] tests/test_hooks.py::ContextIdCallbackTest::test_pause_resume PASSED     [ 87%]
+[  672s] tests/test_hooks.py::ContextIdCallbackTest::test_profile_single_context PASSED [ 89%]
+[  672s] tests/test_hooks.py::ContextNameCallbackTest::test_bad_input PASSED      [ 90%]
+[  672s] tests/test_hooks.py::ContextNameCallbackTest::test_callback PASSED       [ 91%]
+[  672s] tests/test_hooks.py::ContextNameCallbackTest::test_callback_error PASSED [ 92%]
+[  672s] tests/test_hooks.py::ContextNameCallbackTest::test_callback_non_string PASSED [ 93%]
+[  672s] tests/test_hooks.py::ContextNameCallbackTest::test_callback_none_return PASSED [ 94%]
+[  672s] tests/test_hooks.py::ContextNameCallbackTest::test_clear_callback PASSED [ 95%]
+[  673s] tests/test_tags.py::MultiThreadTests::test_tagging_cputime PASSED        [ 96%]
+[  673s] tests/test_tags.py::MultiThreadTests::test_tagging_walltime PASSED       [ 97%]
+[  673s] tests/test_tags.py::SingleThreadTests::test_invalid_tag PASSED           [ 98%]
+[  674s] tests/test_tags.py::SingleThreadTests::test_simple_tagging PASSED        [100%]
+[  674s] 
+[  674s] ================= 91 passed, 7 deselected in 78.85s (0:01:18) ==================
+[  674s] ++ '[' -f _current_flavor ']'
+[  674s] ++ cat _current_flavor
+[  674s] + last_flavor=python38
+[  674s] + '[' -z python38 ']'
+[  674s] + '[' python38 '!=' python39 ']'
+[  674s] + '[' -d build ']'
+[  674s] + mv build _build.python38
+[  675s] + '[' -d _build.python39 ']'
+[  675s] + mv _build.python39 build
+[  675s] + echo python39
+[  675s] + python_flavor=python39
+[  675s] + PYTHONPATH=tests/:/home/abuild/rpmbuild/BUILDROOT/python-yappi-1.4.0-2.2.riscv64/usr/lib64/python3.9/site-packages
+[  675s] + PYTHONDONTWRITEBYTECODE=1
+[  675s] + pytest-3.9 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not test_basic_old_style and not test_basic and not test_context_cbks_reset_to_default and not test_run_as_script'
+[  684s] ============================= test session starts ==============================
+[  684s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  684s] cachedir: .pytest_cache
+[  684s] rootdir: /home/abuild/rpmbuild/BUILD/yappi-1.4.0
+[  684s] plugins: anyio-3.6.2, asyncio-0.20.3
+[  684s] asyncio: mode=strict
+[  688s] collecting ... collected 98 items / 7 deselected / 91 selected
+[  688s] 
+[  695s] tests/test_asyncio.py::SingleThreadTests::test_issue58 PASSED            [  1%]
+[  696s] tests/test_asyncio.py::SingleThreadTests::test_recursive_coroutine PASSED [  2%]
+[  697s] tests/test_asyncio_context_vars.py::AsyncUsage::test_async_cpu PASSED    [  3%]
+[  697s] tests/test_asyncio_context_vars.py::AsyncUsage::test_async_wall PASSED   [  4%]
+[  698s] tests/test_asyncio_context_vars.py::AsyncUsageWithContextvars::test_async_cpu PASSED [  5%]
+[  698s] tests/test_asyncio_context_vars.py::AsyncUsageWithContextvars::test_async_wall PASSED [  6%]
+[  699s] tests/test_asyncio_context_vars.py::AsyncUsageThreaded::test_async_cpu PASSED [  7%]
+[  700s] tests/test_asyncio_context_vars.py::AsyncUsageThreaded::test_async_wall PASSED [  8%]
+[  702s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvars::test_async_cpu PASSED [  9%]
+[  703s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvars::test_async_wall PASSED [ 10%]
+[  705s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvarsSelfContained::test_async_cpu PASSED [ 12%]
+[  706s] tests/test_asyncio_context_vars.py::AsyncUsageThreadedWithContextvarsSelfContained::test_async_wall PASSED [ 13%]
+[  707s] tests/test_functionality.py::BasicUsage::test_builtin_profiling PASSED   [ 14%]
+[  707s] tests/test_functionality.py::BasicUsage::test_callback_function_int_return_overflow PASSED [ 15%]
+[  707s] tests/test_functionality.py::BasicUsage::test_children_stat_functions PASSED [ 16%]
+[  707s] tests/test_functionality.py::BasicUsage::test_clear_stats_while_running PASSED [ 17%]
+[  708s] tests/test_functionality.py::BasicUsage::test_filter PASSED              [ 18%]
+[  709s] tests/test_functionality.py::BasicUsage::test_filter_callback PASSED     [ 19%]
+[  712s] tests/test_functionality.py::BasicUsage::test_generator PASSED           [ 20%]
+[  712s] tests/test_functionality.py::BasicUsage::test_get_clock PASSED           [ 21%]
+[  712s] tests/test_functionality.py::BasicUsage::test_issue54 PASSED             [ 23%]
+[  712s] tests/test_functionality.py::BasicUsage::test_issue60 PASSED             [ 24%]
+[  713s] tests/test_functionality.py::BasicUsage::test_lambda PASSED              [ 25%]
+[  713s] tests/test_functionality.py::BasicUsage::test_module_stress PASSED       [ 26%]
+[  713s] tests/test_functionality.py::BasicUsage::test_no_stats_different_clock_type_load PASSED [ 27%]
+[  713s] tests/test_functionality.py::BasicUsage::test_print_formatting PASSED    [ 28%]
+[  713s] tests/test_functionality.py::BasicUsage::test_profile_decorator PASSED   [ 29%]
+[  713s] tests/test_functionality.py::BasicUsage::test_run PASSED                 [ 30%]
+[  713s] tests/test_functionality.py::BasicUsage::test_run_recursive PASSED       [ 31%]
+[  714s] tests/test_functionality.py::BasicUsage::test_singlethread_profiling PASSED [ 32%]
+[  725s] tests/test_functionality.py::BasicUsage::test_slice_child_stats_and_strip_dirs PASSED [ 34%]
+[  725s] tests/test_functionality.py::BasicUsage::test_start_flags PASSED         [ 35%]
+[  725s] tests/test_functionality.py::BasicUsage::test_stat_sorting PASSED        [ 36%]
+[  725s] tests/test_functionality.py::BasicUsage::test_strip_dirs PASSED          [ 37%]
+[  725s] tests/test_functionality.py::BasicUsage::test_subsequent_profile PASSED  [ 38%]
+[  728s] tests/test_functionality.py::BasicUsage::test_yappi_overhead PASSED      [ 39%]
+[  729s] tests/test_functionality.py::StatSaveScenarios::test_merge_aabab_aabbc PASSED [ 40%]
+[  730s] tests/test_functionality.py::StatSaveScenarios::test_merge_load_different_clock_types PASSED [ 41%]
+[  730s] tests/test_functionality.py::StatSaveScenarios::test_merge_multithreaded_stats PASSED [ 42%]
+[  730s] tests/test_functionality.py::StatSaveScenarios::test_merge_stats PASSED  [ 43%]
+[  731s] tests/test_functionality.py::StatSaveScenarios::test_pstats_conversion PASSED [ 45%]
+[  732s] tests/test_functionality.py::MultithreadedScenarios::test_barrier PASSED [ 46%]
+[  733s] tests/test_functionality.py::MultithreadedScenarios::test_concurrent_futures PASSED [ 47%]
+[  735s] tests/test_functionality.py::MultithreadedScenarios::test_ctx_stats PASSED [ 48%]
+[  735s] tests/test_functionality.py::MultithreadedScenarios::test_ctx_stats_cpu PASSED [ 49%]
+[  736s] tests/test_functionality.py::MultithreadedScenarios::test_issue_32 PASSED [ 50%]
+[  743s] tests/test_functionality.py::MultithreadedScenarios::test_producer_consumer_with_queues PASSED [ 51%]
+[  745s] tests/test_functionality.py::MultithreadedScenarios::test_signals_with_blocking_calls PASSED [ 52%]
+[  745s] tests/test_functionality.py::MultithreadedScenarios::test_subsequent_profile PASSED [ 53%]
+[  747s] tests/test_functionality.py::MultithreadedScenarios::test_temporary_lock_waiting PASSED [ 54%]
+[  748s] tests/test_functionality.py::NonRecursiveFunctions::test_abcd PASSED     [ 56%]
+[  748s] tests/test_functionality.py::NonRecursiveFunctions::test_stop_in_middle PASSED [ 57%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_aaaa PASSED        [ 58%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_aaab PASSED        [ 59%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_aabb PASSED        [ 60%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_aabccb PASSED      [ 61%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_abaa PASSED        [ 62%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_abab PASSED        [ 63%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_abbb PASSED        [ 64%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_abcabc PASSED      [ 65%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_abcadc PASSED      [ 67%]
+[  748s] tests/test_functionality.py::RecursiveFunctions::test_abcbca PASSED      [ 68%]
+[  750s] tests/test_functionality.py::RecursiveFunctions::test_fibonacci PASSED   [ 69%]
+[  750s] tests/test_gevent.py::TestAPI::test_context_change_exception PASSED      [ 70%]
+[  750s] tests/test_gevent.py::TestAPI::test_get_context_stat_exception PASSED    [ 71%]
+[  750s] tests/test_gevent.py::TestAPI::test_start_flags PASSED                   [ 72%]
+[  751s] tests/test_gevent.py::SingleThreadTests::test_default_context_name_cbk PASSED [ 73%]
+[  752s] tests/test_gevent.py::SingleThreadTests::test_exception_raised PASSED    [ 74%]
+[  753s] tests/test_gevent.py::SingleThreadTests::test_greenlets_spawned_before_profile PASSED [ 75%]
+[  756s] tests/test_gevent.py::SingleThreadTests::test_many_context_switches PASSED [ 76%]
+[  757s] tests/test_gevent.py::SingleThreadTests::test_recursive_function PASSED  [ 78%]
+[  759s] tests/test_gevent.py::SingleThreadTests::test_recursive_greenlet PASSED  [ 79%]
+[  759s] tests/test_gevent.py::MultiThreadTests::test_default_ctx_name_callback PASSED [ 80%]
+[  762s] tests/test_gevent.py::MultiThreadTests::test_profile_greenlets_false FAILED [ 81%]
+[  762s] tests/test_hooks.py::ContextIdCallbackTest::test_bad_input PASSED        [ 82%]
+[  762s] tests/test_hooks.py::ContextIdCallbackTest::test_callback PASSED         [ 83%]
+[  762s] tests/test_hooks.py::ContextIdCallbackTest::test_callback_error PASSED   [ 84%]
+[  762s] tests/test_hooks.py::ContextIdCallbackTest::test_callback_non_integer PASSED [ 85%]
+[  762s] tests/test_hooks.py::ContextIdCallbackTest::test_clear_callback PASSED   [ 86%]
+[  762s] tests/test_hooks.py::ContextIdCallbackTest::test_pause_resume PASSED     [ 87%]
+[  762s] tests/test_hooks.py::ContextIdCallbackTest::test_profile_single_context PASSED [ 89%]
+[  762s] tests/test_hooks.py::ContextNameCallbackTest::test_bad_input PASSED      [ 90%]
+[  762s] tests/test_hooks.py::ContextNameCallbackTest::test_callback PASSED       [ 91%]
+[  763s] tests/test_hooks.py::ContextNameCallbackTest::test_callback_error PASSED [ 92%]
+[  763s] tests/test_hooks.py::ContextNameCallbackTest::test_callback_non_string PASSED [ 93%]
+[  763s] tests/test_hooks.py::ContextNameCallbackTest::test_callback_none_return PASSED [ 94%]
+[  763s] tests/test_hooks.py::ContextNameCallbackTest::test_clear_callback PASSED [ 95%]
+[  763s] tests/test_tags.py::MultiThreadTests::test_tagging_cputime PASSED        [ 96%]
+[  764s] tests/test_tags.py::MultiThreadTests::test_tagging_walltime PASSED       [ 97%]
+[  764s] tests/test_tags.py::SingleThreadTests::test_invalid_tag PASSED           [ 98%]
+[  765s] tests/test_tags.py::SingleThreadTests::test_simple_tagging PASSED        [100%]
+[  765s] 
+[  765s] =================================== FAILURES ===================================
+[  765s] ________________ MultiThreadTests.test_profile_greenlets_false _________________
+[  765s] 
+[  765s] self = <tests.test_gevent.MultiThreadTests testMethod=test_profile_greenlets_false>
+[  765s] 
+[  765s]     def test_profile_greenlets_false(self):
+[  765s]     
+[  765s]         def recursive_a(n):
+[  765s]             if not n:
+[  765s]                 return
+[  765s]             burn_cpu(0.1)
+[  765s]             burn_io_gevent(0.1)
+[  765s]             g = self.spawn_greenlet("rec", recursive_a, n - 1)
+[  765s]             return g.get()
+[  765s]     
+[  765s]         yappi.set_clock_type("cpu")
+[  765s]     
+[  765s]         def driver():
+[  765s]     
+[  765s]             to_run = [(recursive_a, (5, )), (recursive_a, (5, ))]
+[  765s]     
+[  765s]             ts = []
+[  765s]             for idx, (func, args) in enumerate(to_run):
+[  765s]                 t = self.spawn_thread(
+[  765s]                     "%s_%d" % (func.__name__, idx), func, *args
+[  765s]                 )
+[  765s]                 ts.append(t)
+[  765s]     
+[  765s]             recursive_a(6)
+[  765s]     
+[  765s]             for t in ts:
+[  765s]                 t.join()
+[  765s]     
+[  765s]         yappi.start(profile_greenlets=False)
+[  765s]     
+[  765s]         driver()
+[  765s]     
+[  765s]         yappi.stop()
+[  765s]         traces = yappi.get_func_stats()
+[  765s]         t1 = '''
+[  765s]         tests/test_gevent.py:359 driver       1      0.000061  0.101845  0.101845
+[  765s]         tests/test_gevent.py:335 recursive_a  1      0.000262  0.100619  0.100619
+[  765s]         ../yappi/tests/utils.py:126 burn_cpu  1      0.000000  0.100082  0.100082
+[  765s]         '''
+[  765s] >       self.assert_traces_almost_equal(t1, traces)
+[  765s] 
+[  765s] tests/test_gevent.py:570: 
+[  765s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  765s] tests/utils.py:55: in assert_traces_almost_equal
+[  765s]     self.assert_almost_equal(ttot_orig, t.ttot, err_msg=tline)
+[  765s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  765s] 
+[  765s] self = <tests.test_gevent.MultiThreadTests testMethod=test_profile_greenlets_false>
+[  765s] x = 0.101845, y = 0.193470408, negative_err = 0.2, positive_err = 0.6
+[  765s] err_msg = 'tests/test_gevent.py:359 driver       1      0.000061  0.101845  0.101845'
+[  765s] 
+[  765s]     def assert_almost_equal(
+[  765s]         self, x, y, negative_err=0.2, positive_err=0.6, err_msg=None
+[  765s]     ):
+[  765s]         # time sensitive tests fail on MacOS CI, increase threshold
+[  765s]         if sys.platform == 'darwin':
+[  765s]             positive_err = 1.5
+[  765s]             negative_err = 0.6
+[  765s]     
+[  765s]         pos_epsilon = (x * positive_err)
+[  765s]         neg_epsilon = (x * negative_err)
+[  765s]     
+[  765s]         # if too small, then use 0 as negative threshold
+[  765s]         neg_threshold = x - neg_epsilon
+[  765s]         if neg_threshold < 0.1:
+[  765s]             neg_threshold = 0
+[  765s]     
+[  765s]         pos_threshold = x + pos_epsilon
+[  765s]         if pos_threshold < 0.1:
+[  765s]             pos_threshold = 0.1
+[  765s]     
+[  765s] >       assert neg_threshold <= y <= pos_threshold, "%s <= %s <= %s is not True. [%s]" % (
+[  765s]             neg_threshold, y, pos_threshold, err_msg
+[  765s]         )
+[  765s] E       AssertionError: 0 <= 0.193470408 <= 0.162952 is not True. [tests/test_gevent.py:359 driver       1      0.000061  0.101845  0.101845]
+[  765s] 
+[  765s] tests/utils.py:90: AssertionError
+[  765s] =========================== short test summary info ============================
+[  765s] FAILED tests/test_gevent.py::MultiThreadTests::test_profile_greenlets_false
+[  765s] ============ 1 failed, 90 passed, 7 deselected in 81.38s (0:01:21) =============
+[  765s] error: Bad exit status from /var/tmp/rpm-tmp.1eGH5b (%check)
+[  765s] 
+[  765s] RPM build errors:
+[  765s]     Bad exit status from /var/tmp/rpm-tmp.1eGH5b (%check)
+[  766s] ### VM INTERACTION START ###
+[  767s] [  756.758959][    T1] sysrq: Power Off
+[  767s] [  756.824869][   T18] reboot: Power down
+[  767s] ### VM INTERACTION END ###
+[  767s] 
+[  767s] lamb09 failed "build python-yappi.spec" at Thu Feb 23 19:24:13 UTC 2023.
+[  767s] 

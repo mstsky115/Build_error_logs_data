@@ -1,0 +1,1575 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] cumulus2 started "build python-google-api-core.spec" at Fri Dec  2 17:45:03 UTC 2022.
+[    0s] 
+[    0s] Building python-google-api-core:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f042875ed4001bf2e1f4a75dd7a46ab4'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/python-google-api-core.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/python-google-api-core.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/python-google-api-core.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [d11c81a945baea4592562c86c1f50e37]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...done
+[    5s] Detected virtio-serial support
+[   26s] booting kvm...
+[   26s] ### VM INTERACTION START ###
+[   26s] Using virtio-serial support
+[   26s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 10000 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 12
+[   31s] ### VM INTERACTION END ###
+[   31s] 2nd stage started in virtual machine
+[   31s] machine type: riscv64
+[   31s] Linux version: 6.0.10-1-default #1 SMP PREEMPT_DYNAMIC Sat Nov 26 17:59:17 UTC 2022 (582305b)
+[   31s] Increasing log level from now on...
+[   31s] [    5.412804][  T448] sysrq: Changing Loglevel
+[   31s] [    5.412924][  T448] sysrq: Loglevel set to 4
+[   31s] Enable sysrq operations
+[   32s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   32s] no label, UUID=1e066c3a-b79e-403e-bac7-9c7516ffb02f
+[   32s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   32s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   32s] swapon /dev/vdb
+[   32s] WARNING: udev not running, creating extra device nodes
+[   33s] logging output to //.build.log...
+[   33s] processing recipe /.build-srcdir/python-google-api-core.spec ...
+[   33s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-google-api-core.spec build ...
+[   34s] initializing rpm db...
+[   34s] querying package ids...
+[   68s] [1/279] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   68s] [2/279] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   68s] [3/279] preinstalled attr-2.5.1-1.1
+[   68s] [4/279] preinstalled bash-5.2.12-6.1
+[   68s] [5/279] preinstalled bash-sh-5.2.12-6.1
+[   68s] [6/279] preinstalled binutils-2.39-1.1
+[   68s] [7/279] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   68s] [8/279] preinstalled build-compare-20220926T095347.40c240f-1.1
+[   68s] [9/279] preinstalled build-mkbaselibs-20221118-1.1
+[   68s] [10/279] preinstalled bzip2-1.0.8-4.1
+[   68s] [11/279] preinstalled chkstat-1599_20220912-2.1
+[   68s] [12/279] preinstalled compat-usrmerge-build-84.87-5.1
+[   68s] [13/279] preinstalled compat-usrmerge-tools-84.87-5.1
+[   68s] [14/279] preinstalled coreutils-9.1-5.1
+[   68s] [15/279] preinstalled cpio-2.13-4.1
+[   68s] [16/279] preinstalled cpp-12-2.1
+[   68s] [17/279] preinstalled cpp12-12.2.1+git537-1.1
+[   68s] [18/279] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   68s] [19/279] preinstalled debugedit-5.0-5.1
+[   68s] [20/279] preinstalled diffutils-3.8-3.1
+[   68s] [21/279] preinstalled dwz-0.15-2.1
+[   68s] [22/279] preinstalled elfutils-0.188-2.1
+[   69s] [23/279] cumulate fdupes-2.2.1-1.1
+[   69s] [24/279] preinstalled file-5.43-1.1
+[   69s] [25/279] preinstalled file-magic-5.43-1.1
+[   69s] [26/279] preinstalled filesystem-84.87-10.1
+[   69s] [27/279] preinstalled fillup-1.42-278.1
+[   69s] [28/279] preinstalled findutils-4.9.0-1.1
+[   69s] [29/279] preinstalled gawk-5.2.1-1.1
+[   69s] [30/279] preinstalled gcc-12-2.1
+[   69s] [31/279] preinstalled gcc-PIE-12-2.1
+[   69s] [32/279] preinstalled gcc12-12.2.1+git537-1.1
+[   69s] [33/279] preinstalled gcc12-PIE-12.2.1+git537-1.1
+[   69s] [34/279] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   69s] [35/279] preinstalled gettext-tools-mini-0.21.1-1.1
+[   69s] [36/279] preinstalled glibc-2.36-8.1
+[   69s] [37/279] preinstalled glibc-devel-2.36-8.1
+[   69s] [38/279] preinstalled glibc-locale-base-2.36-8.1
+[   69s] [39/279] preinstalled grep-3.8-2.1
+[   69s] [40/279] preinstalled gzip-1.12-2.1
+[   69s] [41/279] preinstalled kernel-obs-build-6.0.10-1.1
+[   69s] [42/279] preinstalled libacl1-2.3.1-2.1
+[   69s] [43/279] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   69s] [44/279] preinstalled libasan8-12.2.1+git537-1.1
+[   69s] [45/279] preinstalled libasm1-0.188-2.1
+[   69s] [46/279] preinstalled libatomic1-12.2.1+git537-1.1
+[   69s] [47/279] preinstalled libattr1-2.5.1-1.1
+[   69s] [48/279] preinstalled libaudit1-3.0.6-4.1
+[   69s] [49/279] preinstalled libblkid1-2.37.4-4.1
+[   69s] [50/279] preinstalled libbz2-1-1.0.8-4.1
+[   69s] [51/279] preinstalled libcap-ng0-0.8.3-1.1
+[   69s] [52/279] preinstalled libcap2-2.66-1.1
+[   69s] [53/279] cumulate libcom_err2-1.46.5-3.1
+[   69s] [54/279] preinstalled libcrypt1-4.4.33-1.1
+[   69s] [55/279] preinstalled libctf-nobfd0-2.39-1.1
+[   69s] [56/279] preinstalled libctf0-2.39-1.1
+[   69s] [57/279] preinstalled libdb-4_8-4.8.30-39.1
+[   69s] [58/279] preinstalled libdw1-0.188-2.1
+[   69s] [59/279] preinstalled libeconf0-0.4.9-1.1
+[   69s] [60/279] preinstalled libelf1-0.188-2.1
+[   69s] [61/279] preinstalled libexpat1-2.5.0-1.1
+[   69s] [62/279] preinstalled libfdisk1-2.37.4-4.1
+[   69s] [63/279] preinstalled libffi8-3.4.4-1.1
+[   69s] [64/279] preinstalled libgcc_s1-12.2.1+git537-1.1
+[   69s] [65/279] preinstalled libgcrypt20-1.10.1-1.1
+[   69s] [66/279] preinstalled libgdbm6-1.23-1.1
+[   69s] [67/279] preinstalled libgdbm_compat4-1.23-1.1
+[   69s] [68/279] preinstalled libgmp10-6.2.1-4.1
+[   69s] [69/279] preinstalled libgomp1-12.2.1+git537-1.1
+[   69s] [70/279] preinstalled libgpg-error0-1.46-1.1
+[   69s] [71/279] preinstalled libisl23-0.25-1.1
+[   69s] [72/279] cumulate libkeyutils1-1.6.3-4.1
+[   69s] [73/279] preinstalled liblua5_4-5-5.4.4-6.1
+[   69s] [74/279] preinstalled liblzma5-5.2.8-1.1
+[   69s] [75/279] preinstalled libmagic1-5.43-1.1
+[   69s] [76/279] preinstalled libmount1-2.37.4-4.1
+[   69s] [77/279] preinstalled libmpc3-1.2.1-1.2
+[   69s] [78/279] preinstalled libmpdec3-2.5.1-2.1
+[   69s] [79/279] preinstalled libmpfr6-4.1.1-3.1
+[   69s] [80/279] preinstalled libncurses6-6.3.20221105-30.1
+[   69s] [81/279] cumulate libnss_usrfiles2-2.27-3.1
+[   69s] [82/279] preinstalled libopenssl1_1-1.1.1s-1.1
+[   69s] [83/279] cumulate libp11-kit0-0.24.1-2.1
+[   69s] [84/279] preinstalled libpcre2-8-0-10.40-3.1
+[   69s] [85/279] preinstalled libpkgconf3-1.8.0-1.1
+[   69s] [86/279] preinstalled libpopt0-1.19-1.1
+[   69s] [87/279] preinstalled libpython3_10-1_0-3.10.8-3.1
+[   69s] [88/279] preinstalled libpython3_8-1_0-3.8.15-4.1
+[   69s] [89/279] preinstalled libpython3_9-1_0-3.9.15-3.1
+[   69s] [90/279] cumulate libre2-9-20220601-49.1
+[   69s] [91/279] preinstalled libreadline8-8.2-2.1
+[   69s] [92/279] preinstalled librpmbuild9-4.17.1.1-3.1
+[   69s] [93/279] preinstalled libseccomp2-2.5.4-2.1
+[   69s] [94/279] preinstalled libselinux1-3.4-2.1
+[   69s] [95/279] preinstalled libsemanage-conf-3.4-1.1
+[   69s] [96/279] preinstalled libsemanage2-3.4-1.1
+[   69s] [97/279] preinstalled libsepol2-3.4-1.1
+[   69s] [98/279] preinstalled libsmartcols1-2.37.4-4.1
+[   69s] [99/279] cumulate libsqlite3-0-3.40.0-1.1
+[   69s] [100/279] preinstalled libstdc++6-12.2.1+git537-1.1
+[   69s] [101/279] preinstalled libsubid4-4.13-1.1
+[   69s] [102/279] cumulate libtasn1-6-4.19.0-1.1
+[   69s] [103/279] cumulate libtirpc-netconfig-1.3.3-1.1
+[   69s] [104/279] preinstalled libubsan1-12.2.1+git537-1.1
+[   69s] [105/279] preinstalled libutempter0-1.2.0-3.2
+[   69s] [106/279] preinstalled libuuid1-2.37.4-4.1
+[   69s] [107/279] cumulate libverto1-0.3.2-1.1
+[   69s] [108/279] preinstalled libxcrypt-devel-4.4.33-1.1
+[   69s] [109/279] preinstalled libz1-1.2.12-2.1
+[   69s] [110/279] preinstalled libzstd1-1.5.2-1.1
+[   69s] [111/279] preinstalled linux-glibc-devel-6.0-1.1
+[   69s] [112/279] preinstalled login_defs-4.13-1.1
+[   69s] [113/279] preinstalled lua54-5.4.4-6.1
+[   69s] [114/279] preinstalled make-4.4-2.1
+[   69s] [115/279] preinstalled ncurses-utils-6.3.20221105-30.1
+[   69s] [116/279] preinstalled pam-1.5.2-8.1
+[   69s] [117/279] preinstalled pam_unix-1.5.2-8.1
+[   69s] [118/279] preinstalled patch-2.7.6-6.1
+[   69s] [119/279] preinstalled perl-5.36.0-3.1
+[   69s] [120/279] preinstalled perl-base-5.36.0-3.1
+[   69s] [121/279] preinstalled permissions-1599_20220912-2.1
+[   69s] [122/279] preinstalled permissions-config-1599_20220912-2.1
+[   69s] [123/279] preinstalled pkgconf-1.8.0-1.1
+[   69s] [124/279] preinstalled pkgconf-m4-1.8.0-1.1
+[   69s] [125/279] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   69s] [126/279] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   69s] [127/279] preinstalled post-build-checks-84.87+git20221125.a8b2d0e-1.1
+[   69s] [128/279] preinstalled python-rpm-macros-20221117.8687578-1.1
+[   69s] [129/279] preinstalled python-rpm-packaging-20210526+a18ca48-1.1
+[   69s] [130/279] cumulate python310-apipkg-3.0.1-1.1
+[   69s] [131/279] cumulate python310-attrs-22.1.0-2.1
+[   69s] [132/279] preinstalled python310-base-3.10.8-3.1
+[   69s] [133/279] cumulate python310-cachetools-5.2.0-1.1
+[   69s] [134/279] cumulate python310-charset-normalizer-3.0.0-1.1
+[   69s] [135/279] cumulate python310-idna-3.4-1.1
+[   69s] [136/279] cumulate python310-iniconfig-1.1.1-2.1
+[   69s] [137/279] preinstalled python310-packaging-21.3-4.1
+[   69s] [138/279] cumulate python310-pluggy-1.0.0-1.4
+[   69s] [139/279] cumulate python310-pyasn1-0.4.8-2.4
+[   69s] [140/279] cumulate python310-pycparser-2.21-1.4
+[   69s] [141/279] preinstalled python310-pyparsing-3.0.9-2.1
+[   69s] [142/279] preinstalled python310-setuptools-65.6.3-1.1
+[   69s] [143/279] cumulate python310-six-1.16.0-2.4
+[   69s] [144/279] cumulate python310-tomli-2.0.1-1.2
+[   69s] [145/279] cumulate python310-zipp-3.8.1-1.1
+[   69s] [146/279] cumulate python38-apipkg-3.0.1-1.1
+[   69s] [147/279] cumulate python38-attrs-22.1.0-2.1
+[   69s] [148/279] preinstalled python38-base-3.8.15-4.1
+[   69s] [149/279] cumulate python38-cachetools-5.2.0-1.1
+[   69s] [150/279] cumulate python38-charset-normalizer-3.0.0-1.1
+[   69s] [151/279] cumulate python38-idna-3.4-1.1
+[   69s] [152/279] cumulate python38-iniconfig-1.1.1-2.1
+[   69s] [153/279] cumulate python38-pluggy-1.0.0-1.4
+[   69s] [154/279] cumulate python38-pyasn1-0.4.8-2.4
+[   69s] [155/279] cumulate python38-pycparser-2.21-1.4
+[   69s] [156/279] cumulate python38-pyparsing-3.0.9-2.1
+[   69s] [157/279] preinstalled python38-setuptools-65.6.3-1.1
+[   69s] [158/279] cumulate python38-six-1.16.0-2.4
+[   69s] [159/279] cumulate python38-tomli-2.0.1-1.2
+[   69s] [160/279] cumulate python38-zipp-3.8.1-1.1
+[   69s] [161/279] cumulate python39-apipkg-3.0.1-1.1
+[   69s] [162/279] cumulate python39-attrs-22.1.0-2.1
+[   69s] [163/279] preinstalled python39-base-3.9.15-3.1
+[   69s] [164/279] cumulate python39-cachetools-5.2.0-1.1
+[   69s] [165/279] cumulate python39-charset-normalizer-3.0.0-1.1
+[   69s] [166/279] cumulate python39-idna-3.4-1.1
+[   69s] [167/279] cumulate python39-iniconfig-1.1.1-2.1
+[   69s] [168/279] cumulate python39-pluggy-1.0.0-1.4
+[   69s] [169/279] cumulate python39-pyasn1-0.4.8-2.4
+[   69s] [170/279] cumulate python39-pycparser-2.21-1.4
+[   69s] [171/279] cumulate python39-pyparsing-3.0.9-2.1
+[   69s] [172/279] preinstalled python39-setuptools-65.6.3-1.1
+[   69s] [173/279] cumulate python39-six-1.16.0-2.4
+[   69s] [174/279] cumulate python39-tomli-2.0.1-1.2
+[   69s] [175/279] cumulate python39-zipp-3.8.1-1.1
+[   69s] [176/279] preinstalled qemu-linux-user-7.1.0-45.1
+[   69s] [177/279] preinstalled rpm-4.17.1.1-3.1
+[   69s] [178/279] preinstalled rpm-build-4.17.1.1-3.1
+[   69s] [179/279] preinstalled rpm-build-perl-4.17.1.1-3.1
+[   69s] [180/279] preinstalled rpm-config-SUSE-20220926-1.1
+[   69s] [181/279] preinstalled rpmlint-mini-2.4.0+git20221128.b71453b-8.31
+[   69s] [182/279] preinstalled rpmlint-strict-2.4.0+git20221128.b71453b-1.1
+[   69s] [183/279] preinstalled sed-4.9-1.1
+[   69s] [184/279] preinstalled shadow-4.13-1.1
+[   69s] [185/279] preinstalled system-group-hardware-20170617-24.1
+[   69s] [186/279] preinstalled system-user-root-20190513-2.1
+[   69s] [187/279] preinstalled systemd-rpm-macros-18-1.1
+[   69s] [188/279] preinstalled sysuser-shadow-3.1-5.1
+[   69s] [189/279] preinstalled tar-1.34-8.1
+[   69s] [190/279] preinstalled terminfo-base-6.3.20221105-30.1
+[   69s] [191/279] cumulate timezone-2022f-1.1
+[   69s] [192/279] preinstalled update-alternatives-1.21.8-1.1
+[   69s] [193/279] preinstalled util-linux-2.37.4-4.1
+[   69s] [194/279] preinstalled which-2.21-5.1
+[   69s] [195/279] preinstalled xz-5.2.8-1.1
+[   69s] [196/279] cumulate alts-1.2+3.b848aad-3.1
+[   69s] [197/279] cumulate netcfg-11.6-10.1
+[   69s] [198/279] cumulate python310-cffi-1.15.1-1.1
+[   69s] [199/279] cumulate python310-importlib-metadata-5.0.0-1.1
+[   69s] [200/279] cumulate python310-protobuf-21.9-1.1
+[   69s] [201/279] cumulate python310-pyasn1-modules-0.2.8-1.9
+[   69s] [202/279] cumulate python310-pytz-2022.6-1.1
+[   69s] [203/279] cumulate python38-cffi-1.15.1-1.1
+[   69s] [204/279] cumulate python38-importlib-metadata-5.0.0-1.1
+[   69s] [205/279] cumulate python38-packaging-21.3-4.1
+[   69s] [206/279] cumulate python38-protobuf-21.9-1.1
+[   69s] [207/279] cumulate python38-pyasn1-modules-0.2.8-1.9
+[   69s] [208/279] cumulate python38-pytz-2022.6-1.1
+[   69s] [209/279] cumulate python39-cffi-1.15.1-1.1
+[   69s] [210/279] cumulate python39-importlib-metadata-5.0.0-1.1
+[   69s] [211/279] cumulate python39-packaging-21.3-4.1
+[   69s] [212/279] cumulate python39-protobuf-21.9-1.1
+[   69s] [213/279] cumulate python39-pyasn1-modules-0.2.8-1.9
+[   69s] [214/279] cumulate python39-pytz-2022.6-1.1
+[   69s] [215/279] cumulate p11-kit-0.24.1-2.1
+[   69s] [216/279] cumulate p11-kit-tools-0.24.1-2.1
+[   69s] [217/279] cumulate python310-py-1.11.0-3.1
+[   69s] [218/279] cumulate python38-py-1.11.0-3.1
+[   69s] [219/279] cumulate python39-py-1.11.0-3.1
+[   69s] [220/279] cumulate krb5-mini-1.20.1-1.1
+[   69s] [221/279] cumulate python310-googleapis-common-protos-1.57.0-1.1
+[   69s] [222/279] cumulate python310-proto-plus-1.22.1-1.1
+[   69s] [223/279] cumulate python310-pyOpenSSL-22.1.0-1.1
+[   69s] [224/279] cumulate python310-wheel-0.38.2-1.1
+[   69s] [225/279] cumulate python38-googleapis-common-protos-1.57.0-1.1
+[   69s] [226/279] cumulate python38-proto-plus-1.22.1-1.1
+[   69s] [227/279] cumulate python38-pyOpenSSL-22.1.0-1.1
+[   69s] [228/279] cumulate python38-wheel-0.38.2-1.1
+[   69s] [229/279] cumulate python39-googleapis-common-protos-1.57.0-1.1
+[   69s] [230/279] cumulate python39-proto-plus-1.22.1-1.1
+[   69s] [231/279] cumulate python39-pyOpenSSL-22.1.0-1.1
+[   69s] [232/279] cumulate python39-wheel-0.38.2-1.1
+[   69s] [233/279] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   69s] [234/279] cumulate libcares2-1.18.1-1.1
+[   69s] [235/279] cumulate libtirpc3-1.3.3-1.1
+[   69s] [236/279] cumulate python310-rsa-4.9-1.1
+[   69s] [237/279] cumulate python38-rsa-4.9-1.1
+[   69s] [238/279] cumulate python39-rsa-4.9-1.1
+[   69s] [239/279] cumulate python310-pytest-7.1.2-1.1
+[   69s] [240/279] cumulate python38-pytest-7.1.2-1.1
+[   69s] [241/279] cumulate python39-pytest-7.1.2-1.1
+[   69s] [242/279] cumulate ca-certificates-mozilla-2.56-1.1
+[   69s] [243/279] cumulate libnsl3-2.0.0-1.1
+[   69s] [244/279] cumulate python310-pytest-asyncio-0.19.0-1.1
+[   69s] [245/279] cumulate python38-pytest-asyncio-0.19.0-1.1
+[   69s] [246/279] cumulate python39-pytest-asyncio-0.19.0-1.1
+[   69s] [247/279] cumulate python310-pip-22.0.4-2.1
+[   69s] [248/279] cumulate python38-pip-22.0.4-2.1
+[   69s] [249/279] cumulate python39-pip-22.0.4-2.1
+[   69s] [250/279] cumulate python310-grpcio-1.50.0-1.1
+[   69s] [251/279] cumulate python38-grpcio-1.50.0-1.1
+[   69s] [252/279] cumulate python39-grpcio-1.50.0-1.1
+[   69s] [253/279] cumulate python310-grpcio-gcp-0.2.2-1.9
+[   69s] [254/279] cumulate python38-grpcio-gcp-0.2.2-1.9
+[   69s] [255/279] cumulate python39-grpcio-gcp-0.2.2-1.9
+[   69s] [256/279] cumulate python310-certifi-2022.9.24-1.1
+[   69s] [257/279] cumulate python38-certifi-2022.9.24-1.1
+[   69s] [258/279] cumulate python39-certifi-2022.9.24-1.1
+[   69s] [259/279] cumulate python310-3.10.8-3.1
+[   69s] [260/279] cumulate python310-grpcio-status-1.44.0-1.2
+[   69s] [261/279] cumulate python38-3.8.15-4.1
+[   69s] [262/279] cumulate python38-grpcio-status-1.44.0-1.2
+[   69s] [263/279] cumulate python39-3.9.15-3.1
+[   69s] [264/279] cumulate python39-grpcio-status-1.44.0-1.2
+[   69s] [265/279] cumulate python310-cryptography-38.0.3-1.1
+[   69s] [266/279] cumulate python38-cryptography-38.0.3-1.1
+[   69s] [267/279] cumulate python39-cryptography-38.0.3-1.1
+[   69s] [268/279] cumulate python310-google-auth-2.14.1-1.1
+[   69s] [269/279] cumulate python38-google-auth-2.14.1-1.1
+[   69s] [270/279] cumulate python39-google-auth-2.14.1-1.1
+[   69s] [271/279] cumulate python310-urllib3-1.26.12-2.1
+[   69s] [272/279] cumulate python38-urllib3-1.26.12-2.1
+[   69s] [273/279] cumulate python39-urllib3-1.26.12-2.1
+[   69s] [274/279] cumulate python310-requests-2.28.1-3.1
+[   69s] [275/279] cumulate python38-requests-2.28.1-3.1
+[   69s] [276/279] cumulate python39-requests-2.28.1-3.1
+[   69s] [277/279] cumulate python310-google-api-core-2.11.0-1.1
+[   69s] [278/279] cumulate python38-google-api-core-2.11.0-1.1
+[   69s] [279/279] cumulate python39-google-api-core-2.11.0-1.1
+[   69s] now installing cumulated packages
+[   71s] Preparing...                          ########################################
+[   71s] Updating / installing...
+[   71s] python39-six-1.16.0-2.4               ########################################
+[   71s] python39-protobuf-21.9-1.1            ########################################
+[   72s] python38-six-1.16.0-2.4               ########################################
+[   72s] python38-protobuf-21.9-1.1            ########################################
+[   72s] python310-six-1.16.0-2.4              ########################################
+[   72s] python310-protobuf-21.9-1.1           ########################################
+[   73s] timezone-2022f-1.1                    ########################################
+[   73s] libsqlite3-0-3.40.0-1.1               ########################################
+[   73s] libre2-9-20220601-49.1                ########################################
+[   73s] python39-pyasn1-0.4.8-2.4             ########################################
+[   73s] python39-iniconfig-1.1.1-2.1          ########################################
+[   74s] python39-idna-3.4-1.1                 ########################################
+[   74s] python38-pyasn1-0.4.8-2.4             ########################################
+[   74s] python38-iniconfig-1.1.1-2.1          ########################################
+[   74s] python38-idna-3.4-1.1                 ########################################
+[   74s] python310-pyasn1-0.4.8-2.4            ########################################
+[   74s] python310-iniconfig-1.1.1-2.1         ########################################
+[   74s] python310-idna-3.4-1.1                ########################################
+[   74s] libtasn1-6-4.19.0-1.1                 ########################################
+[   75s] libp11-kit0-0.24.1-2.1                ########################################
+[   75s] libnss_usrfiles2-2.27-3.1             ########################################
+[   75s] netcfg-11.6-10.1                      ########################################
+[   75s] warning: /etc/hosts created as /etc/hosts.rpmnew
+[   75s] libcares2-1.18.1-1.1                  ########################################
+[   75s] p11-kit-0.24.1-2.1                    ########################################
+[   75s] p11-kit-tools-0.24.1-2.1              ########################################
+[   76s] ca-certificates-2+git20211004.3efbea9-########################################
+[   78s] ca-certificates-mozilla-2.56-1.1      ########################################
+[   86s] python310-grpcio-1.50.0-1.1           ########################################
+[   88s] python38-grpcio-1.50.0-1.1            ########################################
+[   89s] python39-grpcio-1.50.0-1.1            ########################################
+[   89s] python39-googleapis-common-protos-1.57########################################
+[   89s] python38-googleapis-common-protos-1.57########################################
+[   89s] python310-googleapis-common-protos-1.5########################################
+[   89s] python310-certifi-2022.9.24-1.1       ########################################
+[   89s] python38-certifi-2022.9.24-1.1        ########################################
+[   89s] python39-certifi-2022.9.24-1.1        ########################################
+[   89s] python310-grpcio-status-1.44.0-1.2    ########################################
+[   89s] python38-grpcio-status-1.44.0-1.2     ########################################
+[   89s] python39-grpcio-status-1.44.0-1.2     ########################################
+[   89s] python39-grpcio-gcp-0.2.2-1.9         ########################################
+[   89s] python38-grpcio-gcp-0.2.2-1.9         ########################################
+[   89s] python310-grpcio-gcp-0.2.2-1.9        ########################################
+[   90s] python310-pyasn1-modules-0.2.8-1.9    ########################################
+[   90s] python38-pyasn1-modules-0.2.8-1.9     ########################################
+[   90s] python39-pyasn1-modules-0.2.8-1.9     ########################################
+[   91s] python310-pytz-2022.6-1.1             ########################################
+[   91s] python38-pytz-2022.6-1.1              ########################################
+[   91s] python39-pytz-2022.6-1.1              ########################################
+[   91s] python39-zipp-3.8.1-1.1               ########################################
+[   91s] python39-importlib-metadata-5.0.0-1.1 ########################################
+[   91s] python39-tomli-2.0.1-1.2              ########################################
+[   91s] python39-pyparsing-3.0.9-2.1          ########################################
+[   91s] python39-packaging-21.3-4.1           ########################################
+[   91s] python39-pycparser-2.21-1.4           ########################################
+[   92s] python39-cffi-1.15.1-1.1              ########################################
+[   92s] python39-pluggy-1.0.0-1.4             ########################################
+[   92s] python39-charset-normalizer-3.0.0-1.1 ########################################
+[   92s] python39-cachetools-5.2.0-1.1         ########################################
+[   92s] python39-attrs-22.1.0-2.1             ########################################
+[   92s] python39-apipkg-3.0.1-1.1             ########################################
+[   92s] python39-py-1.11.0-3.1                ########################################
+[   92s] python38-zipp-3.8.1-1.1               ########################################
+[   93s] python38-importlib-metadata-5.0.0-1.1 ########################################
+[   93s] python38-tomli-2.0.1-1.2              ########################################
+[   93s] python38-pyparsing-3.0.9-2.1          ########################################
+[   93s] python38-packaging-21.3-4.1           ########################################
+[   93s] python38-pycparser-2.21-1.4           ########################################
+[   93s] python38-cffi-1.15.1-1.1              ########################################
+[   93s] python38-pluggy-1.0.0-1.4             ########################################
+[   93s] python38-charset-normalizer-3.0.0-1.1 ########################################
+[   94s] python38-cachetools-5.2.0-1.1         ########################################
+[   94s] python38-attrs-22.1.0-2.1             ########################################
+[   94s] python38-apipkg-3.0.1-1.1             ########################################
+[   94s] python38-py-1.11.0-3.1                ########################################
+[   94s] python310-zipp-3.8.1-1.1              ########################################
+[   94s] python310-importlib-metadata-5.0.0-1.1########################################
+[   94s] python310-tomli-2.0.1-1.2             ########################################
+[   94s] python310-pycparser-2.21-1.4          ########################################
+[   94s] python310-cffi-1.15.1-1.1             ########################################
+[   94s] python310-pluggy-1.0.0-1.4            ########################################
+[   95s] python310-charset-normalizer-3.0.0-1.1########################################
+[   95s] python310-cachetools-5.2.0-1.1        ########################################
+[   95s] python310-attrs-22.1.0-2.1            ########################################
+[   95s] python310-apipkg-3.0.1-1.1            ########################################
+[   95s] python310-py-1.11.0-3.1               ########################################
+[   95s] libverto1-0.3.2-1.1                   ########################################
+[   95s] libtirpc-netconfig-1.3.3-1.1          ########################################
+[   95s] libkeyutils1-1.6.3-4.1                ########################################
+[   95s] libcom_err2-1.46.5-3.1                ########################################
+[   96s] krb5-mini-1.20.1-1.1                  ########################################
+[   96s] Updating /etc/sysconfig/kadmind ...
+[   96s] Updating /etc/sysconfig/krb5kdc ...
+[   96s] libtirpc3-1.3.3-1.1                   ########################################
+[   97s] libnsl3-2.0.0-1.1                     ########################################
+[   97s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   97s] alts-1.2+3.b848aad-3.1                ########################################
+[   97s] python310-rsa-4.9-1.1                 ########################################
+[   98s] python38-rsa-4.9-1.1                  ########################################
+[   98s] python39-rsa-4.9-1.1                  ########################################
+[   99s] python310-pytest-7.1.2-1.1            ########################################
+[  100s] python38-pytest-7.1.2-1.1             ########################################
+[  101s] python39-pytest-7.1.2-1.1             ########################################
+[  104s] python310-pip-22.0.4-2.1              ########################################
+[  104s] python310-3.10.8-3.1                  ########################################
+[  105s] python310-cryptography-38.0.3-1.1     ########################################
+[  105s] python310-pyOpenSSL-22.1.0-1.1        ########################################
+[  105s] python310-urllib3-1.26.12-2.1         ########################################
+[  105s] python310-requests-2.28.1-3.1         ########################################
+[  105s] python310-google-auth-2.14.1-1.1      ########################################
+[  108s] python38-pip-22.0.4-2.1               ########################################
+[  108s] python38-3.8.15-4.1                   ########################################
+[  109s] python38-cryptography-38.0.3-1.1      ########################################
+[  109s] python38-pyOpenSSL-22.1.0-1.1         ########################################
+[  109s] python38-urllib3-1.26.12-2.1          ########################################
+[  109s] python38-requests-2.28.1-3.1          ########################################
+[  110s] python38-google-auth-2.14.1-1.1       ########################################
+[  112s] python39-pip-22.0.4-2.1               ########################################
+[  112s] python39-3.9.15-3.1                   ########################################
+[  113s] python39-cryptography-38.0.3-1.1      ########################################
+[  113s] python39-pyOpenSSL-22.1.0-1.1         ########################################
+[  113s] python39-urllib3-1.26.12-2.1          ########################################
+[  114s] python39-requests-2.28.1-3.1          ########################################
+[  114s] python39-google-auth-2.14.1-1.1       ########################################
+[  114s] python39-google-api-core-2.11.0-1.1   ########################################
+[  114s] python38-google-api-core-2.11.0-1.1   ########################################
+[  114s] python310-google-api-core-2.11.0-1.1  ########################################
+[  114s] python39-pytest-asyncio-0.19.0-1.1    ########################################
+[  114s] python38-pytest-asyncio-0.19.0-1.1    ########################################
+[  114s] python310-pytest-asyncio-0.19.0-1.1   ########################################
+[  115s] python310-wheel-0.38.2-1.1            ########################################
+[  115s] python38-wheel-0.38.2-1.1             ########################################
+[  115s] python39-wheel-0.38.2-1.1             ########################################
+[  116s] python310-proto-plus-1.22.1-1.1       ########################################
+[  116s] python38-proto-plus-1.22.1-1.1        ########################################
+[  116s] python39-proto-plus-1.22.1-1.1        ########################################
+[  116s] fdupes-2.2.1-1.1                      ########################################
+[  129s] now finalizing build dir...
+[  130s] ... running 01-add_abuild_user_to_trusted_group
+[  130s] ... running 02-set_timezone_to_utc
+[  130s] ... running 03-set-permissions-secure
+[  131s] ... running 11-hack_uname_version_to_kernel_version
+[  146s] build target is riscv64-suse-linux
+[  146s] -----------------------------------------------------------------
+[  146s] I have the following modifications for python-google-api-core.spec:
+[  146s] 20c20
+[  146s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  146s] ---
+[  146s] > %global flavor test%{nil}
+[  146s] 31c31
+[  146s] < Release:        0
+[  146s] ---
+[  146s] > Release:        1.1
+[  146s] -----------------------------------------------------------------
+[  146s] ----- building python-google-api-core.spec (user abuild)
+[  146s] -----------------------------------------------------------------
+[  146s] -----------------------------------------------------------------
+[  150s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f042875ed4001bf2e1f4a75dd7a46ab4-python-google-api-core:test' /home/abuild/rpmbuild/SOURCES/python-google-api-core.spec
+[  186s] Building target platforms: riscv64-suse-linux
+[  186s] Building for target riscv64-suse-linux
+[  186s] setting SOURCE_DATE_EPOCH=1669939200
+[  187s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Jc0I5k
+[  187s] + umask 022
+[  187s] + cd /home/abuild/rpmbuild/BUILD
+[  187s] + cd /home/abuild/rpmbuild/BUILD
+[  187s] + rm -rf google-api-core-2.11.0
+[  187s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/google-api-core-2.11.0.tar.gz
+[  187s] + /usr/bin/tar -xof -
+[  187s] + STATUS=0
+[  187s] + '[' 0 -ne 0 ']'
+[  187s] + cd google-api-core-2.11.0
+[  187s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  187s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/python-google-api-core-no-mock.patch
+[  187s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  187s] + RPM_EC=0
+[  187s] ++ jobs -p
+[  187s] + exit 0
+[  187s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Zdne9Y
+[  187s] + umask 022
+[  187s] + cd /home/abuild/rpmbuild/BUILD
+[  187s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-google-api-core-2.11.0-1.1.riscv64
+[  187s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-google-api-core-2.11.0-1.1.riscv64
+[  187s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  188s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-google-api-core-2.11.0-1.1.riscv64
+[  188s] + cd google-api-core-2.11.0
+[  188s] + ref=/usr/lib/rpm
+[  188s] + mints=0
+[  188s] + case $(uname -m) in
+[  188s] ++ uname -m
+[  188s] + mints=20160911
+[  188s] + for s in guess sub
+[  188s] ++ find -maxdepth 8 -name config.guess
+[  188s] + for s in guess sub
+[  188s] ++ find -maxdepth 8 -name config.sub
+[  188s] ++ '[' -f _current_flavor ']'
+[  188s] ++ true
+[  188s] + last_flavor=
+[  188s] + '[' -z '' ']'
+[  188s] + last_flavor=tmp
+[  188s] + '[' tmp '!=' python38 ']'
+[  188s] + '[' -d build ']'
+[  188s] + '[' -d _build.python38 ']'
+[  188s] + echo python38
+[  188s] + python_flavor=python38
+[  188s] + myargs=
+[  188s] + '[' -f './dist/*-none-any.whl' ']'
+[  188s] + /usr/bin/python3.8 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  199s] Processing /home/abuild/rpmbuild/BUILD/google-api-core-2.11.0
+[  199s]   Preparing metadata (pyproject.toml): started
+[  199s]   Running command Preparing metadata (pyproject.toml)
+[  205s]   running dist_info
+[  206s]   creating /tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info
+[  206s]   writing /tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/PKG-INFO
+[  206s]   writing dependency_links to /tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/dependency_links.txt
+[  206s]   writing namespace_packages to /tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/namespace_packages.txt
+[  206s]   writing requirements to /tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/requires.txt
+[  206s]   writing top-level names to /tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/top_level.txt
+[  206s]   writing manifest file '/tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/SOURCES.txt'
+[  206s]   reading manifest file '/tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/SOURCES.txt'
+[  206s]   reading manifest template 'MANIFEST.in'
+[  206s]   /usr/lib/python3.8/site-packages/setuptools/dist.py:285: SetuptoolsDeprecationWarning: The namespace_packages parameter is deprecated, consider using implicit namespaces instead (PEP 420).
+[  206s]     warnings.warn(msg, SetuptoolsDeprecationWarning)
+[  206s]   warning: no files found matching '*.json' under directory 'google'
+[  206s]   warning: no files found matching '*.proto' under directory 'google'
+[  206s]   warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+[  206s]   warning: no previously-included files matching '__pycache__' found anywhere in distribution
+[  206s]   no previously-included directories found matching 'scripts/readme-gen'
+[  206s]   adding license file 'LICENSE'
+[  206s]   writing manifest file '/tmp/pip-modern-metadata-e2h8_z9k/google_api_core.egg-info/SOURCES.txt'
+[  206s]   creating '/tmp/pip-modern-metadata-e2h8_z9k/google_api_core-2.11.0.dist-info'
+[  207s]   Preparing metadata (pyproject.toml): finished with status 'done'
+[  207s] Building wheels for collected packages: google-api-core
+[  207s]   Building wheel for google-api-core (pyproject.toml): started
+[  207s]   Running command Building wheel for google-api-core (pyproject.toml)
+[  214s]   running bdist_wheel
+[  214s]   running build
+[  214s]   running build_py
+[  214s]   creating build/lib
+[  214s]   creating build/lib/google
+[  214s]   copying google/__init__.py -> build/lib/google
+[  214s]   creating build/lib/google/api_core
+[  214s]   copying google/api_core/__init__.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/bidi.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/client_info.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/client_options.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/datetime_helpers.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/exceptions.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/extended_operation.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/general_helpers.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/grpc_helpers.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/grpc_helpers_async.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/iam.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/operation.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/operation_async.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/page_iterator.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/page_iterator_async.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/path_template.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/protobuf_helpers.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/rest_helpers.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/rest_streaming.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/retry.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/retry_async.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/timeout.py -> build/lib/google/api_core
+[  214s]   copying google/api_core/version.py -> build/lib/google/api_core
+[  214s]   creating build/lib/google/api_core/future
+[  214s]   copying google/api_core/future/__init__.py -> build/lib/google/api_core/future
+[  214s]   copying google/api_core/future/_helpers.py -> build/lib/google/api_core/future
+[  214s]   copying google/api_core/future/async_future.py -> build/lib/google/api_core/future
+[  214s]   copying google/api_core/future/base.py -> build/lib/google/api_core/future
+[  214s]   copying google/api_core/future/polling.py -> build/lib/google/api_core/future
+[  214s]   creating build/lib/google/api_core/gapic_v1
+[  214s]   copying google/api_core/gapic_v1/__init__.py -> build/lib/google/api_core/gapic_v1
+[  214s]   copying google/api_core/gapic_v1/client_info.py -> build/lib/google/api_core/gapic_v1
+[  214s]   copying google/api_core/gapic_v1/config.py -> build/lib/google/api_core/gapic_v1
+[  214s]   copying google/api_core/gapic_v1/config_async.py -> build/lib/google/api_core/gapic_v1
+[  214s]   copying google/api_core/gapic_v1/method.py -> build/lib/google/api_core/gapic_v1
+[  214s]   copying google/api_core/gapic_v1/method_async.py -> build/lib/google/api_core/gapic_v1
+[  214s]   copying google/api_core/gapic_v1/routing_header.py -> build/lib/google/api_core/gapic_v1
+[  214s]   creating build/lib/google/api_core/operations_v1
+[  214s]   copying google/api_core/operations_v1/__init__.py -> build/lib/google/api_core/operations_v1
+[  214s]   copying google/api_core/operations_v1/abstract_operations_client.py -> build/lib/google/api_core/operations_v1
+[  214s]   copying google/api_core/operations_v1/operations_async_client.py -> build/lib/google/api_core/operations_v1
+[  214s]   copying google/api_core/operations_v1/operations_client.py -> build/lib/google/api_core/operations_v1
+[  214s]   copying google/api_core/operations_v1/operations_client_config.py -> build/lib/google/api_core/operations_v1
+[  214s]   copying google/api_core/operations_v1/pagers.py -> build/lib/google/api_core/operations_v1
+[  214s]   creating build/lib/google/api_core/operations_v1/transports
+[  214s]   copying google/api_core/operations_v1/transports/__init__.py -> build/lib/google/api_core/operations_v1/transports
+[  214s]   copying google/api_core/operations_v1/transports/base.py -> build/lib/google/api_core/operations_v1/transports
+[  214s]   copying google/api_core/operations_v1/transports/rest.py -> build/lib/google/api_core/operations_v1/transports
+[  214s]   running egg_info
+[  215s]   writing google_api_core.egg-info/PKG-INFO
+[  215s]   writing dependency_links to google_api_core.egg-info/dependency_links.txt
+[  215s]   writing namespace_packages to google_api_core.egg-info/namespace_packages.txt
+[  215s]   writing requirements to google_api_core.egg-info/requires.txt
+[  215s]   writing top-level names to google_api_core.egg-info/top_level.txt
+[  215s]   reading manifest file 'google_api_core.egg-info/SOURCES.txt'
+[  215s]   reading manifest template 'MANIFEST.in'
+[  215s]   /usr/lib/python3.8/site-packages/setuptools/dist.py:285: SetuptoolsDeprecationWarning: The namespace_packages parameter is deprecated, consider using implicit namespaces instead (PEP 420).
+[  215s]     warnings.warn(msg, SetuptoolsDeprecationWarning)
+[  215s]   warning: no files found matching '*.json' under directory 'google'
+[  215s]   warning: no files found matching '*.proto' under directory 'google'
+[  215s]   warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+[  215s]   warning: no previously-included files matching '__pycache__' found anywhere in distribution
+[  215s]   no previously-included directories found matching 'scripts/readme-gen'
+[  215s]   adding license file 'LICENSE'
+[  215s]   writing manifest file 'google_api_core.egg-info/SOURCES.txt'
+[  215s]   copying google/api_core/py.typed -> build/lib/google/api_core
+[  215s]   installing to build/bdist.linux-riscv64/wheel
+[  215s]   running install
+[  215s]   running install_lib
+[  215s]   Skipping installation of build/bdist.linux-riscv64/wheel/google/__init__.py (namespace package)
+[  215s]   copying google/api_core/__init__.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/bidi.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/client_info.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/client_options.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/datetime_helpers.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/exceptions.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/extended_operation.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/general_helpers.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/grpc_helpers.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/grpc_helpers_async.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/iam.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/operation.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/operation_async.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/page_iterator.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/page_iterator_async.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/path_template.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/protobuf_helpers.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/rest_helpers.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/rest_streaming.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  215s]   copying google/api_core/retry.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  216s]   copying google/api_core/retry_async.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  216s]   copying google/api_core/timeout.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  216s]   copying google/api_core/version.py -> build/bdist.linux-riscv64/wheel/google/api_core
+[  216s]   copying google/api_core/py.typed -> build/bdist.linux-riscv64/wheel/google/api_core
+[  216s]   copying google/api_core/future/__init__.py -> build/bdist.linux-riscv64/wheel/google/api_core/future
+[  216s]   copying google/api_core/future/_helpers.py -> build/bdist.linux-riscv64/wheel/google/api_core/future
+[  216s]   copying google/api_core/future/async_future.py -> build/bdist.linux-riscv64/wheel/google/api_core/future
+[  216s]   copying google/api_core/future/base.py -> build/bdist.linux-riscv64/wheel/google/api_core/future
+[  216s]   copying google/api_core/future/polling.py -> build/bdist.linux-riscv64/wheel/google/api_core/future
+[  216s]   copying google/api_core/gapic_v1/__init__.py -> build/bdist.linux-riscv64/wheel/google/api_core/gapic_v1
+[  216s]   copying google/api_core/gapic_v1/client_info.py -> build/bdist.linux-riscv64/wheel/google/api_core/gapic_v1
+[  216s]   copying google/api_core/gapic_v1/config.py -> build/bdist.linux-riscv64/wheel/google/api_core/gapic_v1
+[  216s]   copying google/api_core/gapic_v1/config_async.py -> build/bdist.linux-riscv64/wheel/google/api_core/gapic_v1
+[  216s]   copying google/api_core/gapic_v1/method.py -> build/bdist.linux-riscv64/wheel/google/api_core/gapic_v1
+[  216s]   copying google/api_core/gapic_v1/method_async.py -> build/bdist.linux-riscv64/wheel/google/api_core/gapic_v1
+[  216s]   copying google/api_core/gapic_v1/routing_header.py -> build/bdist.linux-riscv64/wheel/google/api_core/gapic_v1
+[  216s]   copying google/api_core/operations_v1/__init__.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1
+[  216s]   copying google/api_core/operations_v1/abstract_operations_client.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1
+[  216s]   copying google/api_core/operations_v1/operations_async_client.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1
+[  216s]   copying google/api_core/operations_v1/operations_client.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1
+[  216s]   copying google/api_core/operations_v1/operations_client_config.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1
+[  216s]   copying google/api_core/operations_v1/pagers.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1
+[  216s]   copying google/api_core/operations_v1/transports/__init__.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1/transports
+[  216s]   copying google/api_core/operations_v1/transports/base.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1/transports
+[  216s]   copying google/api_core/operations_v1/transports/rest.py -> build/bdist.linux-riscv64/wheel/google/api_core/operations_v1/transports
+[  216s]   running install_egg_info
+[  216s]   Copying google_api_core.egg-info to build/bdist.linux-riscv64/wheel/google_api_core-2.11.0-py3.8.egg-info
+[  216s]   Installing build/bdist.linux-riscv64/wheel/google_api_core-2.11.0-py3.8-nspkg.pth
+[  216s]   running install_scripts
+[  216s]   creating build/bdist.linux-riscv64/wheel/google_api_core-2.11.0.dist-info/WHEEL
+[  216s]   creating '/tmp/pip-wheel-pjftzujf/.tmp-neryrl5l/google_api_core-2.11.0-py3-none-any.whl' and adding 'build/bdist.linux-riscv64/wheel' to it
+[  216s]   adding 'google_api_core-2.11.0-py3.8-nspkg.pth'
+[  216s]   adding 'google/api_core/__init__.py'
+[  216s]   adding 'google/api_core/bidi.py'
+[  216s]   adding 'google/api_core/client_info.py'
+[  216s]   adding 'google/api_core/client_options.py'
+[  216s]   adding 'google/api_core/datetime_helpers.py'
+[  216s]   adding 'google/api_core/exceptions.py'
+[  216s]   adding 'google/api_core/extended_operation.py'
+[  216s]   adding 'google/api_core/general_helpers.py'
+[  216s]   adding 'google/api_core/grpc_helpers.py'
+[  216s]   adding 'google/api_core/grpc_helpers_async.py'
+[  216s]   adding 'google/api_core/iam.py'
+[  216s]   adding 'google/api_core/operation.py'
+[  216s]   adding 'google/api_core/operation_async.py'
+[  216s]   adding 'google/api_core/page_iterator.py'
+[  216s]   adding 'google/api_core/page_iterator_async.py'
+[  216s]   adding 'google/api_core/path_template.py'
+[  216s]   adding 'google/api_core/protobuf_helpers.py'
+[  216s]   adding 'google/api_core/py.typed'
+[  216s]   adding 'google/api_core/rest_helpers.py'
+[  216s]   adding 'google/api_core/rest_streaming.py'
+[  216s]   adding 'google/api_core/retry.py'
+[  216s]   adding 'google/api_core/retry_async.py'
+[  216s]   adding 'google/api_core/timeout.py'
+[  216s]   adding 'google/api_core/version.py'
+[  216s]   adding 'google/api_core/future/__init__.py'
+[  216s]   adding 'google/api_core/future/_helpers.py'
+[  216s]   adding 'google/api_core/future/async_future.py'
+[  216s]   adding 'google/api_core/future/base.py'
+[  216s]   adding 'google/api_core/future/polling.py'
+[  216s]   adding 'google/api_core/gapic_v1/__init__.py'
+[  216s]   adding 'google/api_core/gapic_v1/client_info.py'
+[  216s]   adding 'google/api_core/gapic_v1/config.py'
+[  216s]   adding 'google/api_core/gapic_v1/config_async.py'
+[  216s]   adding 'google/api_core/gapic_v1/method.py'
+[  216s]   adding 'google/api_core/gapic_v1/method_async.py'
+[  216s]   adding 'google/api_core/gapic_v1/routing_header.py'
+[  216s]   adding 'google/api_core/operations_v1/__init__.py'
+[  216s]   adding 'google/api_core/operations_v1/abstract_operations_client.py'
+[  216s]   adding 'google/api_core/operations_v1/operations_async_client.py'
+[  216s]   adding 'google/api_core/operations_v1/operations_client.py'
+[  216s]   adding 'google/api_core/operations_v1/operations_client_config.py'
+[  216s]   adding 'google/api_core/operations_v1/pagers.py'
+[  216s]   adding 'google/api_core/operations_v1/transports/__init__.py'
+[  216s]   adding 'google/api_core/operations_v1/transports/base.py'
+[  216s]   adding 'google/api_core/operations_v1/transports/rest.py'
+[  216s]   adding 'google_api_core-2.11.0.dist-info/LICENSE'
+[  216s]   adding 'google_api_core-2.11.0.dist-info/METADATA'
+[  216s]   adding 'google_api_core-2.11.0.dist-info/WHEEL'
+[  216s]   adding 'google_api_core-2.11.0.dist-info/namespace_packages.txt'
+[  216s]   adding 'google_api_core-2.11.0.dist-info/top_level.txt'
+[  216s]   adding 'google_api_core-2.11.0.dist-info/RECORD'
+[  216s]   removing build/bdist.linux-riscv64/wheel
+[  217s]   Building wheel for google-api-core (pyproject.toml): finished with status 'done'
+[  217s]   Created wheel for google-api-core: filename=google_api_core-2.11.0-py3-none-any.whl size=120337 sha256=ca6fa0be138d19c53bead4ede89640f855a4fc982dfb2f2a4cae29ecea0a9fa4
+[  217s]   Stored in directory: /home/abuild/.cache/pip/wheels/99/52/c5/ff533cd13fc9a25b68046063cfa6ec12160eb94637b952270a
+[  217s] Successfully built google-api-core
+[  217s] + '[' -f ./build/google_api_core-2.11.0-py3-none-any.whl ']'
+[  217s] + mkdir -p ./dist
+[  217s] + cp ./build/google_api_core-2.11.0-py3-none-any.whl ./dist/
+[  217s] ++ '[' -f _current_flavor ']'
+[  217s] ++ cat _current_flavor
+[  217s] + last_flavor=python38
+[  217s] + '[' -z python38 ']'
+[  217s] + '[' python38 '!=' python39 ']'
+[  217s] + '[' -d build ']'
+[  217s] + mv build _build.python38
+[  218s] + '[' -d _build.python39 ']'
+[  218s] + echo python39
+[  218s] + python_flavor=python39
+[  218s] + myargs=
+[  218s] + '[' -f ./dist/google_api_core-2.11.0-py3-none-any.whl ']'
+[  218s] + echo 'Already found a compatible wheel in ./dist'
+[  218s] Already found a compatible wheel in ./dist
+[  218s] + mkdir -p ./build
+[  218s] + cp ./dist/google_api_core-2.11.0-py3-none-any.whl ./build/
+[  218s] ++ '[' -f _current_flavor ']'
+[  218s] ++ cat _current_flavor
+[  218s] + last_flavor=python39
+[  218s] + '[' -z python39 ']'
+[  218s] + '[' python39 '!=' python310 ']'
+[  218s] + '[' -d build ']'
+[  218s] + mv build _build.python39
+[  218s] + '[' -d _build.python310 ']'
+[  218s] + echo python310
+[  218s] + python_flavor=python310
+[  218s] + myargs=
+[  218s] + '[' -f ./dist/google_api_core-2.11.0-py3-none-any.whl ']'
+[  218s] + echo 'Already found a compatible wheel in ./dist'
+[  218s] Already found a compatible wheel in ./dist
+[  218s] + mkdir -p ./build
+[  218s] + cp ./dist/google_api_core-2.11.0-py3-none-any.whl ./build/
+[  218s] + RPM_EC=0
+[  218s] ++ jobs -p
+[  218s] + exit 0
+[  218s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.QaQONI
+[  218s] + umask 022
+[  218s] + cd /home/abuild/rpmbuild/BUILD
+[  218s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-google-api-core-2.11.0-1.1.riscv64
+[  218s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  218s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-google-api-core-2.11.0-1.1.riscv64
+[  218s] + cd google-api-core-2.11.0
+[  218s] + /usr/lib/rpm/find-debuginfo -j12 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/google-api-core-2.11.0
+[  219s] + /usr/lib/rpm/brp-compress
+[  219s] + /usr/lib/rpm/brp-suse
+[  219s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  219s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  220s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  220s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  220s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  220s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.LnzPqe
+[  220s] + umask 022
+[  220s] + cd /home/abuild/rpmbuild/BUILD
+[  220s] + cd google-api-core-2.11.0
+[  220s] + set +x
+[  221s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for pyrsa-decrypt in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for pyrsa-encrypt in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for pyrsa-keygen in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for pyrsa-priv2pub in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for pyrsa-sign in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  221s] Using libalternatives variant 38 for pyrsa-verify in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  222s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  222s] Using libalternatives variant 38 for wheel in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  222s] Using alternative normalizer-3.8 for normalizer in ./build/flavorbin during Python 3.8 expansions.
+[  223s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  223s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for pyrsa-decrypt in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for pyrsa-encrypt in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for pyrsa-keygen in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for pyrsa-priv2pub in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for pyrsa-sign in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for pyrsa-verify in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  224s] Using libalternatives variant 39 for wheel in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  225s] Using alternative normalizer-3.9 for normalizer in ./build/flavorbin during Python 3.9 expansions.
+[  226s] Using alternative normalizer-3.10 for normalizer in ./build/flavorbin during Python 3.10 expansions.
+[  227s] + export PATH=/home/abuild/rpmbuild/BUILD/google-api-core-2.11.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  227s] + PATH=/home/abuild/rpmbuild/BUILD/google-api-core-2.11.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  227s] ++ '[' -f _current_flavor ']'
+[  227s] ++ cat _current_flavor
+[  227s] + last_flavor=python310
+[  227s] + '[' -z python310 ']'
+[  227s] + '[' python310 '!=' python38 ']'
+[  227s] + '[' -d build ']'
+[  227s] + mv build _build.python310
+[  227s] + '[' -d _build.python38 ']'
+[  227s] + mv _build.python38 build
+[  227s] + echo python38
+[  227s] + python_flavor=python38
+[  227s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-google-api-core-2.11.0-1.1.riscv64/usr/lib/python3.8/site-packages
+[  227s] + PYTHONDONTWRITEBYTECODE=1
+[  227s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python310 -v
+[  233s] ============================= test session starts ==============================
+[  233s] platform linux -- Python 3.8.15, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3.8
+[  233s] cachedir: .pytest_cache
+[  233s] rootdir: /home/abuild/rpmbuild/BUILD/google-api-core-2.11.0
+[  233s] plugins: asyncio-0.19.0
+[  233s] asyncio: mode=strict
+[  270s] collecting ... collected 656 items
+[  270s] 
+[  270s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_unary_errors PASSED  [  0%]
+[  270s] tests/asyncio/test_grpc_helpers_async.py::test_common_methods_in_wrapped_call PASSED [  0%]
+[  270s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_unary_stream PASSED [  0%]
+[  270s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_stream_unary PASSED [  0%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_stream_stream PASSED [  0%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_type_error PASSED [  0%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_raised PASSED [  1%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_read PASSED [  1%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_aiter PASSED [  1%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_aiter_non_rpc_error PASSED [  1%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_aiter_called_multiple_times PASSED [  1%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_stream_errors_write PASSED [  1%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_errors_non_streaming PASSED [  1%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_wrap_errors_streaming PASSED [  2%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_implicit PASSED [  2%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_implicit_with_default_host PASSED [  2%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_implicit_with_ssl_creds PASSED [  2%]
+[  271s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_implicit_with_scopes PASSED [  2%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_implicit_with_default_scopes PASSED [  2%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_duplicate_credentials PASSED [  3%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit PASSED [  3%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_scoped PASSED [  3%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_default_scopes PASSED [  3%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_quota_project PASSED [  3%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channnel_with_credentials_file PASSED [  3%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_scopes PASSED [  3%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_default_scopes PASSED [  4%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_create_channel PASSED     [  4%]
+[  272s] tests/asyncio/test_grpc_helpers_async.py::test_fake_stream_unary_call PASSED [  4%]
+[  272s] tests/asyncio/test_operation_async.py::test_constructor PASSED           [  4%]
+[  272s] tests/asyncio/test_operation_async.py::test_metadata PASSED              [  4%]
+[  272s] tests/asyncio/test_operation_async.py::test_cancellation PASSED          [  4%]
+[  273s] tests/asyncio/test_operation_async.py::test_result PASSED                [  5%]
+[  273s] tests/asyncio/test_operation_async.py::test_done_w_retry PASSED          [  5%]
+[  274s] tests/asyncio/test_operation_async.py::test_exception PASSED             [  5%]
+[  274s] tests/asyncio/test_operation_async.py::test_unexpected_result PASSED     [  5%]
+[  274s] tests/asyncio/test_operation_async.py::test_from_gapic PASSED            [  5%]
+[  274s] tests/asyncio/test_operation_async.py::test_deserialize PASSED           [  5%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test_constructor PASSED [  5%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test_anext PASSED [  6%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test_pages_property_starts PASSED [  6%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test_pages_property_restart PASSED [  6%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test__page_aiter_increment PASSED [  6%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test__page_aiter_no_increment PASSED [  6%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test__items_aiter PASSED [  6%]
+[  274s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test___aiter__ PASSED [  7%]
+[  275s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test___aiter__restart PASSED [  7%]
+[  275s] tests/asyncio/test_page_iterator_async.py::TestAsyncIterator::test___aiter___restart_after_page PASSED [  7%]
+[  275s] tests/asyncio/test_page_iterator_async.py::TestAsyncGRPCIterator::test_constructor PASSED [  7%]
+[  275s] tests/asyncio/test_page_iterator_async.py::TestAsyncGRPCIterator::test_constructor_options PASSED [  7%]
+[  275s] tests/asyncio/test_page_iterator_async.py::TestAsyncGRPCIterator::test_iterate PASSED [  7%]
+[  275s] tests/asyncio/test_page_iterator_async.py::TestAsyncGRPCIterator::test_iterate_with_max_results PASSED [  7%]
+[  275s] tests/asyncio/test_retry_async.py::test_retry_target_success PASSED      [  8%]
+[  275s] tests/asyncio/test_retry_async.py::test_retry_target_w_on_error PASSED   [  8%]
+[  275s] tests/asyncio/test_retry_async.py::test_retry_target_non_retryable_error PASSED [  8%]
+[  275s] tests/asyncio/test_retry_async.py::test_retry_target_deadline_exceeded PASSED [  8%]
+[  275s] tests/asyncio/test_retry_async.py::test_retry_target_bad_sleep_generator PASSED [  8%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test_constructor_defaults PASSED [  8%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test_constructor_options PASSED [  8%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test_with_deadline PASSED [  9%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test_with_predicate PASSED [  9%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test_with_delay_noop PASSED [  9%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test_with_delay PASSED [  9%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test___str__ PASSED   [  9%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test___call___and_execute_success PASSED [  9%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test___call___and_execute_retry PASSED [ 10%]
+[  275s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test___call___and_execute_retry_hitting_deadline PASSED [ 10%]
+[  276s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test___init___without_retry_executed PASSED [ 10%]
+[  276s] tests/asyncio/test_retry_async.py::TestAsyncRetry::test___init___when_retry_is_executed PASSED [ 10%]
+[  276s] tests/asyncio/future/test_async_future.py::test_polling_future_constructor PASSED [ 10%]
+[  276s] tests/asyncio/future/test_async_future.py::test_set_result PASSED        [ 10%]
+[  276s] tests/asyncio/future/test_async_future.py::test_set_exception PASSED     [ 10%]
+[  276s] tests/asyncio/future/test_async_future.py::test_invoke_callback_exception PASSED [ 11%]
+[  276s] tests/asyncio/future/test_async_future.py::test_result_with_polling PASSED [ 11%]
+[  276s] tests/asyncio/future/test_async_future.py::test_result_timeout PASSED    [ 11%]
+[  276s] tests/asyncio/future/test_async_future.py::test_exception_timeout PASSED [ 11%]
+[  277s] tests/asyncio/future/test_async_future.py::test_result_timeout_with_retry PASSED [ 11%]
+[  277s] tests/asyncio/future/test_async_future.py::test_result_transient_error PASSED [ 11%]
+[  278s] tests/asyncio/future/test_async_future.py::test_callback_concurrency PASSED [ 12%]
+[  279s] tests/asyncio/future/test_async_future.py::test_double_callback_concurrency PASSED [ 12%]
+[  279s] tests/asyncio/gapic/test_config_async.py::test_create_method_configs PASSED [ 12%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_wrap_method_basic PASSED  [ 12%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_wrap_method_with_no_client_info PASSED [ 12%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_wrap_method_with_custom_client_info PASSED [ 12%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_invoke_wrapped_method_with_metadata PASSED [ 12%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_invoke_wrapped_method_with_metadata_as_none PASSED [ 13%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_wrap_method_with_default_retry_and_timeout PASSED [ 13%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_wrap_method_with_default_retry_and_timeout_using_sentinel PASSED [ 13%]
+[  279s] tests/asyncio/gapic/test_method_async.py::test_wrap_method_with_overriding_retry_and_timeout PASSED [ 13%]
+[  282s] tests/asyncio/gapic/test_method_async.py::test_wrap_method_with_overriding_timeout_as_a_number FAILED [ 13%]
+[  282s] tests/asyncio/operations_v1/test_operations_async_client.py::test_get_operation PASSED [ 13%]
+[  282s] tests/asyncio/operations_v1/test_operations_async_client.py::test_list_operations PASSED [ 14%]
+[  282s] tests/asyncio/operations_v1/test_operations_async_client.py::test_delete_operation PASSED [ 14%]
+[  282s] tests/asyncio/operations_v1/test_operations_async_client.py::test_cancel_operation PASSED [ 14%]
+[  282s] tests/unit/test_bidi.py::Test_RequestQueueGenerator::test_bounded_consume PASSED [ 14%]
+[  283s] tests/unit/test_bidi.py::Test_RequestQueueGenerator::test_yield_initial_and_exit PASSED [ 14%]
+[  283s] tests/unit/test_bidi.py::Test_RequestQueueGenerator::test_yield_initial_callable_and_exit PASSED [ 14%]
+[  283s] tests/unit/test_bidi.py::Test_RequestQueueGenerator::test_exit_when_inactive_with_item PASSED [ 14%]
+[  284s] tests/unit/test_bidi.py::Test_RequestQueueGenerator::test_exit_when_inactive_empty PASSED [ 15%]
+[  284s] tests/unit/test_bidi.py::Test_RequestQueueGenerator::test_exit_with_stop PASSED [ 15%]
+[  284s] tests/unit/test_bidi.py::Test_Throttle::test_repr PASSED                 [ 15%]
+[  284s] tests/unit/test_bidi.py::Test_Throttle::test_raises_error_on_invalid_init_arguments PASSED [ 15%]
+[  284s] tests/unit/test_bidi.py::Test_Throttle::test_does_not_delay_entry_attempts_under_threshold PASSED [ 15%]
+[  285s] tests/unit/test_bidi.py::Test_Throttle::test_delays_entry_attempts_above_threshold PASSED [ 15%]
+[  285s] tests/unit/test_bidi.py::TestBidiRpc::test_initial_state PASSED          [ 16%]
+[  285s] tests/unit/test_bidi.py::TestBidiRpc::test_done_callbacks PASSED         [ 16%]
+[  285s] tests/unit/test_bidi.py::TestBidiRpc::test_metadata PASSED               [ 16%]
+[  285s] tests/unit/test_bidi.py::TestBidiRpc::test_open PASSED                   [ 16%]
+[  286s] tests/unit/test_bidi.py::TestBidiRpc::test_open_error_already_open PASSED [ 16%]
+[  286s] tests/unit/test_bidi.py::TestBidiRpc::test_close PASSED                  [ 16%]
+[  286s] tests/unit/test_bidi.py::TestBidiRpc::test_close_no_rpc PASSED           [ 16%]
+[  286s] tests/unit/test_bidi.py::TestBidiRpc::test_send PASSED                   [ 17%]
+[  286s] tests/unit/test_bidi.py::TestBidiRpc::test_send_not_open PASSED          [ 17%]
+[  286s] tests/unit/test_bidi.py::TestBidiRpc::test_send_dead_rpc PASSED          [ 17%]
+[  286s] tests/unit/test_bidi.py::TestBidiRpc::test_recv PASSED                   [ 17%]
+[  287s] tests/unit/test_bidi.py::TestBidiRpc::test_recv_not_open PASSED          [ 17%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_ctor_defaults PASSED [ 17%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_ctor_explicit PASSED [ 17%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_done_callbacks_terminate PASSED [ 18%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_done_callbacks_recoverable PASSED [ 18%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_done_callbacks_non_recoverable PASSED [ 18%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_send_terminate PASSED [ 18%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_send_recover PASSED  [ 18%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_send_failure PASSED  [ 18%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_recv_terminate PASSED [ 19%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_recv_recover PASSED  [ 19%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_recv_recover_already_recovered PASSED [ 19%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_recv_failure PASSED  [ 19%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_close PASSED         [ 19%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_reopen_failure_on_rpc_restart PASSED [ 19%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_using_throttle_on_reopen_requests PASSED [ 19%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_send_not_open PASSED [ 20%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_recv_not_open PASSED [ 20%]
+[  287s] tests/unit/test_bidi.py::TestResumableBidiRpc::test_finalize_idempotent PASSED [ 20%]
+[  288s] tests/unit/test_bidi.py::TestBackgroundConsumer::test_consume_once_then_exit PASSED [ 20%]
+[  288s] tests/unit/test_bidi.py::TestBackgroundConsumer::test_pause_resume_and_close PASSED [ 20%]
+[  288s] tests/unit/test_bidi.py::TestBackgroundConsumer::test_wake_on_error PASSED [ 20%]
+[  288s] tests/unit/test_bidi.py::TestBackgroundConsumer::test_consumer_expected_error PASSED [ 21%]
+[  288s] tests/unit/test_bidi.py::TestBackgroundConsumer::test_consumer_unexpected_error PASSED [ 21%]
+[  288s] tests/unit/test_bidi.py::TestBackgroundConsumer::test_double_stop PASSED [ 21%]
+[  288s] tests/unit/test_client_info.py::test_constructor_defaults PASSED         [ 21%]
+[  288s] tests/unit/test_client_info.py::test_constructor_options PASSED          [ 21%]
+[  288s] tests/unit/test_client_info.py::test_to_user_agent_minimal PASSED        [ 21%]
+[  288s] tests/unit/test_client_info.py::test_to_user_agent_full PASSED           [ 21%]
+[  288s] tests/unit/test_client_info.py::test_to_user_agent_rest PASSED           [ 22%]
+[  288s] tests/unit/test_client_options.py::test_constructor PASSED               [ 22%]
+[  288s] tests/unit/test_client_options.py::test_constructor_with_encrypted_cert_source PASSED [ 22%]
+[  288s] tests/unit/test_client_options.py::test_constructor_with_both_cert_sources PASSED [ 22%]
+[  288s] tests/unit/test_client_options.py::test_constructor_with_api_key PASSED  [ 22%]
+[  288s] tests/unit/test_client_options.py::test_constructor_with_both_api_key_and_credentials_file PASSED [ 22%]
+[  288s] tests/unit/test_client_options.py::test_from_dict PASSED                 [ 23%]
+[  288s] tests/unit/test_client_options.py::test_from_dict_bad_argument PASSED    [ 23%]
+[  288s] tests/unit/test_client_options.py::test_repr PASSED                      [ 23%]
+[  288s] tests/unit/test_datetime_helpers.py::test_utcnow PASSED                  [ 23%]
+[  288s] tests/unit/test_datetime_helpers.py::test_to_milliseconds PASSED         [ 23%]
+[  288s] tests/unit/test_datetime_helpers.py::test_to_microseconds PASSED         [ 23%]
+[  289s] tests/unit/test_datetime_helpers.py::test_to_microseconds_non_utc PASSED [ 23%]
+[  289s] tests/unit/test_datetime_helpers.py::test_to_microseconds_naive PASSED   [ 24%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_microseconds PASSED       [ 24%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_iso8601_date PASSED       [ 24%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_iso8601_time PASSED       [ 24%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339 PASSED            [ 24%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos PASSED      [ 24%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_without_nanos PASSED [ 25%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_without_nanos PASSED [ 25%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[12345678-123456] PASSED [ 25%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[1234567-123456] PASSED [ 25%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[123456-123456] PASSED [ 25%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[12345-123450] PASSED [ 25%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[1234-123400] PASSED [ 25%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[123-123000] PASSED [ 26%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[12-120000] PASSED [ 26%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_with_truncated_nanos[1-100000] PASSED [ 26%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_is_deprecated PASSED [ 26%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[12345678-123456] PASSED [ 26%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[1234567-123456] PASSED [ 26%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[123456-123456] PASSED [ 26%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[12345-123450] PASSED [ 27%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[1234-123400] PASSED [ 27%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[123-123000] PASSED [ 27%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[12-120000] PASSED [ 27%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_nanos_with_truncated_nanos[1-100000] PASSED [ 27%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_wo_nanos_raise_exception PASSED [ 27%]
+[  289s] tests/unit/test_datetime_helpers.py::test_from_rfc3339_w_nanos_raise_exception PASSED [ 28%]
+[  289s] tests/unit/test_datetime_helpers.py::test_to_rfc3339 PASSED              [ 28%]
+[  289s] tests/unit/test_datetime_helpers.py::test_to_rfc3339_with_utc PASSED     [ 28%]
+[  289s] tests/unit/test_datetime_helpers.py::test_to_rfc3339_with_non_utc PASSED [ 28%]
+[  289s] tests/unit/test_datetime_helpers.py::test_to_rfc3339_with_non_utc_ignore_zone PASSED [ 28%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_ctor_wo_nanos PASSED [ 28%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_ctor_w_nanos PASSED [ 28%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_ctor_w_micros_positional_and_nanos PASSED [ 29%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_ctor_w_micros_keyword_and_nanos PASSED [ 29%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_rfc3339_wo_nanos PASSED [ 29%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_rfc3339_wo_nanos_w_leading_zero PASSED [ 29%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_rfc3339_w_nanos PASSED [ 29%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_rfc3339_w_nanos_w_leading_zero PASSED [ 29%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_rfc3339_w_nanos_no_trailing_zeroes PASSED [ 30%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_rfc3339_w_nanos_w_leading_zero_and_no_trailing_zeros PASSED [ 30%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_w_invalid PASSED [ 30%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_wo_fraction PASSED [ 30%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_w_partial_precision PASSED [ 30%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_w_full_precision PASSED [ 30%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[12345678-123456780] PASSED [ 30%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[1234567-123456700] PASSED [ 31%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[123456-123456000] PASSED [ 31%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[12345-123450000] PASSED [ 31%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[1234-123400000] PASSED [ 31%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[123-123000000] PASSED [ 31%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[12-120000000] PASSED [ 31%]
+[  289s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_rfc3339_test_nanoseconds[1-100000000] PASSED [ 32%]
+[  290s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_timestamp_pb_wo_nanos_naive PASSED [ 32%]
+[  290s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_timestamp_pb_w_nanos PASSED [ 32%]
+[  290s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_timestamp_pb_wo_nanos PASSED [ 32%]
+[  290s] tests/unit/test_datetime_helpers.py::Test_DateTimeWithNanos::test_from_timestamp_pb_w_nanos PASSED [ 32%]
+[  290s] tests/unit/test_exceptions.py::test_create_google_cloud_error PASSED     [ 32%]
+[  290s] tests/unit/test_exceptions.py::test_create_google_cloud_error_with_args PASSED [ 32%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_status PASSED              [ 33%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_status_with_errors_and_response PASSED [ 33%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_status_unknown_code PASSED [ 33%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_response_no_content PASSED [ 33%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_response_text_content PASSED [ 33%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_response_json_content PASSED [ 33%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_response_bad_json_content PASSED [ 33%]
+[  290s] tests/unit/test_exceptions.py::test_from_http_response_json_unicode_content PASSED [ 34%]
+[  290s] tests/unit/test_exceptions.py::test_from_grpc_status PASSED              [ 34%]
+[  290s] tests/unit/test_exceptions.py::test_from_grpc_status_as_int PASSED       [ 34%]
+[  290s] tests/unit/test_exceptions.py::test_from_grpc_status_with_errors_and_response PASSED [ 34%]
+[  290s] tests/unit/test_exceptions.py::test_from_grpc_status_unknown_code PASSED [ 34%]
+[  290s] tests/unit/test_exceptions.py::test_from_grpc_error PASSED               [ 34%]
+[  290s] tests/unit/test_exceptions.py::test_from_grpc_error_non_call PASSED      [ 35%]
+[  290s] tests/unit/test_exceptions.py::test_from_grpc_error_bare_call PASSED     [ 35%]
+[  290s] tests/unit/test_exceptions.py::test_error_details_from_rest_response PASSED [ 35%]
+[  290s] tests/unit/test_exceptions.py::test_error_details_from_v1_rest_response PASSED [ 35%]
+[  290s] tests/unit/test_exceptions.py::test_error_details_from_grpc_response PASSED [ 35%]
+[  290s] tests/unit/test_exceptions.py::test_error_details_from_grpc_response_unknown_error PASSED [ 35%]
+[  290s] tests/unit/test_extended_operation.py::test_constructor PASSED           [ 35%]
+[  290s] tests/unit/test_extended_operation.py::test_done PASSED                  [ 36%]
+[  290s] tests/unit/test_extended_operation.py::test_cancellation PASSED          [ 36%]
+[  290s] tests/unit/test_extended_operation.py::test_done_w_retry PASSED          [ 36%]
+[  290s] tests/unit/test_extended_operation.py::test_error PASSED                 [ 36%]
+[  291s] tests/unit/test_extended_operation.py::test_pass_through PASSED          [ 36%]
+[  291s] tests/unit/test_grpc_helpers.py::test__patch_callable_name PASSED        [ 36%]
+[  291s] tests/unit/test_grpc_helpers.py::test__patch_callable_name_no_op PASSED  [ 37%]
+[  291s] tests/unit/test_grpc_helpers.py::test_wrap_unary_errors PASSED           [ 37%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_ctor_defaults PASSED [ 37%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_ctor_explicit PASSED [ 37%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_ctor_w_rpc_error_on_prefetch PASSED [ 37%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test___iter__ PASSED [ 37%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test___next___w_cached_first_result PASSED [ 37%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test___next___wo_cached_first_result PASSED [ 38%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test___next___w_rpc_error PASSED [ 38%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_add_callback PASSED [ 38%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_cancel PASSED [ 38%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_code PASSED [ 38%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_details PASSED [ 38%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_initial_metadata PASSED [ 39%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_is_active PASSED [ 39%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_time_remaining PASSED [ 39%]
+[  291s] tests/unit/test_grpc_helpers.py::Test_StreamingResponseIterator::test_trailing_metadata PASSED [ 39%]
+[  291s] tests/unit/test_grpc_helpers.py::test_wrap_stream_okay PASSED            [ 39%]
+[  291s] tests/unit/test_grpc_helpers.py::test_wrap_stream_prefetch_disabled PASSED [ 39%]
+[  292s] tests/unit/test_grpc_helpers.py::test_wrap_stream_iterable_iterface PASSED [ 39%]
+[  292s] tests/unit/test_grpc_helpers.py::test_wrap_stream_errors_invocation PASSED [ 40%]
+[  292s] tests/unit/test_grpc_helpers.py::test_wrap_stream_empty_iterator PASSED  [ 40%]
+[  292s] tests/unit/test_grpc_helpers.py::test_wrap_stream_errors_iterator_initialization PASSED [ 40%]
+[  292s] tests/unit/test_grpc_helpers.py::test_wrap_stream_errors_during_iteration PASSED [ 40%]
+[  292s] tests/unit/test_grpc_helpers.py::test_wrap_errors_non_streaming PASSED   [ 40%]
+[  292s] tests/unit/test_grpc_helpers.py::test_wrap_errors_streaming PASSED       [ 40%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_implicit PASSED     [ 41%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_implicit_with_default_host PASSED [ 41%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_implicit_with_ssl_creds PASSED [ 41%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_implicit_with_scopes PASSED [ 41%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_implicit_with_default_scopes PASSED [ 41%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_explicit_with_duplicate_credentials PASSED [ 41%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_explicit PASSED     [ 41%]
+[  292s] tests/unit/test_grpc_helpers.py::test_create_channel_explicit_scoped PASSED [ 42%]
+[  293s] tests/unit/test_grpc_helpers.py::test_create_channel_explicit_default_scopes PASSED [ 42%]
+[  293s] tests/unit/test_grpc_helpers.py::test_create_channel_explicit_with_quota_project PASSED [ 42%]
+[  293s] tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file PASSED [ 42%]
+[  293s] tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_scopes PASSED [ 42%]
+[  293s] tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_default_scopes PASSED [ 42%]
+[  293s] tests/unit/test_grpc_helpers.py::test_create_channel_with_grpc_gcp SKIPPED [ 42%]
+[  293s] tests/unit/test_grpc_helpers.py::test_create_channel_without_grpc_gcp PASSED [ 43%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_single_response PASSED [ 43%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_no_response PASSED [ 43%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_missing_method PASSED [ 43%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_exception_response PASSED [ 43%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_callable_response PASSED [ 43%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_multiple_responses PASSED [ 44%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_multiple_responses_and_single_response_error PASSED [ 44%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_call_info PASSED  [ 44%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_unary_unary PASSED [ 44%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_unary_stream PASSED [ 44%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_stream_unary PASSED [ 44%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_stream_stream PASSED [ 44%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_subscribe_unsubscribe PASSED [ 45%]
+[  293s] tests/unit/test_grpc_helpers.py::TestChannelStub::test_close PASSED      [ 45%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test_ctor_defaults PASSED            [ 45%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test_ctor_explicit PASSED            [ 45%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___getitem___miss PASSED         [ 45%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test__getitem___and_set PASSED       [ 45%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___getitem___version3 PASSED     [ 46%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___getitem___with_conditions PASSED [ 46%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___setitem__ PASSED              [ 46%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test__set_item__overwrite PASSED     [ 46%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___setitem___version3 PASSED     [ 46%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___setitem___with_conditions PASSED [ 46%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___delitem___hit PASSED          [ 46%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___delitem___miss PASSED         [ 47%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___delitem___version3 PASSED     [ 47%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test___delitem___with_conditions PASSED [ 47%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test_bindings_property PASSED        [ 47%]
+[  293s] tests/unit/test_iam.py::TestPolicy::test_owners_getter PASSED            [ 47%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_owners_setter PASSED            [ 47%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_editors_getter PASSED           [ 48%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_editors_setter PASSED           [ 48%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_viewers_getter PASSED           [ 48%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_viewers_setter PASSED           [ 48%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_user PASSED                     [ 48%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_service_account PASSED          [ 48%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_group PASSED                    [ 48%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_domain PASSED                   [ 49%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_all_users PASSED                [ 49%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_authenticated_users PASSED      [ 49%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_from_api_repr_only_etag PASSED  [ 49%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_from_api_repr_complete PASSED   [ 49%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_from_api_repr_unknown_role PASSED [ 49%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_to_api_repr_defaults PASSED     [ 50%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_to_api_repr_only_etag PASSED    [ 50%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_to_api_repr_binding_wo_members PASSED [ 50%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_to_api_repr_binding_w_duplicates PASSED [ 50%]
+[  294s] tests/unit/test_iam.py::TestPolicy::test_to_api_repr_full PASSED         [ 50%]
+[  294s] tests/unit/test_operation.py::test_constructor PASSED                    [ 50%]
+[  294s] tests/unit/test_operation.py::test_metadata PASSED                       [ 50%]
+[  294s] tests/unit/test_operation.py::test_cancellation PASSED                   [ 51%]
+[  295s] tests/unit/test_operation.py::test_result PASSED                         [ 51%]
+[  295s] tests/unit/test_operation.py::test_done_w_retry PASSED                   [ 51%]
+[  296s] tests/unit/test_operation.py::test_exception PASSED                      [ 51%]
+[  296s] tests/unit/test_operation.py::test_exception_with_error_code PASSED      [ 51%]
+[  296s] tests/unit/test_operation.py::test_unexpected_result PASSED              [ 51%]
+[  296s] tests/unit/test_operation.py::test__refresh_http PASSED                  [ 51%]
+[  296s] tests/unit/test_operation.py::test__refresh_http_w_retry PASSED          [ 52%]
+[  296s] tests/unit/test_operation.py::test__cancel_http PASSED                   [ 52%]
+[  296s] tests/unit/test_operation.py::test_from_http_json PASSED                 [ 52%]
+[  296s] tests/unit/test_operation.py::test__refresh_grpc PASSED                  [ 52%]
+[  296s] tests/unit/test_operation.py::test__refresh_grpc_w_retry PASSED          [ 52%]
+[  296s] tests/unit/test_operation.py::test__cancel_grpc PASSED                   [ 52%]
+[  296s] tests/unit/test_operation.py::test_from_grpc PASSED                      [ 53%]
+[  296s] tests/unit/test_operation.py::test_from_gapic PASSED                     [ 53%]
+[  296s] tests/unit/test_operation.py::test_deserialize PASSED                    [ 53%]
+[  296s] tests/unit/test_page_iterator.py::test__do_nothing_page_start PASSED     [ 53%]
+[  296s] tests/unit/test_page_iterator.py::TestPage::test_constructor PASSED      [ 53%]
+[  296s] tests/unit/test_page_iterator.py::TestPage::test___iter__ PASSED         [ 53%]
+[  297s] tests/unit/test_page_iterator.py::TestPage::test_iterator_calls_parent_item_to_value PASSED [ 53%]
+[  297s] tests/unit/test_page_iterator.py::TestPage::test_raw_page PASSED         [ 54%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test_constructor PASSED  [ 54%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test_next PASSED         [ 54%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test_pages_property_starts PASSED [ 54%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test_pages_property_restart PASSED [ 54%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test__page_iter_increment PASSED [ 54%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test__page_iter_no_increment PASSED [ 55%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test__items_iter PASSED  [ 55%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test___iter__ PASSED     [ 55%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test___iter__restart PASSED [ 55%]
+[  297s] tests/unit/test_page_iterator.py::TestIterator::test___iter___restart_after_page PASSED [ 55%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test_constructor PASSED [ 55%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test_constructor_w_extra_param_collision PASSED [ 55%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test_iterate PASSED  [ 56%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__has_next_page_new PASSED [ 56%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__has_next_page_without_token PASSED [ 56%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__has_next_page_w_number_w_token PASSED [ 56%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__has_next_page_w_max_results_not_done PASSED [ 56%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__has_next_page_w_max_results_done PASSED [ 56%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__get_query_params_no_token PASSED [ 57%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__get_query_params_w_token PASSED [ 57%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__get_query_params_w_max_results PASSED [ 57%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__get_query_params_extra_params PASSED [ 57%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__get_next_page_response_with_post PASSED [ 57%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test__get_next_page_bad_http_method PASSED [ 57%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test_page_size_items[3-None-False] PASSED [ 57%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test_page_size_items[3-8-False] PASSED [ 58%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test_page_size_items[3-None-True] PASSED [ 58%]
+[  297s] tests/unit/test_page_iterator.py::TestHTTPIterator::test_page_size_items[3-8-True] PASSED [ 58%]
+[  297s] tests/unit/test_page_iterator.py::TestGRPCIterator::test_constructor PASSED [ 58%]
+[  297s] tests/unit/test_page_iterator.py::TestGRPCIterator::test_constructor_options PASSED [ 58%]
+[  297s] tests/unit/test_page_iterator.py::TestGRPCIterator::test_iterate PASSED  [ 58%]
+[  297s] tests/unit/test_page_iterator.py::TestGRPCIterator::test_iterate_with_max_results PASSED [ 58%]
+[  297s] tests/unit/test_page_iterator.py::TestGAXIterator::test_constructor PASSED [ 59%]
+[  297s] tests/unit/test_page_iterator.py::TestGAXIterator::test__next_page PASSED [ 59%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/*-args0-kwargs0-/v1/a] PASSED [ 59%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/**-args1-kwargs1-/v1/a/b] PASSED [ 59%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/*/*-args2-kwargs2-/v1/a/b] PASSED [ 59%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/*/*/**-args3-kwargs3-/v1/a/b/c/d] PASSED [ 59%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/{name}-args4-kwargs4-/v1/parent] PASSED [ 60%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/{name=**}-args5-kwargs5-/v1/parent/child] PASSED [ 60%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/{name=parent/*}-args6-kwargs6-/v1/parent/child] PASSED [ 60%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/{name=parent/**}-args7-kwargs7-/v1/parent/child/object] PASSED [ 60%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/*/{name}-args8-kwargs8-/v1/a/parent] PASSED [ 60%]
+[  297s] tests/unit/test_path_template.py::test_expand_success[/v1/{name}/*-args9-kwargs9-/v1/parent/a] PASSED [ 60%]
+[  298s] tests/unit/test_path_template.py::test_expand_success[/v1/{parent}/*/{child}/*-args10-kwargs10-/v1/thor/a/thorson/b] PASSED [ 60%]
+[  298s] tests/unit/test_path_template.py::test_expand_success[/v1/{name}/**-args11-kwargs11-/v1/parent/a/b] PASSED [ 61%]
+[  298s] tests/unit/test_path_template.py::test_expand_success[/v1/{name=parent/*}/*-args12-kwargs12-/v1/parent/child/a] PASSED [ 61%]
+[  298s] tests/unit/test_path_template.py::test_expand_success[/v1/*/{name=parent/**}-args13-kwargs13-/v1/a/parent/child/object] PASSED [ 61%]
+[  298s] tests/unit/test_path_template.py::test_expanded_failure[v1/*-args0-kwargs0-Positional] PASSED [ 61%]
+[  298s] tests/unit/test_path_template.py::test_expanded_failure[v1/{name}-args1-kwargs1-Named] PASSED [ 61%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj0-field-stringValue] PASSED [ 61%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj1-nosuchfield-None] PASSED [ 62%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj2-field.subfield-None] PASSED [ 62%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj3-field-None] PASSED [ 62%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj4-field.subfield-stringValue] PASSED [ 62%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj5-field.subfield-expected_result5] PASSED [ 62%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj6-field-None] PASSED [ 62%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj7-field.nosuchfield-None] PASSED [ 62%]
+[  298s] tests/unit/test_path_template.py::test_get_field[request_obj8-field.subfield.subsubfield-stringValue] PASSED [ 63%]
+[  298s] tests/unit/test_path_template.py::test_get_field[string-field-None] PASSED [ 63%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[request_obj0-field-expected_result0] PASSED [ 63%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[request_obj1-nosuchfield-expected_result1] PASSED [ 63%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[request_obj2-field.subfield-expected_result2] PASSED [ 63%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[request_obj3-field.subfield-expected_result3] PASSED [ 63%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[request_obj4-field.subfield-expected_result4] PASSED [ 64%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[request_obj5-field.nosuchfield-expected_result5] PASSED [ 64%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[request_obj6-field.subfield.subsubfield-expected_result6] PASSED [ 64%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[string-field-string] PASSED [ 64%]
+[  298s] tests/unit/test_path_template.py::test_delete_field[string-field.subfield-string] PASSED [ 64%]
+[  298s] tests/unit/test_path_template.py::test_validate_failure[v1/*-v1/a/b] PASSED [ 64%]
+[  298s] tests/unit/test_path_template.py::test_validate_failure[v1/*/*-v1/a/b/c] PASSED [ 64%]
+[  298s] tests/unit/test_path_template.py::test_validate_failure[v1/{name}-v1/a/b] PASSED [ 65%]
+[  298s] tests/unit/test_path_template.py::test_validate_failure[v1/{name}/{value}-v1/a/b/c] PASSED [ 65%]
+[  298s] tests/unit/test_path_template.py::test_validate_failure[v1/{name=parent/*}-v1/grandparent/child] PASSED [ 65%]
+[  298s] tests/unit/test_path_template.py::test__expand_variable_match_unexpected PASSED [ 65%]
+[  298s] tests/unit/test_path_template.py::test__replace_variable_with_pattern PASSED [ 65%]
+[  298s] tests/unit/test_path_template.py::test_transcode_base_case[http_options0-None-request_kwargs0-expected_result0] PASSED [ 65%]
+[  298s] tests/unit/test_path_template.py::test_transcode_base_case[http_options1-message1-request_kwargs1-expected_result1] PASSED [ 66%]
+[  298s] tests/unit/test_path_template.py::test_transcode_base_case[http_options2-None-request_kwargs2-expected_result2] PASSED [ 66%]
+[  298s] tests/unit/test_path_template.py::test_transcode_base_case[http_options3-message3-request_kwargs3-expected_result3] PASSED [ 66%]
+[  298s] tests/unit/test_path_template.py::test_transcode_base_case[http_options4-None-request_kwargs4-expected_result4] PASSED [ 66%]
+[  298s] tests/unit/test_path_template.py::test_transcode_base_case[http_options5-message5-request_kwargs5-expected_result5] PASSED [ 66%]
+[  298s] tests/unit/test_path_template.py::test_transcode_subfields[http_options0-None-request_kwargs0-expected_result0] PASSED [ 66%]
+[  298s] tests/unit/test_path_template.py::test_transcode_subfields[http_options1-message1-request_kwargs1-expected_result1] PASSED [ 66%]
+[  298s] tests/unit/test_path_template.py::test_transcode_subfields[http_options2-None-request_kwargs2-expected_result2] PASSED [ 67%]
+[  298s] tests/unit/test_path_template.py::test_transcode_subfields[http_options3-None-request_kwargs3-expected_result3] PASSED [ 67%]
+[  298s] tests/unit/test_path_template.py::test_transcode_subfields[http_options4-message4-request_kwargs4-expected_result4] PASSED [ 67%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options0-None-request_kwargs0-expected_result0] PASSED [ 67%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options1-message1-request_kwargs1-expected_result1] PASSED [ 67%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options2-None-request_kwargs2-expected_result2] PASSED [ 67%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options3-message3-request_kwargs3-expected_result3] PASSED [ 67%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options4-None-request_kwargs4-expected_result4] PASSED [ 68%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options5-message5-request_kwargs5-expected_result5] PASSED [ 68%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options6-None-request_kwargs6-expected_result6] PASSED [ 68%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options7-message7-request_kwargs7-expected_result7] PASSED [ 68%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options8-None-request_kwargs8-expected_result8] PASSED [ 68%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options9-message9-request_kwargs9-expected_result9] PASSED [ 68%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options10-None-request_kwargs10-expected_result10] PASSED [ 69%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_wildcard[http_options11-message11-request_kwargs11-expected_result11] PASSED [ 69%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_body[http_options0-None-request_kwargs0-expected_result0] PASSED [ 69%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_body[http_options1-message1-request_kwargs1-expected_result1] PASSED [ 69%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_body[http_options2-None-request_kwargs2-expected_result2] PASSED [ 69%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_body[http_options3-message3-request_kwargs3-expected_result3] PASSED [ 69%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_body[http_options4-None-request_kwargs4-expected_result4] PASSED [ 69%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_body[http_options5-message5-request_kwargs5-expected_result5] PASSED [ 70%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_additional_bindings[http_options0-None-request_kwargs0-expected_result0] PASSED [ 70%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_additional_bindings[http_options1-message1-request_kwargs1-expected_result1] PASSED [ 70%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_additional_bindings[http_options2-None-request_kwargs2-expected_result2] PASSED [ 70%]
+[  299s] tests/unit/test_path_template.py::test_transcode_with_additional_bindings[http_options3-message3-request_kwargs3-expected_result3] PASSED [ 70%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options0-None-request_kwargs0] PASSED [ 70%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options1-message1-request_kwargs1] PASSED [ 71%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options2-message2-request_kwargs2] PASSED [ 71%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options3-None-request_kwargs3] PASSED [ 71%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options4-message4-request_kwargs4] PASSED [ 71%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options5-None-request_kwargs5] PASSED [ 71%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options6-message6-request_kwargs6] PASSED [ 71%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options7-None-request_kwargs7] PASSED [ 71%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options8-message8-request_kwargs8] PASSED [ 72%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options9-None-request_kwargs9] PASSED [ 72%]
+[  299s] tests/unit/test_path_template.py::test_transcode_fails[http_options10-message10-request_kwargs10] PASSED [ 72%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_from_any_pb_success PASSED     [ 72%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_from_any_pb_wrapped_success PASSED [ 72%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_from_any_pb_failure PASSED     [ 72%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_check_protobuf_helpers_ok PASSED [ 73%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_check_protobuf_helpers_failures PASSED [ 73%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_get_messages PASSED            [ 73%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_get_dict_absent PASSED         [ 73%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_get_dict_present PASSED        [ 73%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_get_dict_default PASSED        [ 73%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_get_dict_nested PASSED         [ 73%]
+[  299s] tests/unit/test_protobuf_helpers.py::test_get_dict_nested_default PASSED [ 74%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_get_msg_sentinel PASSED        [ 74%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_get_msg_present PASSED         [ 74%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_get_msg_default PASSED         [ 74%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_invalid_object PASSED          [ 74%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_dict PASSED                [ 74%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_msg PASSED                 [ 75%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_dict_nested PASSED         [ 75%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_invalid_object PASSED      [ 75%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_list PASSED                [ 75%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_list_clear_existing PASSED [ 75%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_msg_with_msg_field PASSED  [ 75%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_msg_with_dict_field PASSED [ 75%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_set_msg_nested_key PASSED      [ 76%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_setdefault_dict_unset PASSED   [ 76%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_setdefault_dict_falsy PASSED   [ 76%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_setdefault_dict_truthy PASSED  [ 76%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_setdefault_pb2_falsy PASSED    [ 76%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_setdefault_pb2_truthy PASSED   [ 76%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_invalid_args PASSED [ 76%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_equal_values PASSED [ 77%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_zero_values PASSED  [ 77%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_singular_field_diffs PASSED [ 77%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_message_diffs PASSED [ 77%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_wrapper_type_diffs PASSED [ 77%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_repeated_diffs PASSED [ 77%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_map_diffs PASSED    [ 78%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_different_level_diffs PASSED [ 78%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_ignore_trailing_underscore PASSED [ 78%]
+[  300s] tests/unit/test_protobuf_helpers.py::test_field_mask_ignore_trailing_underscore_with_nesting PASSED [ 78%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_simple_value PASSED        [ 78%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_list PASSED                [ 78%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_none PASSED                [ 78%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_empty_dict PASSED          [ 79%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_simple_dict PASSED         [ 79%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_simple_dict_strict PASSED  [ 79%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_repeated_field PASSED      [ 79%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_nested_dict PASSED         [ 79%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_repeated_dict PASSED       [ 79%]
+[  300s] tests/unit/test_rest_helpers.py::test_flatten_repeated_list PASSED       [ 80%]
+[  300s] tests/unit/test_rest_streaming.py::test_next_simple[False] PASSED        [ 80%]
+[  300s] tests/unit/test_rest_streaming.py::test_next_nested[True] PASSED         [ 80%]
+[  300s] tests/unit/test_rest_streaming.py::test_next_nested[False] PASSED        [ 80%]
+[  301s] tests/unit/test_rest_streaming.py::test_next_stress[True] PASSED         [ 80%]
+[  302s] tests/unit/test_rest_streaming.py::test_next_stress[False] PASSED        [ 80%]
+[  302s] tests/unit/test_rest_streaming.py::test_next_escaped_characters_in_string[True] PASSED [ 80%]
+[  302s] tests/unit/test_rest_streaming.py::test_next_escaped_characters_in_string[False] PASSED [ 81%]
+[  302s] tests/unit/test_rest_streaming.py::test_next_not_array PASSED            [ 81%]
+[  302s] tests/unit/test_rest_streaming.py::test_cancel PASSED                    [ 81%]
+[  302s] tests/unit/test_rest_streaming.py::test_check_buffer PASSED              [ 81%]
+[  302s] tests/unit/test_rest_streaming.py::test_next_html PASSED                 [ 81%]
+[  302s] tests/unit/test_retry.py::test_if_exception_type PASSED                  [ 81%]
+[  302s] tests/unit/test_retry.py::test_if_exception_type_multiple PASSED         [ 82%]
+[  302s] tests/unit/test_retry.py::test_if_transient_error PASSED                 [ 82%]
+[  302s] tests/unit/test_retry.py::test_exponential_sleep_generator_base_2 PASSED [ 82%]
+[  302s] tests/unit/test_retry.py::test_retry_target_success PASSED               [ 82%]
+[  302s] tests/unit/test_retry.py::test_retry_target_w_on_error PASSED            [ 82%]
+[  302s] tests/unit/test_retry.py::test_retry_target_non_retryable_error PASSED   [ 82%]
+[  302s] tests/unit/test_retry.py::test_retry_target_deadline_exceeded PASSED     [ 82%]
+[  302s] tests/unit/test_retry.py::test_retry_target_bad_sleep_generator PASSED   [ 83%]
+[  302s] tests/unit/test_retry.py::TestRetry::test_constructor_defaults PASSED    [ 83%]
+[  302s] tests/unit/test_retry.py::TestRetry::test_constructor_options PASSED     [ 83%]
+[  302s] tests/unit/test_retry.py::TestRetry::test_with_deadline PASSED           [ 83%]
+[  302s] tests/unit/test_retry.py::TestRetry::test_with_predicate PASSED          [ 83%]
+[  302s] tests/unit/test_retry.py::TestRetry::test_with_delay_noop PASSED         [ 83%]
+[  302s] tests/unit/test_retry.py::TestRetry::test_with_delay PASSED              [ 83%]
+[  302s] tests/unit/test_retry.py::TestRetry::test_with_delay_partial_options PASSED [ 84%]
+[  302s] tests/unit/test_retry.py::TestRetry::test___str__ PASSED                 [ 84%]
+[  302s] tests/unit/test_retry.py::TestRetry::test___call___and_execute_success PASSED [ 84%]
+[  302s] tests/unit/test_retry.py::TestRetry::test___call___and_execute_retry PASSED [ 84%]
+[  303s] tests/unit/test_retry.py::TestRetry::test___call___and_execute_retry_hitting_deadline PASSED [ 84%]
+[  303s] tests/unit/test_retry.py::TestRetry::test___init___without_retry_executed PASSED [ 84%]
+[  303s] tests/unit/test_retry.py::TestRetry::test___init___when_retry_is_executed PASSED [ 85%]
+[  303s] tests/unit/test_timeout.py::test__exponential_timeout_generator_base_2 PASSED [ 85%]
+[  303s] tests/unit/test_timeout.py::test__exponential_timeout_generator_base_deadline PASSED [ 85%]
+[  303s] tests/unit/test_timeout.py::TestTimeToDeadlineTimeout::test_constructor PASSED [ 85%]
+[  303s] tests/unit/test_timeout.py::TestTimeToDeadlineTimeout::test_constructor_args PASSED [ 85%]
+[  303s] tests/unit/test_timeout.py::TestTimeToDeadlineTimeout::test___str__ PASSED [ 85%]
+[  303s] tests/unit/test_timeout.py::TestTimeToDeadlineTimeout::test_apply PASSED [ 85%]
+[  303s] tests/unit/test_timeout.py::TestTimeToDeadlineTimeout::test_apply_no_timeout PASSED [ 86%]
+[  303s] tests/unit/test_timeout.py::TestTimeToDeadlineTimeout::test_apply_passthrough PASSED [ 86%]
+[  303s] tests/unit/test_timeout.py::TestConstantTimeout::test_constructor PASSED [ 86%]
+[  303s] tests/unit/test_timeout.py::TestConstantTimeout::test_constructor_args PASSED [ 86%]
+[  303s] tests/unit/test_timeout.py::TestConstantTimeout::test___str__ PASSED     [ 86%]
+[  303s] tests/unit/test_timeout.py::TestConstantTimeout::test_apply PASSED       [ 86%]
+[  303s] tests/unit/test_timeout.py::TestConstantTimeout::test_apply_passthrough PASSED [ 87%]
+[  303s] tests/unit/test_timeout.py::TestExponentialTimeout::test_constructor PASSED [ 87%]
+[  303s] tests/unit/test_timeout.py::TestExponentialTimeout::test_constructor_args PASSED [ 87%]
+[  303s] tests/unit/test_timeout.py::TestExponentialTimeout::test_with_timeout PASSED [ 87%]
+[  303s] tests/unit/test_timeout.py::TestExponentialTimeout::test___str__ PASSED  [ 87%]
+[  303s] tests/unit/test_timeout.py::TestExponentialTimeout::test_apply PASSED    [ 87%]
+[  303s] tests/unit/test_timeout.py::TestExponentialTimeout::test_apply_passthrough PASSED [ 87%]
+[  303s] tests/unit/future/test__helpers.py::test_start_deamon_thread PASSED      [ 88%]
+[  304s] tests/unit/future/test__helpers.py::test_safe_invoke_callback PASSED     [ 88%]
+[  304s] tests/unit/future/test__helpers.py::test_safe_invoke_callback_exception PASSED [ 88%]
+[  304s] tests/unit/future/test_polling.py::test_polling_future_constructor PASSED [ 88%]
+[  304s] tests/unit/future/test_polling.py::test_set_result PASSED                [ 88%]
+[  304s] tests/unit/future/test_polling.py::test_set_exception PASSED             [ 88%]
+[  304s] tests/unit/future/test_polling.py::test_invoke_callback_exception PASSED [ 89%]
+[  304s] tests/unit/future/test_polling.py::test_result_with_one_polling PASSED   [ 89%]
+[  304s] tests/unit/future/test_polling.py::test_result_with_two_pollings PASSED  [ 89%]
+[  305s] tests/unit/future/test_polling.py::test_result_with_two_pollings_custom_retry PASSED [ 89%]
+[  306s] tests/unit/future/test_polling.py::test_result_timeout PASSED            [ 89%]
+[  307s] tests/unit/future/test_polling.py::test_exception_timeout PASSED         [ 89%]
+[  309s] tests/unit/future/test_polling.py::test_result_transient_error PASSED    [ 89%]
+[  310s] tests/unit/future/test_polling.py::test_callback_background_thread PASSED [ 90%]
+[  310s] tests/unit/future/test_polling.py::test_double_callback_background_thread PASSED [ 90%]
+[  310s] tests/unit/future/test_polling.py::test_polling_future_without_retry PASSED [ 90%]
+[  310s] tests/unit/future/test_polling.py::test_polling_future_with__done_or_raise PASSED [ 90%]
+[  310s] tests/unit/gapic/test_client_info.py::test_to_grpc_metadata PASSED       [ 90%]
+[  310s] tests/unit/gapic/test_config.py::test_create_method_configs PASSED       [ 90%]
+[  310s] tests/unit/gapic/test_method.py::test_wrap_method_basic PASSED           [ 91%]
+[  310s] tests/unit/gapic/test_method.py::test_wrap_method_with_no_client_info PASSED [ 91%]
+[  310s] tests/unit/gapic/test_method.py::test_wrap_method_with_custom_client_info PASSED [ 91%]
+[  310s] tests/unit/gapic/test_method.py::test_invoke_wrapped_method_with_metadata PASSED [ 91%]
+[  310s] tests/unit/gapic/test_method.py::test_invoke_wrapped_method_with_metadata_as_none PASSED [ 91%]
+[  310s] tests/unit/gapic/test_method.py::test_wrap_method_with_default_retry_and_timeout PASSED [ 91%]
+[  310s] tests/unit/gapic/test_method.py::test_wrap_method_with_default_retry_and_timeout_using_sentinel PASSED [ 91%]
+[  310s] tests/unit/gapic/test_method.py::test_wrap_method_with_overriding_retry_and_timeout PASSED [ 92%]
+[  310s] tests/unit/gapic/test_method.py::test_wrap_method_with_overriding_timeout_as_a_number PASSED [ 92%]
+[  310s] tests/unit/gapic/test_routing_header.py::test_to_routing_header PASSED   [ 92%]
+[  310s] tests/unit/gapic/test_routing_header.py::test_to_routing_header_with_slashes PASSED [ 92%]
+[  310s] tests/unit/gapic/test_routing_header.py::test_enum_fully_qualified PASSED [ 92%]
+[  310s] tests/unit/gapic/test_routing_header.py::test_enum_nonqualified PASSED   [ 92%]
+[  310s] tests/unit/gapic/test_routing_header.py::test_to_grpc_metadata PASSED    [ 92%]
+[  310s] tests/unit/operations_v1/test_operations_client.py::test_get_operation PASSED [ 93%]
+[  310s] tests/unit/operations_v1/test_operations_client.py::test_list_operations PASSED [ 93%]
+[  310s] tests/unit/operations_v1/test_operations_client.py::test_delete_operation PASSED [ 93%]
+[  310s] tests/unit/operations_v1/test_operations_client.py::test_cancel_operation PASSED [ 93%]
+[  310s] tests/unit/operations_v1/test_operations_client.py::test_operations_client_config PASSED [ 93%]
+[  310s] tests/unit/operations_v1/test_operations_rest_client.py::test__get_default_mtls_endpoint PASSED [ 93%]
+[  310s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_from_service_account_info[AbstractOperationsClient] PASSED [ 94%]
+[  310s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_service_account_always_use_jwt[OperationsRestTransport-rest] PASSED [ 94%]
+[  310s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_from_service_account_file[AbstractOperationsClient] PASSED [ 94%]
+[  310s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_get_transport_class PASSED [ 94%]
+[  310s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options[AbstractOperationsClient-OperationsRestTransport-rest] PASSED [ 94%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_mtls_env_auto[AbstractOperationsClient-OperationsRestTransport-rest-true] PASSED [ 94%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_mtls_env_auto[AbstractOperationsClient-OperationsRestTransport-rest-false] PASSED [ 94%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options_scopes[AbstractOperationsClient-OperationsRestTransport-rest] PASSED [ 95%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options_credentials_file[AbstractOperationsClient-OperationsRestTransport-rest] PASSED [ 95%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest PASSED [ 95%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest_failure PASSED [ 95%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest_pager PASSED [ 95%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_get_operation_rest PASSED [ 95%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_get_operation_rest_failure PASSED [ 96%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_delete_operation_rest PASSED [ 96%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_delete_operation_rest_failure PASSED [ 96%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_cancel_operation_rest PASSED [ 96%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_cancel_operation_rest_failure PASSED [ 96%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_credentials_transport_error PASSED [ 96%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_transport_instance PASSED [ 96%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_transport_adc[OperationsRestTransport] PASSED [ 97%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_error PASSED [ 97%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport PASSED [ 97%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_with_credentials_file PASSED [ 97%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_with_adc PASSED [ 97%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_auth_adc PASSED [ 97%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_http_transport_client_cert_source_for_mtls PASSED [ 98%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_host_no_port PASSED [ 98%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_operations_host_with_port PASSED [ 98%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_common_billing_account_path PASSED [ 98%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_parse_common_billing_account_path PASSED [ 98%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_common_folder_path PASSED [ 98%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_parse_common_folder_path PASSED [ 98%]
+[  311s] tests/unit/operations_v1/test_operations_rest_client.py::test_common_organization_path PASSED [ 99%]
+[  312s] tests/unit/operations_v1/test_operations_rest_client.py::test_parse_common_organization_path PASSED [ 99%]
+[  312s] tests/unit/operations_v1/test_operations_rest_client.py::test_common_project_path PASSED [ 99%]
+[  312s] tests/unit/operations_v1/test_operations_rest_client.py::test_parse_common_project_path PASSED [ 99%]
+[  312s] tests/unit/operations_v1/test_operations_rest_client.py::test_common_location_path PASSED [ 99%]
+[  312s] tests/unit/operations_v1/test_operations_rest_client.py::test_parse_common_location_path PASSED [ 99%]
+[  312s] tests/unit/operations_v1/test_operations_rest_client.py::test_client_withDEFAULT_CLIENT_INFO PASSED [100%]
+[  312s] 
+[  312s] =================================== FAILURES ===================================
+[  312s] _____________ test_wrap_method_with_overriding_timeout_as_a_number _____________
+[  312s] 
+[  312s]     @pytest.mark.asyncio
+[  312s]     async def test_wrap_method_with_overriding_timeout_as_a_number():
+[  312s]         fake_call = grpc_helpers_async.FakeUnaryUnaryCall(42)
+[  312s]         method = mock.Mock(spec=aio.UnaryUnaryMultiCallable, return_value=fake_call)
+[  312s]         default_retry = retry_async.AsyncRetry()
+[  312s]         default_timeout = timeout.ConstantTimeout(60)
+[  312s]         wrapped_method = gapic_v1.method_async.wrap_method(
+[  312s]             method, default_retry, default_timeout
+[  312s]         )
+[  312s]     
+[  312s]         result = await wrapped_method(timeout=22)
+[  312s]     
+[  312s]         assert result == 42
+[  312s] >       method.assert_called_once_with(timeout=22, metadata=mock.ANY)
+[  312s] 
+[  312s] tests/asyncio/gapic/test_method_async.py:214: 
+[  312s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  312s] /usr/lib64/python3.8/unittest/mock.py:925: in assert_called_once_with
+[  312s]     return self.assert_called_with(*args, **kwargs)
+[  312s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  312s] 
+[  312s] self = <Mock spec='UnaryUnaryMultiCallable' id='275010133872'>, args = ()
+[  312s] kwargs = {'metadata': <ANY>, 'timeout': 22}
+[  312s] expected = ('', <BoundArguments (kwargs={'timeout': 22, 'metadata': <ANY>})>)
+[  312s] actual = ('', <BoundArguments (kwargs={'metadata': [('x-goog-api-client', 'gl-python/3.8.15 grpc/1.50.0 gax/2.11.0')], 'timeout': 21.998726844787598})>)
+[  312s] _error_message = <function NonCallableMock.assert_called_with.<locals>._error_message at 0x4008878c10>
+[  312s] cause = None
+[  312s] 
+[  312s]     def assert_called_with(self, /, *args, **kwargs):
+[  312s]         """assert that the last call was made with the specified arguments.
+[  312s]     
+[  312s]         Raises an AssertionError if the args and keyword args passed in are
+[  312s]         different to the last call to the mock."""
+[  312s]         if self.call_args is None:
+[  312s]             expected = self._format_mock_call_signature(args, kwargs)
+[  312s]             actual = 'not called.'
+[  312s]             error_message = ('expected call not found.\nExpected: %s\nActual: %s'
+[  312s]                     % (expected, actual))
+[  312s]             raise AssertionError(error_message)
+[  312s]     
+[  312s]         def _error_message():
+[  312s]             msg = self._format_mock_failure_message(args, kwargs)
+[  312s]             return msg
+[  312s]         expected = self._call_matcher((args, kwargs))
+[  312s]         actual = self._call_matcher(self.call_args)
+[  312s]         if expected != actual:
+[  312s]             cause = expected if isinstance(expected, Exception) else None
+[  312s] >           raise AssertionError(_error_message()) from cause
+[  312s] E           AssertionError: expected call not found.
+[  312s] E           Expected: mock(timeout=22, metadata=<ANY>)
+[  312s] E           Actual: mock(metadata=[('x-goog-api-client', 'gl-python/3.8.15 grpc/1.50.0 gax/2.11.0')], timeout=21.998726844787598)
+[  312s] 
+[  312s] /usr/lib64/python3.8/unittest/mock.py:913: AssertionError
+[  312s] =========================== short test summary info ============================
+[  312s] FAILED tests/asyncio/gapic/test_method_async.py::test_wrap_method_with_overriding_timeout_as_a_number
+[  312s] ============= 1 failed, 654 passed, 1 skipped in 79.02s (0:01:19) ==============
+[  312s] error: Bad exit status from /var/tmp/rpm-tmp.LnzPqe (%check)
+[  312s] 
+[  312s] RPM build errors:
+[  312s]     Bad exit status from /var/tmp/rpm-tmp.LnzPqe (%check)
+[  313s] ### VM INTERACTION START ###
+[  313s] [  287.230720][    T1] sysrq: Power Off
+[  313s] [  287.237955][  T443] reboot: Power down
+[  314s] ### VM INTERACTION END ###
+[  314s] 
+[  314s] cumulus2 failed "build python-google-api-core.spec" at Fri Dec  2 17:50:17 UTC 2022.
+[  314s] 

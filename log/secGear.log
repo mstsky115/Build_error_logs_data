@@ -1,0 +1,1941 @@
+[    0s] Memory limit set to 127090600KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing docker build
+[    0s] 
+[    0s] 
+[    0s] oerv-obs-worker-09 started "build _service:tar_scm:secGear.spec" at Mon Apr  3 05:27:18 UTC 2023.
+[    0s] 
+[    0s] Building secGear for project 'openEuler:23.03' repository '23.03' arch 'riscv64' srcmd5 'b86582993f621e2b0a9b40d3b3ef73f2'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/_service:tar_scm:secGear.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/_service:tar_scm:secGear.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/_service:tar_scm:secGear.spec build ...
+[    2s] cycle: bash -> coreutils
+[    2s]   breaking dependency coreutils -> bash
+[    2s] cycle: bash -> coreutils -> info
+[    2s]   breaking dependency coreutils -> info
+[    2s] cycle: filesystem -> bash -> coreutils -> glibc
+[    2s]   breaking dependency filesystem -> bash
+[    2s] cycle: filesystem -> coreutils -> glibc
+[    2s]   breaking dependency filesystem -> coreutils
+[    2s] cycle: bash -> coreutils -> libcap
+[    2s]   breaking dependency coreutils -> libcap
+[    2s] cycle: coreutils -> openssl-libs
+[    2s]   breaking dependency coreutils -> openssl-libs
+[    2s] cycle: systemd -> audit
+[    2s]   breaking dependency audit -> systemd
+[    2s] cycle: perl-Carp -> perl-libs
+[    2s]   breaking dependency perl-libs -> perl-Carp
+[    2s] cycle: perl-libs -> perl-Exporter
+[    2s]   breaking dependency perl-libs -> perl-Exporter
+[    2s] cycle: perl-Carp -> perl-Exporter
+[    2s]   breaking dependency perl-Exporter -> perl-Carp
+[    2s] cycle: nss-util -> nss
+[    2s]   breaking dependency nss -> nss-util
+[    2s] cycle: nss-softokn -> nss-util -> nss
+[    2s]   breaking dependency nss -> nss-softokn
+[    2s] cycle: perl-constant -> perl -> perl-Getopt-Long
+[    2s]   breaking dependency perl -> perl-Getopt-Long
+[    2s] cycle: perl-constant -> perl
+[    2s]   breaking dependency perl -> perl-constant
+[    2s] cycle: perl -> perl-Data-Dumper
+[    2s]   breaking dependency perl-Data-Dumper -> perl
+[    2s] cycle: perl-constant -> perl -> perl-Data-Dumper
+[    2s]   breaking dependency perl -> perl-Data-Dumper
+[    2s] cycle: rpm -> rpm-libs
+[    2s]   breaking dependency rpm -> rpm-libs
+[    2s] [1/114] preinstalling avahi-devel...
+[    2s] [2/114] preinstalling kernel-headers...
+[    2s] [3/114] preinstalling libraqm-devel...
+[    2s] [4/114] preinstalling pulseaudio-libs-devel...
+[    2s] [5/114] preinstalling python3-setuptools...
+[    2s] [6/114] preinstalling python3-pip...
+[    2s] [7/114] preinstalling filesystem...
+[    2s] [8/114] preinstalling dbus...
+[    2s] [9/114] preinstalling glibc...
+[    2s] [10/114] preinstalling libgcc...
+[    3s] [11/114] preinstalling diffutils...
+[    3s] [12/114] preinstalling libatomic...
+[    3s] [13/114] preinstalling libcap-ng...
+[    3s] [14/114] preinstalling libffi...
+[    3s] [15/114] preinstalling libgpg-error...
+[    3s] [16/114] preinstalling libpcap...
+[    3s] [17/114] preinstalling libsmartcols...
+[    3s] [18/114] preinstalling libuuid...
+[    3s] [19/114] preinstalling libxcrypt...
+[    3s] [20/114] preinstalling lz4...
+[    3s] [21/114] preinstalling m4...
+[    3s] [22/114] preinstalling nspr...
+[    3s] [23/114] preinstalling xz-libs...
+[    3s] [24/114] preinstalling attr...
+[    3s] [25/114] preinstalling libdb...
+[    3s] [26/114] preinstalling ncurses-libs...
+[    4s] [27/114] preinstalling zlib...
+[    4s] [28/114] preinstalling audit-libs...
+[    4s] [29/114] preinstalling compat-openssl11-libs...
+[    4s] [30/114] preinstalling iptables-libs...
+[    4s] [31/114] preinstalling libacl...
+[    4s] [32/114] preinstalling libffi-devel...
+[    4s] [33/114] preinstalling libgcrypt...
+[    4s] [34/114] preinstalling p11-kit...
+[    4s] [35/114] preinstalling python3-ldb...
+[    4s] [36/114] preinstalling readline...
+[    4s] [37/114] preinstalling cmake...
+[    5s] [38/114] preinstalling ncurses...
+[    5s] [39/114] preinstalling perl-libs...
+[    5s] [40/114] preinstalling python3-libxml2...
+[    5s] [41/114] preinstalling zstd...
+[    5s] [42/114] preinstalling python3-ldb-devel...
+[    5s] [43/114] preinstalling perl-Exporter...
+[    5s] [44/114] preinstalling pcre...
+[    5s] [45/114] preinstalling pcre2...
+[    5s] [46/114] preinstalling acl...
+[    6s] [47/114] preinstalling sqlite...
+[    6s] [48/114] preinstalling libselinux...
+[    6s] [49/114] preinstalling perl-Carp...
+[    6s] [50/114] preinstalling perl-Digest-MD5...
+[    6s] [51/114] preinstalling sed...
+[    6s] [52/114] preinstalling coreutils...
+[    6s] [53/114] preinstalling openssl-libs...
+[    6s] [54/114] preinstalling bash...
+[    6s] [55/114] preinstalling iproute...
+[    6s] [56/114] preinstalling dnf...
+[    7s] [57/114] preinstalling guile-devel...
+[    7s] [58/114] preinstalling ima-evm-utils-libs...
+[    7s] [59/114] preinstalling bzip2...
+[    7s] [60/114] preinstalling hostname...
+[    7s] [61/114] preinstalling luajit...
+[    7s] [62/114] preinstalling pcre-devel...
+[    7s] [63/114] preinstalling popt...
+[    7s] [64/114] preinstalling elfutils...
+[    7s] [65/114] preinstalling grep...
+[    7s] [66/114] preinstalling info...
+[    7s] [67/114] preinstalling kmod-libs...
+[    7s] [68/114] preinstalling libblkid...
+[    7s] [69/114] preinstalling tar...
+[    7s] [70/114] preinstalling libgcrypt-devel...
+[    7s] [71/114] preinstalling lua...
+[    7s] [72/114] preinstalling openssl...
+[    7s] [73/114] preinstalling audit...
+[    7s] [74/114] preinstalling pam...
+[    7s] [75/114] preinstalling nss...
+[    8s] [76/114] preinstalling luajit-devel...
+[    8s] [77/114] preinstalling efibootmgr...
+[    8s] [78/114] preinstalling elfutils-extra...
+[    8s] [79/114] preinstalling chkconfig...
+[    8s] [80/114] preinstalling copy-jdk-configs...
+[    8s] [81/114] preinstalling libfdisk...
+[    8s] [82/114] preinstalling file...
+[    8s] [83/114] preinstalling libcap...
+[    8s] [84/114] preinstalling libmount...
+[    8s] [85/114] preinstalling libsemanage...
+[    8s] [86/114] preinstalling nss-util...
+[    8s] [87/114] preinstalling xz...
+[    8s] [88/114] preinstalling findutils...
+[    8s] [89/114] preinstalling sudo...
+[    8s] [90/114] preinstalling iputils...
+[    8s] [91/114] preinstalling nss-softokn...
+[    8s] [92/114] preinstalling glib2...
+[    9s] [93/114] preinstalling shadow...
+[    9s] [94/114] preinstalling systemd-libs...
+[    9s] [95/114] preinstalling rpm...
+[    9s] [96/114] preinstalling dbus-libs...
+[    9s] [97/114] preinstalling vala-devel...
+[    9s] [98/114] preinstalling gobject-introspection...
+[    9s] [99/114] preinstalling openEuler-rpm-config...
+[    9s] [100/114] preinstalling rpm-libs...
+[    9s] [101/114] preinstalling util-linux...
+[    9s] [102/114] preinstalling systemd...
+[   10s] [103/114] preinstalling erlang...
+[   10s] [104/114] preinstalling net-tools...
+[   10s] [105/114] preinstalling vala...
+[   10s] [106/114] preinstalling device-mapper...
+[   10s] [107/114] preinstalling supermin...
+[   10s] [108/114] preinstalling perl...
+[   10s] [109/114] preinstalling perl-constant...
+[   10s] [110/114] preinstalling cryptsetup...
+[   10s] [111/114] preinstalling lvm2...
+[   11s] [112/114] preinstalling perl-Getopt-Long...
+[   11s] [113/114] preinstalling perl-Data-Dumper...
+[   11s] [114/114] preinstalling git...
+[   11s] 
+[   11s] copying packages...
+[   13s] reordering...cycle: bash -> coreutils
+[   13s]   breaking dependency coreutils -> bash
+[   13s] cycle: bash -> coreutils -> info
+[   13s]   breaking dependency coreutils -> info
+[   13s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[   13s]   breaking dependency filesystem -> bash
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[   13s]   breaking dependency filesystem -> coreutils
+[   13s] cycle: glibc -> basesystem -> filesystem -> setup -> openEuler-release -> bash -> coreutils -> gmp
+[   13s]   breaking dependency filesystem -> setup
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> gmp
+[   13s]   breaking dependency coreutils -> gmp
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils
+[   13s]   breaking dependency coreutils -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> libacl
+[   13s]   breaking dependency coreutils -> libacl
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> attr
+[   13s]   breaking dependency coreutils -> attr
+[   13s] cycle: bash -> coreutils -> libcap
+[   13s]   breaking dependency coreutils -> libcap
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> openssl-libs
+[   13s]   breaking dependency coreutils -> openssl-libs
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> libselinux
+[   13s]   breaking dependency bash -> coreutils
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash
+[   13s]   breaking dependency openEuler-release -> bash
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux
+[   13s]   breaking dependency libselinux -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2
+[   13s]   breaking dependency pcre2 -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2 -> readline
+[   13s]   breaking dependency readline -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   13s]   breaking dependency glibc -> basesystem
+[   13s] cycle: glibc -> glibc-common -> bash
+[   13s]   breaking dependency glibc-common -> bash
+[   13s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   13s]   breaking dependency glibc-common -> coreutils
+[   13s] cycle: glibc -> glibc-common
+[   13s]   breaking dependency glibc-common -> glibc
+[   13s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   13s]   breaking dependency readline -> ncurses-libs
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[   13s]   breaking dependency libsepol -> bash
+[   13s] cycle: libselinux -> libsepol -> coreutils
+[   13s]   breaking dependency coreutils -> libselinux
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses
+[   13s]   breaking dependency ncurses -> glibc
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses -> ncurses-libs
+[   13s]   breaking dependency ncurses -> ncurses-libs
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses -> libstdc++
+[   13s]   breaking dependency ncurses -> libstdc++
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[   13s]   breaking dependency libsepol -> glibc
+[   13s] cycle: adobe-mappings-cmap -> adobe-mappings-cmap-lang
+[   13s]   breaking dependency adobe-mappings-cmap-lang -> adobe-mappings-cmap
+[   13s] cycle: crypto-policies -> python3 -> openssl-libs
+[   13s]   breaking dependency python3 -> openssl-libs
+[   13s] cycle: libnsl2 -> libtirpc -> krb5-libs -> crypto-policies -> python3
+[   13s]   breaking dependency python3 -> libnsl2
+[   13s] cycle: libtirpc -> krb5-libs -> crypto-policies -> python3
+[   13s]   breaking dependency python3 -> libtirpc
+[   13s] cycle: pam -> libpwquality
+[   13s]   breaking dependency pam -> libpwquality
+[   13s] cycle: systemd -> audit
+[   13s]   breaking dependency audit -> systemd
+[   13s] cycle: rpm -> rpm-libs
+[   13s]   breaking dependency rpm -> rpm-libs
+[   13s] cycle: hunspell-en -> hunspell
+[   13s]   breaking dependency hunspell -> hunspell-en
+[   13s] cycle: glibc-devel -> libxcrypt-devel
+[   13s]   breaking dependency glibc-devel -> libxcrypt-devel
+[   13s] cycle: ocaml-devel -> ocaml
+[   13s]   breaking dependency ocaml -> ocaml-devel
+[   13s] cycle: perl-libs -> perl-Carp
+[   13s]   breaking dependency perl-libs -> perl-Carp
+[   13s] cycle: perl-libs -> perl-Exporter
+[   13s]   breaking dependency perl-libs -> perl-Exporter
+[   13s] cycle: erlang-erts -> erlang-kernel
+[   13s]   breaking dependency erlang-erts -> erlang-kernel
+[   13s] cycle: erlang-erts -> erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   13s]   breaking dependency erlang-erts -> erlang-stdlib
+[   13s] cycle: nss -> nss-util
+[   13s]   breaking dependency nss -> nss-util
+[   13s] cycle: nss -> nss-softokn -> nss-util
+[   13s]   breaking dependency nss -> nss-softokn
+[   13s] cycle: erlang-kernel -> erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   13s]   breaking dependency erlang-crypto -> erlang-kernel
+[   13s] cycle: erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   13s]   breaking dependency erlang-compiler -> erlang-crypto
+[   13s] cycle: erlang-compiler -> erlang-hipe
+[   13s]   breaking dependency erlang-hipe -> erlang-compiler
+[   13s] cycle: erlang-kernel -> erlang-stdlib -> erlang-compiler -> erlang-hipe
+[   13s]   breaking dependency erlang-stdlib -> erlang-compiler
+[   13s] cycle: erlang-stdlib -> erlang-crypto
+[   13s]   breaking dependency erlang-crypto -> erlang-stdlib
+[   13s] cycle: erlang-kernel -> erlang-stdlib
+[   13s]   breaking dependency erlang-stdlib -> erlang-kernel
+[   13s] cycle: fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[   13s] cycle: fontconfig -> urw-base35-nimbus-roman-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-nimbus-roman-fonts
+[   13s] cycle: fontconfig -> urw-base35-bookman-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-bookman-fonts
+[   13s] cycle: fontconfig -> urw-base35-z003-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-z003-fonts
+[   13s] cycle: fontconfig -> urw-base35-c059-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-c059-fonts
+[   13s] cycle: fontconfig -> urw-base35-d050000l-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-d050000l-fonts
+[   13s] cycle: fontconfig -> urw-base35-gothic-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-gothic-fonts
+[   13s] cycle: fontconfig -> urw-base35-p052-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-p052-fonts
+[   13s] cycle: fontconfig -> urw-base35-nimbus-sans-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-nimbus-sans-fonts
+[   13s] cycle: perl-Carp -> perl-Exporter
+[   13s]   breaking dependency perl-Exporter -> perl-Carp
+[   13s] cycle: perl -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-PathTools
+[   13s] cycle: perl -> perl-ExtUtils-MakeMaker
+[   13s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[   13s] cycle: perl -> perl-File-Path -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-File-Path
+[   13s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[   13s]   breaking dependency perl -> perl-Getopt-Long
+[   13s] cycle: perl -> perl-Locale-Maketext
+[   13s]   breaking dependency perl -> perl-Locale-Maketext
+[   13s] cycle: perl -> perl-Pod-Simple
+[   13s]   breaking dependency perl -> perl-Pod-Simple
+[   13s] cycle: perl -> perl-Socket
+[   13s]   breaking dependency perl -> perl-Socket
+[   13s] cycle: perl -> perl-Storable
+[   13s]   breaking dependency perl -> perl-Storable
+[   13s] cycle: perl -> perl-Text-Tabs+Wrap
+[   13s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[   13s] cycle: perl -> perl-Time-Local -> perl-constant
+[   13s]   breaking dependency perl -> perl-Time-Local
+[   13s] cycle: perl -> perl-constant
+[   13s]   breaking dependency perl -> perl-constant
+[   13s] cycle: perl -> perl-threads
+[   13s]   breaking dependency perl -> perl-threads
+[   13s] cycle: perl -> perl-threads-shared
+[   13s]   breaking dependency perl -> perl-threads-shared
+[   13s] cycle: perl -> perl-Archive-Tar
+[   13s]   breaking dependency perl -> perl-Archive-Tar
+[   13s] cycle: perl-B-Debug -> perl
+[   13s]   breaking dependency perl -> perl-B-Debug
+[   13s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[   13s]   breaking dependency perl -> perl-CPAN-Meta
+[   13s] cycle: perl -> perl-CPAN-Meta-Requirements
+[   13s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[   13s] cycle: perl -> perl-CPAN-Meta-YAML
+[   13s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[   13s] cycle: perl -> perl-Compress-Raw-Bzip2
+[   13s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[   13s] cycle: perl -> perl-Compress-Raw-Zlib
+[   13s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[   13s] cycle: perl -> perl-Config-Perl-V
+[   13s]   breaking dependency perl -> perl-Config-Perl-V
+[   13s] cycle: perl -> perl-Data-Dumper
+[   13s]   breaking dependency perl -> perl-Data-Dumper
+[   13s] cycle: perl -> perl-Devel-PPPort
+[   13s]   breaking dependency perl -> perl-Devel-PPPort
+[   13s] cycle: perl -> perl-Digest-SHA
+[   13s]   breaking dependency perl -> perl-Digest-SHA
+[   13s] cycle: perl -> perl-Encode
+[   13s]   breaking dependency perl -> perl-Encode
+[   13s] cycle: perl -> perl-Env
+[   13s]   breaking dependency perl -> perl-Env
+[   13s] cycle: perl -> perl-ExtUtils-Command
+[   13s]   breaking dependency perl -> perl-ExtUtils-Command
+[   13s] cycle: perl -> perl-ExtUtils-Install
+[   13s]   breaking dependency perl -> perl-ExtUtils-Install
+[   13s] cycle: perl -> perl-ExtUtils-Manifest
+[   13s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[   13s] cycle: perl -> perl-ExtUtils-ParseXS
+[   13s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[   13s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-File-Fetch
+[   13s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-File-Temp
+[   13s] cycle: perl -> perl-Filter
+[   13s]   breaking dependency perl -> perl-Filter
+[   13s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[   13s]   breaking dependency perl -> perl-Filter-Simple
+[   13s] cycle: perl -> perl-HTTP-Tiny
+[   13s]   breaking dependency perl -> perl-HTTP-Tiny
+[   13s] cycle: perl -> perl-IO-Compress
+[   13s]   breaking dependency perl -> perl-IO-Compress
+[   13s] cycle: perl -> perl-IO-Socket-IP
+[   13s]   breaking dependency perl -> perl-IO-Socket-IP
+[   13s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[   13s]   breaking dependency perl -> perl-IPC-Cmd
+[   13s] cycle: perl -> perl-IPC-SysV
+[   13s]   breaking dependency perl -> perl-IPC-SysV
+[   13s] cycle: perl -> perl-JSON-PP
+[   13s]   breaking dependency perl -> perl-JSON-PP
+[   13s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[   13s]   breaking dependency perl -> perl-Locale-Codes
+[   13s] cycle: perl -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-Math-BigInt
+[   13s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[   13s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-Math-BigRat
+[   13s] cycle: perl -> perl-Module-CoreList
+[   13s]   breaking dependency perl -> perl-Module-CoreList
+[   13s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-Module-Load
+[   13s] cycle: perl -> perl-Module-Load-Conditional
+[   13s]   breaking dependency perl -> perl-Module-Load-Conditional
+[   13s] cycle: perl -> perl-Module-Metadata
+[   13s]   breaking dependency perl -> perl-Module-Metadata
+[   13s] cycle: perl -> perl-Params-Check
+[   13s]   breaking dependency perl -> perl-Params-Check
+[   13s] cycle: perl -> perl-Pod-Checker
+[   13s]   breaking dependency perl -> perl-Pod-Checker
+[   13s] cycle: perl -> perl-Pod-Parser
+[   13s]   breaking dependency perl -> perl-Pod-Parser
+[   13s] cycle: perl -> perl-Pod-Perldoc
+[   13s]   breaking dependency perl -> perl-Pod-Perldoc
+[   13s] cycle: perl -> perl-Pod-Usage
+[   13s]   breaking dependency perl -> perl-Pod-Usage
+[   13s] cycle: perl -> perl-Sys-Syslog
+[   13s]   breaking dependency perl -> perl-Sys-Syslog
+[   13s] cycle: perl -> perl-Term-Cap
+[   13s]   breaking dependency perl -> perl-Term-Cap
+[   13s] cycle: perl -> perl-Test-Harness
+[   13s]   breaking dependency perl -> perl-Test-Harness
+[   13s] cycle: perl -> perl-Test-Simple
+[   13s]   breaking dependency perl -> perl-Test-Simple
+[   13s] cycle: perl -> perl-Text-Balanced
+[   13s]   breaking dependency perl -> perl-Text-Balanced
+[   13s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[   13s]   breaking dependency perl -> perl-Thread-Queue
+[   13s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-Unicode-Collate
+[   13s] cycle: perl -> perl-autodie
+[   13s]   breaking dependency perl -> perl-autodie
+[   13s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-bignum
+[   13s] cycle: perl -> perl-Encode-devel
+[   13s]   breaking dependency perl -> perl-Encode-devel
+[   13s] cycle: perl -> perl-experimental
+[   13s]   breaking dependency perl -> perl-experimental
+[   13s] cycle: perl -> perl-libnet
+[   13s]   breaking dependency perl -> perl-libnet
+[   13s] cycle: perl -> perl-podlators
+[   13s]   breaking dependency perl -> perl-podlators
+[   13s] cycle: perl -> perl-version
+[   13s]   breaking dependency perl -> perl-version
+[   13s] cycle: glib2-devel -> sysprof-devel
+[   13s]   breaking dependency glib2-devel -> sysprof-devel
+[   13s] cycle: libglvnd-egl -> mesa-libEGL
+[   13s]   breaking dependency mesa-libEGL -> libglvnd-egl
+[   13s] cycle: cmake-data -> cmake
+[   13s]   breaking dependency cmake -> cmake-data
+[   13s] cycle: erlang-compiler -> erlang-hipe -> erlang-syntax_tools
+[   13s]   breaking dependency erlang-syntax_tools -> erlang-compiler
+[   13s] cycle: erlang-inets -> erlang-ssl
+[   13s]   breaking dependency erlang-inets -> erlang-ssl
+[   13s] cycle: libglvnd-glx -> mesa-libGL
+[   13s]   breaking dependency mesa-libGL -> libglvnd-glx
+[   13s] cycle: gupnp-igd -> gssdp -> gtk4 -> gstreamer1-plugins-bad-free -> libnice
+[   13s]   breaking dependency gtk4 -> gstreamer1-plugins-bad-free
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[   13s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[   13s]   breaking dependency perl-podlators -> perl-Encode
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[   13s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[   13s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[   13s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[   13s] cycle: perl-Pod-Usage -> perl-podlators
+[   13s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[   13s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[   13s] cycle: openssh -> openssh-server
+[   13s]   breaking dependency openssh-server -> openssh
+[   13s] cycle: perl-Git -> git
+[   13s]   breaking dependency git -> perl-Git
+[   13s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[   13s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[   13s] done
+[   13s] Warning: cross compile not possible due to missing static binaries. please install build-initvm package for that purpose.
+[   13s]          check that the right architecture is available for your build host, you need initvm.x86_64 for this one.
+[   13s] booting docker...
+[   14s] 2nd stage started in virtual machine
+[   14s] machine type: riscv64
+[   14s] Linux version: 5.3.18-150300.59.54-default #1 SMP Sat Mar 5 10:00:50 UTC 2022 (1d0fa95)
+[   14s] Increasing log level from now on...
+[   14s] Enable sysrq operations
+[   14s] WARNING: udev not running, creating extra device nodes
+[   14s] processing recipe /.build-srcdir/_service:tar_scm:secGear.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/_service:tar_scm:secGear.spec build ...
+[   15s] initializing rpm db...
+[   15s] querying package ids...
+[   29s] [1/648] installing adobe-mappings-pdf-20190401-2.oe2303
+[   30s] [2/648] installing adwaita-cursor-theme-43-1.oe2303
+[   31s] [3/648] installing cmake-filesystem-3.24.3-1.oe2303
+[   31s] [4/648] installing fonts-filesystem-4.0.2-1.oe2303
+[   31s] [5/648] installing fuse-common-3.13.0-1.oe2303
+[   32s] [6/648] installing javapackages-filesystem-5.3.0-5.oe2303
+[   32s] [7/648] installing kernel-headers-6.1.8-3.oe2303
+[   33s] [8/648] installing libreport-filesystem-2.15.2-6.oe2303
+[   33s] [9/648] installing ncurses-base-6.4-1.oe2303
+[   33s] [10/648] installing openEuler-gpg-keys-1.0-3.3.oe2303
+[   33s] [11/648] installing python-ldb-devel-common-2.6.1-1.oe2303
+[   34s] [12/648] installing python-setuptools-60.9.3-2.oe2303
+[   34s] [13/648] installing python3-setuptools-60.9.3-2.oe2303
+[   35s] [14/648] installing python3-six-1.16.0-3.oe2303
+[   35s] [15/648] installing qt5-srpm-macros-5.15.2-1.oe2303
+[   35s] [16/648] installing tzdata-2022g-3.oe2303
+[   35s] [17/648] installing tzdata-java-2022g-3.oe2303
+[   36s] [18/648] installing wxGTK3-i18n-3.0.4-8.oe2303
+[   36s] [19/648] installing xkeyboard-config-2.38-1.oe2303
+[   37s] [20/648] installing dnf-data-4.14.0-13.oe2303
+[   37s] [21/648] installing google-droid-sans-fonts-20200215-1.oe2303
+[   38s] [22/648] installing openEuler-repos-1.0-3.3.oe2303
+[   39s] [23/648] installing adobe-mappings-cmap-lang-20190730-3.oe2303
+[   40s] [24/648] installing filesystem-3.16-5.oe2303
+[   41s] warning: group mail does not exist - using root
+[   41s] [25/648] installing adobe-mappings-cmap-20190730-3.oe2303
+[   41s] [26/648] installing emacs-filesystem-1:28.2-3.oe2303
+[   41s] [27/648] installing libgcc-10.3.1-25.oe2303
+[   42s] [28/648] installing urw-base35-fonts-common-20200910-1.oe2303
+[   42s] [29/648] installing readline-8.2-2.oe2303
+[   42s] [30/648] installing pcre2-10.42-1.oe2303
+[   43s] [31/648] installing ncurses-6.4-1.oe2303
+[   43s] [32/648] installing coreutils-9.0-7.oe2303
+[   45s] [33/648] installing libsepol-3.4-1.oe2303
+[   46s] [34/648] installing libselinux-3.4-1.oe2303
+[   46s] [35/648] installing glibc-common-2.36-13.oe2303
+[   48s] [36/648] installing glibc-2.36-13.oe2303
+[   50s] [37/648] installing SDL2-2.0.12-5.oe2303
+[   51s] [38/648] installing brotli-1.0.9-3.oe2303
+[   51s] [39/648] installing cdparanoia-libs-10.2-31.oe2303
+[   51s] [40/648] installing chrpath-0.16-13.oe2303
+[   51s] [41/648] installing cpio-2.13-7.oe2303
+[   52s] [42/648] installing diffutils-3.9-2.oe2303
+[   52s] [43/648] installing efivar-libs-38-1.oe2303
+[   53s] [44/648] installing expat-2.5.0-1.oe2303
+[   53s] [45/648] installing fribidi-1.0.12-1.oe2303
+[   53s] [46/648] installing gsm-1.0.18-5.oe2303
+[   53s] [47/648] installing hyphen-2.8.8-15.oe2303
+[   54s] [48/648] installing itrustee_sdk-0.1.0-11.oe2303
+[   54s] [49/648] installing jbigkit-libs-2.1-21.oe2303
+[   54s] [50/648] installing json-c-0.16-2.oe2303
+[   55s] [51/648] installing keyutils-libs-1.6.3-5.oe2303
+[   55s] [52/648] installing lcms2-2.13.1-2.oe2303
+[   55s] [53/648] installing libICE-1.1.1-1.oe2303
+[   56s] [54/648] installing libXau-1.0.10-1.oe2303
+[   56s] [55/648] installing libaio-0.3.113-7.oe2303
+[   56s] [56/648] installing libargon2-20190702-3.oe2303
+[   57s] [57/648] installing libasyncns-0.8-18.oe2303
+[   57s] [58/648] installing libatomic-10.3.1-25.oe2303
+[   57s] [59/648] installing libcap-ng-0.8.3-1.oe2303
+[   57s] [60/648] installing libdaemon-0.14-21.oe2303
+[   58s] [61/648] installing libdatrie-0.2.13-1.oe2303
+[   58s] [62/648] installing libdrm-2.4.114-1.oe2303
+[   58s] [63/648] installing libepoxy-1.5.10-2.oe2303
+[   59s] [64/648] installing libev-4.33-3.oe2303
+[   59s] [65/648] installing libffi-3.4.4-1.oe2303
+[   59s] [66/648] installing libglvnd-1:1.3.4-3.oe2303
+[   60s] [67/648] installing libgomp-10.3.1-25.oe2303
+[   60s] [68/648] installing libgpg-error-1.46-1.oe2303
+[   61s] [69/648] installing libijs-0.35-10.oe2303
+[   61s] [70/648] installing libjpeg-turbo-2.1.1-3.oe2303
+[   61s] [71/648] installing libmnl-1.0.5-2.oe2303
+[   61s] [72/648] installing libmspack-0.10.1-0.1.1.oe2303
+[   62s] [73/648] installing libnfnetlink-1.0.2-1.oe2303
+[   62s] [74/648] installing libnghttp2-1.47.0-3.oe2303
+[   62s] [75/648] installing libogg-2:1.3.5-2.oe2303
+[   63s] [76/648] installing libpcap-14:1.10.3-1.oe2303
+[   63s] [77/648] installing libpipeline-1.5.7-1.oe2303
+[   63s] [78/648] installing libsigsegv-2.14-1.oe2303
+[   64s] [79/648] installing libsmartcols-2.37.2-14.oe2303
+[   64s] [80/648] installing libsndfile-1.2.0-1.oe2303
+[   64s] [81/648] installing libstemmer-0-13.oe2303
+[   65s] [82/648] installing libtalloc-2.3.4-1.oe2303
+[   65s] [83/648] installing libtasn1-4.17.0-3.oe2303
+[   65s] [84/648] installing libtdb-1.4.7-1.oe2303
+[   66s] [85/648] installing libtool-ltdl-2.4.7-2.oe2303
+[   66s] [86/648] installing libunistring-1.1-2.oe2303
+[   66s] [87/648] installing libuuid-2.37.2-14.oe2303
+[   67s] [88/648] installing libuv-1:1.42.0-4.oe2303
+[   67s] [89/648] installing libvisual-1:0.4.1-1.oe2303
+[   67s] [90/648] installing libwebp-1.3.0-1.oe2303
+[   68s] [91/648] installing libxcrypt-4.4.33-1.oe2303
+[   68s] [92/648] installing libxshmfence-1.3.2-1.oe2303
+[   69s] [93/648] installing libyaml-0.2.5-4.oe2303
+[   69s] [94/648] installing lmdb-0.9.30-2.oe2303
+[   69s] [95/648] installing lz4-1.9.4-2.oe2303
+[   70s] [96/648] installing m4-1.4.19-3.oe2303
+[   70s] [97/648] installing nspr-4.35.0-2.oe2303
+[   70s] [98/648] installing openjpeg2-2.5.0-2.oe2303
+[   71s] [99/648] installing opus-1.3.1-4.oe2303
+[   71s] [100/648] installing pixman-0.42.2-1.oe2303
+[   71s] [101/648] installing pkgconf-1.8.0-3.oe2303
+[   72s] [102/648] installing which-2.21-15.oe2303
+[   72s] [103/648] installing xz-libs-5.2.10-1.oe2303
+[   72s] [104/648] installing alsa-lib-1.2.8-1.oe2303
+[   73s] [105/648] installing attr-2.5.1-4.oe2303
+[   73s] [106/648] installing libidn-1.38-4.oe2303
+[   73s] [107/648] installing libstdc++-10.3.1-25.oe2303
+[   74s] [108/648] installing mesa-libglapi-23.0.0-1.oe2303
+[   74s] [109/648] installing zlib-1.2.13-1.oe2303
+[   75s] [110/648] installing ncurses-libs-6.4-1.oe2303
+[   75s] [111/648] installing libglvnd-core-devel-1:1.3.4-3.oe2303
+[   75s] [112/648] installing libstdc++-devel-10.3.1-25.oe2303
+[   77s] [113/648] installing xorg-x11-proto-devel-2021.5-2.oe2303
+[   78s] [114/648] installing audit-libs-1:3.0.9-1.oe2303
+[   78s] [115/648] installing elfutils-libelf-0.187-10.oe2303
+[   78s] [116/648] installing fribidi-devel-1.0.12-1.oe2303
+[   79s] [117/648] installing gmp-1:6.2.1-3.oe2303
+[   79s] [118/648] installing keyutils-libs-devel-1.6.3-5.oe2303
+[   79s] [119/648] installing less-608-4.oe2303
+[   80s] [120/648] installing libacl-2.3.1-1.oe2303
+[   80s] [121/648] installing libassuan-2.5.5-2.oe2303
+[   80s] [122/648] installing libedit-3.1-29.oe2303
+[   81s] [123/648] installing libfontenc-1.1.6-1.oe2303
+[   81s] [124/648] installing libgcrypt-1.9.4-1.oe2303
+[   81s] [125/648] installing libglvnd-opengl-1:1.3.4-3.oe2303
+[   82s] [126/648] installing libpng-2:1.6.38-2.oe2303
+[   82s] [127/648] installing libsepol-devel-3.4-1.oe2303
+[   83s] [128/648] installing libtalloc-devel-2.3.4-1.oe2303
+[   83s] [129/648] installing libtdb-devel-1.4.7-1.oe2303
+[   84s] [130/648] installing libtevent-0.13.0-1.oe2303
+[   84s] [131/648] installing libthai-0.1.29-1.oe2303
+[   84s] [132/648] installing libtheora-1:1.1.1-26.oe2303
+[   85s] [133/648] installing libvorbis-1:1.3.7-2.oe2303
+[   85s] [134/648] installing libxcb-1.15-1.oe2303
+[   86s] [135/648] installing p11-kit-0.24.1-1.oe2303
+[   86s] [136/648] installing pixman-devel-0.42.2-1.oe2303
+[   86s] [137/648] installing psmisc-23.6-1.oe2303
+[   87s] [138/648] installing wayland-1.21.0-2.oe2303
+[   87s] [139/648] installing zlib-devel-1.2.13-1.oe2303
+[   87s] [140/648] installing fuse-2.9.9-11.oe2303
+[   88s] [141/648] installing gdbm-1:1.23-2.oe2303
+[   88s] [142/648] installing libSM-1.2.4-1.oe2303
+[   88s] [143/648] installing libdatrie-devel-0.2.13-1.oe2303
+[   89s] [144/648] installing libdb-5.3.28-41.oe2303
+[   91s] [145/648] installing libffi-devel-3.4.4-1.oe2303
+[   91s] [146/648] installing libicu-72.1-5.oe2303
+[   96s] [147/648] installing libjpeg-turbo-devel-2.1.1-3.oe2303
+[   96s] [148/648] installing libnetfilter_conntrack-1.0.9-4.oe2303
+[   96s] [149/648] installing libxml2-2.9.14-7.oe2303
+[   97s] [150/648] installing patch-2.7.6-20.oe2303
+[   98s] [151/648] installing python3-tdb-1.4.7-1.oe2303
+[   98s] [152/648] installing bash-5.1.8-7.oe2303
+[   99s] [153/648] installing gc-8.2.2-1.oe2303
+[   99s] [154/648] installing pcre-8.45-5.oe2303
+[  100s] [155/648] installing perl-libs-4:5.34.0-4.oe2303
+[  101s] [156/648] installing woff2-1.0.2-6.oe2303
+[  101s] [157/648] installing hunspell-1.7.0-10.oe2303
+[  102s] [158/648] installing thin-provisioning-tools-0.9.0-4.oe2303
+[  102s] [159/648] installing wxBase3-3.0.4-8.oe2303
+[  103s] [160/648] installing zstd-1.5.2-1.oe2303
+[  103s] [161/648] installing libtiff-4.5.0-3.oe2303
+[  104s] [162/648] installing hunspell-en-2020.12.07-2.oe2303
+[  104s] [163/648] installing perl-parent-1:0.238-2.oe2303
+[  104s] [164/648] installing perl-perlfaq-5.20210520-2.oe2303
+[  105s] [165/648] installing efi-filesystem-4-9.oe2303
+[  105s] [166/648] installing elfutils-default-yama-scope-0.187-10.oe2303
+[  105s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libseccomp.so.2: cannot open shared object file: No such file or directory
+[  105s] [167/648] installing gc-devel-8.2.2-1.oe2303
+[  106s] [168/648] installing hicolor-icon-theme-0.17-7.oe2303
+[  106s] [169/648] installing libX11-1.8.1-3.oe2303
+[  107s] [170/648] installing mpfr-4.1.0-3.oe2303
+[  107s] [171/648] installing nettle-3.8.1-1.oe2303
+[  108s] [172/648] installing perl-Exporter-5.74-2.oe2303
+[  108s] [173/648] installing publicsuffix-list-20211113-3.oe2303
+[  108s] [174/648] installing uname-build-checks-1.0-0.5.oe2303
+[  108s] [175/648] installing adwaita-icon-theme-43-1.oe2303
+[  110s] [176/648] installing bzip2-1.0.8-7.oe2303
+[  111s] [177/648] installing cyrus-sasl-lib-2.1.28-1.oe2303
+[  111s] [178/648] installing gzip-1.12-3.oe2303
+[  111s] [179/648] installing hostname-3.23-1.oe2303
+[  112s] [180/648] installing jbig2dec-0.19-4.oe2303
+[  112s] [181/648] installing libXau-devel-1.0.10-1.oe2303
+[  112s] [182/648] installing libbpf-2:0.8.1-5.oe2303
+[  113s] [183/648] installing libpaper-1.1.28-2.oe2303
+[  113s] [184/648] installing libpng-devel-2:1.6.38-2.oe2303
+[  113s] [185/648] installing libseccomp-2.5.4-1.oe2303
+[  114s] [186/648] installing libtevent-devel-0.13.0-1.oe2303
+[  114s] [187/648] installing libthai-devel-0.1.29-1.oe2303
+[  114s] [188/648] installing libxkbcommon-1.5.0-1.oe2303
+[  115s] [189/648] installing lksctp-tools-1.0.19-2.oe2303
+[  115s] [190/648] installing luajit-2.1.0-4.5.oe2303
+[  116s] [191/648] installing npth-1.6-7.oe2303
+[  116s] [192/648] installing orc-0.4.33-1.oe2303
+[  117s] [193/648] installing popt-1.19-2.oe2303
+[  117s] [194/648] installing sed-4.9-1.oe2303
+[  117s] [195/648] installing sgml-common-0.6.3-52.oe2303
+[  118s] [196/648] installing acl-2.3.1-1.oe2303
+[  118s] [197/648] installing dwz-0.15-1.oe2303
+[  118s] [198/648] installing grep-3.8-1.oe2303
+[  119s] [199/648] installing info-6.8-5.oe2303
+[  119s] [200/648] installing iptables-libs-1.8.9-2.oe2303
+[  119s] [201/648] installing libblkid-2.37.2-14.oe2303
+[  120s] [202/648] installing libcomps-0.1.19-1.oe2303
+[  120s] [203/648] installing libidn2-2.3.3-2.oe2303
+[  121s] [204/648] installing libksba-1.6.3-1.oe2303
+[  121s] [205/648] installing mesa-libgbm-23.0.0-1.oe2303
+[  122s] [206/648] installing pcre-devel-8.45-5.oe2303
+[  122s] [207/648] installing pcre2-devel-10.42-1.oe2303
+[  124s] [208/648] installing tar-2:1.34-4.oe2303
+[  125s] [209/648] installing tcl-1:8.6.13-2.oe2303
+[  126s] [210/648] installing gmp-c++-1:6.2.1-3.oe2303
+[  126s] [211/648] installing graphite2-1.3.14-6.oe2303
+[  127s] [212/648] installing groff-base-1.22.4-12.oe2303
+[  127s] [213/648] installing jsoncpp-1.9.5-3.oe2303
+[  128s] [214/648] installing libgpg-error-devel-1.46-1.oe2303
+[  128s] [215/648] installing lua-5.4.4-1.oe2303
+[  129s] [216/648] installing python3-libxml2-2.9.14-7.oe2303
+[  129s] [217/648] installing slang-2.3.3-1.oe2303
+[  130s] [218/648] installing unixODBC-2.3.9-3.oe2303
+[  130s] [219/648] installing aspell-12:0.60.8-1.oe2303
+[  131s] [220/648] installing glibc-devel-2.36-13.oe2303
+[  134s] [221/648] installing libunwind-2:1.6.2-4.oe2303
+[  134s] [222/648] installing libxslt-1.1.37-1.oe2303
+[  135s] [223/648] installing wayland-devel-1.21.0-2.oe2303
+[  135s] [224/648] installing libicu-devel-72.1-5.oe2303
+[  136s] [225/648] installing gettext-0.21.1-1.oe2303
+[  137s] [226/648] installing guile-5:2.2.7-2.oe2303
+[  141s] [227/648] installing iso-codes-4.7.0-1.oe2303
+[  144s] [228/648] installing bzip2-devel-1.0.8-7.oe2303
+[  144s] [229/648] installing crontabs-1.11-23.oe2303
+[  144s] [230/648] installing gmp-devel-1:6.2.1-3.oe2303
+[  145s] [231/648] installing graphite2-devel-1.3.14-6.oe2303
+[  146s] [232/648] installing libXcomposite-0.4.6-1.oe2303
+[  146s] [233/648] installing libXext-1.3.5-1.oe2303
+[  146s] [234/648] installing libXfixes-6.0.0-2.oe2303
+[  147s] [235/648] installing libXpm-3.5.15-1.oe2303
+[  147s] [236/648] installing libXrender-0.9.11-1.oe2303
+[  147s] [237/648] installing lua-devel-5.4.4-1.oe2303
+[  148s] [238/648] installing luajit-devel-2.1.0-4.5.oe2303
+[  148s] [239/648] installing perl-Carp-1.50-419.oe2303
+[  148s] [240/648] installing perl-Perl-OSType-1.010-422.oe2303
+[  149s] [241/648] installing perl-Pod-Escapes-1:1.07_01-1.oe2303
+[  149s] [242/648] installing perl-Term-ANSIColor-5.01-2.oe2303
+[  149s] [243/648] installing zip-3.0-30.oe2303
+[  149s] [244/648] installing libfdisk-2.37.2-14.oe2303
+[  150s] [245/648] installing libmpc-1.3.1-1.oe2303
+[  150s] [246/648] installing libxcb-devel-1.15-1.oe2303
+[  151s] [247/648] installing libxcrypt-devel-4.4.33-1.oe2303
+[  151s] [248/648] installing lua-posix-35.0-1.oe2303
+[  152s] [249/648] installing newt-0.52.23-1.oe2303
+[  152s] [250/648] installing bc-1.07.1-12.oe2303
+[  152s] [251/648] installing efibootmgr-18-4.oe2303
+[  152s] [252/648] installing file-libs-5.44-1.oe2303
+[  154s] [253/648] installing libXt-1.2.1-4.oe2303
+[  154s] [254/648] installing libmount-2.37.2-14.oe2303
+[  154s] [255/648] installing libselinux-devel-3.4-1.oe2303
+[  155s] [256/648] installing libwpe-1.6.0-1.oe2303
+[  155s] [257/648] installing unzip-6.0-51.oe2303
+[  155s] [258/648] installing cracklib-2.9.8-1.oe2303
+[  157s] [259/648] installing e2fsprogs-1.46.5-4.oe2303
+[  158s] [260/648] installing libsemanage-3.4-1.oe2303
+[  159s] [261/648] installing perl-MIME-Base64-3.16-2.oe2303
+[  159s] [262/648] installing sqlite-3.37.2-5.oe2303
+[  160s] [263/648] installing xz-5.2.10-1.oe2303
+[  160s] [264/648] installing findutils-2:4.9.0-1.oe2303
+[  161s] [265/648] installing freetype-2.12.1-1.oe2303
+[  161s] [266/648] installing libpsl-0.21.2-1.oe2303
+[  161s] [267/648] installing logrotate-3.20.1-1.oe2303
+[  162s] [268/648] installing make-1:4.4-2.oe2303
+[  162s] [269/648] installing elfutils-libs-0.187-10.oe2303
+[  163s] [270/648] installing libgcrypt-devel-1.9.4-1.oe2303
+[  163s] [271/648] installing gawk-5.2.0-3.oe2303
+[  164s] [272/648] installing iproute-1:6.1.0-7.oe2303
+[  164s] [273/648] installing mesa-libEGL-23.0.0-1.oe2303
+[  165s] [274/648] installing perl-PerlIO-via-QuotedPrint-0.10-1.oe2303
+[  165s] [275/648] installing xz-devel-5.2.10-1.oe2303
+[  165s] [276/648] installing libXdamage-1.1.6-1.oe2303
+[  166s] [277/648] installing libXi-1.8-2.oe2303
+[  166s] [278/648] installing libXinerama-1.1.5-1.oe2303
+[  166s] [279/648] installing libXv-1.0.12-1.oe2303
+[  167s] [280/648] installing libXxf86vm-1.1.5-2.oe2303
+[  167s] [281/648] installing libglvnd-egl-1:1.3.4-3.oe2303
+[  167s] [282/648] installing libglvnd-gles-1:1.3.4-3.oe2303
+[  168s] [283/648] installing perl-Text-ParseWords-3.30-420.oe2303
+[  168s] [284/648] installing copy-jdk-configs-4.0-1.oe2303
+[  168s] [285/648] installing libX11-devel-1.8.1-3.oe2303
+[  169s] [286/648] installing libXcursor-1.2.1-1.oe2303
+[  169s] [287/648] installing libXmu-1.1.4-1.oe2303
+[  170s] [288/648] installing libXrandr-1.5.3-1.oe2303
+[  170s] [289/648] installing openEuler-release-23.03-54.oe2303
+[  170s] [290/648] installing perl-Digest-1.20-3.oe2303
+[  171s] [291/648] installing chkconfig-1.21-2.oe2303
+[  171s] [292/648] installing file-5.44-1.oe2303
+[  171s] [293/648] installing e2fsprogs-devel-1.46.5-4.oe2303
+[  172s] [294/648] installing guile-devel-5:2.2.7-2.oe2303
+[  172s] [295/648] installing perl-Scalar-List-Utils-4:1.60-2.oe2303
+[  173s] [296/648] installing perl-Time-HiRes-4:1.9767-3.oe2303
+[  173s] [297/648] installing perl-Unicode-Normalize-1.28-2.oe2303
+[  174s] [298/648] installing elfutils-0.187-10.oe2303
+[  174s] [299/648] installing freetype-devel-2.12.1-1.oe2303
+[  175s] [300/648] installing xorg-x11-font-utils-1:7.5-44.oe2303
+[  175s] [301/648] installing cpp-10.3.1-25.oe2303
+[  178s] [302/648] installing glib2-2.74.4-2.oe2303
+[  180s] [303/648] installing man-db-2.11.0-1.oe2303
+[  181s] [304/648] installing fontconfig-2.14.2-1.oe2303
+[  184s] [305/648] installing gsettings-desktop-schemas-43.0-1.oe2303
+[  185s] [306/648] installing atk-2.38.0-1.oe2303
+[  186s] [307/648] installing graphene-1.10.6-2.oe2303
+[  186s] [308/648] installing json-glib-1.6.6-2.oe2303
+[  187s] [309/648] installing polkit-help-122-2.oe2303
+[  187s] [310/648] installing setup-2.14.3-1.oe2303
+[  188s] [311/648] installing libsecret-0.20.5-1.oe2303
+[  188s] [312/648] installing libXext-devel-1.3.5-1.oe2303
+[  188s] [313/648] installing libXfixes-devel-6.0.0-2.oe2303
+[  189s] [314/648] installing libXrender-devel-0.9.11-1.oe2303
+[  189s] [315/648] installing libXtst-1.2.4-1.oe2303
+[  189s] [316/648] installing perl-Digest-MD5-2.58-2.oe2303
+[  190s] [317/648] installing urw-base35-bookman-fonts-20200910-1.oe2303
+[  191s] [318/648] installing urw-base35-c059-fonts-20200910-1.oe2303
+[  192s] [319/648] installing urw-base35-d050000l-fonts-20200910-1.oe2303
+[  192s] [320/648] installing urw-base35-gothic-fonts-20200910-1.oe2303
+[  193s] [321/648] installing urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2303
+[  194s] [322/648] installing urw-base35-nimbus-roman-fonts-20200910-1.oe2303
+[  195s] [323/648] installing urw-base35-nimbus-sans-fonts-20200910-1.oe2303
+[  197s] [324/648] installing urw-base35-p052-fonts-20200910-1.oe2303
+[  198s] [325/648] installing urw-base35-standard-symbols-ps-fonts-20200910-1.oe2303
+[  199s] [326/648] installing urw-base35-z003-fonts-20200910-1.oe2303
+[  200s] [327/648] installing xorg-x11-fonts-7.5-25.oe2303
+[  207s] [328/648] installing elfutils-extra-0.187-10.oe2303
+[  208s] [329/648] installing gobject-introspection-1.74.0-1.oe2303
+[  208s] [330/648] installing libXft-2.3.7-1.oe2303
+[  209s] [331/648] installing libtiff-devel-4.5.0-3.oe2303
+[  209s] [332/648] installing shared-mime-info-2.2-1.oe2303
+[  212s] [333/648] installing binutils-2.37-14.oe2303
+[  214s] [334/648] installing enchant2-2.3.3-1.oe2303
+[  215s] [335/648] installing libXaw-1.0.14-2.oe2303
+[  215s] [336/648] installing harfbuzz-6.0.0-1.oe2303
+[  216s] [337/648] installing libxml2-devel-2.9.14-7.oe2303
+[  219s] [338/648] installing p11-kit-trust-0.24.1-1.oe2303
+[  220s] [339/648] installing babeltrace-1.5.8-6.oe2303
+[  221s] [340/648] installing wpebackend-fdo-1.6.1-2.oe2303
+[  221s] [341/648] installing cairo-1.17.4-3.oe2303
+[  222s] [342/648] installing mesa-libGL-23.0.0-1.oe2303
+[  222s] [343/648] installing basesystem-12-3.oe2303
+[  222s] [344/648] installing libxkbcommon-devel-1.5.0-1.oe2303
+[  223s] [345/648] installing libraqm-0.7.0-3.oe2303
+[  223s] [346/648] installing fontconfig-devel-2.14.2-1.oe2303
+[  224s] [347/648] installing libXdamage-devel-1.1.6-1.oe2303
+[  224s] [348/648] installing libXinerama-devel-1.1.5-1.oe2303
+[  224s] [349/648] installing libglvnd-glx-1:1.3.4-3.oe2303
+[  225s] [350/648] installing ca-certificates-2021.2.52-2.oe2303
+[  231s] [351/648] installing libXcursor-devel-1.2.1-1.oe2303
+[  231s] [352/648] installing libXi-devel-1.8-2.oe2303
+[  232s] [353/648] installing libXrandr-devel-1.5.3-1.oe2303
+[  232s] [354/648] installing gdk-pixbuf2-2.42.10-2.oe2303
+[  233s] [355/648] installing pango-1.50.12-1.oe2303
+[  233s] [356/648] installing urw-base35-fonts-20200910-1.oe2303
+[  234s] [357/648] installing cairo-gobject-1.17.4-3.oe2303
+[  234s] [358/648] installing gcc-10.3.1-25.oe2303
+[  242s] [359/648] installing python-pip-wheel-22.3.1-1.oe2303
+[  243s] [360/648] installing gtk-update-icon-cache-3.24.36-1.oe2303
+[  243s] [361/648] installing gdk-pixbuf2-modules-2.42.10-2.oe2303
+[  244s] [362/648] installing mesa-libGLU-9.0.2-1.oe2303
+[  244s] [363/648] installing libXft-devel-2.3.7-1.oe2303
+[  245s] [364/648] installing libglvnd-devel-1:1.3.4-3.oe2303
+[  245s] [365/648] installing gcc-c++-10.3.1-25.oe2303
+[  249s] [366/648] installing gd-2.3.2-1.oe2303
+[  249s] [367/648] installing librsvg2-2.55.1-1.oe2303
+[  251s] [368/648] installing libepoxy-devel-1.5.10-2.oe2303
+[  252s] [369/648] installing python3-3.10.9-1.oe2303
+[  256s] [370/648] installing python3-unversioned-command-3.10.9-1.oe2303
+[  257s] [371/648] installing python3-distro-1.6.0-2.oe2303
+[  257s] [372/648] installing python3-markdown-3.3.7-2.oe2303
+[  257s] [373/648] installing python3-markupsafe-2.1.1-1.oe2303
+[  258s] [374/648] installing python3-dateutil-1:2.8.2-3.oe2303
+[  258s] [375/648] installing python3-pip-22.3.1-1.oe2303
+[  260s] [376/648] installing crypto-policies-20200619-3.git781bbd4.oe2303
+[  261s] [377/648] installing python3-libcomps-0.1.19-1.oe2303
+[  262s] [378/648] installing gdb-headless-12.1-2.oe2303
+[  264s] [379/648] installing gdb-12.1-2.oe2303
+[  264s] [380/648] installing python3-mako-1.2.4-1.oe2303
+[  265s] [381/648] installing compat-openssl11-libs-1:1.1.1m-3.oe2303
+[  266s] [382/648] installing openssl-libs-1:3.0.8-3.oe2303
+[  267s] [383/648] installing nss-3.85.0-2.oe2303
+[  268s] [384/648] installing libevent-2.1.12-7.oe2303
+[  269s] [385/648] installing openldap-2.6.3-2.oe2303
+[  269s] [386/648] installing kmod-libs-30-2.oe2303
+[  270s] [387/648] installing nss-util-3.85.0-2.oe2303
+[  270s] [388/648] installing kmod-30-2.oe2303
+[  271s] [389/648] installing openssl-1:3.0.8-3.oe2303
+[  271s] [390/648] installing libarchive-3.6.1-2.oe2303
+[  272s] [391/648] installing debugedit-5.0-6.oe2303
+[  272s] [392/648] installing libevent-devel-2.1.12-7.oe2303
+[  273s] [393/648] installing libverto-0.3.2-3.oe2303
+[  273s] [394/648] installing nss-softokn-3.85.0-2.oe2303
+[  274s] [395/648] installing libldb-2.6.1-1.oe2303
+[  274s] [396/648] installing libverto-devel-0.3.2-3.oe2303
+[  275s] [397/648] installing libldb-devel-2.6.1-1.oe2303
+[  275s] [398/648] installing python3-ldb-2.6.1-1.oe2303
+[  276s] [399/648] installing krb5-libs-1.20.1-1.oe2303
+[  276s] [400/648] installing libtirpc-1.3.3-2.oe2303
+[  277s] [401/648] installing python3-ldb-devel-2.6.1-1.oe2303
+[  277s] [402/648] installing libssh-0.10.4-2.oe2303
+[  277s] [403/648] installing audit-1:3.0.9-1.oe2303
+[  278s] Created symlink /etc/systemd/system/multi-user.target.wants/auditd.service -> /usr/lib/systemd/system/auditd.service.
+[  278s] [404/648] installing libsoup3-3.2.2-1.oe2303
+[  279s] [405/648] installing krb5-devel-1.20.1-1.oe2303
+[  279s] [406/648] installing libnsl2-2.0.0-5.oe2303
+[  280s] [407/648] installing compat-openssl11-devel-1:1.1.1m-3.oe2303
+[  282s] [408/648] installing libcurl-7.86.0-3.oe2303
+[  283s] [409/648] installing libtracker-sparql3-3.4.2-1.oe2303
+[  284s] [410/648] installing curl-7.86.0-3.oe2303
+[  284s] [411/648] installing tpm2-tss-3.2.1-2.oe2303
+[  285s] [412/648] installing pam-1.5.2-4.oe2303
+[  285s] [413/648] installing ima-evm-utils-libs-1.4-1.oe2303
+[  286s] [414/648] installing libpwquality-1.4.5-1.oe2303
+[  286s] [415/648] installing libcap-2.66-1.oe2303
+[  287s] [416/648] installing shadow-subid-devel-2:4.13-2.oe2303
+[  287s] [417/648] installing sudo-1.9.12p2-3.oe2303
+[  288s] [418/648] installing bubblewrap-0.4.1-1.oe2303
+[  288s] [419/648] installing iputils-20221126-1.oe2303
+[  289s] [420/648] installing gstreamer1-1.20.4-1.oe2303
+[  290s] [421/648] installing systemd-libs-249-49.oe2303
+[  291s] Detected system with incompatible nobody defined, creating /etc/systemd/dont-synthesize-nobody
+[  291s] [422/648] installing shadow-2:4.13-2.oe2303
+[  291s] [423/648] installing rpm-4.18.0-6.oe2303
+[  292s] [424/648] installing efi-srpm-macros-4-9.oe2303
+[  293s] [425/648] installing cmake-rpm-macros-3.24.3-1.oe2303
+[  293s] [426/648] installing dbus-libs-1:1.14.0-2.oe2303
+[  294s] [427/648] installing libgudev-237-2.oe2303
+[  294s] [428/648] installing libusbx-1.0.26-1.oe2303
+[  294s] [429/648] installing polkit-libs-122-2.oe2303
+[  295s] [430/648] installing procps-ng-4.0.2-1.oe2303
+[  295s] [431/648] installing libutempter-1.2.1-3.oe2303
+[  296s] [432/648] installing webkit2gtk3-jsc-2.38.2-2.oe2303
+[  300s] [433/648] installing erlang-erts-23.3.4.9-3.oe2303
+[  302s] [434/648] installing rpm-libs-4.18.0-6.oe2303
+[  302s] [435/648] installing gstreamer1-plugins-base-1.20.3-3.oe2303
+[  304s] [436/648] installing systemd-249-49.oe2303
+[  307s] [437/648] installing dbus-common-1:1.14.0-2.oe2303
+[  308s] [438/648] installing dbus-tools-1:1.14.0-2.oe2303
+[  308s] [439/648] installing erlang-erl_interface-23.3.4.9-3.oe2303
+[  309s] [440/648] installing avahi-libs-0.8-15.oe2303
+[  309s] [441/648] installing libgusb-0.3.10-1.oe2303
+[  310s] [442/648] installing obs-env-1.0-7.oe2303
+[  311s] fatal library error, lookup self
+[  311s] [443/648] installing python3-dbus-1.3.2-1.oe2303
+[  312s] [444/648] installing erlang-crypto-23.3.4.9-3.oe2303
+[  312s] [445/648] installing libmodulemd-2.14.0-1.oe2303
+[  313s] [446/648] installing net-tools-2.10-3.oe2303
+[  314s] [447/648] installing pulseaudio-libs-16.1-8.oe2303
+[  314s] [448/648] installing sysprof-cli-3.46.0-1.oe2303
+[  315s] [449/648] installing libsolv-0.7.22-1.oe2303
+[  316s] [450/648] installing openEuler-rpm-config-30-37.oe2303
+[  316s] [451/648] installing cmake-3.24.3-1.oe2303
+[  321s] [452/648] installing python3-rpm-4.18.0-6.oe2303
+[  322s] [453/648] installing util-linux-2.37.2-14.oe2303
+[  324s] [454/648] installing pulseaudio-libs-glib2-16.1-8.oe2303
+[  324s] [455/648] installing util-linux-devel-2.37.2-14.oe2303
+[  325s] [456/648] installing cmake-data-3.24.3-1.oe2303
+[  326s] [457/648] installing erlang-stdlib-23.3.4.9-3.oe2303
+[  327s] [458/648] installing colord-libs-1.4.5-4.oe2303
+[  328s] [459/648] installing ocaml-4.13.1-4.oe2303
+[  367s] [460/648] installing device-mapper-8:1.02.182-2.oe2303
+[  368s] [461/648] installing dbus-daemon-1:1.14.0-2.oe2303
+[  369s] [462/648] installing rpm-build-4.18.0-6.oe2303
+[  370s] [463/648] installing perl-4:5.34.0-4.oe2303
+[  372s] [464/648] installing ocaml-devel-4.13.1-4.oe2303
+[  380s] [465/648] installing dbus-1:1.14.0-2.oe2303
+[  381s] [466/648] installing erlang-kernel-23.3.4.9-3.oe2303
+[  382s] [467/648] installing ocaml-csexp-1.5.1-1.oe2303
+[  382s] [468/648] installing perl-B-Debug-1.26-6.oe2303
+[  382s] [469/648] installing perl-Env-1.04-398.oe2303
+[  383s] [470/648] installing perl-Text-Tabs+Wrap-2021.0814-2.oe2303
+[  383s] [471/648] installing perl-Devel-PPPort-3.63-2.oe2303
+[  383s] [472/648] installing perl-Algorithm-Diff-1:1.201-2.oe2303
+[  384s] [473/648] installing perl-Params-Check-1:0.38-419.oe2303
+[  384s] [474/648] installing perl-Term-Cap-1.17-511.oe2303
+[  384s] [475/648] installing perl-TermReadKey-2.38-2.oe2303
+[  385s] [476/648] installing perl-Text-Balanced-2.06-1.oe2303
+[  385s] [477/648] installing perl-threads-2:2.26-2.oe2303
+[  385s] [478/648] installing perl-CPAN-Meta-YAML-0.018-421.oe2303
+[  386s] [479/648] installing perl-Config-Perl-V-0.33-2.oe2303
+[  386s] [480/648] installing perl-Error-1:0.17029-3.oe2303
+[  386s] [481/648] installing perl-Filter-2:1.64-1.oe2303
+[  387s] [482/648] installing perl-IPC-SysV-2.09-2.oe2303
+[  387s] [483/648] installing perl-Locale-Maketext-1:1.29-2.oe2303
+[  388s] [484/648] installing perl-constant-1.33-422.oe2303
+[  388s] [485/648] installing perl-Socket-4:2.032-2.oe2303
+[  389s] [486/648] installing perl-Storable-1:3.25-3.oe2303
+[  389s] [487/648] installing device-mapper-event-8:1.02.182-2.oe2303
+[  390s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[  390s] [488/648] installing gcc_secure-1.0-0.12.oe2303
+[  390s] [489/648] installing cryptsetup-2.6.0-2.oe2303
+[  391s] [490/648] installing glib2-devel-2.74.4-2.oe2303
+[  392s] [491/648] installing ocaml-csexp-devel-1.5.1-1.oe2303
+[  393s] [492/648] installing erlang-eunit-23.3.4.9-3.oe2303
+[  393s] [493/648] installing erlang-ftp-23.3.4.9-3.oe2303
+[  394s] [494/648] installing erlang-mnesia-23.3.4.9-3.oe2303
+[  394s] [495/648] installing erlang-parsetools-23.3.4.9-3.oe2303
+[  395s] [496/648] installing erlang-tftp-23.3.4.9-3.oe2303
+[  395s] [497/648] installing erlang-xmerl-23.3.4.9-3.oe2303
+[  396s] [498/648] installing graphene-devel-1.10.6-2.oe2303
+[  397s] [499/648] installing xdg-dbus-proxy-0.1.2-1.oe2303
+[  397s] [500/648] installing erlang-asn1-23.3.4.9-3.oe2303
+[  398s] [501/648] installing erlang-syntax_tools-23.3.4.9-3.oe2303
+[  398s] [502/648] installing polkit-devel-122-2.oe2303
+[  399s] [503/648] installing erlang-odbc-23.3.4.9-3.oe2303
+[  399s] [504/648] installing json-glib-devel-1.6.6-2.oe2303
+[  400s] [505/648] installing perl-Filter-Simple-1:0.94-1.oe2303
+[  400s] [506/648] installing perl-IO-Socket-IP-0.41-3.oe2303
+[  400s] [507/648] installing perl-Text-Diff-1.45-8.oe2303
+[  401s] [508/648] installing perl-Time-Local-2:1.300-2.oe2303
+[  401s] [509/648] installing perl-version-8:0.99.29-2.oe2303
+[  401s] [510/648] installing pulseaudio-libs-devel-16.1-8.oe2303
+[  402s] [511/648] installing perl-IPC-System-Simple-1.30-3.oe2303
+[  402s] [512/648] installing perl-threads-shared-1.62-2.oe2303
+[  403s] [513/648] installing perl-Compress-Raw-Bzip2-2.201-1.oe2303
+[  403s] [514/648] installing perl-Compress-Raw-Zlib-1:2.202-1.oe2303
+[  403s] [515/648] installing perl-Locale-Codes-3.68-2.oe2303
+[  404s] [516/648] installing perl-PathTools-3.80-2.oe2303
+[  405s] [517/648] installing perl-Sys-Syslog-0.36-2.oe2303
+[  405s] [518/648] installing perl-Math-BigInt-1:1.9998.27-2.oe2303
+[  405s] [519/648] installing gdk-pixbuf2-devel-2.42.10-2.oe2303
+[  406s] [520/648] installing perl-Data-Dumper-2.183-2.oe2303
+[  406s] [521/648] installing unbound-libs-1.17.0-2.oe2303
+[  408s] [522/648] installing at-spi2-core-2.44.1-2.oe2303
+[  408s] [523/648] installing perl-Encode-4:3.16-2.oe2303
+[  409s] [524/648] installing avahi-0.8-15.oe2303
+[  411s] Created symlink /etc/systemd/system/sockets.target.wants/avahi-daemon.socket -> /usr/lib/systemd/system/avahi-daemon.socket.
+[  411s] Created symlink /etc/systemd/system/dbus-org.freedesktop.Avahi.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[  411s] Created symlink /etc/systemd/system/multi-user.target.wants/avahi-daemon.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[  411s] [525/648] installing cairo-devel-1.17.4-3.oe2303
+[  411s] [526/648] installing harfbuzz-devel-6.0.0-1.oe2303
+[  412s] [527/648] installing lvm2-8:2.03.18-2.oe2303
+[  414s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[  414s] [528/648] installing openssh-server-9.1p1-3.oe2303
+[  415s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[  415s] [529/648] installing perl-Module-Load-1:0.36-2.oe2303
+[  415s] [530/648] installing avahi-devel-0.8-15.oe2303
+[  416s] [531/648] installing cairo-gobject-devel-1.17.4-3.oe2303
+[  416s] [532/648] installing ocaml-dune-2.9.1-2.oe2303
+[  419s] [533/648] installing perl-Thread-Queue-3.13-4.oe2303
+[  419s] [534/648] installing perl-experimental-0.030-1.oe2303
+[  419s] [535/648] installing at-spi2-atk-2.38.0-2.oe2303
+[  420s] [536/648] installing erlang-hipe-23.3.4.9-3.oe2303
+[  420s] [537/648] installing erlang-public_key-23.3.4.9-3.oe2303
+[  421s] [538/648] installing erlang-runtime_tools-23.3.4.9-3.oe2303
+[  421s] [539/648] installing libraqm-devel-0.7.0-3.oe2303
+[  422s] [540/648] installing perl-File-Path-2.18-2.oe2303
+[  422s] [541/648] installing perl-Module-Metadata-1.000037-2.oe2303
+[  422s] [542/648] installing perl-CPAN-Meta-Requirements-2.140-420.oe2303
+[  423s] [543/648] installing perl-Encode-devel-4:3.16-2.oe2303
+[  423s] [544/648] installing perl-HTTP-Tiny-0.080-1.oe2303
+[  424s] [545/648] installing perl-Math-BigInt-FastCalc-0.5012-3.oe2303
+[  424s] [546/648] installing perl-Math-BigRat-0.2620-2.oe2303
+[  425s] [547/648] installing perl-Unicode-Collate-1.31-2.oe2303
+[  425s] [548/648] installing perl-autodie-2.34-3.oe2303
+[  426s] [549/648] installing openssh-9.1p1-3.oe2303
+[  427s] [550/648] installing perl-libnet-3.14-2.oe2303
+[  427s] [551/648] installing perl-podlators-1:4.14-2.oe2303
+[  427s] [552/648] installing gnutls-3.7.8-2.oe2303
+[  428s] [553/648] installing pango-devel-1.50.12-1.oe2303
+[  429s] [554/648] installing NetworkManager-libnm-1:1.32.12-16.oe2303
+[  431s] [555/648] installing cups-libs-1:2.4.0-5.oe2303
+[  431s] [556/648] installing erlang-compiler-23.3.4.9-3.oe2303
+[  432s] [557/648] installing erlang-ssh-23.3.4.9-3.oe2303
+[  433s] [558/648] installing perl-ExtUtils-Command-1:7.62-2.oe2303
+[  433s] [559/648] installing perl-ExtUtils-Manifest-1:1.73-2.oe2303
+[  433s] [560/648] installing erlang-snmp-23.3.4.9-3.oe2303
+[  434s] [561/648] installing perl-bignum-0.63-2.oe2303
+[  435s] [562/648] installing erlang-inets-23.3.4.9-3.oe2303
+[  435s] [563/648] installing perl-File-Temp-1:0.2311-3.oe2303
+[  436s] [564/648] installing openssh-clients-9.1p1-3.oe2303
+[  436s] [565/648] installing gnupg2-2.3.6-3.oe2303
+[  438s] [566/648] installing gpgme-1.17.0-1.oe2303
+[  439s] [567/648] installing erlang-otp_mibs-23.3.4.9-3.oe2303
+[  439s] [568/648] installing erlang-ssl-23.3.4.9-3.oe2303
+[  440s] [569/648] installing libproxy-0.4.18-1.oe2303
+[  440s] [570/648] installing erlang-edoc-23.3.4.9-3.oe2303
+[  441s] [571/648] installing erlang-tools-23.3.4.9-3.oe2303
+[  442s] [572/648] installing git-core-2.39.1-3.oe2303
+[  445s] [573/648] installing perl-Test-Simple-2:1.302188-2.oe2303
+[  446s] [574/648] installing perl-Pod-Perldoc-1:3.28-5.oe2303
+[  446s] [575/648] installing java-1.8.0-openjdk-headless-1:1.8.0.352.b08-5.oe2303
+[  460s] [576/648] installing gtk2-2.24.33-7.oe2303
+[  462s] [577/648] installing gtk3-3.24.36-1.oe2303
+[  465s] [578/648] installing gtk4-4.9.1-1.oe2303
+[  469s] [579/648] installing python3-gpgme-1.17.0-1.oe2303
+[  469s] [580/648] installing erlang-sasl-23.3.4.9-3.oe2303
+[  470s] [581/648] installing erlang-eldap-23.3.4.9-3.oe2303
+[  470s] [582/648] installing erlang-erl_docgen-23.3.4.9-3.oe2303
+[  471s] [583/648] installing javapackages-tools-5.3.0-5.oe2303
+[  471s] [584/648] installing glib-networking-2.74.0-1.oe2303
+[  472s] [585/648] installing libadwaita-1.2.0-1.oe2303
+[  473s] [586/648] installing erlang-diameter-23.3.4.9-3.oe2303
+[  474s] [587/648] installing librepo-1.15.1-1.oe2303
+[  474s] [588/648] installing perl-Pod-Usage-4:2.03-2.oe2303
+[  474s] [589/648] installing ghostscript-9.56.1-1.oe2303
+[  478s] [590/648] installing gtk4-devel-4.9.1-1.oe2303
+[  488s] [591/648] installing erlang-jinterface-23.3.4.9-3.oe2303
+[  489s] [592/648] installing erlang-os_mon-23.3.4.9-3.oe2303
+[  489s] [593/648] installing libsysprof-ui-3.46.0-1.oe2303
+[  490s] [594/648] installing perl-Getopt-Long-1:2.52-2.oe2303
+[  490s] [595/648] installing libsoup-2.74.3-1.oe2303
+[  491s] [596/648] installing libdnf-0.69.0-3.oe2303
+[  492s] [597/648] installing graphviz-2.48.0-3.oe2303
+[  494s] [598/648] installing graphviz-devel-2.48.0-3.oe2303
+[  494s] [599/648] installing gssdp-1.4.0.1-1.oe2303
+[  495s] [600/648] installing perl-ExtUtils-ParseXS-2:3.35-2.oe2303
+[  495s] [601/648] installing perl-Module-CoreList-1:5.20211020-2.oe2303
+[  495s] [602/648] installing perl-Digest-SHA-1:6.02-8.oe2303
+[  496s] [603/648] installing perl-Pod-Parser-1.63-399.oe2303
+[  496s] [604/648] installing perl-Pod-Simple-1:3.43-2.oe2303
+[  497s] [605/648] installing perl-Test-Harness-2:3.44-1.oe2303
+[  497s] [606/648] installing sysprof-3.46.0-1.oe2303
+[  500s] [607/648] installing perl-IO-Compress-2.201-1.oe2303
+[  500s] [608/648] installing perl-JSON-PP-1:4.12-2.oe2303
+[  500s] [609/648] installing autoconf-2.71-3.oe2303
+[  501s] [610/648] installing python3-libdnf-0.69.0-3.oe2303
+[  502s] [611/648] installing git-2.39.1-3.oe2303
+[  507s] [612/648] installing webkit2gtk3-2.38.2-2.oe2303
+[  518s] [613/648] installing perl-Git-2.39.1-3.oe2303
+[  518s] [614/648] installing vala-devel-0.56.3-3.oe2303
+[  519s] [615/648] installing gupnp-1.4.3-2.oe2303
+[  520s] [616/648] installing perl-Pod-Checker-4:1.74-2.oe2303
+[  520s] [617/648] installing perl-CPAN-Meta-2.150010-420.oe2303
+[  520s] [618/648] installing perl-Module-Load-Conditional-0.74-2.oe2303
+[  521s] [619/648] installing perl-Archive-Tar-2.40-2.oe2303
+[  521s] [620/648] installing automake-1.16.5-4.oe2303
+[  522s] [621/648] installing perl-ExtUtils-MakeMaker-1:7.62-2.oe2303
+[  522s] [622/648] installing python3-hawkey-0.69.0-3.oe2303
+[  523s] [623/648] installing wxGTK3-3.0.4-8.oe2303
+[  525s] [624/648] installing gupnp-igd-1.2.0-1.oe2303
+[  526s] [625/648] installing libtool-2.4.7-2.oe2303
+[  526s] [626/648] installing perl-ExtUtils-Install-2.20-2.oe2303
+[  527s] [627/648] installing python3-dnf-4.14.0-13.oe2303
+[  527s] [628/648] installing erlang-wx-23.3.4.9-3.oe2303
+[  529s] [629/648] installing perl-IPC-Cmd-2:1.04-4.oe2303
+[  529s] [630/648] installing dnf-4.14.0-13.oe2303
+[  530s] [631/648] installing libnice-0.1.19-1.oe2303
+[  530s] [632/648] installing erlang-debugger-23.3.4.9-3.oe2303
+[  531s] [633/648] installing erlang-et-23.3.4.9-3.oe2303
+[  532s] [634/648] installing python3-dnf-plugins-core-4.3.1-2.oe2303
+[  532s] [635/648] installing erlang-reltool-23.3.4.9-3.oe2303
+[  533s] [636/648] installing erlang-dialyzer-23.3.4.9-3.oe2303
+[  533s] [637/648] installing gobject-introspection-devel-1.74.0-1.oe2303
+[  535s] [638/648] installing perl-File-Fetch-1.04-1.oe2303
+[  535s] [639/648] installing dnf-plugins-core-4.3.1-2.oe2303
+[  536s] [640/648] installing erlang-megaco-23.3.4.9-3.oe2303
+[  538s] [641/648] installing erlang-observer-23.3.4.9-3.oe2303
+[  539s] [642/648] installing vala-0.56.3-3.oe2303
+[  540s] [643/648] installing gstreamer1-plugins-bad-free-1.16.2-6.oe2303
+[  542s] [644/648] installing libadwaita-devel-1.2.0-1.oe2303
+[  542s] [645/648] installing supermin-5.3.2-1.oe2303
+[  543s] [646/648] installing erlang-common_test-23.3.4.9-3.oe2303
+[  544s] [647/648] installing sysprof-devel-3.46.0-1.oe2303
+[  544s] [648/648] installing erlang-23.3.4.9-3.oe2303
+[  545s] now finalizing build dir...
+[  545s] egrep: warning: egrep is obsolescent; using grep -E
+[  546s] egrep: warning: egrep is obsolescent; using grep -E
+[  546s] RTNETLINK answers: File exists
+[  546s] RTNETLINK answers: Permission denied
+[  546s] Network setup
+[  546s] Cannot find device "eth0"
+[  546s] Cannot find device "eth0"
+[  546s] Cannot find device "eth0"
+[  546s] Error: Nexthop has invalid gateway.
+[  546s] /home/abuild/rpmbuild
+[  548s] Running build time source services...
+[  552s] -----------------------------------------------------------------
+[  552s] I have the following modifications for secGear.spec:
+[  552s] 77c77
+[  552s] < BUildRequires:	glibc glibc-devel cmake ocaml-dune rpm gcc-c++ compat-openssl11-libs compat-openssl11-devel secGear-devel
+[  552s] ---
+[  552s] > BUildRequires:	glibc glibc-devel cmake ocaml-dune rpm gcc-c++ compat-openssl11-libs compat-openssl11-devel
+[  552s] 81c81
+[  552s] < BUildRequires:	itrustee_sdk itrustee_sdk-devel
+[  552s] ---
+[  552s] > BUildRequires:	itrustee_sdk
+[  552s] 100c100
+[  552s] < Requires:		itrustee_sdk-devel
+[  552s] ---
+[  552s] > Requires:		itrustee_sdk
+[  552s] -----------------------------------------------------------------
+[  552s] ----- building secGear.spec (user abuild)
+[  552s] -----------------------------------------------------------------
+[  552s] -----------------------------------------------------------------
+[  552s] egrep: warning: egrep is obsolescent; using grep -E
+[  553s] /.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[  553s] printenv PATH
+[  553s] export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[  553s] rpmspec -P /home/abuild/rpmbuild/SOURCES/secGear.spec || echo parse spec fail.
+[  553s] #!/bin/sh -x
+[  553s] exec "rpmbuild" "--noclean" "-ba" "--define" "_srcdefattr (-,root,root)" "--nosignature" "--define" "disturl obs://private/openEuler:23.03/23.03/b86582993f621e2b0a9b40d3b3ef73f2-secGear" "/home/abuild/rpmbuild/SOURCES/secGear.spec"
+[  553s] /usr/local/bin:/usr/bin
+[  553s] Name:		secGear
+[  553s] Version:	0.1.0
+[  553s] Release:	40
+[  553s] Summary:	secGear is an SDK to develop confidential computing apps based on hardware enclave features
+[  553s] 
+[  553s] 
+[  553s] Group:		OS Security
+[  553s] License:	MulanPSL-2.0
+[  553s] URL:		https://gitee.com/openeuler/secGear
+[  553s] Source0:	https://gitee.com/openeuler/secGear/repository/archive/v0.1.0.tar.gz
+[  553s] 
+[  553s] Patch0:		0001-add-README.cn.md.patch
+[  553s] Patch1:		0002-it-is-better-to-define-enum-from-0-rather-than-1.patch
+[  553s] Patch2:		0003-update-README.cn.md.patch
+[  553s] Patch3:		0004-update-README.cn.md.patch
+[  553s] Patch4:		0005-delete-unnecessary-README.cn.md.patch
+[  553s] Patch5:		0006-fix-issues-about-double-create-destory.patch
+[  553s] Patch6:		0007-to-make-secGear-log-more-clear.patch
+[  553s] Patch7:		0008-modify-path-error.patch
+[  553s] Patch8:		0009-fix-cmake-error-of-missing-CMAKE_CXX_COMPILER.patch
+[  553s] Patch9:		0010-fix-sgxssl-edl.patch
+[  553s] Patch10:	0011-update-docs-build_install.md.patch
+[  553s] Patch11:	0012-modify-the-prompt-information.patch
+[  553s] Patch12:	0013-parse-new-error-code-and-del-redundant-print.patch
+[  553s] Patch13:	0014-fix-error-print.patch
+[  553s] Patch14:	0015-set-umask-in-sign_tool.sh.patch
+[  553s] Patch15:	0016-1.fix-the-race-of-ecall-and-enclave-destroy.patch
+[  553s] Patch16:	0017-fix-wrong-spelling-and-null-pointer-dereference-issu.patch
+[  553s] Patch17:	0018-update-sign_tool.doc.patch
+[  553s] Patch18:	0019-normalized-codegen-from-arm-and-x86.patch
+[  553s] Patch19:	0020-rm-e-parameter-normalize-c-parameter.patch
+[  553s] Patch20:	0021-example-use-absolute-path-to-find-enclave.sign.so.patch
+[  553s] Patch21:	0022-add-example-of-using-sgxssl-lib.patch
+[  553s] Patch22:	0023-tls_enclave-is-not-compiled-by-default.patch
+[  553s] Patch23:	0024-Cmake-replace-minial-cmake-from-3.12-to-3.10.patch
+[  553s] Patch24:	0025-example-add-example-for-LRT-long-running-task.patch
+[  553s] Patch25:	0026-example-add-Dockerfile-to-build-lrt-example-image.patch
+[  553s] Patch26:	0027-Change-to-use-the-milestone-picture-with-English.patch
+[  553s] Patch27:	0028-example-use-the-sgx-device-plugin-from-intel.patch
+[  553s] Patch28:	0029-some-adaptations-for-trustzone.patch
+[  553s] Patch29:	0030-fix-sgx-two-step-mode-bug-add-dump-command.patch
+[  553s] Patch30:	0031-set-signtool_v3.py-path.patch
+[  553s] Patch31:	0032-del-size_to_aligned_size.patch
+[  553s] Patch32:	0033-modify-the-error-information-when-missing-c-and-m.patch
+[  553s] Patch33:	0034-normalize-the-log-printed-by-PrintInfo.patch
+[  553s] Patch34:	0035-itrustee-add-lrt-support-itrustee.patch
+[  553s] Patch35:	0036-enclave-use-the-can-pull-image-from-hub.oepkgs.net.patch
+[  553s] Patch36:	0037-add-description-about-file-parameter-path-for-sign_t.patch
+[  553s] Patch37:	0038-fix-use-after-free-in-cc_enclave_create.patch
+[  553s] Patch38:	0039-clean-memory-when-it-come-to-error_handle.patch
+[  553s] Patch39:	0040-fix-double-free.patch
+[  553s] Patch40:	0041-fix-logs-redirection-error-and-delete-rsa_public_key.patch
+[  553s] Patch41:	0042-destroy-rwlock-when-create-enclave-failed.patch
+[  553s] Patch42:	0043-fix-partial-resource-leak.patch
+[  553s] Patch43:	0044-fix-pointer-without-init-or-check-NULL.patch
+[  553s] Patch44:	0045-optimize-the-private-key-usage-of-the-single-step-si.patch
+[  553s] Patch45:	0046-fix-return-value.patch
+[  553s] Patch46:        0047-del-print-uncontrol-form-string.patch
+[  553s] Patch47:        0048-Delete-the-null-determination-of-out_buf-in-codegene.patch
+[  553s] Patch48:        0049-support-switchless-feature.patch
+[  553s] Patch49:        0050-switchless-schedule-policy.patch
+[  553s] Patch50:        0051-asynchronous-switchless.patch
+[  553s] Patch51:        0052-rollback-to-common-invoking-when-async-invoking-fail.patch
+[  553s] Patch52:        0053-asynchronous-switchless-example.patch
+[  553s] Patch53:        0054-fix-gen-ecall-header-error.patch
+[  553s] Patch54:        0055-switchless-readme-add-async-interface.patch
+[  553s] Patch55:        0056-destroy-enclave-release-remain-shared-memory.patch
+[  553s] Patch56:        0057-support-secure-channel.patch
+[  553s] Patch57:        0058_bugfix_secure_channel_list_error.patch
+[  553s] Patch58:        0059-add-example-client-with-recv-thread.patch
+[  553s] Patch59:        0060-server-support-multi-thread-handle-connection.patch
+[  553s] Patch60:        0061-verify-sessionid-and-len-in-encrypted-data.patch
+[  553s] Patch61:        0062-send-random-iv-with-encrypted-data.patch
+[  553s] Patch62:        0063-del-personal-info-in-example-config.patch
+[  553s] 
+[  553s] BuildRequires:	gcc python automake autoconf libtool
+[  553s] BUildRequires:	glibc glibc-devel cmake ocaml-dune rpm gcc-c++ compat-openssl11-libs compat-openssl11-devel
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] BUildRequires:	itrustee_sdk
+[  553s] 
+[  553s] 
+[  553s] Requires:		rsyslog compat-openssl11-libs
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] Requires:		itrustee_sdk
+[  553s] 
+[  553s] 
+[  553s] %description
+[  553s] secGear is an SDK to develop confidential computing apps based on hardware enclave features
+[  553s] 
+[  553s] %package		devel
+[  553s] Summary:		Development files for secGear
+[  553s] Requires:		secGear = 0.1.0-40.oe2303 cmake
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] Requires:		itrustee_sdk
+[  553s] 
+[  553s] %description	devel
+[  553s] The secGear-devel is package contains Header file for developing applications that
+[  553s] us secGear
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] %prep
+[  553s] 
+[  553s] cd '/home/abuild/rpmbuild/BUILD'
+[  553s] rm -rf 'secGear'
+[  553s] /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/v0.1.0.tar.gz
+[  553s] STATUS=$?
+[  553s] if [ $STATUS -ne 0 ]; then
+[  553s]   exit $STATUS
+[  553s] fi
+[  553s] cd 'secGear'
+[  553s] /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0001-add-README.cn.md.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0002-it-is-better-to-define-enum-from-0-rather-than-1.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0003-update-README.cn.md.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0004-update-README.cn.md.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0005-delete-unnecessary-README.cn.md.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0006-fix-issues-about-double-create-destory.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0007-to-make-secGear-log-more-clear.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0008-modify-path-error.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0009-fix-cmake-error-of-missing-CMAKE_CXX_COMPILER.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0010-fix-sgxssl-edl.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0011-update-docs-build_install.md.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0012-modify-the-prompt-information.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0013-parse-new-error-code-and-del-redundant-print.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0014-fix-error-print.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0015-set-umask-in-sign_tool.sh.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0016-1.fix-the-race-of-ecall-and-enclave-destroy.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0017-fix-wrong-spelling-and-null-pointer-dereference-issu.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0018-update-sign_tool.doc.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0019-normalized-codegen-from-arm-and-x86.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0020-rm-e-parameter-normalize-c-parameter.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0021-example-use-absolute-path-to-find-enclave.sign.so.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0022-add-example-of-using-sgxssl-lib.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0023-tls_enclave-is-not-compiled-by-default.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0024-Cmake-replace-minial-cmake-from-3.12-to-3.10.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0025-example-add-example-for-LRT-long-running-task.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0026-example-add-Dockerfile-to-build-lrt-example-image.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0027-Change-to-use-the-milestone-picture-with-English.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0028-example-use-the-sgx-device-plugin-from-intel.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0029-some-adaptations-for-trustzone.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0030-fix-sgx-two-step-mode-bug-add-dump-command.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0031-set-signtool_v3.py-path.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0032-del-size_to_aligned_size.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0033-modify-the-error-information-when-missing-c-and-m.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0034-normalize-the-log-printed-by-PrintInfo.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0035-itrustee-add-lrt-support-itrustee.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0036-enclave-use-the-can-pull-image-from-hub.oepkgs.net.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0037-add-description-about-file-parameter-path-for-sign_t.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0038-fix-use-after-free-in-cc_enclave_create.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0039-clean-memory-when-it-come-to-error_handle.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0040-fix-double-free.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0041-fix-logs-redirection-error-and-delete-rsa_public_key.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0042-destroy-rwlock-when-create-enclave-failed.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0043-fix-partial-resource-leak.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0044-fix-pointer-without-init-or-check-NULL.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0045-optimize-the-private-key-usage-of-the-single-step-si.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0046-fix-return-value.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0047-del-print-uncontrol-form-string.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0048-Delete-the-null-determination-of-out_buf-in-codegene.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0049-support-switchless-feature.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0050-switchless-schedule-policy.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0051-asynchronous-switchless.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0052-rollback-to-common-invoking-when-async-invoking-fail.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0053-asynchronous-switchless-example.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0054-fix-gen-ecall-header-error.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0055-switchless-readme-add-async-interface.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0056-destroy-enclave-release-remain-shared-memory.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0057-support-secure-channel.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0058_bugfix_secure_channel_list_error.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0059-add-example-client-with-recv-thread.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0060-server-support-multi-thread-handle-connection.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0061-verify-sessionid-and-len-in-encrypted-data.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0062-send-random-iv-with-encrypted-data.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0063-del-personal-info-in-example-config.patch | 
+[  553s] /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] rm -rf examples
+[  553s] source ./environment
+[  553s] cmake -DCMAKE_BUILD_TYPE=Debug -DENCLAVE=GP
+[  553s] make
+[  553s] 
+[  553s] 
+[  553s] 
+[  553s] %package debuginfo
+[  553s] Summary: Debug information for package secGear
+[  553s] Group: Development/Debug
+[  553s] AutoReq: 0
+[  553s] AutoProv: 1
+[  553s] %description debuginfo
+[  553s] This package provides debug information for package secGear.
+[  553s] Debug information is useful when developing applications that use this
+[  553s] package or when debugging this package.
+[  553s] %files debuginfo -f debugfiles.list
+[  553s] 
+[  553s] 
+[  553s] %package debugsource
+[  553s] Summary: Debug sources for package secGear
+[  553s] Group: Development/Debug
+[  553s] AutoReqProv: 0
+[  553s] %description debugsource
+[  553s] This package provides debug sources for package secGear.
+[  553s] Debug sources are useful when developing applications that use this
+[  553s] package or when debugging this package.
+[  553s] %files debugsource -f debugsourcefiles.list
+[  553s] 
+[  553s] 
+[  553s] %install
+[  553s] 
+[  553s] make install DESTDIR=/home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64
+[  553s] install -d /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/share/licenses/secGear
+[  553s] install -pm 644 License/Third_Party_Open_Source_Software_Notice.md /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/share/licenses/secGear
+[  553s] install -d /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -d /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/bin
+[  553s] install -pm 751 bin/codegen /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/bin
+[  553s] install -pm 751 tools/sign_tool/sign_tool.sh /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/bin
+[  553s] install -d /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64/lib/secGear/
+[  553s] install -pm 751 tools/sign_tool/*.py /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64/lib/secGear
+[  553s] install -pm 644 component/secure_channel/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 component/secure_channel/*.edl /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 component/secure_channel/client/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 component/secure_channel/host/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 component/secure_channel/enclave/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -d /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 inc/host_inc/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 inc/host_inc/gp/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 inc/host_inc/gp/*.edl /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 inc/enclave_inc/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 inc/enclave_inc/gp/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] install -pm 644 inc/enclave_inc/gp/itrustee/*.h /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64//usr/include/secGear
+[  553s] pushd /home/abuild/rpmbuild/BUILDROOT/secGear-0.1.0-40.oe2303.riscv64
+[  553s] rm `find . -name secgear_helloworld` -rf
+[  553s] rm `find . -name secgear_seal_data` -rf
+[  553s] rm `find . -name secgear_switchless` -rf
+[  553s] rm `find . -name sc_client` -rf
+[  553s] rm `find . -name sc_server` -rf
+[  553s] popd
+[  553s] 
+[  553s] %files
+[  553s] %license License/LICENSE
+[  553s] %license License/Third_Party_Open_Source_Software_Notice.md
+[  553s] %defattr(-,root,root)
+[  553s] /usr/lib64/libsecgear_tee.a
+[  553s] /usr/lib64/libsecgear.so
+[  553s] /usr/lib64/libusecure_channel.so
+[  553s] /usr/lib64/libcsecure_channel.so
+[  553s] /usr/lib64/libtsecure_channel.a
+[  553s] /usr/lib64/libgp_0.so
+[  553s] %config(noreplace) %attr(0600,root,root) /etc/rsyslog.d/secgear.conf
+[  553s] %config(noreplace) %attr(0600,root,root) /etc/logrotate.d/secgear
+[  553s] 
+[  553s] %files devel
+[  553s] /usr/bin/*
+[  553s] /usr/include/secGear/*
+[  553s] /lib/secGear/*
+[  553s] 
+[  553s] 
+[  553s] %post
+[  553s] systemctl restart rsyslog
+[  553s] 
+[  553s] %changelog
+[  553s] * Mon Mar 20 2023 houmingyong<houmingyong@huawei.com> - 0.1.0-40
+[  553s] - del personal info in example config
+[  553s] 
+[  553s] * Mon Mar 13 2023 houmingyong<houmingyong@huawei.com> - 0.1.0-39
+[  553s] - secure channel bugfix
+[  553s] 
+[  553s] * Fri Mar 10 2023 houmingyong<houmingyong@huawei.com> - 0.1.0-38
+[  553s] - secure channel bugfix
+[  553s] 
+[  553s] * Tue Mar 07 2023 houmingyong<houmingyong@huawei.com> - 0.1.0-37
+[  553s] - bugfix the secure channel server list error
+[  553s] 
+[  553s] * Tue Feb 28 2023 houmingyong<houmingyong@huawei.com> - 0.1.0-36
+[  553s] - support secure channel
+[  553s] 
+[  553s] * Tue Dec 20 2022 houmingyong<houmingyong@huawei.com> - 0.1.0-35
+[  553s] - fix aysnchronous ecall bug
+[  553s] 
+[  553s] * Tue Dec 20 2022 houmingyong<houmingyong@huawei.com> - 0.1.0-34
+[  553s] - add asynchronous switchless example
+[  553s] 
+[  553s] * Sat Dec 17 2022 houmingyong<houmingyong@huawei.com> - 0.1.0-33
+[  553s] - switchless support asynchronous ecall
+[  553s] 
+[  553s] * Tue Nov 22 2022 houmingyong<houmingyong@huawei.com> - 0.1.0-32
+[  553s] - switchless support configure schedule policy
+[  553s] 
+[  553s] * Sat Nov 12 2022 zhengxiaoxiao <zhengxiaoxiao2@huawei.com> - 0.1.0-31
+[  553s] - add "Delete-the-null-determination-of-out_buf_in_codegene.patch" and "support-switchless-feature.patch" 
+[  553s] 
+[  554s] * Wed Aug 03 2022 fushanqing <fushanqing@kylinos.cn> - 0.1.0-30
+[  554s] - Unified license name specification
+[  554s] 
+[  554s] * Wed Aug 3 2022 zhengxiaoxiao <zhengxiaoxiao2@huawei.com> - 0.1.0-29
+[  554s] * DESC: override with 22.03
+[  554s] 
+[  554s] * Mon Jun 6 2022 zhengxiaoxiao <zhengxiaoxiao2@huawei.com> - 0.1.0-28
+[  554s] * DESC: del print uncontrol form string
+[  554s] 
+[  554s] * Sun May 15 2022 zhengxiaoxiao <zhengxiaoxiao2@huawei.com> - 0.1.0-27
+[  554s] * DESC: fix return value
+[  554s] 
+[  554s] * Thu Mar 24 2022 baizhonggui <baizhonggui@huawei.com> - 0.1.0-26
+[  554s] * DESC: delete .oe2303
+[  554s] 
+[  554s] * Tue Mar 15 2022 wangcheng <wangcheng156@huawei.com> - 0.1.0-25
+[  554s] * DESC: fix the building failure in arm
+[  554s] 
+[  554s] * Thu Mar 10 2022 wangcheng <wangcheng156@huawei.com> - 0.1.0-24
+[  554s] * DESC: fix some bugs
+[  554s] 
+[  554s] * Fri Mar 4 2022 gaoyusong <gaoyusong1@huawei.com> - 0.1.0-23
+[  554s] - DESC: fix logs redirection error and del rsa_public_key_cloud.pem
+[  554s] 
+[  554s] * Wed Feb 23 2022 houmingyong<houmingyong@huawei.com> - 0.1.0-22
+[  554s] - DESC: fix double free bug
+[  554s] 
+[  554s] * Tue Jan 11 2022 houmingyong<houmingyong@huawei.com> - 0.1.0-21
+[  554s] - DESC: fix no secgear.log after install secGear-devel 
+[  554s] 
+[  554s] * Mon Jul 19 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-20
+[  554s] - DESC: add requires for secGear: libsgx-aesm-launch-plugin ocaml-dune
+[  554s] 
+[  554s] * Fri Jul 2 2021 zhangguangzhi<zhangguangzhi3@huawei.com> - 0.1.0-19
+[  554s] - DESC: add buildrequires openssl for x86
+[  554s] 
+[  554s] * Tue Jun 29 2021 zhangguangzhi<zhangguangzhi3@huawei.com> - 0.1.0-18
+[  554s] - DESC: add some buildrequires gcc-c++ rpm
+[  554s] 
+[  554s] * Fri Jun 4 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-17
+[  554s] - DESC: clean enclave memory when it comes to error_handle
+[  554s] 
+[  554s] * Thu Jun 3 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-16
+[  554s] - DESC: backport some patches from openeuler secGear
+[  554s] 
+[  554s] * Wed Jun 2 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-15
+[  554s] - DESC: fix uaf in cc_enclave_create
+[  554s] 
+[  554s] * Thu May 20 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-14
+[  554s] - DESC: update some bugfix form openeuler secGear
+[  554s] 
+[  554s] * Wed May 12 2021 yanlu<yanlu14@huawei.com> - 0.1.0-13
+[  554s] - DESC: update signtool and codegen
+[  554s] 
+[  554s] * Tue Apr 27 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-12
+[  554s] - DESC: add cmake to Requires
+[  554s] 
+[  554s] * Tue Apr 13 2021 wanghongzhe<wanghongzhe@huawei.com> - 0.1.0-11
+[  554s] - DESC: add licenses and thirdparty opensource notice
+[  554s] 
+[  554s] * Sat Mar 20 2021 zhangguangzhi<zhangguangzhi3@huawei.com> - 0.1.0-10
+[  554s] - DESC: backport patch
+[  554s] 
+[  554s] * Fri Mar 19 2021 wanghongzhe<wanghongzhe@huawei.com> - 0.1.0-9
+[  554s] - DESC: fix local compile error
+[  554s] 
+[  554s] * Thu Mar 18 2021 gaoyusong<gaoyusong1@huawei.com> - 0.1.0-8
+[  554s] - DESC: backport patch
+[  554s] 
+[  554s] * Mon Mar 15 2021 zhangguangzhi<zhangguangzhi3@huawei.com> - 0.1.0-7
+[  554s] - DESC: backport patch
+[  554s] 
+[  554s] * Wed Mar 10 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-6
+[  554s] - DESC: change requires from linux-sgx-sdk to sgxsdk
+[  554s] 
+[  554s] * Wed Mar 3 2021 zhangguangzhi<zhangguangzhi@huawei.com> - 0.1.0-5
+[  554s] - DESC: add codegen and sign_tool, modify file path and backport patch
+[  554s] 
+[  554s] * Mon Feb 22 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-4
+[  554s] - DESC:delete unnecessary BuildRequires
+[  554s] 
+[  554s] * Sat Feb 20 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-3
+[  554s] - DESC:fix url and source0 description error
+[  554s] 
+[  554s] * Sun Feb 7 2021 chenmaodong<chenmaodong@huawei.com> - 0.1.0-2
+[  554s] - DESC:fix secGear build error and add secGear-sim rpm package
+[  554s] 
+[  554s] * Wed Feb 3 2021 wanghongzhe<wanghongzhe@huawei.com> - 0.1.0-1
+[  554s] - DESC:init secGear.tar.gz
+[  554s] 
+[  554s] * Mon Jan 11 2021 wanghongzhe<wanghongzhe@huawei.com> - 1.0-1
+[  554s] - DESC:init secgear
+[  554s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.Z7Gz2j
+[  554s] + umask 022
+[  554s] + cd /home/abuild/rpmbuild/BUILD
+[  554s] + case secGear in
+[  554s] + cd /home/abuild/rpmbuild/BUILD
+[  554s] + rm -rf secGear
+[  554s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/v0.1.0.tar.gz
+[  554s] + STATUS=0
+[  554s] + '[' 0 -ne 0 ']'
+[  554s] + cd secGear
+[  554s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  554s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0001-add-README.cn.md.patch
+[  554s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  554s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0002-it-is-better-to-define-enum-from-0-rather-than-1.patch
+[  554s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  554s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0003-update-README.cn.md.patch
+[  554s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  554s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0004-update-README.cn.md.patch
+[  554s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  554s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0005-delete-unnecessary-README.cn.md.patch
+[  554s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0006-fix-issues-about-double-create-destory.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0007-to-make-secGear-log-more-clear.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0008-modify-path-error.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0009-fix-cmake-error-of-missing-CMAKE_CXX_COMPILER.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0010-fix-sgxssl-edl.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0011-update-docs-build_install.md.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0012-modify-the-prompt-information.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0013-parse-new-error-code-and-del-redundant-print.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0014-fix-error-print.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  555s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0015-set-umask-in-sign_tool.sh.patch
+[  555s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0016-1.fix-the-race-of-ecall-and-enclave-destroy.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0017-fix-wrong-spelling-and-null-pointer-dereference-issu.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0018-update-sign_tool.doc.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0019-normalized-codegen-from-arm-and-x86.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0020-rm-e-parameter-normalize-c-parameter.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0021-example-use-absolute-path-to-find-enclave.sign.so.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0022-add-example-of-using-sgxssl-lib.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0023-tls_enclave-is-not-compiled-by-default.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0024-Cmake-replace-minial-cmake-from-3.12-to-3.10.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  556s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0025-example-add-example-for-LRT-long-running-task.patch
+[  556s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0026-example-add-Dockerfile-to-build-lrt-example-image.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0027-Change-to-use-the-milestone-picture-with-English.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0028-example-use-the-sgx-device-plugin-from-intel.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0029-some-adaptations-for-trustzone.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0030-fix-sgx-two-step-mode-bug-add-dump-command.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0031-set-signtool_v3.py-path.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0032-del-size_to_aligned_size.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0033-modify-the-error-information-when-missing-c-and-m.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0034-normalize-the-log-printed-by-PrintInfo.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  557s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0035-itrustee-add-lrt-support-itrustee.patch
+[  557s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0036-enclave-use-the-can-pull-image-from-hub.oepkgs.net.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0037-add-description-about-file-parameter-path-for-sign_t.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0038-fix-use-after-free-in-cc_enclave_create.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0039-clean-memory-when-it-come-to-error_handle.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0040-fix-double-free.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0041-fix-logs-redirection-error-and-delete-rsa_public_key.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0042-destroy-rwlock-when-create-enclave-failed.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0043-fix-partial-resource-leak.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  558s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0044-fix-pointer-without-init-or-check-NULL.patch
+[  558s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0045-optimize-the-private-key-usage-of-the-single-step-si.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0046-fix-return-value.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0047-del-print-uncontrol-form-string.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0048-Delete-the-null-determination-of-out_buf-in-codegene.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0049-support-switchless-feature.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0050-switchless-schedule-policy.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0051-asynchronous-switchless.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0052-rollback-to-common-invoking-when-async-invoking-fail.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0053-asynchronous-switchless-example.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  559s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0054-fix-gen-ecall-header-error.patch
+[  559s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0055-switchless-readme-add-async-interface.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0056-destroy-enclave-release-remain-shared-memory.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0057-support-secure-channel.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0058_bugfix_secure_channel_list_error.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0059-add-example-client-with-recv-thread.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0060-server-support-multi-thread-handle-connection.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0061-verify-sessionid-and-len-in-encrypted-data.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0062-send-random-iv-with-encrypted-data.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  560s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0063-del-personal-info-in-example-config.patch
+[  560s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  561s] + RPM_EC=0
+[  561s] ++ jobs -p
+[  561s] + exit 0
+[  561s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.Yua2cP
+[  561s] + umask 022
+[  561s] + cd /home/abuild/rpmbuild/BUILD
+[  561s] + case secGear in
+[  561s] + cd secGear
+[  561s] + rm -rf examples
+[  561s] + source ./environment
+[  561s] +++ readlink -f ./environment
+[  561s] ++ file_dir=/home/abuild/rpmbuild/BUILD/secGear/environment
+[  561s] +++ dirname /home/abuild/rpmbuild/BUILD/secGear/environment
+[  561s] ++ export CC_SDK=/home/abuild/rpmbuild/BUILD/secGear
+[  561s] ++ CC_SDK=/home/abuild/rpmbuild/BUILD/secGear
+[  561s] ++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/abuild/rpmbuild/BUILD/secGear/bin/
+[  561s] ++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/abuild/rpmbuild/BUILD/secGear/bin/
+[  561s] + cmake -DCMAKE_BUILD_TYPE=Debug -DENCLAVE=GP
+[  561s] CMake Warning:
+[  561s]   No source or binary directory provided.  Both will be assumed to be the
+[  561s]   same as the current working directory, but note that this warning will
+[  561s]   become a fatal error in future CMake releases.
+[  561s] 
+[  561s] 
+[  562s] -- The C compiler identification is GNU 10.3.1
+[  562s] -- Detecting C compiler ABI info
+[  563s] -- Detecting C compiler ABI info - done
+[  563s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  563s] -- Detecting C compile features
+[  563s] -- Detecting C compile features - done
+[  563s] =============cmake help info=======================
+[  563s] Example default cmd: cmake ..
+[  563s] same with default: cmake -DENCLAVE=SGX -DSDK_PATH=/opt/intel/sgxsdk -DSSL_PATH=/opt/intel/sgxssl ..
+[  563s] cmake [-DCMAKE_BUILD_TYPE=val] [-DENCLAVE=val] [-DCC_SIM=ON] [-DSDK_PATH=path] [-DSSL_PATH=path] ..
+[  563s] CMAKE_BUILD_TYPE:[optional] pass Debug if you need file line info in log, default log without file line
+[  563s] ENCLAVE:[optional] valid val: SGX --default, GP --trustzone, PL --Penglai
+[  563s] CC_SIM:[optional] only support by SGX
+[  563s] SDK_PATH:[optional] default SGX:/opt/intel/sgxsdk, GP:/opt/itrustee_sdk, PL:/root/dev/sdk;
+[  563s] 	 pass SDK_PATH if you installed sdk in custom path
+[  563s] SSL_PATH:[optional] pass security ssl installed path when your application use ssl
+[  563s] =============cmake help info=======================
+[  563s] Current Platform: ARM Trustzone, iTrustee SDK PATH:/opt/itrustee_sdk
+[  563s] CMake Error at CMakeLists.txt:60 (message):
+[  563s]   Please provide the correct iTrusteeSDK path
+[  563s] 
+[  563s] 
+[  563s] -- Configuring incomplete, errors occurred!
+[  563s] See also "/home/abuild/rpmbuild/BUILD/secGear/CMakeFiles/CMakeOutput.log".
+[  563s] error: Bad exit status from /var/tmp/rpm-tmp.Yua2cP (%build)
+[  563s] 
+[  563s] RPM build errors:
+[  563s]     Bad exit status from /var/tmp/rpm-tmp.Yua2cP (%build)
+[  564s] 
+[  564s]  failed "build _service:tar_scm:secGear.spec" at Mon Apr  3 05:36:42 UTC 2023.
+[  564s] 
+[  564s] 
+[  564s] oerv-obs-worker-09 failed "build _service:tar_scm:secGear.spec" at Mon Apr  3 05:36:42 UTC 2023.
+[  564s] 

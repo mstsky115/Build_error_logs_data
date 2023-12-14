@@ -1,0 +1,724 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    0s] 
+[    0s] old-cirrus2 started "build imb.spec" at Mon Mar 20 20:55:31 UTC 2023.
+[    0s] 
+[    0s] Building imb:gnu-openmpi4-hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '94ea27b1d7823c444d25290d615e62f2'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/imb.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/imb.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --buildflavor gnu-openmpi4-hpc --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/imb.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [068b7acb454ec5ffeefe0cf546ee1d7f]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...cycle: libefa1 -> libibverbs1 -> libibverbs
+[    4s]   breaking dependency libibverbs -> libefa1
+[    4s] cycle: libibverbs1 -> libibverbs
+[    4s]   breaking dependency libibverbs -> libibverbs1
+[    4s] cycle: libibverbs1 -> libibverbs -> libmlx4-1
+[    4s]   breaking dependency libibverbs -> libmlx4-1
+[    4s] cycle: libibverbs1 -> libibverbs -> libmlx5-1
+[    4s]   breaking dependency libmlx5-1 -> libibverbs1
+[    4s] cycle: libpmix2 -> pmix-plugins
+[    4s]   breaking dependency pmix-plugins -> libpmix2
+[    4s] cycle: openmpi_4_1_4-gnu-hpc -> libopenmpi_4_1_4-gnu-hpc
+[    4s]   breaking dependency libopenmpi_4_1_4-gnu-hpc -> openmpi_4_1_4-gnu-hpc
+[    4s] done
+[    4s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   12s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   12s] Increasing log level from now on...
+[   12s] [    5.613248][  T370] sysrq: Changing Loglevel
+[   12s] [    5.613374][  T370] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   12s] no label, UUID=112136e3-ace4-4607-b0d3-01a5ad9dbe1d
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   12s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/imb.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor gnu-openmpi4-hpc /.build-srcdir/imb.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   44s] [1/193] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   44s] [2/193] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   44s] [3/193] preinstalled attr-2.5.1-1.1
+[   44s] [4/193] preinstalled bash-5.2.15-8.1
+[   44s] [5/193] preinstalled bash-sh-5.2.15-8.1
+[   44s] [6/193] preinstalled binutils-2.40-2.1
+[   44s] [7/193] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   44s] [8/193] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   44s] [9/193] preinstalled build-mkbaselibs-20230314-1.1
+[   44s] [10/193] preinstalled bzip2-1.0.8-5.1
+[   44s] [11/193] preinstalled chkstat-1599_20230217-1.1
+[   44s] [12/193] preinstalled compat-usrmerge-build-84.87-5.1
+[   44s] [13/193] preinstalled compat-usrmerge-tools-84.87-5.1
+[   44s] [14/193] preinstalled coreutils-9.1-5.1
+[   44s] [15/193] preinstalled cpio-2.13-5.1
+[   44s] [16/193] preinstalled cpp-13-1.1
+[   44s] [17/193] preinstalled cpp13-13.0.1+git6669-7.1
+[   44s] [18/193] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   44s] [19/193] preinstalled debugedit-5.0-5.1
+[   44s] [20/193] preinstalled diffutils-3.9-1.1
+[   44s] [21/193] preinstalled dwz-0.15-2.1
+[   44s] [22/193] preinstalled elfutils-0.189-2.1
+[   44s] [23/193] preinstalled file-5.44-1.2
+[   44s] [24/193] preinstalled file-magic-5.44-1.2
+[   44s] [25/193] preinstalled filesystem-84.87-12.1
+[   44s] [26/193] preinstalled fillup-1.42-279.1
+[   44s] [27/193] preinstalled findutils-4.9.0-2.1
+[   44s] [28/193] preinstalled gawk-5.2.1-2.1
+[   44s] [29/193] preinstalled gcc-13-1.1
+[   44s] [30/193] preinstalled gcc-PIE-13-1.1
+[   44s] [31/193] preinstalled gcc13-13.0.1+git6669-7.1
+[   44s] [32/193] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   44s] [33/193] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   44s] [34/193] preinstalled gettext-tools-mini-0.21.1-1.1
+[   44s] [35/193] preinstalled glibc-2.37-1.1
+[   44s] [36/193] preinstalled glibc-devel-2.37-1.1
+[   44s] [37/193] preinstalled glibc-locale-base-2.37-1.1
+[   44s] [38/193] preinstalled grep-3.9-1.1
+[   44s] [39/193] preinstalled gzip-1.12-3.1
+[   44s] [40/193] cumulate hwloc-data-2.9.0-2.1
+[   44s] [41/193] preinstalled kernel-obs-build-6.2.6-1.2
+[   44s] [42/193] preinstalled libacl1-2.3.1-2.1
+[   44s] [43/193] preinstalled libasan8-13.0.1+git6669-7.1
+[   44s] [44/193] preinstalled libasm1-0.189-2.1
+[   44s] [45/193] preinstalled libatomic1-13.0.1+git6669-7.1
+[   44s] [46/193] preinstalled libattr1-2.5.1-1.1
+[   44s] [47/193] preinstalled libaudit1-3.0.9-1.1
+[   44s] [48/193] preinstalled libblkid1-2.38.1-10.1
+[   44s] [49/193] preinstalled libbz2-1-1.0.8-5.1
+[   44s] [50/193] preinstalled libcap-ng0-0.8.3-1.1
+[   44s] [51/193] preinstalled libcap2-2.67-1.1
+[   44s] [52/193] cumulate libcbor0_10-0.10.2-1.1
+[   44s] [53/193] cumulate libcom_err2-1.46.5-4.1
+[   44s] [54/193] preinstalled libcrypt1-4.4.33-2.1
+[   44s] [55/193] preinstalled libctf-nobfd0-2.40-2.1
+[   44s] [56/193] preinstalled libctf0-2.40-2.1
+[   44s] [57/193] preinstalled libdb-4_8-4.8.30-40.1
+[   44s] [58/193] preinstalled libdw1-0.189-2.1
+[   44s] [59/193] preinstalled libeconf0-0.5.1-1.1
+[   44s] [60/193] cumulate libedit0-20210910.3.1-1.1
+[   44s] [61/193] preinstalled libelf1-0.189-2.1
+[   44s] [62/193] preinstalled libfdisk1-2.38.1-10.1
+[   44s] [63/193] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   44s] [64/193] preinstalled libgcrypt20-1.10.1-2.1
+[   44s] [65/193] preinstalled libgdbm6-1.23-1.1
+[   44s] [66/193] preinstalled libgdbm_compat4-1.23-1.1
+[   44s] [67/193] cumulate libgfortran5-13.0.1+git6669-7.1
+[   44s] [68/193] preinstalled libgmp10-6.2.1-4.1
+[   44s] [69/193] preinstalled libgomp1-13.0.1+git6669-7.1
+[   44s] [70/193] preinstalled libgpg-error0-1.46-1.1
+[   44s] [71/193] cumulate libibumad3-42.0-2.1
+[   44s] [72/193] preinstalled libisl23-0.25-1.1
+[   44s] [73/193] preinstalled libitm1-13.0.1+git6669-7.1
+[   44s] [74/193] cumulate libkeyutils1-1.6.3-5.1
+[   44s] [75/193] preinstalled liblua5_4-5-5.4.4-8.1
+[   44s] [76/193] preinstalled liblzma5-5.4.1-2.1
+[   44s] [77/193] preinstalled libmagic1-5.44-1.2
+[   44s] [78/193] cumulate libmca_common_dstore1-3.2.3-7.1
+[   44s] [79/193] preinstalled libmount1-2.38.1-10.1
+[   44s] [80/193] preinstalled libmpc3-1.3.1-1.2
+[   44s] [81/193] preinstalled libmpfr6-4.2.0-1.1
+[   44s] [82/193] preinstalled libncurses6-6.4.20230311-8.1
+[   44s] [83/193] cumulate libnl-config-3.7.0-1.1
+[   44s] [84/193] cumulate libpciaccess0-0.17-1.1
+[   44s] [85/193] preinstalled libpcre2-8-0-10.42-3.2
+[   44s] [86/193] preinstalled libpkgconf3-1.8.0-2.1
+[   44s] [87/193] preinstalled libpopt0-1.19-1.1
+[   44s] [88/193] preinstalled libreadline8-8.2-2.1
+[   44s] [89/193] preinstalled librpmbuild9-4.18.0-3.2
+[   44s] [90/193] preinstalled libseccomp2-2.5.4-2.1
+[   44s] [91/193] preinstalled libselinux1-3.5-1.1
+[   44s] [92/193] preinstalled libsemanage-conf-3.5-1.1
+[   44s] [93/193] preinstalled libsemanage2-3.5-1.1
+[   44s] [94/193] preinstalled libsepol2-3.5-1.1
+[   44s] [95/193] preinstalled libsmartcols1-2.38.1-10.1
+[   44s] [96/193] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   44s] [97/193] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   44s] [98/193] preinstalled libsubid4-4.13-4.1
+[   44s] [99/193] cumulate libsystemd0-mini-253.1-2.1
+[   44s] [100/193] preinstalled libubsan1-13.0.1+git6669-7.1
+[   44s] [101/193] cumulate libudev-mini1-253.1-2.1
+[   44s] [102/193] preinstalled libutempter0-1.2.0-3.2
+[   44s] [103/193] preinstalled libuuid1-2.38.1-10.1
+[   44s] [104/193] cumulate libverto1-0.3.2-1.1
+[   44s] [105/193] preinstalled libxcrypt-devel-4.4.33-2.1
+[   44s] [106/193] cumulate libxml2-2-2.10.3-3.1
+[   44s] [107/193] preinstalled libz1-1.2.13-3.1
+[   44s] [108/193] preinstalled libzstd1-1.5.4-2.1
+[   44s] [109/193] preinstalled linux-glibc-devel-6.2-1.1
+[   44s] [110/193] preinstalled login_defs-4.13-4.1
+[   44s] [111/193] preinstalled lua54-5.4.4-8.1
+[   44s] [112/193] cumulate lua54-luafilesystem-1.8.0-6.1
+[   44s] [113/193] cumulate lua54-luaposix-35.1-2.1
+[   44s] [114/193] cumulate lua54-luaterm-0.07-8.1
+[   44s] [115/193] preinstalled make-4.4.1-1.1
+[   44s] [116/193] preinstalled ncurses-utils-6.4.20230311-8.1
+[   44s] [117/193] cumulate openmpi4-config-4.1.4-2.1
+[   44s] [118/193] preinstalled pam-1.5.2-13.1
+[   44s] [119/193] preinstalled patch-2.7.6-6.1
+[   44s] [120/193] preinstalled perl-5.36.0-4.1
+[   44s] [121/193] preinstalled perl-base-5.36.0-4.1
+[   44s] [122/193] preinstalled permissions-1599_20230217-1.1
+[   44s] [123/193] preinstalled permissions-config-1599_20230217-1.1
+[   44s] [124/193] preinstalled pkgconf-1.8.0-2.1
+[   44s] [125/193] preinstalled pkgconf-m4-1.8.0-2.1
+[   44s] [126/193] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   44s] [127/193] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   44s] [128/193] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   44s] [129/193] preinstalled qemu-linux-user-7.1.0-54.1
+[   44s] [130/193] preinstalled rpm-4.18.0-3.2
+[   44s] [131/193] preinstalled rpm-build-4.18.0-3.2
+[   44s] [132/193] preinstalled rpm-build-perl-4.18.0-3.2
+[   44s] [133/193] preinstalled rpm-config-SUSE-20220926-1.1
+[   44s] [134/193] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.18
+[   44s] [135/193] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   44s] [136/193] preinstalled sed-4.9-2.1
+[   44s] [137/193] preinstalled shadow-4.13-4.1
+[   44s] [138/193] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   44s] [139/193] cumulate suse-module-tools-16.0.30-1.1
+[   44s] [140/193] preinstalled system-group-hardware-20170617-24.1
+[   44s] [141/193] cumulate system-group-kvm-20170617-24.1
+[   44s] [142/193] preinstalled system-user-root-20190513-2.1
+[   44s] [143/193] cumulate systemd-mini-253.1-2.1
+[   44s] [144/193] preinstalled systemd-rpm-macros-19-1.1
+[   44s] [145/193] preinstalled sysuser-shadow-3.1-5.1
+[   44s] [146/193] preinstalled tar-1.34-10.1
+[   44s] [147/193] cumulate tcl-8.6.13-4.1
+[   44s] [148/193] preinstalled terminfo-base-6.4.20230311-8.1
+[   44s] [149/193] preinstalled update-alternatives-1.21.8-1.1
+[   44s] [150/193] preinstalled util-linux-2.38.1-10.1
+[   44s] [151/193] preinstalled which-2.21-5.1
+[   44s] [152/193] preinstalled xz-5.4.1-2.1
+[   44s] [153/193] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   44s] [154/193] cumulate gcc13-fortran-13.0.1+git6669-7.1
+[   44s] [155/193] cumulate libhidapi-hidraw0-0.13.1-1.1
+[   44s] [156/193] cumulate libibmad5-42.0-2.1
+[   44s] [157/193] cumulate libnl3-200-3.7.0-1.1
+[   44s] [158/193] cumulate libopenssl3-3.0.8-2.1
+[   44s] [159/193] cumulate krb5-mini-1.20.1-4.1
+[   44s] [160/193] cumulate libhwloc15-2.9.0-2.1
+[   44s] [161/193] cumulate lua-lmod-8.7.17-2.1
+[   44s] [162/193] cumulate gcc-c++-13-1.1
+[   44s] [163/193] cumulate gcc-fortran-13-1.1
+[   44s] [164/193] cumulate gnu-compilers-hpc-1.4-10.2
+[   44s] [165/193] cumulate libevent-2_1-7-2.1.12-3.2
+[   44s] [166/193] cumulate openssh-common-8.9p1-7.3
+[   44s] [167/193] cumulate kmod-30-2.2
+[   44s] [168/193] cumulate libibnetdisc5-42.0-2.1
+[   44s] [169/193] cumulate libfido2-1-1.13.0-1.1
+[   44s] [170/193] cumulate infiniband-diags-42.0-2.1
+[   44s] [171/193] cumulate udev-mini-253.1-2.1
+[   44s] [172/193] cumulate gnu-compilers-hpc-devel-1.4-10.2
+[   44s] [173/193] cumulate openssh-clients-8.9p1-7.3
+[   44s] [174/193] cumulate openssh-server-8.9p1-7.3
+[   44s] [175/193] cumulate gnu-compilers-hpc-macros-devel-1.4-10.2
+[   44s] [176/193] cumulate openssh-8.9p1-7.3
+[   44s] [177/193] cumulate rdma-core-42.0-2.1
+[   44s] [178/193] cumulate libmlx5-1-42.0-2.1
+[   44s] [179/193] cumulate pmix-plugins-3.2.3-7.1
+[   44s] [180/193] cumulate libpmix2-3.2.3-7.1
+[   44s] [181/193] cumulate libibverbs-42.0-2.1
+[   44s] [182/193] cumulate libibverbs1-42.0-2.1
+[   44s] [183/193] cumulate libefa1-42.0-2.1
+[   44s] [184/193] cumulate libmlx4-1-42.0-2.1
+[   44s] [185/193] cumulate librdmacm1-42.0-2.1
+[   44s] [186/193] cumulate rsocket-42.0-2.1
+[   44s] [187/193] cumulate libfabric1-1.16.1-2.1
+[   44s] [188/193] cumulate libopenmpi_4_1_4-gnu-hpc-4.1.4-2.1
+[   44s] [189/193] cumulate rdma-core-devel-42.0-2.1
+[   44s] [190/193] cumulate openmpi_4_1_4-gnu-hpc-4.1.4-2.1
+[   44s] [191/193] cumulate openmpi_4_1_4-gnu-hpc-devel-4.1.4-2.1
+[   44s] [192/193] cumulate openmpi_4_1_4-gnu-hpc-macros-devel-4.1.4-2.1
+[   44s] [193/193] cumulate openmpi4-gnu-hpc-macros-devel-4.1.4-2.1
+[   44s] now installing cumulated packages
+[   45s] Preparing...                          ########################################
+[   45s] Updating / installing...
+[   45s] libibumad3-42.0-2.1                   ########################################
+[   45s] libibmad5-42.0-2.1                    ########################################
+[   45s] systemd-mini-253.1-2.1                warning: group systemd-journal does not exist - using root
+[   47s] ########################################
+[   47s] Creating group 'systemd-journal' with GID 486.
+[   47s] Creating group 'systemd-timesync' with GID 485.
+[   47s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   47s] Running in chroot, ignoring command 'daemon-reexec'
+[   48s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   48s] All rules containing unresolvable specifiers will be skipped.
+[   49s] libudev-mini1-253.1-2.1               ########################################
+[   49s] libcom_err2-1.46.5-4.1                ########################################
+[   49s] libhidapi-hidraw0-0.13.1-1.1          ########################################
+[   49s] libibnetdisc5-42.0-2.1                ########################################
+[   50s] infiniband-diags-42.0-2.1             ########################################
+[   51s] tcl-8.6.13-4.1                        ########################################
+[   51s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-group-kvm.conf -
+[   51s] Creating group 'kvm' with GID 36.
+[   51s] system-group-kvm-20170617-24.1        ########################################
+[   51s] openmpi4-config-4.1.4-2.1             ########################################
+[   51s] lua54-luaterm-0.07-8.1                ########################################
+[   51s] lua54-luaposix-35.1-2.1               ########################################
+[   51s] lua54-luafilesystem-1.8.0-6.1         ########################################
+[   51s] lua-lmod-8.7.17-2.1                   ########################################
+[   51s] gnu-compilers-hpc-1.4-10.2            ########################################
+[   52s] libxml2-2-2.10.3-3.1                  ########################################
+[   52s] libverto1-0.3.2-1.1                   ########################################
+[   52s] libsystemd0-mini-253.1-2.1            ########################################
+[   66s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[   71s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[   71s] gcc-c++-13-1.1                        ########################################
+[   71s] libpciaccess0-0.17-1.1                ########################################
+[   71s] libnl-config-3.7.0-1.1                ########################################
+[   71s] libnl3-200-3.7.0-1.1                  ########################################
+[   72s] libmca_common_dstore1-3.2.3-7.1       ########################################
+[   72s] libkeyutils1-1.6.3-5.1                ########################################
+[   73s] krb5-mini-1.20.1-4.1                  ########################################
+[   73s] Updating /etc/sysconfig/kadmind ...
+[   73s] Updating /etc/sysconfig/krb5kdc ...
+[   74s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[   82s] gcc13-fortran-13.0.1+git6669-7.1      ########################################
+[   83s] gcc-fortran-13-1.1                    ########################################
+[   83s] gnu-compilers-hpc-devel-1.4-10.2      ########################################
+[   83s] libedit0-20210910.3.1-1.1             ########################################
+[   83s] libcbor0_10-0.10.2-1.1                ########################################
+[   83s] hwloc-data-2.9.0-2.1                  ########################################
+[   83s] libhwloc15-2.9.0-2.1                  ########################################
+[   83s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   84s] libopenssl3-3.0.8-2.1                 ########################################
+[   84s] libevent-2_1-7-2.1.12-3.2             ########################################
+[   85s] suse-module-tools-16.0.30-1.1         ########################################
+[   85s] kmod-30-2.2                           ########################################
+[   85s] openssh-common-8.9p1-7.3              ########################################
+[   86s] libfido2-1-1.13.0-1.1                 ########################################
+[   86s] openssh-clients-8.9p1-7.3             ########################################
+[   86s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/sshd.conf -
+[   87s] Creating group 'sshd' with GID 484.
+[   87s] Creating user 'sshd' (SSH daemon) with UID 484 and GID 484.
+[   87s] openssh-server-8.9p1-7.3              ########################################
+[   87s] Updating /etc/sysconfig/ssh ...
+[   87s] openssh-8.9p1-7.3                     ########################################
+[   89s] udev-mini-253.1-2.1                   ########################################
+[   98s] Failed to preset unit, unit remote-cryptsetup.target does not exist.
+[   99s] rdma-core-42.0-2.1                    ########################################
+[   99s] libmlx5-1-42.0-2.1                    ########################################
+[   99s] libefa1-42.0-2.1                      ########################################
+[   99s] libmlx4-1-42.0-2.1                    ########################################
+[   99s] libibverbs1-42.0-2.1                  ########################################
+[  100s] libibverbs-42.0-2.1                   ########################################
+[  100s] librdmacm1-42.0-2.1                   ########################################
+[  100s] libfabric1-1.16.1-2.1                 ########################################
+[  100s] rsocket-42.0-2.1                      ########################################
+[  100s] rdma-core-devel-42.0-2.1              ########################################
+[  100s] pmix-plugins-3.2.3-7.1                ########################################
+[  100s] libpmix2-3.2.3-7.1                    ########################################
+[  101s] libopenmpi_4_1_4-gnu-hpc-4.1.4-2.1    ########################################
+[  101s] openmpi_4_1_4-gnu-hpc-4.1.4-2.1       ########################################
+[  101s] openmpi_4_1_4-gnu-hpc-devel-4.1.4-2.1 ########################################
+[  101s] openmpi_4_1_4-gnu-hpc-macros-devel-4.1########################################
+[  101s] openmpi4-gnu-hpc-macros-devel-4.1.4-2.########################################
+[  101s] gnu-compilers-hpc-macros-devel-1.4-10.########################################
+[  101s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[  102s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  103s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  107s] now finalizing build dir...
+[  107s] ... running 01-add_abuild_user_to_trusted_group
+[  107s] ... running 02-set_timezone_to_utc
+[  108s] ... running 03-set-permissions-secure
+[  108s] ... running 11-hack_uname_version_to_kernel_version
+[  111s] sh: line 1: /usr/bin/ps: No such file or directory
+[  117s] -----------------------------------------------------------------
+[  117s] I have the following modifications for imb.spec:
+[  117s] 19c19
+[  117s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  117s] ---
+[  117s] > %global flavor gnu-openmpi4-hpc%{nil}
+[  117s] 409c409
+[  117s] < Release:        0
+[  117s] ---
+[  117s] > Release:        1.2
+[  125s] build target is riscv64-suse-linux
+[  125s] -----------------------------------------------------------------
+[  125s] ----- building imb.spec (user abuild)
+[  125s] -----------------------------------------------------------------
+[  125s] -----------------------------------------------------------------
+[  130s] sh: line 1: /usr/bin/ps: No such file or directory
+[  130s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/94ea27b1d7823c444d25290d615e62f2-imb:gnu-openmpi4-hpc' /home/abuild/rpmbuild/SOURCES/imb.spec
+[  131s] Building target platforms: riscv64-suse-linux
+[  131s] Building for target riscv64-suse-linux
+[  131s]  Building for gnu 
+[  131s]  hpc_gnu_init 
+[  135s] setting SOURCE_DATE_EPOCH=1663200000
+[  135s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.K9Rq9c
+[  135s] + umask 022
+[  135s] + cd /home/abuild/rpmbuild/BUILD
+[  135s] + cd /home/abuild/rpmbuild/BUILD
+[  135s] + rm -rf mpi-benchmarks-IMB-v2021.3
+[  135s] + /usr/lib/rpm/rpmuncompress -x -v /home/abuild/rpmbuild/SOURCES/imb_2021.3.tar.gz
+[  135s] /usr/bin/gzip -dc  '/home/abuild/rpmbuild/SOURCES/imb_2021.3.tar.gz' | /usr/bin/tar -xvvof -
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/
+[  136s] -rw-rw-r-- root/root      4027 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/Makefile
+[  136s] -rw-rw-r-- root/root      3820 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/Makefile_win
+[  136s] -rw-rw-r-- root/root     12906 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/README.md
+[  136s] -rw-rw-r-- root/root     12704 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/ReadMe_IMB.txt
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2013/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2013/IMB-EXT.rc
+[  136s] -rw-rw-r-- root/root       834 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2013/IMB-EXT.sln
+[  136s] -rw-rw-r-- root/root      9137 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2013/IMB-EXT.vcxproj
+[  136s] -rw-rw-r-- root/root       387 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2013/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2015/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2015/IMB-EXT.rc
+[  136s] -rw-rw-r-- root/root       834 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2015/IMB-EXT.sln
+[  136s] -rw-rw-r-- root/root      9135 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2015/IMB-EXT.vcxproj
+[  136s] -rw-rw-r-- root/root       387 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2015/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2017/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2017/IMB-EXT.rc
+[  136s] -rw-rw-r-- root/root       834 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2017/IMB-EXT.sln
+[  136s] -rw-rw-r-- root/root     10032 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2017/IMB-EXT.vcxproj
+[  136s] -rw-rw-r-- root/root       387 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-EXT_VS_2017/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2013/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2013/IMB-IO.rc
+[  136s] -rw-rw-r-- root/root       832 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2013/IMB-IO.sln
+[  136s] -rw-rw-r-- root/root      8826 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2013/IMB-IO.vcxproj
+[  136s] -rw-rw-r-- root/root       386 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2013/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2015/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2015/IMB-IO.rc
+[  136s] -rw-rw-r-- root/root       832 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2015/IMB-IO.sln
+[  136s] -rw-rw-r-- root/root      8826 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2015/IMB-IO.vcxproj
+[  136s] -rw-rw-r-- root/root       386 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2015/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2017/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2017/IMB-IO.rc
+[  136s] -rw-rw-r-- root/root       832 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2017/IMB-IO.sln
+[  136s] -rw-rw-r-- root/root      9721 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2017/IMB-IO.vcxproj
+[  136s] -rw-rw-r-- root/root       386 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-IO_VS_2017/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2013/
+[  136s] -rw-rw-r-- root/root      2255 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2013/IMB-MPI1.rc
+[  136s] -rw-rw-r-- root/root       836 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2013/IMB-MPI1.sln
+[  136s] -rw-rw-r-- root/root      9575 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2013/IMB-MPI1.vcxproj
+[  136s] -rw-rw-r-- root/root       388 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2013/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2015/
+[  136s] -rw-rw-r-- root/root      2255 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2015/IMB-MPI1.rc
+[  136s] -rw-rw-r-- root/root       836 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2015/IMB-MPI1.sln
+[  136s] -rw-rw-r-- root/root      9575 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2015/IMB-MPI1.vcxproj
+[  136s] -rw-rw-r-- root/root       388 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2015/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2017/
+[  136s] -rw-rw-r-- root/root      2255 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2017/IMB-MPI1.rc
+[  136s] -rw-rw-r-- root/root       836 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2017/IMB-MPI1.sln
+[  136s] -rw-rw-r-- root/root     10465 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2017/IMB-MPI1.vcxproj
+[  136s] -rw-rw-r-- root/root       388 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MPI1_VS_2017/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2013/
+[  136s] -rw-rw-r-- root/root      2251 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2013/IMB-MT.rc
+[  136s] -rw-rw-r-- root/root       832 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2013/IMB-MT.sln
+[  136s] -rw-rw-r-- root/root      7427 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2013/IMB-MT.vcxproj
+[  136s] -rw-rw-r-- root/root       386 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2013/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2015/
+[  136s] -rw-rw-r-- root/root      2251 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2015/IMB-MT.rc
+[  136s] -rw-rw-r-- root/root       832 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2015/IMB-MT.sln
+[  136s] -rw-rw-r-- root/root      7427 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2015/IMB-MT.vcxproj
+[  136s] -rw-rw-r-- root/root       386 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2015/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2017/
+[  136s] -rw-rw-r-- root/root      2251 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2017/IMB-MT.rc
+[  136s] -rw-rw-r-- root/root       832 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2017/IMB-MT.sln
+[  136s] -rw-rw-r-- root/root      8193 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2017/IMB-MT.vcxproj
+[  136s] -rw-rw-r-- root/root       386 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-MT_VS_2017/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2013/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2013/IMB-NBC.rc
+[  136s] -rw-rw-r-- root/root       856 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2013/IMB-NBC.sln
+[  136s] -rw-rw-r-- root/root      9518 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2013/IMB-NBC.vcxproj
+[  136s] -rw-rw-r-- root/root       401 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2013/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2015/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2015/IMB-NBC.rc
+[  136s] -rw-rw-r-- root/root       856 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2015/IMB-NBC.sln
+[  136s] -rw-rw-r-- root/root      9518 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2015/IMB-NBC.vcxproj
+[  136s] -rw-rw-r-- root/root       401 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2015/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2017/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2017/IMB-NBC.rc
+[  136s] -rw-rw-r-- root/root       856 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2017/IMB-NBC.sln
+[  136s] -rw-rw-r-- root/root     10413 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2017/IMB-NBC.vcxproj
+[  136s] -rw-rw-r-- root/root       401 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-NBC_VS_2017/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2013/
+[  136s] -rw-rw-r-- root/root      2253 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2013/IMB-P2P.rc
+[  136s] -rw-rw-r-- root/root       834 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2013/IMB-P2P.sln
+[  136s] -rw-rw-r-- root/root      7227 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2013/IMB-P2P.vcxproj
+[  136s] -rw-rw-r-- root/root       387 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2013/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2015/
+[  136s] -rw-rw-r-- root/root      2253 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2015/IMB-P2P.rc
+[  136s] -rw-rw-r-- root/root       834 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2015/IMB-P2P.sln
+[  136s] -rw-rw-r-- root/root      7227 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2015/IMB-P2P.vcxproj
+[  136s] -rw-rw-r-- root/root       387 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2015/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2017/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2017/IMB-P2P.rc
+[  136s] -rw-rw-r-- root/root       834 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2017/IMB-P2P.sln
+[  136s] -rw-rw-r-- root/root      8351 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2017/IMB-P2P.vcxproj
+[  136s] -rw-rw-r-- root/root       401 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-P2P_VS_2017/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2013/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2013/IMB-RMA.rc
+[  136s] -rw-rw-r-- root/root       856 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2013/IMB-RMA.sln
+[  136s] -rw-rw-r-- root/root      8962 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2013/IMB-RMA.vcxproj
+[  136s] -rw-rw-r-- root/root       401 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2013/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2015/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2015/IMB-RMA.rc
+[  136s] -rw-rw-r-- root/root       856 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2015/IMB-RMA.sln
+[  136s] -rw-rw-r-- root/root      8822 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2015/IMB-RMA.vcxproj
+[  136s] -rw-rw-r-- root/root       401 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2015/resource.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2017/
+[  136s] -rw-rw-r-- root/root      2355 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2017/IMB-RMA.rc
+[  136s] -rw-rw-r-- root/root       856 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2017/IMB-RMA.sln
+[  136s] -rw-rw-r-- root/root      9857 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2017/IMB-RMA.vcxproj
+[  136s] -rw-rw-r-- root/root       401 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/IMB-RMA_VS_2017/resource.h
+[  136s] -rw-rw-r-- root/root       822 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/WINDOWS/mkvsprojs.sh
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/license/
+[  136s] -rw-rw-r-- root/root      1940 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/license/license.txt
+[  136s] -rw-rw-r-- root/root     26456 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/license/third-party-programs.txt
+[  136s] -rw-rw-r-- root/root       869 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/license/use-of-trademark-license.txt
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/
+[  136s] -rw-rw-r-- root/root     14727 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_2018.c
+[  136s] -rw-rw-r-- root/root     11726 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_allgather.c
+[  136s] -rw-rw-r-- root/root     12321 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_allgatherv.c
+[  136s] -rw-rw-r-- root/root      9939 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_allreduce.c
+[  136s] -rw-rw-r-- root/root     11775 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_alltoall.c
+[  136s] -rw-rw-r-- root/root     12556 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_alltoallv.c
+[  136s] -rw-rw-r-- root/root      3454 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_appl_errors.h
+[  136s] -rw-rw-r-- root/root     11029 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_bandwidth.c
+[  136s] -rw-rw-r-- root/root      6843 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_barrier.c
+[  136s] -rw-rw-r-- root/root     11362 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_bcast.c
+[  136s] -rw-rw-r-- root/root     11558 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_benchlist.c
+[  136s] -rw-rw-r-- root/root      6295 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_benchmark.h
+[  136s] -rw-rw-r-- root/root      3399 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_bnames_ext.h
+[  136s] -rw-rw-r-- root/root      4721 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_bnames_io.h
+[  136s] -rw-rw-r-- root/root      3883 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_bnames_mpi1.h
+[  136s] -rw-rw-r-- root/root      3929 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_bnames_nbc.h
+[  136s] -rw-rw-r-- root/root      4027 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_bnames_rma.h
+[  136s] -rw-rw-r-- root/root      2841 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_cache.h
+[  136s] -rw-rw-r-- root/root     41430 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_chk_diff.c
+[  136s] -rw-rw-r-- root/root      7710 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_comm_info.h
+[  136s] -rw-rw-r-- root/root      5022 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_comments.h
+[  136s] -rw-rw-r-- root/root      5459 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_cpu_exploit.c
+[  136s] -rw-rw-r-- root/root      4089 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_declare.c
+[  136s] -rw-rw-r-- root/root      8705 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_declare.h
+[  136s] -rw-rw-r-- root/root      3226 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_err_check.h
+[  136s] -rw-rw-r-- root/root      7916 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_err_handler.c
+[  136s] -rw-rw-r-- root/root      7417 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_exchange.c
+[  136s] -rw-rw-r-- root/root      9831 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_g_info.c
+[  136s] -rw-rw-r-- root/root     12035 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_gather.c
+[  136s] -rw-rw-r-- root/root     12651 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_gatherv.c
+[  136s] -rw-rw-r-- root/root     51261 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_init.c
+[  136s] -rw-rw-r-- root/root     11875 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_init_file.c
+[  136s] -rw-rw-r-- root/root     10008 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_init_transfer.c
+[  136s] -rw-rw-r-- root/root        28 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_input.txt
+[  136s] -rw-rw-r-- root/root      8124 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_l0.c
+[  136s] -rw-rw-r-- root/root      3335 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_l0.h
+[  136s] -rw-rw-r-- root/root      3563 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_mem_info.h
+[  136s] -rw-rw-r-- root/root     32234 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_mem_manager.c
+[  136s] -rw-rw-r-- root/root      7902 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_ones_accu.c
+[  136s] -rw-rw-r-- root/root      7517 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_ones_bidir.c
+[  136s] -rw-rw-r-- root/root     18790 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_ones_unidir.c
+[  136s] -rw-rw-r-- root/root      5297 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_open_close.c
+[  136s] -rw-rw-r-- root/root     43781 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_output.c
+[  136s] -rw-rw-r-- root/root      6902 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_parse_name_ext.c
+[  136s] -rw-rw-r-- root/root      8544 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_parse_name_io.c
+[  136s] -rw-rw-r-- root/root     10757 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_parse_name_mpi1.c
+[  136s] -rw-rw-r-- root/root      7964 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_parse_name_nbc.c
+[  136s] -rw-rw-r-- root/root      8751 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_parse_name_rma.c
+[  136s] -rw-rw-r-- root/root      6446 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_pingping.c
+[  136s] -rw-rw-r-- root/root      7394 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_pingpong.c
+[  136s] -rw-rw-r-- root/root     24156 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_prototypes.h
+[  136s] -rw-rw-r-- root/root     21688 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_read.c
+[  136s] -rw-rw-r-- root/root     10629 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_reduce.c
+[  136s] -rw-rw-r-- root/root      5478 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_reduce_local.c
+[  136s] -rw-rw-r-- root/root     11863 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_reduce_scatter.c
+[  136s] -rw-rw-r-- root/root      5991 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_reduce_scatter_block.c
+[  136s] -rw-rw-r-- root/root     13021 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_rma_atomic.c
+[  136s] -rw-rw-r-- root/root     15905 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_rma_get.c
+[  136s] -rw-rw-r-- root/root     18255 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_rma_put.c
+[  136s] -rw-rw-r-- root/root     11998 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_scatter.c
+[  136s] -rw-rw-r-- root/root     12552 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_scatterv.c
+[  136s] -rw-rw-r-- root/root      6258 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_sendrecv.c
+[  136s] -rw-rw-r-- root/root      5619 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_settings.h
+[  136s] -rw-rw-r-- root/root      5538 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_settings_io.h
+[  136s] -rw-rw-r-- root/root      5230 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_strgs.c
+[  136s] -rw-rw-r-- root/root      3731 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_user_set_info.c
+[  136s] -rw-rw-r-- root/root      3950 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_utils.c
+[  136s] -rw-rw-r-- root/root      5422 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_warm_up.c
+[  136s] -rw-rw-r-- root/root      5170 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_window.c
+[  136s] -rw-rw-r-- root/root     19648 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/IMB_write.c
+[  136s] -rw-rw-r-- root/root      7911 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/Makefile
+[  136s] -rw-rw-r-- root/root     11491 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/Makefile_win
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/
+[  136s] -rw-rw-r-- root/root      3534 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/Makefile
+[  136s] -rw-rw-r-- root/root     33300 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p.c
+[  136s] -rw-rw-r-- root/root      6521 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p.h
+[  136s] -rw-rw-r-- root/root      7992 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_birandom.c
+[  136s] -rw-rw-r-- root/root      7921 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_corandom.c
+[  136s] -rw-rw-r-- root/root      6274 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_pingping.c
+[  136s] -rw-rw-r-- root/root      7265 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_pingpong.c
+[  136s] -rw-rw-r-- root/root      6006 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_sendrecv_replace.c
+[  136s] -rw-rw-r-- root/root      9144 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_stencil2d.c
+[  136s] -rw-rw-r-- root/root     10017 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_stencil3d.c
+[  136s] -rw-rw-r-- root/root      7219 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_c/P2P/imb_p2p_unirandom.c
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/EXT/
+[  136s] -rw-rw-r-- root/root      5212 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/EXT/EXT_benchmark.cpp
+[  136s] -rw-rw-r-- root/root     25105 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/EXT/EXT_suite.cpp
+[  136s] -rw-rw-r-- root/root      3698 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/EXT/Makefile.EXT.mk
+[  136s] -rw-rw-r-- root/root      4061 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/EXT/Makefile_win.EXT.mk
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/HALO/
+[  136s] -rw-rw-r-- root/root      3071 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/HALO/Makefile.HALO.mk
+[  136s] -rw-rw-r-- root/root      3253 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/HALO/halo_benchmark.cpp
+[  136s] -rw-rw-r-- root/root     12825 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/HALO/halo_benchmark.h
+[  136s] -rw-rw-r-- root/root      8367 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/HALO/halo_suite.cpp
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/IO/
+[  136s] -rw-rw-r-- root/root     23315 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/IO/IO_benchmark.cpp
+[  136s] -rw-rw-r-- root/root     24987 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/IO/IO_suite.cpp
+[  136s] -rw-rw-r-- root/root      3720 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/IO/Makefile.IO.mk
+[  136s] -rw-rw-r-- root/root      4087 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/IO/Makefile_win.IO.mk
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MPI1/
+[  136s] -rw-rw-r-- root/root     10652 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MPI1/MPI1_benchmark.cpp
+[  136s] -rw-rw-r-- root/root     33404 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MPI1/MPI1_suite.cpp
+[  136s] -rw-rw-r-- root/root      4663 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MPI1/Makefile.MPI1.mk
+[  136s] -rw-rw-r-- root/root      4775 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MPI1/Makefile_win.MPI1.mk
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MT/
+[  136s] -rw-rw-r-- root/root     33699 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MT/MT_benchmark.cpp
+[  136s] -rw-rw-r-- root/root     19581 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MT/MT_benchmark.h
+[  136s] -rw-rw-r-- root/root      9730 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MT/MT_suite.cpp
+[  136s] -rw-rw-r-- root/root      3697 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MT/MT_types.h
+[  136s] -rw-rw-r-- root/root      3031 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MT/Makefile.MT.mk
+[  136s] -rw-rw-r-- root/root      3329 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/MT/Makefile_win.MT.mk
+[  136s] -rw-rw-r-- root/root      6288 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/Makefile
+[  136s] -rw-rw-r-- root/root      3949 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/Makefile_win
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/NBC/
+[  136s] -rw-rw-r-- root/root      3994 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/NBC/Makefile.NBC.mk
+[  136s] -rw-rw-r-- root/root      4532 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/NBC/Makefile_win.NBC.mk
+[  136s] -rw-rw-r-- root/root     10381 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/NBC/NBC_benchmark.cpp
+[  136s] -rw-rw-r-- root/root     25326 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/NBC/NBC_suite.cpp
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/RMA/
+[  136s] -rw-rw-r-- root/root      3697 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/RMA/Makefile.RMA.mk
+[  136s] -rw-rw-r-- root/root      4216 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/RMA/Makefile_win.RMA.mk
+[  136s] -rw-rw-r-- root/root     10522 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/RMA/RMA_benchmark.cpp
+[  136s] -rw-rw-r-- root/root     25959 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/RMA/RMA_suite.cpp
+[  136s] -rw-rw-r-- root/root      4608 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/any.h
+[  136s] -rw-rw-r-- root/root     29348 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/args_parser.cpp
+[  136s] -rw-rw-r-- root/root     16958 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/args_parser.h
+[  136s] -rw-rw-r-- root/root     10935 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/args_parser_utests.cpp
+[  136s] -rw-rw-r-- root/root      4530 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/benchmark.h
+[  136s] -rw-rw-r-- root/root      7294 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/benchmark_suite.h
+[  136s] -rw-rw-r-- root/root      4016 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/benchmark_suite_base.h
+[  136s] -rw-rw-r-- root/root      3323 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/benchmark_suites_collection.cpp
+[  136s] -rw-rw-r-- root/root      6558 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/benchmark_suites_collection.h
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/example/
+[  136s] -rw-rw-r-- root/root      3149 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/example/Makefile.example.mk
+[  136s] -rw-rw-r-- root/root      4071 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/example/example_benchmark1.cpp
+[  136s] -rw-rw-r-- root/root      3686 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/example/example_benchmark2.cpp
+[  136s] -rw-rw-r-- root/root      5688 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/example/example_benchmark3.cpp
+[  136s] -rw-rw-r-- root/root      8234 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/example/example_benchmark4.cpp
+[  136s] -rw-rw-r-- root/root      4895 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/example/example_benchmark5.cpp
+[  136s] drwxrwxr-x root/root         0 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/helpers/
+[  136s] -rw-rw-r-- root/root      3032 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/helpers/Makefile.helpers.mk
+[  136s] -rw-rw-r-- root/root      2994 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/helpers/Makefile_win.helpers.mk
+[  136s] -rw-rw-r-- root/root     29573 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/helpers/helper_IMB_functions.h
+[  136s] -rw-rw-r-- root/root     10387 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/helpers/original_benchmark.h
+[  136s] -rw-rw-r-- root/root     16203 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/imb.cpp
+[  136s] -rw-rw-r-- root/root      3546 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/scope.cpp
+[  136s] -rw-rw-r-- root/root      5793 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/scope.h
+[  136s] -rw-rw-r-- root/root      4217 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/smart_ptr.h
+[  136s] -rw-rw-r-- root/root      4564 2021-10-01 13:09 mpi-benchmarks-IMB-v2021.3/src_cpp/utils.h
+[  136s] + STATUS=0
+[  136s] + '[' 0 -ne 0 ']'
+[  136s] + cd mpi-benchmarks-IMB-v2021.3
+[  136s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  136s] + RPM_EC=0
+[  136s] ++ jobs -p
+[  136s] + exit 0
+[  136s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.ZjnyzC
+[  136s] + umask 022
+[  136s] + cd /home/abuild/rpmbuild/BUILD
+[  136s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/imb_2021_3-gnu-openmpi4-hpc-2021.3-1.2.riscv64
+[  136s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/imb_2021_3-gnu-openmpi4-hpc-2021.3-1.2.riscv64
+[  136s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  136s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/imb_2021_3-gnu-openmpi4-hpc-2021.3-1.2.riscv64
+[  136s] + cd mpi-benchmarks-IMB-v2021.3
+[  136s] + ref=/usr/lib/rpm
+[  136s] + mints=0
+[  136s] + case $(uname -m) in
+[  136s] ++ uname -m
+[  137s] + mints=20160911
+[  137s] + for s in guess sub
+[  137s] ++ find -maxdepth 8 -name config.guess
+[  137s] + for s in guess sub
+[  137s] ++ find -maxdepth 8 -name config.sub
+[  137s] + module purge
+[  137s] + '[' -z '' ']'
+[  137s] + case "$-" in
+[  137s] + __lmod_sh_dbg=x
+[  137s] + '[' -n x ']'
+[  137s] + set +x
+[  137s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  138s] sh: line 1: /usr/bin/ps: No such file or directory
+[  138s] Shell debugging restarted
+[  138s] + unset __lmod_sh_dbg
+[  138s] + return 0
+[  138s] + export CC=gcc
+[  138s] + CC=gcc
+[  138s] + export CXX=g++
+[  138s] + CXX=g++
+[  138s] + export FC=gfortran
+[  138s] + FC=gfortran
+[  138s] + export F77=gfortran
+[  138s] + F77=gfortran
+[  138s] + module load gnu/13
+[  138s] + '[' -z '' ']'
+[  138s] + case "$-" in
+[  138s] + __lmod_sh_dbg=x
+[  138s] + '[' -n x ']'
+[  138s] + set +x
+[  138s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  139s] sh: line 1: /usr/bin/ps: No such file or directory
+[  140s] Shell debugging restarted
+[  140s] + unset __lmod_sh_dbg
+[  140s] + return 0
+[  140s] + module load openmpi
+[  140s] + '[' -z '' ']'
+[  140s] + case "$-" in
+[  140s] + __lmod_sh_dbg=x
+[  140s] + '[' -n x ']'
+[  140s] + set +x
+[  140s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  141s] sh: line 1: /usr/bin/ps: No such file or directory
+[  145s] Lmod has detected the following error: The following module(s) are unknown:
+[  145s] "openmpi"
+[  145s] 
+[  145s] Please check the spelling or version number. Also try "module spider ..."
+[  145s] It is also possible your cache file is out-of-date; it may help to try:
+[  145s]   $ module --ignore_cache load "openmpi"
+[  145s] 
+[  145s] Also make sure that all modulefiles written in TCL start with the string
+[  145s] #%Module
+[  145s] 
+[  145s] 
+[  145s] 
+[  145s] Shell debugging restarted
+[  145s] + unset __lmod_sh_dbg
+[  145s] + return 1
+[  145s] error: Bad exit status from /var/tmp/rpm-tmp.ZjnyzC (%build)
+[  145s] 
+[  145s] RPM build errors:
+[  145s]     Bad exit status from /var/tmp/rpm-tmp.ZjnyzC (%build)
+[  146s] ### VM INTERACTION START ###
+[  146s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[  146s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[  146s] Powering off.
+[  146s] [  140.323118][ T3166] reboot: Power down
+[  146s] ### VM INTERACTION END ###
+[  146s] 
+[  146s] old-cirrus2 failed "build imb.spec" at Mon Mar 20 20:57:57 UTC 2023.
+[  146s] 

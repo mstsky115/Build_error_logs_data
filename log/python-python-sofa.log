@@ -1,0 +1,1522 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] cloud111 started "build python-python-sofa.spec" at Fri Apr  7 18:58:59 UTC 2023.
+[    0s] 
+[    0s] Building python-python-sofa for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'b6e02f2f4248891755b311946792e8b3'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/python-python-sofa.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/python-python-sofa.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/python-python-sofa.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [7e2d7ed3e5abd7814cd81f9b16254030]
+[    5s] 
+[    5s] copying packages...
+[    6s] reordering...cycle: jupyter-jupyter-client -> python310-jupyter-client
+[    6s]   breaking dependency python310-jupyter-client -> jupyter-jupyter-client
+[    6s] done
+[    6s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.2.9-1-default #1 SMP PREEMPT_DYNAMIC Thu Mar 30 11:30:50 UTC 2023 (7a187a3)
+[   12s] Increasing log level from now on...
+[   12s] [    4.909759][  T408] sysrq: Changing Loglevel
+[   12s] [    4.910203][  T408] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   13s] Setting up swapspace version 1, size = 1.5 GiB (1610608640 bytes)
+[   13s] no label, UUID=4560d833-d516-4db1-98a1-372846acc9ef
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=1610612736, devsize=1610612736
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/python-python-sofa.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-python-sofa.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   51s] [1/394] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   51s] [2/394] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   51s] [3/394] preinstalled attr-2.5.1-1.1
+[   51s] [4/394] preinstalled bash-5.2.15-8.1
+[   51s] [5/394] preinstalled bash-sh-5.2.15-8.1
+[   51s] [6/394] preinstalled binutils-2.40-3.1
+[   51s] [7/394] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   51s] [8/394] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   51s] [9/394] preinstalled build-mkbaselibs-20230314-1.1
+[   51s] [10/394] preinstalled bzip2-1.0.8-5.1
+[   51s] [11/394] preinstalled chkstat-1599_20230217-1.1
+[   51s] [12/394] preinstalled compat-usrmerge-build-84.87-5.1
+[   51s] [13/394] preinstalled compat-usrmerge-tools-84.87-5.1
+[   51s] [14/394] preinstalled coreutils-9.2-1.1
+[   51s] [15/394] preinstalled cpio-2.13-5.1
+[   51s] [16/394] preinstalled cpp-13-1.1
+[   51s] [17/394] preinstalled cpp13-13.0.1+git6669-7.1
+[   51s] [18/394] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   51s] [19/394] preinstalled debugedit-5.0-5.1
+[   51s] [20/394] preinstalled diffutils-3.9-1.1
+[   51s] [21/394] preinstalled dwz-0.15-2.1
+[   51s] [22/394] preinstalled elfutils-0.189-2.1
+[   51s] [23/394] cumulate fdupes-2.2.1-1.1
+[   51s] [24/394] preinstalled file-5.44-1.3
+[   51s] [25/394] preinstalled file-magic-5.44-1.3
+[   51s] [26/394] preinstalled filesystem-84.87-12.1
+[   51s] [27/394] preinstalled fillup-1.42-279.1
+[   51s] [28/394] preinstalled findutils-4.9.0-2.1
+[   51s] [29/394] preinstalled gawk-5.2.1-2.1
+[   51s] [30/394] preinstalled gcc-13-1.1
+[   51s] [31/394] preinstalled gcc-PIE-13-1.1
+[   51s] [32/394] preinstalled gcc13-13.0.1+git6669-7.1
+[   51s] [33/394] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   51s] [34/394] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   51s] [35/394] preinstalled gettext-tools-mini-0.21.1-1.1
+[   51s] [36/394] preinstalled glibc-2.37-3.1
+[   51s] [37/394] preinstalled glibc-devel-2.37-3.1
+[   51s] [38/394] preinstalled glibc-locale-base-2.37-3.1
+[   51s] [39/394] preinstalled grep-3.9-1.1
+[   51s] [40/394] preinstalled gzip-1.12-3.1
+[   51s] [41/394] preinstalled kernel-obs-build-6.2.9-1.1
+[   51s] [42/394] cumulate libXau6-1.0.11-1.1
+[   51s] [43/394] preinstalled libacl1-2.3.1-2.1
+[   51s] [44/394] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   51s] [45/394] preinstalled libasan8-13.0.1+git6669-7.1
+[   51s] [46/394] preinstalled libasm1-0.189-2.1
+[   51s] [47/394] preinstalled libatomic1-13.0.1+git6669-7.1
+[   51s] [48/394] preinstalled libattr1-2.5.1-1.1
+[   51s] [49/394] preinstalled libaudit1-3.0.9-1.1
+[   51s] [50/394] preinstalled libblkid1-2.38.1-11.1
+[   51s] [51/394] cumulate libbrotlicommon1-1.0.9-3.1
+[   51s] [52/394] preinstalled libbz2-1-1.0.8-5.1
+[   51s] [53/394] preinstalled libcap-ng0-0.8.3-1.1
+[   51s] [54/394] preinstalled libcap2-2.68-1.1
+[   51s] [55/394] cumulate libcom_err2-1.46.5-4.1
+[   51s] [56/394] preinstalled libcrypt1-4.4.33-3.1
+[   51s] [57/394] preinstalled libctf-nobfd0-2.40-3.1
+[   51s] [58/394] preinstalled libctf0-2.40-3.1
+[   51s] [59/394] preinstalled libdb-4_8-4.8.30-40.1
+[   51s] [60/394] preinstalled libdw1-0.189-2.1
+[   51s] [61/394] preinstalled libeconf0-0.5.2-1.1
+[   51s] [62/394] preinstalled libelf1-0.189-2.1
+[   51s] [63/394] preinstalled libexpat1-2.5.0-2.1
+[   51s] [64/394] preinstalled libfdisk1-2.38.1-11.1
+[   51s] [65/394] preinstalled libffi8-3.4.4-1.1
+[   51s] [66/394] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   51s] [67/394] preinstalled libgcrypt20-1.10.1-2.1
+[   51s] [68/394] preinstalled libgdbm6-1.23-1.1
+[   51s] [69/394] preinstalled libgdbm_compat4-1.23-1.1
+[   51s] [70/394] cumulate libgfortran5-13.0.1+git6669-7.1
+[   51s] [71/394] preinstalled libgmp10-6.2.1-4.1
+[   51s] [72/394] preinstalled libgomp1-13.0.1+git6669-7.1
+[   51s] [73/394] preinstalled libgpg-error0-1.46-1.1
+[   51s] [74/394] cumulate libhdf5-200-1.12.2-5.1
+[   51s] [75/394] cumulate libimagequant0-2.18.0-1.1
+[   51s] [76/394] preinstalled libisl23-0.25-1.1
+[   51s] [77/394] preinstalled libitm1-13.0.1+git6669-7.1
+[   51s] [78/394] cumulate libjbig2-2.1-4.1
+[   51s] [79/394] cumulate libjpeg8-8.2.2-74.1
+[   51s] [80/394] cumulate liblcms2-2-2.14-3.3
+[   51s] [81/394] preinstalled liblua5_4-5-5.4.4-10.1
+[   51s] [82/394] preinstalled liblzma5-5.4.2-2.1
+[   51s] [83/394] preinstalled libmagic1-5.44-1.3
+[   51s] [84/394] preinstalled libmount1-2.38.1-11.1
+[   51s] [85/394] preinstalled libmpc3-1.3.1-1.2
+[   51s] [86/394] preinstalled libmpdec3-2.5.1-2.1
+[   51s] [87/394] preinstalled libmpfr6-4.2.0-1.1
+[   51s] [88/394] preinstalled libncurses6-6.4.20230311-8.1
+[   51s] [89/394] cumulate libnghttp2-14-1.51.0-7.2
+[   51s] [90/394] cumulate libopenjp2-7-2.5.0-3.1
+[   51s] [91/394] preinstalled libopenssl3-3.0.8-2.1
+[   51s] [92/394] preinstalled libpcre2-8-0-10.42-3.2
+[   51s] [93/394] preinstalled libpkgconf3-1.8.0-2.1
+[   51s] [94/394] cumulate libpng16-16-1.6.39-2.1
+[   51s] [95/394] preinstalled libpopt0-1.19-1.1
+[   51s] [96/394] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   51s] [97/394] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   51s] [98/394] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   51s] [99/394] cumulate libqhull_r8_0-2020.2-3.1
+[   51s] [100/394] preinstalled libreadline8-8.2-2.1
+[   51s] [101/394] preinstalled librpmbuild9-4.18.0-4.2
+[   51s] [102/394] cumulate libsasl2-3-2.1.28-4.2
+[   51s] [103/394] preinstalled libseccomp2-2.5.4-2.1
+[   51s] [104/394] preinstalled libselinux1-3.5-1.1
+[   51s] [105/394] preinstalled libsemanage-conf-3.5-1.2
+[   51s] [106/394] preinstalled libsemanage2-3.5-1.2
+[   51s] [107/394] preinstalled libsepol2-3.5-1.1
+[   51s] [108/394] preinstalled libsmartcols1-2.38.1-11.1
+[   51s] [109/394] cumulate libsodium23-1.0.18-2.2
+[   51s] [110/394] cumulate libsqlite3-0-3.41.2-1.1
+[   51s] [111/394] cumulate libssh-config-0.10.4-1.2
+[   51s] [112/394] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   51s] [113/394] preinstalled libsubid4-4.13-4.1
+[   51s] [114/394] cumulate libsystemd0-mini-253.3-1.1
+[   51s] [115/394] preinstalled libubsan1-13.0.1+git6669-7.1
+[   51s] [116/394] cumulate libunistring5-1.1-1.1
+[   51s] [117/394] cumulate libunwind8-1.6.2-4.1
+[   51s] [118/394] preinstalled libutempter0-1.2.0-3.2
+[   51s] [119/394] preinstalled libuuid1-2.38.1-11.1
+[   51s] [120/394] cumulate libverto1-0.3.2-1.1
+[   51s] [121/394] cumulate libwebp7-1.2.4-1.2
+[   51s] [122/394] preinstalled libxcrypt-devel-4.4.33-3.1
+[   51s] [123/394] cumulate libxml2-2-2.10.3-3.1
+[   51s] [124/394] preinstalled libz1-1.2.13-3.1
+[   51s] [125/394] preinstalled libzstd1-1.5.4-2.1
+[   51s] [126/394] preinstalled linux-glibc-devel-6.2-1.1
+[   51s] [127/394] preinstalled login_defs-4.13-4.1
+[   51s] [128/394] preinstalled lua54-5.4.4-10.1
+[   51s] [129/394] preinstalled make-4.4.1-1.1
+[   51s] [130/394] preinstalled ncurses-utils-6.4.20230311-8.1
+[   51s] [131/394] preinstalled pam-1.5.2-14.1
+[   51s] [132/394] preinstalled patch-2.7.6-6.1
+[   51s] [133/394] preinstalled perl-5.36.0-4.1
+[   51s] [134/394] preinstalled perl-base-5.36.0-4.1
+[   51s] [135/394] preinstalled permissions-1599_20230217-1.1
+[   51s] [136/394] preinstalled permissions-config-1599_20230217-1.1
+[   51s] [137/394] preinstalled pkgconf-1.8.0-2.1
+[   51s] [138/394] preinstalled pkgconf-m4-1.8.0-2.1
+[   51s] [139/394] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   51s] [140/394] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   51s] [141/394] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   51s] [142/394] preinstalled python-rpm-macros-20230403.29b58f8-1.1
+[   51s] [143/394] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   51s] [144/394] cumulate python310-Cycler-0.11.0-1.3
+[   51s] [145/394] cumulate python310-appdirs-1.4.4-3.6
+[   51s] [146/394] cumulate python310-attrs-22.2.0-1.3
+[   51s] [147/394] cumulate python310-backcall-0.2.0-1.9
+[   51s] [148/394] preinstalled python310-base-3.10.10-2.1
+[   51s] [149/394] cumulate python310-debugpy-1.6.6-3.2
+[   51s] [150/394] cumulate python310-decorator-5.1.1-1.4
+[   51s] [151/394] cumulate python310-devel-3.10.10-2.1
+[   51s] [152/394] cumulate python310-entrypoints-0.4-1.3
+[   51s] [153/394] cumulate python310-exceptiongroup-1.1.1-1.2
+[   51s] [154/394] cumulate python310-executing-1.2.0-4.3
+[   51s] [155/394] cumulate python310-fastjsonschema-2.16.3-1.2
+[   51s] [156/394] cumulate python310-iniconfig-2.0.0-1.2
+[   51s] [157/394] cumulate python310-jedi-0.18.2-4.3
+[   51s] [158/394] cumulate python310-kiwisolver-1.4.4-1.3
+[   51s] [159/394] cumulate python310-nest-asyncio-1.5.6-1.3
+[   51s] [160/394] cumulate python310-olefile-0.46-3.6
+[   51s] [161/394] preinstalled python310-packaging-23.0-2.1
+[   51s] [162/394] cumulate python310-parso-0.8.3-2.3
+[   51s] [163/394] cumulate python310-pickleshare-0.7.5-4.3
+[   51s] [164/394] cumulate python310-platformdirs-3.2.0-1.1
+[   51s] [165/394] cumulate python310-pluggy-1.0.0-1.6
+[   51s] [166/394] cumulate python310-ptyprocess-0.7.0-1.7
+[   51s] [167/394] cumulate python310-pure-eval-0.2.2-1.3
+[   51s] [168/394] cumulate python310-pyparsing-3.0.9-3.1
+[   51s] [169/394] cumulate python310-pyrsistent-0.19.3-1.3
+[   51s] [170/394] preinstalled python310-setuptools-67.6.0-1.2
+[   51s] [171/394] cumulate python310-six-1.16.0-2.6
+[   51s] [172/394] cumulate python310-tomli-2.0.1-1.4
+[   51s] [173/394] cumulate python310-traitlets-5.9.0-1.3
+[   51s] [174/394] cumulate python310-wcwidth-0.2.6-1.3
+[   51s] [175/394] cumulate python310-zipp-3.8.1-1.3
+[   51s] [176/394] cumulate python311-Cycler-0.11.0-1.3
+[   51s] [177/394] cumulate python311-appdirs-1.4.4-3.6
+[   51s] [178/394] cumulate python311-attrs-22.2.0-1.3
+[   51s] [179/394] cumulate python311-backcall-0.2.0-1.9
+[   51s] [180/394] preinstalled python311-base-3.11.2-1.2
+[   51s] [181/394] cumulate python311-debugpy-1.6.6-3.2
+[   51s] [182/394] cumulate python311-decorator-5.1.1-1.4
+[   51s] [183/394] cumulate python311-devel-3.11.2-1.2
+[   51s] [184/394] cumulate python311-entrypoints-0.4-1.3
+[   51s] [185/394] cumulate python311-exceptiongroup-1.1.1-1.2
+[   51s] [186/394] cumulate python311-executing-1.2.0-4.3
+[   51s] [187/394] cumulate python311-fastjsonschema-2.16.3-1.2
+[   51s] [188/394] cumulate python311-iniconfig-2.0.0-1.2
+[   51s] [189/394] cumulate python311-jedi-0.18.2-4.3
+[   51s] [190/394] cumulate python311-kiwisolver-1.4.4-1.3
+[   51s] [191/394] cumulate python311-nest-asyncio-1.5.6-1.3
+[   51s] [192/394] cumulate python311-olefile-0.46-3.6
+[   51s] [193/394] cumulate python311-packaging-23.0-2.2
+[   51s] [194/394] cumulate python311-parso-0.8.3-2.3
+[   51s] [195/394] cumulate python311-pickleshare-0.7.5-4.3
+[   51s] [196/394] cumulate python311-platformdirs-3.2.0-1.1
+[   51s] [197/394] cumulate python311-pluggy-1.0.0-1.6
+[   51s] [198/394] cumulate python311-ptyprocess-0.7.0-1.7
+[   51s] [199/394] cumulate python311-pure-eval-0.2.2-1.3
+[   51s] [200/394] cumulate python311-pyparsing-3.0.9-3.1
+[   51s] [201/394] cumulate python311-pyrsistent-0.19.3-1.3
+[   51s] [202/394] preinstalled python311-setuptools-67.6.0-1.2
+[   51s] [203/394] cumulate python311-six-1.16.0-2.6
+[   51s] [204/394] cumulate python311-tomli-2.0.1-1.4
+[   51s] [205/394] cumulate python311-traitlets-5.9.0-1.3
+[   51s] [206/394] cumulate python311-wcwidth-0.2.6-1.3
+[   51s] [207/394] cumulate python311-zipp-3.8.1-1.3
+[   51s] [208/394] cumulate python39-Cycler-0.11.0-1.3
+[   51s] [209/394] cumulate python39-appdirs-1.4.4-3.6
+[   51s] [210/394] cumulate python39-attrs-22.2.0-1.3
+[   51s] [211/394] cumulate python39-backcall-0.2.0-1.9
+[   51s] [212/394] preinstalled python39-base-3.9.16-5.1
+[   51s] [213/394] cumulate python39-debugpy-1.6.6-3.2
+[   51s] [214/394] cumulate python39-decorator-5.1.1-1.4
+[   51s] [215/394] cumulate python39-devel-3.9.16-5.1
+[   51s] [216/394] cumulate python39-entrypoints-0.4-1.3
+[   51s] [217/394] cumulate python39-exceptiongroup-1.1.1-1.2
+[   51s] [218/394] cumulate python39-executing-1.2.0-4.3
+[   51s] [219/394] cumulate python39-fastjsonschema-2.16.3-1.2
+[   51s] [220/394] cumulate python39-iniconfig-2.0.0-1.2
+[   51s] [221/394] cumulate python39-jedi-0.18.2-4.3
+[   51s] [222/394] cumulate python39-kiwisolver-1.4.4-1.3
+[   51s] [223/394] cumulate python39-nest-asyncio-1.5.6-1.3
+[   51s] [224/394] cumulate python39-olefile-0.46-3.6
+[   51s] [225/394] cumulate python39-packaging-23.0-2.2
+[   51s] [226/394] cumulate python39-parso-0.8.3-2.3
+[   51s] [227/394] cumulate python39-pickleshare-0.7.5-4.3
+[   51s] [228/394] cumulate python39-platformdirs-3.2.0-1.1
+[   51s] [229/394] cumulate python39-pluggy-1.0.0-1.6
+[   51s] [230/394] cumulate python39-ptyprocess-0.7.0-1.7
+[   51s] [231/394] cumulate python39-pure-eval-0.2.2-1.3
+[   51s] [232/394] cumulate python39-pyparsing-3.0.9-3.1
+[   51s] [233/394] cumulate python39-pyrsistent-0.19.3-1.3
+[   51s] [234/394] preinstalled python39-setuptools-67.6.0-1.2
+[   51s] [235/394] cumulate python39-six-1.16.0-2.6
+[   51s] [236/394] cumulate python39-tomli-2.0.1-1.4
+[   51s] [237/394] cumulate python39-traitlets-5.9.0-1.3
+[   51s] [238/394] cumulate python39-typing_extensions-4.5.0-1.2
+[   51s] [239/394] cumulate python39-wcwidth-0.2.6-1.3
+[   51s] [240/394] cumulate python39-zipp-3.8.1-1.3
+[   51s] [241/394] preinstalled qemu-linux-user-7.1.0-58.1
+[   51s] [242/394] preinstalled rpm-4.18.0-4.2
+[   51s] [243/394] preinstalled rpm-build-4.18.0-4.2
+[   51s] [244/394] preinstalled rpm-build-perl-4.18.0-4.2
+[   51s] [245/394] preinstalled rpm-config-SUSE-20220926-1.1
+[   51s] [246/394] preinstalled rpmlint-mini-2.4.0+git20230403.7ce263c-10.4
+[   51s] [247/394] preinstalled rpmlint-strict-2.4.0+git20230403.7ce263c-1.1
+[   51s] [248/394] preinstalled sed-4.9-2.1
+[   51s] [249/394] preinstalled shadow-4.13-4.1
+[   51s] [250/394] preinstalled system-group-hardware-20170617-24.1
+[   51s] [251/394] preinstalled system-user-root-20190513-2.1
+[   51s] [252/394] preinstalled systemd-rpm-macros-20-1.1
+[   51s] [253/394] preinstalled sysuser-shadow-3.1-5.1
+[   51s] [254/394] preinstalled tar-1.34-10.1
+[   51s] [255/394] preinstalled terminfo-base-6.4.20230311-8.1
+[   51s] [256/394] cumulate timezone-2023c-1.1
+[   51s] [257/394] preinstalled update-alternatives-1.21.8-1.1
+[   51s] [258/394] preinstalled util-linux-2.38.1-11.1
+[   51s] [259/394] preinstalled which-2.21-5.1
+[   51s] [260/394] preinstalled xz-5.4.2-2.1
+[   51s] [261/394] cumulate alts-1.2+3.b848aad-3.1
+[   51s] [262/394] cumulate libblas3-3.9.0-8.1
+[   51s] [263/394] cumulate libbrotlidec1-1.0.9-3.1
+[   51s] [264/394] cumulate libhdf5_cpp200-1.12.2-5.1
+[   51s] [265/394] cumulate libhdf5_hl200-1.12.2-5.1
+[   51s] [266/394] cumulate libidn2-0-2.3.4-1.1
+[   51s] [267/394] cumulate libldap2-2.6.3-3.2
+[   51s] [268/394] cumulate libopenblas_serial0-0.3.21-5.1
+[   51s] [269/394] cumulate libprocps8-3.3.17-12.1
+[   51s] [270/394] cumulate libwebpdemux2-1.2.4-1.2
+[   51s] [271/394] cumulate libwebpmux3-1.2.4-1.2
+[   51s] [272/394] cumulate libxcb1-1.15-2.1
+[   51s] [273/394] cumulate python310-3.10.10-2.1
+[   51s] [274/394] cumulate python310-Cython-0.29.34-1.1
+[   51s] [275/394] cumulate python310-asttokens-2.2.1-1.3
+[   51s] [276/394] cumulate python310-comm-0.1.3-1.1
+[   51s] [277/394] cumulate python310-importlib-metadata-6.1.0-2.1
+[   51s] [278/394] cumulate python310-matplotlib-inline-0.1.6-1.3
+[   51s] [279/394] cumulate python310-pexpect-4.8.0-8.2
+[   51s] [280/394] cumulate python310-prompt_toolkit-3.0.38-1.1
+[   51s] [281/394] cumulate python310-python-dateutil-2.8.2-1.6
+[   51s] [282/394] cumulate python310-pytz-2023.3-1.1
+[   51s] [283/394] cumulate python311-3.11.2-1.1
+[   51s] [284/394] cumulate python311-Cython-0.29.34-1.1
+[   51s] [285/394] cumulate python311-asttokens-2.2.1-1.3
+[   51s] [286/394] cumulate python311-comm-0.1.3-1.1
+[   51s] [287/394] cumulate python311-importlib-metadata-6.1.0-2.1
+[   51s] [288/394] cumulate python311-matplotlib-inline-0.1.6-1.3
+[   51s] [289/394] cumulate python311-pexpect-4.8.0-8.2
+[   51s] [290/394] cumulate python311-prompt_toolkit-3.0.38-1.1
+[   51s] [291/394] cumulate python311-python-dateutil-2.8.2-1.6
+[   51s] [292/394] cumulate python311-pytz-2023.3-1.1
+[   51s] [293/394] cumulate python39-3.9.16-5.1
+[   51s] [294/394] cumulate python39-Cython3-3.0.0~a11-1.3
+[   52s] [295/394] cumulate python39-asttokens-2.2.1-1.3
+[   52s] [296/394] cumulate python39-comm-0.1.3-1.1
+[   52s] [297/394] cumulate python39-importlib-metadata-6.1.0-2.1
+[   52s] [298/394] cumulate python39-matplotlib-inline-0.1.6-1.3
+[   52s] [299/394] cumulate python39-pexpect-4.8.0-8.2
+[   52s] [300/394] cumulate python39-prompt_toolkit-3.0.38-1.1
+[   52s] [301/394] cumulate python39-python-dateutil-2.8.2-1.6
+[   52s] [302/394] cumulate python39-pytz-2023.3-1.1
+[   52s] [303/394] cumulate krb5-mini-1.20.1-5.1
+[   52s] [304/394] cumulate libhdf5_fortran200-1.12.2-5.1
+[   52s] [305/394] cumulate libtiff6-4.5.0-3.1
+[   52s] [306/394] cumulate libzmq5-4.3.4-4.1
+[   52s] [307/394] cumulate libcblas3-3.9.0-8.1
+[   52s] [308/394] cumulate libhdf5_hl_cpp200-1.12.2-5.1
+[   52s] [309/394] cumulate procps-3.3.17-12.1
+[   52s] [310/394] cumulate python310-Pygments-2.14.0-1.3
+[   52s] [311/394] cumulate python310-coverage-7.2.2-1.2
+[   52s] [312/394] cumulate python310-pybind11-2.10.4-1.2
+[   52s] [313/394] cumulate python310-pyzmq-24.0.1-3.3
+[   52s] [314/394] cumulate python310-tornado6-6.2-5.3
+[   52s] [315/394] cumulate python311-Pygments-2.14.0-1.3
+[   52s] [316/394] cumulate python311-coverage-7.2.2-1.2
+[   52s] [317/394] cumulate python311-pybind11-2.10.4-1.2
+[   52s] [318/394] cumulate python311-pyzmq-24.0.1-3.3
+[   52s] [319/394] cumulate python311-tornado6-6.2-5.3
+[   52s] [320/394] cumulate python39-Pygments-2.14.0-1.3
+[   52s] [321/394] cumulate python39-coverage-7.2.2-1.2
+[   52s] [322/394] cumulate python39-pybind11-2.10.4-1.2
+[   52s] [323/394] cumulate python39-pyzmq-24.0.1-3.3
+[   52s] [324/394] cumulate python39-tornado6-6.2-5.3
+[   52s] [325/394] cumulate libfreetype6-2.13.0-1.1
+[   52s] [326/394] cumulate liblapack3-3.9.0-8.1
+[   52s] [327/394] cumulate libpsl5-0.21.2-1.1
+[   52s] [328/394] cumulate libssh4-0.10.4-1.2
+[   52s] [329/394] cumulate python310-jsonschema-4.17.3-2.3
+[   52s] [330/394] cumulate python310-jupyter-core-5.3.0-1.2
+[   52s] [331/394] cumulate python310-stack-data-0.2.0-2.3
+[   52s] [332/394] cumulate python311-jsonschema-4.17.3-2.3
+[   52s] [333/394] cumulate python311-jupyter-core-5.3.0-1.2
+[   52s] [334/394] cumulate python311-stack-data-0.2.0-2.3
+[   52s] [335/394] cumulate python39-jsonschema-4.17.3-2.3
+[   52s] [336/394] cumulate python39-jupyter-core-5.3.0-1.2
+[   52s] [337/394] cumulate python39-stack-data-0.2.0-2.3
+[   52s] [338/394] cumulate libhdf5hl_fortran200-1.12.2-5.1
+[   52s] [339/394] cumulate python310-pytest-7.2.0-3.2
+[   52s] [340/394] cumulate python311-pytest-7.2.0-3.2
+[   52s] [341/394] cumulate python39-pytest-7.2.0-3.2
+[   52s] [342/394] cumulate python310-psutil-5.9.4-2.3
+[   52s] [343/394] cumulate python310-tornado-6.2-15.6
+[   52s] [344/394] cumulate python311-psutil-5.9.4-2.3
+[   52s] [345/394] cumulate python311-tornado-6.2-15.6
+[   52s] [346/394] cumulate python39-psutil-5.9.4-2.3
+[   52s] [347/394] cumulate python39-tornado-6.2-15.6
+[   52s] [348/394] cumulate python310-numpy-1.24.2-1.2
+[   52s] [349/394] cumulate python311-numpy-1.24.2-1.2
+[   52s] [350/394] cumulate python39-numpy-1.24.2-1.2
+[   52s] [351/394] cumulate python310-nbformat-5.7.3-1.3
+[   52s] [352/394] cumulate python311-nbformat-5.7.3-1.3
+[   52s] [353/394] cumulate python39-nbformat-5.7.3-1.3
+[   52s] [354/394] cumulate hdf5-1.12.2-5.1
+[   52s] [355/394] cumulate libcurl4-8.0.1-1.1
+[   52s] [356/394] cumulate python310-Pillow-9.5.0-1.1
+[   52s] [357/394] cumulate python310-ipython-8.12.0-1.1
+[   52s] [358/394] cumulate python311-Pillow-9.5.0-1.1
+[   52s] [359/394] cumulate python311-ipython-8.12.0-1.1
+[   52s] [360/394] cumulate python39-Pillow-9.5.0-1.1
+[   52s] [361/394] cumulate python39-ipython-8.12.0-1.1
+[   52s] [362/394] cumulate python310-contourpy-1.0.6-2.3
+[   52s] [363/394] cumulate python311-contourpy-1.0.6-2.3
+[   52s] [364/394] cumulate python39-contourpy-1.0.6-2.3
+[   52s] [365/394] cumulate python310-cftime-1.6.2-1.3
+[   52s] [366/394] cumulate python311-cftime-1.6.2-1.3
+[   52s] [367/394] cumulate python39-cftime-1.6.2-1.3
+[   52s] [368/394] cumulate libnetcdf19-4.9.2-1.1
+[   52s] [369/394] cumulate python310-fs-2.4.16-1.4
+[   52s] [370/394] cumulate python310-scipy-1.10.1-2.2
+[   52s] [371/394] cumulate python311-fs-2.4.16-1.4
+[   52s] [372/394] cumulate python311-scipy-1.10.1-2.2
+[   52s] [373/394] cumulate python39-fs-2.4.16-1.4
+[   52s] [374/394] cumulate python39-scipy-1.10.1-2.2
+[   52s] [375/394] cumulate python310-FontTools-4.39.3-1.2
+[   52s] [376/394] cumulate python311-FontTools-4.39.3-1.2
+[   52s] [377/394] cumulate python39-FontTools-4.39.3-1.2
+[   52s] [378/394] cumulate netcdf-4.9.2-1.1
+[   52s] [379/394] cumulate python310-netCDF4-1.6.2-1.3
+[   52s] [380/394] cumulate python311-netCDF4-1.6.2-1.3
+[   52s] [381/394] cumulate python39-netCDF4-1.6.2-1.3
+[   52s] [382/394] cumulate python310-matplotlib-3.6.3-10.3
+[   52s] [383/394] cumulate python311-matplotlib-3.6.3-10.3
+[   52s] [384/394] cumulate python39-matplotlib-3.6.3-10.3
+[   52s] [385/394] cumulate python310-jupyter-client-8.1.0-1.2
+[   52s] [386/394] cumulate jupyter-jupyter-client-8.1.0-1.2
+[   52s] [387/394] cumulate python311-jupyter-client-8.1.0-1.2
+[   52s] [388/394] cumulate python39-jupyter-client-8.1.0-1.2
+[   52s] [389/394] cumulate python310-ipykernel-6.22.0-1.1
+[   52s] [390/394] cumulate python310-nbval-0.10.0-1.3
+[   52s] [391/394] cumulate python311-ipykernel-6.22.0-1.1
+[   52s] [392/394] cumulate python39-ipykernel-6.22.0-1.1
+[   52s] [393/394] cumulate python311-nbval-0.10.0-1.3
+[   52s] [394/394] cumulate python39-nbval-0.10.0-1.3
+[   52s] now installing cumulated packages
+[   54s] Preparing...                          ########################################
+[   54s] Updating / installing...
+[   55s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[   55s] python39-traitlets-5.9.0-1.3          ########################################
+[   55s] python311-traitlets-5.9.0-1.3         ########################################
+[   56s] python310-traitlets-5.9.0-1.3         ########################################
+[   56s] libhdf5-200-1.12.2-5.1                ########################################
+[   57s] libblas3-3.9.0-8.1                    ########################################
+[   57s] update-alternatives: using /usr/lib64/blas/libblas.so.3 to provide /usr/lib64/libblas.so.3 (libblas.so.3_riscv64) in auto mode
+[   57s] libwebp7-1.2.4-1.2                    ########################################
+[   57s] libhdf5_hl200-1.12.2-5.1              ########################################
+[   57s] libjpeg8-8.2.2-74.1                   ########################################
+[   57s] libwebpdemux2-1.2.4-1.2               ########################################
+[   57s] libwebpmux3-1.2.4-1.2                 ########################################
+[   57s] libcblas3-3.9.0-8.1                   ########################################
+[   57s] update-alternatives: using /usr/lib64/blas/libcblas.so.3 to provide /usr/lib64/libcblas.so.3 (libcblas.so.3_riscv64) in auto mode
+[   58s] liblapack3-3.9.0-8.1                  ########################################
+[   59s] update-alternatives: using /usr/lib64/lapack/liblapack.so.3 to provide /usr/lib64/liblapack.so.3 (liblapack.so.3_riscv64) in auto mode
+[   60s] libopenblas_serial0-0.3.21-5.1        ########################################
+[   60s] update-alternatives: using /usr/lib64/openblas-serial to provide /usr/lib64/openblas-default (openblas-default_riscv64) in auto mode
+[   61s] update-alternatives: using /usr/lib64/openblas-serial/libopenblas.so.0 to provide /usr/lib64/liblapacke.so.3 (liblapacke.so.3_riscv64) in auto mode
+[   62s] timezone-2023c-1.1                    ########################################
+[   62s] python39-six-1.16.0-2.6               ########################################
+[   62s] python39-packaging-23.0-2.2           ########################################
+[   62s] python311-six-1.16.0-2.6              ########################################
+[   62s] python311-packaging-23.0-2.2          ########################################
+[   62s] python310-six-1.16.0-2.6              ########################################
+[   62s] libsqlite3-0-3.41.2-1.1               ########################################
+[   62s] python310-3.10.10-2.1                 ########################################
+[   63s] python310-tornado6-6.2-5.3            ########################################
+[   63s] python311-3.11.2-1.1                  ########################################
+[   64s] python311-tornado6-6.2-5.3            ########################################
+[   64s] python39-3.9.16-5.1                   ########################################
+[   64s] python39-tornado6-6.2-5.3             ########################################
+[   64s] libqhull_r8_0-2020.2-3.1              ########################################
+[   64s] libopenjp2-7-2.5.0-3.1                ########################################
+[   64s] liblcms2-2-2.14-3.3                   ########################################
+[   65s] libimagequant0-2.18.0-1.1             ########################################
+[   65s] python310-python-dateutil-2.8.2-1.6   ########################################
+[   65s] python311-python-dateutil-2.8.2-1.6   ########################################
+[   65s] python39-python-dateutil-2.8.2-1.6    ########################################
+[   65s] libhdf5_fortran200-1.12.2-5.1         ########################################
+[   65s] python310-matplotlib-inline-0.1.6-1.3 ########################################
+[   65s] python311-matplotlib-inline-0.1.6-1.3 ########################################
+[   65s] python39-matplotlib-inline-0.1.6-1.3  ########################################
+[   65s] python39-tomli-2.0.1-1.4              ########################################
+[   65s] python39-attrs-22.2.0-1.3             ########################################
+[   65s] python311-tomli-2.0.1-1.4             ########################################
+[   66s] python311-attrs-22.2.0-1.3            ########################################
+[   66s] python310-tomli-2.0.1-1.4             ########################################
+[   66s] python310-attrs-22.2.0-1.3            ########################################
+[   66s] libunistring5-1.1-1.1                 ########################################
+[   66s] libidn2-0-2.3.4-1.1                   ########################################
+[   66s] libpsl5-0.21.2-1.1                    ########################################
+[   66s] python310-coverage-7.2.2-1.2          ########################################
+[   67s] python311-coverage-7.2.2-1.2          ########################################
+[   67s] python39-coverage-7.2.2-1.2           ########################################
+[   68s] libhdf5hl_fortran200-1.12.2-5.1       ########################################
+[   68s] python310-asttokens-2.2.1-1.3         ########################################
+[   68s] python311-asttokens-2.2.1-1.3         ########################################
+[   68s] python39-asttokens-2.2.1-1.3          ########################################
+[   68s] python310-pytz-2023.3-1.1             ########################################
+[   68s] python311-pytz-2023.3-1.1             ########################################
+[   68s] python39-pytz-2023.3-1.1              ########################################
+[   68s] libhdf5_hl_cpp200-1.12.2-5.1          ########################################
+[   69s] libhdf5_cpp200-1.12.2-5.1             ########################################
+[   69s] hdf5-1.12.2-5.1                       ########################################
+[   69s] python310-comm-0.1.3-1.1              ########################################
+[   69s] python311-comm-0.1.3-1.1              ########################################
+[   69s] python39-comm-0.1.3-1.1               ########################################
+[   69s] python39-zipp-3.8.1-1.3               ########################################
+[   69s] python39-importlib-metadata-6.1.0-2.1 ########################################
+[   69s] python39-wcwidth-0.2.6-1.3            ########################################
+[   69s] python39-typing_extensions-4.5.0-1.2  ########################################
+[   69s] python39-pyrsistent-0.19.3-1.3        ########################################
+[   69s] python39-pyparsing-3.0.9-3.1          ########################################
+[   69s] python39-pure-eval-0.2.2-1.3          ########################################
+[   69s] python39-ptyprocess-0.7.0-1.7         ########################################
+[   69s] python39-pexpect-4.8.0-8.2            ########################################
+[   70s] python39-pluggy-1.0.0-1.6             ########################################
+[   70s] python39-platformdirs-3.2.0-1.1       ########################################
+[   70s] python39-pickleshare-0.7.5-4.3        ########################################
+[   70s] python39-parso-0.8.3-2.3              ########################################
+[   71s] python39-jedi-0.18.2-4.3              ########################################
+[   72s] python39-olefile-0.46-3.6             ########################################
+[   72s] python39-nest-asyncio-1.5.6-1.3       ########################################
+[   72s] python39-kiwisolver-1.4.4-1.3         ########################################
+[   72s] python39-iniconfig-2.0.0-1.2          ########################################
+[   72s] python39-executing-1.2.0-4.3          ########################################
+[   72s] python39-exceptiongroup-1.1.1-1.2     ########################################
+[   72s] python39-entrypoints-0.4-1.3          ########################################
+[   72s] python39-devel-3.9.16-5.1             ########################################
+[   74s] python39-Cython3-3.0.0~a11-1.3        ########################################
+[   74s] python39-decorator-5.1.1-1.4          ########################################
+[   76s] python39-debugpy-1.6.6-3.2            ########################################
+[   76s] python39-backcall-0.2.0-1.9           ########################################
+[   76s] python39-appdirs-1.4.4-3.6            ########################################
+[   76s] python39-Cycler-0.11.0-1.3            ########################################
+[   76s] python311-zipp-3.8.1-1.3              ########################################
+[   76s] python311-importlib-metadata-6.1.0-2.1########################################
+[   76s] python311-wcwidth-0.2.6-1.3           ########################################
+[   76s] python311-pyrsistent-0.19.3-1.3       ########################################
+[   76s] python311-pyparsing-3.0.9-3.1         ########################################
+[   76s] python311-pure-eval-0.2.2-1.3         ########################################
+[   77s] python311-ptyprocess-0.7.0-1.7        ########################################
+[   77s] python311-pexpect-4.8.0-8.2           ########################################
+[   77s] python311-pluggy-1.0.0-1.6            ########################################
+[   77s] python311-platformdirs-3.2.0-1.1      ########################################
+[   77s] python311-pickleshare-0.7.5-4.3       ########################################
+[   77s] python311-parso-0.8.3-2.3             ########################################
+[   78s] python311-jedi-0.18.2-4.3             ########################################
+[   79s] python311-olefile-0.46-3.6            ########################################
+[   79s] python311-nest-asyncio-1.5.6-1.3      ########################################
+[   79s] python311-kiwisolver-1.4.4-1.3        ########################################
+[   79s] python311-iniconfig-2.0.0-1.2         ########################################
+[   79s] python311-executing-1.2.0-4.3         ########################################
+[   79s] python311-exceptiongroup-1.1.1-1.2    ########################################
+[   79s] python311-entrypoints-0.4-1.3         ########################################
+[   79s] python311-devel-3.11.2-1.2            ########################################
+[   81s] python311-Cython-0.29.34-1.1          ########################################
+[   81s] python311-decorator-5.1.1-1.4         ########################################
+[   83s] python311-debugpy-1.6.6-3.2           ########################################
+[   83s] python311-backcall-0.2.0-1.9          ########################################
+[   83s] python311-appdirs-1.4.4-3.6           ########################################
+[   83s] python311-Cycler-0.11.0-1.3           ########################################
+[   83s] python310-zipp-3.8.1-1.3              ########################################
+[   83s] python310-importlib-metadata-6.1.0-2.1########################################
+[   83s] python310-wcwidth-0.2.6-1.3           ########################################
+[   83s] python310-pyrsistent-0.19.3-1.3       ########################################
+[   83s] python310-pyparsing-3.0.9-3.1         ########################################
+[   83s] python310-pure-eval-0.2.2-1.3         ########################################
+[   83s] python310-ptyprocess-0.7.0-1.7        ########################################
+[   84s] python310-pexpect-4.8.0-8.2           ########################################
+[   84s] python310-pluggy-1.0.0-1.6            ########################################
+[   84s] python310-platformdirs-3.2.0-1.1      ########################################
+[   84s] python310-pickleshare-0.7.5-4.3       ########################################
+[   84s] python310-parso-0.8.3-2.3             ########################################
+[   85s] python310-jedi-0.18.2-4.3             ########################################
+[   86s] python310-olefile-0.46-3.6            ########################################
+[   86s] python310-nest-asyncio-1.5.6-1.3      ########################################
+[   86s] python310-kiwisolver-1.4.4-1.3        ########################################
+[   86s] python310-iniconfig-2.0.0-1.2         ########################################
+[   86s] python310-executing-1.2.0-4.3         ########################################
+[   86s] python310-exceptiongroup-1.1.1-1.2    ########################################
+[   86s] python310-entrypoints-0.4-1.3         ########################################
+[   86s] python310-devel-3.10.10-2.1           ########################################
+[   88s] python310-Cython-0.29.34-1.1          ########################################
+[   88s] python310-decorator-5.1.1-1.4         ########################################
+[   90s] python310-debugpy-1.6.6-3.2           ########################################
+[   90s] python310-backcall-0.2.0-1.9          ########################################
+[   90s] python310-appdirs-1.4.4-3.6           ########################################
+[   90s] python310-Cycler-0.11.0-1.3           ########################################
+[   90s] libxml2-2-2.10.3-3.1                  ########################################
+[   90s] libverto1-0.3.2-1.1                   ########################################
+[   90s] libunwind8-1.6.2-4.1                  ########################################
+[   90s] libsystemd0-mini-253.3-1.1            ########################################
+[   91s] libprocps8-3.3.17-12.1                ########################################
+[   91s] procps-3.3.17-12.1                    ########################################
+[   91s] python310-psutil-5.9.4-2.3            ########################################
+[   91s] python311-psutil-5.9.4-2.3            ########################################
+[   91s] python39-psutil-5.9.4-2.3             ########################################
+[   92s] python39-fs-2.4.16-1.4                ########################################
+[   93s] python39-FontTools-4.39.3-1.2         ########################################
+[   94s] python311-fs-2.4.16-1.4               ########################################
+[   96s] python311-FontTools-4.39.3-1.2        ########################################
+[   96s] python310-fs-2.4.16-1.4               ########################################
+[   98s] python310-FontTools-4.39.3-1.2        ########################################
+[   98s] libssh-config-0.10.4-1.2              ########################################
+[   98s] libsodium23-1.0.18-2.2                ########################################
+[   98s] libzmq5-4.3.4-4.1                     ########################################
+[   99s] libsasl2-3-2.1.28-4.2                 ########################################
+[   99s] libldap2-2.6.3-3.2                    ########################################
+[   99s] libpng16-16-1.6.39-2.1                ########################################
+[   99s] libnghttp2-14-1.51.0-7.2              ########################################
+[   99s] libjbig2-2.1-4.1                      ########################################
+[   99s] libtiff6-4.5.0-3.1                    ########################################
+[   99s] libcom_err2-1.46.5-4.1                ########################################
+[  100s] krb5-mini-1.20.1-5.1                  ########################################
+[  100s] Updating /etc/sysconfig/kadmind ...
+[  100s] Updating /etc/sysconfig/krb5kdc ...
+[  101s] libssh4-0.10.4-1.2                    ########################################
+[  101s] libbrotlicommon1-1.0.9-3.1            ########################################
+[  101s] libbrotlidec1-1.0.9-3.1               ########################################
+[  101s] libfreetype6-2.13.0-1.1               ########################################
+[  101s] libcurl4-8.0.1-1.1                    ########################################
+[  102s] libnetcdf19-4.9.2-1.1                 ########################################
+[  102s] netcdf-4.9.2-1.1                      ########################################
+[  102s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  102s] alts-1.2+3.b848aad-3.1                ########################################
+[  106s] python310-numpy-1.24.2-1.2            ########################################
+[  111s] python311-numpy-1.24.2-1.2            ########################################
+[  116s] python39-numpy-1.24.2-1.2             ########################################
+[  118s] python310-Pygments-2.14.0-1.3         ########################################
+[  120s] python311-Pygments-2.14.0-1.3         ########################################
+[  122s] python39-Pygments-2.14.0-1.3          ########################################
+[  122s] python310-pytest-7.2.0-3.2            ########################################
+[  123s] python311-pytest-7.2.0-3.2            ########################################
+[  124s] python39-pytest-7.2.0-3.2             ########################################
+[  125s] python39-pyzmq-24.0.1-3.3             ########################################
+[  125s] python311-pyzmq-24.0.1-3.3            ########################################
+[  126s] python310-pyzmq-24.0.1-3.3            ########################################
+[  126s] python310-jsonschema-4.17.3-2.3       ########################################
+[  126s] python311-jsonschema-4.17.3-2.3       ########################################
+[  127s] python39-jsonschema-4.17.3-2.3        ########################################
+[  127s] python39-fastjsonschema-2.16.3-1.2    ########################################
+[  127s] python311-fastjsonschema-2.16.3-1.2   ########################################
+[  127s] python310-fastjsonschema-2.16.3-1.2   ########################################
+[  127s] python39-stack-data-0.2.0-2.3         ########################################
+[  127s] python311-stack-data-0.2.0-2.3        ########################################
+[  127s] python310-stack-data-0.2.0-2.3        ########################################
+[  128s] python39-prompt_toolkit-3.0.38-1.1    ########################################
+[  128s] python311-prompt_toolkit-3.0.38-1.1   ########################################
+[  129s] python310-prompt_toolkit-3.0.38-1.1   ########################################
+[  129s] jupyter-jupyter-client-8.1.0-1.2      ########################################
+[  129s] python310-jupyter-client-8.1.0-1.2    ########################################
+[  130s] python310-jupyter-core-5.3.0-1.2      ########################################
+[  130s] python310-ipykernel-6.22.0-1.1        ########################################
+[  131s] python310-ipython-8.12.0-1.1          ########################################
+[  132s] python311-jupyter-client-8.1.0-1.2    ########################################
+[  132s] python311-jupyter-core-5.3.0-1.2      ########################################
+[  132s] python311-ipykernel-6.22.0-1.1        ########################################
+[  134s] python311-ipython-8.12.0-1.1          ########################################
+[  134s] python39-jupyter-client-8.1.0-1.2     ########################################
+[  134s] python39-jupyter-core-5.3.0-1.2       ########################################
+[  135s] python39-ipykernel-6.22.0-1.1         ########################################
+[  136s] python39-ipython-8.12.0-1.1           ########################################
+[  137s] python39-nbformat-5.7.3-1.3           ########################################
+[  137s] python311-nbformat-5.7.3-1.3          ########################################
+[  137s] python310-nbformat-5.7.3-1.3          ########################################
+[  138s] python39-contourpy-1.0.6-2.3          ########################################
+[  138s] python39-cftime-1.6.2-1.3             ########################################
+[  138s] python311-contourpy-1.0.6-2.3         ########################################
+[  138s] python311-cftime-1.6.2-1.3            ########################################
+[  138s] python310-contourpy-1.0.6-2.3         ########################################
+[  138s] python310-cftime-1.6.2-1.3            ########################################
+[  138s] python310-pybind11-2.10.4-1.2         ########################################
+[  139s] python311-pybind11-2.10.4-1.2         ########################################
+[  139s] python39-pybind11-2.10.4-1.2          ########################################
+[  139s] libXau6-1.0.11-1.1                    ########################################
+[  139s] libxcb1-1.15-2.1                      ########################################
+[  140s] python310-Pillow-9.5.0-1.1            ########################################
+[  141s] python311-Pillow-9.5.0-1.1            ########################################
+[  141s] python39-Pillow-9.5.0-1.1             ########################################
+[  146s] python39-matplotlib-3.6.3-10.3        ########################################
+[  151s] python311-matplotlib-3.6.3-10.3       ########################################
+[  155s] python310-matplotlib-3.6.3-10.3       ########################################
+[  168s] python39-scipy-1.10.1-2.2             ########################################
+[  181s] python311-scipy-1.10.1-2.2            ########################################
+[  194s] python310-scipy-1.10.1-2.2            ########################################
+[  194s] python310-netCDF4-1.6.2-1.3           ########################################
+[  195s] python311-netCDF4-1.6.2-1.3           ########################################
+[  195s] python39-netCDF4-1.6.2-1.3            ########################################
+[  196s] python310-nbval-0.10.0-1.3            ########################################
+[  196s] python311-nbval-0.10.0-1.3            ########################################
+[  196s] python39-nbval-0.10.0-1.3             ########################################
+[  196s] python39-tornado-6.2-15.6             ########################################
+[  196s] python311-tornado-6.2-15.6            ########################################
+[  196s] python310-tornado-6.2-15.6            ########################################
+[  196s] fdupes-2.2.1-1.1                      ########################################
+[  207s] now finalizing build dir...
+[  208s] ... running 01-add_abuild_user_to_trusted_group
+[  208s] ... running 02-set_timezone_to_utc
+[  209s] ... running 03-set-permissions-secure
+[  209s] ... running 11-hack_uname_version_to_kernel_version
+[  218s] -----------------------------------------------------------------
+[  218s] I have the following modifications for python-python-sofa.spec:
+[  219s] 23c23
+[  219s] < Release:        0
+[  219s] ---
+[  219s] > Release:        4.3
+[  228s] build target is riscv64-suse-linux
+[  228s] -----------------------------------------------------------------
+[  228s] ----- building python-python-sofa.spec (user abuild)
+[  228s] -----------------------------------------------------------------
+[  228s] -----------------------------------------------------------------
+[  232s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/b6e02f2f4248891755b311946792e8b3-python-python-sofa' /home/abuild/rpmbuild/SOURCES/python-python-sofa.spec
+[  263s] Building target platforms: riscv64-suse-linux
+[  263s] Building for target riscv64-suse-linux
+[  263s] setting SOURCE_DATE_EPOCH=1662595200
+[  264s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.2jlQvK
+[  264s] + umask 022
+[  264s] + cd /home/abuild/rpmbuild/BUILD
+[  264s] + cd /home/abuild/rpmbuild/BUILD
+[  264s] + rm -rf python-sofa-0.2.0
+[  264s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/python-sofa-0.2.0-gh.tar.gz
+[  264s] + STATUS=0
+[  264s] + '[' 0 -ne 0 ']'
+[  264s] + cd python-sofa-0.2.0
+[  264s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  264s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/python-sofa-pr4-scipy1_6.patch
+[  264s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  265s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/image-size.patch
+[  265s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  265s] + RPM_EC=0
+[  265s] ++ jobs -p
+[  265s] + exit 0
+[  265s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.WktLfF
+[  265s] + umask 022
+[  265s] + cd /home/abuild/rpmbuild/BUILD
+[  265s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64
+[  265s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64
+[  266s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  266s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64
+[  266s] + cd python-sofa-0.2.0
+[  266s] + ref=/usr/lib/rpm
+[  266s] + mints=0
+[  266s] + case $(uname -m) in
+[  266s] ++ uname -m
+[  266s] + mints=20160911
+[  266s] + for s in guess sub
+[  266s] ++ find -maxdepth 8 -name config.guess
+[  266s] + for s in guess sub
+[  266s] ++ find -maxdepth 8 -name config.sub
+[  266s] ++ '[' -f _current_flavor ']'
+[  266s] ++ true
+[  266s] + last_flavor=
+[  266s] + '[' -z '' ']'
+[  266s] + last_flavor=tmp
+[  266s] + '[' tmp '!=' python39 ']'
+[  266s] + '[' -d build ']'
+[  266s] + '[' -d _build.python39 ']'
+[  266s] + echo python39
+[  266s] + python_flavor=python39
+[  266s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  269s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:516: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  269s]   warnings.warn(msg, warning_class)
+[  270s] running build
+[  270s] running build_py
+[  270s] creating build
+[  270s] creating build/lib
+[  270s] creating build/lib/sofa
+[  270s] copying src/sofa/__init__.py -> build/lib/sofa
+[  270s] copying src/sofa/_database.py -> build/lib/sofa
+[  270s] creating build/lib/sofa/access
+[  270s] copying src/sofa/access/__init__.py -> build/lib/sofa/access
+[  270s] copying src/sofa/access/dimensions.py -> build/lib/sofa/access
+[  270s] copying src/sofa/access/metadata.py -> build/lib/sofa/access
+[  270s] copying src/sofa/access/proxy.py -> build/lib/sofa/access
+[  270s] copying src/sofa/access/variables.py -> build/lib/sofa/access
+[  270s] creating build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/GeneralFIR.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/GeneralFIRE.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/GeneralTF.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/MultiSpeakerBRIR.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/SimpleFreeFieldHRIR.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/SimpleFreeFieldSOS.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/SimpleFreeFieldTF.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/SimpleHeadphoneIR.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/SingleRoomDRIR.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/__init__.py -> build/lib/sofa/conventions
+[  270s] copying src/sofa/conventions/base.py -> build/lib/sofa/conventions
+[  270s] creating build/lib/sofa/datatypes
+[  270s] copying src/sofa/datatypes/FIR.py -> build/lib/sofa/datatypes
+[  270s] copying src/sofa/datatypes/FIRE.py -> build/lib/sofa/datatypes
+[  270s] copying src/sofa/datatypes/SOS.py -> build/lib/sofa/datatypes
+[  270s] copying src/sofa/datatypes/TF.py -> build/lib/sofa/datatypes
+[  270s] copying src/sofa/datatypes/__init__.py -> build/lib/sofa/datatypes
+[  270s] copying src/sofa/datatypes/base.py -> build/lib/sofa/datatypes
+[  270s] creating build/lib/sofa/roomtypes
+[  270s] copying src/sofa/roomtypes/__init__.py -> build/lib/sofa/roomtypes
+[  270s] copying src/sofa/roomtypes/base.py -> build/lib/sofa/roomtypes
+[  270s] copying src/sofa/roomtypes/freefield.py -> build/lib/sofa/roomtypes
+[  270s] copying src/sofa/roomtypes/reverberant.py -> build/lib/sofa/roomtypes
+[  270s] copying src/sofa/roomtypes/shoebox.py -> build/lib/sofa/roomtypes
+[  270s] creating build/lib/sofa/spatial
+[  270s] copying src/sofa/spatial/__init__.py -> build/lib/sofa/spatial
+[  270s] copying src/sofa/spatial/coordinates.py -> build/lib/sofa/spatial
+[  270s] copying src/sofa/spatial/spatialobject.py -> build/lib/sofa/spatial
+[  270s] ++ '[' -f _current_flavor ']'
+[  270s] ++ cat _current_flavor
+[  270s] + last_flavor=python39
+[  270s] + '[' -z python39 ']'
+[  270s] + '[' python39 '!=' python311 ']'
+[  270s] + '[' -d build ']'
+[  270s] + mv build _build.python39
+[  270s] + '[' -d _build.python311 ']'
+[  270s] + echo python311
+[  270s] + python_flavor=python311
+[  270s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  273s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:516: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  273s]   warnings.warn(msg, warning_class)
+[  274s] running build
+[  274s] running build_py
+[  274s] creating build
+[  274s] creating build/lib
+[  274s] creating build/lib/sofa
+[  274s] copying src/sofa/__init__.py -> build/lib/sofa
+[  274s] copying src/sofa/_database.py -> build/lib/sofa
+[  274s] creating build/lib/sofa/access
+[  274s] copying src/sofa/access/__init__.py -> build/lib/sofa/access
+[  274s] copying src/sofa/access/dimensions.py -> build/lib/sofa/access
+[  274s] copying src/sofa/access/metadata.py -> build/lib/sofa/access
+[  274s] copying src/sofa/access/proxy.py -> build/lib/sofa/access
+[  274s] copying src/sofa/access/variables.py -> build/lib/sofa/access
+[  274s] creating build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/GeneralFIR.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/GeneralFIRE.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/GeneralTF.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/MultiSpeakerBRIR.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/SimpleFreeFieldHRIR.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/SimpleFreeFieldSOS.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/SimpleFreeFieldTF.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/SimpleHeadphoneIR.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/SingleRoomDRIR.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/__init__.py -> build/lib/sofa/conventions
+[  274s] copying src/sofa/conventions/base.py -> build/lib/sofa/conventions
+[  274s] creating build/lib/sofa/datatypes
+[  274s] copying src/sofa/datatypes/FIR.py -> build/lib/sofa/datatypes
+[  274s] copying src/sofa/datatypes/FIRE.py -> build/lib/sofa/datatypes
+[  274s] copying src/sofa/datatypes/SOS.py -> build/lib/sofa/datatypes
+[  274s] copying src/sofa/datatypes/TF.py -> build/lib/sofa/datatypes
+[  274s] copying src/sofa/datatypes/__init__.py -> build/lib/sofa/datatypes
+[  274s] copying src/sofa/datatypes/base.py -> build/lib/sofa/datatypes
+[  274s] creating build/lib/sofa/roomtypes
+[  274s] copying src/sofa/roomtypes/__init__.py -> build/lib/sofa/roomtypes
+[  274s] copying src/sofa/roomtypes/base.py -> build/lib/sofa/roomtypes
+[  274s] copying src/sofa/roomtypes/freefield.py -> build/lib/sofa/roomtypes
+[  274s] copying src/sofa/roomtypes/reverberant.py -> build/lib/sofa/roomtypes
+[  274s] copying src/sofa/roomtypes/shoebox.py -> build/lib/sofa/roomtypes
+[  274s] creating build/lib/sofa/spatial
+[  274s] copying src/sofa/spatial/__init__.py -> build/lib/sofa/spatial
+[  274s] copying src/sofa/spatial/coordinates.py -> build/lib/sofa/spatial
+[  274s] copying src/sofa/spatial/spatialobject.py -> build/lib/sofa/spatial
+[  274s] ++ '[' -f _current_flavor ']'
+[  274s] ++ cat _current_flavor
+[  274s] + last_flavor=python311
+[  274s] + '[' -z python311 ']'
+[  274s] + '[' python311 '!=' python310 ']'
+[  274s] + '[' -d build ']'
+[  274s] + mv build _build.python311
+[  274s] + '[' -d _build.python310 ']'
+[  274s] + echo python310
+[  274s] + python_flavor=python310
+[  274s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  277s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:516: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  277s]   warnings.warn(msg, warning_class)
+[  278s] running build
+[  278s] running build_py
+[  278s] creating build
+[  278s] creating build/lib
+[  278s] creating build/lib/sofa
+[  278s] copying src/sofa/__init__.py -> build/lib/sofa
+[  278s] copying src/sofa/_database.py -> build/lib/sofa
+[  278s] creating build/lib/sofa/access
+[  278s] copying src/sofa/access/__init__.py -> build/lib/sofa/access
+[  278s] copying src/sofa/access/dimensions.py -> build/lib/sofa/access
+[  278s] copying src/sofa/access/metadata.py -> build/lib/sofa/access
+[  278s] copying src/sofa/access/proxy.py -> build/lib/sofa/access
+[  278s] copying src/sofa/access/variables.py -> build/lib/sofa/access
+[  278s] creating build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/GeneralFIR.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/GeneralFIRE.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/GeneralTF.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/MultiSpeakerBRIR.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/SimpleFreeFieldHRIR.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/SimpleFreeFieldSOS.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/SimpleFreeFieldTF.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/SimpleHeadphoneIR.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/SingleRoomDRIR.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/__init__.py -> build/lib/sofa/conventions
+[  278s] copying src/sofa/conventions/base.py -> build/lib/sofa/conventions
+[  278s] creating build/lib/sofa/datatypes
+[  278s] copying src/sofa/datatypes/FIR.py -> build/lib/sofa/datatypes
+[  278s] copying src/sofa/datatypes/FIRE.py -> build/lib/sofa/datatypes
+[  278s] copying src/sofa/datatypes/SOS.py -> build/lib/sofa/datatypes
+[  278s] copying src/sofa/datatypes/TF.py -> build/lib/sofa/datatypes
+[  278s] copying src/sofa/datatypes/__init__.py -> build/lib/sofa/datatypes
+[  278s] copying src/sofa/datatypes/base.py -> build/lib/sofa/datatypes
+[  278s] creating build/lib/sofa/roomtypes
+[  278s] copying src/sofa/roomtypes/__init__.py -> build/lib/sofa/roomtypes
+[  278s] copying src/sofa/roomtypes/base.py -> build/lib/sofa/roomtypes
+[  278s] copying src/sofa/roomtypes/freefield.py -> build/lib/sofa/roomtypes
+[  278s] copying src/sofa/roomtypes/reverberant.py -> build/lib/sofa/roomtypes
+[  278s] copying src/sofa/roomtypes/shoebox.py -> build/lib/sofa/roomtypes
+[  278s] creating build/lib/sofa/spatial
+[  278s] copying src/sofa/spatial/__init__.py -> build/lib/sofa/spatial
+[  278s] copying src/sofa/spatial/coordinates.py -> build/lib/sofa/spatial
+[  278s] copying src/sofa/spatial/spatialobject.py -> build/lib/sofa/spatial
+[  278s] + RPM_EC=0
+[  278s] ++ jobs -p
+[  278s] + exit 0
+[  278s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.2g8FGZ
+[  279s] + umask 022
+[  279s] + cd /home/abuild/rpmbuild/BUILD
+[  279s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64
+[  279s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  279s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64
+[  279s] + cd python-sofa-0.2.0
+[  279s] ++ '[' -f _current_flavor ']'
+[  279s] ++ cat _current_flavor
+[  279s] + last_flavor=python310
+[  279s] + '[' -z python310 ']'
+[  279s] + '[' python310 '!=' python39 ']'
+[  279s] + '[' -d build ']'
+[  279s] + mv build _build.python310
+[  279s] + '[' -d _build.python39 ']'
+[  279s] + mv _build.python39 build
+[  279s] + echo python39
+[  279s] + python_flavor=python39
+[  279s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64 --prefix /usr
+[  282s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:516: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  282s]   warnings.warn(msg, warning_class)
+[  282s] running install
+[  282s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  282s]   warnings.warn(
+[  283s] running install_lib
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa
+[  283s] copying build/lib/sofa/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa
+[  283s] copying build/lib/sofa/_database.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access
+[  283s] copying build/lib/sofa/access/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access
+[  283s] copying build/lib/sofa/access/dimensions.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access
+[  283s] copying build/lib/sofa/access/metadata.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access
+[  283s] copying build/lib/sofa/access/proxy.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access
+[  283s] copying build/lib/sofa/access/variables.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/GeneralFIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/GeneralFIRE.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/GeneralTF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/MultiSpeakerBRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/SimpleFreeFieldHRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/SimpleFreeFieldSOS.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/SimpleFreeFieldTF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/SimpleHeadphoneIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/SingleRoomDRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] copying build/lib/sofa/conventions/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes
+[  283s] copying build/lib/sofa/datatypes/FIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes
+[  283s] copying build/lib/sofa/datatypes/FIRE.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes
+[  283s] copying build/lib/sofa/datatypes/SOS.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes
+[  283s] copying build/lib/sofa/datatypes/TF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes
+[  283s] copying build/lib/sofa/datatypes/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes
+[  283s] copying build/lib/sofa/datatypes/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes
+[  283s] copying build/lib/sofa/roomtypes/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes
+[  283s] copying build/lib/sofa/roomtypes/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes
+[  283s] copying build/lib/sofa/roomtypes/freefield.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes
+[  283s] copying build/lib/sofa/roomtypes/reverberant.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes
+[  283s] copying build/lib/sofa/roomtypes/shoebox.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes
+[  283s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial
+[  283s] copying build/lib/sofa/spatial/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial
+[  283s] copying build/lib/sofa/spatial/coordinates.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial
+[  283s] copying build/lib/sofa/spatial/spatialobject.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/__init__.py to __init__.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/_database.py to _database.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__init__.py to __init__.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/dimensions.py to dimensions.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/metadata.py to metadata.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/proxy.py to proxy.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/variables.py to variables.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/GeneralFIR.py to GeneralFIR.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/GeneralFIRE.py to GeneralFIRE.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/GeneralTF.py to GeneralTF.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/MultiSpeakerBRIR.py to MultiSpeakerBRIR.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/SimpleFreeFieldHRIR.py to SimpleFreeFieldHRIR.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/SimpleFreeFieldSOS.py to SimpleFreeFieldSOS.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/SimpleFreeFieldTF.py to SimpleFreeFieldTF.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/SimpleHeadphoneIR.py to SimpleHeadphoneIR.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/SingleRoomDRIR.py to SingleRoomDRIR.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__init__.py to __init__.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/base.py to base.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/FIR.py to FIR.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/FIRE.py to FIRE.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/SOS.py to SOS.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/TF.py to TF.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__init__.py to __init__.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/base.py to base.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__init__.py to __init__.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/base.py to base.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/freefield.py to freefield.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/reverberant.py to reverberant.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/shoebox.py to shoebox.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial/__init__.py to __init__.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial/coordinates.py to coordinates.cpython-39.pyc
+[  283s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial/spatialobject.py to spatialobject.cpython-39.pyc
+[  283s] writing byte-compilation script '/tmp/tmpd4q8q4tp.py'
+[  283s] /usr/bin/python3.9 /tmp/tmpd4q8q4tp.py
+[  287s] removing /tmp/tmpd4q8q4tp.py
+[  287s] running install_egg_info
+[  287s] running egg_info
+[  287s] creating src/python_sofa.egg-info
+[  287s] writing src/python_sofa.egg-info/PKG-INFO
+[  287s] writing dependency_links to src/python_sofa.egg-info/dependency_links.txt
+[  287s] writing requirements to src/python_sofa.egg-info/requires.txt
+[  287s] writing top-level names to src/python_sofa.egg-info/top_level.txt
+[  287s] writing manifest file 'src/python_sofa.egg-info/SOURCES.txt'
+[  288s] reading manifest file 'src/python_sofa.egg-info/SOURCES.txt'
+[  288s] adding license file 'LICENSE'
+[  288s] writing manifest file 'src/python_sofa.egg-info/SOURCES.txt'
+[  288s] Copying src/python_sofa.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/python_sofa-0.2.0-py3.9.egg-info
+[  288s] running install_scripts
+[  289s] ++ '[' -f _current_flavor ']'
+[  289s] ++ cat _current_flavor
+[  290s] + last_flavor=python39
+[  290s] + '[' -z python39 ']'
+[  290s] + '[' python39 '!=' python311 ']'
+[  290s] + '[' -d build ']'
+[  290s] + mv build _build.python39
+[  290s] + '[' -d _build.python311 ']'
+[  290s] + mv _build.python311 build
+[  290s] + echo python311
+[  290s] + python_flavor=python311
+[  290s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64 --prefix /usr
+[  292s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:516: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  292s]   warnings.warn(msg, warning_class)
+[  293s] running install
+[  293s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  293s]   warnings.warn(
+[  293s] running install_lib
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa
+[  293s] copying build/lib/sofa/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa
+[  293s] copying build/lib/sofa/_database.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access
+[  293s] copying build/lib/sofa/access/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access
+[  293s] copying build/lib/sofa/access/dimensions.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access
+[  293s] copying build/lib/sofa/access/metadata.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access
+[  293s] copying build/lib/sofa/access/proxy.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access
+[  293s] copying build/lib/sofa/access/variables.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/GeneralFIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/GeneralFIRE.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/GeneralTF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/MultiSpeakerBRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/SimpleFreeFieldHRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/SimpleFreeFieldSOS.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/SimpleFreeFieldTF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/SimpleHeadphoneIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/SingleRoomDRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] copying build/lib/sofa/conventions/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes
+[  293s] copying build/lib/sofa/datatypes/FIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes
+[  293s] copying build/lib/sofa/datatypes/FIRE.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes
+[  293s] copying build/lib/sofa/datatypes/SOS.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes
+[  293s] copying build/lib/sofa/datatypes/TF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes
+[  293s] copying build/lib/sofa/datatypes/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes
+[  293s] copying build/lib/sofa/datatypes/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes
+[  293s] copying build/lib/sofa/roomtypes/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes
+[  293s] copying build/lib/sofa/roomtypes/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes
+[  293s] copying build/lib/sofa/roomtypes/freefield.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes
+[  293s] copying build/lib/sofa/roomtypes/reverberant.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes
+[  293s] copying build/lib/sofa/roomtypes/shoebox.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes
+[  293s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial
+[  293s] copying build/lib/sofa/spatial/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial
+[  293s] copying build/lib/sofa/spatial/coordinates.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial
+[  293s] copying build/lib/sofa/spatial/spatialobject.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial
+[  293s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/__init__.py to __init__.cpython-311.pyc
+[  293s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/_database.py to _database.cpython-311.pyc
+[  293s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__init__.py to __init__.cpython-311.pyc
+[  293s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/dimensions.py to dimensions.cpython-311.pyc
+[  293s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/metadata.py to metadata.cpython-311.pyc
+[  293s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/proxy.py to proxy.cpython-311.pyc
+[  293s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/variables.py to variables.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/GeneralFIR.py to GeneralFIR.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/GeneralFIRE.py to GeneralFIRE.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/GeneralTF.py to GeneralTF.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/MultiSpeakerBRIR.py to MultiSpeakerBRIR.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/SimpleFreeFieldHRIR.py to SimpleFreeFieldHRIR.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/SimpleFreeFieldSOS.py to SimpleFreeFieldSOS.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/SimpleFreeFieldTF.py to SimpleFreeFieldTF.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/SimpleHeadphoneIR.py to SimpleHeadphoneIR.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/SingleRoomDRIR.py to SingleRoomDRIR.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__init__.py to __init__.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/base.py to base.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/FIR.py to FIR.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/FIRE.py to FIRE.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/SOS.py to SOS.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/TF.py to TF.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__init__.py to __init__.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/base.py to base.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__init__.py to __init__.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/base.py to base.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/freefield.py to freefield.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/reverberant.py to reverberant.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/shoebox.py to shoebox.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/__init__.py to __init__.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/coordinates.py to coordinates.cpython-311.pyc
+[  294s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/spatialobject.py to spatialobject.cpython-311.pyc
+[  294s] writing byte-compilation script '/tmp/tmp9w_wrrc2.py'
+[  294s] /usr/bin/python3.11 /tmp/tmp9w_wrrc2.py
+[  297s] removing /tmp/tmp9w_wrrc2.py
+[  297s] running install_egg_info
+[  297s] running egg_info
+[  298s] writing src/python_sofa.egg-info/PKG-INFO
+[  298s] writing dependency_links to src/python_sofa.egg-info/dependency_links.txt
+[  298s] writing requirements to src/python_sofa.egg-info/requires.txt
+[  298s] writing top-level names to src/python_sofa.egg-info/top_level.txt
+[  298s] reading manifest file 'src/python_sofa.egg-info/SOURCES.txt'
+[  298s] adding license file 'LICENSE'
+[  298s] writing manifest file 'src/python_sofa.egg-info/SOURCES.txt'
+[  298s] Copying src/python_sofa.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/python_sofa-0.2.0-py3.11.egg-info
+[  298s] running install_scripts
+[  300s] ++ '[' -f _current_flavor ']'
+[  300s] ++ cat _current_flavor
+[  300s] + last_flavor=python311
+[  300s] + '[' -z python311 ']'
+[  300s] + '[' python311 '!=' python310 ']'
+[  300s] + '[' -d build ']'
+[  300s] + mv build _build.python311
+[  300s] + '[' -d _build.python310 ']'
+[  300s] + mv _build.python310 build
+[  300s] + echo python310
+[  300s] + python_flavor=python310
+[  300s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64 --prefix /usr
+[  303s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:516: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  303s]   warnings.warn(msg, warning_class)
+[  303s] running install
+[  303s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  303s]   warnings.warn(
+[  304s] running install_lib
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa
+[  304s] copying build/lib/sofa/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa
+[  304s] copying build/lib/sofa/_database.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access
+[  304s] copying build/lib/sofa/access/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access
+[  304s] copying build/lib/sofa/access/dimensions.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access
+[  304s] copying build/lib/sofa/access/metadata.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access
+[  304s] copying build/lib/sofa/access/proxy.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access
+[  304s] copying build/lib/sofa/access/variables.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/GeneralFIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/GeneralFIRE.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/GeneralTF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/MultiSpeakerBRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/SimpleFreeFieldHRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/SimpleFreeFieldSOS.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/SimpleFreeFieldTF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/SimpleHeadphoneIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/SingleRoomDRIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] copying build/lib/sofa/conventions/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes
+[  304s] copying build/lib/sofa/datatypes/FIR.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes
+[  304s] copying build/lib/sofa/datatypes/FIRE.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes
+[  304s] copying build/lib/sofa/datatypes/SOS.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes
+[  304s] copying build/lib/sofa/datatypes/TF.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes
+[  304s] copying build/lib/sofa/datatypes/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes
+[  304s] copying build/lib/sofa/datatypes/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes
+[  304s] copying build/lib/sofa/roomtypes/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes
+[  304s] copying build/lib/sofa/roomtypes/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes
+[  304s] copying build/lib/sofa/roomtypes/freefield.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes
+[  304s] copying build/lib/sofa/roomtypes/reverberant.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes
+[  304s] copying build/lib/sofa/roomtypes/shoebox.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes
+[  304s] creating /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial
+[  304s] copying build/lib/sofa/spatial/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial
+[  304s] copying build/lib/sofa/spatial/coordinates.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial
+[  304s] copying build/lib/sofa/spatial/spatialobject.py -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/__init__.py to __init__.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/_database.py to _database.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__init__.py to __init__.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/dimensions.py to dimensions.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/metadata.py to metadata.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/proxy.py to proxy.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/variables.py to variables.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/GeneralFIR.py to GeneralFIR.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/GeneralFIRE.py to GeneralFIRE.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/GeneralTF.py to GeneralTF.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/MultiSpeakerBRIR.py to MultiSpeakerBRIR.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/SimpleFreeFieldHRIR.py to SimpleFreeFieldHRIR.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/SimpleFreeFieldSOS.py to SimpleFreeFieldSOS.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/SimpleFreeFieldTF.py to SimpleFreeFieldTF.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/SimpleHeadphoneIR.py to SimpleHeadphoneIR.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/SingleRoomDRIR.py to SingleRoomDRIR.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__init__.py to __init__.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/base.py to base.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/FIR.py to FIR.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/FIRE.py to FIRE.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/SOS.py to SOS.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/TF.py to TF.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__init__.py to __init__.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/base.py to base.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__init__.py to __init__.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/base.py to base.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/freefield.py to freefield.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/reverberant.py to reverberant.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/shoebox.py to shoebox.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial/__init__.py to __init__.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial/coordinates.py to coordinates.cpython-310.pyc
+[  304s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial/spatialobject.py to spatialobject.cpython-310.pyc
+[  304s] writing byte-compilation script '/tmp/tmpqo3c6nns.py'
+[  304s] /usr/bin/python3.10 /tmp/tmpqo3c6nns.py
+[  308s] removing /tmp/tmpqo3c6nns.py
+[  308s] running install_egg_info
+[  308s] running egg_info
+[  308s] writing src/python_sofa.egg-info/PKG-INFO
+[  308s] writing dependency_links to src/python_sofa.egg-info/dependency_links.txt
+[  308s] writing requirements to src/python_sofa.egg-info/requires.txt
+[  308s] writing top-level names to src/python_sofa.egg-info/top_level.txt
+[  308s] reading manifest file 'src/python_sofa.egg-info/SOURCES.txt'
+[  308s] adding license file 'LICENSE'
+[  308s] writing manifest file 'src/python_sofa.egg-info/SOURCES.txt'
+[  308s] Copying src/python_sofa.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/python_sofa-0.2.0-py3.10.egg-info
+[  308s] running install_scripts
+[  310s] ++ '[' -f _current_flavor ']'
+[  310s] ++ cat _current_flavor
+[  310s] + last_flavor=python310
+[  310s] + '[' -z python310 ']'
+[  310s] + '[' python310 '!=' python39 ']'
+[  310s] + '[' -d build ']'
+[  310s] + mv build _build.python310
+[  310s] + '[' -d _build.python39 ']'
+[  310s] + mv _build.python39 build
+[  310s] + echo python39
+[  310s] + python_flavor=python39
+[  310s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/python_sofa-0.2.0-py3.9.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/python_sofa-0.2.0-py3.9.egg-info/zip-safe
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/__pycache__/__init__.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/__pycache__/_database.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/__pycache__/_database.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/spatial/__pycache__/__init__.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/shoebox.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/shoebox.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/reverberant.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/reverberant.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/base.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/base.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/__init__.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/freefield.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/roomtypes/__pycache__/freefield.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/base.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/base.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/TF.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/TF.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/SOS.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/SOS.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/FIRE.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/FIRE.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/FIR.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/FIR.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/datatypes/__pycache__/__init__.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/base.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/base.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/__init__.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SingleRoomDRIR.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SingleRoomDRIR.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleHeadphoneIR.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleHeadphoneIR.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldTF.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldTF.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldSOS.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldSOS.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldHRIR.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldHRIR.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/GeneralTF.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/GeneralTF.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/GeneralFIRE.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/GeneralFIRE.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/GeneralFIR.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/GeneralFIR.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/MultiSpeakerBRIR.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/conventions/__pycache__/MultiSpeakerBRIR.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/proxy.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/proxy.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/metadata.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/metadata.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/__init__.cpython-39.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/dimensions.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages/sofa/access/__pycache__/dimensions.cpython-39.pyc
+[  311s] ++ '[' -f _current_flavor ']'
+[  311s] ++ cat _current_flavor
+[  311s] + last_flavor=python39
+[  311s] + '[' -z python39 ']'
+[  311s] + '[' python39 '!=' python311 ']'
+[  311s] + '[' -d build ']'
+[  311s] + mv build _build.python39
+[  311s] + '[' -d _build.python311 ']'
+[  311s] + mv _build.python311 build
+[  311s] + echo python311
+[  311s] + python_flavor=python311
+[  311s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/python_sofa-0.2.0-py3.11.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/python_sofa-0.2.0-py3.11.egg-info/zip-safe
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/__pycache__/_database.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/__pycache__/_database.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/__pycache__/__init__.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/__pycache__/coordinates.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/__pycache__/coordinates.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/__pycache__/__init__.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/__pycache__/spatialobject.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/spatial/__pycache__/spatialobject.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/shoebox.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/shoebox.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/reverberant.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/reverberant.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/freefield.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/freefield.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/base.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/base.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/roomtypes/__pycache__/__init__.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/base.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/base.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/TF.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/TF.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/SOS.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/SOS.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/__init__.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/FIR.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/FIR.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/FIRE.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/datatypes/__pycache__/FIRE.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/base.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/base.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/__init__.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SingleRoomDRIR.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SingleRoomDRIR.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleHeadphoneIR.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleHeadphoneIR.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldTF.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldTF.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldSOS.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldSOS.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldHRIR.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldHRIR.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/GeneralTF.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/GeneralTF.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/GeneralFIRE.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/GeneralFIRE.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/GeneralFIR.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/GeneralFIR.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/MultiSpeakerBRIR.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/conventions/__pycache__/MultiSpeakerBRIR.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/variables.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/variables.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/proxy.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/proxy.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/metadata.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/metadata.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/dimensions.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/dimensions.cpython-311.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.11/site-packages/sofa/access/__pycache__/__init__.cpython-311.pyc
+[  311s] ++ '[' -f _current_flavor ']'
+[  311s] ++ cat _current_flavor
+[  311s] + last_flavor=python311
+[  311s] + '[' -z python311 ']'
+[  311s] + '[' python311 '!=' python310 ']'
+[  311s] + '[' -d build ']'
+[  311s] + mv build _build.python311
+[  311s] + '[' -d _build.python310 ']'
+[  311s] + mv _build.python310 build
+[  311s] + echo python310
+[  311s] + python_flavor=python310
+[  311s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/python_sofa-0.2.0-py3.10.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/python_sofa-0.2.0-py3.10.egg-info/zip-safe
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/__pycache__/_database.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/__pycache__/_database.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/__pycache__/__init__.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/spatial/__pycache__/__init__.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/shoebox.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/shoebox.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/reverberant.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/reverberant.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/freefield.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/freefield.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/base.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/base.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/roomtypes/__pycache__/__init__.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/base.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/base.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/TF.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/TF.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/SOS.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/SOS.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/__init__.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/FIR.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/FIR.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/FIRE.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/datatypes/__pycache__/FIRE.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/base.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/base.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/__init__.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SingleRoomDRIR.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SingleRoomDRIR.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleHeadphoneIR.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleHeadphoneIR.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldTF.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldTF.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldSOS.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldSOS.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldHRIR.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/SimpleFreeFieldHRIR.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/GeneralTF.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/GeneralTF.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/GeneralFIRE.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/GeneralFIRE.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/GeneralFIR.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/GeneralFIR.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/MultiSpeakerBRIR.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/conventions/__pycache__/MultiSpeakerBRIR.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/proxy.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/proxy.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/metadata.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/metadata.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/dimensions.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/dimensions.cpython-310.pyc
+[  311s] Linking /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.10/site-packages/sofa/access/__pycache__/__init__.cpython-310.pyc
+[  311s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/python-sofa-0.2.0
+[  312s] + /usr/lib/rpm/brp-compress
+[  312s] + /usr/lib/rpm/brp-suse
+[  312s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  312s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  313s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  313s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  313s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  313s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.rHKJt1
+[  313s] + umask 022
+[  313s] + cd /home/abuild/rpmbuild/BUILD
+[  313s] + cd python-sofa-0.2.0
+[  313s] + echo '
+[  313s] [regex1]
+[  313s] regex: DateCreated: .*
+[  313s] replace: DateCreated: 0000-00-00 00:00:00
+[  313s] 
+[  313s] [regex2]
+[  313s] regex: <module '\''sofa'\'' from '\''.*'\''
+[  313s] replace: <module '\''sofa'\'' from '\''somewhere'\''
+[  313s] 
+[  313s] '
+[  313s] + set +x
+[  313s] Using libalternatives variant 39 for f2py in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for ipython in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for ipython3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for jsonschema in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for jupyter in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for jupyter-trust in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for pybind11-config in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for pygmentize in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  314s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  315s] Using alternative coverage-3.9 for coverage in ./build/flavorbin during Python 3.9 expansions.
+[  315s] Using alternative cygdb-3.9 for cygdb in ./build/flavorbin during Python 3.9 expansions.
+[  315s] Using alternative cython-3.9 for cython in ./build/flavorbin during Python 3.9 expansions.
+[  315s] Using alternative cythonize-3.9 for cythonize in ./build/flavorbin during Python 3.9 expansions.
+[  315s] Using alternative fonttools-3.9 for fonttools in ./build/flavorbin during Python 3.9 expansions.
+[  316s] Using alternative nc3tonc4-3.9 for nc3tonc4 in ./build/flavorbin during Python 3.9 expansions.
+[  316s] Using alternative nc4tonc3-3.9 for nc4tonc3 in ./build/flavorbin during Python 3.9 expansions.
+[  317s] Using alternative ncinfo-3.9 for ncinfo in ./build/flavorbin during Python 3.9 expansions.
+[  317s] Using alternative pyftmerge-3.9 for pyftmerge in ./build/flavorbin during Python 3.9 expansions.
+[  317s] Using alternative pyftsubset-3.9 for pyftsubset in ./build/flavorbin during Python 3.9 expansions.
+[  317s] Using alternative ttx-3.9 for ttx in ./build/flavorbin during Python 3.9 expansions.
+[  318s] Using libalternatives variant 311 for f2py in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for ipython in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for ipython3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for jsonschema in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for jupyter in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for jupyter-trust in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  318s] Using libalternatives variant 311 for pybind11-config in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  319s] Using libalternatives variant 311 for pygmentize in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  319s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  319s] Using alternative coverage-3.11 for coverage in ./build/flavorbin during Python 3.11 expansions.
+[  319s] Using alternative cygdb-3.11 for cygdb in ./build/flavorbin during Python 3.11 expansions.
+[  319s] Using alternative cython-3.11 for cython in ./build/flavorbin during Python 3.11 expansions.
+[  319s] Using alternative cythonize-3.11 for cythonize in ./build/flavorbin during Python 3.11 expansions.
+[  320s] Using alternative fonttools-3.11 for fonttools in ./build/flavorbin during Python 3.11 expansions.
+[  320s] Using alternative nc3tonc4-3.11 for nc3tonc4 in ./build/flavorbin during Python 3.11 expansions.
+[  321s] Using alternative nc4tonc3-3.11 for nc4tonc3 in ./build/flavorbin during Python 3.11 expansions.
+[  321s] Using alternative ncinfo-3.11 for ncinfo in ./build/flavorbin during Python 3.11 expansions.
+[  321s] Using alternative pyftmerge-3.11 for pyftmerge in ./build/flavorbin during Python 3.11 expansions.
+[  321s] Using alternative pyftsubset-3.11 for pyftsubset in ./build/flavorbin during Python 3.11 expansions.
+[  322s] Using alternative ttx-3.11 for ttx in ./build/flavorbin during Python 3.11 expansions.
+[  322s] Using alternative coverage-3.10 for coverage in ./build/flavorbin during Python 3.10 expansions.
+[  322s] Using alternative cygdb-3.10 for cygdb in ./build/flavorbin during Python 3.10 expansions.
+[  322s] Using alternative cython-3.10 for cython in ./build/flavorbin during Python 3.10 expansions.
+[  322s] Using alternative cythonize-3.10 for cythonize in ./build/flavorbin during Python 3.10 expansions.
+[  323s] Using alternative fonttools-3.10 for fonttools in ./build/flavorbin during Python 3.10 expansions.
+[  324s] Using alternative nc3tonc4-3.10 for nc3tonc4 in ./build/flavorbin during Python 3.10 expansions.
+[  324s] Using alternative nc4tonc3-3.10 for nc4tonc3 in ./build/flavorbin during Python 3.10 expansions.
+[  324s] Using alternative ncinfo-3.10 for ncinfo in ./build/flavorbin during Python 3.10 expansions.
+[  324s] Using alternative pyftmerge-3.10 for pyftmerge in ./build/flavorbin during Python 3.10 expansions.
+[  324s] Using alternative pyftsubset-3.10 for pyftsubset in ./build/flavorbin during Python 3.10 expansions.
+[  325s] Using alternative ttx-3.10 for ttx in ./build/flavorbin during Python 3.10 expansions.
+[  325s] + export PATH=/home/abuild/rpmbuild/BUILD/python-sofa-0.2.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  325s] + PATH=/home/abuild/rpmbuild/BUILD/python-sofa-0.2.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  325s] ++ '[' -f _current_flavor ']'
+[  325s] ++ cat _current_flavor
+[  325s] + last_flavor=python310
+[  325s] + '[' -z python310 ']'
+[  325s] + '[' python310 '!=' python39 ']'
+[  325s] + '[' -d build ']'
+[  325s] + mv build _build.python310
+[  325s] + '[' -d _build.python39 ']'
+[  325s] + mv _build.python39 build
+[  325s] + echo python39
+[  325s] + python_flavor=python39
+[  325s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-python-sofa-0.2.0-4.3.riscv64/usr/lib/python3.9/site-packages
+[  325s] + PYTHONDONTWRITEBYTECODE=1
+[  325s] + pytest-3.9 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v --nbval --sanitize-with nbval_sanitize.cfg doc/examples/SOFA-file-access.ipynb
+[  340s] /usr/lib/python3.9/site-packages/nbval/plugin.py:122: DeprecationWarning: --sanitize-with has been renamed to --nbval-sanitize-with
+[  340s]   warnings.warn("--sanitize-with has been renamed to --nbval-sanitize-with", DeprecationWarning)
+[  341s] ============================= test session starts ==============================
+[  341s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  341s] cachedir: .pytest_cache
+[  341s] rootdir: /home/abuild/rpmbuild/BUILD/python-sofa-0.2.0
+[  341s] plugins: nbval-0.10.0
+[  342s] collecting ... collected 17 items
+[  342s] 
+[  359s] doc/examples/SOFA-file-access::ipynb::Cell 0 PASSED                      [  5%]
+[  373s] doc/examples/SOFA-file-access::ipynb::Cell 1 FAILED                      [ 11%]
+[  374s] doc/examples/SOFA-file-access::ipynb::Cell 2 PASSED                      [ 17%]
+[  410s] doc/examples/SOFA-file-access::ipynb::Cell 3 PASSED                      [ 23%]
+[  410s] doc/examples/SOFA-file-access::ipynb::Cell 4 PASSED                      [ 29%]
+[  411s] doc/examples/SOFA-file-access::ipynb::Cell 5 PASSED                      [ 35%]
+[  411s] doc/examples/SOFA-file-access::ipynb::Cell 6 PASSED                      [ 41%]
+[  411s] doc/examples/SOFA-file-access::ipynb::Cell 7 PASSED                      [ 47%]
+[  412s] doc/examples/SOFA-file-access::ipynb::Cell 8 PASSED                      [ 52%]
+[  412s] doc/examples/SOFA-file-access::ipynb::Cell 9 PASSED                      [ 58%]
+[  412s] doc/examples/SOFA-file-access::ipynb::Cell 10 PASSED                     [ 64%]
+[  412s] doc/examples/SOFA-file-access::ipynb::Cell 11 PASSED                     [ 70%]
+[  413s] doc/examples/SOFA-file-access::ipynb::Cell 12 PASSED                     [ 76%]
+[  413s] doc/examples/SOFA-file-access::ipynb::Cell 13 PASSED                     [ 82%]
+[  413s] doc/examples/SOFA-file-access::ipynb::Cell 14 PASSED                     [ 88%]
+[  413s] doc/examples/SOFA-file-access::ipynb::Cell 15 PASSED                     [ 94%]
+[  414s] doc/examples/SOFA-file-access::ipynb::Cell 16 PASSED                     [100%]
+[  414s] 
+[  414s] =================================== FAILURES ===================================
+[  414s] _________________ doc/examples/SOFA-file-access.ipynb::Cell 1 __________________
+[  414s] [91mNotebook cell execution failed[0m
+[  414s] [94mCell 1: Cell outputs differ
+[  414s] 
+[  414s] Input:
+[  414s] [0mimport matplotlib.pyplot as plt
+[  414s] from mpl_toolkits import mplot3d
+[  414s] import numpy as np
+[  414s] %matplotlib inline
+[  414s] 
+[  414s] [94mTraceback:[0m
+[  414s] [91mUnexpected output fields from running code: {'stderr'}[0m
+[  414s] 
+[  414s] =========================== short test summary info ============================
+[  414s] FAILED doc/examples/SOFA-file-access.ipynb::Cell 1
+[  414s] =================== 1 failed, 16 passed in 72.89s (0:01:12) ====================
+[  414s] sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/dev/null' mode='w' encoding='UTF-8'>
+[  415s] error: Bad exit status from /var/tmp/rpm-tmp.rHKJt1 (%check)
+[  415s] 
+[  415s] RPM build errors:
+[  415s]     Bad exit status from /var/tmp/rpm-tmp.rHKJt1 (%check)
+[  415s] ### VM INTERACTION START ###
+[  415s] [  408.065859][    T1] sysrq: Power Off
+[  415s] [  408.068937][    T7] reboot: Power down
+[  415s] ### VM INTERACTION END ###
+[  415s] 
+[  415s] cloud111 failed "build python-python-sofa.spec" at Fri Apr  7 19:05:54 UTC 2023.
+[  415s] 

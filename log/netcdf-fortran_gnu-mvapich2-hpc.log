@@ -1,0 +1,497 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] build71 started "build netcdf-fortran.spec" at Mon Mar 20 13:16:39 UTC 2023.
+[    0s] 
+[    0s] Building netcdf-fortran:gnu-mvapich2-hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'dbb745b6794af7319c69b0d55c9ca722'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/netcdf-fortran.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/netcdf-fortran.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --buildflavor gnu-mvapich2-hpc --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/netcdf-fortran.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [068b7acb454ec5ffeefe0cf546ee1d7f]
+[    2s] 
+[    2s] copying packages...
+[    2s] reordering...cycle: libibverbs1 -> libibverbs -> libefa1
+[    2s]   breaking dependency libibverbs -> libefa1
+[    2s] cycle: libibverbs1 -> libibverbs
+[    2s]   breaking dependency libibverbs -> libibverbs1
+[    2s] cycle: libibverbs1 -> libibverbs -> libmlx4-1
+[    2s]   breaking dependency libibverbs -> libmlx4-1
+[    2s] cycle: libibverbs1 -> libibverbs -> libmlx5-1
+[    2s]   breaking dependency libmlx5-1 -> libibverbs1
+[    2s] done
+[    2s] Detected virtio-serial support
+[    3s] booting kvm...
+[    3s] ### VM INTERACTION START ###
+[    3s] Using virtio-serial support
+[    3s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 4096 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 3
+[    6s] ### VM INTERACTION END ###
+[    6s] 2nd stage started in virtual machine
+[    6s] machine type: riscv64
+[    6s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[    6s] Increasing log level from now on...
+[    6s] [    3.342652][  T360] sysrq: Changing Loglevel
+[    6s] [    3.342741][  T360] sysrq: Loglevel set to 4
+[    6s] Enable sysrq operations
+[    7s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[    7s] no label, UUID=b9029748-57e5-4ddd-8e34-5e3a98a25c33
+[    7s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    7s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[    7s] swapon /dev/vdb
+[    7s] WARNING: udev not running, creating extra device nodes
+[    7s] logging output to //.build.log...
+[    7s] processing recipe /.build-srcdir/netcdf-fortran.spec ...
+[    7s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor gnu-mvapich2-hpc /.build-srcdir/netcdf-fortran.spec build ...
+[    8s] initializing rpm db...
+[    8s] querying package ids...
+[   29s] [1/205] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   29s] [2/205] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   29s] [3/205] preinstalled attr-2.5.1-1.1
+[   29s] [4/205] preinstalled bash-5.2.15-8.1
+[   29s] [5/205] preinstalled bash-sh-5.2.15-8.1
+[   29s] [6/205] preinstalled binutils-2.40-2.1
+[   29s] [7/205] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   29s] [8/205] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   29s] [9/205] preinstalled build-mkbaselibs-20230314-1.1
+[   29s] [10/205] preinstalled bzip2-1.0.8-5.1
+[   29s] [11/205] preinstalled chkstat-1599_20230217-1.1
+[   29s] [12/205] preinstalled compat-usrmerge-build-84.87-5.1
+[   29s] [13/205] preinstalled compat-usrmerge-tools-84.87-5.1
+[   29s] [14/205] preinstalled coreutils-9.1-5.1
+[   29s] [15/205] preinstalled cpio-2.13-5.1
+[   29s] [16/205] preinstalled cpp-13-1.1
+[   29s] [17/205] preinstalled cpp13-13.0.1+git6669-7.1
+[   29s] [18/205] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   29s] [19/205] preinstalled debugedit-5.0-5.1
+[   29s] [20/205] preinstalled diffutils-3.9-1.1
+[   29s] [21/205] preinstalled dwz-0.15-2.1
+[   29s] [22/205] preinstalled elfutils-0.189-2.1
+[   29s] [23/205] preinstalled file-5.44-1.2
+[   29s] [24/205] preinstalled file-magic-5.44-1.2
+[   29s] [25/205] preinstalled filesystem-84.87-12.1
+[   29s] [26/205] preinstalled fillup-1.42-279.1
+[   29s] [27/205] preinstalled findutils-4.9.0-2.1
+[   29s] [28/205] preinstalled gawk-5.2.1-2.1
+[   29s] [29/205] preinstalled gcc-13-1.1
+[   29s] [30/205] preinstalled gcc-PIE-13-1.1
+[   29s] [31/205] preinstalled gcc13-13.0.1+git6669-7.1
+[   29s] [32/205] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   29s] [33/205] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   29s] [34/205] preinstalled gettext-tools-mini-0.21.1-1.1
+[   29s] [35/205] preinstalled glibc-2.37-1.1
+[   29s] [36/205] preinstalled glibc-devel-2.37-1.1
+[   29s] [37/205] preinstalled glibc-locale-base-2.37-1.1
+[   29s] [38/205] preinstalled grep-3.9-1.1
+[   29s] [39/205] preinstalled gzip-1.12-3.1
+[   29s] [40/205] preinstalled kernel-obs-build-6.2.6-1.2
+[   29s] [41/205] preinstalled libacl1-2.3.1-2.1
+[   29s] [42/205] preinstalled libasan8-13.0.1+git6669-7.1
+[   29s] [43/205] preinstalled libasm1-0.189-2.1
+[   29s] [44/205] preinstalled libatomic1-13.0.1+git6669-7.1
+[   29s] [45/205] preinstalled libattr1-2.5.1-1.1
+[   29s] [46/205] preinstalled libaudit1-3.0.9-1.1
+[   29s] [47/205] preinstalled libblkid1-2.38.1-10.1
+[   29s] [48/205] cumulate libbrotlicommon1-1.0.9-3.1
+[   29s] [49/205] preinstalled libbz2-1-1.0.8-5.1
+[   29s] [50/205] preinstalled libcap-ng0-0.8.3-1.1
+[   29s] [51/205] preinstalled libcap2-2.67-1.1
+[   29s] [52/205] cumulate libcom_err2-1.46.5-4.1
+[   29s] [53/205] preinstalled libcrypt1-4.4.33-2.1
+[   29s] [54/205] preinstalled libctf-nobfd0-2.40-2.1
+[   29s] [55/205] preinstalled libctf0-2.40-2.1
+[   29s] [56/205] preinstalled libdb-4_8-4.8.30-40.1
+[   29s] [57/205] preinstalled libdw1-0.189-2.1
+[   29s] [58/205] preinstalled libeconf0-0.5.1-1.1
+[   29s] [59/205] preinstalled libelf1-0.189-2.1
+[   29s] [60/205] preinstalled libfdisk1-2.38.1-10.1
+[   29s] [61/205] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   29s] [62/205] preinstalled libgcrypt20-1.10.1-2.1
+[   29s] [63/205] preinstalled libgdbm6-1.23-1.1
+[   29s] [64/205] preinstalled libgdbm_compat4-1.23-1.1
+[   29s] [65/205] cumulate libgfortran5-13.0.1+git6669-7.1
+[   29s] [66/205] preinstalled libgmp10-6.2.1-4.1
+[   29s] [67/205] preinstalled libgomp1-13.0.1+git6669-7.1
+[   29s] [68/205] preinstalled libgpg-error0-1.46-1.1
+[   29s] [69/205] cumulate libibumad3-42.0-2.1
+[   29s] [70/205] preinstalled libisl23-0.25-1.1
+[   29s] [71/205] preinstalled libitm1-13.0.1+git6669-7.1
+[   29s] [72/205] cumulate libkeyutils1-1.6.3-5.1
+[   29s] [73/205] preinstalled liblua5_4-5-5.4.4-8.1
+[   29s] [74/205] preinstalled liblzma5-5.4.1-2.1
+[   29s] [75/205] preinstalled libmagic1-5.44-1.2
+[   29s] [76/205] preinstalled libmount1-2.38.1-10.1
+[   29s] [77/205] preinstalled libmpc3-1.3.1-1.2
+[   29s] [78/205] preinstalled libmpfr6-4.2.0-1.1
+[   29s] [79/205] preinstalled libncurses6-6.4.20230311-8.1
+[   29s] [80/205] cumulate libnghttp2-14-1.51.0-7.2
+[   29s] [81/205] cumulate libnl-config-3.7.0-1.1
+[   29s] [82/205] cumulate libnuma1-2.0.15.0.g01a39cb-1.1
+[   29s] [83/205] preinstalled libpcre2-8-0-10.42-3.2
+[   29s] [84/205] preinstalled libpkgconf3-1.8.0-2.1
+[   29s] [85/205] preinstalled libpopt0-1.19-1.1
+[   29s] [86/205] preinstalled libreadline8-8.2-2.1
+[   29s] [87/205] preinstalled librpmbuild9-4.18.0-3.2
+[   29s] [88/205] cumulate libsasl2-3-2.1.28-4.2
+[   29s] [89/205] preinstalled libseccomp2-2.5.4-2.1
+[   29s] [90/205] preinstalled libselinux1-3.5-1.1
+[   29s] [91/205] preinstalled libsemanage-conf-3.5-1.1
+[   29s] [92/205] preinstalled libsemanage2-3.5-1.1
+[   29s] [93/205] preinstalled libsepol2-3.5-1.1
+[   29s] [94/205] preinstalled libsmartcols1-2.38.1-10.1
+[   29s] [95/205] cumulate libssh-config-0.10.4-1.2
+[   29s] [96/205] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   29s] [97/205] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   29s] [98/205] preinstalled libsubid4-4.13-4.1
+[   29s] [99/205] preinstalled libubsan1-13.0.1+git6669-7.1
+[   29s] [100/205] cumulate libunistring5-1.1-1.1
+[   29s] [101/205] preinstalled libutempter0-1.2.0-3.2
+[   29s] [102/205] preinstalled libuuid1-2.38.1-10.1
+[   29s] [103/205] cumulate libverto1-0.3.2-1.1
+[   29s] [104/205] preinstalled libxcrypt-devel-4.4.33-2.1
+[   29s] [105/205] cumulate libxml2-2-2.10.3-3.1
+[   29s] [106/205] preinstalled libz1-1.2.13-3.1
+[   29s] [107/205] preinstalled libzstd1-1.5.4-2.1
+[   29s] [108/205] preinstalled linux-glibc-devel-6.2-1.1
+[   29s] [109/205] preinstalled login_defs-4.13-4.1
+[   29s] [110/205] preinstalled lua54-5.4.4-8.1
+[   29s] [111/205] cumulate lua54-luafilesystem-1.8.0-6.1
+[   29s] [112/205] cumulate lua54-luaposix-35.1-2.1
+[   29s] [113/205] cumulate lua54-luaterm-0.07-8.1
+[   29s] [114/205] cumulate m4-1.4.18-7.1
+[   29s] [115/205] preinstalled make-4.4.1-1.1
+[   29s] [116/205] preinstalled ncurses-utils-6.4.20230311-8.1
+[   29s] [117/205] preinstalled pam-1.5.2-13.1
+[   29s] [118/205] preinstalled patch-2.7.6-6.1
+[   29s] [119/205] preinstalled perl-5.36.0-4.1
+[   29s] [120/205] preinstalled perl-base-5.36.0-4.1
+[   29s] [121/205] preinstalled permissions-1599_20230217-1.1
+[   29s] [122/205] preinstalled permissions-config-1599_20230217-1.1
+[   29s] [123/205] preinstalled pkgconf-1.8.0-2.1
+[   29s] [124/205] preinstalled pkgconf-m4-1.8.0-2.1
+[   29s] [125/205] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   29s] [126/205] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   29s] [127/205] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   29s] [128/205] preinstalled qemu-linux-user-7.1.0-54.1
+[   29s] [129/205] preinstalled rpm-4.18.0-3.2
+[   29s] [130/205] preinstalled rpm-build-4.18.0-3.2
+[   29s] [131/205] preinstalled rpm-build-perl-4.18.0-3.2
+[   29s] [132/205] preinstalled rpm-config-SUSE-20220926-1.1
+[   29s] [133/205] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.18
+[   29s] [134/205] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   29s] [135/205] preinstalled sed-4.9-2.1
+[   29s] [136/205] preinstalled shadow-4.13-4.1
+[   29s] [137/205] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   29s] [138/205] cumulate suse-module-tools-16.0.30-1.1
+[   29s] [139/205] preinstalled system-group-hardware-20170617-24.1
+[   29s] [140/205] cumulate system-group-kvm-20170617-24.1
+[   29s] [141/205] preinstalled system-user-root-20190513-2.1
+[   29s] [142/205] cumulate systemd-mini-253.1-2.1
+[   29s] [143/205] preinstalled systemd-rpm-macros-19-1.1
+[   29s] [144/205] preinstalled sysuser-shadow-3.1-5.1
+[   29s] [145/205] preinstalled tar-1.34-10.1
+[   29s] [146/205] cumulate tcl-8.6.13-4.1
+[   29s] [147/205] preinstalled terminfo-base-6.4.20230311-8.1
+[   29s] [148/205] preinstalled update-alternatives-1.21.8-1.1
+[   29s] [149/205] preinstalled util-linux-2.38.1-10.1
+[   29s] [150/205] preinstalled which-2.21-5.1
+[   29s] [151/205] preinstalled xz-5.4.1-2.1
+[   29s] [152/205] cumulate zlib-devel-1.2.13-3.1
+[   29s] [153/205] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   29s] [154/205] cumulate gcc13-fortran-13.0.1+git6669-7.1
+[   29s] [155/205] cumulate libbrotlidec1-1.0.9-3.1
+[   29s] [156/205] cumulate libibmad5-42.0-2.1
+[   29s] [157/205] cumulate libidn2-0-2.3.4-1.1
+[   29s] [158/205] cumulate libnl3-200-3.7.0-1.1
+[   29s] [159/205] cumulate libopenssl3-3.0.8-2.1
+[   29s] [160/205] cumulate krb5-mini-1.20.1-4.1
+[   29s] [161/205] cumulate lua-lmod-8.7.17-2.1
+[   29s] [162/205] cumulate gcc-c++-13-1.1
+[   29s] [163/205] cumulate gcc-fortran-13-1.1
+[   30s] [164/205] cumulate gnu-compilers-hpc-1.4-10.2
+[   30s] [165/205] cumulate hdf5_1_12_2-gnu-mvapich2-hpc-module-1.12.2-4.1
+[   30s] [166/205] cumulate kmod-30-2.2
+[   30s] [167/205] cumulate libibnetdisc5-42.0-2.1
+[   30s] [168/205] cumulate libldap2-2.6.3-3.2
+[   30s] [169/205] cumulate libpsl5-0.21.2-1.1
+[   30s] [170/205] cumulate libssh4-0.10.4-1.2
+[   30s] [171/205] cumulate libhdf5_1_12_2-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [172/205] cumulate libhdf5_cpp_1_12_2-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [173/205] cumulate libhdf5_hl_1_12_2-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [174/205] cumulate libhdf5_hl_cpp_1_12_2-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [175/205] cumulate libhdf5_fortran_1_12_2-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [176/205] cumulate libhdf5hl_fortran_1_12_2-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [177/205] cumulate infiniband-diags-42.0-2.1
+[   30s] [178/205] cumulate udev-mini-253.1-2.1
+[   30s] [179/205] cumulate gnu-compilers-hpc-devel-1.4-10.2
+[   30s] [180/205] cumulate libcurl4-7.88.1-1.1
+[   30s] [181/205] cumulate gnu-compilers-hpc-macros-devel-1.4-10.2
+[   30s] [182/205] cumulate libcurl-devel-7.88.1-1.1
+[   30s] [183/205] cumulate libhdf5-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [184/205] cumulate libhdf5_hl-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [185/205] cumulate rdma-core-42.0-2.1
+[   30s] [186/205] cumulate libmlx5-1-42.0-2.1
+[   30s] [187/205] cumulate libibverbs-42.0-2.1
+[   30s] [188/205] cumulate libibverbs1-42.0-2.1
+[   30s] [189/205] cumulate libefa1-42.0-2.1
+[   30s] [190/205] cumulate libmlx4-1-42.0-2.1
+[   30s] [191/205] cumulate librdmacm1-42.0-2.1
+[   30s] [192/205] cumulate rsocket-42.0-2.1
+[   30s] [193/205] cumulate mvapich2_2_3_6-gnu-hpc-2.3.6-7.2
+[   30s] [194/205] cumulate mvapich2-gnu-hpc-2.3.6-7.2
+[   30s] [195/205] cumulate rdma-core-devel-42.0-2.1
+[   30s] [196/205] cumulate hdf5_1_12_2-gnu-mvapich2-hpc-1.12.2-4.1
+[   30s] [197/205] cumulate libnetcdf_4_9_0-gnu-mvapich2-hpc-4.9.0-1.1
+[   30s] [198/205] cumulate mvapich2_2_3_6-gnu-hpc-devel-2.3.6-7.2
+[   30s] [199/205] cumulate mvapich2-gnu-hpc-devel-2.3.6-7.2
+[   30s] [200/205] cumulate mvapich2_2_3_6-gnu-hpc-macros-devel-2.3.6-7.2
+[   30s] [201/205] cumulate mvapich2-gnu-hpc-macros-devel-2.3.6-7.2
+[   30s] [202/205] cumulate hdf5_1_12_2-gnu-mvapich2-hpc-devel-1.12.2-4.1
+[   30s] [203/205] cumulate hdf5-gnu-mvapich2-hpc-devel-1.12.2-4.1
+[   30s] [204/205] cumulate netcdf_4_9_0-gnu-mvapich2-hpc-devel-4.9.0-1.1
+[   30s] [205/205] cumulate netcdf-gnu-mvapich2-hpc-devel-4.9.0-1.1
+[   30s] now installing cumulated packages
+[   30s] Preparing...                          ########################################
+[   30s] Updating / installing...
+[   30s] libibumad3-42.0-2.1                   ########################################
+[   31s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[   31s] libibmad5-42.0-2.1                    ########################################
+[   40s] gcc13-fortran-13.0.1+git6669-7.1      ########################################
+[   41s] zlib-devel-1.2.13-3.1                 ########################################
+[   41s] systemd-mini-253.1-2.1                warning: group systemd-journal does not exist - using root
+[   42s] ########################################
+[   42s] Creating group 'systemd-journal' with GID 486.
+[   42s] Creating group 'systemd-timesync' with GID 485.
+[   42s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   42s] Running in chroot, ignoring command 'daemon-reexec'
+[   43s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   43s] All rules containing unresolvable specifiers will be skipped.
+[   44s] libxml2-2-2.10.3-3.1                  ########################################
+[   44s] libunistring5-1.1-1.1                 ########################################
+[   44s] libidn2-0-2.3.4-1.1                   ########################################
+[   44s] libnuma1-2.0.15.0.g01a39cb-1.1        ########################################
+[   44s] libpsl5-0.21.2-1.1                    ########################################
+[   45s] gcc-fortran-13-1.1                    ########################################
+[   45s] libibnetdisc5-42.0-2.1                ########################################
+[   45s] infiniband-diags-42.0-2.1             ########################################
+[   46s] tcl-8.6.13-4.1                        ########################################
+[   47s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-group-kvm.conf -
+[   47s] Creating group 'kvm' with GID 36.
+[   47s] system-group-kvm-20170617-24.1        ########################################
+[   47s] lua54-luaterm-0.07-8.1                ########################################
+[   47s] lua54-luaposix-35.1-2.1               ########################################
+[   47s] lua54-luafilesystem-1.8.0-6.1         ########################################
+[   47s] lua-lmod-8.7.17-2.1                   ########################################
+[   47s] hdf5_1_12_2-gnu-mvapich2-hpc-module-1.########################################
+[   47s] gnu-compilers-hpc-1.4-10.2            ########################################
+[   48s] libhdf5_1_12_2-gnu-mvapich2-hpc-1.12.2########################################
+[   48s] libhdf5_hl_1_12_2-gnu-mvapich2-hpc-1.1########################################
+[   48s] libhdf5_fortran_1_12_2-gnu-mvapich2-hp########################################
+[   49s] libhdf5hl_fortran_1_12_2-gnu-mvapich2-########################################
+[   49s] libhdf5_hl-gnu-mvapich2-hpc-1.12.2-4.1########################################
+[   49s] libhdf5-gnu-mvapich2-hpc-1.12.2-4.1   ########################################
+[   49s] libhdf5_cpp_1_12_2-gnu-mvapich2-hpc-1.########################################
+[   49s] libhdf5_hl_cpp_1_12_2-gnu-mvapich2-hpc########################################
+[   49s] libverto1-0.3.2-1.1                   ########################################
+[   68s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[   75s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[   75s] gcc-c++-13-1.1                        ########################################
+[   75s] gnu-compilers-hpc-devel-1.4-10.2      ########################################
+[   75s] libssh-config-0.10.4-1.2              ########################################
+[   75s] libsasl2-3-2.1.28-4.2                 ########################################
+[   75s] libnl-config-3.7.0-1.1                ########################################
+[   75s] libnl3-200-3.7.0-1.1                  ########################################
+[   75s] libnghttp2-14-1.51.0-7.2              ########################################
+[   75s] libkeyutils1-1.6.3-5.1                ########################################
+[   75s] libcom_err2-1.46.5-4.1                ########################################
+[   76s] krb5-mini-1.20.1-4.1                  ########################################
+[   76s] Updating /etc/sysconfig/kadmind ...
+[   76s] Updating /etc/sysconfig/krb5kdc ...
+[   77s] libbrotlicommon1-1.0.9-3.1            ########################################
+[   77s] libbrotlidec1-1.0.9-3.1               ########################################
+[   77s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   77s] libopenssl3-3.0.8-2.1                 ########################################
+[   78s] suse-module-tools-16.0.30-1.1         ########################################
+[   78s] kmod-30-2.2                           ########################################
+[   79s] udev-mini-253.1-2.1                   ########################################
+[   85s] Failed to preset unit, unit remote-cryptsetup.target does not exist.
+[   86s] rdma-core-42.0-2.1                    ########################################
+[   86s] libmlx5-1-42.0-2.1                    ########################################
+[   86s] libefa1-42.0-2.1                      ########################################
+[   86s] libmlx4-1-42.0-2.1                    ########################################
+[   86s] libibverbs1-42.0-2.1                  ########################################
+[   86s] libibverbs-42.0-2.1                   ########################################
+[   86s] librdmacm1-42.0-2.1                   ########################################
+[   88s] mvapich2_2_3_6-gnu-hpc-2.3.6-7.2      ########################################
+[   88s] mvapich2-gnu-hpc-2.3.6-7.2            ########################################
+[   88s] hdf5_1_12_2-gnu-mvapich2-hpc-1.12.2-4.########################################
+[   88s] rsocket-42.0-2.1                      ########################################
+[   88s] rdma-core-devel-42.0-2.1              ########################################
+[   88s] mvapich2_2_3_6-gnu-hpc-devel-2.3.6-7.2########################################
+[   88s] mvapich2-gnu-hpc-devel-2.3.6-7.2      ########################################
+[   89s] hdf5_1_12_2-gnu-mvapich2-hpc-devel-1.1########################################
+[   89s] hdf5-gnu-mvapich2-hpc-devel-1.12.2-4.1########################################
+[   89s] mvapich2_2_3_6-gnu-hpc-macros-devel-2.########################################
+[   89s] libldap2-2.6.3-3.2                    ########################################
+[   89s] libssh4-0.10.4-1.2                    ########################################
+[   89s] libcurl4-7.88.1-1.1                   ########################################
+[   89s] libcurl-devel-7.88.1-1.1              ########################################
+[   89s] libnetcdf_4_9_0-gnu-mvapich2-hpc-4.9.0########################################
+[   90s] netcdf_4_9_0-gnu-mvapich2-hpc-devel-4.########################################
+[   90s] netcdf-gnu-mvapich2-hpc-devel-4.9.0-1.########################################
+[   90s] mvapich2-gnu-hpc-macros-devel-2.3.6-7.########################################
+[   90s] gnu-compilers-hpc-macros-devel-1.4-10.########################################
+[   90s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[   90s] m4-1.4.18-7.1                         ########################################
+[   90s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[   90s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[   93s] now finalizing build dir...
+[   94s] ... running 01-add_abuild_user_to_trusted_group
+[   94s] ... running 02-set_timezone_to_utc
+[   94s] ... running 03-set-permissions-secure
+[   94s] ... running 11-hack_uname_version_to_kernel_version
+[   97s] sh: line 1: /usr/bin/ps: No such file or directory
+[  105s] Warning: spec file parser line 544: can't expand %(...)
+[  105s] Warning: spec file parser line 546: can't expand %(...)
+[  105s] Warning: spec file parser line 556: can't expand %(...)
+[  105s] Warning: spec file parser line 557: can't expand %(...)
+[  105s] -----------------------------------------------------------------
+[  105s] I have the following modifications for netcdf-fortran.spec:
+[  105s] 19c19
+[  105s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  105s] ---
+[  105s] > %global flavor gnu-mvapich2-hpc%{nil}
+[  105s] 344c344
+[  105s] < Release:        0
+[  105s] ---
+[  105s] > Release:        4.3
+[  105s] 354c354
+[  105s] < BuildRequires:  pkg-config
+[  105s] ---
+[  105s] > BuildRequires:  pkgconf-pkg-config
+[  113s] build target is riscv64-suse-linux
+[  114s] -----------------------------------------------------------------
+[  114s] ----- building netcdf-fortran.spec (user abuild)
+[  114s] -----------------------------------------------------------------
+[  114s] -----------------------------------------------------------------
+[  118s] sh: line 1: /usr/bin/ps: No such file or directory
+[  119s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/dbb745b6794af7319c69b0d55c9ca722-netcdf-fortran:gnu-mvapich2-hpc' /home/abuild/rpmbuild/SOURCES/netcdf-fortran.spec
+[  119s] Building target platforms: riscv64-suse-linux
+[  119s] Building for target riscv64-suse-linux
+[  119s]  Building for gnu 
+[  119s]  hpc_gnu_init 
+[  121s] warning: /home/abuild/rpmbuild/SOURCES/netcdf-fortran.spec: line 414: Macro %_pname defined but not used within scope
+[  125s] setting SOURCE_DATE_EPOCH=1664236800
+[  125s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.oefbpB
+[  126s] + umask 022
+[  126s] + cd /home/abuild/rpmbuild/BUILD
+[  126s] + cd /home/abuild/rpmbuild/BUILD
+[  126s] + rm -rf netcdf-fortran-4.5.3
+[  126s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/netcdf-fortran-4.5.3.tar.gz
+[  126s] + STATUS=0
+[  126s] + '[' 0 -ne 0 ']'
+[  126s] + cd netcdf-fortran-4.5.3
+[  126s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  126s] + chmod a-x RELEASE_NOTES.md
+[  126s] + RPM_EC=0
+[  126s] ++ jobs -p
+[  126s] + exit 0
+[  126s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.UZ0rdW
+[  126s] + umask 022
+[  126s] + cd /home/abuild/rpmbuild/BUILD
+[  126s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/netcdf-fortran_4_5_3-gnu-mvapich2-hpc-4.5.3-4.3.riscv64
+[  126s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/netcdf-fortran_4_5_3-gnu-mvapich2-hpc-4.5.3-4.3.riscv64
+[  126s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  126s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/netcdf-fortran_4_5_3-gnu-mvapich2-hpc-4.5.3-4.3.riscv64
+[  126s] + cd netcdf-fortran-4.5.3
+[  126s] + ref=/usr/lib/rpm
+[  126s] + mints=0
+[  126s] + case $(uname -m) in
+[  126s] ++ uname -m
+[  127s] + mints=20160911
+[  127s] + for s in guess sub
+[  127s] ++ find -maxdepth 8 -name config.guess
+[  127s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  127s] + grep -q config-patches@ ./config.guess
+[  127s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.guess
+[  127s] + timestamp=20200101
+[  127s] + test -n 20200101
+[  127s] + test 20200101 -ge 20160911
+[  127s] + for s in guess sub
+[  127s] ++ find -maxdepth 8 -name config.sub
+[  127s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  127s] + grep -q config-patches@ ./config.sub
+[  127s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.sub
+[  127s] + timestamp=20200101
+[  127s] + test -n 20200101
+[  127s] + test 20200101 -ge 20160911
+[  127s] + module purge
+[  127s] + '[' -z '' ']'
+[  127s] + case "$-" in
+[  127s] + __lmod_sh_dbg=x
+[  127s] + '[' -n x ']'
+[  127s] + set +x
+[  127s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  127s] sh: line 1: /usr/bin/ps: No such file or directory
+[  128s] Shell debugging restarted
+[  128s] + unset __lmod_sh_dbg
+[  128s] + return 0
+[  128s] + export CC=gcc
+[  128s] + CC=gcc
+[  128s] + export CXX=g++
+[  128s] + CXX=g++
+[  128s] + export FC=gfortran
+[  128s] + FC=gfortran
+[  128s] + export F77=gfortran
+[  128s] + F77=gfortran
+[  128s] + module load gnu/13
+[  128s] + '[' -z '' ']'
+[  128s] + case "$-" in
+[  128s] + __lmod_sh_dbg=x
+[  128s] + '[' -n x ']'
+[  128s] + set +x
+[  128s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  128s] sh: line 1: /usr/bin/ps: No such file or directory
+[  129s] Shell debugging restarted
+[  129s] + unset __lmod_sh_dbg
+[  129s] + return 0
+[  129s] + module load mvapich2
+[  129s] + '[' -z '' ']'
+[  129s] + case "$-" in
+[  129s] + __lmod_sh_dbg=x
+[  129s] + '[' -n x ']'
+[  129s] + set +x
+[  129s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  129s] sh: line 1: /usr/bin/ps: No such file or directory
+[  132s] Lmod has detected the following error: The following module(s) are unknown:
+[  132s] "mvapich2"
+[  132s] 
+[  132s] Please check the spelling or version number. Also try "module spider ..."
+[  132s] It is also possible your cache file is out-of-date; it may help to try:
+[  132s]   $ module --ignore_cache load "mvapich2"
+[  132s] 
+[  132s] Also make sure that all modulefiles written in TCL start with the string
+[  132s] #%Module
+[  132s] 
+[  132s] 
+[  132s] 
+[  132s] Shell debugging restarted
+[  132s] + unset __lmod_sh_dbg
+[  132s] + return 1
+[  132s] error: Bad exit status from /var/tmp/rpm-tmp.UZ0rdW (%build)
+[  132s] 
+[  132s] RPM build warnings:
+[  132s]     /home/abuild/rpmbuild/SOURCES/netcdf-fortran.spec: line 414: Macro %_pname defined but not used within scope
+[  132s] 
+[  132s] RPM build errors:
+[  132s]     Bad exit status from /var/tmp/rpm-tmp.UZ0rdW (%build)
+[  132s] ### VM INTERACTION START ###
+[  132s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[  132s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[  132s] Powering off.
+[  132s] [  129.266083][ T3371] reboot: Power down
+[  132s] ### VM INTERACTION END ###
+[  132s] 
+[  132s] build71 failed "build netcdf-fortran.spec" at Mon Mar 20 13:18:51 UTC 2023.
+[  132s] 

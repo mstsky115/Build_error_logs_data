@@ -1,0 +1,352 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    1s] 
+[    1s] lamb08 started "build dssim.spec" at Fri Apr  7 17:19:44 UTC 2023.
+[    1s] 
+[    1s] Building dssim for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '58298d81fdf733c18aaf43abb18fce37'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/dssim.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/dssim.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/dssim.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [bf3fd5535274255b622e6b04fcd17bb1]
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.2.9-1-default #1 SMP PREEMPT_DYNAMIC Thu Mar 30 11:30:50 UTC 2023 (7a187a3)
+[   10s] Increasing log level from now on...
+[   10s] [    4.687755][  T410] sysrq: Changing Loglevel
+[   10s] [    4.688112][  T410] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=88989634-3196-4fc7-a17d-b5fef787f7ad
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/dssim.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/dssim.spec build ...
+[   12s] initializing rpm db...
+[   13s] querying package ids...
+[   33s] [1/153] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   33s] [2/153] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   33s] [3/153] preinstalled attr-2.5.1-1.1
+[   33s] [4/153] preinstalled bash-5.2.15-8.1
+[   33s] [5/153] preinstalled bash-sh-5.2.15-8.1
+[   33s] [6/153] preinstalled binutils-2.40-3.1
+[   33s] [7/153] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   33s] [8/153] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   33s] [9/153] preinstalled build-mkbaselibs-20230314-1.1
+[   33s] [10/153] preinstalled bzip2-1.0.8-5.1
+[   33s] [11/153] preinstalled chkstat-1599_20230217-1.1
+[   33s] [12/153] preinstalled compat-usrmerge-build-84.87-5.1
+[   33s] [13/153] preinstalled compat-usrmerge-tools-84.87-5.1
+[   33s] [14/153] preinstalled coreutils-9.2-1.1
+[   33s] [15/153] preinstalled cpio-2.13-5.1
+[   33s] [16/153] preinstalled cpp-13-1.1
+[   33s] [17/153] preinstalled cpp13-13.0.1+git6669-7.1
+[   33s] [18/153] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   33s] [19/153] preinstalled debugedit-5.0-5.1
+[   33s] [20/153] preinstalled diffutils-3.9-1.1
+[   33s] [21/153] preinstalled dwz-0.15-2.1
+[   33s] [22/153] preinstalled elfutils-0.189-2.1
+[   33s] [23/153] preinstalled file-5.44-1.3
+[   33s] [24/153] preinstalled file-magic-5.44-1.3
+[   33s] [25/153] preinstalled filesystem-84.87-12.1
+[   33s] [26/153] preinstalled fillup-1.42-279.1
+[   33s] [27/153] preinstalled findutils-4.9.0-2.1
+[   33s] [28/153] preinstalled gawk-5.2.1-2.1
+[   33s] [29/153] preinstalled gcc-13-1.1
+[   33s] [30/153] preinstalled gcc-PIE-13-1.1
+[   33s] [31/153] preinstalled gcc13-13.0.1+git6669-7.1
+[   33s] [32/153] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   33s] [33/153] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   33s] [34/153] preinstalled gettext-tools-mini-0.21.1-1.1
+[   33s] [35/153] preinstalled glibc-2.37-3.1
+[   33s] [36/153] preinstalled glibc-devel-2.37-3.1
+[   33s] [37/153] preinstalled glibc-locale-base-2.37-3.1
+[   33s] [38/153] preinstalled grep-3.9-1.1
+[   33s] [39/153] preinstalled gzip-1.12-3.1
+[   33s] [40/153] preinstalled kernel-obs-build-6.2.9-1.1
+[   33s] [41/153] preinstalled libacl1-2.3.1-2.1
+[   33s] [42/153] preinstalled libasan8-13.0.1+git6669-7.1
+[   33s] [43/153] preinstalled libasm1-0.189-2.1
+[   33s] [44/153] preinstalled libatomic1-13.0.1+git6669-7.1
+[   33s] [45/153] preinstalled libattr1-2.5.1-1.1
+[   33s] [46/153] preinstalled libaudit1-3.0.9-1.1
+[   33s] [47/153] preinstalled libblkid1-2.38.1-11.1
+[   33s] [48/153] cumulate libbrotlicommon1-1.0.9-3.1
+[   33s] [49/153] preinstalled libbz2-1-1.0.8-5.1
+[   33s] [50/153] preinstalled libcap-ng0-0.8.3-1.1
+[   33s] [51/153] preinstalled libcap2-2.68-1.1
+[   33s] [52/153] cumulate libcom_err2-1.46.5-4.1
+[   33s] [53/153] preinstalled libcrypt1-4.4.33-3.1
+[   33s] [54/153] preinstalled libctf-nobfd0-2.40-3.1
+[   33s] [55/153] preinstalled libctf0-2.40-3.1
+[   33s] [56/153] preinstalled libdb-4_8-4.8.30-40.1
+[   33s] [57/153] preinstalled libdw1-0.189-2.1
+[   33s] [58/153] preinstalled libeconf0-0.5.2-1.1
+[   33s] [59/153] cumulate libedit0-20210910.3.1-1.1
+[   33s] [60/153] preinstalled libelf1-0.189-2.1
+[   33s] [61/153] preinstalled libfdisk1-2.38.1-11.1
+[   33s] [62/153] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   33s] [63/153] preinstalled libgcrypt20-1.10.1-2.1
+[   33s] [64/153] preinstalled libgdbm6-1.23-1.1
+[   33s] [65/153] preinstalled libgdbm_compat4-1.23-1.1
+[   33s] [66/153] preinstalled libgmp10-6.2.1-4.1
+[   33s] [67/153] preinstalled libgomp1-13.0.1+git6669-7.1
+[   33s] [68/153] preinstalled libgpg-error0-1.46-1.1
+[   33s] [69/153] preinstalled libisl23-0.25-1.1
+[   33s] [70/153] preinstalled libitm1-13.0.1+git6669-7.1
+[   33s] [71/153] preinstalled liblua5_4-5-5.4.4-10.1
+[   33s] [72/153] preinstalled liblzma5-5.4.2-2.1
+[   33s] [73/153] preinstalled libmagic1-5.44-1.3
+[   33s] [74/153] preinstalled libmount1-2.38.1-11.1
+[   33s] [75/153] preinstalled libmpc3-1.3.1-1.2
+[   33s] [76/153] preinstalled libmpfr6-4.2.0-1.1
+[   33s] [77/153] preinstalled libncurses6-6.4.20230311-8.1
+[   33s] [78/153] cumulate libnghttp2-14-1.51.0-7.2
+[   33s] [79/153] preinstalled libpcre2-8-0-10.42-3.2
+[   33s] [80/153] preinstalled libpkgconf3-1.8.0-2.1
+[   33s] [81/153] preinstalled libpopt0-1.19-1.1
+[   33s] [82/153] preinstalled libreadline8-8.2-2.1
+[   33s] [83/153] preinstalled librpmbuild9-4.18.0-4.2
+[   33s] [84/153] cumulate libsasl2-3-2.1.28-4.2
+[   33s] [85/153] preinstalled libseccomp2-2.5.4-2.1
+[   33s] [86/153] preinstalled libselinux1-3.5-1.1
+[   33s] [87/153] preinstalled libsemanage-conf-3.5-1.2
+[   33s] [88/153] preinstalled libsemanage2-3.5-1.2
+[   33s] [89/153] preinstalled libsepol2-3.5-1.1
+[   33s] [90/153] preinstalled libsmartcols1-2.38.1-11.1
+[   33s] [91/153] cumulate libssh-config-0.10.4-1.2
+[   33s] [92/153] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   33s] [93/153] preinstalled libsubid4-4.13-4.1
+[   33s] [94/153] preinstalled libubsan1-13.0.1+git6669-7.1
+[   33s] [95/153] cumulate libunistring5-1.1-1.1
+[   33s] [96/153] preinstalled libutempter0-1.2.0-3.2
+[   33s] [97/153] preinstalled libuuid1-2.38.1-11.1
+[   33s] [98/153] cumulate libverto1-0.3.2-1.1
+[   33s] [99/153] preinstalled libxcrypt-devel-4.4.33-3.1
+[   33s] [100/153] preinstalled libz1-1.2.13-3.1
+[   33s] [101/153] preinstalled libzstd1-1.5.4-2.1
+[   33s] [102/153] preinstalled linux-glibc-devel-6.2-1.1
+[   33s] [103/153] preinstalled login_defs-4.13-4.1
+[   33s] [104/153] preinstalled lua54-5.4.4-10.1
+[   33s] [105/153] preinstalled make-4.4.1-1.1
+[   33s] [106/153] preinstalled ncurses-utils-6.4.20230311-8.1
+[   33s] [107/153] preinstalled pam-1.5.2-14.1
+[   33s] [108/153] preinstalled patch-2.7.6-6.1
+[   33s] [109/153] preinstalled perl-5.36.0-4.1
+[   33s] [110/153] preinstalled perl-base-5.36.0-4.1
+[   33s] [111/153] preinstalled permissions-1599_20230217-1.1
+[   33s] [112/153] preinstalled permissions-config-1599_20230217-1.1
+[   33s] [113/153] preinstalled pkgconf-1.8.0-2.1
+[   33s] [114/153] preinstalled pkgconf-m4-1.8.0-2.1
+[   33s] [115/153] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   33s] [116/153] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   33s] [117/153] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   33s] [118/153] preinstalled qemu-linux-user-7.1.0-58.1
+[   33s] [119/153] preinstalled rpm-4.18.0-4.2
+[   33s] [120/153] preinstalled rpm-build-4.18.0-4.2
+[   33s] [121/153] preinstalled rpm-build-perl-4.18.0-4.2
+[   33s] [122/153] preinstalled rpm-config-SUSE-20220926-1.1
+[   33s] [123/153] preinstalled rpmlint-mini-2.4.0+git20230403.7ce263c-10.4
+[   33s] [124/153] preinstalled rpmlint-strict-2.4.0+git20230403.7ce263c-1.1
+[   33s] [125/153] preinstalled sed-4.9-2.1
+[   33s] [126/153] preinstalled shadow-4.13-4.1
+[   33s] [127/153] preinstalled system-group-hardware-20170617-24.1
+[   33s] [128/153] preinstalled system-user-root-20190513-2.1
+[   33s] [129/153] preinstalled systemd-rpm-macros-20-1.1
+[   33s] [130/153] preinstalled sysuser-shadow-3.1-5.1
+[   33s] [131/153] preinstalled tar-1.34-10.1
+[   33s] [132/153] preinstalled terminfo-base-6.4.20230311-8.1
+[   33s] [133/153] preinstalled update-alternatives-1.21.8-1.1
+[   33s] [134/153] preinstalled util-linux-2.38.1-11.1
+[   33s] [135/153] preinstalled which-2.21-5.1
+[   33s] [136/153] preinstalled xz-5.4.2-2.1
+[   33s] [137/153] cumulate zstd-1.5.4-2.1
+[   33s] [138/153] cumulate libLLVM15-15.0.7-2.2
+[   33s] [139/153] cumulate libbrotlidec1-1.0.9-3.1
+[   33s] [140/153] cumulate libidn2-0-2.3.4-1.1
+[   33s] [141/153] cumulate libopenssl3-3.0.8-2.1
+[   33s] [142/153] cumulate krb5-mini-1.20.1-5.1
+[   33s] [143/153] cumulate lld15-15.0.7-2.2
+[   33s] [144/153] cumulate libldap2-2.6.3-3.2
+[   33s] [145/153] cumulate libpsl5-0.21.2-1.1
+[   33s] [146/153] cumulate libssh4-0.10.4-1.2
+[   33s] [147/153] cumulate rust1.68-1.68.2-1.1
+[   33s] [148/153] cumulate libcurl4-8.0.1-1.1
+[   33s] [149/153] cumulate rust-1.68.0-1.1
+[   33s] [150/153] cumulate cargo1.68-1.68.2-1.1
+[   33s] [151/153] cumulate cargo-1.68.0-1.1
+[   33s] [152/153] cumulate cargo-auditable-0.6.0~0-1.1
+[   33s] [153/153] cumulate cargo-packaging-1.2.0+0-2.1
+[   33s] now installing cumulated packages
+[   33s] Preparing...                          ########################################
+[   33s] Updating / installing...
+[   34s] libunistring5-1.1-1.1                 ########################################
+[   34s] libidn2-0-2.3.4-1.1                   ########################################
+[   34s] libpsl5-0.21.2-1.1                    ########################################
+[   34s] zstd-1.5.4-2.1                        ########################################
+[   34s] libverto1-0.3.2-1.1                   ########################################
+[   34s] libssh-config-0.10.4-1.2              ########################################
+[   34s] libsasl2-3-2.1.28-4.2                 ########################################
+[   34s] libnghttp2-14-1.51.0-7.2              ########################################
+[   34s] libedit0-20210910.3.1-1.1             ########################################
+[   45s] libLLVM15-15.0.7-2.2                  ########################################
+[   45s] lld15-15.0.7-2.2                      ########################################
+[   46s] update-alternatives: using /usr/bin/lld-15.0.7 to provide /usr/bin/lld (lld) in auto mode
+[   46s] libcom_err2-1.46.5-4.1                ########################################
+[   46s] krb5-mini-1.20.1-5.1                  ########################################
+[   46s] Updating /etc/sysconfig/kadmind ...
+[   47s] Updating /etc/sysconfig/krb5kdc ...
+[   47s] libbrotlicommon1-1.0.9-3.1            ########################################
+[   47s] libbrotlidec1-1.0.9-3.1               ########################################
+[   47s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   48s] libopenssl3-3.0.8-2.1                 ########################################
+[   48s] libldap2-2.6.3-3.2                    ########################################
+[   48s] libssh4-0.10.4-1.2                    ########################################
+[   48s] libcurl4-8.0.1-1.1                    ########################################
+[   48s] rust-1.68.0-1.1                       ########################################
+[   71s] rust1.68-1.68.2-1.1                   ########################################
+[   73s] cargo1.68-1.68.2-1.1                  ########################################
+[   73s] cargo-1.68.0-1.1                      ########################################
+[   73s] cargo-auditable-0.6.0~0-1.1           ########################################
+[   74s] cargo-packaging-1.2.0+0-2.1           ########################################
+[   75s] now finalizing build dir...
+[   75s] ... running 01-add_abuild_user_to_trusted_group
+[   76s] ... running 02-set_timezone_to_utc
+[   76s] ... running 03-set-permissions-secure
+[   76s] ... running 11-hack_uname_version_to_kernel_version
+[   82s] Running build time source services...
+[   85s] -----------------------------------------------------------------
+[   85s] I have the following modifications for dssim.spec:
+[   85s] 22c22
+[   85s] < Release:        0
+[   85s] ---
+[   85s] > Release:        1.1
+[   91s] build target is riscv64-suse-linux
+[   91s] -----------------------------------------------------------------
+[   91s] ----- building dssim.spec (user abuild)
+[   91s] -----------------------------------------------------------------
+[   91s] -----------------------------------------------------------------
+[   94s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/58298d81fdf733c18aaf43abb18fce37-dssim' /home/abuild/rpmbuild/SOURCES/dssim.spec
+[   94s] Building target platforms: riscv64-suse-linux
+[   94s] Building for target riscv64-suse-linux
+[   94s] setting SOURCE_DATE_EPOCH=1675036800
+[   95s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.yNw7Ds
+[   95s] + umask 022
+[   95s] + cd /home/abuild/rpmbuild/BUILD
+[   95s] + cd /home/abuild/rpmbuild/BUILD
+[   95s] + rm -rf dssim-3.2.3
+[   95s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/dssim-3.2.3.tar.gz
+[   95s] + STATUS=0
+[   95s] + '[' 0 -ne 0 ']'
+[   95s] + cd dssim-3.2.3
+[   95s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/vendor.tar.gz
+[   97s] + STATUS=0
+[   97s] + '[' 0 -ne 0 ']'
+[   97s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   97s] + mkdir -p .cargo
+[   97s] + cp /home/abuild/rpmbuild/SOURCES/cargo_config .cargo/config
+[   97s] + RPM_EC=0
+[   97s] ++ jobs -p
+[   97s] + exit 0
+[   98s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.dTsmXd
+[   98s] + umask 022
+[   98s] + cd /home/abuild/rpmbuild/BUILD
+[   98s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/dssim-3.2.3-1.1.riscv64
+[   98s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/dssim-3.2.3-1.1.riscv64
+[   98s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   98s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/dssim-3.2.3-1.1.riscv64
+[   98s] + cd dssim-3.2.3
+[   98s] + ref=/usr/lib/rpm
+[   98s] + mints=0
+[   98s] + case $(uname -m) in
+[   98s] ++ uname -m
+[   98s] + mints=20160911
+[   98s] + for s in guess sub
+[   98s] ++ find -maxdepth 8 -name config.guess
+[   98s] + for s in guess sub
+[   98s] ++ find -maxdepth 8 -name config.sub
+[   98s] + unset LIBSSH2_SYS_USE_PKG_CONFIG
+[   98s] + [[ -z '' ]]
+[   98s] + CARGO_AUDITABLE=auditable
+[   98s] + CARGO_FEATURE_VENDORED=1
+[   98s] + RUSTFLAGS='-Clink-arg=-Wl,-z,relro,-z,now -C debuginfo=2 -C incremental=false'
+[   98s] + /usr/bin/cargo auditable build -j8 --offline --release
+[  104s]    Compiling autocfg v1.1.0
+[  104s]    Compiling libc v0.2.139
+[  104s]    Compiling cfg-if v1.0.0
+[  104s]    Compiling dunce v1.0.3
+[  104s]    Compiling crossbeam-utils v0.8.14
+[  104s]    Compiling proc-macro2 v1.0.50
+[  104s]    Compiling unicode-ident v1.0.6
+[  104s]    Compiling version_check v0.9.4
+[  107s]    Compiling quote v1.0.23
+[  108s]    Compiling syn v1.0.107
+[  110s]    Compiling once_cell v1.17.0
+[  118s]    Compiling nasm-rs v0.2.4
+[  123s]    Compiling bytemuck v1.13.0
+[  126s]    Compiling ahash v0.7.6
+[  128s]    Compiling num-traits v0.2.15
+[  133s]    Compiling num-integer v0.1.45
+[  135s]    Compiling memoffset v0.7.1
+[  139s]    Compiling num-bigint v0.4.3
+[  142s]    Compiling crossbeam-epoch v0.9.13
+[  144s]    Compiling jobserver v0.1.25
+[  148s]    Compiling getrandom v0.2.8
+[  152s]    Compiling cc v1.0.79
+[  158s]    Compiling num-rational v0.4.1
+[  158s]    Compiling num-iter v0.1.43
+[  158s]    Compiling pkg-config v0.3.26
+[  159s]    Compiling scopeguard v1.1.0
+[  163s]    Compiling crc32fast v1.3.2
+[  170s]    Compiling rgb v0.8.34
+[  175s]    Compiling rayon-core v1.10.2
+[  178s]    Compiling adler v1.0.2
+[  181s]    Compiling crossbeam-deque v0.8.2
+[  190s]    Compiling num-complex v0.4.3
+[  191s]    Compiling miniz_oxide v0.6.2
+[  191s]    Compiling hashbrown v0.12.3
+[  193s]    Compiling num_cpus v1.15.0
+[  211s]    Compiling crossbeam-channel v0.5.6
+[  212s]    Compiling mozjpeg-sys v1.0.3
+[  213s]    Compiling lcms2-sys v4.0.0
+[  216s]    Compiling either v1.8.1
+[  223s]    Compiling foreign-types-shared v0.3.1
+[  225s]    Compiling fallible_collections v0.4.6
+[  227s]    Compiling flate2 v1.0.25
+[  228s] error: failed to run custom build command for `mozjpeg-sys v1.0.3`
+[  228s] 
+[  228s] Caused by:
+[  228s]   process didn't exit successfully: `/home/abuild/rpmbuild/BUILD/dssim-3.2.3/target/release/build/mozjpeg-sys-2fdf7b561f1c7cfd/build-script-build` (exit status: 101)
+[  228s]   --- stdout
+[  228s]   cargo:include=/home/abuild/rpmbuild/BUILD/dssim-3.2.3/target/release/build/mozjpeg-sys-15d8e8320f933b5d/out/include:/home/abuild/rpmbuild/BUILD/dssim-3.2.3/vendor/mozjpeg-sys/vendor
+[  228s]   cargo:lib_version=62
+[  228s] 
+[  228s]   --- stderr
+[  228s]   thread 'main' panicked at '"with_simd" feature flag has been enabled in mozjpeg-sys crate on riscv64 platform, which is does not have SIMD acceleration in MozJPEG. Disable SIMD or compile for x86/ARM/MIPS.', /home/abuild/rpmbuild/BUILD/dssim-3.2.3/vendor/mozjpeg-sys/src/build.rs:279:13
+[  228s]   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[  228s] warning: build failed, waiting for other jobs to finish...
+[  319s] error: Bad exit status from /var/tmp/rpm-tmp.dTsmXd (%build)
+[  319s] 
+[  319s] RPM build errors:
+[  319s]     Bad exit status from /var/tmp/rpm-tmp.dTsmXd (%build)
+[  319s] ### VM INTERACTION START ###
+[  320s] [  314.371481][    T1] sysrq: Power Off
+[  320s] [  314.374861][   T18] reboot: Power down
+[  320s] ### VM INTERACTION END ###
+[  320s] 
+[  320s] lamb08 failed "build dssim.spec" at Fri Apr  7 17:25:03 UTC 2023.
+[  320s] 

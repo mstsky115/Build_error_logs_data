@@ -1,0 +1,2718 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing qemu build in /var/cache/obs/worker/root_5/root
+[    0s] 
+[    0s] 
+[    0s] oerv-obs-worker-11 started "build _service:tar_scm:hadoop.spec" at Thu Apr  6 12:56:29 UTC 2023.
+[    0s] 
+[    0s] Building hadoop for project 'openEuler:23.03' repository '23.03' arch 'riscv64' srcmd5 '0e27f5877f35fecfdd79692c70e90686'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/_service:tar_scm:hadoop.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/_service:tar_scm:hadoop.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/_service:tar_scm:hadoop.spec build ...
+[    0s] cycle: coreutils -> bash
+[    0s]   breaking dependency coreutils -> bash
+[    0s] cycle: coreutils -> info
+[    0s]   breaking dependency coreutils -> info
+[    0s] cycle: filesystem -> coreutils -> glibc
+[    0s]   breaking dependency filesystem -> coreutils
+[    0s] cycle: filesystem -> bash -> coreutils -> glibc
+[    0s]   breaking dependency filesystem -> bash
+[    0s] cycle: coreutils -> libcap
+[    0s]   breaking dependency coreutils -> libcap
+[    0s] cycle: coreutils -> openssl-libs
+[    0s]   breaking dependency coreutils -> openssl-libs
+[    0s] cycle: systemd -> audit
+[    0s]   breaking dependency audit -> systemd
+[    0s] cycle: perl-Carp -> perl-libs
+[    0s]   breaking dependency perl-libs -> perl-Carp
+[    0s] cycle: perl-libs -> perl-Exporter
+[    0s]   breaking dependency perl-libs -> perl-Exporter
+[    0s] cycle: perl-Carp -> perl-Exporter
+[    0s]   breaking dependency perl-Exporter -> perl-Carp
+[    0s] cycle: nss-util -> nss
+[    0s]   breaking dependency nss -> nss-util
+[    0s] cycle: nss-softokn -> nss-util -> nss
+[    0s]   breaking dependency nss -> nss-softokn
+[    0s] cycle: perl-constant -> perl -> perl-Getopt-Long
+[    0s]   breaking dependency perl -> perl-Getopt-Long
+[    0s] cycle: perl-constant -> perl
+[    0s]   breaking dependency perl -> perl-constant
+[    0s] cycle: perl -> perl-Data-Dumper
+[    0s]   breaking dependency perl-Data-Dumper -> perl
+[    0s] cycle: perl-constant -> perl -> perl-Data-Dumper
+[    0s]   breaking dependency perl -> perl-Data-Dumper
+[    0s] cycle: rpm -> rpm-libs
+[    0s]   breaking dependency rpm -> rpm-libs
+[    0s] [1/114] preinstalling avahi-devel...
+[    1s] [2/114] preinstalling kernel-headers...
+[    1s] [3/114] preinstalling libraqm-devel...
+[    1s] [4/114] preinstalling pulseaudio-libs-devel...
+[    1s] [5/114] preinstalling python3-setuptools...
+[    1s] [6/114] preinstalling python3-pip...
+[    1s] [7/114] preinstalling filesystem...
+[    1s] [8/114] preinstalling dbus...
+[    1s] [9/114] preinstalling glibc...
+[    1s] [10/114] preinstalling libgcc...
+[    1s] [11/114] preinstalling diffutils...
+[    1s] [12/114] preinstalling libatomic...
+[    1s] [13/114] preinstalling libcap-ng...
+[    1s] [14/114] preinstalling libffi...
+[    1s] [15/114] preinstalling libgpg-error...
+[    2s] [16/114] preinstalling libpcap...
+[    2s] [17/114] preinstalling libsmartcols...
+[    2s] [18/114] preinstalling libuuid...
+[    2s] [19/114] preinstalling libxcrypt...
+[    2s] [20/114] preinstalling lz4...
+[    2s] [21/114] preinstalling m4...
+[    2s] [22/114] preinstalling nspr...
+[    2s] [23/114] preinstalling xz-libs...
+[    2s] [24/114] preinstalling attr...
+[    2s] [25/114] preinstalling libdb...
+[    2s] [26/114] preinstalling ncurses-libs...
+[    2s] [27/114] preinstalling zlib...
+[    2s] [28/114] preinstalling audit-libs...
+[    2s] [29/114] preinstalling compat-openssl11-libs...
+[    2s] [30/114] preinstalling iptables-libs...
+[    2s] [31/114] preinstalling libacl...
+[    3s] [32/114] preinstalling libffi-devel...
+[    3s] [33/114] preinstalling libgcrypt...
+[    3s] [34/114] preinstalling p11-kit...
+[    3s] [35/114] preinstalling python3-ldb...
+[    3s] [36/114] preinstalling readline...
+[    3s] [37/114] preinstalling cmake...
+[    4s] [38/114] preinstalling ncurses...
+[    4s] [39/114] preinstalling perl-libs...
+[    4s] [40/114] preinstalling python3-libxml2...
+[    4s] [41/114] preinstalling zstd...
+[    4s] [42/114] preinstalling python3-ldb-devel...
+[    4s] [43/114] preinstalling perl-Exporter...
+[    4s] [44/114] preinstalling pcre...
+[    4s] [45/114] preinstalling pcre2...
+[    4s] [46/114] preinstalling acl...
+[    4s] [47/114] preinstalling sqlite...
+[    4s] [48/114] preinstalling libselinux...
+[    4s] [49/114] preinstalling perl-Carp...
+[    4s] [50/114] preinstalling perl-Digest-MD5...
+[    4s] [51/114] preinstalling sed...
+[    4s] [52/114] preinstalling coreutils...
+[    5s] [53/114] preinstalling openssl-libs...
+[    5s] [54/114] preinstalling bash...
+[    5s] [55/114] preinstalling iproute...
+[    5s] [56/114] preinstalling dnf...
+[    5s] [57/114] preinstalling guile-devel...
+[    5s] [58/114] preinstalling ima-evm-utils-libs...
+[    5s] [59/114] preinstalling bzip2...
+[    5s] [60/114] preinstalling hostname...
+[    5s] [61/114] preinstalling luajit...
+[    5s] [62/114] preinstalling pcre-devel...
+[    5s] [63/114] preinstalling popt...
+[    5s] [64/114] preinstalling elfutils...
+[    6s] [65/114] preinstalling grep...
+[    6s] [66/114] preinstalling info...
+[    6s] [67/114] preinstalling kmod-libs...
+[    6s] [68/114] preinstalling libblkid...
+[    6s] [69/114] preinstalling tar...
+[    6s] [70/114] preinstalling libgcrypt-devel...
+[    6s] [71/114] preinstalling lua...
+[    6s] [72/114] preinstalling openssl...
+[    6s] [73/114] preinstalling audit...
+[    6s] [74/114] preinstalling pam...
+[    6s] [75/114] preinstalling nss...
+[    6s] [76/114] preinstalling luajit-devel...
+[    6s] [77/114] preinstalling efibootmgr...
+[    6s] [78/114] preinstalling elfutils-extra...
+[    6s] [79/114] preinstalling chkconfig...
+[    6s] [80/114] preinstalling copy-jdk-configs...
+[    6s] [81/114] preinstalling libfdisk...
+[    6s] [82/114] preinstalling file...
+[    6s] [83/114] preinstalling libcap...
+[    6s] [84/114] preinstalling libmount...
+[    7s] [85/114] preinstalling libsemanage...
+[    7s] [86/114] preinstalling nss-util...
+[    7s] [87/114] preinstalling xz...
+[    7s] [88/114] preinstalling findutils...
+[    7s] [89/114] preinstalling sudo...
+[    7s] [90/114] preinstalling iputils...
+[    7s] [91/114] preinstalling nss-softokn...
+[    7s] [92/114] preinstalling glib2...
+[    7s] [93/114] preinstalling shadow...
+[    7s] [94/114] preinstalling systemd-libs...
+[    7s] [95/114] preinstalling rpm...
+[    7s] [96/114] preinstalling dbus-libs...
+[    8s] [97/114] preinstalling vala-devel...
+[    8s] [98/114] preinstalling gobject-introspection...
+[    8s] [99/114] preinstalling openEuler-rpm-config...
+[    8s] [100/114] preinstalling rpm-libs...
+[    8s] [101/114] preinstalling util-linux...
+[    8s] [102/114] preinstalling systemd...
+[    8s] [103/114] preinstalling erlang...
+[    8s] [104/114] preinstalling net-tools...
+[    8s] [105/114] preinstalling vala...
+[    8s] [106/114] preinstalling device-mapper...
+[    9s] [107/114] preinstalling supermin...
+[    9s] [108/114] preinstalling perl...
+[    9s] [109/114] preinstalling perl-constant...
+[    9s] [110/114] preinstalling cryptsetup...
+[    9s] [111/114] preinstalling lvm2...
+[    9s] [112/114] preinstalling perl-Getopt-Long...
+[    9s] [113/114] preinstalling perl-Data-Dumper...
+[    9s] [114/114] preinstalling git...
+[   10s] 
+[   10s] copying packages...
+[   12s] reordering...cycle: bash -> coreutils
+[   12s]   breaking dependency coreutils -> bash
+[   12s] cycle: bash -> coreutils -> info
+[   12s]   breaking dependency coreutils -> info
+[   12s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[   12s]   breaking dependency filesystem -> bash
+[   12s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[   12s]   breaking dependency filesystem -> coreutils
+[   12s] cycle: glibc -> basesystem -> filesystem -> setup -> openEuler-release -> bash -> coreutils -> gmp
+[   12s]   breaking dependency filesystem -> setup
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> gmp
+[   12s]   breaking dependency coreutils -> gmp
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils
+[   12s]   breaking dependency coreutils -> glibc
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> libacl
+[   12s]   breaking dependency coreutils -> libacl
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> attr
+[   12s]   breaking dependency coreutils -> attr
+[   12s] cycle: bash -> coreutils -> libcap
+[   12s]   breaking dependency coreutils -> libcap
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> openssl-libs
+[   12s]   breaking dependency coreutils -> openssl-libs
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> libselinux
+[   12s]   breaking dependency bash -> coreutils
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash
+[   12s]   breaking dependency openEuler-release -> bash
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux
+[   12s]   breaking dependency libselinux -> glibc
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2
+[   12s]   breaking dependency pcre2 -> glibc
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2 -> readline
+[   12s]   breaking dependency readline -> glibc
+[   12s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   12s]   breaking dependency glibc -> basesystem
+[   12s] cycle: glibc -> glibc-common -> bash
+[   12s]   breaking dependency glibc-common -> bash
+[   12s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   12s]   breaking dependency glibc-common -> coreutils
+[   12s] cycle: glibc -> glibc-common
+[   12s]   breaking dependency glibc-common -> glibc
+[   12s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   12s]   breaking dependency readline -> ncurses-libs
+[   12s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[   12s]   breaking dependency libsepol -> bash
+[   12s] cycle: libselinux -> libsepol -> coreutils
+[   12s]   breaking dependency coreutils -> libselinux
+[   12s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses
+[   12s]   breaking dependency ncurses -> glibc
+[   12s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses -> ncurses-libs
+[   12s]   breaking dependency ncurses -> ncurses-libs
+[   12s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses -> libstdc++
+[   12s]   breaking dependency ncurses -> libstdc++
+[   12s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[   12s]   breaking dependency libsepol -> glibc
+[   12s] cycle: adobe-mappings-cmap -> adobe-mappings-cmap-lang
+[   12s]   breaking dependency adobe-mappings-cmap-lang -> adobe-mappings-cmap
+[   12s] cycle: crypto-policies -> python3 -> openssl-libs
+[   12s]   breaking dependency python3 -> openssl-libs
+[   12s] cycle: libnsl2 -> libtirpc -> krb5-libs -> crypto-policies -> python3
+[   12s]   breaking dependency python3 -> libnsl2
+[   12s] cycle: libtirpc -> krb5-libs -> crypto-policies -> python3
+[   12s]   breaking dependency python3 -> libtirpc
+[   12s] cycle: pam -> libpwquality
+[   12s]   breaking dependency pam -> libpwquality
+[   12s] cycle: systemd -> audit
+[   12s]   breaking dependency audit -> systemd
+[   12s] cycle: rpm -> rpm-libs
+[   12s]   breaking dependency rpm -> rpm-libs
+[   12s] cycle: hunspell-en -> hunspell
+[   12s]   breaking dependency hunspell -> hunspell-en
+[   12s] cycle: perl-libs -> perl-Carp
+[   12s]   breaking dependency perl-libs -> perl-Carp
+[   12s] cycle: perl-libs -> perl-Exporter
+[   12s]   breaking dependency perl-libs -> perl-Exporter
+[   12s] cycle: nss -> nss-util
+[   12s]   breaking dependency nss -> nss-util
+[   12s] cycle: nss -> nss-softokn -> nss-util
+[   12s]   breaking dependency nss -> nss-softokn
+[   12s] cycle: erlang-erts -> erlang-kernel
+[   12s]   breaking dependency erlang-erts -> erlang-kernel
+[   12s] cycle: erlang-erts -> erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   12s]   breaking dependency erlang-erts -> erlang-stdlib
+[   12s] cycle: erlang-kernel -> erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   12s]   breaking dependency erlang-crypto -> erlang-kernel
+[   12s] cycle: erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   12s]   breaking dependency erlang-compiler -> erlang-crypto
+[   12s] cycle: erlang-compiler -> erlang-hipe
+[   12s]   breaking dependency erlang-hipe -> erlang-compiler
+[   12s] cycle: erlang-kernel -> erlang-stdlib -> erlang-compiler -> erlang-hipe
+[   12s]   breaking dependency erlang-stdlib -> erlang-compiler
+[   12s] cycle: erlang-stdlib -> erlang-crypto
+[   12s]   breaking dependency erlang-crypto -> erlang-stdlib
+[   12s] cycle: erlang-kernel -> erlang-stdlib
+[   12s]   breaking dependency erlang-stdlib -> erlang-kernel
+[   12s] cycle: fontconfig -> urw-base35-z003-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-z003-fonts
+[   12s] cycle: fontconfig -> urw-base35-bookman-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-bookman-fonts
+[   12s] cycle: fontconfig -> urw-base35-p052-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-p052-fonts
+[   12s] cycle: fontconfig -> urw-base35-c059-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-c059-fonts
+[   12s] cycle: fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[   12s] cycle: fontconfig -> urw-base35-d050000l-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-d050000l-fonts
+[   12s] cycle: fontconfig -> urw-base35-gothic-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-gothic-fonts
+[   12s] cycle: fontconfig -> urw-base35-nimbus-sans-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-nimbus-sans-fonts
+[   12s] cycle: fontconfig -> urw-base35-nimbus-roman-fonts
+[   12s]   breaking dependency fontconfig -> urw-base35-nimbus-roman-fonts
+[   12s] cycle: perl-Carp -> perl-Exporter
+[   12s]   breaking dependency perl-Exporter -> perl-Carp
+[   12s] cycle: perl -> perl-PathTools
+[   12s]   breaking dependency perl -> perl-PathTools
+[   12s] cycle: perl -> perl-ExtUtils-MakeMaker
+[   12s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[   12s] cycle: perl -> perl-File-Path -> perl-PathTools
+[   12s]   breaking dependency perl -> perl-File-Path
+[   12s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[   12s]   breaking dependency perl -> perl-Getopt-Long
+[   12s] cycle: perl -> perl-Locale-Maketext
+[   12s]   breaking dependency perl -> perl-Locale-Maketext
+[   12s] cycle: perl -> perl-Pod-Simple
+[   12s]   breaking dependency perl -> perl-Pod-Simple
+[   12s] cycle: perl -> perl-Socket
+[   12s]   breaking dependency perl -> perl-Socket
+[   12s] cycle: perl -> perl-Storable
+[   12s]   breaking dependency perl -> perl-Storable
+[   12s] cycle: perl -> perl-Text-Tabs+Wrap
+[   12s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[   12s] cycle: perl -> perl-Time-Local -> perl-constant
+[   12s]   breaking dependency perl -> perl-Time-Local
+[   12s] cycle: perl -> perl-constant
+[   12s]   breaking dependency perl -> perl-constant
+[   12s] cycle: perl -> perl-threads
+[   12s]   breaking dependency perl -> perl-threads
+[   12s] cycle: perl -> perl-threads-shared
+[   12s]   breaking dependency perl -> perl-threads-shared
+[   12s] cycle: perl -> perl-Archive-Tar
+[   12s]   breaking dependency perl -> perl-Archive-Tar
+[   12s] cycle: perl-B-Debug -> perl
+[   12s]   breaking dependency perl -> perl-B-Debug
+[   12s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[   12s]   breaking dependency perl -> perl-CPAN-Meta
+[   12s] cycle: perl -> perl-CPAN-Meta-Requirements
+[   12s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[   12s] cycle: perl -> perl-CPAN-Meta-YAML
+[   12s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[   12s] cycle: perl -> perl-Compress-Raw-Bzip2
+[   12s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[   12s] cycle: perl -> perl-Compress-Raw-Zlib
+[   12s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[   12s] cycle: perl -> perl-Config-Perl-V
+[   12s]   breaking dependency perl -> perl-Config-Perl-V
+[   12s] cycle: perl -> perl-Data-Dumper
+[   12s]   breaking dependency perl -> perl-Data-Dumper
+[   12s] cycle: perl -> perl-Devel-PPPort
+[   12s]   breaking dependency perl -> perl-Devel-PPPort
+[   12s] cycle: perl -> perl-Digest-SHA
+[   12s]   breaking dependency perl -> perl-Digest-SHA
+[   12s] cycle: perl -> perl-Encode
+[   12s]   breaking dependency perl -> perl-Encode
+[   12s] cycle: perl -> perl-Env
+[   12s]   breaking dependency perl -> perl-Env
+[   12s] cycle: perl -> perl-ExtUtils-Command
+[   12s]   breaking dependency perl -> perl-ExtUtils-Command
+[   12s] cycle: perl -> perl-ExtUtils-Install
+[   12s]   breaking dependency perl -> perl-ExtUtils-Install
+[   12s] cycle: perl -> perl-ExtUtils-Manifest
+[   12s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[   12s] cycle: perl -> perl-ExtUtils-ParseXS
+[   12s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[   12s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[   12s]   breaking dependency perl -> perl-File-Fetch
+[   12s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[   12s]   breaking dependency perl -> perl-File-Temp
+[   12s] cycle: perl -> perl-Filter
+[   12s]   breaking dependency perl -> perl-Filter
+[   12s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[   12s]   breaking dependency perl -> perl-Filter-Simple
+[   12s] cycle: perl -> perl-HTTP-Tiny
+[   12s]   breaking dependency perl -> perl-HTTP-Tiny
+[   12s] cycle: perl -> perl-IO-Compress
+[   12s]   breaking dependency perl -> perl-IO-Compress
+[   12s] cycle: perl -> perl-IO-Socket-IP
+[   12s]   breaking dependency perl -> perl-IO-Socket-IP
+[   12s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[   12s]   breaking dependency perl -> perl-IPC-Cmd
+[   12s] cycle: perl -> perl-IPC-SysV
+[   12s]   breaking dependency perl -> perl-IPC-SysV
+[   12s] cycle: perl -> perl-JSON-PP
+[   12s]   breaking dependency perl -> perl-JSON-PP
+[   12s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[   12s]   breaking dependency perl -> perl-Locale-Codes
+[   12s] cycle: perl -> perl-Math-BigInt
+[   12s]   breaking dependency perl -> perl-Math-BigInt
+[   12s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[   12s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[   12s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[   12s]   breaking dependency perl -> perl-Math-BigRat
+[   12s] cycle: perl -> perl-Module-CoreList
+[   12s]   breaking dependency perl -> perl-Module-CoreList
+[   12s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[   12s]   breaking dependency perl -> perl-Module-Load
+[   12s] cycle: perl -> perl-Module-Load-Conditional
+[   12s]   breaking dependency perl -> perl-Module-Load-Conditional
+[   12s] cycle: perl -> perl-Module-Metadata
+[   12s]   breaking dependency perl -> perl-Module-Metadata
+[   12s] cycle: perl -> perl-Params-Check
+[   12s]   breaking dependency perl -> perl-Params-Check
+[   12s] cycle: perl -> perl-Pod-Checker
+[   12s]   breaking dependency perl -> perl-Pod-Checker
+[   12s] cycle: perl -> perl-Pod-Parser
+[   12s]   breaking dependency perl -> perl-Pod-Parser
+[   12s] cycle: perl -> perl-Pod-Perldoc
+[   12s]   breaking dependency perl -> perl-Pod-Perldoc
+[   12s] cycle: perl -> perl-Pod-Usage
+[   12s]   breaking dependency perl -> perl-Pod-Usage
+[   12s] cycle: perl -> perl-Sys-Syslog
+[   12s]   breaking dependency perl -> perl-Sys-Syslog
+[   12s] cycle: perl -> perl-Term-Cap
+[   12s]   breaking dependency perl -> perl-Term-Cap
+[   12s] cycle: perl -> perl-Test-Harness
+[   12s]   breaking dependency perl -> perl-Test-Harness
+[   12s] cycle: perl -> perl-Test-Simple
+[   12s]   breaking dependency perl -> perl-Test-Simple
+[   12s] cycle: perl -> perl-Text-Balanced
+[   12s]   breaking dependency perl -> perl-Text-Balanced
+[   12s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[   12s]   breaking dependency perl -> perl-Thread-Queue
+[   12s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[   12s]   breaking dependency perl -> perl-Unicode-Collate
+[   12s] cycle: perl -> perl-autodie
+[   12s]   breaking dependency perl -> perl-autodie
+[   12s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[   12s]   breaking dependency perl -> perl-bignum
+[   12s] cycle: perl -> perl-Encode-devel
+[   12s]   breaking dependency perl -> perl-Encode-devel
+[   12s] cycle: perl -> perl-experimental
+[   12s]   breaking dependency perl -> perl-experimental
+[   12s] cycle: perl -> perl-libnet
+[   12s]   breaking dependency perl -> perl-libnet
+[   12s] cycle: perl -> perl-podlators
+[   12s]   breaking dependency perl -> perl-podlators
+[   12s] cycle: perl -> perl-version
+[   12s]   breaking dependency perl -> perl-version
+[   12s] cycle: glib2-devel -> sysprof-devel
+[   12s]   breaking dependency glib2-devel -> sysprof-devel
+[   12s] cycle: libglvnd-egl -> mesa-libEGL
+[   12s]   breaking dependency mesa-libEGL -> libglvnd-egl
+[   12s] cycle: libxcrypt-devel -> glibc-devel
+[   12s]   breaking dependency glibc-devel -> libxcrypt-devel
+[   12s] cycle: groovy -> gpars
+[   12s]   breaking dependency groovy -> gpars
+[   12s] cycle: cmake-data -> cmake
+[   12s]   breaking dependency cmake -> cmake-data
+[   12s] cycle: erlang-compiler -> erlang-hipe -> erlang-syntax_tools
+[   12s]   breaking dependency erlang-syntax_tools -> erlang-compiler
+[   12s] cycle: erlang-inets -> erlang-ssl
+[   12s]   breaking dependency erlang-inets -> erlang-ssl
+[   12s] cycle: libglvnd-glx -> mesa-libGL
+[   12s]   breaking dependency mesa-libGL -> libglvnd-glx
+[   12s] cycle: gupnp-igd -> gssdp -> gtk4 -> gstreamer1-plugins-bad-free -> libnice
+[   12s]   breaking dependency gtk4 -> gstreamer1-plugins-bad-free
+[   12s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[   12s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[   12s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[   12s]   breaking dependency perl-podlators -> perl-Encode
+[   12s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[   12s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[   12s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[   12s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[   12s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[   12s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[   12s] cycle: perl-Pod-Usage -> perl-podlators
+[   12s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[   12s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[   12s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[   12s] cycle: openssh -> openssh-server
+[   12s]   breaking dependency openssh-server -> openssh
+[   12s] cycle: perl-Git -> git
+[   12s]   breaking dependency git -> perl-Git
+[   12s] cycle: xalan-j2 -> xerces-j2
+[   12s]   breaking dependency xerces-j2 -> xalan-j2
+[   12s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[   12s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[   12s] done
+[   12s] Warning: cross compile not possible due to missing static binaries. please install build-initvm package for that purpose.
+[   12s]          check that the right architecture is available for your build host, you need initvm.x86_64 for this one.
+[   13s] booting qemu...
+[   13s] ### VM INTERACTION START ###
+[   13s] Using UART console
+[   13s] qemu-system-riscv64 -nodefaults -no-reboot -nographic -vga none -cpu rv64 -bios none -M virt -object rng-random,filename=/dev/urandom,id=rng0 -device virtio-rng-device,rng=rng0 -netdev user,id=n0 -device virtio-net-pci,netdev=n0 -kernel /var/run/obs/worker/5/build/kernel.riscv64 -initrd /var/run/obs/worker/5/build/initrd.riscv64 -append root=/dev/sda rootfstype=ext3 rootflags=data=writeback,nobarrier,commit=150,noatime ext4.allow_unsupported=1 mitigations=off panic=1 quiet no-kvmclock elevator=noop nmi_watchdog=0 rw console=ttyS0 init=/.build/build -m 2048 -drive file=/var/cache/obs/worker/root_5/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-device,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_5/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-device,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_5/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 1,threads=1
+[   13s] qemu-system-riscv64: -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_5/root.qemu/monitor: warning: short-form boolean option 'server' deprecated
+[   13s] Please use server=on instead
+[   13s] qemu-system-riscv64: -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_5/root.qemu/monitor: warning: short-form boolean option 'nowait' deprecated
+[   13s] Please use wait=off instead
+[   13s] 
+[   13s] OpenSBI v1.0
+[   13s]    ____                    _____ ____ _____
+[   13s]   / __ \                  / ____|  _ \_   _|
+[   13s]  | |  | |_ __   ___ _ __ | (___ | |_) || |
+[   13s]  | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+[   13s]  | |__| | |_) |  __/ | | |____) | |_) || |_
+[   13s]   \____/| .__/ \___|_| |_|_____/|____/_____|
+[   13s]         | |
+[   13s]         |_|
+[   13s] 
+[   13s] Platform Name             : riscv-virtio,qemu
+[   13s] Platform Features         : medeleg
+[   13s] Platform HART Count       : 1
+[   13s] Platform IPI Device       : aclint-mswi
+[   13s] Platform Timer Device     : aclint-mtimer @ 10000000Hz
+[   13s] Platform Console Device   : uart8250
+[   13s] Platform HSM Device       : ---
+[   13s] Platform Reboot Device    : sifive_test
+[   13s] Platform Shutdown Device  : sifive_test
+[   13s] Firmware Base             : 0x80000000
+[   13s] Firmware Size             : 252 KB
+[   13s] Runtime SBI Version       : 0.3
+[   13s] 
+[   13s] Domain0 Name              : root
+[   13s] Domain0 Boot HART         : 0
+[   13s] Domain0 HARTs             : 0*
+[   13s] Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+[   13s] Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+[   13s] Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+[   13s] Domain0 Next Address      : 0x0000000080200000
+[   13s] Domain0 Next Arg1         : 0x0000000082200000
+[   13s] Domain0 Next Mode         : S-mode
+[   13s] Domain0 SysReset          : yes
+[   13s] 
+[   13s] Boot HART ID              : 0
+[   13s] Boot HART Domain          : root
+[   13s] Boot HART ISA             : rv64imafdcsuh
+[   13s] Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+[   13s] Boot HART PMP Count       : 16
+[   13s] Boot HART PMP Granularity : 4
+[   13s] Boot HART PMP Address Bits: 54
+[   13s] Boot HART MHPM Count      : 16
+[   13s] Boot HART MIDELEG         : 0x0000000000001666
+[   13s] Boot HART MEDELEG         : 0x0000000000f0b509
+[   13s] [    0.404784] syscon-poweroff soc:poweroff: pm_power_off already claimed 00000000ea1bf2e4 sbi_shutdown
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   15s] machine type: riscv64
+[   15s] Linux version: 5.10.0-10.oe2203.riscv64 #1 SMP Tue Dec 27 05:04:25 UTC 2022
+[   15s] Increasing log level from now on...
+[   15s] /.build/build-vm: line 574: /proc/sysrq-trigger: No such file or directory
+[   15s] Enable sysrq operations
+[   15s] /.build/build-vm: line 576: /proc/sys/kernel/sysrq: No such file or directory
+[   15s] [    2.371953] EXT4-fs (vda): Cannot change data mode on remount
+[   15s] mount: /: mount point not mounted or bad option.
+[   16s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   16s] no label, UUID=bfe1246e-081b-439e-98c5-8d5aa523d782
+[   16s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   16s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   16s] swapon /dev/vdb
+[   16s] WARNING: udev not running, creating extra device nodes
+[   16s] logging output to //.build.log...
+[   17s] processing recipe /.build-srcdir/_service:tar_scm:hadoop.spec ...
+[   17s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/_service:tar_scm:hadoop.spec build ...
+[   17s] initializing rpm db...
+[   18s] querying package ids...
+[   59s] [1/834] installing adobe-mappings-pdf-20190401-2.oe2303
+[   60s] [2/834] installing adwaita-cursor-theme-43-1.oe2303
+[   63s] [3/834] installing cmake-filesystem-3.24.3-1.oe2303
+[   63s] [4/834] installing fonts-filesystem-4.0.2-1.oe2303
+[   64s] [5/834] installing fuse-common-3.13.0-1.oe2303
+[   64s] [6/834] installing javapackages-filesystem-5.3.0-5.oe2303
+[   65s] [7/834] installing kernel-headers-6.1.19-2.oe2303
+[   68s] [8/834] installing libreport-filesystem-2.15.2-6.oe2303
+[   68s] [9/834] installing ncurses-base-6.4-1.oe2303
+[   69s] [10/834] installing openEuler-gpg-keys-1.0-3.3.oe2303
+[   70s] [11/834] installing python-ldb-devel-common-2.6.1-2.oe2303
+[   70s] [12/834] installing python-setuptools-60.9.3-2.oe2303
+[   71s] [13/834] installing python3-setuptools-60.9.3-2.oe2303
+[   73s] [14/834] installing python3-six-1.16.0-3.oe2303
+[   74s] [15/834] installing qt5-srpm-macros-5.15.2-1.oe2303
+[   74s] [16/834] installing tzdata-2022g-3.oe2303
+[   77s] [17/834] installing tzdata-java-2022g-3.oe2303
+[   78s] [18/834] installing wxGTK3-i18n-3.0.4-8.oe2303
+[   80s] [19/834] installing xkeyboard-config-2.38-1.oe2303
+[   82s] [20/834] installing dnf-data-4.14.0-13.oe2303
+[   83s] [21/834] installing google-droid-sans-fonts-20200215-1.oe2303
+[   85s] [22/834] installing openEuler-repos-1.0-3.3.oe2303
+[   86s] [23/834] installing wqy-zenhei-fonts-0.9.46-22.oe2303
+[   91s] [24/834] installing adobe-mappings-cmap-lang-20190730-3.oe2303
+[   96s] [25/834] installing filesystem-3.16-5.oe2303
+[  100s] warning: group mail does not exist - using root
+[  100s] [26/834] installing adobe-mappings-cmap-20190730-3.oe2303
+[  101s] [27/834] installing emacs-filesystem-1:28.2-4.oe2303
+[  101s] [28/834] installing libgcc-10.3.1-27.oe2303
+[  102s] [29/834] installing urw-base35-fonts-common-20200910-1.oe2303
+[  102s] [30/834] installing readline-8.2-2.oe2303
+[  103s] [31/834] installing pcre2-10.42-1.oe2303
+[  104s] [32/834] installing ncurses-6.4-1.oe2303
+[  109s] [33/834] installing coreutils-9.0-7.oe2303
+[  114s] [34/834] installing libsepol-3.4-1.oe2303
+[  115s] [35/834] installing libselinux-3.4-1.oe2303
+[  115s] [36/834] installing glibc-common-2.36-13.oe2303
+[  121s] [37/834] installing glibc-2.36-13.oe2303
+[  125s] [38/834] installing SDL2-2.0.12-5.oe2303
+[  126s] [39/834] installing brotli-1.0.9-3.oe2303
+[  127s] [40/834] installing cdparanoia-libs-10.2-31.oe2303
+[  128s] [41/834] installing chrpath-0.16-13.oe2303
+[  128s] [42/834] installing cpio-2.13-7.oe2303
+[  129s] [43/834] installing diffutils-3.9-2.oe2303
+[  130s] [44/834] installing efivar-libs-38-1.oe2303
+[  131s] [45/834] installing expat-2.5.0-1.oe2303
+[  132s] [46/834] installing fribidi-1.0.12-1.oe2303
+[  132s] [47/834] installing gsm-1.0.18-5.oe2303
+[  133s] [48/834] installing hyphen-2.8.8-15.oe2303
+[  134s] [49/834] installing jbigkit-libs-2.1-21.oe2303
+[  135s] [50/834] installing json-c-0.16-2.oe2303
+[  135s] [51/834] installing keyutils-libs-1.6.3-5.oe2303
+[  136s] [52/834] installing lcms2-2.13.1-2.oe2303
+[  137s] [53/834] installing libICE-1.1.1-1.oe2303
+[  137s] [54/834] installing libXau-1.0.10-1.oe2303
+[  138s] [55/834] installing libaio-0.3.113-7.oe2303
+[  139s] [56/834] installing libargon2-20190702-3.oe2303
+[  140s] [57/834] installing libasyncns-0.8-18.oe2303
+[  140s] [58/834] installing libatomic-10.3.1-27.oe2303
+[  141s] [59/834] installing libcap-ng-0.8.3-1.oe2303
+[  142s] [60/834] installing libdaemon-0.14-21.oe2303
+[  142s] [61/834] installing libdatrie-0.2.13-1.oe2303
+[  143s] [62/834] installing libdrm-2.4.114-1.oe2303
+[  144s] [63/834] installing libepoxy-1.5.10-2.oe2303
+[  145s] [64/834] installing libev-4.33-3.oe2303
+[  145s] [65/834] installing libffi-3.4.4-2.oe2303
+[  146s] [66/834] installing libglvnd-1:1.3.4-3.oe2303
+[  147s] [67/834] installing libgomp-10.3.1-27.oe2303
+[  148s] [68/834] installing libgpg-error-1.46-1.oe2303
+[  149s] [69/834] installing libijs-0.35-10.oe2303
+[  150s] [70/834] installing libjpeg-turbo-2.1.1-3.oe2303
+[  150s] [71/834] installing libmnl-1.0.5-2.oe2303
+[  151s] [72/834] installing libmspack-0.10.1-0.1.1.oe2303
+[  152s] [73/834] installing libnfnetlink-1.0.2-1.oe2303
+[  152s] [74/834] installing libnghttp2-1.47.0-3.oe2303
+[  153s] [75/834] installing libogg-2:1.3.5-2.oe2303
+[  154s] [76/834] installing libpcap-14:1.10.3-1.oe2303
+[  155s] [77/834] installing libpipeline-1.5.7-1.oe2303
+[  155s] [78/834] installing libsigsegv-2.14-1.oe2303
+[  156s] [79/834] installing libsmartcols-2.37.2-14.oe2303
+[  157s] [80/834] installing libsndfile-1.2.0-1.oe2303
+[  158s] [81/834] installing libstemmer-0-13.oe2303
+[  159s] [82/834] installing libtalloc-2.3.4-1.oe2303
+[  159s] [83/834] installing libtasn1-4.17.0-3.oe2303
+[  161s] [84/834] installing libtdb-1.4.7-1.oe2303
+[  161s] [85/834] installing libtool-ltdl-2.4.7-2.oe2303
+[  162s] [86/834] installing libunistring-1.1-2.oe2303
+[  163s] [87/834] installing libuuid-2.37.2-14.oe2303
+[  164s] [88/834] installing libuv-1:1.42.0-4.oe2303
+[  165s] [89/834] installing libvisual-1:0.4.1-1.oe2303
+[  166s] [90/834] installing libwebp-1.3.0-1.oe2303
+[  167s] [91/834] installing libxcrypt-4.4.33-1.oe2303
+[  168s] [92/834] installing libxshmfence-1.3.2-1.oe2303
+[  168s] [93/834] installing libyaml-0.2.5-4.oe2303
+[  169s] [94/834] installing lmdb-0.9.30-2.oe2303
+[  170s] [95/834] installing lz4-1.9.4-2.oe2303
+[  171s] [96/834] installing m4-1.4.19-3.oe2303
+[  172s] [97/834] installing nspr-4.35.0-2.oe2303
+[  173s] [98/834] installing openjpeg2-2.5.0-2.oe2303
+[  174s] [99/834] installing opus-1.3.1-4.oe2303
+[  174s] [100/834] installing pixman-0.42.2-1.oe2303
+[  175s] [101/834] installing pkgconf-1.8.0-3.oe2303
+[  176s] [102/834] installing which-2.21-15.oe2303
+[  177s] [103/834] installing xz-libs-5.2.10-1.oe2303
+[  177s] [104/834] installing alsa-lib-1.2.8-1.oe2303
+[  179s] [105/834] installing attr-2.5.1-4.oe2303
+[  180s] [106/834] installing libidn-1.38-4.oe2303
+[  181s] [107/834] installing libstdc++-10.3.1-27.oe2303
+[  182s] [108/834] installing mesa-libglapi-23.0.0-1.oe2303
+[  183s] [109/834] installing zlib-1.2.13-1.oe2303
+[  184s] [110/834] installing ncurses-libs-6.4-1.oe2303
+[  184s] [111/834] installing libglvnd-core-devel-1:1.3.4-3.oe2303
+[  185s] [112/834] installing libstdc++-devel-10.3.1-27.oe2303
+[  190s] [113/834] installing xorg-x11-proto-devel-2021.5-2.oe2303
+[  192s] [114/834] installing audit-libs-1:3.0.9-1.oe2303
+[  192s] [115/834] installing elfutils-libelf-0.187-10.oe2303
+[  194s] [116/834] installing fribidi-devel-1.0.12-1.oe2303
+[  194s] [117/834] installing gmp-1:6.2.1-3.oe2303
+[  195s] [118/834] installing less-608-4.oe2303
+[  196s] [119/834] installing libacl-2.3.1-1.oe2303
+[  197s] [120/834] installing libassuan-2.5.5-2.oe2303
+[  198s] [121/834] installing libedit-3.1-29.oe2303
+[  198s] [122/834] installing libfontenc-1.1.6-1.oe2303
+[  199s] [123/834] installing libgcrypt-1.9.4-1.oe2303
+[  200s] [124/834] installing libglvnd-opengl-1:1.3.4-3.oe2303
+[  201s] [125/834] installing libpng-2:1.6.38-2.oe2303
+[  202s] [126/834] installing libsepol-devel-3.4-1.oe2303
+[  204s] [127/834] installing libtalloc-devel-2.3.4-1.oe2303
+[  205s] [128/834] installing libtdb-devel-1.4.7-1.oe2303
+[  206s] [129/834] installing libtevent-0.13.0-1.oe2303
+[  206s] [130/834] installing libthai-0.1.29-1.oe2303
+[  207s] [131/834] installing libtheora-1:1.1.1-26.oe2303
+[  208s] [132/834] installing libvorbis-1:1.3.7-2.oe2303
+[  209s] [133/834] installing libxcb-1.15-1.oe2303
+[  210s] [134/834] installing p11-kit-0.24.1-1.oe2303
+[  212s] [135/834] installing pixman-devel-0.42.2-1.oe2303
+[  212s] [136/834] installing psmisc-23.6-1.oe2303
+[  213s] [137/834] installing wayland-1.21.0-2.oe2303
+[  214s] [138/834] installing zlib-devel-1.2.13-1.oe2303
+[  215s] [139/834] installing fuse-2.9.9-11.oe2303
+[  216s] [140/834] installing gdbm-1:1.23-2.oe2303
+[  217s] [141/834] installing libSM-1.2.4-1.oe2303
+[  218s] [142/834] installing libdatrie-devel-0.2.13-1.oe2303
+[  218s] [143/834] installing libdb-5.3.28-41.oe2303
+[  222s] [144/834] installing libffi-devel-3.4.4-2.oe2303
+[  223s] [145/834] installing libicu-72.1-5.oe2303
+[  233s] [146/834] installing libjpeg-turbo-devel-2.1.1-3.oe2303
+[  234s] [147/834] installing libnetfilter_conntrack-1.0.9-4.oe2303
+[  235s] [148/834] installing libxml2-2.9.14-7.oe2303
+[  237s] [149/834] installing patch-2.7.6-20.oe2303
+[  238s] [150/834] installing python3-tdb-1.4.7-1.oe2303
+[  239s] [151/834] installing bash-5.1.8-7.oe2303
+[  241s] [152/834] installing gc-8.2.2-1.oe2303
+[  242s] [153/834] installing pcre-8.45-5.oe2303
+[  243s] [154/834] installing perl-libs-4:5.34.0-4.oe2303
+[  247s] [155/834] installing protobuf2-2.5.0-3.oe2303
+[  248s] [156/834] installing woff2-1.0.2-6.oe2303
+[  249s] [157/834] installing hunspell-1.7.0-10.oe2303
+[  250s] [158/834] installing thin-provisioning-tools-0.9.0-4.oe2303
+[  251s] [159/834] installing wxBase3-3.0.4-8.oe2303
+[  252s] [160/834] installing zstd-1.5.2-1.oe2303
+[  254s] [161/834] installing libtiff-4.5.0-3.oe2303
+[  255s] [162/834] installing hunspell-en-2020.12.07-2.oe2303
+[  256s] [163/834] installing perl-parent-1:0.238-2.oe2303
+[  256s] [164/834] installing perl-perlfaq-5.20210520-2.oe2303
+[  257s] [165/834] installing efi-filesystem-4-9.oe2303
+[  258s] [166/834] installing elfutils-default-yama-scope-0.187-10.oe2303
+[  258s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libseccomp.so.2: cannot open shared object file: No such file or directory
+[  258s] [167/834] installing gc-devel-8.2.2-1.oe2303
+[  259s] [168/834] installing hicolor-icon-theme-0.17-7.oe2303
+[  260s] [169/834] installing libX11-1.8.1-3.oe2303
+[  262s] [170/834] installing mpfr-4.1.0-3.oe2303
+[  264s] [171/834] installing nettle-3.8.1-1.oe2303
+[  265s] [172/834] installing perl-Exporter-5.74-2.oe2303
+[  265s] [173/834] installing publicsuffix-list-20211113-3.oe2303
+[  266s] [174/834] installing uname-build-checks-1.0-0.5.oe2303
+[  267s] [175/834] installing adwaita-icon-theme-43-1.oe2303
+[  277s] [176/834] installing bzip2-1.0.8-7.oe2303
+[  278s] [177/834] installing cyrus-sasl-lib-2.1.28-1.oe2303
+[  279s] [178/834] installing gzip-1.12-3.oe2303
+[  280s] [179/834] installing hostname-3.23-1.oe2303
+[  281s] [180/834] installing jbig2dec-0.19-4.oe2303
+[  282s] [181/834] installing libXau-devel-1.0.10-1.oe2303
+[  282s] [182/834] installing libbpf-2:0.8.1-5.oe2303
+[  283s] [183/834] installing libpaper-1.1.28-2.oe2303
+[  284s] [184/834] installing libpng-devel-2:1.6.38-2.oe2303
+[  285s] [185/834] installing libseccomp-2.5.4-1.oe2303
+[  286s] [186/834] installing libtevent-devel-0.13.0-1.oe2303
+[  287s] [187/834] installing libthai-devel-0.1.29-1.oe2303
+[  288s] [188/834] installing libxkbcommon-1.5.0-1.oe2303
+[  289s] [189/834] installing lksctp-tools-1.0.19-2.oe2303
+[  290s] [190/834] installing luajit-2.1.0-4.5.oe2303
+[  291s] [191/834] installing npth-1.6-7.oe2303
+[  292s] [192/834] installing orc-0.4.33-1.oe2303
+[  293s] [193/834] installing popt-1.19-2.oe2303
+[  294s] [194/834] installing sed-4.9-1.oe2303
+[  295s] [195/834] installing sgml-common-0.6.3-52.oe2303
+[  296s] [196/834] installing acl-2.3.1-1.oe2303
+[  296s] [197/834] installing dwz-0.15-1.oe2303
+[  297s] [198/834] installing grep-3.8-1.oe2303
+[  299s] [199/834] installing info-6.8-5.oe2303
+[  300s] [200/834] installing iptables-libs-1.8.9-2.oe2303
+[  301s] [201/834] installing libblkid-2.37.2-14.oe2303
+[  302s] [202/834] installing libcomps-0.1.19-1.oe2303
+[  303s] [203/834] installing libidn2-2.3.3-2.oe2303
+[  304s] [204/834] installing libksba-1.6.3-1.oe2303
+[  306s] [205/834] installing mesa-libgbm-23.0.0-1.oe2303
+[  307s] [206/834] installing pcre-devel-8.45-5.oe2303
+[  308s] [207/834] installing pcre2-devel-10.42-1.oe2303
+[  312s] [208/834] installing tar-2:1.34-4.oe2303
+[  314s] [209/834] installing tcl-1:8.6.13-2.oe2303
+[  317s] [210/834] installing apr-1.7.0-5.oe2303
+[  318s] [211/834] installing gmp-c++-1:6.2.1-3.oe2303
+[  319s] [212/834] installing graphite2-1.3.14-6.oe2303
+[  320s] [213/834] installing groff-base-1.22.4-12.oe2303
+[  322s] [214/834] installing jsoncpp-1.9.5-3.oe2303
+[  323s] [215/834] installing libgpg-error-devel-1.46-1.oe2303
+[  324s] [216/834] installing lua-5.4.4-1.oe2303
+[  325s] [217/834] installing protobuf2-compiler-2.5.0-3.oe2303
+[  326s] [218/834] installing python3-libxml2-2.9.14-7.oe2303
+[  327s] [219/834] installing slang-2.3.3-1.oe2303
+[  329s] [220/834] installing snappy-1.1.9-2.oe2303
+[  330s] [221/834] installing unixODBC-2.3.9-3.oe2303
+[  332s] [222/834] installing aspell-12:0.60.8-1.oe2303
+[  334s] [223/834] installing glibc-devel-2.36-13.oe2303
+[  341s] [224/834] installing libunwind-2:1.6.2-4.oe2303
+[  342s] [225/834] installing libxslt-1.1.37-1.oe2303
+[  343s] [226/834] installing wayland-devel-1.21.0-2.oe2303
+[  344s] [227/834] installing libicu-devel-72.1-5.oe2303
+[  346s] [228/834] installing gettext-0.21.1-1.oe2303
+[  349s] [229/834] installing guile-5:2.2.7-2.oe2303
+[  360s] [230/834] installing iso-codes-4.7.0-1.oe2303
+[  367s] [231/834] installing bzip2-devel-1.0.8-7.oe2303
+[  368s] [232/834] installing crontabs-1.11-23.oe2303
+[  369s] [233/834] installing gmp-devel-1:6.2.1-3.oe2303
+[  371s] [234/834] installing graphite2-devel-1.3.14-6.oe2303
+[  372s] [235/834] installing libXcomposite-0.4.6-1.oe2303
+[  372s] [236/834] installing libXext-1.3.5-1.oe2303
+[  373s] [237/834] installing libXfixes-6.0.0-2.oe2303
+[  374s] [238/834] installing libXpm-3.5.15-1.oe2303
+[  375s] [239/834] installing libXrender-0.9.11-1.oe2303
+[  376s] [240/834] installing lua-devel-5.4.4-1.oe2303
+[  378s] [241/834] installing luajit-devel-2.1.0-4.5.oe2303
+[  378s] [242/834] installing perl-Carp-1.50-419.oe2303
+[  379s] [243/834] installing perl-Perl-OSType-1.010-422.oe2303
+[  379s] [244/834] installing perl-Pod-Escapes-1:1.07_01-1.oe2303
+[  380s] [245/834] installing perl-Term-ANSIColor-5.01-2.oe2303
+[  381s] [246/834] installing zip-3.0-30.oe2303
+[  381s] [247/834] installing libfdisk-2.37.2-14.oe2303
+[  383s] [248/834] installing libmpc-1.3.1-1.oe2303
+[  383s] [249/834] installing libxcb-devel-1.15-1.oe2303
+[  385s] [250/834] installing libxcrypt-devel-4.4.33-1.oe2303
+[  386s] [251/834] installing lua-posix-35.0-1.oe2303
+[  387s] [252/834] installing newt-0.52.23-1.oe2303
+[  389s] [253/834] installing bc-1.07.1-12.oe2303
+[  389s] [254/834] installing efibootmgr-18-4.oe2303
+[  390s] [255/834] installing file-libs-5.44-1.oe2303
+[  393s] [256/834] installing libXt-1.2.1-4.oe2303
+[  394s] [257/834] installing libmount-2.37.2-14.oe2303
+[  395s] [258/834] installing libselinux-devel-3.4-1.oe2303
+[  396s] [259/834] installing libwpe-1.6.0-1.oe2303
+[  397s] [260/834] installing protobuf2-devel-2.5.0-3.oe2303
+[  398s] [261/834] installing unzip-6.0-51.oe2303
+[  399s] [262/834] installing cracklib-2.9.8-1.oe2303
+[  403s] [263/834] installing e2fsprogs-1.46.5-4.oe2303
+[  405s] [264/834] installing libsemanage-3.4-1.oe2303
+[  406s] [265/834] installing perl-MIME-Base64-3.16-2.oe2303
+[  407s] [266/834] installing sqlite-3.37.2-5.oe2303
+[  409s] [267/834] installing xz-5.2.10-1.oe2303
+[  410s] [268/834] installing findutils-2:4.9.0-1.oe2303
+[  411s] [269/834] installing freetype-2.12.1-1.oe2303
+[  413s] [270/834] installing libpsl-0.21.2-1.oe2303
+[  414s] [271/834] installing logrotate-3.20.1-1.oe2303
+[  415s] [272/834] installing make-1:4.4-2.oe2303
+[  416s] [273/834] installing elfutils-libs-0.187-10.oe2303
+[  417s] [274/834] installing libgcrypt-devel-1.9.4-1.oe2303
+[  418s] [275/834] installing gawk-5.2.0-3.oe2303
+[  419s] [276/834] installing iproute-1:6.1.0-7.oe2303
+[  421s] [277/834] installing mesa-libEGL-23.0.0-1.oe2303
+[  422s] [278/834] installing perl-PerlIO-via-QuotedPrint-0.10-1.oe2303
+[  423s] [279/834] installing xz-devel-5.2.10-1.oe2303
+[  424s] [280/834] installing libXdamage-1.1.6-1.oe2303
+[  425s] [281/834] installing libXi-1.8-2.oe2303
+[  426s] [282/834] installing libXinerama-1.1.5-1.oe2303
+[  427s] [283/834] installing libXv-1.0.12-1.oe2303
+[  428s] [284/834] installing libXxf86vm-1.1.5-2.oe2303
+[  429s] [285/834] installing libglvnd-egl-1:1.3.4-3.oe2303
+[  429s] [286/834] installing libglvnd-gles-1:1.3.4-3.oe2303
+[  430s] [287/834] installing perl-Text-ParseWords-3.30-420.oe2303
+[  431s] [288/834] installing copy-jdk-configs-4.0-1.oe2303
+[  432s] [289/834] installing libX11-devel-1.8.1-3.oe2303
+[  433s] [290/834] installing libXcursor-1.2.1-1.oe2303
+[  434s] [291/834] installing libXmu-1.1.4-1.oe2303
+[  435s] [292/834] installing libXrandr-1.5.3-1.oe2303
+[  435s] [293/834] installing openEuler-release-23.03-54.oe2303
+[  437s] [294/834] installing perl-Digest-1.20-3.oe2303
+[  437s] [295/834] installing chkconfig-1.21-2.oe2303
+[  439s] [296/834] installing file-5.44-1.oe2303
+[  439s] [297/834] installing guile-devel-5:2.2.7-2.oe2303
+[  440s] [298/834] installing perl-Scalar-List-Utils-4:1.60-2.oe2303
+[  441s] [299/834] installing perl-Time-HiRes-4:1.9767-3.oe2303
+[  442s] [300/834] installing perl-Unicode-Normalize-1.28-2.oe2303
+[  443s] [301/834] installing elfutils-0.187-10.oe2303
+[  445s] [302/834] installing freetype-devel-2.12.1-1.oe2303
+[  446s] [303/834] installing xorg-x11-font-utils-1:7.5-44.oe2303
+[  447s] [304/834] installing cpp-10.3.1-27.oe2303
+[  453s] [305/834] installing glib2-2.74.4-2.oe2303
+[  458s] [306/834] installing man-db-2.11.0-1.oe2303
+[  461s] [307/834] installing fontconfig-2.14.2-1.oe2303
+[  466s] [308/834] installing gsettings-desktop-schemas-43.0-1.oe2303
+[  468s] [309/834] installing atk-2.38.0-1.oe2303
+[  470s] [310/834] installing graphene-1.10.6-2.oe2303
+[  471s] [311/834] installing json-glib-1.6.6-2.oe2303
+[  473s] [312/834] installing polkit-help-122-2.oe2303
+[  473s] [313/834] installing setup-2.14.3-1.oe2303
+[  474s] [314/834] installing libsecret-0.20.5-1.oe2303
+[  476s] [315/834] installing libXext-devel-1.3.5-1.oe2303
+[  477s] [316/834] installing libXfixes-devel-6.0.0-2.oe2303
+[  478s] [317/834] installing libXrender-devel-0.9.11-1.oe2303
+[  479s] [318/834] installing libXtst-1.2.4-1.oe2303
+[  480s] [319/834] installing perl-Digest-MD5-2.58-2.oe2303
+[  481s] [320/834] installing urw-base35-bookman-fonts-20200910-1.oe2303
+[  483s] [321/834] installing urw-base35-c059-fonts-20200910-1.oe2303
+[  485s] [322/834] installing urw-base35-d050000l-fonts-20200910-1.oe2303
+[  486s] [323/834] installing urw-base35-gothic-fonts-20200910-1.oe2303
+[  488s] [324/834] installing urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2303
+[  490s] [325/834] installing urw-base35-nimbus-roman-fonts-20200910-1.oe2303
+[  492s] [326/834] installing urw-base35-nimbus-sans-fonts-20200910-1.oe2303
+[  495s] [327/834] installing urw-base35-p052-fonts-20200910-1.oe2303
+[  497s] [328/834] installing urw-base35-standard-symbols-ps-fonts-20200910-1.oe2303
+[  499s] [329/834] installing urw-base35-z003-fonts-20200910-1.oe2303
+[  501s] [330/834] installing xorg-x11-fonts-7.5-25.oe2303
+[  516s] [331/834] installing xorg-x11-fonts-others-7.5-25.oe2303
+[  526s] [332/834] installing elfutils-extra-0.187-10.oe2303
+[  526s] [333/834] installing gobject-introspection-1.74.0-1.oe2303
+[  528s] [334/834] installing libXft-2.3.7-1.oe2303
+[  529s] [335/834] installing libtiff-devel-4.5.0-3.oe2303
+[  530s] [336/834] installing shared-mime-info-2.2-1.oe2303
+[  537s] [337/834] installing binutils-2.37-14.oe2303
+[  543s] [338/834] installing enchant2-2.3.3-1.oe2303
+[  544s] [339/834] installing libXaw-1.0.14-2.oe2303
+[  545s] [340/834] installing harfbuzz-6.0.0-1.oe2303
+[  547s] [341/834] installing libxml2-devel-2.9.14-7.oe2303
+[  553s] [342/834] installing p11-kit-trust-0.24.1-1.oe2303
+[  554s] [343/834] installing babeltrace-1.5.8-6.oe2303
+[  556s] [344/834] installing wpebackend-fdo-1.6.1-2.oe2303
+[  557s] [345/834] installing cairo-1.17.4-3.oe2303
+[  558s] [346/834] installing mesa-libGL-23.0.0-1.oe2303
+[  559s] [347/834] installing basesystem-12-3.oe2303
+[  560s] [348/834] installing libxkbcommon-devel-1.5.0-1.oe2303
+[  561s] [349/834] installing libraqm-0.7.0-3.oe2303
+[  562s] [350/834] installing fontconfig-devel-2.14.2-1.oe2303
+[  563s] [351/834] installing libXdamage-devel-1.1.6-1.oe2303
+[  564s] [352/834] installing libXinerama-devel-1.1.5-1.oe2303
+[  564s] [353/834] installing libglvnd-glx-1:1.3.4-3.oe2303
+[  565s] [354/834] installing ca-certificates-2021.2.52-2.oe2303
+[  578s] [355/834] installing libXcursor-devel-1.2.1-1.oe2303
+[  579s] [356/834] installing libXi-devel-1.8-2.oe2303
+[  580s] [357/834] installing libXrandr-devel-1.5.3-1.oe2303
+[  580s] [358/834] installing gdk-pixbuf2-2.42.10-2.oe2303
+[  582s] [359/834] installing pango-1.50.12-1.oe2303
+[  584s] [360/834] installing urw-base35-fonts-20200910-1.oe2303
+[  584s] [361/834] installing cairo-gobject-1.17.4-3.oe2303
+[  585s] [362/834] installing gcc-10.3.1-27.oe2303
+[  602s] [363/834] installing python-pip-wheel-22.3.1-1.oe2303
+[  604s] [364/834] installing gtk-update-icon-cache-3.24.36-1.oe2303
+[  604s] [365/834] installing gdk-pixbuf2-modules-2.42.10-2.oe2303
+[  606s] [366/834] installing mesa-libGLU-9.0.2-1.oe2303
+[  607s] [367/834] installing libXft-devel-2.3.7-1.oe2303
+[  608s] [368/834] installing libglvnd-devel-1:1.3.4-3.oe2303
+[  609s] [369/834] installing gcc-c++-10.3.1-27.oe2303
+[  617s] [370/834] installing gd-2.3.2-1.oe2303
+[  618s] [371/834] installing librsvg2-2.55.1-1.oe2303
+[  622s] [372/834] installing libepoxy-devel-1.5.10-2.oe2303
+[  623s] [373/834] installing python3-3.10.9-2.oe2303
+[  636s] [374/834] installing python3-distro-1.6.0-2.oe2303
+[  637s] [375/834] installing python3-markdown-3.3.7-2.oe2303
+[  639s] [376/834] installing python3-markupsafe-2.1.1-1.oe2303
+[  639s] [377/834] installing python3-dateutil-1:2.8.2-3.oe2303
+[  641s] [378/834] installing python3-pip-22.3.1-1.oe2303
+[  648s] [379/834] installing crypto-policies-20200619-3.git781bbd4.oe2303
+[  651s] [380/834] installing python3-lxml-4.9.1-3.oe2303
+[  654s] [381/834] installing python3-libcomps-0.1.19-1.oe2303
+[  655s] [382/834] installing gdb-headless-12.1-2.oe2303
+[  659s] [383/834] installing gdb-12.1-2.oe2303
+[  660s] [384/834] installing python3-javapackages-5.3.0-5.oe2303
+[  662s] [385/834] installing python3-mako-1.2.4-1.oe2303
+[  663s] [386/834] installing compat-openssl11-libs-1:1.1.1m-3.oe2303
+[  665s] [387/834] installing openssl-libs-1:3.0.8-3.oe2303
+[  668s] [388/834] installing nss-3.85.0-2.oe2303
+[  672s] [389/834] installing libevent-2.1.12-7.oe2303
+[  673s] [390/834] installing openssl-devel-1:3.0.8-3.oe2303
+[  690s] [391/834] installing libtcnative-1-0-1.2.23-6.oe2303
+[  691s] [392/834] installing openldap-2.6.3-2.oe2303
+[  692s] [393/834] installing kmod-libs-30-2.oe2303
+[  694s] [394/834] installing nss-util-3.85.0-2.oe2303
+[  695s] [395/834] installing kmod-30-2.oe2303
+[  697s] [396/834] installing openssl-1:3.0.8-3.oe2303
+[  697s] [397/834] installing nodejs-libs-1:16.15.0-2.oe2303
+[  712s] [398/834] installing libarchive-3.6.1-2.oe2303
+[  713s] [399/834] installing debugedit-5.0-6.oe2303
+[  715s] [400/834] installing libevent-devel-2.1.12-7.oe2303
+[  716s] [401/834] installing libverto-0.3.2-3.oe2303
+[  717s] [402/834] installing nss-softokn-3.85.0-2.oe2303
+[  719s] [403/834] installing libldb-2.6.1-2.oe2303
+[  720s] [404/834] installing nodejs-1:16.15.0-2.oe2303
+[  721s] [405/834] installing npm-1:8.5.5-1.16.15.0.2.oe2303
+[  730s] [406/834] installing libldb-devel-2.6.1-2.oe2303
+[  731s] [407/834] installing python3-ldb-2.6.1-2.oe2303
+[  732s] [408/834] installing krb5-libs-1.20.1-1.oe2303
+[  733s] [409/834] installing libtirpc-1.3.3-2.oe2303
+[  734s] [410/834] installing python3-ldb-devel-2.6.1-2.oe2303
+[  735s] [411/834] installing libssh-0.10.4-2.oe2303
+[  737s] [412/834] installing audit-1:3.0.9-1.oe2303
+[  739s] Created symlink /etc/systemd/system/multi-user.target.wants/auditd.service -> /usr/lib/systemd/system/auditd.service.
+[  739s] [413/834] installing libsoup3-3.2.2-1.oe2303
+[  740s] [414/834] installing libnsl2-2.0.0-5.oe2303
+[  741s] [415/834] installing libcurl-7.86.0-4.oe2303
+[  743s] [416/834] installing libtracker-sparql3-3.4.2-1.oe2303
+[  744s] [417/834] installing curl-7.86.0-4.oe2303
+[  745s] [418/834] installing tpm2-tss-3.2.1-2.oe2303
+[  747s] [419/834] installing pam-1.5.2-6.oe2303
+[  750s] [420/834] installing ima-evm-utils-libs-1.4-1.oe2303
+[  751s] [421/834] installing libpwquality-1.4.5-1.oe2303
+[  752s] [422/834] installing libcap-2.66-1.oe2303
+[  754s] [423/834] installing shadow-subid-devel-2:4.13-3.oe2303
+[  755s] [424/834] installing sudo-1.9.12p2-3.oe2303
+[  758s] [425/834] installing bubblewrap-0.4.1-1.oe2303
+[  758s] [426/834] installing iputils-20221126-1.oe2303
+[  759s] [427/834] installing gstreamer1-1.20.4-1.oe2303
+[  762s] [428/834] installing systemd-libs-249-49.oe2303
+[  764s] Detected system with incompatible nobody defined, creating /etc/systemd/dont-synthesize-nobody
+[  764s] [429/834] installing shadow-2:4.13-3.oe2303
+[  766s] [430/834] installing rpm-4.18.0-6.oe2303
+[  769s] [431/834] installing efi-srpm-macros-4-9.oe2303
+[  770s] [432/834] installing cmake-rpm-macros-3.24.3-1.oe2303
+[  771s] [433/834] installing dbus-libs-1:1.14.0-2.oe2303
+[  772s] [434/834] installing libgudev-237-2.oe2303
+[  773s] [435/834] installing libusbx-1.0.26-1.oe2303
+[  775s] [436/834] installing polkit-libs-122-2.oe2303
+[  776s] [437/834] installing procps-ng-4.0.2-2.oe2303
+[  777s] [438/834] installing libutempter-1.2.1-3.oe2303
+[  779s] [439/834] installing webkit2gtk3-jsc-2.38.2-3.oe2303
+[  787s] [440/834] installing erlang-erts-23.3.4.9-3.oe2303
+[  791s] [441/834] installing rpm-libs-4.18.0-6.oe2303
+[  793s] [442/834] installing gstreamer1-plugins-base-1.20.3-3.oe2303
+[  797s] [443/834] installing systemd-249-49.oe2303
+[  808s] [444/834] installing dbus-common-1:1.14.0-2.oe2303
+[  809s] [445/834] installing dbus-tools-1:1.14.0-2.oe2303
+[  810s] [446/834] installing erlang-erl_interface-23.3.4.9-3.oe2303
+[  812s] [447/834] installing avahi-libs-0.8-15.oe2303
+[  814s] [448/834] installing libgusb-0.3.10-1.oe2303
+[  815s] [449/834] installing obs-env-1.0-7.oe2303
+[  819s] [450/834] installing python3-dbus-1.3.2-1.oe2303
+[  821s] [451/834] installing erlang-crypto-23.3.4.9-3.oe2303
+[  822s] [452/834] installing libmodulemd-2.14.0-1.oe2303
+[  823s] [453/834] installing net-tools-2.10-3.oe2303
+[  826s] [454/834] installing pulseaudio-libs-16.1-8.oe2303
+[  827s] [455/834] installing sysprof-cli-3.46.0-1.oe2303
+[  829s] [456/834] installing libsolv-0.7.22-1.oe2303
+[  830s] [457/834] installing openEuler-rpm-config-30-37.oe2303
+[  832s] [458/834] installing cmake-3.24.3-1.oe2303
+[  842s] [459/834] installing python3-rpm-4.18.0-6.oe2303
+[  844s] [460/834] installing util-linux-2.37.2-14.oe2303
+[  849s] [461/834] installing nodejs-packaging-20-2.oe2303
+[  850s] [462/834] installing pulseaudio-libs-glib2-16.1-8.oe2303
+[  851s] [463/834] installing util-linux-devel-2.37.2-14.oe2303
+[  852s] [464/834] installing cmake-data-3.24.3-1.oe2303
+[  859s] [465/834] installing erlang-stdlib-23.3.4.9-3.oe2303
+[  861s] [466/834] installing colord-libs-1.4.5-4.oe2303
+[  863s] [467/834] installing device-mapper-8:1.02.182-2.oe2303
+[  865s] [468/834] installing dbus-daemon-1:1.14.0-2.oe2303
+[  867s] [469/834] installing cyrus-sasl-2.1.28-1.oe2303
+[  869s] [470/834] installing rpm-build-4.18.0-6.oe2303
+[  871s] [471/834] installing perl-4:5.34.0-4.oe2303
+[  876s] [472/834] installing dbus-1:1.14.0-2.oe2303
+[  877s] [473/834] installing erlang-kernel-23.3.4.9-3.oe2303
+[  879s] [474/834] installing perl-B-Debug-1.26-6.oe2303
+[  880s] [475/834] installing perl-Env-1.04-398.oe2303
+[  881s] [476/834] installing perl-Text-Tabs+Wrap-2021.0814-2.oe2303
+[  881s] [477/834] installing perl-Devel-PPPort-3.63-2.oe2303
+[  883s] [478/834] installing perl-Algorithm-Diff-1:1.201-2.oe2303
+[  884s] [479/834] installing perl-Params-Check-1:0.38-419.oe2303
+[  884s] [480/834] installing perl-Term-Cap-1.17-511.oe2303
+[  885s] [481/834] installing perl-TermReadKey-2.38-2.oe2303
+[  886s] [482/834] installing perl-Text-Balanced-2.06-1.oe2303
+[  887s] [483/834] installing perl-threads-2:2.26-2.oe2303
+[  888s] [484/834] installing perl-CPAN-Meta-YAML-0.018-421.oe2303
+[  889s] [485/834] installing perl-Config-Perl-V-0.33-2.oe2303
+[  890s] [486/834] installing perl-Error-1:0.17029-3.oe2303
+[  891s] [487/834] installing perl-Filter-2:1.64-1.oe2303
+[  892s] [488/834] installing perl-IPC-SysV-2.09-2.oe2303
+[  893s] [489/834] installing perl-Locale-Maketext-1:1.29-2.oe2303
+[  894s] [490/834] installing perl-constant-1.33-422.oe2303
+[  895s] [491/834] installing cyrus-sasl-devel-2.1.28-1.oe2303
+[  896s] [492/834] installing perl-Socket-4:2.032-2.oe2303
+[  898s] [493/834] installing perl-Storable-1:3.25-3.oe2303
+[  899s] [494/834] installing device-mapper-event-8:1.02.182-2.oe2303
+[  901s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[  901s] [495/834] installing gcc_secure-1.0-0.12.oe2303
+[  902s] [496/834] installing cryptsetup-2.6.0-2.oe2303
+[  905s] [497/834] installing glib2-devel-2.74.4-2.oe2303
+[  908s] [498/834] installing erlang-eunit-23.3.4.9-3.oe2303
+[  909s] [499/834] installing erlang-ftp-23.3.4.9-3.oe2303
+[  910s] [500/834] installing erlang-mnesia-23.3.4.9-3.oe2303
+[  912s] [501/834] installing erlang-parsetools-23.3.4.9-3.oe2303
+[  913s] [502/834] installing erlang-tftp-23.3.4.9-3.oe2303
+[  914s] [503/834] installing erlang-xmerl-23.3.4.9-3.oe2303
+[  916s] [504/834] installing graphene-devel-1.10.6-2.oe2303
+[  918s] [505/834] installing xdg-dbus-proxy-0.1.2-1.oe2303
+[  918s] [506/834] installing erlang-asn1-23.3.4.9-3.oe2303
+[  920s] [507/834] installing erlang-syntax_tools-23.3.4.9-3.oe2303
+[  921s] [508/834] installing polkit-devel-122-2.oe2303
+[  923s] [509/834] installing erlang-odbc-23.3.4.9-3.oe2303
+[  924s] [510/834] installing json-glib-devel-1.6.6-2.oe2303
+[  926s] [511/834] installing perl-Filter-Simple-1:0.94-1.oe2303
+[  926s] [512/834] installing perl-IO-Socket-IP-0.41-3.oe2303
+[  927s] [513/834] installing perl-Text-Diff-1.45-8.oe2303
+[  928s] [514/834] installing perl-Time-Local-2:1.300-2.oe2303
+[  929s] [515/834] installing perl-version-8:0.99.29-2.oe2303
+[  930s] [516/834] installing pulseaudio-libs-devel-16.1-8.oe2303
+[  931s] [517/834] installing perl-IPC-System-Simple-1.30-3.oe2303
+[  932s] [518/834] installing perl-threads-shared-1.62-2.oe2303
+[  933s] [519/834] installing perl-Compress-Raw-Bzip2-2.201-1.oe2303
+[  935s] [520/834] installing perl-Compress-Raw-Zlib-1:2.202-1.oe2303
+[  936s] [521/834] installing perl-Locale-Codes-3.68-2.oe2303
+[  937s] [522/834] installing perl-PathTools-3.80-2.oe2303
+[  939s] [523/834] installing perl-Sys-Syslog-0.36-2.oe2303
+[  940s] [524/834] installing perl-Math-BigInt-1:1.9998.27-2.oe2303
+[  941s] [525/834] installing gdk-pixbuf2-devel-2.42.10-2.oe2303
+[  942s] [526/834] installing perl-Data-Dumper-2.183-2.oe2303
+[  944s] [527/834] installing unbound-libs-1.17.0-2.oe2303
+[  946s] [528/834] installing at-spi2-core-2.44.1-2.oe2303
+[  948s] [529/834] installing perl-Encode-4:3.16-2.oe2303
+[  951s] [530/834] installing avahi-0.8-15.oe2303
+[  955s] Created symlink /etc/systemd/system/sockets.target.wants/avahi-daemon.socket -> /usr/lib/systemd/system/avahi-daemon.socket.
+[  955s] Created symlink /etc/systemd/system/dbus-org.freedesktop.Avahi.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[  955s] Created symlink /etc/systemd/system/multi-user.target.wants/avahi-daemon.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[  955s] [531/834] installing cairo-devel-1.17.4-3.oe2303
+[  957s] [532/834] installing harfbuzz-devel-6.0.0-1.oe2303
+[  958s] [533/834] installing lvm2-8:2.03.18-2.oe2303
+[  962s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[  963s] [534/834] installing openssh-server-9.1p1-3.oe2303
+[  965s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[  965s] [535/834] installing perl-Module-Load-1:0.36-2.oe2303
+[  966s] [536/834] installing avahi-devel-0.8-15.oe2303
+[  967s] [537/834] installing cairo-gobject-devel-1.17.4-3.oe2303
+[  968s] [538/834] installing perl-Thread-Queue-3.13-4.oe2303
+[  969s] [539/834] installing perl-experimental-0.030-1.oe2303
+[  970s] [540/834] installing at-spi2-atk-2.38.0-2.oe2303
+[  971s] [541/834] installing erlang-hipe-23.3.4.9-3.oe2303
+[  973s] [542/834] installing erlang-public_key-23.3.4.9-3.oe2303
+[  975s] [543/834] installing erlang-runtime_tools-23.3.4.9-3.oe2303
+[  976s] [544/834] installing libraqm-devel-0.7.0-3.oe2303
+[  977s] [545/834] installing perl-File-Path-2.18-2.oe2303
+[  978s] [546/834] installing perl-Module-Metadata-1.000037-2.oe2303
+[  979s] [547/834] installing perl-CPAN-Meta-Requirements-2.140-420.oe2303
+[  980s] [548/834] installing perl-Encode-devel-4:3.16-2.oe2303
+[  981s] [549/834] installing perl-HTTP-Tiny-0.080-1.oe2303
+[  982s] [550/834] installing perl-Math-BigInt-FastCalc-0.5012-3.oe2303
+[  983s] [551/834] installing perl-Math-BigRat-0.2620-2.oe2303
+[  984s] [552/834] installing perl-Unicode-Collate-1.31-2.oe2303
+[  987s] [553/834] installing perl-autodie-2.34-3.oe2303
+[  988s] [554/834] installing openssh-9.1p1-3.oe2303
+[  990s] [555/834] installing perl-libnet-3.14-2.oe2303
+[  990s] [556/834] installing perl-podlators-1:4.14-2.oe2303
+[  991s] [557/834] installing gnutls-3.7.8-2.oe2303
+[  994s] [558/834] installing pango-devel-1.50.12-1.oe2303
+[  997s] [559/834] installing NetworkManager-libnm-1:1.32.12-16.oe2303
+[ 1001s] [560/834] installing cups-libs-1:2.4.0-5.oe2303
+[ 1002s] [561/834] installing erlang-compiler-23.3.4.9-3.oe2303
+[ 1004s] [562/834] installing erlang-ssh-23.3.4.9-3.oe2303
+[ 1006s] [563/834] installing perl-ExtUtils-Command-1:7.62-2.oe2303
+[ 1006s] [564/834] installing perl-ExtUtils-Manifest-1:1.73-2.oe2303
+[ 1007s] [565/834] installing erlang-snmp-23.3.4.9-3.oe2303
+[ 1010s] [566/834] installing perl-bignum-0.63-2.oe2303
+[ 1011s] [567/834] installing erlang-inets-23.3.4.9-3.oe2303
+[ 1012s] [568/834] installing perl-File-Temp-1:0.2311-3.oe2303
+[ 1013s] [569/834] installing openssh-clients-9.1p1-3.oe2303
+[ 1015s] [570/834] installing gnupg2-2.3.6-3.oe2303
+[ 1019s] [571/834] installing gpgme-1.17.0-1.oe2303
+[ 1021s] [572/834] installing erlang-otp_mibs-23.3.4.9-3.oe2303
+[ 1022s] [573/834] installing erlang-ssl-23.3.4.9-3.oe2303
+[ 1023s] [574/834] installing libproxy-0.4.18-1.oe2303
+[ 1025s] [575/834] installing erlang-edoc-23.3.4.9-3.oe2303
+[ 1026s] [576/834] installing erlang-tools-23.3.4.9-3.oe2303
+[ 1028s] [577/834] installing git-core-2.39.1-3.oe2303
+[ 1036s] [578/834] installing perl-Test-Simple-2:1.302188-2.oe2303
+[ 1038s] [579/834] installing perl-Pod-Perldoc-1:3.28-5.oe2303
+[ 1038s] [580/834] installing java-1.8.0-openjdk-headless-1:1.8.0.352.b08-5.oe2303
+[ 1068s] [581/834] installing gtk2-2.24.33-7.oe2303
+[ 1073s] [582/834] installing gtk3-3.24.36-1.oe2303
+[ 1081s] [583/834] installing gtk4-4.9.1-1.oe2303
+[ 1088s] [584/834] installing ant-lib-1.10.12-1.oe2303
+[ 1090s] [585/834] installing aopalliance-1.0-19.oe2303
+[ 1091s] [586/834] installing apache-commons-cli-1.4-7.oe2303
+[ 1092s] [587/834] installing apache-commons-codec-1.11-6.oe2303
+[ 1093s] [588/834] installing apache-commons-collections-3.2.2-11.oe2303
+[ 1094s] [589/834] installing apache-commons-compress-1.21-1.oe2303
+[ 1095s] [590/834] installing apache-commons-lang-2.6-23.oe2303
+[ 1096s] [591/834] installing apache-commons-lang3-3.9-3.oe2303
+[ 1097s] [592/834] installing apache-commons-logging-1.2-17.oe2303
+[ 1097s] [593/834] installing apache-ivy-2.4.0-17.oe2303
+[ 1103s] [594/834] installing apache-resource-bundles-2-23.oe2303
+[ 1103s] [595/834] installing atinject-1-31.oe2303
+[ 1104s] [596/834] installing avalon-logkit-2.1-34.oe2303
+[ 1105s] [597/834] installing beust-jcommander-1.71-7.oe2303
+[ 1106s] [598/834] installing dain-snappy-0.4-7.oe2303
+[ 1107s] [599/834] installing extra166y-1.7.0-11.oe2303
+[ 1108s] [600/834] installing geronimo-annotation-1.0-26.oe2303
+[ 1109s] [601/834] installing glassfish-servlet-api-3.1.0-17.oe2303
+[ 1110s] [602/834] installing hawtjni-runtime-1.16-4.oe2303
+[ 1111s] [603/834] installing httpcomponents-core-4.4.15-1.oe2303
+[ 1118s] [604/834] installing jakarta-el-api-4.0.0-4.oe2303
+[ 1118s] [605/834] installing jakarta-server-pages-api-2.3.6-1.oe2303
+[ 1119s] [606/834] installing jboss-interceptors-1.2-api-1.0.1-2.oe2303
+[ 1120s] [607/834] installing jdom2-2.0.6-16.oe2303
+[ 1121s] [608/834] installing jsoup-1.14.2-1.oe2303
+[ 1124s] [609/834] installing jsr-305-3.0.2-1.oe2303
+[ 1125s] [610/834] installing jzlib-1.1.3-11.oe2303
+[ 1125s] [611/834] installing maven-monitor-2.2.1-60.oe2303
+[ 1126s] [612/834] installing maven-resolver-api-1:1.1.1-4.oe2303
+[ 1127s] [613/834] installing multiverse-0.7.0-10.oe2303
+[ 1130s] [614/834] installing objenesis-2.6-4.oe2303
+[ 1132s] [615/834] installing osgi-core-7.0.0-1.oe2303
+[ 1133s] [616/834] installing plexus-cipher-1.7-16.oe2303
+[ 1134s] [617/834] installing plexus-classworlds-2.5.2-10.oe2303
+[ 1135s] [618/834] installing plexus-containers-component-annotations-1.7.1-7.oe2303
+[ 1135s] [619/834] installing plexus-interpolation-1.26-1.oe2303
+[ 1136s] [620/834] installing plexus-utils-3.3.0-1.oe2303
+[ 1137s] [621/834] installing protobuf2-java-2.5.0-3.oe2303
+[ 1138s] [622/834] installing qdox-2.0-5.M9.oe2303
+[ 1139s] [623/834] installing slf4j-1.7.25-8.oe2303
+[ 1140s] [624/834] installing tomcat-taglibs-standard-1.2.5-7.oe2303
+[ 1141s] [625/834] installing xml-commons-apis-1.4.01-29.oe2303
+[ 1145s] [626/834] installing xmlpull-1.1.3.1-1.oe2303
+[ 1146s] [627/834] installing xmlunit-core-2.7.0-1.oe2303
+[ 1146s] [628/834] installing xmvn-api-3.0.0-24.oe2303
+[ 1147s] [629/834] installing xmvn-core-3.0.0-24.oe2303
+[ 1148s] [630/834] installing xpp3-1.1.4-21.oe2303
+[ 1149s] [631/834] installing xz-java-1.8-4.oe2303
+[ 1151s] [632/834] installing apache-commons-daemon-1.3.2-2.oe2303
+[ 1152s] [633/834] installing ecj-1:4.12-1.oe2303
+[ 1154s] [634/834] installing netty-tcnative-1.1.33-1.oe2303
+[ 1155s] [635/834] installing python3-gpgme-1.17.0-1.oe2303
+[ 1157s] [636/834] installing antlr-tool-2.7.7-60.oe2303
+[ 1158s] [637/834] installing erlang-sasl-23.3.4.9-3.oe2303
+[ 1159s] [638/834] installing log4j12-1.2.17-25.oe2303
+[ 1161s] [639/834] installing erlang-eldap-23.3.4.9-3.oe2303
+[ 1162s] [640/834] installing erlang-erl_docgen-23.3.4.9-3.oe2303
+[ 1164s] [641/834] installing javapackages-tools-5.3.0-5.oe2303
+[ 1165s] [642/834] installing glib-networking-2.74.0-1.oe2303
+[ 1167s] [643/834] installing libadwaita-1.2.0-1.oe2303
+[ 1170s] [644/834] installing erlang-diameter-23.3.4.9-3.oe2303
+[ 1172s] [645/834] installing librepo-1.15.1-1.oe2303
+[ 1173s] [646/834] installing perl-Pod-Usage-4:2.03-2.oe2303
+[ 1174s] [647/834] installing java-1.8.0-openjdk-1:1.8.0.352.b08-5.oe2303
+[ 1176s] [648/834] installing ghostscript-9.56.1-1.oe2303
+[ 1186s] [649/834] installing gtk4-devel-4.9.1-1.oe2303
+[ 1221s] [650/834] installing erlang-jinterface-23.3.4.9-3.oe2303
+[ 1222s] [651/834] installing avalon-framework-4.3-24.oe2303
+[ 1223s] [652/834] installing bsf-2.4.0-32.oe2303
+[ 1224s] [653/834] installing fontbox-2.0.25-2.oe2303
+[ 1225s] [654/834] installing jansi-native-1.7-8.oe2303
+[ 1227s] [655/834] installing jcl-over-slf4j-1.7.25-8.oe2303
+[ 1227s] [656/834] installing jcsp-1.1-0.13.oe2303
+[ 1233s] [657/834] installing maven-artifact-2.2.1-60.oe2303
+[ 1234s] [658/834] installing maven-model-2.2.1-60.oe2303
+[ 1235s] [659/834] installing maven-resolver-spi-1:1.1.1-4.oe2303
+[ 1236s] [660/834] installing maven-resolver-util-1:1.1.1-4.oe2303
+[ 1237s] [661/834] installing maven-wagon-provider-api-3.1.0-3.oe2303
+[ 1238s] [662/834] installing mxparser-1.2.1-3.oe2303
+[ 1238s] [663/834] installing plexus-component-api-1.0-0.25.alpha16.oe2303
+[ 1239s] [664/834] installing snakeyaml-1.32-1.oe2303
+[ 1240s] [665/834] installing ant-1.10.12-1.oe2303
+[ 1241s] [666/834] installing apache-commons-configuration-1.10-13.oe2303
+[ 1242s] [667/834] installing jakarta-commons-httpclient-1:3.1-30.oe2303
+[ 1247s] [668/834] installing maven-invoker-2.2-9.oe2303
+[ 1248s] [669/834] installing netty3-3.10.6-6.oe2303
+[ 1257s] [670/834] installing objectweb-asm-8.0.1-1.oe2303
+[ 1258s] [671/834] installing plexus-build-api-0.0.7-24.oe2303
+[ 1259s] [672/834] installing plexus-sec-dispatcher-1.4-26.oe2303
+[ 1260s] [673/834] installing velocity-1.7-26.oe2303
+[ 1262s] [674/834] installing xml-commons-resolver-1.2-27.oe2303
+[ 1262s] [675/834] installing xmvn-connector-aether-3.0.0-24.oe2303
+[ 1263s] [676/834] installing cdi-api-1.2-10.oe2303
+[ 1264s] [677/834] installing httpcomponents-client-4.5.5-7.oe2303
+[ 1265s] [678/834] installing xmvn-resolve-3.0.0-24.oe2303
+[ 1266s] [679/834] installing xmvn-subst-3.0.0-24.oe2303
+[ 1267s] [680/834] installing erlang-os_mon-23.3.4.9-3.oe2303
+[ 1269s] [681/834] installing libsysprof-ui-3.46.0-1.oe2303
+[ 1270s] [682/834] installing perl-Getopt-Long-1:2.52-2.oe2303
+[ 1271s] [683/834] installing java-1.8.0-openjdk-devel-1:1.8.0.352.b08-5.oe2303
+[ 1282s] [684/834] installing libsoup-2.74.3-1.oe2303
+[ 1285s] [685/834] installing tomcat-1:9.0.10-29.oe2303
+[ 1292s] [686/834] installing libdnf-0.69.0-3.oe2303
+[ 1294s] [687/834] installing graphviz-2.48.0-3.oe2303
+[ 1300s] [688/834] installing graphviz-devel-2.48.0-3.oe2303
+[ 1301s] [689/834] installing cglib-3.3.0-1.oe2303
+[ 1302s] [690/834] installing xstream-1.4.18-2.oe2303
+[ 1303s] [691/834] installing jansi-1.17.1-2.oe2303
+[ 1304s] [692/834] installing maven-dependency-tree-3.0-7.oe2303
+[ 1305s] [693/834] installing maven-wagon-file-3.1.0-3.oe2303
+[ 1306s] [694/834] installing plexus-languages-0.9.10-4.oe2303
+[ 1307s] [695/834] installing testng-6.14.3-6.oe2303
+[ 1308s] [696/834] installing ant-antlr-1.10.12-1.oe2303
+[ 1309s] [697/834] installing gssdp-1.4.0.1-1.oe2303
+[ 1311s] [698/834] installing maven-resolver-connector-basic-1:1.1.1-4.oe2303
+[ 1311s] [699/834] installing maven-resolver-impl-1:1.1.1-4.oe2303
+[ 1312s] [700/834] installing perl-ExtUtils-ParseXS-2:3.35-2.oe2303
+[ 1313s] [701/834] installing xmvn-mojo-3.0.0-24.oe2303
+[ 1314s] [702/834] installing maven-resolver-transport-wagon-1:1.1.1-4.oe2303
+[ 1315s] [703/834] installing perl-Module-CoreList-1:5.20211020-2.oe2303
+[ 1316s] [704/834] installing sisu-inject-1:0.3.3-6.oe2303
+[ 1320s] [705/834] installing perl-Digest-SHA-1:6.02-8.oe2303
+[ 1321s] [706/834] installing perl-Pod-Parser-1.63-399.oe2303
+[ 1322s] [707/834] installing perl-Pod-Simple-1:3.43-2.oe2303
+[ 1323s] [708/834] installing xerces-j2-2.12.2-1.oe2303
+[ 1325s] [709/834] installing perl-Test-Harness-2:3.44-1.oe2303
+[ 1326s] [710/834] installing xmvn-install-3.0.0-24.oe2303
+[ 1327s] [711/834] installing sysprof-3.46.0-1.oe2303
+[ 1335s] [712/834] installing perl-IO-Compress-2.201-1.oe2303
+[ 1336s] [713/834] installing perl-JSON-PP-1:4.12-2.oe2303
+[ 1337s] [714/834] installing autoconf-2.71-3.oe2303
+[ 1339s] [715/834] installing python3-libdnf-0.69.0-3.oe2303
+[ 1341s] [716/834] installing git-2.39.1-3.oe2303
+[ 1352s] [717/834] installing webkit2gtk3-2.38.2-3.oe2303
+[ 1371s] [718/834] installing jline-2.14.6-4.oe2303
+[ 1373s] [719/834] installing easymock-3.6-1.oe2303
+[ 1374s] [720/834] installing perl-Git-2.39.1-3.oe2303
+[ 1374s] [721/834] installing vala-devel-0.56.3-3.oe2303
+[ 1376s] [722/834] installing gupnp-1.4.3-2.oe2303
+[ 1378s] [723/834] installing javapackages-local-5.3.0-5.oe2303
+[ 1380s] [724/834] installing perl-Pod-Checker-4:1.74-2.oe2303
+[ 1381s] [725/834] installing xalan-j2-2.7.1-39.oe2303
+[ 1406s] [726/834] installing perl-CPAN-Meta-2.150010-420.oe2303
+[ 1407s] [727/834] installing perl-Module-Load-Conditional-0.74-2.oe2303
+[ 1408s] [728/834] installing perl-Archive-Tar-2.40-2.oe2303
+[ 1409s] [729/834] installing automake-1.16.5-4.oe2303
+[ 1411s] [730/834] installing perl-ExtUtils-MakeMaker-1:7.62-2.oe2303
+[ 1412s] [731/834] installing python3-hawkey-0.69.0-3.oe2303
+[ 1413s] [732/834] installing wxGTK3-3.0.4-8.oe2303
+[ 1419s] [733/834] installing gupnp-igd-1.2.0-1.oe2303
+[ 1421s] [734/834] installing hamcrest-1.3-25.oe2303
+[ 1422s] [735/834] installing bsh-2.0-16.b6.oe2303
+[ 1423s] [736/834] installing scala-2.10.6-15.oe2303
+[ 1441s] [737/834] installing libtool-2.4.7-2.oe2303
+[ 1443s] [738/834] installing perl-ExtUtils-Install-2.20-2.oe2303
+[ 1444s] [739/834] installing python3-dnf-4.14.0-13.oe2303
+[ 1446s] [740/834] installing erlang-wx-23.3.4.9-3.oe2303
+[ 1450s] [741/834] installing perl-IPC-Cmd-2:1.04-4.oe2303
+[ 1451s] [742/834] installing junit-1:4.12-13.oe2303
+[ 1452s] [743/834] installing dnf-4.14.0-13.oe2303
+[ 1454s] [744/834] installing libnice-0.1.19-1.oe2303
+[ 1456s] [745/834] installing parboiled-1.1.6-17.oe2303
+[ 1457s] [746/834] installing erlang-debugger-23.3.4.9-3.oe2303
+[ 1459s] [747/834] installing erlang-et-23.3.4.9-3.oe2303
+[ 1460s] [748/834] installing python3-dnf-plugins-core-4.3.1-2.oe2303
+[ 1462s] [749/834] installing erlang-reltool-23.3.4.9-3.oe2303
+[ 1464s] [750/834] installing erlang-dialyzer-23.3.4.9-3.oe2303
+[ 1465s] [751/834] installing gobject-introspection-devel-1.74.0-1.oe2303
+[ 1469s] [752/834] installing perl-File-Fetch-1.04-1.oe2303
+[ 1470s] [753/834] installing apache-commons-io-1:2.6-8.oe2303
+[ 1471s] [754/834] installing pegdown-1.4.2-14.oe2303
+[ 1473s] [755/834] installing dnf-plugins-core-4.3.1-2.oe2303
+[ 1475s] [756/834] installing guava20-20.0-10.oe2303
+[ 1477s] [757/834] installing xmlunit-legacy-2.7.0-1.oe2303
+[ 1478s] [758/834] installing ant-junit-1.10.12-1.oe2303
+[ 1479s] [759/834] installing erlang-megaco-23.3.4.9-3.oe2303
+[ 1484s] [760/834] installing erlang-observer-23.3.4.9-3.oe2303
+[ 1486s] [761/834] installing vala-0.56.3-3.oe2303
+[ 1491s] [762/834] installing gstreamer1-plugins-bad-free-1.16.2-6.oe2303
+[ 1495s] [763/834] installing leveldb-java-0.7-11.oe2303
+[ 1496s] [764/834] installing maven-shared-utils-3.3.3-1.oe2303
+[ 1497s] [765/834] installing plexus-io-3.2.0-1.oe2303
+[ 1498s] [766/834] installing xmlgraphics-commons-2.2-4.oe2303
+[ 1504s] [767/834] installing google-guice-4.1-13.oe2303
+[ 1505s] [768/834] installing libadwaita-devel-1.2.0-1.oe2303
+[ 1507s] [769/834] installing maven-wagon-http-shared-3.1.0-3.oe2303
+[ 1507s] [770/834] installing supermin-5.3.2-1.oe2303
+[ 1509s] [771/834] installing erlang-common_test-23.3.4.9-3.oe2303
+[ 1511s] [772/834] installing groovy-2.4.8-11.oe2303
+[ 1522s] [773/834] installing leveldbjni-1.8-22.oe2303
+[ 1524s] [774/834] installing maven-verifier-1.6-8.oe2303
+[ 1525s] [775/834] installing batik-1.10-8.oe2303
+[ 1563s] [776/834] installing gpars-1.2.1-13.oe2303
+[ 1565s] [777/834] installing plexus-archiver-4.2.6-2.oe2303
+[ 1567s] [778/834] installing sysprof-devel-3.46.0-1.oe2303
+[ 1569s] [779/834] installing xbean-4.9-3.oe2303
+[ 1573s] [780/834] installing maven-wagon-http-3.1.0-3.oe2303
+[ 1574s] [781/834] installing maven-lib-1:3.6.3-1.oe2303
+[ 1576s] [782/834] installing erlang-23.3.4.9-3.oe2303
+[ 1577s] [783/834] installing maven-artifact-resolver-1:1.0-21.oe2303
+[ 1578s] [784/834] installing maven-common-artifact-filters-3.0.1-7.oe2303
+[ 1580s] [785/834] installing maven-plugin-testing-harness-3.3.0-14.oe2303
+[ 1581s] [786/834] installing maven-shared-incremental-1.1-16.oe2303
+[ 1582s] [787/834] installing maven-filtering-3.1.1-7.oe2303
+[ 1584s] [788/834] installing plexus-containers-container-default-1.7.1-7.oe2303
+[ 1585s] [789/834] installing maven-archiver-3.5.2-1.oe2303
+[ 1586s] [790/834] installing fop-2.2-5.oe2303
+[ 1609s] [791/834] installing xmvn-minimal-3.0.0-24.oe2303
+[ 1610s] [792/834] installing maven-1:3.6.3-1.oe2303
+[ 1611s] [793/834] installing maven-doxia-logging-api-1.7-12.oe2303
+[ 1612s] [794/834] installing maven-enforcer-api-1.4.1-11.oe2303
+[ 1613s] [795/834] installing maven-plugin-registry-2.2.1-60.oe2303
+[ 1614s] [796/834] installing plexus-i18n-1.0-0.12.b10.6.oe2303
+[ 1615s] [797/834] installing plexus-resources-1.0-0.25.a7.oe2303
+[ 1615s] [798/834] installing plexus-cli-1.6-9.oe2303
+[ 1616s] [799/834] installing plexus-velocity-1.2-6.oe2303
+[ 1617s] [800/834] installing maven-jar-plugin-3.1.0-4.oe2303
+[ 1618s] [801/834] installing maven-profile-2.2.1-60.oe2303
+[ 1619s] [802/834] installing maven-settings-2.2.1-60.oe2303
+[ 1620s] [803/834] installing maven-artifact-manager-2.2.1-60.oe2303
+[ 1621s] [804/834] installing maven-resources-plugin-3.1.0-5.oe2303
+[ 1622s] [805/834] installing maven-artifact-transfer-1:0.9.0-7.oe2303
+[ 1623s] [806/834] installing maven-doxia-sink-api-1.7-12.oe2303
+[ 1624s] [807/834] installing maven-enforcer-rules-1.4.1-11.oe2303
+[ 1624s] [808/834] installing maven-project-2.2.1-60.oe2303
+[ 1625s] [809/834] installing maven-reporting-api-3.0-17.oe2303
+[ 1627s] [810/834] installing maven-enforcer-plugin-1.4.1-11.oe2303
+[ 1628s] [811/834] installing maven-doxia-core-1.7-12.oe2303
+[ 1628s] [812/834] installing plexus-containers-component-metadata-1.7.1-7.oe2303
+[ 1629s] [813/834] installing maven-remote-resources-plugin-1.5-5.oe2303
+[ 1630s] [814/834] installing plexus-pom-5.0-4.oe2303
+[ 1631s] [815/834] installing apache-parent-19-5.oe2303
+[ 1632s] [816/834] installing maven-doxia-module-apt-1.7-12.oe2303
+[ 1633s] [817/834] installing maven-doxia-module-fml-1.7-12.oe2303
+[ 1634s] [818/834] installing maven-doxia-module-xdoc-1.7-12.oe2303
+[ 1634s] [819/834] installing maven-doxia-module-xhtml-1.7-12.oe2303
+[ 1635s] [820/834] installing maven-doxia-module-fo-1.7-12.oe2303
+[ 1636s] [821/834] installing maven-parent-27-8.oe2303
+[ 1637s] [822/834] installing plexus-components-pom-1.3.1-14.oe2303
+[ 1638s] [823/834] installing maven-doxia-module-markdown-1.7-12.oe2303
+[ 1639s] [824/834] installing plexus-compiler-2.8.2-4.oe2303
+[ 1641s] [825/834] installing plexus-interactivity-1.0-2.oe2303
+[ 1642s] [826/834] installing maven-plugin-tools-3.5.1-7.oe2303
+[ 1645s] [827/834] installing maven-doxia-sitetools-1.7.5-5.oe2303
+[ 1647s] [828/834] installing maven-compiler-plugin-3.8.0-2.oe2303
+[ 1648s] [829/834] installing maven-surefire-2.22.0-7.oe2303
+[ 1650s] [830/834] installing maven-javadoc-plugin-3.0.1-3.oe2303
+[ 1651s] [831/834] installing maven-surefire-plugin-2.22.0-7.oe2303
+[ 1652s] [832/834] installing maven-surefire-provider-junit-2.22.0-7.oe2303
+[ 1653s] [833/834] installing maven-surefire-provider-testng-2.22.0-7.oe2303
+[ 1653s] [834/834] installing maven-local-5.3.0-5.oe2303
+[ 1655s] now finalizing build dir...
+[ 1657s] egrep: warning: egrep is obsolescent; using grep -E
+[ 1657s] egrep: warning: egrep is obsolescent; using grep -E
+[ 1658s] Network setup
+[ 1658s] RTNETLINK answers: Cannot assign requested address
+[ 1663s] /home/abuild/rpmbuild
+[ 1666s] Running build time source services...
+[ 1677s] -----------------------------------------------------------------
+[ 1677s] I have the following modifications for hadoop.spec:
+[ 1677s] 71c71
+[ 1677s] < Requires(pre): /usr/sbin/useradd
+[ 1677s] ---
+[ 1677s] > Requires(pre): shadow
+[ 1678s] -----------------------------------------------------------------
+[ 1678s] ----- building hadoop.spec (user abuild)
+[ 1678s] -----------------------------------------------------------------
+[ 1678s] -----------------------------------------------------------------
+[ 1678s] egrep: warning: egrep is obsolescent; using grep -E
+[ 1680s] /.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/bin
+[ 1680s] printenv PATH
+[ 1680s] export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/bin
+[ 1680s] rpmspec -P /home/abuild/rpmbuild/SOURCES/hadoop.spec || echo parse spec fail.
+[ 1680s] #!/bin/sh -x
+[ 1680s] exec "rpmbuild" "--noclean" "-ba" "--define" "_srcdefattr (-,root,root)" "--nosignature" "--define" "disturl obs://private/openEuler:23.03/23.03/0e27f5877f35fecfdd79692c70e90686-hadoop" "/home/abuild/rpmbuild/SOURCES/hadoop.spec"
+[ 1684s] /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] Name:   hadoop
+[ 1684s] Version: 3.3.4
+[ 1684s] Release: 2
+[ 1684s] Summary: A software platform for processing vast amounts of data
+[ 1684s] 
+[ 1684s] 
+[ 1684s] License: Apache-2.0 and BSD and Zlib and BSL-1.0 and MPL-2.0 and EPL-1.0 and MIT
+[ 1684s] URL:     https://hadoop.apache.org
+[ 1684s] Source0: https://www.apache.org/dist/hadoop/core/hadoop-3.3.4/hadoop-3.3.4-src.tar.gz
+[ 1684s] Source1: hadoop-layout.sh
+[ 1684s] Source2: hadoop-hdfs.service.template
+[ 1684s] Source3: hadoop-mapreduce.service.template
+[ 1684s] Source4: hadoop-yarn.service.template
+[ 1684s] Source5: context.xml
+[ 1684s] Source6: hadoop.logrotate
+[ 1684s] Source7: hadoop-httpfs.sysconfig
+[ 1684s] Source8: hdfs-create-dirs
+[ 1684s] Source9: hadoop-tomcat-users.xml
+[ 1684s] Source10: hadoop-core-site.xml
+[ 1684s] Source11: hadoop-hdfs-site.xml
+[ 1684s] Source12: hadoop-mapred-site.xml
+[ 1684s] Source13: hadoop-yarn-site.xml
+[ 1684s] Source14: yarn-v1.22.5.tar.gz
+[ 1684s] Source15: node-12.22.1-linux-x64.tar.gz
+[ 1684s] Source16: node-v12.22.1-linux-arm64.tar.gz
+[ 1684s] Source17: settings.xml
+[ 1684s] 
+[ 1684s] BuildRoot: /var/tmp/hadoop-3.3.4-2.oe2303-root
+[ 1684s] BuildRequires: java-1.8.0-openjdk-devel maven hostname maven-local tomcat cmake snappy openssl-devel
+[ 1684s] BuildRequires: cyrus-sasl-devel chrpath systemd protobuf2-compiler protobuf2-devel protobuf2-java protobuf2
+[ 1684s] BuildRequires: leveldbjni leveldb-java hawtjni-runtime gcc-c++
+[ 1684s] BuildRequires: npm chrpath
+[ 1684s] Requires: java-1.8.0-openjdk protobuf2-java apache-zookeeper
+[ 1684s] 
+[ 1684s] %description
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] %package client
+[ 1684s] Summary: Libraries for Apache Hadoop clients
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires: hadoop-common = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-hdfs = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-mapreduce = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-yarn = 3.3.4-2.oe2303
+[ 1684s] 
+[ 1684s] %description client
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package provides libraries for Apache Hadoop clients.
+[ 1684s] 
+[ 1684s] %package common
+[ 1684s] Summary: Common files needed by Apache Hadoop daemons
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires(pre): shadow
+[ 1684s] Obsoletes: hadoop-javadoc < 2.4.1-22.oe2303
+[ 1684s] 
+[ 1684s] Requires: apache-zookeeper
+[ 1684s] Requires: leveldb
+[ 1684s] Requires: protobuf2-java
+[ 1684s] 
+[ 1684s] %description common
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package contains common files and utilities needed by other Apache
+[ 1684s] Hadoop modules.
+[ 1684s] 
+[ 1684s] %package common-native
+[ 1684s] Summary: The native Apache Hadoop library file
+[ 1684s] Requires: hadoop-common = 3.3.4-2.oe2303
+[ 1684s] 
+[ 1684s] %description common-native
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package contains the native-hadoop library
+[ 1684s] 
+[ 1684s] %package devel
+[ 1684s] Summary: Headers for Apache Hadoop
+[ 1684s] Requires: libhdfs(riscv-64) = 3.3.4-2.oe2303
+[ 1684s] 
+[ 1684s] %description devel
+[ 1684s] Header files for Apache Hadoop's hdfs library and other utilities
+[ 1684s] 
+[ 1684s] %package hdfs
+[ 1684s] Summary: The Apache Hadoop Distributed File System
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires: apache-commons-daemon-jsvc
+[ 1684s] Requires: hadoop-common = 3.3.4-2.oe2303
+[ 1684s] Requires(post): systemd
+[ 1684s] Requires(preun): systemd
+[ 1684s] Requires(postun): systemd
+[ 1684s] 
+[ 1684s] %description hdfs
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] The Hadoop Distributed File System (HDFS) is the primary storage system
+[ 1684s] used by Apache Hadoop applications.
+[ 1684s] 
+[ 1684s] 
+[ 1684s] %package httpfs
+[ 1684s] Summary: Provides web access to HDFS
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires: apache-commons-dbcp
+[ 1684s] Requires: ecj >= 1:4.2.1-6
+[ 1684s] Requires: json_simple
+[ 1684s] Requires: tomcat
+[ 1684s] Requires: tomcat-lib
+[ 1684s] Requires: tcnative
+[ 1684s] Requires(post): systemd
+[ 1684s] Requires(preun): systemd
+[ 1684s] Requires(postun): systemd
+[ 1684s] 
+[ 1684s] %description httpfs
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package provides a server that provides HTTP REST API support for
+[ 1684s] the complete FileSystem/FileContext interface in HDFS.
+[ 1684s] 
+[ 1684s] %package -n libhdfs
+[ 1684s] Summary: The Apache Hadoop Filesystem Library
+[ 1684s] Requires: hadoop-hdfs = 3.3.4-2.oe2303
+[ 1684s] Requires: lzo
+[ 1684s] 
+[ 1684s] %description -n libhdfs
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package provides the Apache Hadoop Filesystem Library.
+[ 1684s] 
+[ 1684s] %package mapreduce
+[ 1684s] Summary: Apache Hadoop MapReduce (MRv2)
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires: hadoop-common = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-mapreduce-examples = 3.3.4-2.oe2303
+[ 1684s] Requires(post): systemd
+[ 1684s] Requires(preun): systemd
+[ 1684s] Requires(postun): systemd
+[ 1684s] 
+[ 1684s] %description mapreduce
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package provides Apache Hadoop MapReduce (MRv2).
+[ 1684s] 
+[ 1684s] %package mapreduce-examples
+[ 1684s] Summary: Apache Hadoop MapReduce (MRv2) examples
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires: hsqldb
+[ 1684s] 
+[ 1684s] %description mapreduce-examples
+[ 1684s] This package contains mapreduce examples.
+[ 1684s] 
+[ 1684s] %package maven-plugin
+[ 1684s] Summary: Apache Hadoop maven plugin
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires: maven
+[ 1684s] 
+[ 1684s] %description maven-plugin
+[ 1684s] The Apache Hadoop maven plugin
+[ 1684s] 
+[ 1684s] %package tests
+[ 1684s] Summary: Apache Hadoop test resources
+[ 1684s] BuildArch: noarch
+[ 1684s] Requires: hadoop-common = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-hdfs = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-mapreduce = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-yarn = 3.3.4-2.oe2303
+[ 1684s] 
+[ 1684s] %description tests
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package contains test related resources for Apache Hadoop.
+[ 1684s] 
+[ 1684s] %package yarn
+[ 1684s] BuildArch: noarch
+[ 1684s] Summary: Apache Hadoop YARN
+[ 1684s] Requires: hadoop-common = 3.3.4-2.oe2303
+[ 1684s] Requires: hadoop-mapreduce = 3.3.4-2.oe2303
+[ 1684s] Requires: aopalliance
+[ 1684s] Requires: atinject
+[ 1684s] Requires: hamcrest
+[ 1684s] Requires: hawtjni
+[ 1684s] Requires: leveldbjni
+[ 1684s] Requires(post): systemd
+[ 1684s] Requires(preun): systemd
+[ 1684s] Requires(postun): systemd
+[ 1684s] 
+[ 1684s] %description yarn
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package contains Apache Hadoop YARN.
+[ 1684s] 
+[ 1684s] %package yarn-security
+[ 1684s] Summary: The ability to run Apache Hadoop YARN in secure mode
+[ 1684s] Requires: hadoop-yarn = 3.3.4-2.oe2303
+[ 1684s] 
+[ 1684s] %description yarn-security
+[ 1684s] Apache Hadoop is a framework that allows for the distributed processing of
+[ 1684s] large data sets across clusters of computers using simple programming models.
+[ 1684s] It is designed to scale up from single servers to thousands of machines, each
+[ 1684s] offering local computation and storage.
+[ 1684s] 
+[ 1684s] This package contains files needed to run Apache Hadoop YARN in secure mode.
+[ 1684s] 
+[ 1684s] %prep
+[ 1684s] 
+[ 1684s] cd '/home/abuild/rpmbuild/BUILD'
+[ 1684s] rm -rf 'hadoop-3.3.4-src'
+[ 1684s] /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/hadoop-3.3.4-src.tar.gz
+[ 1684s] STATUS=$?
+[ 1684s] if [ $STATUS -ne 0 ]; then
+[ 1684s]   exit $STATUS
+[ 1684s] fi
+[ 1684s] cd 'hadoop-3.3.4-src'
+[ 1684s] /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] cp /home/abuild/rpmbuild/SOURCES/settings.xml ./
+[ 1684s] mvn install:install-file -DgroupId=org.fusesource.leveldbjni -DartifactId=leveldbjni-all -Dversion=1.8 -Dpackaging=jar -Dfile=/usr/lib/java/leveldbjni-all.jar -s settings.xml 
+[ 1684s] mvn install:install-file -DgroupId=org.fusesource.leveldbjni -DartifactId=leveldbjni -Dversion=1.8 -Dpackaging=jar -Dfile=/usr/lib/java/leveldbjni/leveldbjni.jar -s settings.xml
+[ 1684s] mvn install:install-file -DgroupId=org.iq80.leveldb -DartifactId=leveldb-api -Dversion=0.7 -Dpackaging=jar -Dfile=/usr/share/java/leveldb-java/leveldb-api.jar -s settings.xml
+[ 1684s] mvn install:install-file -DgroupId=org.iq80.leveldb -DartifactId=leveldb-benchmark -Dversion=0.7 -Dpackaging=jar -Dfile=/usr/share/java/leveldb-java/leveldb-benchmark.jar -s settings.xml
+[ 1684s] mvn install:install-file -DgroupId=org.iq80.leveldb -DartifactId=leveldb -Dversion=0.7 -Dpackaging=jar -Dfile=/usr/share/java/leveldb-java/leveldb.jar -s settings.xml
+[ 1684s] mvn install:install-file -DgroupId=orn.fusesource.hawtjni -DartifactId=hawtjni-runtime -Dversion=1.16 -Dpackaging=jar -Dfile=/usr/lib/java/hawtjni/hawtjni-runtime.jar -s settings.xml
+[ 1684s] 
+[ 1684s] mkdir -p /home/abuild/repository/com/github/eirslett/node/12.22.1/
+[ 1684s] cp /home/abuild/rpmbuild/SOURCES/node-12.22.1-linux-x64.tar.gz /home/abuild/repository/com/github/eirslett/node/12.22.1/
+[ 1684s] cp /home/abuild/rpmbuild/SOURCES/node-v12.22.1-linux-arm64.tar.gz /home/abuild/repository/com/github/eirslett/node/12.22.1/
+[ 1684s] mv /home/abuild/repository/com/github/eirslett/node/12.22.1/node-v12.22.1-linux-arm64.tar.gz /home/abuild/repository/com/github/eirslett/node/12.22.1/node-12.22.1-linux-arm64.tar.gz
+[ 1684s] mkdir -p /home/abuild/repository/com/github/eirslett/yarn/1.22.5/
+[ 1684s] cp /home/abuild/rpmbuild/SOURCES/yarn-v1.22.5.tar.gz /home/abuild/repository/com/github/eirslett/yarn/1.22.5/
+[ 1684s] mv /home/abuild/repository/com/github/eirslett/yarn/1.22.5/yarn-v1.22.5.tar.gz /home/abuild/repository/com/github/eirslett/yarn/1.22.5/yarn-1.22.5.tar.gz
+[ 1684s] tar -xzvf /home/abuild/repository/com/github/eirslett/yarn/1.22.5/yarn-1.22.5.tar.gz -C /home/abuild/repository/com/github/eirslett/yarn/1.22.5/
+[ 1684s] npm config set registry https://repo.huaweicloud.com/repository/npm/
+[ 1684s] npm cache clean -f
+[ 1684s] /home/abuild/repository/com/github/eirslett/yarn/1.22.5/yarn-v1.22.5/bin/yarn config set registry https://repo.huaweicloud.com/repository/npm/ -g 
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep        org.iq80.leveldb:leveldb-api:0.7 hadoop-hdfs-project/hadoop-hdfs
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep        org.iq80.leveldb:leveldb-api:0.7 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-web-proxy
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep        org.iq80.leveldb:leveldb-api:0.7 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep        org.iq80.leveldb:leveldb-api:0.7 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep        org.fusesource.leveldbjni:leveldbjni:1.8 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep        org.fusesource.hawtjni:hawtjni-runtime:1.16 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice
+[ 1684s] 
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module hadoop-minikdc hadoop-common-project
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module hadoop-pipes hadoop-tools
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module hadoop-azure hadoop-tools
+[ 1684s] 
+[ 1684s]  /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module hadoop-yarn-server-timelineservice-hbase-tests hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/pom.xml
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] # War files we don't want
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-auth-examples __noinstall
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-hdfs-httpfs __noinstall
+[ 1684s] 
+[ 1684s] # Parts we don't want to distribute
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-assemblies __noinstall
+[ 1684s] 
+[ 1684s] # Workaround for bz1012059
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-project-dist __noinstall
+[ 1684s] 
+[ 1684s] # Create separate file lists for packaging
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :::tests: hadoop-tests
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-*-tests::{}: hadoop-tests
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-client*::{}: hadoop-client
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-hdfs*::{}: hadoop-hdfs
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-mapreduce-examples*::{}: hadoop-mapreduce-examples
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-mapreduce*::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-archives::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-datajoin::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-distcp::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-extras::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-gridmix::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-openstack::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-rumen::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-sls::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-streaming::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-tools*::{}: hadoop-mapreduce
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-maven-plugins::{}: hadoop-maven-plugin
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-minicluster::{}: hadoop-tests
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hadoop-yarn*::{}: hadoop-yarn
+[ 1684s] 
+[ 1684s] # Jar files that need to be overridden due to installation location
+[ 1684s] /usr/bin/python3 /usr/share/java-utils/mvn_file.py :hadoop-common::tests: hadoop/hadoop-common
+[ 1684s] 
+[ 1684s] mvn clean  -Dsnappy.lib=/usr/lib64 -Dbundle.snappy -Dcontainer-executor.conf.dir=/etc/hadoop -Pdist,native -DskipTests -DskipIT -Dmaven.javadoc.skip=true package -s settings.xml
+[ 1684s] 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] %package debuginfo
+[ 1684s] Summary: Debug information for package hadoop
+[ 1684s] Group: Development/Debug
+[ 1684s] AutoReq: 0
+[ 1684s] AutoProv: 1
+[ 1684s] %description debuginfo
+[ 1684s] This package provides debug information for package hadoop.
+[ 1684s] Debug information is useful when developing applications that use this
+[ 1684s] package or when debugging this package.
+[ 1684s] %files debuginfo -f debugfiles.list
+[ 1684s] 
+[ 1684s] 
+[ 1684s] %package debugsource
+[ 1684s] Summary: Debug sources for package hadoop
+[ 1684s] Group: Development/Debug
+[ 1684s] AutoReqProv: 0
+[ 1684s] %description debugsource
+[ 1684s] This package provides debug sources for package hadoop.
+[ 1684s] Debug sources are useful when developing applications that use this
+[ 1684s] package or when debugging this package.
+[ 1684s] %files debugsource -f debugsourcefiles.list
+[ 1684s] 
+[ 1684s] 
+[ 1684s] %install
+[ 1684s] 
+[ 1684s] # Copy all jar files except those generated by the build
+[ 1684s] # $1 the src directory
+[ 1684s] # $2 the dest directory
+[ 1684s] copy_dep_jars()
+[ 1684s] {
+[ 1684s]   find $1 ! -name "hadoop-*.jar" -name "*.jar" | xargs install -m 0644 -t $2
+[ 1684s]   rm -f $2/tools-*.jar
+[ 1684s] }
+[ 1684s] 
+[ 1684s] # Create symlinks for jars from the build
+[ 1684s] # $1 the location to create the symlink
+[ 1684s] link_hadoop_jars()
+[ 1684s] {
+[ 1684s]   for f in `ls hadoop-* | grep -v tests | grep -v examples`
+[ 1684s]   do
+[ 1684s]     n=`echo $f | sed -e "s/-3.3.4//" -e "s/1.1.1//"`
+[ 1684s]     if [ -L $1/$n ]
+[ 1684s]     then
+[ 1684s]       continue
+[ 1684s]     elif [ -e $1/$f ]
+[ 1684s]     then
+[ 1684s]       rm -f $1/$f $1/$n
+[ 1684s]     fi
+[ 1684s]     p=`find /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/java /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop -name $n | sed "s#/home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64##"`
+[ 1684s]     ln -s $p $1/$n
+[ 1684s]   done
+[ 1684s] }
+[ 1684s] 
+[ 1684s] xmvn-install    -R .xmvn-reactor -n hadoop  -d "/home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64" 
+[ 1684s] jdir=target/site/apidocs; [ -d .xmvn/apidocs ] && jdir=.xmvn/apidocs 
+[ 1684s] /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/licenses 
+[ 1684s] if [ -d "${jdir}" ]; then 
+[ 1684s]    install -dm755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/javadoc/hadoop 
+[ 1684s]    cp -pr "${jdir}"/* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/javadoc/hadoop 
+[ 1684s]    echo '/usr/share/javadoc/hadoop' >>.mfiles-javadoc 
+[ 1684s] fi 
+[ 1684s] 
+[ 1684s] 
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib64/hadoop
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/include/hadoop
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/java/hadoop
+[ 1684s] 
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/client/lib
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/common/lib
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs/lib
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs/webapps
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/httpfs/tomcat/webapps
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/mapreduce/lib
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/yarn/lib
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/tomcat/Catalina/localhost
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/logrotate.d
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/sysconfig
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/tmpfiles.d
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/lib/hadoop-hdfs
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/lib/tomcats/httpfs
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/cache/hadoop-yarn
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/cache/hadoop-httpfs/temp
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/cache/hadoop-httpfs/work
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/cache/hadoop-mapreduce
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/log/hadoop-yarn
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/log/hadoop-hdfs
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/log/hadoop-httpfs
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/log/hadoop-mapreduce
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/run/hadoop-yarn
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/run/hadoop-hdfs
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/run/hadoop-mapreduce
+[ 1684s] 
+[ 1684s] basedir='hadoop-common-project/hadoop-common/target/hadoop-common-3.3.4'
+[ 1684s] hdfsdir='hadoop-hdfs-project/hadoop-hdfs/target/hadoop-hdfs-3.3.4'
+[ 1684s] httpfsdir='hadoop-hdfs-project/hadoop-hdfs-httpfs/target/hadoop-hdfs-httpfs-3.3.4'
+[ 1684s] mapreddir='hadoop-mapreduce-project/target/hadoop-mapreduce-3.3.4'
+[ 1684s] yarndir='hadoop-yarn-project/target/hadoop-yarn-project-3.3.4'
+[ 1684s] 
+[ 1684s] # copy jar package
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop
+[ 1684s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop
+[ 1684s] # client
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-client.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-client.jar >> .mfiles-hadoop-client 
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-client.pom 
+[ 1684s] echo /usr/share/maven-poms/hadoop/hadoop-client.pom >> .mfiles-hadoop-client
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client-api/target/hadoop-client-api-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-client-api.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-client-api.jar >> .mfiles-hadoop-client
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client-api/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-client-api.pom
+[ 1684s] echo /usr/share/maven-poms/hadoop/hadoop-client-api.pom >> .mfiles-hadoop-client
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client-minicluster/target/hadoop-client-minicluster-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-client-minicluster.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-client-minicluster.jar >> .mfiles-hadoop-client
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client-minicluster/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-client-minicluster.pom
+[ 1684s] echo /usr/share/maven-poms/hadoop/hadoop-client-minicluster.pom >> .mfiles-hadoop-client
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client-runtime/target/hadoop-client-runtime-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-client-runtime.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-client-runtime.jar >> .mfiles-hadoop-client
+[ 1684s] install -m 0755 hadoop-client-modules/hadoop-client-runtime/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-client-runtime.pom
+[ 1684s] echo /usr/share/maven-poms/hadoop/hadoop-client-runtime.pom >> .mfiles-hadoop-client
+[ 1684s] # common
+[ 1684s] install -m 0755 hadoop-common-project/hadoop-annotations/target/hadoop-annotations-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-annotations.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-annotations.jar >> .mfiles
+[ 1684s] install -m 0755 hadoop-common-project/hadoop-auth/target/hadoop-auth-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-auth.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-auth.jar >> .mfiles
+[ 1684s] install -m 0755 hadoop-tools/hadoop-aws/target/hadoop-aws-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-aws.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-aws.jar >> .mfiles
+[ 1684s] install -m 0755 hadoop-build-tools/target/hadoop-build-tools-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-build-tools.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-build-tools.jar >> .mfiles
+[ 1684s] install -m 0755 hadoop-common-project/hadoop-nfs/target/hadoop-nfs-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-nfs.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-nfs.jar >> .mfiles
+[ 1684s] install -m 0755 hadoop-common-project/hadoop-common/target/hadoop-common-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/java/hadoop/hadoop-common.jar
+[ 1684s] echo /usr/lib/java/hadoop/hadoop-common.jar >> .mfiles
+[ 1684s] install -m 0755 hadoop-common-project/hadoop-kms/target/hadoop-kms-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-kms.jar
+[ 1684s] echo /usr/share/java/hadoop/hadoop-kms.jar >> .mfiles
+[ 1684s] install -m 0755 hadoop-common-project/hadoop-annotations/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-annotations.pom
+[ 1684s] echo /usr/share/maven-poms/hadoop/hadoop-annotations.pom >> .mfiles
+[ 1684s] install -m 0755 hadoop-common-project/hadoop-auth/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-auth.pom
+[ 1684s] echo /usr/share/maven-poms/hadoop/hadoop-auth.pom >> .mfiles
+[ 1684s] install -m 0755 hadoop-tools/hadoop-aws/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-aws.pom
+[ 1684s] echo /usr/share/maven-poms/hadoop/hadoop-aws.pom >> .mfiles
+[ 1685s] install -m 0755 hadoop-build-tools/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-build-tools.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-build-tools.pom >> .mfiles
+[ 1685s] install -m 0755 hadoop-common-project/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-common-project.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-common-project.pom >> .mfiles
+[ 1685s] install -m 0755 hadoop-common-project/hadoop-common/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-common.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-common.pom >> .mfiles
+[ 1685s] install -m 0755 hadoop-dist/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-dist.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-dist.pom >> .mfiles
+[ 1685s] install -m 0755 hadoop-common-project/hadoop-nfs/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-nfs.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-nfs.pom >> .mfiles
+[ 1685s] install -m 0755 hadoop-project/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-project.pom 
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-project.pom >> .mfiles
+[ 1685s] install -m 0755 hadoop-common-project/hadoop-kms/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-kms.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-kms.pom >> .mfiles
+[ 1685s] echo /etc/hadoop/hadoop-user-functions.sh.example >> .mfiles
+[ 1685s] echo /etc/hadoop/shellprofile.d/example.sh >> .mfiles
+[ 1685s] echo /etc/hadoop/workers >> .mfiles
+[ 1685s] echo /usr/libexec/hadoop-functions.sh >> .mfiles
+[ 1685s] echo /usr/libexec/hadoop-layout.sh.example >> .mfiles
+[ 1685s] echo /usr/sbin/workers.sh >> .mfiles
+[ 1685s] echo /usr/share/hadoop/common/hadoop-common.jar >> .mfiles
+[ 1685s] # hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-client/target/hadoop-hdfs-client-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs-client.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs-client.jar >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-nfs/target/hadoop-hdfs-nfs-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs-nfs.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs-nfs.jar >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs/target/hadoop-hdfs-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs.jar >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-hdfs-nfs.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-hdfs-nfs.pom >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-hdfs-project.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-hdfs-project.pom >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-hdfs.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-hdfs.pom >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-httpfs/target/hadoop-hdfs-httpfs-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs-httpfs.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs-httpfs.jar >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-hdfs-httpfs.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-hdfs-httpfs.pom >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-native-client/target/hadoop-hdfs-native-client-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs-native-client.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs-native-client.jar >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-hdfs-native-client.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-hdfs-native-client.pom >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-rbf/target/hadoop-hdfs-rbf-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs-rbf.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs-rbf.jar >> .mfiles-hadoop-hdfs
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-hdfs-rbf.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-hdfs-rbf.pom >> .mfiles-hadoop-hdfs
+[ 1685s] echo /usr/libexec/shellprofile.d/hadoop-hdfs.sh >> .mfiles-hadoop-hdfs
+[ 1685s] # mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-archives/target/hadoop-archives-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-archives.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-archives.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-datajoin/target/hadoop-datajoin-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-datajoin.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-datajoin.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-distcp/target/hadoop-distcp-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-distcp.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-distcp.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-extras/target/hadoop-extras-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-extras.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-extras.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-gridmix/target/hadoop-gridmix-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-gridmix.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-gridmix.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/target/hadoop-mapreduce-client-app-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-app.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-app.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/target/hadoop-mapreduce-client-common-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-common.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-common.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/target/hadoop-mapreduce-client-core-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-core.jar 
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-core.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs-plugins/target/hadoop-mapreduce-client-hs-plugins-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-hs-plugins.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-hs-plugins.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/target/hadoop-mapreduce-client-hs-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-hs.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-hs.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/target/hadoop-mapreduce-client-jobclient-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-jobclient.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-jobclient.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-shuffle/target/hadoop-mapreduce-client-shuffle-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-shuffle.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-shuffle.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-openstack/target/hadoop-openstack-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-openstack.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-openstack.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-rumen/target/hadoop-rumen-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-rumen.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-rumen.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-sls/target/hadoop-sls-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-sls.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-sls.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-streaming/target/hadoop-streaming-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-streaming.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-streaming.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-tools-dist/target/hadoop-tools-dist-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-tools-dist.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-tools-dist.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-archives/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-archives.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-archives.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-datajoin/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-datajoin.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-datajoin.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-distcp/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-distcp.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-distcp.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-extras/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-extras.pom 
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-extras.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-gridmix/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-gridmix.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-gridmix.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-app.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-app.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-common.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-common.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-core.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-core.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs-plugins/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-hs-plugins.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-hs-plugins.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-hs.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-hs.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-jobclient.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-jobclient.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-shuffle/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-shuffle.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-shuffle.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-openstack/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-openstack.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-openstack.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-rumen/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-rumen.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-rumen.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-sls/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-sls.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-sls.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-streaming/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-streaming.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-streaming.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/hadoop-tools-dist/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-tools-dist.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-tools-dist.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-tools/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-tools.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-tools.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] echo /usr/libexec/shellprofile.d/hadoop-mapreduce.sh >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-nativetask/target/hadoop-mapreduce-client-nativetask-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-nativetask.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-nativetask.jar >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-nativetask/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-nativetask.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-nativetask.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-uploader/target/hadoop-mapreduce-client-uploader-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-uploader.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-uploader.jar >> .mfiles-hadoop-mapreduce 
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-uploader/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-client-uploader.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-client-uploader.pom >> .mfiles-hadoop-mapreduce
+[ 1685s] # mapreduce-examples
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-examples/target/hadoop-mapreduce-examples-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-examples.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-examples.jar >> .mfiles-hadoop-mapreduce-examples
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-examples/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-mapreduce-examples.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-mapreduce-examples.pom >> .mfiles-hadoop-mapreduce-examples
+[ 1685s] # maven-plugin
+[ 1685s] install -m 0755 hadoop-maven-plugins/target/hadoop-maven-plugins-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-maven-plugins.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-maven-plugins.jar >> .mfiles-hadoop-maven-plugin
+[ 1685s] install -m 0755 hadoop-maven-plugins/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-maven-plugins.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-maven-plugins.pom >> .mfiles-hadoop-maven-plugin
+[ 1685s] # tests
+[ 1685s] install -m 0755 hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-client-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-client-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-common-project/hadoop-common/target/hadoop-common-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-common-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-common-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs/target/hadoop-hdfs-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/target/hadoop-mapreduce-client-app-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-app-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-app-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/target/hadoop-mapreduce-client-jobclient-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-mapreduce-client-jobclient-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-mapreduce-client-jobclient-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-minicluster/target/hadoop-minicluster-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-minicluster.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-minicluster.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-tools/hadoop-tools-dist/target/hadoop-tools-dist-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-tools-dist-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-tools-dist-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/target/hadoop-yarn-common-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-common-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-common-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] #install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-registry/target/hadoop-yarn-registry-3.3.4-test-sources.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-registry-test-sources.jar
+[ 1685s] #echo /usr/share/java/hadoop/hadoop-yarn-registry-test-sources.jar >> .mfiles-hadoop-test-sources
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/target/hadoop-yarn-server-resourcemanager-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-resourcemanager-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-resourcemanager-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-sharedcachemanager/target/hadoop-yarn-server-sharedcachemanager-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-sharedcachemanager-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-sharedcachemanager-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/target/hadoop-yarn-server-tests-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-tests-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-tests-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/target/hadoop-yarn-server-tests-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-minicluster/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-minicluster.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-minicluster.pom >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-tests.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-tests.pom >> .mfiles-hadoop-tests
+[ 1685s] install -m 0755 hadoop-hdfs-project/hadoop-hdfs-client/target/hadoop-hdfs-client-3.3.4-tests.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-hdfs-client-tests.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-hdfs-client-tests.jar >> .mfiles-hadoop-tests
+[ 1685s] # yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/target/hadoop-yarn-api-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-api.jar 
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-api.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/target/hadoop-yarn-applications-distributedshell-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-applications-distributedshell.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-applications-distributedshell.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-unmanaged-am-launcher/target/hadoop-yarn-applications-unmanaged-am-launcher-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-applications-unmanaged-am-launcher.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-applications-unmanaged-am-launcher.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-client/target/hadoop-yarn-client-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-client.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-client.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/target/hadoop-yarn-common-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-common.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-common.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-registry/target/hadoop-yarn-registry-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-registry.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-registry.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/target/hadoop-yarn-server-applicationhistoryservice-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-applicationhistoryservice.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-applicationhistoryservice.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/target/hadoop-yarn-server-common-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-common.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-common.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/target/hadoop-yarn-server-resourcemanager-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-resourcemanager.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-resourcemanager.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-sharedcachemanager/target/hadoop-yarn-server-sharedcachemanager-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-sharedcachemanager.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-sharedcachemanager.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-web-proxy/target/hadoop-yarn-server-web-proxy-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-web-proxy.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-web-proxy.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/target/hadoop-yarn-server-nodemanager-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-nodemanager.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-nodemanager.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-router/target/hadoop-yarn-server-router-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-router.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-router.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-router/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-router.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-router.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timeline-pluginstorage/target/hadoop-yarn-server-timeline-pluginstorage-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-timeline-pluginstorage.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-timeline-pluginstorage.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice/target/hadoop-yarn-server-timelineservice-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-timelineservice.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-timelineservice.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/hadoop-yarn-server-timelineservice-hbase-client/target/hadoop-yarn-server-timelineservice-hbase-client-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-timelineservice-hbase-client.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-timelineservice-hbase-client.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/hadoop-yarn-server-timelineservice-hbase-common/target/hadoop-yarn-server-timelineservice-hbase-common-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-timelineservice-hbase-common.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-timelineservice-hbase-common.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/target/hadoop-yarn-project-3.3.4/share/hadoop/yarn/timelineservice/hadoop-yarn-server-timelineservice-hbase-coprocessor-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-server-timelineservice-hbase-coprocessor.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-server-timelineservice-hbase-coprocessor.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timeline-pluginstorage/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-timeline-pluginstorage.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-timeline-pluginstorage.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-api/target/hadoop-yarn-services-api-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-services-api.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-services-api.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-api/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-services-api.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-services-api.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/target/hadoop-yarn-services-core-3.3.4.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/java/hadoop/hadoop-yarn-services-core.jar
+[ 1685s] echo /usr/share/java/hadoop/hadoop-yarn-services-core.jar >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-services-core.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-services-core.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-api.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-api.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-applications-distributedshell.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-applications-distributedshell.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-unmanaged-am-launcher/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-applications-unmanaged-am-launcher.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-applications-unmanaged-am-launcher.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-applications.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-applications.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-client/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-client.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-client.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-common.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-common.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-registry/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-registry.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-registry.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-applicationhistoryservice.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-applicationhistoryservice.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-common.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-common.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-nodemanager.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-nodemanager.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-resourcemanager.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-resourcemanager.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-sharedcachemanager/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-sharedcachemanager.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-sharedcachemanager.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-web-proxy/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-web-proxy.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-web-proxy.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-site/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-site.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-site.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-timelineservice.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-timelineservice.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/hadoop-yarn-server-timelineservice-hbase-client/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-timelineservice-hbase-client.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-timelineservice-hbase-client.pom >> .mfiles-hadoop-yarn
+[ 1685s] install -m 0755 hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/hadoop-yarn-server-timelineservice-hbase-common/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/hadoop/hadoop-yarn-server-timelineservice-hbase-common.pom
+[ 1685s] echo /usr/share/maven-poms/hadoop/hadoop-yarn-server-timelineservice-hbase-common.pom >> .mfiles-hadoop-yarn
+[ 1685s] echo /etc/hadoop/yarnservice-log4j.properties >> .mfiles-hadoop-yarn
+[ 1685s] echo /usr/bin/container-executor >> .mfiles-hadoop-yarn
+[ 1685s] echo /usr/bin/oom-listener >> .mfiles-hadoop-yarn
+[ 1685s] echo /usr/bin/test-container-executor >> .mfiles-hadoop-yarn
+[ 1685s] echo /usr/libexec/shellprofile.d/hadoop-yarn.sh >> .mfiles-hadoop-yarn
+[ 1685s] echo /usr/sbin/FederationStateStore/* >> .mfiles-hadoop-yarn
+[ 1685s] # copy script folders
+[ 1685s] for dir in bin libexec sbin
+[ 1685s] do
+[ 1685s]   cp -arf $basedir/$dir /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr
+[ 1685s]   cp -arf $hdfsdir/$dir /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr
+[ 1685s]   cp -arf $mapreddir/$dir /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr
+[ 1685s]   cp -arf $yarndir/$dir /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr
+[ 1685s] done
+[ 1685s] 
+[ 1685s] # This binary is obsoleted and causes a conflict with qt-devel
+[ 1685s] rm -rf /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/bin/rcc
+[ 1685s] 
+[ 1685s] # Duplicate files
+[ 1685s] rm -f /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/sbin/hdfs-config.sh
+[ 1685s] 
+[ 1685s] # copy config files
+[ 1685s] cp -arf $basedir/etc/* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc
+[ 1685s] cp -arf $httpfsdir/etc/* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc
+[ 1685s] cp -arf $mapreddir/etc/* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc
+[ 1685s] cp -arf $yarndir/etc/* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc
+[ 1685s] 
+[ 1685s] # copy binaries
+[ 1685s] cp -arf $basedir/lib/native/libhadoop.so* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib64/hadoop
+[ 1685s] chrpath --delete /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib64/hadoop/*
+[ 1685s] cp -arf ./hadoop-hdfs-project/hadoop-hdfs-native-client/target/hadoop-hdfs-native-client-3.3.4/include/hdfs.h /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/include/hadoop
+[ 1685s] cp -arf ./hadoop-hdfs-project/hadoop-hdfs-native-client/target/hadoop-hdfs-native-client-3.3.4/lib/native/libhdfs.so* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib64
+[ 1685s] chrpath --delete /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib64/libhdfs*
+[ 1685s] 
+[ 1685s] # Not needed since httpfs is deployed with existing systemd setup
+[ 1685s] rm -f /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/sbin/httpfs.sh
+[ 1685s] rm -f /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/libexec/httpfs-config.sh
+[ 1685s] rm -f /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/bin/httpfs-env.sh
+[ 1685s] 
+[ 1685s] # Remove files with .cmd extension
+[ 1685s] find /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64 -name *.cmd | xargs rm -f 
+[ 1685s] 
+[ 1685s] # Modify hadoop-env.sh to point to correct locations for JAVA_HOME
+[ 1685s] # and JSVC_HOME.
+[ 1685s] sed -i "s|\${JAVA_HOME}|/usr/lib/jvm/jre|" /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/hadoop-env.sh
+[ 1685s] sed -i "s|\${JSVC_HOME}|/usr/bin|" /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/hadoop-env.sh
+[ 1685s] 
+[ 1685s] # Ensure the java provided DocumentBuilderFactory is used
+[ 1685s] sed -i "s|\(HADOOP_OPTS.*=.*\)\$HADOOP_CLIENT_OPTS|\1 -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl \$HADOOP_CLIENT_OPTS|" /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/hadoop-env.sh
+[ 1685s] echo "export YARN_OPTS=\"\$YARN_OPTS -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl\"" >> /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/yarn-env.sh
+[ 1685s] 
+[ 1685s] # Workaround for bz1012059
+[ 1685s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/
+[ 1685s] install -pm 644 hadoop-project-dist/pom.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/maven-poms/JPP.hadoop-hadoop-project-dist.pom
+[ 1685s] ln -s /usr/lib/java/hadoop/hadoop-common.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/common
+[ 1685s] ln -s /usr/share/java/hadoop/hadoop-hdfs.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs
+[ 1685s] ln -s /usr/share/java/hadoop/hadoop-client.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/client
+[ 1685s] 
+[ 1685s] # client jar depenencies
+[ 1685s] copy_dep_jars hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4/share/hadoop/client/lib /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/client/lib
+[ 1685s] pushd  hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4/share/hadoop/client/lib
+[ 1685s]   link_hadoop_jars /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/client/lib
+[ 1685s] popd
+[ 1685s] cp -f hadoop-client-modules/hadoop-client-api/target/hadoop-client-api-3.3.4.jar hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4/share/hadoop/client
+[ 1685s] cp -f hadoop-client-modules/hadoop-client-minicluster/target/hadoop-client-minicluster-3.3.4.jar hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4/share/hadoop/client
+[ 1685s] cp -f hadoop-client-modules/hadoop-client-runtime/target/hadoop-client-runtime-3.3.4.jar hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4/share/hadoop/client
+[ 1685s] pushd  hadoop-client-modules/hadoop-client/target/hadoop-client-3.3.4/share/hadoop/client
+[ 1685s]   link_hadoop_jars /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/client
+[ 1685s] popd
+[ 1685s] 
+[ 1685s] # common jar depenencies
+[ 1685s] copy_dep_jars $basedir/share/hadoop/common/lib /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/common/lib
+[ 1685s] cp -f hadoop-common-project/hadoop-kms/target/hadoop-kms-3.3.4.jar $basedir/share/hadoop/common
+[ 1685s] cp -f hadoop-common-project/hadoop-nfs/target/hadoop-nfs-3.3.4.jar $basedir/share/hadoop/common 
+[ 1685s] cp -f hadoop-common-project/hadoop-auth/target/hadoop-auth-3.3.4.jar $basedir/share/hadoop/common
+[ 1685s] pushd $basedir/share/hadoop/common
+[ 1685s]   link_hadoop_jars /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/common
+[ 1685s] popd
+[ 1685s] pushd $basedir/share/hadoop/common/lib
+[ 1685s]   link_hadoop_jars /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/common/lib
+[ 1685s]   \cp -r /home/abuild/rpmbuild/BUILD/hadoop-3.3.4-src/hadoop-dist/target/hadoop-3.3.4/share/hadoop/common/lib/*  /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/common/lib
+[ 1685s] popd
+[ 1685s] 
+[ 1685s] # hdfs jar dependencies
+[ 1685s] copy_dep_jars $hdfsdir/share/hadoop/hdfs/lib /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs/lib
+[ 1685s] ln -s /usr/lib/java/hadoop/hadoop-hdfs-bkjournal.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs/lib
+[ 1685s] cp -f hadoop-hdfs-project/hadoop-hdfs-client/target/hadoop-hdfs-client-3.3.4.jar $hdfsdir/share/hadoop/hdfs
+[ 1685s] cp -f hadoop-hdfs-project/hadoop-hdfs-httpfs/target/hadoop-hdfs-httpfs-3.3.4.jar $hdfsdir/share/hadoop/hdfs
+[ 1685s] cp -f hadoop-hdfs-project/hadoop-hdfs-native-client/target/hadoop-hdfs-native-client-3.3.4.jar $hdfsdir/share/hadoop/hdfs
+[ 1685s] cp -f hadoop-hdfs-project/hadoop-hdfs-nfs/target/hadoop-hdfs-nfs-3.3.4.jar $hdfsdir/share/hadoop/hdfs
+[ 1685s] cp -f hadoop-hdfs-project/hadoop-hdfs-rbf/target/hadoop-hdfs-rbf-3.3.4.jar $hdfsdir/share/hadoop/hdfs
+[ 1685s] pushd $hdfsdir/share/hadoop/hdfs
+[ 1685s]   link_hadoop_jars /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs
+[ 1685s]   \cp -r /home/abuild/rpmbuild/BUILD/hadoop-3.3.4-src/hadoop-dist/target/hadoop-3.3.4/share/hadoop/hdfs/lib /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs/lib 
+[ 1685s] popd
+[ 1685s] 
+[ 1685s] # httpfs
+[ 1685s] # Create the webapp directory structure
+[ 1685s] pushd /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/var/lib/tomcats/httpfs
+[ 1685s]   ln -s /usr/share/hadoop/httpfs/tomcat/conf conf
+[ 1685s]   ln -s /usr/share/hadoop/httpfs/tomcat/lib lib
+[ 1685s]   ln -s /usr/share/hadoop/httpfs/tomcat/logs logs
+[ 1685s]   ln -s /usr/share/hadoop/httpfs/tomcat/temp temp
+[ 1685s]   ln -s /usr/share/hadoop/httpfs/tomcat/webapps webapps
+[ 1685s]   ln -s /usr/share/hadoop/httpfs/tomcat/work work
+[ 1685s] popd
+[ 1685s] 
+[ 1685s] # Copy the tomcat configuration and overlay with specific configuration bits.
+[ 1685s] # This is needed so the httpfs instance won't collide with a system running
+[ 1685s] # tomcat
+[ 1685s] for cfgfile in catalina.policy catalina.properties context.xml \
+[ 1685s]   tomcat.conf web.xml server.xml logging.properties;
+[ 1685s] do
+[ 1685s]   cp -a /etc/tomcat/$cfgfile /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/tomcat
+[ 1685s] done
+[ 1685s] 
+[ 1685s] # Replace, in place, the Tomcat configuration files delivered with the current
+[ 1685s] # Fedora release. See BZ#1295968 for some reason.
+[ 1685s] sed -i -e 's/8005/${httpfs.admin.port}/g' -e 's/8080/${httpfs.http.port}/g' /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/tomcat/server.xml
+[ 1685s] sed -i -e 's/catalina.base/httpfs.log.dir/g' /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/tomcat/logging.properties
+[ 1685s] # Given the permission, only the root and tomcat users can access to that file,
+[ 1685s] # not the build user. So, the build would fail here.
+[ 1685s] install -m 660 /home/abuild/rpmbuild/SOURCES/hadoop-tomcat-users.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/tomcat/tomcat-users.xml
+[ 1685s] 
+[ 1685s] # Copy the httpfs webapp
+[ 1685s] cp -arf hadoop-hdfs-project/hadoop-hdfs-httpfs/target/classes/webapps/webhdfs /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/httpfs/tomcat/webapps
+[ 1685s] 
+[ 1685s] # Tell tomcat to follow symlinks
+[ 1685s] install -d -m 0766 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/httpfs/tomcat/webapps/webhdfs/META-INF/
+[ 1685s] cp /home/abuild/rpmbuild/SOURCES/context.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/httpfs/tomcat/webapps/webhdfs/META-INF/
+[ 1685s] 
+[ 1685s] # Remove the jars included in the webapp and create symlinks
+[ 1685s] rm -f /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/tools*.jar
+[ 1685s] rm -f /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/tomcat-*.jar
+[ 1685s] 
+[ 1685s] pushd /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/httpfs/tomcat
+[ 1685s]   ln -s /usr/share/tomcat/bin bin
+[ 1685s]   ln -s /etc/hadoop/tomcat conf
+[ 1685s]   ln -s /usr/share/tomcat/lib lib
+[ 1685s]   ln -s /var/cache/hadoop-httpfs/temp temp
+[ 1685s]   ln -s /var/cache/hadoop-httpfs/work work
+[ 1685s]   ln -s /var/log/hadoop-httpfs logs
+[ 1685s] popd
+[ 1685s] 
+[ 1685s] # mapreduce jar dependencies
+[ 1685s] mrdir='hadoop-mapreduce-project/target/hadoop-mapreduce-3.3.4'
+[ 1685s] copy_dep_jars $mrdir/share/hadoop/mapreduce/lib /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/mapreduce/lib
+[ 1685s] ln -s /usr/share/java/hadoop/hadoop-annotations.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/mapreduce/lib
+[ 1685s] cp -f hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-nativetask/target/hadoop-mapreduce-client-nativetask-3.3.4.jar $mrdir/share/hadoop/mapreduce
+[ 1685s] cp -f hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-uploader/target/hadoop-mapreduce-client-uploader-3.3.4.jar $mrdir/share/hadoop/mapreduce
+[ 1685s] cp -f hadoop-mapreduce-project/hadoop-mapreduce-examples/target/hadoop-mapreduce-examples-3.3.4.jar $mrdir/share/hadoop/mapreduce
+[ 1685s] pushd $mrdir/share/hadoop/mapreduce
+[ 1685s]   link_hadoop_jars /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/mapreduce
+[ 1685s] popd
+[ 1685s] 
+[ 1685s] # yarn jar dependencies
+[ 1685s] yarndir='hadoop-yarn-project/target/hadoop-yarn-project-3.3.4'
+[ 1685s] copy_dep_jars $yarndir/share/hadoop/yarn/lib /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/yarn/lib
+[ 1685s] ln -s /usr/share/java/hadoop/hadoop-annotations.jar /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/yarn/lib
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/target/hadoop-yarn-server-nodemanager-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-router/target/hadoop-yarn-server-router-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timeline-pluginstorage/target/hadoop-yarn-server-timeline-pluginstorage-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-api/target/hadoop-yarn-services-api-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/target/hadoop-yarn-services-core-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice/target/hadoop-yarn-server-timelineservice-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/hadoop-yarn-server-timelineservice-hbase-client/target/hadoop-yarn-server-timelineservice-hbase-client-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/hadoop-yarn-server-timelineservice-hbase-common/target/hadoop-yarn-server-timelineservice-hbase-common-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] cp -f hadoop-yarn-project/target/hadoop-yarn-project-3.3.4/share/hadoop/yarn/timelineservice/hadoop-yarn-server-timelineservice-hbase-coprocessor-3.3.4.jar $yarndir/share/hadoop/yarn
+[ 1685s] pushd $yarndir/share/hadoop/yarn
+[ 1685s]   link_hadoop_jars /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/yarn
+[ 1685s] popd
+[ 1685s] 
+[ 1685s] # Install hdfs webapp bits
+[ 1685s] cp -arf hadoop-hdfs-project/hadoop-hdfs/target/webapps/* /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/share/hadoop/hdfs/webapps
+[ 1685s] 
+[ 1685s] # hadoop layout. Convert to appropriate lib location for 32 and 64 bit archs
+[ 1685s] lib=$(echo /usr/lib64 | sed -e 's:/usr/\(.*\):\1:')
+[ 1685s] if [ "$lib" = "/usr/lib64" ]; then
+[ 1685s]   echo "_libdir is not located in /usr.  Lib location is wrong"
+[ 1685s]   exit 1
+[ 1685s] fi
+[ 1685s] sed -e "s|HADOOP_COMMON_LIB_NATIVE_DIR\s*=.*|HADOOP_COMMON_LIB_NATIVE_DIR=$lib/hadoop|" /home/abuild/rpmbuild/SOURCES/hadoop-layout.sh > /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/libexec/hadoop-layout.sh
+[ 1685s] 
+[ 1685s] # Default config
+[ 1685s] cp -f /home/abuild/rpmbuild/SOURCES/hadoop-core-site.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/core-site.xml
+[ 1685s] cp -f /home/abuild/rpmbuild/SOURCES/hadoop-hdfs-site.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/hdfs-site.xml
+[ 1685s] cp -f /home/abuild/rpmbuild/SOURCES/hadoop-mapred-site.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/mapred-site.xml
+[ 1685s] cp -f /home/abuild/rpmbuild/SOURCES/hadoop-yarn-site.xml /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/hadoop/yarn-site.xml
+[ 1685s] 
+[ 1685s] # systemd configuration
+[ 1685s] install -d -m 0755 /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/systemd/system/
+[ 1685s] for service in hadoop-zkfc.service hadoop-datanode.service hadoop-secondarynamenode.service hadoop-namenode.service hadoop-journalnode.service hadoop-historyserver.service hadoop-proxyserver.service hadoop-resourcemanager.service hadoop-nodemanager.service hadoop-timelineserver.service
+[ 1685s] do
+[ 1685s]   s=`echo $service | cut -d'-' -f 2 | cut -d'.' -f 1`
+[ 1685s]   daemon=$s
+[ 1685s]   if [[ "hadoop-zkfc.service hadoop-datanode.service hadoop-secondarynamenode.service hadoop-namenode.service hadoop-journalnode.service" == *$service* ]]
+[ 1685s]   then
+[ 1685s]     src=/home/abuild/rpmbuild/SOURCES/hadoop-hdfs.service.template
+[ 1685s]   elif [[ "hadoop-historyserver.service" == *$service* ]]
+[ 1685s]   then
+[ 1685s]     src=/home/abuild/rpmbuild/SOURCES/hadoop-mapreduce.service.template
+[ 1685s]   elif [[ "hadoop-proxyserver.service hadoop-resourcemanager.service hadoop-nodemanager.service hadoop-timelineserver.service" == *$service* ]]
+[ 1685s]   then
+[ 1685s]     if [[ "$s" == "timelineserver" ]]
+[ 1685s]     then
+[ 1685s]       daemon='historyserver'
+[ 1685s]     fi
+[ 1685s]     src=/home/abuild/rpmbuild/SOURCES/hadoop-yarn.service.template
+[ 1685s]   else
+[ 1685s]     echo "Failed to determine type of service for %service"
+[ 1685s]     exit 1
+[ 1685s]   fi
+[ 1685s]   sed -e "s|DAEMON|$daemon|g" -e "/LimitNPROC/a\SuccessExitStatus=SIGKILL" $src > /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/systemd/system/hadoop-$s.service
+[ 1685s] done
+[ 1685s] 
+[ 1685s] cp -f /home/abuild/rpmbuild/SOURCES/hadoop-httpfs.sysconfig /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/sysconfig/tomcat@httpfs
+[ 1685s] 
+[ 1685s] # Ensure /var/run directories are recreated on boot
+[ 1685s] echo "d /var/run/hadoop-yarn 0775 yarn hadoop -" > /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/tmpfiles.d/hadoop-yarn.conf
+[ 1685s] echo "d /var/run/hadoop-hdfs 0775 hdfs hadoop -" > /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/tmpfiles.d/hadoop-hdfs.conf
+[ 1685s] echo "d /var/run/hadoop-mapreduce 0775 mapred hadoop -" > /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/lib/tmpfiles.d/hadoop-mapreduce.conf
+[ 1685s] 
+[ 1685s] # logrotate config
+[ 1685s] for type in hdfs httpfs yarn mapreduce
+[ 1685s] do
+[ 1685s]   sed -e "s|NAME|$type|" /home/abuild/rpmbuild/SOURCES/hadoop.logrotate > /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/logrotate.d/hadoop-$type
+[ 1685s] done
+[ 1685s] sed -i "s|{|/var/log/hadoop-hdfs/*.audit\n{|" /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/etc/logrotate.d/hadoop-hdfs
+[ 1685s] 
+[ 1685s] # hdfs init script
+[ 1685s] install -m 755 /home/abuild/rpmbuild/SOURCES/hdfs-create-dirs /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/sbin
+[ 1685s] 
+[ 1685s] chrpath -d /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/bin/container-executor
+[ 1685s] chrpath -d /home/abuild/rpmbuild/BUILDROOT/hadoop-3.3.4-2.oe2303.riscv64/usr/bin/test-container-executor
+[ 1685s] 
+[ 1685s] %pretrans -p <lua> hdfs
+[ 1685s] path = "/usr/share/hadoop/hdfs/webapps"
+[ 1685s] st = posix.stat(path)
+[ 1685s] if st and st.type == "link" then
+[ 1685s]   os.remove(path)
+[ 1685s] end
+[ 1685s] 
+[ 1685s] %pre common
+[ 1685s] getent group hadoop >/dev/null || groupadd -r hadoop
+[ 1685s] 
+[ 1685s] %pre hdfs
+[ 1685s] getent group hdfs >/dev/null || groupadd -r hdfs
+[ 1685s] getent passwd hdfs >/dev/null || /usr/sbin/useradd --comment "Apache Hadoop HDFS" --shell /sbin/nologin -M -r -g hdfs -G hadoop --home /var/lib/hadoop-hdfs hdfs
+[ 1685s] 
+[ 1685s] %pre mapreduce
+[ 1685s] getent group mapred >/dev/null || groupadd -r mapred
+[ 1685s] getent passwd mapred >/dev/null || /usr/sbin/useradd --comment "Apache Hadoop MapReduce" --shell /sbin/nologin -M -r -g mapred -G hadoop --home /var/cache/hadoop-mapreduce mapred
+[ 1685s] 
+[ 1685s] %pre yarn
+[ 1685s] getent group yarn >/dev/null || groupadd -r yarn
+[ 1685s] getent passwd yarn >/dev/null || /usr/sbin/useradd --comment "Apache Hadoop Yarn" --shell /sbin/nologin -M -r -g yarn -G hadoop --home /var/cache/hadoop-yarn yarn
+[ 1685s] 
+[ 1685s] %preun hdfs
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -eq 0 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Package removal, not upgrade 
+[ 1685s]     if [ -d /run/systemd/system ]; then 
+[ 1685s]           /usr/bin/systemctl --no-reload disable --now hadoop-zkfc.service hadoop-datanode.service hadoop-secondarynamenode.service hadoop-namenode.service hadoop-journalnode.service || : 
+[ 1685s]     else 
+[ 1685s]           /usr/bin/systemctl --no-reload disable hadoop-zkfc.service hadoop-datanode.service hadoop-secondarynamenode.service hadoop-namenode.service hadoop-journalnode.service || : 
+[ 1685s]     fi 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %preun mapreduce
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -eq 0 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Package removal, not upgrade 
+[ 1685s]     if [ -d /run/systemd/system ]; then 
+[ 1685s]           /usr/bin/systemctl --no-reload disable --now hadoop-historyserver.service || : 
+[ 1685s]     else 
+[ 1685s]           /usr/bin/systemctl --no-reload disable hadoop-historyserver.service || : 
+[ 1685s]     fi 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %preun yarn
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -eq 0 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Package removal, not upgrade 
+[ 1685s]     if [ -d /run/systemd/system ]; then 
+[ 1685s]           /usr/bin/systemctl --no-reload disable --now hadoop-proxyserver.service hadoop-resourcemanager.service hadoop-nodemanager.service hadoop-timelineserver.service || : 
+[ 1685s]     else 
+[ 1685s]           /usr/bin/systemctl --no-reload disable hadoop-proxyserver.service hadoop-resourcemanager.service hadoop-nodemanager.service hadoop-timelineserver.service || : 
+[ 1685s]     fi 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %post common-native -p /sbin/ldconfig
+[ 1685s] 
+[ 1685s] %post hdfs
+[ 1685s] # Change the home directory for the hdfs user
+[ 1685s] if [[ `getent passwd hdfs | cut -d: -f 6` != "/var/lib/hadoop-hdfs" ]]
+[ 1685s] then
+[ 1685s]   /usr/sbin/usermod -d /var/lib/hadoop-hdfs hdfs
+[ 1685s] fi
+[ 1685s] 
+[ 1685s] if [ $1 -gt 1 ]
+[ 1685s] then
+[ 1685s]   if [ -d /var/cache/hadoop-hdfs ] && [ ! -L /var/cache/hadoop-hdfs ]
+[ 1685s]   then
+[ 1685s]     # Move the existing hdfs data to the new location
+[ 1685s]     mv -f /var/cache/hadoop-hdfs/* /var/lib/hadoop-hdfs/
+[ 1685s]   fi
+[ 1685s] fi
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -eq 1 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Initial installation 
+[ 1685s]     /usr/bin/systemctl --no-reload preset hadoop-zkfc.service hadoop-datanode.service hadoop-secondarynamenode.service hadoop-namenode.service hadoop-journalnode.service || : 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %post -n libhdfs -p /sbin/ldconfig
+[ 1685s] 
+[ 1685s] %post mapreduce
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -eq 1 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Initial installation 
+[ 1685s]     /usr/bin/systemctl --no-reload preset hadoop-historyserver.service || : 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %post yarn
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -eq 1 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Initial installation 
+[ 1685s]     /usr/bin/systemctl --no-reload preset hadoop-proxyserver.service hadoop-resourcemanager.service hadoop-nodemanager.service hadoop-timelineserver.service || : 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %postun common-native -p /sbin/ldconfig
+[ 1685s] 
+[ 1685s] %postun hdfs
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -ge 1 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Package upgrade, not uninstall 
+[ 1685s]     /usr/bin/systemctl try-restart hadoop-zkfc.service hadoop-datanode.service hadoop-secondarynamenode.service hadoop-namenode.service hadoop-journalnode.service || : 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] if [ $1 -lt 1 ]
+[ 1685s] then
+[ 1685s]   # Remove the compatibility symlink
+[ 1685s]   rm -f /var/cache/hadoop-hdfs
+[ 1685s] fi
+[ 1685s] 
+[ 1685s] %postun -n libhdfs -p /sbin/ldconfig
+[ 1685s] 
+[ 1685s] %postun mapreduce
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -ge 1 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Package upgrade, not uninstall 
+[ 1685s]     /usr/bin/systemctl try-restart hadoop-historyserver.service || : 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %postun yarn
+[ 1685s] 
+[ 1685s]  
+[ 1685s] if [ $1 -ge 1 ] && [ -x /usr/bin/systemctl ]; then 
+[ 1685s]     # Package upgrade, not uninstall 
+[ 1685s]     /usr/bin/systemctl try-restart hadoop-proxyserver.service hadoop-resourcemanager.service hadoop-nodemanager.service hadoop-timelineserver.service || : 
+[ 1685s] fi 
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %posttrans hdfs
+[ 1685s] # Create a symlink to the new location for hdfs data in case the user changed
+[ 1685s] # the configuration file and the new one isn't in place to point to the
+[ 1685s] # correct location
+[ 1685s] if [ ! -e /var/cache/hadoop-hdfs ]
+[ 1685s] then
+[ 1685s]   ln -s /var/lib/hadoop-hdfs /var/cache
+[ 1685s] fi
+[ 1685s] 
+[ 1685s] %files -f .mfiles-hadoop-client client
+[ 1685s] /usr/share/hadoop/client
+[ 1685s] 
+[ 1685s] %files -f .mfiles common
+[ 1685s] %doc LICENSE.txt
+[ 1685s] %doc NOTICE.txt
+[ 1685s] %doc README.txt
+[ 1685s] %config(noreplace) /etc/hadoop/core-site.xml
+[ 1685s] %config(noreplace) /etc/hadoop/hadoop-env.sh
+[ 1685s] %config(noreplace) /etc/hadoop/hadoop-metrics2.properties
+[ 1685s] %config(noreplace) /etc/hadoop/hadoop-policy.xml
+[ 1685s] %config(noreplace) /etc/hadoop/log4j.properties
+[ 1685s] %config(noreplace) /etc/hadoop/ssl-client.xml.example
+[ 1685s] %config(noreplace) /etc/hadoop/ssl-server.xml.example
+[ 1685s] %config(noreplace) /etc/hadoop/configuration.xsl
+[ 1685s] 
+[ 1685s] %dir /usr/share/hadoop
+[ 1685s] %dir /usr/share/hadoop/common
+[ 1685s] /usr/share/hadoop/common/lib
+[ 1685s] /usr/share/hadoop/common/hadoop-kms.jar
+[ 1685s] /usr/share/hadoop/common/hadoop-nfs.jar
+[ 1685s] /usr/share/hadoop/common/hadoop-auth.jar
+[ 1685s] /usr/libexec/hadoop-config.sh
+[ 1685s] /usr/libexec/hadoop-layout.sh
+[ 1685s] 
+[ 1685s] /usr/share/maven-poms/JPP.hadoop-hadoop-project-dist.pom
+[ 1685s] 
+[ 1685s] /usr/bin/hadoop
+[ 1685s] /usr/sbin/hadoop-daemon.sh
+[ 1685s] /usr/sbin/hadoop-daemons.sh
+[ 1685s] /usr/sbin/start-all.sh
+[ 1685s] /usr/sbin/start-balancer.sh
+[ 1685s] /usr/sbin/start-dfs.sh
+[ 1685s] /usr/sbin/start-secure-dns.sh
+[ 1685s] /usr/sbin/stop-all.sh
+[ 1685s] /usr/sbin/stop-balancer.sh
+[ 1685s] /usr/sbin/stop-dfs.sh
+[ 1685s] /usr/sbin/stop-secure-dns.sh
+[ 1685s] 
+[ 1685s] %files common-native
+[ 1685s] /usr/lib64/hadoop/libhadoop.*
+[ 1685s] 
+[ 1685s] %files devel
+[ 1685s] /usr/include/hadoop
+[ 1685s] /usr/lib64/libhdfs.so
+[ 1685s] 
+[ 1685s] %files -f .mfiles-hadoop-hdfs hdfs
+[ 1685s] %config(noreplace) /etc/hadoop/hdfs-site.xml
+[ 1685s] /usr/share/hadoop/hdfs
+[ 1685s] /usr/lib/systemd/system/hadoop-datanode.service
+[ 1685s] /usr/lib/systemd/system/hadoop-namenode.service
+[ 1685s] /usr/lib/systemd/system/hadoop-journalnode.service
+[ 1685s] /usr/lib/systemd/system/hadoop-secondarynamenode.service
+[ 1685s] /usr/lib/systemd/system/hadoop-zkfc.service
+[ 1685s] /usr/libexec/hdfs-config.sh
+[ 1685s] /usr/bin/hdfs
+[ 1685s] /usr/sbin/distribute-exclude.sh
+[ 1685s] /usr/sbin/refresh-namenodes.sh
+[ 1685s] /usr/sbin/hdfs-create-dirs
+[ 1685s] /usr/lib/tmpfiles.d/hadoop-hdfs.conf
+[ 1685s] %config(noreplace) %attr(644, root, root) /etc/logrotate.d/hadoop-hdfs
+[ 1685s] %attr(0755,hdfs,hadoop) %dir /var/run/hadoop-hdfs
+[ 1685s] %attr(0755,hdfs,hadoop) %dir /var/log/hadoop-hdfs
+[ 1685s] %attr(0755,hdfs,hadoop) %dir /var/lib/hadoop-hdfs
+[ 1685s] 
+[ 1685s] 
+[ 1685s] %files httpfs
+[ 1685s] %config(noreplace) /etc/sysconfig/tomcat@httpfs
+[ 1685s] %config(noreplace) /etc/hadoop/httpfs-env.sh
+[ 1685s] %config(noreplace) /etc/hadoop/httpfs-log4j.properties
+[ 1685s] %config(noreplace) /etc/hadoop/httpfs-site.xml
+[ 1685s] %attr(-,tomcat,tomcat) %config(noreplace) /etc/hadoop/tomcat/*.*
+[ 1685s] %attr(0775,root,tomcat) %dir /etc/hadoop/tomcat
+[ 1685s] %attr(0775,root,tomcat) %dir /etc/hadoop/tomcat/Catalina
+[ 1685s] %attr(0775,root,tomcat) %dir /etc/hadoop/tomcat/Catalina/localhost
+[ 1685s] /usr/share/hadoop/httpfs
+[ 1685s] /var/lib/tomcats/httpfs
+[ 1685s] %config(noreplace) %attr(644, root, root) /etc/logrotate.d/hadoop-httpfs
+[ 1685s] %attr(0775,root,tomcat) %dir /var/log/hadoop-httpfs
+[ 1685s] %attr(0775,root,tomcat) %dir /var/cache/hadoop-httpfs
+[ 1685s] %attr(0775,root,tomcat) %dir /var/cache/hadoop-httpfs/temp
+[ 1685s] %attr(0775,root,tomcat) %dir /var/cache/hadoop-httpfs/work
+[ 1685s] 
+[ 1685s] %files -n libhdfs
+[ 1685s] /usr/lib64/libhdfs.so.*
+[ 1685s] 
+[ 1685s] %files -f .mfiles-hadoop-mapreduce mapreduce
+[ 1685s] %config(noreplace) /etc/hadoop/mapred-env.sh
+[ 1685s] %config(noreplace) /etc/hadoop/mapred-queues.xml.template
+[ 1685s] %config(noreplace) /etc/hadoop/mapred-site.xml
+[ 1685s] /usr/share/hadoop/mapreduce
+[ 1685s] /usr/libexec/mapred-config.sh
+[ 1685s] /usr/lib/systemd/system/hadoop-historyserver.service
+[ 1685s] /usr/bin/mapred
+[ 1685s] /usr/sbin/mr-jobhistory-daemon.sh
+[ 1685s] /usr/lib/tmpfiles.d/hadoop-mapreduce.conf
+[ 1685s] %config(noreplace) %attr(644, root, root) /etc/logrotate.d/hadoop-mapreduce
+[ 1685s] %attr(0755,mapred,hadoop) %dir /var/run/hadoop-mapreduce
+[ 1685s] %attr(0755,mapred,hadoop) %dir /var/log/hadoop-mapreduce
+[ 1685s] %attr(0755,mapred,hadoop) %dir /var/cache/hadoop-mapreduce
+[ 1685s] 
+[ 1685s] %files -f .mfiles-hadoop-mapreduce-examples mapreduce-examples
+[ 1685s] 
+[ 1685s] %files -f .mfiles-hadoop-maven-plugin maven-plugin
+[ 1685s] 
+[ 1685s] %files -f .mfiles-hadoop-tests tests
+[ 1685s] 
+[ 1685s] %files -f .mfiles-hadoop-yarn yarn
+[ 1685s] %config(noreplace) /etc/hadoop/capacity-scheduler.xml
+[ 1685s] %config(noreplace) /etc/hadoop/yarn-env.sh
+[ 1685s] %config(noreplace) /etc/hadoop/yarn-site.xml
+[ 1685s] /usr/lib/systemd/system/hadoop-nodemanager.service
+[ 1685s] /usr/lib/systemd/system/hadoop-proxyserver.service
+[ 1685s] /usr/lib/systemd/system/hadoop-resourcemanager.service
+[ 1685s] /usr/lib/systemd/system/hadoop-timelineserver.service
+[ 1685s] /usr/libexec/yarn-config.sh
+[ 1685s] /usr/share/hadoop/yarn
+[ 1685s] /usr/bin/yarn
+[ 1685s] /usr/sbin/yarn-daemon.sh
+[ 1685s] /usr/sbin/yarn-daemons.sh
+[ 1685s] /usr/sbin/start-yarn.sh
+[ 1685s] /usr/sbin/stop-yarn.sh
+[ 1685s] /usr/lib/tmpfiles.d/hadoop-yarn.conf
+[ 1685s] %config(noreplace) %attr(644, root, root) /etc/logrotate.d/hadoop-yarn
+[ 1685s] %attr(0755,yarn,hadoop) %dir /var/run/hadoop-yarn
+[ 1685s] %attr(0755,yarn,hadoop) %dir /var/log/hadoop-yarn
+[ 1685s] %attr(0755,yarn,hadoop) %dir /var/cache/hadoop-yarn
+[ 1685s] 
+[ 1685s] %files yarn-security
+[ 1685s] %config(noreplace) /etc/hadoop/container-executor.cfg
+[ 1685s] 
+[ 1685s] %changelog
+[ 1685s] * Thu Mar 9 2023 xiexing <xiexing4@hisilicon.com> - 3.3.4-2
+[ 1685s] - fix EBS install problem
+[ 1685s] 
+[ 1685s] * Mon Sep 19 2022 xiasenlin <xiasenlin1@huawei.com> - 3.3.4-1
+[ 1685s] - fix cve CVE-2021-25642
+[ 1685s] 
+[ 1685s] * Thu Sep 8 2022 xiasenlin <xiasenlin1@huawei.com> - 3.3.3-2
+[ 1685s] - add chrpath to solve check_rpath warning
+[ 1685s] 
+[ 1685s] * Thu Aug 11 2022 xiexing <xiexing4@hisilicon.com> - 3.3.3-1
+[ 1685s] - update version
+[ 1685s] 
+[ 1685s] * Mon Jul 12 2021 lingsheng <lingsheng@huawei.com> - 3.2.1-5
+[ 1685s] - Fix stop service failure
+[ 1685s] 
+[ 1685s] * Sat Jul 10 2021 wangyue <wangyue92@huawei.com> - 3.2.1-4
+[ 1685s] - Add gcc-c++ to build dependency
+[ 1685s] 
+[ 1685s] * Fri Jun 25 2021 wangyue <wangyue92@huawei.com> - 3.2.1-3
+[ 1685s] - Fix CVE-2019-17195
+[ 1685s] 
+[ 1685s] * Fri May 14 2021 wangyue <wangyue92@huawei.com> - 3.2.1-2
+[ 1685s] - Fix CVE-2020-9492
+[ 1685s] 
+[ 1685s] * Thu May 13 2021 Ge Wang <wangge20@huawei.com> - 3.2.1-1
+[ 1685s] - Init package
+[ 1685s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.gu0N61
+[ 1686s] + umask 022
+[ 1686s] + cd /home/abuild/rpmbuild/BUILD
+[ 1686s] + case hadoop in
+[ 1686s] + : disable os-maven-plugin UNKNOWN os.arch exeption
+[ 1686s] + export MAVEN_OPTS=-DfailOnUnknownOS=false
+[ 1686s] + MAVEN_OPTS=-DfailOnUnknownOS=false
+[ 1686s] + cd /home/abuild/rpmbuild/BUILD
+[ 1686s] + rm -rf hadoop-3.3.4-src
+[ 1686s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/hadoop-3.3.4-src.tar.gz
+[ 1717s] + STATUS=0
+[ 1717s] + '[' 0 -ne 0 ']'
+[ 1717s] + cd hadoop-3.3.4-src
+[ 1717s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1722s] + cp /home/abuild/rpmbuild/SOURCES/settings.xml ./
+[ 1722s] + mvn install:install-file -DgroupId=org.fusesource.leveldbjni -DartifactId=leveldbjni-all -Dversion=1.8 -Dpackaging=jar -Dfile=/usr/lib/java/leveldbjni-all.jar -s settings.xml
+[ 1765s] [INFO] Scanning for projects...
+[ 1880s] Downloading from huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/felix/maven-bundle-plugin/2.5.0/maven-bundle-plugin-2.5.0.pom
+[ 2186s] [ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[ 2186s] [ERROR] Unresolveable build extension: Plugin org.apache.felix:maven-bundle-plugin:2.5.0 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.felix:maven-bundle-plugin:jar:2.5.0 @ 
+[ 2186s]  @ 
+[ 2186s] [ERROR] The build could not read 1 project -> [Help 1]
+[ 2186s] [ERROR]   
+[ 2186s] [ERROR]   The project org.apache.hadoop:hadoop-main:3.3.4 (/home/abuild/rpmbuild/BUILD/hadoop-3.3.4-src/pom.xml) has 1 error
+[ 2187s] [ERROR]     Unresolveable build extension: Plugin org.apache.felix:maven-bundle-plugin:2.5.0 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.felix:maven-bundle-plugin:jar:2.5.0: Could not transfer artifact org.apache.felix:maven-bundle-plugin:pom:2.5.0 from/to huaweicloud (https://repo.huaweicloud.com/repository/maven/): Connect to repo.huaweicloud.com:443 [repo.huaweicloud.com/113.3.58.56, repo.huaweicloud.com/175.153.171.177, repo.huaweicloud.com/113.3.58.55, repo.huaweicloud.com/175.153.171.173] failed: Connection refused (Connection refused) -> [Help 2]
+[ 2187s] [ERROR] 
+[ 2187s] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ 2187s] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ 2187s] [ERROR] 
+[ 2187s] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ 2187s] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ 2187s] [ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/PluginManagerException
+[ 2187s] error: Bad exit status from /var/tmp/rpm-tmp.gu0N61 (%prep)
+[ 2187s] 
+[ 2187s] RPM build errors:
+[ 2187s]     Bad exit status from /var/tmp/rpm-tmp.gu0N61 (%prep)
+[ 2188s] ### VM INTERACTION START ###
+[ 2189s] Powering off.
+[ 2189s] [ 2175.693055] reboot: Power down
+[ 2189s] ### VM INTERACTION END ###
+[ 2189s] 
+[ 2189s] oerv-obs-worker-11 failed "build _service:tar_scm:hadoop.spec" at Thu Apr  6 13:32:58 UTC 2023.
+[ 2189s] 

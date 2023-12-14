@@ -1,0 +1,1443 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    1s] 
+[    1s] lamb56 started "build python-pytest-cov.spec" at Sat Feb 25 00:38:16 UTC 2023.
+[    1s] 
+[    1s] Building python-pytest-cov:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '34a39df2c955de77c5d57b282e3f44bb'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/python-pytest-cov.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/python-pytest-cov.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/python-pytest-cov.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [70f457c6a25842d3b89d5b661f0305dc]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...done
+[    5s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   12s] ### VM INTERACTION END ###
+[   12s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   12s] Increasing log level from now on...
+[   12s] [    5.069713][  T404] sysrq: Changing Loglevel
+[   12s] [    5.070070][  T404] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   13s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   13s] no label, UUID=27d58793-dbb1-4f75-9d32-1d47de1a5a28
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   14s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/python-pytest-cov.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-pytest-cov.spec build ...
+[   15s] initializing rpm db...
+[   15s] querying package ids...
+[   42s] [1/233] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   42s] [2/233] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   42s] [3/233] preinstalled attr-2.5.1-1.1
+[   42s] [4/233] preinstalled bash-5.2.15-8.1
+[   42s] [5/233] preinstalled bash-sh-5.2.15-8.1
+[   42s] [6/233] preinstalled binutils-2.40-1.1
+[   42s] [7/233] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   42s] [8/233] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   42s] [9/233] preinstalled build-mkbaselibs-20230215-1.1
+[   42s] [10/233] preinstalled bzip2-1.0.8-4.1
+[   42s] [11/233] preinstalled chkstat-1599_20230217-1.1
+[   42s] [12/233] preinstalled compat-usrmerge-build-84.87-5.1
+[   43s] [13/233] preinstalled compat-usrmerge-tools-84.87-5.1
+[   43s] [14/233] preinstalled coreutils-9.1-5.1
+[   43s] [15/233] preinstalled cpio-2.13-5.1
+[   43s] [16/233] preinstalled cpp-12-2.1
+[   43s] [17/233] preinstalled cpp12-12.2.1+git749-4.1
+[   43s] [18/233] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   43s] [19/233] preinstalled debugedit-5.0-5.1
+[   43s] [20/233] preinstalled diffutils-3.9-1.1
+[   43s] [21/233] preinstalled dwz-0.15-2.1
+[   43s] [22/233] preinstalled elfutils-0.188-4.1
+[   43s] [23/233] cumulate fdupes-2.2.1-1.1
+[   43s] [24/233] preinstalled file-5.44-1.2
+[   43s] [25/233] preinstalled file-magic-5.44-1.2
+[   43s] [26/233] preinstalled filesystem-84.87-12.1
+[   43s] [27/233] preinstalled fillup-1.42-279.1
+[   43s] [28/233] preinstalled findutils-4.9.0-2.1
+[   43s] [29/233] preinstalled gawk-5.2.1-2.1
+[   43s] [30/233] preinstalled gcc-12-2.1
+[   43s] [31/233] preinstalled gcc-PIE-12-2.1
+[   43s] [32/233] preinstalled gcc12-12.2.1+git749-4.1
+[   43s] [33/233] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   43s] [34/233] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   43s] [35/233] preinstalled gettext-tools-mini-0.21.1-1.1
+[   43s] [36/233] preinstalled glibc-2.37-1.1
+[   43s] [37/233] preinstalled glibc-devel-2.37-1.1
+[   43s] [38/233] preinstalled glibc-locale-base-2.37-1.1
+[   43s] [39/233] preinstalled grep-3.8-3.1
+[   43s] [40/233] preinstalled gzip-1.12-3.1
+[   43s] [41/233] preinstalled kernel-obs-build-6.1.12-1.1
+[   43s] [42/233] preinstalled libacl1-2.3.1-2.1
+[   43s] [43/233] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   43s] [44/233] preinstalled libasan8-13.0.1+git5428-6.1
+[   43s] [45/233] preinstalled libasm1-0.188-4.1
+[   43s] [46/233] preinstalled libatomic1-13.0.1+git5428-6.1
+[   43s] [47/233] preinstalled libattr1-2.5.1-1.1
+[   43s] [48/233] preinstalled libaudit1-3.0.9-1.1
+[   43s] [49/233] preinstalled libblkid1-2.38.1-7.1
+[   43s] [50/233] preinstalled libbz2-1-1.0.8-4.1
+[   43s] [51/233] preinstalled libcap-ng0-0.8.3-1.1
+[   43s] [52/233] preinstalled libcap2-2.67-1.1
+[   43s] [53/233] preinstalled libcrypt1-4.4.33-1.1
+[   43s] [54/233] preinstalled libctf-nobfd0-2.40-1.1
+[   43s] [55/233] preinstalled libctf0-2.40-1.1
+[   43s] [56/233] preinstalled libdb-4_8-4.8.30-39.1
+[   43s] [57/233] preinstalled libdw1-0.188-4.1
+[   43s] [58/233] preinstalled libeconf0-0.5.1-1.1
+[   43s] [59/233] preinstalled libelf1-0.188-4.1
+[   43s] [60/233] preinstalled libexpat1-2.5.0-2.1
+[   43s] [61/233] preinstalled libfdisk1-2.38.1-7.1
+[   43s] [62/233] preinstalled libffi8-3.4.4-1.1
+[   43s] [63/233] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   43s] [64/233] preinstalled libgcrypt20-1.10.1-1.1
+[   43s] [65/233] preinstalled libgdbm6-1.23-1.1
+[   43s] [66/233] preinstalled libgdbm_compat4-1.23-1.1
+[   43s] [67/233] preinstalled libgmp10-6.2.1-4.1
+[   43s] [68/233] preinstalled libgomp1-13.0.1+git5428-6.1
+[   43s] [69/233] preinstalled libgpg-error0-1.46-1.1
+[   43s] [70/233] preinstalled libisl23-0.25-1.1
+[   43s] [71/233] preinstalled liblua5_4-5-5.4.4-8.1
+[   43s] [72/233] preinstalled liblzma5-5.4.1-1.1
+[   43s] [73/233] preinstalled libmagic1-5.44-1.2
+[   43s] [74/233] preinstalled libmount1-2.38.1-7.1
+[   43s] [75/233] preinstalled libmpc3-1.3.1-1.2
+[   43s] [76/233] preinstalled libmpdec3-2.5.1-2.1
+[   43s] [77/233] preinstalled libmpfr6-4.2.0-1.1
+[   43s] [78/233] preinstalled libncurses6-6.4.20230218-6.1
+[   43s] [79/233] preinstalled libopenssl3-3.0.8-1.1
+[   43s] [80/233] preinstalled libpcre2-8-0-10.42-3.2
+[   43s] [81/233] preinstalled libpkgconf3-1.8.0-2.1
+[   43s] [82/233] preinstalled libpopt0-1.19-1.1
+[   43s] [83/233] preinstalled libpython3_10-1_0-3.10.9-3.1
+[   43s] [84/233] preinstalled libpython3_11-1_0-3.11.1-5.1
+[   43s] [85/233] preinstalled libpython3_8-1_0-3.8.16-4.1
+[   43s] [86/233] preinstalled libpython3_9-1_0-3.9.16-4.1
+[   43s] [87/233] preinstalled libreadline8-8.2-2.1
+[   43s] [88/233] preinstalled librpmbuild9-4.18.0-3.2
+[   43s] [89/233] preinstalled libseccomp2-2.5.4-2.1
+[   43s] [90/233] preinstalled libselinux1-3.4-2.1
+[   43s] [91/233] preinstalled libsemanage-conf-3.4-1.1
+[   43s] [92/233] preinstalled libsemanage2-3.4-1.1
+[   43s] [93/233] preinstalled libsepol2-3.4-1.1
+[   43s] [94/233] preinstalled libsmartcols1-2.38.1-7.1
+[   43s] [95/233] cumulate libsqlite3-0-3.41.0-1.1
+[   43s] [96/233] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   43s] [97/233] preinstalled libsubid4-4.13-4.1
+[   43s] [98/233] preinstalled libubsan1-13.0.1+git5428-6.1
+[   43s] [99/233] preinstalled libutempter0-1.2.0-3.2
+[   43s] [100/233] preinstalled libuuid1-2.38.1-7.1
+[   43s] [101/233] preinstalled libxcrypt-devel-4.4.33-1.1
+[   43s] [102/233] preinstalled libz1-1.2.13-2.1
+[   43s] [103/233] preinstalled libzstd1-1.5.2-2.1
+[   43s] [104/233] preinstalled linux-glibc-devel-6.1-1.1
+[   43s] [105/233] preinstalled login_defs-4.13-4.1
+[   43s] [106/233] preinstalled lua54-5.4.4-8.1
+[   43s] [107/233] preinstalled make-4.4-2.1
+[   43s] [108/233] preinstalled ncurses-utils-6.4.20230218-6.1
+[   43s] [109/233] preinstalled pam-1.5.2-12.1
+[   43s] [110/233] preinstalled patch-2.7.6-6.1
+[   43s] [111/233] preinstalled perl-5.36.0-4.1
+[   43s] [112/233] preinstalled perl-base-5.36.0-4.1
+[   43s] [113/233] preinstalled permissions-1599_20230217-1.1
+[   43s] [114/233] preinstalled permissions-config-1599_20230217-1.1
+[   43s] [115/233] preinstalled pkgconf-1.8.0-2.1
+[   43s] [116/233] preinstalled pkgconf-m4-1.8.0-2.1
+[   43s] [117/233] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   43s] [118/233] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   43s] [119/233] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   43s] [120/233] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   43s] [121/233] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   43s] [122/233] cumulate python310-attrs-22.2.0-1.2
+[   43s] [123/233] cumulate python310-backports.entry_points_selectable-1.1.1-1.3
+[   43s] [124/233] preinstalled python310-base-3.10.9-3.1
+[   43s] [125/233] cumulate python310-distlib-0.3.6-1.2
+[   43s] [126/233] cumulate python310-exceptiongroup-1.1.0-1.2
+[   43s] [127/233] cumulate python310-execnet-1.9.0-2.2
+[   43s] [128/233] cumulate python310-fields-5.0.0-3.10
+[   43s] [129/233] cumulate python310-filelock-3.9.0-1.3
+[   43s] [130/233] cumulate python310-iniconfig-1.1.1-3.2
+[   43s] [131/233] preinstalled python310-packaging-23.0-1.1
+[   43s] [132/233] cumulate python310-platformdirs-2.5.2-1.2
+[   43s] [133/233] cumulate python310-pluggy-1.0.0-1.5
+[   43s] [134/233] cumulate python310-process-tests-2.1.2-1.2
+[   43s] [135/233] preinstalled python310-setuptools-65.6.3-1.2
+[   43s] [136/233] cumulate python310-six-1.16.0-2.5
+[   43s] [137/233] cumulate python310-tomli-2.0.1-1.3
+[   43s] [138/233] cumulate python310-zipp-3.8.1-1.2
+[   43s] [139/233] cumulate python311-attrs-22.2.0-1.2
+[   43s] [140/233] cumulate python311-backports.entry_points_selectable-1.1.1-1.3
+[   43s] [141/233] preinstalled python311-base-3.11.1-5.1
+[   43s] [142/233] cumulate python311-distlib-0.3.6-1.2
+[   43s] [143/233] cumulate python311-exceptiongroup-1.1.0-1.2
+[   43s] [144/233] cumulate python311-execnet-1.9.0-2.2
+[   43s] [145/233] cumulate python311-fields-5.0.0-3.10
+[   43s] [146/233] cumulate python311-filelock-3.9.0-1.3
+[   43s] [147/233] cumulate python311-iniconfig-1.1.1-3.2
+[   43s] [148/233] cumulate python311-packaging-23.0-1.2
+[   43s] [149/233] cumulate python311-platformdirs-2.5.2-1.2
+[   43s] [150/233] cumulate python311-pluggy-1.0.0-1.5
+[   43s] [151/233] cumulate python311-process-tests-2.1.2-1.2
+[   43s] [152/233] preinstalled python311-setuptools-65.6.3-1.2
+[   43s] [153/233] cumulate python311-six-1.16.0-2.5
+[   43s] [154/233] cumulate python311-tomli-2.0.1-1.3
+[   43s] [155/233] cumulate python311-zipp-3.8.1-1.2
+[   43s] [156/233] cumulate python38-attrs-22.2.0-1.2
+[   43s] [157/233] cumulate python38-backports.entry_points_selectable-1.1.1-1.3
+[   43s] [158/233] preinstalled python38-base-3.8.16-4.1
+[   43s] [159/233] cumulate python38-distlib-0.3.6-1.2
+[   43s] [160/233] cumulate python38-exceptiongroup-1.1.0-1.2
+[   43s] [161/233] cumulate python38-execnet-1.9.0-2.2
+[   43s] [162/233] cumulate python38-fields-5.0.0-3.10
+[   43s] [163/233] cumulate python38-filelock-3.9.0-1.3
+[   43s] [164/233] cumulate python38-iniconfig-1.1.1-3.2
+[   43s] [165/233] cumulate python38-packaging-23.0-1.2
+[   43s] [166/233] cumulate python38-platformdirs-2.5.2-1.2
+[   43s] [167/233] cumulate python38-pluggy-1.0.0-1.5
+[   43s] [168/233] cumulate python38-process-tests-2.1.2-1.2
+[   43s] [169/233] preinstalled python38-setuptools-65.6.3-1.2
+[   43s] [170/233] cumulate python38-six-1.16.0-2.5
+[   43s] [171/233] cumulate python38-tomli-2.0.1-1.3
+[   43s] [172/233] cumulate python38-zipp-3.8.1-1.2
+[   43s] [173/233] cumulate python39-attrs-22.2.0-1.2
+[   43s] [174/233] cumulate python39-backports.entry_points_selectable-1.1.1-1.3
+[   43s] [175/233] preinstalled python39-base-3.9.16-4.1
+[   43s] [176/233] cumulate python39-distlib-0.3.6-1.2
+[   43s] [177/233] cumulate python39-exceptiongroup-1.1.0-1.2
+[   43s] [178/233] cumulate python39-execnet-1.9.0-2.2
+[   43s] [179/233] cumulate python39-fields-5.0.0-3.10
+[   43s] [180/233] cumulate python39-filelock-3.9.0-1.3
+[   43s] [181/233] cumulate python39-iniconfig-1.1.1-3.2
+[   43s] [182/233] cumulate python39-packaging-23.0-1.2
+[   43s] [183/233] cumulate python39-platformdirs-2.5.2-1.2
+[   43s] [184/233] cumulate python39-pluggy-1.0.0-1.5
+[   43s] [185/233] cumulate python39-process-tests-2.1.2-1.2
+[   43s] [186/233] preinstalled python39-setuptools-65.6.3-1.2
+[   43s] [187/233] cumulate python39-six-1.16.0-2.5
+[   43s] [188/233] cumulate python39-tomli-2.0.1-1.3
+[   43s] [189/233] cumulate python39-zipp-3.8.1-1.2
+[   43s] [190/233] preinstalled qemu-linux-user-7.1.0-50.1
+[   43s] [191/233] preinstalled rpm-4.18.0-3.2
+[   43s] [192/233] preinstalled rpm-build-4.18.0-3.2
+[   43s] [193/233] preinstalled rpm-build-perl-4.18.0-3.2
+[   43s] [194/233] preinstalled rpm-config-SUSE-20220926-1.1
+[   43s] [195/233] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.8
+[   43s] [196/233] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   43s] [197/233] preinstalled sed-4.9-2.1
+[   43s] [198/233] preinstalled shadow-4.13-4.1
+[   43s] [199/233] preinstalled system-group-hardware-20170617-24.1
+[   43s] [200/233] preinstalled system-user-root-20190513-2.1
+[   43s] [201/233] preinstalled systemd-rpm-macros-19-1.1
+[   43s] [202/233] preinstalled sysuser-shadow-3.1-5.1
+[   43s] [203/233] preinstalled tar-1.34-9.1
+[   43s] [204/233] preinstalled terminfo-base-6.4.20230218-6.1
+[   43s] [205/233] preinstalled update-alternatives-1.21.8-1.1
+[   43s] [206/233] preinstalled util-linux-2.38.1-7.1
+[   43s] [207/233] preinstalled which-2.21-5.1
+[   43s] [208/233] preinstalled xz-5.4.1-1.1
+[   43s] [209/233] cumulate alts-1.2+3.b848aad-3.1
+[   43s] [210/233] cumulate python310-3.10.9-3.1
+[   43s] [211/233] cumulate python310-importlib-metadata-6.0.0-1.2
+[   43s] [212/233] cumulate python311-3.11.1-5.1
+[   43s] [213/233] cumulate python311-importlib-metadata-6.0.0-1.2
+[   43s] [214/233] cumulate python38-3.8.16-4.1
+[   43s] [215/233] cumulate python38-importlib-metadata-6.0.0-1.2
+[   43s] [216/233] cumulate python39-3.9.16-4.1
+[   43s] [217/233] cumulate python39-importlib-metadata-6.0.0-1.2
+[   43s] [218/233] cumulate python310-virtualenv-20.16.7-2.2
+[   43s] [219/233] cumulate python311-virtualenv-20.16.7-2.2
+[   43s] [220/233] cumulate python38-virtualenv-20.16.7-2.2
+[   43s] [221/233] cumulate python39-virtualenv-20.16.7-2.2
+[   43s] [222/233] cumulate python310-coverage-7.1.0-1.2
+[   43s] [223/233] cumulate python311-coverage-7.1.0-1.2
+[   43s] [224/233] cumulate python38-coverage-7.1.0-1.2
+[   43s] [225/233] cumulate python39-coverage-7.1.0-1.2
+[   43s] [226/233] cumulate python310-pytest-7.2.0-2.2
+[   43s] [227/233] cumulate python311-pytest-7.2.0-2.2
+[   43s] [228/233] cumulate python38-pytest-7.2.0-2.2
+[   43s] [229/233] cumulate python39-pytest-7.2.0-2.2
+[   43s] [230/233] cumulate python310-pytest-xdist-3.0.2-1.2
+[   43s] [231/233] cumulate python311-pytest-xdist-3.0.2-1.2
+[   43s] [232/233] cumulate python38-pytest-xdist-3.0.2-1.2
+[   43s] [233/233] cumulate python39-pytest-xdist-3.0.2-1.2
+[   43s] now installing cumulated packages
+[   43s] Preparing...                          ########################################
+[   44s] Updating / installing...
+[   44s] libsqlite3-0-3.41.0-1.1               ########################################
+[   44s] python39-tomli-2.0.1-1.3              ########################################
+[   44s] python38-tomli-2.0.1-1.3              ########################################
+[   44s] python311-tomli-2.0.1-1.3             ########################################
+[   44s] python310-tomli-2.0.1-1.3             ########################################
+[   44s] python310-3.10.9-3.1                  ########################################
+[   44s] python311-3.11.1-5.1                  ########################################
+[   44s] python38-3.8.16-4.1                   ########################################
+[   44s] python39-3.9.16-4.1                   ########################################
+[   44s] python39-zipp-3.8.1-1.2               ########################################
+[   44s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   44s] python39-six-1.16.0-2.5               ########################################
+[   45s] python39-pluggy-1.0.0-1.5             ########################################
+[   45s] python39-platformdirs-2.5.2-1.2       ########################################
+[   45s] python39-packaging-23.0-1.2           ########################################
+[   45s] python39-iniconfig-1.1.1-3.2          ########################################
+[   45s] python39-filelock-3.9.0-1.3           ########################################
+[   45s] python39-execnet-1.9.0-2.2            ########################################
+[   45s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   45s] python39-distlib-0.3.6-1.2            ########################################
+[   45s] python39-backports.entry_points_select########################################
+[   45s] python39-attrs-22.2.0-1.2             ########################################
+[   45s] python38-zipp-3.8.1-1.2               ########################################
+[   45s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   45s] python38-six-1.16.0-2.5               ########################################
+[   45s] python38-pluggy-1.0.0-1.5             ########################################
+[   45s] python38-platformdirs-2.5.2-1.2       ########################################
+[   45s] python38-packaging-23.0-1.2           ########################################
+[   45s] python38-iniconfig-1.1.1-3.2          ########################################
+[   45s] python38-filelock-3.9.0-1.3           ########################################
+[   45s] python38-execnet-1.9.0-2.2            ########################################
+[   45s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   45s] python38-distlib-0.3.6-1.2            ########################################
+[   46s] python38-backports.entry_points_select########################################
+[   46s] python38-attrs-22.2.0-1.2             ########################################
+[   46s] python311-zipp-3.8.1-1.2              ########################################
+[   46s] python311-importlib-metadata-6.0.0-1.2########################################
+[   46s] python311-six-1.16.0-2.5              ########################################
+[   46s] python311-pluggy-1.0.0-1.5            ########################################
+[   46s] python311-platformdirs-2.5.2-1.2      ########################################
+[   46s] python311-packaging-23.0-1.2          ########################################
+[   46s] python311-iniconfig-1.1.1-3.2         ########################################
+[   46s] python311-filelock-3.9.0-1.3          ########################################
+[   46s] python311-execnet-1.9.0-2.2           ########################################
+[   46s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   46s] python311-distlib-0.3.6-1.2           ########################################
+[   46s] python311-backports.entry_points_selec########################################
+[   46s] python311-attrs-22.2.0-1.2            ########################################
+[   46s] python310-zipp-3.8.1-1.2              ########################################
+[   46s] python310-importlib-metadata-6.0.0-1.2########################################
+[   46s] python310-six-1.16.0-2.5              ########################################
+[   46s] python310-pluggy-1.0.0-1.5            ########################################
+[   46s] python310-platformdirs-2.5.2-1.2      ########################################
+[   47s] python310-iniconfig-1.1.1-3.2         ########################################
+[   47s] python310-filelock-3.9.0-1.3          ########################################
+[   47s] python310-execnet-1.9.0-2.2           ########################################
+[   47s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   47s] python310-distlib-0.3.6-1.2           ########################################
+[   47s] python310-backports.entry_points_selec########################################
+[   47s] python310-attrs-22.2.0-1.2            ########################################
+[   47s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   47s] alts-1.2+3.b848aad-3.1                ########################################
+[   47s] python310-pytest-7.2.0-2.2            ########################################
+[   48s] python311-pytest-7.2.0-2.2            ########################################
+[   49s] python38-pytest-7.2.0-2.2             ########################################
+[   50s] python39-pytest-7.2.0-2.2             ########################################
+[   50s] python39-pytest-xdist-3.0.2-1.2       ########################################
+[   50s] python38-pytest-xdist-3.0.2-1.2       ########################################
+[   50s] python311-pytest-xdist-3.0.2-1.2      ########################################
+[   50s] python310-pytest-xdist-3.0.2-1.2      ########################################
+[   51s] python310-virtualenv-20.16.7-2.2      ########################################
+[   52s] python311-virtualenv-20.16.7-2.2      ########################################
+[   53s] python38-virtualenv-20.16.7-2.2       ########################################
+[   54s] python39-virtualenv-20.16.7-2.2       ########################################
+[   55s] python39-coverage-7.1.0-1.2           ########################################
+[   55s] python38-coverage-7.1.0-1.2           ########################################
+[   55s] python311-coverage-7.1.0-1.2          ########################################
+[   56s] python310-coverage-7.1.0-1.2          ########################################
+[   56s] python39-process-tests-2.1.2-1.2      ########################################
+[   56s] python39-fields-5.0.0-3.10            ########################################
+[   56s] python38-process-tests-2.1.2-1.2      ########################################
+[   56s] python38-fields-5.0.0-3.10            ########################################
+[   56s] python311-process-tests-2.1.2-1.2     ########################################
+[   56s] python311-fields-5.0.0-3.10           ########################################
+[   56s] python310-process-tests-2.1.2-1.2     ########################################
+[   56s] python310-fields-5.0.0-3.10           ########################################
+[   56s] fdupes-2.2.1-1.1                      ########################################
+[   62s] now finalizing build dir...
+[   62s] ... running 01-add_abuild_user_to_trusted_group
+[   62s] ... running 02-set_timezone_to_utc
+[   63s] ... running 03-set-permissions-secure
+[   63s] ... running 11-hack_uname_version_to_kernel_version
+[   73s] -----------------------------------------------------------------
+[   73s] I have the following modifications for python-pytest-cov.spec:
+[   74s] 19c19
+[   74s] < %global flavor @BUILD_FLAVOR@%{nil}
+[   74s] ---
+[   74s] > %global flavor test%{nil}
+[   74s] 30c30
+[   74s] < Release:        0
+[   74s] ---
+[   74s] > Release:        3.1
+[   82s] build target is riscv64-suse-linux
+[   82s] -----------------------------------------------------------------
+[   82s] ----- building python-pytest-cov.spec (user abuild)
+[   82s] -----------------------------------------------------------------
+[   82s] -----------------------------------------------------------------
+[   86s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/34a39df2c955de77c5d57b282e3f44bb-python-pytest-cov:test' /home/abuild/rpmbuild/SOURCES/python-pytest-cov.spec
+[  107s] Building target platforms: riscv64-suse-linux
+[  107s] Building for target riscv64-suse-linux
+[  107s] setting SOURCE_DATE_EPOCH=1670457600
+[  107s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.4RYTaN
+[  108s] + umask 022
+[  108s] + cd /home/abuild/rpmbuild/BUILD
+[  108s] + cd /home/abuild/rpmbuild/BUILD
+[  108s] + rm -rf pytest-cov-4.0.0
+[  108s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pytest-cov-4.0.0.tar.gz
+[  108s] + STATUS=0
+[  108s] + '[' 0 -ne 0 ']'
+[  108s] + cd pytest-cov-4.0.0
+[  108s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  108s] + RPM_EC=0
+[  108s] ++ jobs -p
+[  108s] + exit 0
+[  108s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.qxmzEP
+[  108s] + umask 022
+[  108s] + cd /home/abuild/rpmbuild/BUILD
+[  108s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pytest-cov-test-4.0.0-3.1.riscv64
+[  108s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-pytest-cov-test-4.0.0-3.1.riscv64
+[  108s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  109s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pytest-cov-test-4.0.0-3.1.riscv64
+[  109s] + cd pytest-cov-4.0.0
+[  109s] + ref=/usr/lib/rpm
+[  109s] + mints=0
+[  109s] + case $(uname -m) in
+[  109s] ++ uname -m
+[  109s] + mints=20160911
+[  109s] + for s in guess sub
+[  109s] ++ find -maxdepth 8 -name config.guess
+[  109s] + for s in guess sub
+[  109s] ++ find -maxdepth 8 -name config.sub
+[  109s] ++ '[' -f _current_flavor ']'
+[  109s] ++ true
+[  109s] + last_flavor=
+[  109s] + '[' -z '' ']'
+[  109s] + last_flavor=tmp
+[  109s] + '[' tmp '!=' python38 ']'
+[  109s] + '[' -d build ']'
+[  109s] + '[' -d _build.python38 ']'
+[  109s] + echo python38
+[  109s] + python_flavor=python38
+[  109s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  114s] running build
+[  114s] running build_py
+[  114s] creating build
+[  114s] creating build/lib
+[  114s] creating build/lib/pytest_cov
+[  114s] copying src/pytest_cov/__init__.py -> build/lib/pytest_cov
+[  114s] copying src/pytest_cov/compat.py -> build/lib/pytest_cov
+[  114s] copying src/pytest_cov/embed.py -> build/lib/pytest_cov
+[  114s] copying src/pytest_cov/engine.py -> build/lib/pytest_cov
+[  114s] copying src/pytest_cov/plugin.py -> build/lib/pytest_cov
+[  114s] running egg_info
+[  115s] writing src/pytest_cov.egg-info/PKG-INFO
+[  115s] writing dependency_links to src/pytest_cov.egg-info/dependency_links.txt
+[  115s] writing entry points to src/pytest_cov.egg-info/entry_points.txt
+[  115s] writing requirements to src/pytest_cov.egg-info/requires.txt
+[  115s] writing top-level names to src/pytest_cov.egg-info/top_level.txt
+[  115s] reading manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  115s] reading manifest template 'MANIFEST.in'
+[  115s] no previously-included directories found matching 'examples/*/.tox'
+[  115s] no previously-included directories found matching 'examples/*/htmlcov'
+[  115s] no previously-included directories found matching 'examples/*/*/htmlcov'
+[  115s] no previously-included directories found matching 'examples/adhoc-layout/*.egg-info'
+[  115s] no previously-included directories found matching 'examples/src-layout/src/*.egg-info'
+[  115s] warning: no files found matching '.coveragerc'
+[  115s] warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+[  115s] warning: no previously-included files matching '__pycache__/*' found anywhere in distribution
+[  115s] warning: no previously-included files matching '*.so' found anywhere in distribution
+[  115s] warning: no previously-included files matching '*.dylib' found anywhere in distribution
+[  115s] adding license file 'LICENSE'
+[  115s] adding license file 'AUTHORS.rst'
+[  115s] writing manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  115s] copying src/pytest-cov.pth -> build/lib
+[  115s] ++ '[' -f _current_flavor ']'
+[  115s] ++ cat _current_flavor
+[  115s] + last_flavor=python38
+[  115s] + '[' -z python38 ']'
+[  115s] + '[' python38 '!=' python39 ']'
+[  115s] + '[' -d build ']'
+[  115s] + mv build _build.python38
+[  115s] + '[' -d _build.python39 ']'
+[  115s] + echo python39
+[  115s] + python_flavor=python39
+[  115s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  120s] running build
+[  120s] running build_py
+[  120s] creating build
+[  120s] creating build/lib
+[  120s] creating build/lib/pytest_cov
+[  120s] copying src/pytest_cov/__init__.py -> build/lib/pytest_cov
+[  120s] copying src/pytest_cov/compat.py -> build/lib/pytest_cov
+[  120s] copying src/pytest_cov/embed.py -> build/lib/pytest_cov
+[  120s] copying src/pytest_cov/engine.py -> build/lib/pytest_cov
+[  120s] copying src/pytest_cov/plugin.py -> build/lib/pytest_cov
+[  120s] running egg_info
+[  120s] writing src/pytest_cov.egg-info/PKG-INFO
+[  120s] writing dependency_links to src/pytest_cov.egg-info/dependency_links.txt
+[  120s] writing entry points to src/pytest_cov.egg-info/entry_points.txt
+[  120s] writing requirements to src/pytest_cov.egg-info/requires.txt
+[  120s] writing top-level names to src/pytest_cov.egg-info/top_level.txt
+[  120s] reading manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  120s] reading manifest template 'MANIFEST.in'
+[  120s] no previously-included directories found matching 'examples/*/.tox'
+[  120s] no previously-included directories found matching 'examples/*/htmlcov'
+[  120s] no previously-included directories found matching 'examples/*/*/htmlcov'
+[  120s] no previously-included directories found matching 'examples/adhoc-layout/*.egg-info'
+[  120s] no previously-included directories found matching 'examples/src-layout/src/*.egg-info'
+[  120s] warning: no files found matching '.coveragerc'
+[  120s] warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+[  120s] warning: no previously-included files matching '__pycache__/*' found anywhere in distribution
+[  120s] warning: no previously-included files matching '*.so' found anywhere in distribution
+[  120s] warning: no previously-included files matching '*.dylib' found anywhere in distribution
+[  120s] adding license file 'LICENSE'
+[  120s] adding license file 'AUTHORS.rst'
+[  120s] writing manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  120s] copying /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/src/pytest-cov.pth -> build/lib
+[  120s] ++ '[' -f _current_flavor ']'
+[  120s] ++ cat _current_flavor
+[  120s] + last_flavor=python39
+[  120s] + '[' -z python39 ']'
+[  120s] + '[' python39 '!=' python311 ']'
+[  120s] + '[' -d build ']'
+[  120s] + mv build _build.python39
+[  120s] + '[' -d _build.python311 ']'
+[  120s] + echo python311
+[  120s] + python_flavor=python311
+[  120s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  125s] running build
+[  125s] running build_py
+[  125s] creating build
+[  125s] creating build/lib
+[  125s] creating build/lib/pytest_cov
+[  125s] copying src/pytest_cov/__init__.py -> build/lib/pytest_cov
+[  125s] copying src/pytest_cov/compat.py -> build/lib/pytest_cov
+[  125s] copying src/pytest_cov/embed.py -> build/lib/pytest_cov
+[  125s] copying src/pytest_cov/engine.py -> build/lib/pytest_cov
+[  125s] copying src/pytest_cov/plugin.py -> build/lib/pytest_cov
+[  125s] running egg_info
+[  125s] writing src/pytest_cov.egg-info/PKG-INFO
+[  125s] writing dependency_links to src/pytest_cov.egg-info/dependency_links.txt
+[  125s] writing entry points to src/pytest_cov.egg-info/entry_points.txt
+[  125s] writing requirements to src/pytest_cov.egg-info/requires.txt
+[  125s] writing top-level names to src/pytest_cov.egg-info/top_level.txt
+[  125s] reading manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  125s] reading manifest template 'MANIFEST.in'
+[  125s] no previously-included directories found matching 'examples/*/.tox'
+[  125s] no previously-included directories found matching 'examples/*/htmlcov'
+[  125s] no previously-included directories found matching 'examples/*/*/htmlcov'
+[  125s] no previously-included directories found matching 'examples/adhoc-layout/*.egg-info'
+[  125s] no previously-included directories found matching 'examples/src-layout/src/*.egg-info'
+[  125s] warning: no files found matching '.coveragerc'
+[  125s] warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+[  125s] warning: no previously-included files matching '__pycache__/*' found anywhere in distribution
+[  125s] warning: no previously-included files matching '*.so' found anywhere in distribution
+[  125s] warning: no previously-included files matching '*.dylib' found anywhere in distribution
+[  125s] adding license file 'LICENSE'
+[  125s] adding license file 'AUTHORS.rst'
+[  125s] writing manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  125s] copying /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/src/pytest-cov.pth -> build/lib
+[  125s] ++ '[' -f _current_flavor ']'
+[  125s] ++ cat _current_flavor
+[  125s] + last_flavor=python311
+[  125s] + '[' -z python311 ']'
+[  125s] + '[' python311 '!=' python310 ']'
+[  125s] + '[' -d build ']'
+[  125s] + mv build _build.python311
+[  125s] + '[' -d _build.python310 ']'
+[  125s] + echo python310
+[  125s] + python_flavor=python310
+[  125s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  130s] running build
+[  130s] running build_py
+[  130s] creating build
+[  130s] creating build/lib
+[  130s] creating build/lib/pytest_cov
+[  130s] copying src/pytest_cov/__init__.py -> build/lib/pytest_cov
+[  130s] copying src/pytest_cov/compat.py -> build/lib/pytest_cov
+[  130s] copying src/pytest_cov/embed.py -> build/lib/pytest_cov
+[  130s] copying src/pytest_cov/engine.py -> build/lib/pytest_cov
+[  130s] copying src/pytest_cov/plugin.py -> build/lib/pytest_cov
+[  130s] running egg_info
+[  130s] writing src/pytest_cov.egg-info/PKG-INFO
+[  130s] writing dependency_links to src/pytest_cov.egg-info/dependency_links.txt
+[  130s] writing entry points to src/pytest_cov.egg-info/entry_points.txt
+[  130s] writing requirements to src/pytest_cov.egg-info/requires.txt
+[  130s] writing top-level names to src/pytest_cov.egg-info/top_level.txt
+[  130s] reading manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  130s] reading manifest template 'MANIFEST.in'
+[  130s] no previously-included directories found matching 'examples/*/.tox'
+[  130s] no previously-included directories found matching 'examples/*/htmlcov'
+[  130s] no previously-included directories found matching 'examples/*/*/htmlcov'
+[  130s] no previously-included directories found matching 'examples/adhoc-layout/*.egg-info'
+[  130s] no previously-included directories found matching 'examples/src-layout/src/*.egg-info'
+[  130s] warning: no files found matching '.coveragerc'
+[  130s] warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+[  130s] warning: no previously-included files matching '__pycache__/*' found anywhere in distribution
+[  130s] warning: no previously-included files matching '*.so' found anywhere in distribution
+[  130s] warning: no previously-included files matching '*.dylib' found anywhere in distribution
+[  130s] adding license file 'LICENSE'
+[  130s] adding license file 'AUTHORS.rst'
+[  130s] writing manifest file 'src/pytest_cov.egg-info/SOURCES.txt'
+[  130s] copying /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/src/pytest-cov.pth -> build/lib
+[  130s] + RPM_EC=0
+[  130s] ++ jobs -p
+[  130s] + exit 0
+[  131s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.YDH7zF
+[  131s] + umask 022
+[  131s] + cd /home/abuild/rpmbuild/BUILD
+[  131s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pytest-cov-test-4.0.0-3.1.riscv64
+[  131s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  131s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pytest-cov-test-4.0.0-3.1.riscv64
+[  131s] + cd pytest-cov-4.0.0
+[  131s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0
+[  131s] + /usr/lib/rpm/brp-compress
+[  132s] + /usr/lib/rpm/brp-suse
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  133s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.zpoEIq
+[  133s] + umask 022
+[  133s] + cd /home/abuild/rpmbuild/BUILD
+[  133s] + cd pytest-cov-4.0.0
+[  133s] + export PYTHONDONTWRITEBYTECODE=1
+[  133s] + PYTHONDONTWRITEBYTECODE=1
+[  133s] ++ pwd
+[  133s] + echo 'import site;site.addsitedir("/home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/src")'
+[  133s] + donttest='test_dist_missing_data or test_central_subprocess_change_cwd_with_pythonpath'
+[  133s] + donttest+=' or test_contexts'
+[  133s] + donttest+=' or test_dist_boxed'
+[  133s] ++ '[' -f _current_flavor ']'
+[  133s] ++ cat _current_flavor
+[  133s] + last_flavor=python310
+[  133s] + '[' -z python310 ']'
+[  133s] + '[' python310 '!=' python38 ']'
+[  133s] + '[' -d build ']'
+[  133s] + mv build _build.python310
+[  133s] + '[' -d _build.python38 ']'
+[  133s] + mv _build.python38 build
+[  133s] + echo python38
+[  133s] + python_flavor=python38
+[  133s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-pytest-cov-test-4.0.0-3.1.riscv64/usr/lib/python3.8/site-packages:/home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/tests
+[  133s] + py.test-3.8 -v -k 'not (test_dist_missing_data or test_central_subprocess_change_cwd_with_pythonpath or test_contexts or test_dist_boxed)'
+[  139s] ============================= test session starts ==============================
+[  139s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  139s] cachedir: .pytest_cache
+[  139s] rootdir: /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0, configfile: setup.cfg, testpaths: tests
+[  139s] plugins: xdist-3.0.2, cov-4.0.0
+[  144s] collecting ... collected 128 items / 6 deselected / 122 selected
+[  144s] 
+[  152s] tests/test_pytest_cov.py::test_central[branch2x] PASSED                  [  0%]
+[  160s] tests/test_pytest_cov.py::test_central[branch1c] PASSED                  [  1%]
+[  169s] tests/test_pytest_cov.py::test_central[branch1a] PASSED                  [  2%]
+[  178s] tests/test_pytest_cov.py::test_central[nobranch] PASSED                  [  3%]
+[  186s] tests/test_pytest_cov.py::test_annotate PASSED                           [  4%]
+[  197s] tests/test_pytest_cov.py::test_annotate_output_dir PASSED                [  4%]
+[  205s] tests/test_pytest_cov.py::test_html PASSED                               [  5%]
+[  212s] tests/test_pytest_cov.py::test_html_output_dir PASSED                    [  6%]
+[  220s] tests/test_pytest_cov.py::test_term_report_does_not_interact_with_html_output PASSED [  7%]
+[  228s] tests/test_pytest_cov.py::test_html_configured_output_dir PASSED         [  8%]
+[  236s] tests/test_pytest_cov.py::test_xml_output_dir PASSED                     [  9%]
+[  243s] tests/test_pytest_cov.py::test_lcov_output_dir PASSED                    [  9%]
+[  243s] tests/test_pytest_cov.py::test_lcov_not_supported SKIPPED (condition...) [ 10%]
+[  248s] tests/test_pytest_cov.py::test_term_output_dir PASSED                    [ 11%]
+[  252s] tests/test_pytest_cov.py::test_term_missing_output_dir PASSED            [ 12%]
+[  258s] tests/test_pytest_cov.py::test_cov_min_100 PASSED                        [ 13%]
+[  265s] tests/test_pytest_cov.py::test_cov_min_100_passes_if_collectonly PASSED  [ 13%]
+[  271s] tests/test_pytest_cov.py::test_cov_min_50 PASSED                         [ 14%]
+[  278s] tests/test_pytest_cov.py::test_cov_min_float_value PASSED                [ 15%]
+[  284s] tests/test_pytest_cov.py::test_cov_min_float_value_not_reached PASSED    [ 16%]
+[  291s] tests/test_pytest_cov.py::test_cov_min_no_report PASSED                  [ 17%]
+[  299s] tests/test_pytest_cov.py::test_central_nonspecific[branch2x] PASSED      [ 18%]
+[  306s] tests/test_pytest_cov.py::test_central_nonspecific[branch1c] PASSED      [ 18%]
+[  314s] tests/test_pytest_cov.py::test_central_nonspecific[branch1a] PASSED      [ 19%]
+[  322s] tests/test_pytest_cov.py::test_central_nonspecific[nobranch] PASSED      [ 20%]
+[  328s] tests/test_pytest_cov.py::test_cov_min_from_coveragerc PASSED            [ 21%]
+[  334s] tests/test_pytest_cov.py::test_central_coveragerc[branch2x] PASSED       [ 22%]
+[  341s] tests/test_pytest_cov.py::test_central_coveragerc[branch1c] PASSED       [ 22%]
+[  348s] tests/test_pytest_cov.py::test_central_coveragerc[branch1a] PASSED       [ 23%]
+[  354s] tests/test_pytest_cov.py::test_central_coveragerc[nobranch] PASSED       [ 24%]
+[  361s] tests/test_pytest_cov.py::test_central_with_path_aliasing[branch2x-nodist] PASSED [ 25%]
+[  377s] tests/test_pytest_cov.py::test_central_with_path_aliasing[branch2x-xdist] PASSED [ 26%]
+[  385s] tests/test_pytest_cov.py::test_central_with_path_aliasing[branch1c-nodist] PASSED [ 27%]
+[  402s] tests/test_pytest_cov.py::test_central_with_path_aliasing[branch1c-xdist] PASSED [ 27%]
+[  410s] tests/test_pytest_cov.py::test_central_with_path_aliasing[branch1a-nodist] PASSED [ 28%]
+[  429s] tests/test_pytest_cov.py::test_central_with_path_aliasing[branch1a-xdist] PASSED [ 29%]
+[  438s] tests/test_pytest_cov.py::test_central_with_path_aliasing[nobranch-nodist] PASSED [ 30%]
+[  457s] tests/test_pytest_cov.py::test_central_with_path_aliasing[nobranch-xdist] PASSED [ 31%]
+[  465s] tests/test_pytest_cov.py::test_borken_cwd[nodist] PASSED                 [ 31%]
+[  480s] tests/test_pytest_cov.py::test_borken_cwd[xdist] PASSED                  [ 32%]
+[  493s] tests/test_pytest_cov.py::test_subprocess_with_path_aliasing PASSED      [ 33%]
+[  502s] tests/test_pytest_cov.py::test_show_missing_coveragerc[branch2x] PASSED  [ 34%]
+[  510s] tests/test_pytest_cov.py::test_show_missing_coveragerc[branch1c] PASSED  [ 35%]
+[  518s] tests/test_pytest_cov.py::test_show_missing_coveragerc[branch1a] PASSED  [ 36%]
+[  525s] tests/test_pytest_cov.py::test_show_missing_coveragerc[nobranch] PASSED  [ 36%]
+[  533s] tests/test_pytest_cov.py::test_no_cov_on_fail PASSED                     [ 37%]
+[  540s] tests/test_pytest_cov.py::test_no_cov PASSED                             [ 38%]
+[  551s] tests/test_pytest_cov.py::test_cov_and_failure_report_on_fail PASSED     [ 39%]
+[  609s] tests/test_pytest_cov.py::test_dist_combine_racecondition PASSED         [ 40%]
+[  625s] tests/test_pytest_cov.py::test_dist_collocated[branch2x] PASSED          [ 40%]
+[  643s] tests/test_pytest_cov.py::test_dist_collocated[branch1c] PASSED          [ 41%]
+[  663s] tests/test_pytest_cov.py::test_dist_collocated[branch1a] PASSED          [ 42%]
+[  683s] tests/test_pytest_cov.py::test_dist_collocated[nobranch] PASSED          [ 43%]
+[  756s] tests/test_pytest_cov.py::test_dist_not_collocated[branch2x] PASSED      [ 44%]
+[  830s] tests/test_pytest_cov.py::test_dist_not_collocated[branch1c] PASSED      [ 45%]
+[  902s] tests/test_pytest_cov.py::test_dist_not_collocated[branch1a] PASSED      [ 45%]
+[  952s] tests/test_pytest_cov.py::test_dist_not_collocated[nobranch] PASSED      [ 46%]
+[ 1001s] tests/test_pytest_cov.py::test_dist_not_collocated_coveragerc_source[branch2x] PASSED [ 47%]
+[ 1060s] tests/test_pytest_cov.py::test_dist_not_collocated_coveragerc_source[branch1c] PASSED [ 48%]
+[ 1108s] tests/test_pytest_cov.py::test_dist_not_collocated_coveragerc_source[branch1a] PASSED [ 49%]
+[ 1155s] tests/test_pytest_cov.py::test_dist_not_collocated_coveragerc_source[nobranch] PASSED [ 50%]
+[ 1171s] tests/test_pytest_cov.py::test_central_subprocess PASSED                 [ 50%]
+[ 1187s] tests/test_pytest_cov.py::test_central_subprocess_change_cwd PASSED      [ 51%]
+[ 1198s] tests/test_pytest_cov.py::test_central_subprocess_no_subscript PASSED    [ 52%]
+[ 1218s] tests/test_pytest_cov.py::test_dist_subprocess_collocated PASSED         [ 53%]
+[ 1285s] tests/test_pytest_cov.py::test_dist_subprocess_not_collocated PASSED     [ 54%]
+[ 1292s] tests/test_pytest_cov.py::test_invalid_coverage_source PASSED            [ 54%]
+[ 1299s] tests/test_pytest_cov.py::test_funcarg PASSED                            [ 55%]
+[ 1305s] tests/test_pytest_cov.py::test_funcarg_not_active PASSED                 [ 56%]
+[ 1315s] tests/test_pytest_cov.py::test_cleanup_on_sigterm FAILED                 [ 57%]
+[ 1315s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_break[setup0] SKIPPED [ 58%]
+[ 1315s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_break[setup1] SKIPPED [ 59%]
+[ 1315s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_break[setup2] SKIPPED [ 59%]
+[ 1322s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl[setup0] FAILED [ 60%]
+[ 1329s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl[setup1] FAILED [ 61%]
+[ 1336s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl[setup2] FAILED [ 62%]
+[ 1343s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl_sigint FAILED  [ 63%]
+[ 1352s] tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_ign FAILED         [ 63%]
+[ 1358s] tests/test_pytest_cov.py::test_cover_conftest PASSED                     [ 64%]
+[ 1371s] tests/test_pytest_cov.py::test_cover_looponfail PASSED                   [ 65%]
+[ 1386s] tests/test_pytest_cov.py::test_cover_conftest_dist PASSED                [ 66%]
+[ 1393s] tests/test_pytest_cov.py::test_no_cover_marker PASSED                    [ 67%]
+[ 1399s] tests/test_pytest_cov.py::test_no_cover_fixture PASSED                   [ 68%]
+[ 1405s] tests/test_pytest_cov.py::test_coveragerc PASSED                         [ 68%]
+[ 1419s] tests/test_pytest_cov.py::test_coveragerc_dist PASSED                    [ 69%]
+[ 1425s] tests/test_pytest_cov.py::test_skip_covered_cli[term-missing:skip-covered] PASSED [ 70%]
+[ 1432s] tests/test_pytest_cov.py::test_skip_covered_cli[term:skip-covered] PASSED [ 71%]
+[ 1437s] tests/test_pytest_cov.py::test_skip_covered_coveragerc_config PASSED     [ 72%]
+[ 1443s] tests/test_pytest_cov.py::test_clear_environ PASSED                      [ 72%]
+[ 1457s] tests/test_pytest_cov.py::test_dist_bare_cov PASSED                      [ 73%]
+[ 1457s] tests/test_pytest_cov.py::test_not_started_plugin_does_not_fail PASSED   [ 74%]
+[ 1464s] tests/test_pytest_cov.py::test_default_output_setting PASSED             [ 75%]
+[ 1470s] tests/test_pytest_cov.py::test_disabled_output PASSED                    [ 76%]
+[ 1476s] tests/test_pytest_cov.py::test_coverage_file PASSED                      [ 77%]
+[ 1483s] tests/test_pytest_cov.py::test_external_data_file PASSED                 [ 77%]
+[ 1496s] tests/test_pytest_cov.py::test_external_data_file_xdist PASSED           [ 78%]
+[ 1508s] tests/test_pytest_cov.py::test_xdist_no_data_collected PASSED            [ 79%]
+[ 1514s] tests/test_pytest_cov.py::test_external_data_file_negative PASSED        [ 80%]
+[ 1526s] tests/test_pytest_cov.py::test_append_coverage[branch2x-nodist] PASSED   [ 81%]
+[ 1551s] tests/test_pytest_cov.py::test_append_coverage[branch2x-xdist] PASSED    [ 81%]
+[ 1566s] tests/test_pytest_cov.py::test_append_coverage[branch1c-nodist] PASSED   [ 82%]
+[ 1597s] tests/test_pytest_cov.py::test_append_coverage[branch1c-xdist] PASSED    [ 83%]
+[ 1610s] tests/test_pytest_cov.py::test_append_coverage[branch1a-nodist] PASSED   [ 84%]
+[ 1637s] tests/test_pytest_cov.py::test_append_coverage[branch1a-xdist] PASSED    [ 85%]
+[ 1650s] tests/test_pytest_cov.py::test_append_coverage[nobranch-nodist] PASSED   [ 86%]
+[ 1679s] tests/test_pytest_cov.py::test_append_coverage[nobranch-xdist] PASSED    [ 86%]
+[ 1692s] tests/test_pytest_cov.py::test_do_not_append_coverage[branch2x-nodist] PASSED [ 87%]
+[ 1720s] tests/test_pytest_cov.py::test_do_not_append_coverage[branch2x-xdist] PASSED [ 88%]
+[ 1736s] tests/test_pytest_cov.py::test_do_not_append_coverage[branch1c-nodist] PASSED [ 89%]
+[ 1772s] tests/test_pytest_cov.py::test_do_not_append_coverage[branch1c-xdist] PASSED [ 90%]
+[ 1790s] tests/test_pytest_cov.py::test_do_not_append_coverage[branch1a-nodist] PASSED [ 90%]
+[ 1825s] tests/test_pytest_cov.py::test_do_not_append_coverage[branch1a-xdist] PASSED [ 91%]
+[ 1840s] tests/test_pytest_cov.py::test_do_not_append_coverage[nobranch-nodist] PASSED [ 92%]
+[ 1872s] tests/test_pytest_cov.py::test_do_not_append_coverage[nobranch-xdist] PASSED [ 93%]
+[ 1890s] tests/test_pytest_cov.py::test_append_coverage_subprocess PASSED         [ 94%]
+[ 1890s] tests/test_pytest_cov.py::test_pth_failure PASSED                        [ 95%]
+[ 1896s] tests/test_pytest_cov.py::test_double_cov PASSED                         [ 95%]
+[ 1903s] tests/test_pytest_cov.py::test_double_cov2 PASSED                        [ 96%]
+[ 1908s] tests/test_pytest_cov.py::test_cov_reset PASSED                          [ 97%]
+[ 1914s] tests/test_pytest_cov.py::test_cov_reset_then_set PASSED                 [ 98%]
+[ 1926s] tests/test_pytest_cov.py::test_cov_and_no_cov PASSED                     [ 99%]
+[ 1927s] tests/test_pytest_cov.py::test_issue_417 PASSED                          [100%]
+[ 1927s] 
+[ 1927s] =================================== FAILURES ===================================
+[ 1927s] ___________________________ test_cleanup_on_sigterm ____________________________
+[ 1927s] 
+[ 1927s] testdir = <Testdir local('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm0')>
+[ 1927s] 
+[ 1927s]     @pytest.mark.skipif('sys.platform == "win32"', reason="SIGTERM isn't really supported on Windows")
+[ 1927s]     @pytest.mark.xfail('platform.python_implementation() == "PyPy"', reason="Interpreter seems buggy")
+[ 1927s]     def test_cleanup_on_sigterm(testdir):
+[ 1927s]         script = testdir.makepyfile('''
+[ 1927s]     import os, signal, subprocess, sys, time
+[ 1927s]     
+[ 1927s]     def cleanup(num, frame):
+[ 1927s]         print("num == signal.SIGTERM => %s" % (num == signal.SIGTERM))
+[ 1927s]         raise Exception()
+[ 1927s]     
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.terminate()
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s]         assert stdout == b"""num == signal.SIGTERM => True
+[ 1927s]     captured Exception()
+[ 1927s]     """
+[ 1927s]         assert proc.returncode == 0
+[ 1927s]     
+[ 1927s]     if __name__ == "__main__":
+[ 1927s]         signal.signal(signal.SIGTERM, cleanup)
+[ 1927s]     
+[ 1927s]         from pytest_cov.embed import cleanup_on_sigterm
+[ 1927s]         cleanup_on_sigterm()
+[ 1927s]     
+[ 1927s]         try:
+[ 1927s]             time.sleep(10)
+[ 1927s]         except BaseException as exc:
+[ 1927s]             print("captured %r" % exc)
+[ 1927s]     ''')
+[ 1927s]     
+[ 1927s]         result = testdir.runpytest('-vv',
+[ 1927s]                                    '--cov=%s' % script.dirpath(),
+[ 1927s]                                    '--cov-report=term-missing',
+[ 1927s]                                    script)
+[ 1927s]     
+[ 1927s] >       result.stdout.fnmatch_lines([
+[ 1927s]             '*- coverage: platform *, python * -*',
+[ 1927s]             'test_cleanup_on_sigterm* 26-27',
+[ 1927s]             '*1 passed*'
+[ 1927s]         ])
+[ 1927s] E       Failed: nomatch: '*- coverage: platform *, python * -*'
+[ 1927s] E           and: '============================= test session starts =============================='
+[ 1927s] E           and: 'platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8'
+[ 1927s] E           and: 'cachedir: .pytest_cache'
+[ 1927s] E           and: 'rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm0'
+[ 1927s] E           and: 'plugins: xdist-3.0.2, cov-4.0.0'
+[ 1927s] E           and: 'collecting ... collected 1 item'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm.py::test_run FAILED                              [100%]'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '=================================== FAILURES ==================================='
+[ 1927s] E           and: '___________________________________ test_run ___________________________________'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '    def test_run():'
+[ 1927s] E           and: '        proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)'
+[ 1927s] E           and: '        time.sleep(1)'
+[ 1927s] E           and: '        proc.terminate()'
+[ 1927s] E           and: '        stdout, stderr = proc.communicate()'
+[ 1927s] E           and: '        assert not stderr'
+[ 1927s] E           and: '>       assert stdout == b"""num == signal.SIGTERM => True'
+[ 1927s] E           and: '    captured Exception()'
+[ 1927s] E           and: '    """'
+[ 1927s] E           and: "E       AssertionError: assert b'' == b'num == signal.SIGTERM => True\\ncaptured Exception()\\n'"
+[ 1927s] E           and: 'E         Full diff:'
+[ 1927s] E           and: "E         - b'num == signal.SIGTERM => True\\ncaptured Exception()\\n'"
+[ 1927s] E           and: "E         + b''"
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm.py:13: AssertionError'
+[ 1927s] E           and: ''
+[ 1927s] E       fnmatch: '*- coverage: platform *, python * -*'
+[ 1927s] E          with: '---------- coverage: platform linux, python 3.8.16-final-0 -----------'
+[ 1927s] E       nomatch: 'test_cleanup_on_sigterm* 26-27'
+[ 1927s] E           and: 'Name                         Stmts   Miss  Cover   Missing'
+[ 1927s] E           and: '----------------------------------------------------------'
+[ 1927s] E           and: 'test_cleanup_on_sigterm.py      20     10    50%   4-5, 16, 19-27'
+[ 1927s] E           and: '----------------------------------------------------------'
+[ 1927s] E           and: 'TOTAL                           20     10    50%'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '=========================== short test summary info ============================'
+[ 1927s] E           and: "FAILED test_cleanup_on_sigterm.py::test_run - AssertionError: assert b'' == b..."
+[ 1927s] E           and: '============================== 1 failed in 1.92s ==============================='
+[ 1927s] E       remains unmatched: 'test_cleanup_on_sigterm* 26-27'
+[ 1927s] 
+[ 1927s] /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/tests/test_pytest_cov.py:1133: Failed
+[ 1927s] ----------------------------- Captured stdout call -----------------------------
+[ 1927s] running: /usr/bin/python3.8 -mpytest --basetemp=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm0/runpytest-0 -vv --cov=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm0 --cov-report=term-missing /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm0/test_cleanup_on_sigterm.py --basetemp=/tmp/pytest-of-abuild/pytest-0/basetemp
+[ 1927s]      in: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm0
+[ 1927s] ============================= test session starts ==============================
+[ 1927s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[ 1927s] cachedir: .pytest_cache
+[ 1927s] rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm0
+[ 1927s] plugins: xdist-3.0.2, cov-4.0.0
+[ 1927s] collecting ... collected 1 item
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm.py::test_run FAILED                              [100%]
+[ 1927s] 
+[ 1927s] =================================== FAILURES ===================================
+[ 1927s] ___________________________________ test_run ___________________________________
+[ 1927s] 
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.terminate()
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s] >       assert stdout == b"""num == signal.SIGTERM => True
+[ 1927s]     captured Exception()
+[ 1927s]     """
+[ 1927s] E       AssertionError: assert b'' == b'num == signal.SIGTERM => True\ncaptured Exception()\n'
+[ 1927s] E         Full diff:
+[ 1927s] E         - b'num == signal.SIGTERM => True\ncaptured Exception()\n'
+[ 1927s] E         + b''
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm.py:13: AssertionError
+[ 1927s] 
+[ 1927s] ---------- coverage: platform linux, python 3.8.16-final-0 -----------
+[ 1927s] Name                         Stmts   Miss  Cover   Missing
+[ 1927s] ----------------------------------------------------------
+[ 1927s] test_cleanup_on_sigterm.py      20     10    50%   4-5, 16, 19-27
+[ 1927s] ----------------------------------------------------------
+[ 1927s] TOTAL                           20     10    50%
+[ 1927s] 
+[ 1927s] =========================== short test summary info ============================
+[ 1927s] FAILED test_cleanup_on_sigterm.py::test_run - AssertionError: assert b'' == b...
+[ 1927s] ============================== 1 failed in 1.92s ===============================
+[ 1927s] ___________________ test_cleanup_on_sigterm_sig_dfl[setup0] ____________________
+[ 1927s] 
+[ 1927s] pytester = <Pytester PosixPath('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0')>
+[ 1927s] testdir = <Testdir local('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0')>
+[ 1927s] setup = ('signal.signal(signal.SIGTERM, signal.SIG_DFL); cleanup_on_sigterm()', '88%   18-19')
+[ 1927s] 
+[ 1927s]     @pytest.mark.skipif('sys.platform == "win32"', reason="SIGTERM isn't really supported on Windows")
+[ 1927s]     @pytest.mark.xfail('sys.platform == "darwin"', reason="Something weird going on Macs...")
+[ 1927s]     @pytest.mark.xfail('platform.python_implementation() == "PyPy"', reason="Interpreter seems buggy")
+[ 1927s]     @pytest.mark.parametrize('setup', [
+[ 1927s]         ('signal.signal(signal.SIGTERM, signal.SIG_DFL); cleanup_on_sigterm()', '88%   18-19'),
+[ 1927s]         ('cleanup_on_sigterm()', '88%   18-19'),
+[ 1927s]         ('cleanup()', '75%   16-19'),
+[ 1927s]     ])
+[ 1927s]     def test_cleanup_on_sigterm_sig_dfl(pytester, testdir, setup):
+[ 1927s]         script = testdir.makepyfile('''
+[ 1927s]     import os, signal, subprocess, sys, time
+[ 1927s]     
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.terminate()
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s]         assert stdout == b""
+[ 1927s]         assert proc.returncode in [128 + signal.SIGTERM, -signal.SIGTERM]
+[ 1927s]     
+[ 1927s]     if __name__ == "__main__":
+[ 1927s]         from pytest_cov.embed import cleanup_on_sigterm, cleanup
+[ 1927s]         ''' + setup[0] + '''
+[ 1927s]     
+[ 1927s]         try:
+[ 1927s]             time.sleep(10)
+[ 1927s]         except BaseException as exc:
+[ 1927s]             print("captured %r" % exc)
+[ 1927s]     ''')
+[ 1927s]     
+[ 1927s]         result = testdir.runpytest('-vv',
+[ 1927s]                                    '--assert=plain',
+[ 1927s]                                    '--cov=%s' % script.dirpath(),
+[ 1927s]                                    '--cov-report=term-missing',
+[ 1927s]                                    script)
+[ 1927s]     
+[ 1927s] >       result.stdout.fnmatch_lines([
+[ 1927s]             '*- coverage: platform *, python * -*',
+[ 1927s]             'test_cleanup_on_sigterm* %s' % setup[1],
+[ 1927s]             '*1 passed*'
+[ 1927s]         ])
+[ 1927s] E       Failed: nomatch: '*- coverage: platform *, python * -*'
+[ 1927s] E           and: '============================= test session starts =============================='
+[ 1927s] E           and: 'platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8'
+[ 1927s] E           and: 'cachedir: .pytest_cache'
+[ 1927s] E           and: 'rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0'
+[ 1927s] E           and: 'plugins: xdist-3.0.2, cov-4.0.0'
+[ 1927s] E           and: 'collecting ... collected 1 item'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl.py::test_run PASSED                      [100%]'
+[ 1927s] E           and: ''
+[ 1927s] E       fnmatch: '*- coverage: platform *, python * -*'
+[ 1927s] E          with: '---------- coverage: platform linux, python 3.8.16-final-0 -----------'
+[ 1927s] E       nomatch: 'test_cleanup_on_sigterm* 88%   18-19'
+[ 1927s] E           and: 'Name                                 Stmts   Miss  Cover   Missing'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl.py      16      6    62%   13-19'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'TOTAL                                   16      6    62%'
+[ 1927s] E           and: ''
+[ 1927s] E           and: ''
+[ 1927s] E           and: '============================== 1 passed in 1.61s ==============================='
+[ 1927s] E       remains unmatched: 'test_cleanup_on_sigterm* 88%   18-19'
+[ 1927s] 
+[ 1927s] /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/tests/test_pytest_cov.py:1224: Failed
+[ 1927s] ----------------------------- Captured stdout call -----------------------------
+[ 1927s] running: /usr/bin/python3.8 -mpytest --basetemp=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0/runpytest-0 -vv --assert=plain --cov=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0 --cov-report=term-missing /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0/test_cleanup_on_sigterm_sig_dfl.py --basetemp=/tmp/pytest-of-abuild/pytest-0/basetemp
+[ 1927s]      in: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0
+[ 1927s] ============================= test session starts ==============================
+[ 1927s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[ 1927s] cachedir: .pytest_cache
+[ 1927s] rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl0
+[ 1927s] plugins: xdist-3.0.2, cov-4.0.0
+[ 1927s] collecting ... collected 1 item
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm_sig_dfl.py::test_run PASSED                      [100%]
+[ 1927s] 
+[ 1927s] ---------- coverage: platform linux, python 3.8.16-final-0 -----------
+[ 1927s] Name                                 Stmts   Miss  Cover   Missing
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] test_cleanup_on_sigterm_sig_dfl.py      16      6    62%   13-19
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] TOTAL                                   16      6    62%
+[ 1927s] 
+[ 1927s] 
+[ 1927s] ============================== 1 passed in 1.61s ===============================
+[ 1927s] ___________________ test_cleanup_on_sigterm_sig_dfl[setup1] ____________________
+[ 1927s] 
+[ 1927s] pytester = <Pytester PosixPath('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1')>
+[ 1927s] testdir = <Testdir local('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1')>
+[ 1927s] setup = ('cleanup_on_sigterm()', '88%   18-19')
+[ 1927s] 
+[ 1927s]     @pytest.mark.skipif('sys.platform == "win32"', reason="SIGTERM isn't really supported on Windows")
+[ 1927s]     @pytest.mark.xfail('sys.platform == "darwin"', reason="Something weird going on Macs...")
+[ 1927s]     @pytest.mark.xfail('platform.python_implementation() == "PyPy"', reason="Interpreter seems buggy")
+[ 1927s]     @pytest.mark.parametrize('setup', [
+[ 1927s]         ('signal.signal(signal.SIGTERM, signal.SIG_DFL); cleanup_on_sigterm()', '88%   18-19'),
+[ 1927s]         ('cleanup_on_sigterm()', '88%   18-19'),
+[ 1927s]         ('cleanup()', '75%   16-19'),
+[ 1927s]     ])
+[ 1927s]     def test_cleanup_on_sigterm_sig_dfl(pytester, testdir, setup):
+[ 1927s]         script = testdir.makepyfile('''
+[ 1927s]     import os, signal, subprocess, sys, time
+[ 1927s]     
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.terminate()
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s]         assert stdout == b""
+[ 1927s]         assert proc.returncode in [128 + signal.SIGTERM, -signal.SIGTERM]
+[ 1927s]     
+[ 1927s]     if __name__ == "__main__":
+[ 1927s]         from pytest_cov.embed import cleanup_on_sigterm, cleanup
+[ 1927s]         ''' + setup[0] + '''
+[ 1927s]     
+[ 1927s]         try:
+[ 1927s]             time.sleep(10)
+[ 1927s]         except BaseException as exc:
+[ 1927s]             print("captured %r" % exc)
+[ 1927s]     ''')
+[ 1927s]     
+[ 1927s]         result = testdir.runpytest('-vv',
+[ 1927s]                                    '--assert=plain',
+[ 1927s]                                    '--cov=%s' % script.dirpath(),
+[ 1927s]                                    '--cov-report=term-missing',
+[ 1927s]                                    script)
+[ 1927s]     
+[ 1927s] >       result.stdout.fnmatch_lines([
+[ 1927s]             '*- coverage: platform *, python * -*',
+[ 1927s]             'test_cleanup_on_sigterm* %s' % setup[1],
+[ 1927s]             '*1 passed*'
+[ 1927s]         ])
+[ 1927s] E       Failed: nomatch: '*- coverage: platform *, python * -*'
+[ 1927s] E           and: '============================= test session starts =============================='
+[ 1927s] E           and: 'platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8'
+[ 1927s] E           and: 'cachedir: .pytest_cache'
+[ 1927s] E           and: 'rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1'
+[ 1927s] E           and: 'plugins: xdist-3.0.2, cov-4.0.0'
+[ 1927s] E           and: 'collecting ... collected 1 item'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl.py::test_run PASSED                      [100%]'
+[ 1927s] E           and: ''
+[ 1927s] E       fnmatch: '*- coverage: platform *, python * -*'
+[ 1927s] E          with: '---------- coverage: platform linux, python 3.8.16-final-0 -----------'
+[ 1927s] E       nomatch: 'test_cleanup_on_sigterm* 88%   18-19'
+[ 1927s] E           and: 'Name                                 Stmts   Miss  Cover   Missing'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl.py      16      6    62%   13-19'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'TOTAL                                   16      6    62%'
+[ 1927s] E           and: ''
+[ 1927s] E           and: ''
+[ 1927s] E           and: '============================== 1 passed in 1.62s ==============================='
+[ 1927s] E       remains unmatched: 'test_cleanup_on_sigterm* 88%   18-19'
+[ 1927s] 
+[ 1927s] /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/tests/test_pytest_cov.py:1224: Failed
+[ 1927s] ----------------------------- Captured stdout call -----------------------------
+[ 1927s] running: /usr/bin/python3.8 -mpytest --basetemp=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1/runpytest-0 -vv --assert=plain --cov=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1 --cov-report=term-missing /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1/test_cleanup_on_sigterm_sig_dfl.py --basetemp=/tmp/pytest-of-abuild/pytest-0/basetemp
+[ 1927s]      in: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1
+[ 1927s] ============================= test session starts ==============================
+[ 1927s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[ 1927s] cachedir: .pytest_cache
+[ 1927s] rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl1
+[ 1927s] plugins: xdist-3.0.2, cov-4.0.0
+[ 1927s] collecting ... collected 1 item
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm_sig_dfl.py::test_run PASSED                      [100%]
+[ 1927s] 
+[ 1927s] ---------- coverage: platform linux, python 3.8.16-final-0 -----------
+[ 1927s] Name                                 Stmts   Miss  Cover   Missing
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] test_cleanup_on_sigterm_sig_dfl.py      16      6    62%   13-19
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] TOTAL                                   16      6    62%
+[ 1927s] 
+[ 1927s] 
+[ 1927s] ============================== 1 passed in 1.62s ===============================
+[ 1927s] ___________________ test_cleanup_on_sigterm_sig_dfl[setup2] ____________________
+[ 1927s] 
+[ 1927s] pytester = <Pytester PosixPath('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2')>
+[ 1927s] testdir = <Testdir local('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2')>
+[ 1927s] setup = ('cleanup()', '75%   16-19')
+[ 1927s] 
+[ 1927s]     @pytest.mark.skipif('sys.platform == "win32"', reason="SIGTERM isn't really supported on Windows")
+[ 1927s]     @pytest.mark.xfail('sys.platform == "darwin"', reason="Something weird going on Macs...")
+[ 1927s]     @pytest.mark.xfail('platform.python_implementation() == "PyPy"', reason="Interpreter seems buggy")
+[ 1927s]     @pytest.mark.parametrize('setup', [
+[ 1927s]         ('signal.signal(signal.SIGTERM, signal.SIG_DFL); cleanup_on_sigterm()', '88%   18-19'),
+[ 1927s]         ('cleanup_on_sigterm()', '88%   18-19'),
+[ 1927s]         ('cleanup()', '75%   16-19'),
+[ 1927s]     ])
+[ 1927s]     def test_cleanup_on_sigterm_sig_dfl(pytester, testdir, setup):
+[ 1927s]         script = testdir.makepyfile('''
+[ 1927s]     import os, signal, subprocess, sys, time
+[ 1927s]     
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.terminate()
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s]         assert stdout == b""
+[ 1927s]         assert proc.returncode in [128 + signal.SIGTERM, -signal.SIGTERM]
+[ 1927s]     
+[ 1927s]     if __name__ == "__main__":
+[ 1927s]         from pytest_cov.embed import cleanup_on_sigterm, cleanup
+[ 1927s]         ''' + setup[0] + '''
+[ 1927s]     
+[ 1927s]         try:
+[ 1927s]             time.sleep(10)
+[ 1927s]         except BaseException as exc:
+[ 1927s]             print("captured %r" % exc)
+[ 1927s]     ''')
+[ 1927s]     
+[ 1927s]         result = testdir.runpytest('-vv',
+[ 1927s]                                    '--assert=plain',
+[ 1927s]                                    '--cov=%s' % script.dirpath(),
+[ 1927s]                                    '--cov-report=term-missing',
+[ 1927s]                                    script)
+[ 1927s]     
+[ 1927s] >       result.stdout.fnmatch_lines([
+[ 1927s]             '*- coverage: platform *, python * -*',
+[ 1927s]             'test_cleanup_on_sigterm* %s' % setup[1],
+[ 1927s]             '*1 passed*'
+[ 1927s]         ])
+[ 1927s] E       Failed: nomatch: '*- coverage: platform *, python * -*'
+[ 1927s] E           and: '============================= test session starts =============================='
+[ 1927s] E           and: 'platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8'
+[ 1927s] E           and: 'cachedir: .pytest_cache'
+[ 1927s] E           and: 'rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2'
+[ 1927s] E           and: 'plugins: xdist-3.0.2, cov-4.0.0'
+[ 1927s] E           and: 'collecting ... collected 1 item'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl.py::test_run PASSED                      [100%]'
+[ 1927s] E           and: ''
+[ 1927s] E       fnmatch: '*- coverage: platform *, python * -*'
+[ 1927s] E          with: '---------- coverage: platform linux, python 3.8.16-final-0 -----------'
+[ 1927s] E       nomatch: 'test_cleanup_on_sigterm* 75%   16-19'
+[ 1927s] E           and: 'Name                                 Stmts   Miss  Cover   Missing'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl.py      16      6    62%   13-19'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'TOTAL                                   16      6    62%'
+[ 1927s] E           and: ''
+[ 1927s] E           and: ''
+[ 1927s] E           and: '============================== 1 passed in 1.62s ==============================='
+[ 1927s] E       remains unmatched: 'test_cleanup_on_sigterm* 75%   16-19'
+[ 1927s] 
+[ 1927s] /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/tests/test_pytest_cov.py:1224: Failed
+[ 1927s] ----------------------------- Captured stdout call -----------------------------
+[ 1927s] running: /usr/bin/python3.8 -mpytest --basetemp=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2/runpytest-0 -vv --assert=plain --cov=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2 --cov-report=term-missing /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2/test_cleanup_on_sigterm_sig_dfl.py --basetemp=/tmp/pytest-of-abuild/pytest-0/basetemp
+[ 1927s]      in: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2
+[ 1927s] ============================= test session starts ==============================
+[ 1927s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[ 1927s] cachedir: .pytest_cache
+[ 1927s] rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl2
+[ 1927s] plugins: xdist-3.0.2, cov-4.0.0
+[ 1927s] collecting ... collected 1 item
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm_sig_dfl.py::test_run PASSED                      [100%]
+[ 1927s] 
+[ 1927s] ---------- coverage: platform linux, python 3.8.16-final-0 -----------
+[ 1927s] Name                                 Stmts   Miss  Cover   Missing
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] test_cleanup_on_sigterm_sig_dfl.py      16      6    62%   13-19
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] TOTAL                                   16      6    62%
+[ 1927s] 
+[ 1927s] 
+[ 1927s] ============================== 1 passed in 1.62s ===============================
+[ 1927s] ____________________ test_cleanup_on_sigterm_sig_dfl_sigint ____________________
+[ 1927s] 
+[ 1927s] testdir = <Testdir local('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl_sigint0')>
+[ 1927s] 
+[ 1927s]     @pytest.mark.skipif('sys.platform == "win32"', reason="SIGINT is subtly broken on Windows")
+[ 1927s]     @pytest.mark.xfail('sys.platform == "darwin"', reason="Something weird going on Macs...")
+[ 1927s]     @pytest.mark.xfail('platform.python_implementation() == "PyPy"', reason="Interpreter seems buggy")
+[ 1927s]     def test_cleanup_on_sigterm_sig_dfl_sigint(testdir):
+[ 1927s]         script = testdir.makepyfile('''
+[ 1927s]     import os, signal, subprocess, sys, time
+[ 1927s]     
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.send_signal(signal.SIGINT)
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s]         assert stdout == b"""captured KeyboardInterrupt()
+[ 1927s]     """
+[ 1927s]         assert proc.returncode == 0
+[ 1927s]     
+[ 1927s]     if __name__ == "__main__":
+[ 1927s]         from pytest_cov.embed import cleanup_on_signal
+[ 1927s]         cleanup_on_signal(signal.SIGINT)
+[ 1927s]     
+[ 1927s]         try:
+[ 1927s]             time.sleep(10)
+[ 1927s]         except BaseException as exc:
+[ 1927s]             print("captured %r" % exc)
+[ 1927s]     ''')
+[ 1927s]     
+[ 1927s]         result = testdir.runpytest('-vv',
+[ 1927s]                                    '--assert=plain',
+[ 1927s]                                    '--cov=%s' % script.dirpath(),
+[ 1927s]                                    '--cov-report=term-missing',
+[ 1927s]                                    script)
+[ 1927s]     
+[ 1927s] >       result.stdout.fnmatch_lines([
+[ 1927s]             '*- coverage: platform *, python * -*',
+[ 1927s]             'test_cleanup_on_sigterm* 88%   19-20',
+[ 1927s]             '*1 passed*'
+[ 1927s]         ])
+[ 1927s] E       Failed: nomatch: '*- coverage: platform *, python * -*'
+[ 1927s] E           and: '============================= test session starts =============================='
+[ 1927s] E           and: 'platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8'
+[ 1927s] E           and: 'cachedir: .pytest_cache'
+[ 1927s] E           and: 'rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl_sigint0'
+[ 1927s] E           and: 'plugins: xdist-3.0.2, cov-4.0.0'
+[ 1927s] E           and: 'collecting ... collected 1 item'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl_sigint.py::test_run FAILED               [100%]'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '=================================== FAILURES ==================================='
+[ 1927s] E           and: '___________________________________ test_run ___________________________________'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '    def test_run():'
+[ 1927s] E           and: '        proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)'
+[ 1927s] E           and: '        time.sleep(1)'
+[ 1927s] E           and: '        proc.send_signal(signal.SIGINT)'
+[ 1927s] E           and: '        stdout, stderr = proc.communicate()'
+[ 1927s] E           and: '        assert not stderr'
+[ 1927s] E           and: '>       assert stdout == b"""captured KeyboardInterrupt()'
+[ 1927s] E           and: '    """'
+[ 1927s] E           and: 'E       AssertionError'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl_sigint.py:9: AssertionError'
+[ 1927s] E           and: ''
+[ 1927s] E       fnmatch: '*- coverage: platform *, python * -*'
+[ 1927s] E          with: '---------- coverage: platform linux, python 3.8.16-final-0 -----------'
+[ 1927s] E       nomatch: 'test_cleanup_on_sigterm* 88%   19-20'
+[ 1927s] E           and: 'Name                                        Stmts   Miss  Cover   Missing'
+[ 1927s] E           and: '-------------------------------------------------------------------------'
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_dfl_sigint.py      16      7    56%   11, 14-20'
+[ 1927s] E           and: '-------------------------------------------------------------------------'
+[ 1927s] E           and: 'TOTAL                                          16      7    56%'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '=========================== short test summary info ============================'
+[ 1927s] E           and: 'FAILED test_cleanup_on_sigterm_sig_dfl_sigint.py::test_run - AssertionError'
+[ 1927s] E           and: '============================== 1 failed in 1.77s ==============================='
+[ 1927s] E       remains unmatched: 'test_cleanup_on_sigterm* 88%   19-20'
+[ 1927s] 
+[ 1927s] /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/tests/test_pytest_cov.py:1265: Failed
+[ 1927s] ----------------------------- Captured stdout call -----------------------------
+[ 1927s] running: /usr/bin/python3.8 -mpytest --basetemp=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl_sigint0/runpytest-0 -vv --assert=plain --cov=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl_sigint0 --cov-report=term-missing /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl_sigint0/test_cleanup_on_sigterm_sig_dfl_sigint.py --basetemp=/tmp/pytest-of-abuild/pytest-0/basetemp
+[ 1927s]      in: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl_sigint0
+[ 1927s] ============================= test session starts ==============================
+[ 1927s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[ 1927s] cachedir: .pytest_cache
+[ 1927s] rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_dfl_sigint0
+[ 1927s] plugins: xdist-3.0.2, cov-4.0.0
+[ 1927s] collecting ... collected 1 item
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm_sig_dfl_sigint.py::test_run FAILED               [100%]
+[ 1927s] 
+[ 1927s] =================================== FAILURES ===================================
+[ 1927s] ___________________________________ test_run ___________________________________
+[ 1927s] 
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.send_signal(signal.SIGINT)
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s] >       assert stdout == b"""captured KeyboardInterrupt()
+[ 1927s]     """
+[ 1927s] E       AssertionError
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm_sig_dfl_sigint.py:9: AssertionError
+[ 1927s] 
+[ 1927s] ---------- coverage: platform linux, python 3.8.16-final-0 -----------
+[ 1927s] Name                                        Stmts   Miss  Cover   Missing
+[ 1927s] -------------------------------------------------------------------------
+[ 1927s] test_cleanup_on_sigterm_sig_dfl_sigint.py      16      7    56%   11, 14-20
+[ 1927s] -------------------------------------------------------------------------
+[ 1927s] TOTAL                                          16      7    56%
+[ 1927s] 
+[ 1927s] =========================== short test summary info ============================
+[ 1927s] FAILED test_cleanup_on_sigterm_sig_dfl_sigint.py::test_run - AssertionError
+[ 1927s] ============================== 1 failed in 1.77s ===============================
+[ 1927s] _______________________ test_cleanup_on_sigterm_sig_ign ________________________
+[ 1927s] 
+[ 1927s] testdir = <Testdir local('/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_ign0')>
+[ 1927s] 
+[ 1927s]     @pytest.mark.skipif('sys.platform == "win32"', reason="fork not available on Windows")
+[ 1927s]     @pytest.mark.xfail('platform.python_implementation() == "PyPy"', reason="Interpreter seems buggy")
+[ 1927s]     def test_cleanup_on_sigterm_sig_ign(testdir):
+[ 1927s]         script = testdir.makepyfile('''
+[ 1927s]     import os, signal, subprocess, sys, time
+[ 1927s]     
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.send_signal(signal.SIGINT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.terminate()
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s]         assert stdout == b""
+[ 1927s]         # it appears signal handling is buggy on python 2?
+[ 1927s]         if sys.version_info == 3: assert proc.returncode in [128 + signal.SIGTERM, -signal.SIGTERM]
+[ 1927s]     
+[ 1927s]     if __name__ == "__main__":
+[ 1927s]         signal.signal(signal.SIGINT, signal.SIG_IGN)
+[ 1927s]     
+[ 1927s]         from pytest_cov.embed import cleanup_on_signal
+[ 1927s]         cleanup_on_signal(signal.SIGINT)
+[ 1927s]     
+[ 1927s]         try:
+[ 1927s]             time.sleep(10)
+[ 1927s]         except BaseException as exc:
+[ 1927s]             print("captured %r" % exc)
+[ 1927s]         ''')
+[ 1927s]     
+[ 1927s]         result = testdir.runpytest('-vv',
+[ 1927s]                                    '--assert=plain',
+[ 1927s]                                    '--cov=%s' % script.dirpath(),
+[ 1927s]                                    '--cov-report=term-missing',
+[ 1927s]                                    script)
+[ 1927s]     
+[ 1927s] >       result.stdout.fnmatch_lines([
+[ 1927s]             '*- coverage: platform *, python * -*',
+[ 1927s]             'test_cleanup_on_sigterm* 89%   23-24',
+[ 1927s]             '*1 passed*'
+[ 1927s]         ])
+[ 1927s] E       Failed: nomatch: '*- coverage: platform *, python * -*'
+[ 1927s] E           and: '============================= test session starts =============================='
+[ 1927s] E           and: 'platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8'
+[ 1927s] E           and: 'cachedir: .pytest_cache'
+[ 1927s] E           and: 'rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_ign0'
+[ 1927s] E           and: 'plugins: xdist-3.0.2, cov-4.0.0'
+[ 1927s] E           and: 'collecting ... collected 1 item'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_ign.py::test_run FAILED                      [100%]'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '=================================== FAILURES ==================================='
+[ 1927s] E           and: '___________________________________ test_run ___________________________________'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '    def test_run():'
+[ 1927s] E           and: '        proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)'
+[ 1927s] E           and: '        time.sleep(1)'
+[ 1927s] E           and: '        proc.send_signal(signal.SIGINT)'
+[ 1927s] E           and: '        time.sleep(1)'
+[ 1927s] E           and: '        proc.terminate()'
+[ 1927s] E           and: '        stdout, stderr = proc.communicate()'
+[ 1927s] E           and: '        assert not stderr'
+[ 1927s] E           and: '>       assert stdout == b""'
+[ 1927s] E           and: 'E       AssertionError'
+[ 1927s] E           and: ''
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_ign.py:11: AssertionError'
+[ 1927s] E           and: ''
+[ 1927s] E       fnmatch: '*- coverage: platform *, python * -*'
+[ 1927s] E          with: '---------- coverage: platform linux, python 3.8.16-final-0 -----------'
+[ 1927s] E       nomatch: 'test_cleanup_on_sigterm* 89%   23-24'
+[ 1927s] E           and: 'Name                                 Stmts   Miss  Cover   Missing'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'test_cleanup_on_sigterm_sig_ign.py      19      8    58%   13, 16-24'
+[ 1927s] E           and: '------------------------------------------------------------------'
+[ 1927s] E           and: 'TOTAL                                   19      8    58%'
+[ 1927s] E           and: ''
+[ 1927s] E           and: '=========================== short test summary info ============================'
+[ 1927s] E           and: 'FAILED test_cleanup_on_sigterm_sig_ign.py::test_run - AssertionError'
+[ 1927s] E           and: '============================== 1 failed in 2.86s ==============================='
+[ 1927s] E       remains unmatched: 'test_cleanup_on_sigterm* 89%   23-24'
+[ 1927s] 
+[ 1927s] /home/abuild/rpmbuild/BUILD/pytest-cov-4.0.0/tests/test_pytest_cov.py:1309: Failed
+[ 1927s] ----------------------------- Captured stdout call -----------------------------
+[ 1927s] running: /usr/bin/python3.8 -mpytest --basetemp=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_ign0/runpytest-0 -vv --assert=plain --cov=/tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_ign0 --cov-report=term-missing /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_ign0/test_cleanup_on_sigterm_sig_ign.py --basetemp=/tmp/pytest-of-abuild/pytest-0/basetemp
+[ 1927s]      in: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_ign0
+[ 1927s] ============================= test session starts ==============================
+[ 1927s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[ 1927s] cachedir: .pytest_cache
+[ 1927s] rootdir: /tmp/pytest-of-abuild/pytest-0/test_cleanup_on_sigterm_sig_ign0
+[ 1927s] plugins: xdist-3.0.2, cov-4.0.0
+[ 1927s] collecting ... collected 1 item
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm_sig_ign.py::test_run FAILED                      [100%]
+[ 1927s] 
+[ 1927s] =================================== FAILURES ===================================
+[ 1927s] ___________________________________ test_run ___________________________________
+[ 1927s] 
+[ 1927s]     def test_run():
+[ 1927s]         proc = subprocess.Popen([sys.executable, __file__], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.send_signal(signal.SIGINT)
+[ 1927s]         time.sleep(1)
+[ 1927s]         proc.terminate()
+[ 1927s]         stdout, stderr = proc.communicate()
+[ 1927s]         assert not stderr
+[ 1927s] >       assert stdout == b""
+[ 1927s] E       AssertionError
+[ 1927s] 
+[ 1927s] test_cleanup_on_sigterm_sig_ign.py:11: AssertionError
+[ 1927s] 
+[ 1927s] ---------- coverage: platform linux, python 3.8.16-final-0 -----------
+[ 1927s] Name                                 Stmts   Miss  Cover   Missing
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] test_cleanup_on_sigterm_sig_ign.py      19      8    58%   13, 16-24
+[ 1927s] ------------------------------------------------------------------
+[ 1927s] TOTAL                                   19      8    58%
+[ 1927s] 
+[ 1927s] =========================== short test summary info ============================
+[ 1927s] FAILED test_cleanup_on_sigterm_sig_ign.py::test_run - AssertionError
+[ 1927s] ============================== 1 failed in 2.86s ===============================
+[ 1927s] =============================== warnings summary ===============================
+[ 1927s] ../../../../../usr/lib/python3.8/site-packages/_pytest/config/__init__.py:1240
+[ 1927s]   /usr/lib/python3.8/site-packages/_pytest/config/__init__.py:1240: PytestRemovedIn8Warning: The --strict option is deprecated, use --strict-markers instead.
+[ 1927s]     self.issue_config_time_warning(
+[ 1927s] 
+[ 1927s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[ 1927s] =========================== short test summary info ============================
+[ 1927s] SKIPPED [1] tests/test_pytest_cov.py:367: condition: coverage.version_info >= (6, 3)
+[ 1927s] SKIPPED [3] tests/test_pytest_cov.py:1141: condition: sys.platform != "win32"
+[ 1927s] FAILED tests/test_pytest_cov.py::test_cleanup_on_sigterm - Failed: nomatch: '...
+[ 1927s] FAILED tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl[setup0] - Fa...
+[ 1927s] FAILED tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl[setup1] - Fa...
+[ 1927s] FAILED tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl[setup2] - Fa...
+[ 1927s] FAILED tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_dfl_sigint - Fai...
+[ 1927s] FAILED tests/test_pytest_cov.py::test_cleanup_on_sigterm_sig_ign - Failed: no...
+[ 1927s] = 6 failed, 112 passed, 4 skipped, 6 deselected, 1 warning in 1788.71s (0:29:48) =
+[ 1927s] error: Bad exit status from /var/tmp/rpm-tmp.zpoEIq (%check)
+[ 1927s] 
+[ 1927s] RPM build errors:
+[ 1927s]     Bad exit status from /var/tmp/rpm-tmp.zpoEIq (%check)
+[ 1928s] ### VM INTERACTION START ###
+[ 1928s] [ 1921.006016][    T1] sysrq: Power Off
+[ 1928s] [ 1921.010582][   T99] reboot: Power down
+[ 1928s] ### VM INTERACTION END ###
+[ 1928s] 
+[ 1928s] lamb56 failed "build python-pytest-cov.spec" at Sat Feb 25 01:10:23 UTC 2023.
+[ 1928s] 

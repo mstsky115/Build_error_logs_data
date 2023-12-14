@@ -1,0 +1,1538 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] lamb71 started "build sonic-pi.spec" at Wed Apr 12 08:36:45 UTC 2023.
+[    0s] 
+[    0s] Building sonic-pi for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '5b8fe395786be0e614b4879cf65238e4'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/sonic-pi.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/sonic-pi.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/sonic-pi.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [afb7c7aaf2a1517b804cdedda04f3c29]
+[    4s] 
+[    4s] copying packages...
+[    5s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    5s]   breaking dependency python310-base -> libpython3_10-1_0
+[    5s] cycle: erlang -> erlang-epmd
+[    5s]   breaking dependency erlang-epmd -> erlang
+[    5s] cycle: gio-branding-upstream -> libgio-2_0-0
+[    5s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    5s] cycle: libgio-2_0-0 -> glib2-tools
+[    5s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    5s] cycle: Mesa-dri -> Mesa
+[    5s]   breaking dependency Mesa -> Mesa-dri
+[    5s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[    5s]   breaking dependency Mesa -> Mesa-libEGL1
+[    5s] cycle: Mesa -> Mesa-libGL1
+[    5s]   breaking dependency Mesa-libGL1 -> Mesa
+[    5s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[    5s]   breaking dependency Mesa -> Mesa-libGL1
+[    5s] cycle: libglvnd -> Mesa-dri -> Mesa
+[    5s]   breaking dependency libglvnd -> Mesa-dri
+[    5s] cycle: libfontconfig1 -> fontconfig
+[    5s]   breaking dependency libfontconfig1 -> fontconfig
+[    5s] cycle: openssl -> openssl-3
+[    5s]   breaking dependency openssl-3 -> openssl
+[    5s] cycle: ruby3.2 -> ruby-common -> ruby3.2-rubygem-gem2rpm
+[    5s]   breaking dependency ruby3.2-rubygem-gem2rpm -> ruby3.2
+[    5s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    5s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    5s] cycle: qscintilla-qt5 -> libqscintilla2_qt5-15
+[    5s]   breaking dependency libqscintilla2_qt5-15 -> qscintilla-qt5
+[    5s] cycle: libsoftokn3 -> mozilla-nss
+[    5s]   breaking dependency mozilla-nss -> libsoftokn3
+[    5s] done
+[    5s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.2.9-1-default #1 SMP PREEMPT_DYNAMIC Thu Mar 30 11:30:50 UTC 2023 (7a187a3)
+[   12s] Increasing log level from now on...
+[   12s] [    5.093554][  T407] sysrq: Changing Loglevel
+[   12s] [    5.093672][  T407] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   12s] no label, UUID=3134845c-79e1-43f6-a1ac-7efbad267efe
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/sonic-pi.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/sonic-pi.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   52s] [1/468] cumulate Catch2-devel-3.3.2-1.1
+[   52s] [2/468] cumulate Mesa-KHR-devel-23.0.1-355.1
+[   52s] [3/468] cumulate Mesa-libglapi0-23.0.1-355.1
+[   52s] [4/468] cumulate PlatformFolders-4.2.0-1.1
+[   52s] [5/468] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   52s] [6/468] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   52s] [7/468] preinstalled attr-2.5.1-1.1
+[   52s] [8/468] preinstalled bash-5.2.15-8.1
+[   52s] [9/468] preinstalled bash-sh-5.2.15-8.1
+[   52s] [10/468] preinstalled binutils-2.40-3.1
+[   52s] [11/468] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   52s] [12/468] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   52s] [13/468] preinstalled build-mkbaselibs-20230314-1.1
+[   52s] [14/468] preinstalled bzip2-1.0.8-5.1
+[   52s] [15/468] preinstalled chkstat-1599_20230217-1.1
+[   52s] [16/468] preinstalled compat-usrmerge-build-84.87-5.1
+[   52s] [17/468] preinstalled compat-usrmerge-tools-84.87-5.1
+[   52s] [18/468] preinstalled coreutils-9.2-2.1
+[   52s] [19/468] preinstalled cpio-2.13-5.1
+[   52s] [20/468] preinstalled cpp-13-1.1
+[   52s] [21/468] preinstalled cpp13-13.0.1+git6995-8.1
+[   52s] [22/468] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   52s] [23/468] cumulate dbus-1-common-1.14.6-2.1
+[   52s] [24/468] preinstalled debugedit-5.0-5.1
+[   52s] [25/468] preinstalled diffutils-3.9-1.1
+[   52s] [26/468] preinstalled dwz-0.15-2.1
+[   52s] [27/468] preinstalled elfutils-0.189-2.1
+[   52s] [28/468] cumulate esbuild-0.17.5-1.1
+[   52s] [29/468] cumulate fdupes-2.2.1-1.1
+[   52s] [30/468] cumulate ffmpeg-5-mini-libs-5.1.2-12.1
+[   52s] [31/468] preinstalled file-5.44-1.3
+[   52s] [32/468] preinstalled file-magic-5.44-1.3
+[   52s] [33/468] preinstalled filesystem-84.87-12.1
+[   52s] [34/468] preinstalled fillup-1.42-279.1
+[   52s] [35/468] preinstalled findutils-4.9.0-2.1
+[   52s] [36/468] preinstalled gawk-5.2.1-2.1
+[   52s] [37/468] preinstalled gcc-13-1.1
+[   52s] [38/468] preinstalled gcc-PIE-13-1.1
+[   52s] [39/468] preinstalled gcc13-13.0.1+git6995-8.1
+[   52s] [40/468] preinstalled gcc13-PIE-13.0.1+git6995-8.1
+[   52s] [41/468] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   52s] [42/468] preinstalled gettext-tools-mini-0.21.1-1.1
+[   52s] [43/468] cumulate gl3w-devel-2022.03.24-2.1
+[   52s] [44/468] preinstalled glibc-2.37-3.1
+[   52s] [45/468] preinstalled glibc-devel-2.37-3.1
+[   52s] [46/468] preinstalled glibc-locale-base-2.37-3.1
+[   52s] [47/468] preinstalled grep-3.9-1.1
+[   52s] [48/468] preinstalled gzip-1.12-3.1
+[   52s] [49/468] cumulate hicolor-icon-theme-0.17-4.1
+[   52s] [50/468] preinstalled kernel-obs-build-6.2.9-1.1
+[   52s] [51/468] cumulate libICE6-1.1.1-1.1
+[   52s] [52/468] cumulate libX11-data-1.8.4-1.1
+[   52s] [53/468] cumulate libXau6-1.0.11-1.1
+[   52s] [54/468] preinstalled libacl1-2.3.1-2.1
+[   52s] [55/468] cumulate libaom3-3.6.0-1.1
+[   52s] [56/468] preinstalled libasan8-13.0.1+git6995-8.1
+[   52s] [57/468] preinstalled libasm1-0.189-2.1
+[   52s] [58/468] cumulate libasound2-1.2.8-1.1
+[   52s] [59/468] preinstalled libatomic1-13.0.1+git6995-8.1
+[   52s] [60/468] preinstalled libattr1-2.5.1-1.1
+[   52s] [61/468] preinstalled libaudit1-3.0.9-1.1
+[   52s] [62/468] cumulate libavahi-common3-0.8-22.4
+[   52s] [63/468] preinstalled libblkid1-2.38.1-12.1
+[   52s] [64/468] cumulate libbrotlicommon1-1.0.9-3.1
+[   52s] [65/468] preinstalled libbz2-1-1.0.8-5.1
+[   52s] [66/468] preinstalled libcap-ng0-0.8.3-1.1
+[   52s] [67/468] preinstalled libcap2-2.68-1.1
+[   52s] [68/468] cumulate libcelt0-2-0.11.3-1.3
+[   52s] [69/468] cumulate libcodec2-1_0-1.0.5-1.1
+[   52s] [70/468] cumulate libcom_err2-1.46.5-4.1
+[   52s] [71/468] cumulate libcrossguid0-0.2.2.20190529T083634.ca1bf4b-1.1
+[   52s] [72/468] preinstalled libcrypt1-4.4.33-3.1
+[   52s] [73/468] preinstalled libctf-nobfd0-2.40-3.1
+[   52s] [74/468] preinstalled libctf0-2.40-3.1
+[   52s] [75/468] cumulate libdav1d6-1.1.0-3.1
+[   52s] [76/468] preinstalled libdb-4_8-4.8.30-40.1
+[   52s] [77/468] cumulate libdouble-conversion3-3.2.1-1.1
+[   52s] [78/468] cumulate libdrm2-2.4.115-2.1
+[   53s] [79/468] preinstalled libdw1-0.189-2.1
+[   53s] [80/468] preinstalled libeconf0-0.5.2-1.1
+[   53s] [81/468] cumulate libedit0-20210910.3.1-1.1
+[   53s] [82/468] preinstalled libelf1-0.189-2.1
+[   53s] [83/468] cumulate libevdev2-1.13.0-1.1
+[   53s] [84/468] cumulate libexpat1-2.5.0-2.1
+[   53s] [85/468] preinstalled libfdisk1-2.38.1-12.1
+[   53s] [86/468] cumulate libffi8-3.4.4-1.1
+[   53s] [87/468] cumulate libfftw3-3-3.3.10-3.1
+[   53s] [88/468] cumulate libfmt9-9.1.0-2.1
+[   53s] [89/468] cumulate libfreebl3-3.88.1-1.1
+[   53s] [90/468] preinstalled libgcc_s1-13.0.1+git6995-8.1
+[   53s] [91/468] preinstalled libgcrypt20-1.10.1-2.1
+[   53s] [92/468] preinstalled libgdbm6-1.23-1.1
+[   53s] [93/468] preinstalled libgdbm_compat4-1.23-1.1
+[   53s] [94/468] cumulate libglib-2_0-0-2.76.1-1.1
+[   53s] [95/468] preinstalled libgmp10-6.2.1-4.1
+[   53s] [96/468] preinstalled libgomp1-13.0.1+git6995-8.1
+[   53s] [97/468] preinstalled libgpg-error0-1.46-1.1
+[   53s] [98/468] cumulate libgraphite2-3-1.3.14-3.1
+[   53s] [99/468] cumulate libgsm1-1.0.22-1.1
+[   53s] [100/468] cumulate libicu72-ledata-72.1-2.1
+[   53s] [101/468] preinstalled libisl23-0.25-1.1
+[   53s] [102/468] preinstalled libitm1-13.0.1+git6995-8.1
+[   53s] [103/468] cumulate libjack0-1.9.21-1.3
+[   53s] [104/468] cumulate libjitterentropy3-3.4.1-2.1
+[   53s] [105/468] cumulate libjpeg8-8.2.2-74.1
+[   53s] [106/468] cumulate libkissfft-float131-131.1.0-2.1
+[   53s] [107/468] cumulate liblcms2-2-2.14-3.3
+[   53s] [108/468] cumulate libltdl7-2.4.7-3.2
+[   53s] [109/468] preinstalled liblua5_4-5-5.4.4-10.1
+[   53s] [110/468] preinstalled liblzma5-5.4.2-2.1
+[   53s] [111/468] preinstalled libmagic1-5.44-1.3
+[   53s] [112/468] cumulate libmd0-1.0.4-1.1
+[   53s] [113/468] cumulate libminizip1-1.2.13-3.1
+[   53s] [114/468] preinstalled libmount1-2.38.1-12.1
+[   53s] [115/468] cumulate libmp3lame0-3.100-5.1
+[   53s] [116/468] preinstalled libmpc3-1.3.1-1.2
+[   53s] [117/468] cumulate libmpdec3-2.5.1-2.1
+[   53s] [118/468] preinstalled libmpfr6-4.2.0-1.1
+[   53s] [119/468] cumulate libmpg123-0-1.31.3-1.1
+[   53s] [120/468] cumulate libmtdev1-1.1.6-1.1
+[   53s] [121/468] preinstalled libncurses6-6.4.20230311-8.1
+[   53s] [122/468] cumulate libnettle8-3.8.1-2.1
+[   53s] [123/468] cumulate libnghttp2-14-1.51.0-7.2
+[   53s] [124/468] cumulate libogg0-1.3.5-1.1
+[   53s] [125/468] cumulate libonig5-6.9.8-1.1
+[   53s] [126/468] cumulate libopenjp2-7-2.5.0-3.1
+[   53s] [127/468] cumulate libopus0-1.3.1-3.2
+[   53s] [128/468] cumulate libpciaccess0-0.17-1.1
+[   53s] [129/468] cumulate libpcre2-16-0-10.42-3.2
+[   53s] [130/468] preinstalled libpcre2-8-0-10.42-3.2
+[   53s] [131/468] preinstalled libpkgconf3-1.8.0-2.1
+[   53s] [132/468] cumulate libpng16-16-1.6.39-2.1
+[   53s] [133/468] preinstalled libpopt0-1.19-1.1
+[   53s] [134/468] cumulate libproxy1-0.4.18-1.1
+[   53s] [135/468] cumulate librav1e0-0.6.2+0-1.1
+[   53s] [136/468] preinstalled libreadline8-8.2-2.1
+[   53s] [137/468] cumulate libreproc14-14.2.4-2.1
+[   53s] [138/468] cumulate librhash0-1.4.3-1.1
+[   53s] [139/468] preinstalled librpmbuild9-4.18.0-4.2
+[   53s] [140/468] cumulate libruby3_2-3_2-3.2.2-1.1
+[   53s] [141/468] cumulate libsamplerate0-0.2.2-1.1
+[   53s] [142/468] cumulate libsasl2-3-2.1.28-4.2
+[   53s] [143/468] preinstalled libseccomp2-2.5.4-2.1
+[   53s] [144/468] preinstalled libselinux1-3.5-1.1
+[   53s] [145/468] preinstalled libsemanage-conf-3.5-1.2
+[   53s] [146/468] preinstalled libsemanage2-3.5-1.2
+[   53s] [147/468] preinstalled libsepol2-3.5-1.1
+[   53s] [148/468] preinstalled libsmartcols1-2.38.1-12.1
+[   53s] [149/468] cumulate libsnappy1-1.1.9-2.1
+[   53s] [150/468] cumulate libsodium23-1.0.18-2.2
+[   53s] [151/468] cumulate libsoxr0-0.1.3-2.2
+[   53s] [152/468] cumulate libspeex1-1.2.1-1.1
+[   53s] [153/468] cumulate libspeexdsp1-1.2.1-1.1
+[   53s] [154/468] cumulate libsqlite3-0-3.41.2-1.1
+[   53s] [155/468] cumulate libssh-config-0.10.4-1.2
+[   53s] [156/468] preinstalled libstdc++6-13.0.1+git6995-8.1
+[   53s] [157/468] cumulate libstdc++6-devel-gcc13-13.0.1+git6995-8.1
+[   53s] [158/468] preinstalled libsubid4-4.13-4.1
+[   53s] [159/468] cumulate libsystemd0-mini-253.3-1.1
+[   53s] [160/468] cumulate libtasn1-6-4.19.0-1.1
+[   53s] [161/468] cumulate libtheoradec1-1.1.1-30.1
+[   53s] [162/468] cumulate libts0-1.22-1.1
+[   53s] [163/468] cumulate libtwolame0-0.4.0-1.2
+[   53s] [164/468] preinstalled libubsan1-13.0.1+git6995-8.1
+[   53s] [165/468] cumulate libudev-mini1-253.3-1.1
+[   53s] [166/468] cumulate libunistring5-1.1-1.1
+[   53s] [167/468] cumulate libunwind8-1.6.2-4.1
+[   53s] [168/468] preinstalled libutempter0-1.2.0-3.2
+[   53s] [169/468] cumulate libuuid-devel-2.38.1-12.1
+[   53s] [170/468] preinstalled libuuid1-2.38.1-12.1
+[   53s] [171/468] cumulate libuv1-1.44.2-3.1
+[   53s] [172/468] cumulate libva2-2.17.0-1.1
+[   53s] [173/468] cumulate libverto1-0.3.2-1.1
+[   53s] [174/468] cumulate libvpx8-1.13.0-1.1
+[   53s] [175/468] cumulate libvulkan1-1.3.243.0-1.1
+[   53s] [176/468] cumulate libwacom-data-2.5.0-1.1
+[   53s] [177/468] cumulate libwayland-egl1-1.21.0-4.2
+[   53s] [178/468] cumulate libwebp7-1.2.4-1.2
+[   53s] [179/468] preinstalled libxcrypt-devel-4.4.33-3.1
+[   53s] [180/468] cumulate libxml2-2-2.10.3-3.1
+[   53s] [181/468] cumulate libxshmfence1-1.3.2-1.1
+[   53s] [182/468] cumulate libyaml-0-2-0.2.5-2.1
+[   53s] [183/468] preinstalled libz1-1.2.13-3.1
+[   53s] [184/468] preinstalled libzstd1-1.5.4-2.1
+[   53s] [185/468] preinstalled linux-glibc-devel-6.2-1.1
+[   53s] [186/468] preinstalled login_defs-4.13-4.1
+[   53s] [187/468] preinstalled lua54-5.4.4-10.1
+[   53s] [188/468] preinstalled make-4.4.1-2.1
+[   53s] [189/468] cumulate mozilla-nspr-4.35-1.1
+[   53s] [190/468] preinstalled ncurses-utils-6.4.20230311-8.1
+[   53s] [191/468] preinstalled pam-1.5.2-14.1
+[   53s] [192/468] preinstalled patch-2.7.6-6.1
+[   53s] [193/468] preinstalled perl-5.36.0-4.1
+[   53s] [194/468] preinstalled perl-base-5.36.0-4.1
+[   53s] [195/468] preinstalled permissions-1599_20230217-1.1
+[   53s] [196/468] preinstalled permissions-config-1599_20230217-1.1
+[   53s] [197/468] preinstalled pkgconf-1.8.0-2.1
+[   53s] [198/468] preinstalled pkgconf-m4-1.8.0-2.1
+[   53s] [199/468] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   53s] [200/468] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   53s] [201/468] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   53s] [202/468] cumulate python-rpm-macros-20230403.29b58f8-1.1
+[   53s] [203/468] preinstalled qemu-linux-user-7.1.0-58.1
+[   53s] [204/468] preinstalled rpm-4.18.0-4.2
+[   53s] [205/468] preinstalled rpm-build-4.18.0-4.2
+[   53s] [206/468] preinstalled rpm-build-perl-4.18.0-4.2
+[   53s] [207/468] preinstalled rpm-config-SUSE-20220926-1.1
+[   53s] [208/468] preinstalled rpmlint-mini-2.4.0+git20230403.7ce263c-10.5
+[   53s] [209/468] preinstalled rpmlint-strict-2.4.0+git20230403.7ce263c-1.1
+[   53s] [210/468] preinstalled sed-4.9-2.1
+[   53s] [211/468] preinstalled shadow-4.13-4.1
+[   53s] [212/468] preinstalled system-group-hardware-20170617-24.1
+[   53s] [213/468] cumulate system-user-lp-20170617-24.1
+[   53s] [214/468] preinstalled system-user-root-20190513-2.1
+[   53s] [215/468] cumulate systemd-mini-253.3-1.1
+[   53s] [216/468] preinstalled systemd-rpm-macros-20-1.1
+[   53s] [217/468] preinstalled sysuser-shadow-3.1-5.1
+[   53s] [218/468] preinstalled tar-1.34-10.1
+[   53s] [219/468] preinstalled terminfo-base-6.4.20230311-8.1
+[   53s] [220/468] cumulate timezone-2023c-1.1
+[   53s] [221/468] cumulate unzip-6.00-41.1
+[   53s] [222/468] preinstalled update-alternatives-1.21.8-1.1
+[   53s] [223/468] preinstalled util-linux-2.38.1-12.1
+[   53s] [224/468] preinstalled which-2.21-5.1
+[   53s] [225/468] cumulate xkeyboard-config-2.38-1.1
+[   53s] [226/468] cumulate xorgproto-devel-2022.2-2.1
+[   53s] [227/468] preinstalled xz-5.4.2-2.1
+[   53s] [228/468] cumulate zip-3.0-22.1
+[   53s] [229/468] cumulate zlib-devel-1.2.13-3.1
+[   53s] [230/468] cumulate PlatformFolders-devel-4.2.0-1.1
+[   53s] [231/468] cumulate alsa-devel-1.2.8-1.1
+[   53s] [232/468] cumulate crossguid-devel-0.2.2.20190529T083634.ca1bf4b-1.1
+[   53s] [233/468] cumulate cups-config-2.4.2-4.2
+[   53s] [234/468] cumulate desktop-file-utils-0.26-5.1
+[   53s] [235/468] cumulate fmt-devel-9.1.0-2.1
+[   53s] [236/468] cumulate gcc13-c++-13.0.1+git6995-8.1
+[   53s] [237/468] cumulate kissfft-devel-131.1.0-2.1
+[   53s] [238/468] cumulate libFLAC12-1.4.2-2.1
+[   53s] [239/468] cumulate libLLVM16-16.0.1-1.1
+[   53s] [240/468] cumulate libSDL2-2_0-0-2.26.4-1.1
+[   53s] [241/468] cumulate libSM6-1.2.4-2.1
+[   53s] [242/468] cumulate libX11-xcb1-1.8.4-1.1
+[   53s] [243/468] cumulate libbrotlidec1-1.0.9-3.1
+[   53s] [244/468] cumulate libbsd0-0.11.7-2.1
+[   53s] [245/468] cumulate libdrm_amdgpu1-2.4.115-2.1
+[   53s] [246/468] cumulate libdrm_nouveau2-2.4.115-2.1
+[   53s] [247/468] cumulate libdrm_radeon1-2.4.115-2.1
+[   53s] [248/468] cumulate libffi-devel-3.4.4-1.1
+[   53s] [249/468] cumulate libgmodule-2_0-0-2.76.1-1.1
+[   53s] [250/468] cumulate libhogweed6-3.8.1-2.1
+[   53s] [251/468] cumulate libidn2-0-2.3.4-1.1
+[   53s] [252/468] cumulate libjq1-1.6-3.1
+[   53s] [253/468] cumulate libodbc2-2.3.11-2.1
+[   53s] [254/468] cumulate libogg-devel-1.3.5-1.1
+[   53s] [255/468] cumulate libopenssl3-3.0.8-2.1
+[   53s] [256/468] cumulate libopus-devel-1.3.1-3.2
+[   53s] [257/468] cumulate libp11-kit0-0.24.1-2.1
+[   53s] [258/468] cumulate libpciaccess-devel-0.17-1.1
+[   53s] [259/468] cumulate libreproc++14-14.2.4-2.1
+[   53s] [260/468] cumulate libstdc++-devel-13-1.1
+[   53s] [261/468] cumulate libtheoraenc1-1.1.1-30.1
+[   53s] [262/468] cumulate libvorbis0-1.3.7-3.1
+[   53s] [263/468] cumulate libwayland-client0-1.21.0-4.2
+[   53s] [264/468] cumulate libwayland-server0-1.21.0-4.2
+[   53s] [265/468] cumulate libwebpdemux2-1.2.4-1.2
+[   53s] [266/468] cumulate libwebpmux3-1.2.4-1.2
+[   53s] [267/468] cumulate libxcb1-1.15-2.1
+[   53s] [268/468] cumulate libxkbcommon0-1.5.0-1.1
+[   53s] [269/468] cumulate libxslt1-1.1.37-1.1
+[   53s] [270/468] cumulate mozilla-nss-certs-3.88.1-1.1
+[   53s] [271/468] cumulate speexdsp-devel-1.2.1-1.1
+[   53s] [272/468] cumulate sqlite3-devel-3.41.2-1.1
+[   53s] [273/468] cumulate krb5-mini-1.20.1-5.1
+[   53s] [274/468] cumulate libXau-devel-1.0.11-1.1
+[   53s] [275/468] cumulate libdbus-1-3-1.14.6-2.1
+[   53s] [276/468] cumulate libdrm_intel1-2.4.115-2.1
+[   53s] [277/468] cumulate libgobject-2_0-0-2.76.1-1.1
+[   53s] [278/468] cumulate libicu72-72.1-2.1
+[   53s] [279/468] cumulate libjackserver0-1.9.21-1.3
+[   53s] [280/468] cumulate librtmidi6-5.0.0-1.1
+[   53s] [281/468] cumulate libva-drm2-2.17.0-1.1
+[   53s] [282/468] cumulate libzmq5-4.3.4-4.1
+[   53s] [283/468] cumulate shared-mime-info-2.2-2.1
+[   53s] [284/468] cumulate libjacknet0-1.9.21-1.3
+[   53s] [285/468] cumulate gcc-c++-13-1.1
+[   53s] [286/468] cumulate jq-1.6-3.1
+[   53s] [287/468] cumulate libFLAC++10-1.4.2-2.1
+[   53s] [288/468] cumulate libevent-2_1-7-2.1.12-3.2
+[   53s] [289/468] cumulate libre2-10-20230301-53.1
+[   53s] [290/468] cumulate libsrt1_5-1.5.1-1.2
+[   53s] [291/468] cumulate libvorbisenc2-1.3.7-3.1
+[   53s] [292/468] cumulate libwayland-cursor0-1.21.0-4.2
+[   53s] [293/468] cumulate libxcb-composite0-1.15-2.1
+[   53s] [294/468] cumulate libxcb-damage0-1.15-2.1
+[   53s] [295/468] cumulate libxcb-dpms0-1.15-2.1
+[   53s] [296/468] cumulate libxcb-dri2-0-1.15-2.1
+[   53s] [297/468] cumulate libxcb-dri3-0-1.15-2.1
+[   53s] [298/468] cumulate libxcb-glx0-1.15-2.1
+[   53s] [299/468] cumulate libxcb-icccm4-0.4.2-1.1
+[   53s] [300/468] cumulate libxcb-keysyms1-0.4.1-1.1
+[   53s] [301/468] cumulate libxcb-present0-1.15-2.1
+[   53s] [302/468] cumulate libxcb-randr0-1.15-2.1
+[   53s] [303/468] cumulate libxcb-record0-1.15-2.1
+[   53s] [304/468] cumulate libxcb-render0-1.15-2.1
+[   53s] [305/468] cumulate libxcb-res0-1.15-2.1
+[   53s] [306/468] cumulate libxcb-screensaver0-1.15-2.1
+[   53s] [307/468] cumulate libxcb-shape0-1.15-2.1
+[   53s] [308/468] cumulate libxcb-shm0-1.15-2.1
+[   53s] [309/468] cumulate libxcb-sync1-1.15-2.1
+[   53s] [310/468] cumulate libxcb-util1-0.4.1-1.1
+[   53s] [311/468] cumulate libxcb-xf86dri0-1.15-2.1
+[   53s] [312/468] cumulate libxcb-xfixes0-1.15-2.1
+[   53s] [313/468] cumulate libxcb-xinerama0-1.15-2.1
+[   53s] [314/468] cumulate libxcb-xinput0-1.15-2.1
+[   53s] [315/468] cumulate libxcb-xkb1-1.15-2.1
+[   53s] [316/468] cumulate libxcb-xtest0-1.15-2.1
+[   53s] [317/468] cumulate libxcb-xv0-1.15-2.1
+[   53s] [318/468] cumulate libxcb-xvmc0-1.15-2.1
+[   53s] [319/468] cumulate update-desktop-files-84.87-6.1
+[   53s] [320/468] cumulate libX11-6-1.8.4-1.1
+[   53s] [321/468] cumulate libavahi-client3-0.8-22.4
+[   53s] [322/468] cumulate libfreetype6-2.13.0-1.1
+[   53s] [323/468] cumulate libgbm1-23.0.1-355.1
+[   53s] [324/468] cumulate libldap2-2.6.3-3.2
+[   53s] [325/468] cumulate libpsl5-0.21.2-1.1
+[   53s] [326/468] cumulate libsndio7_1-1.7.0-1.1
+[   53s] [327/468] cumulate libvorbisfile3-1.3.7-3.1
+[   53s] [328/468] cumulate reproc-devel-14.2.4-2.1
+[   53s] [329/468] cumulate speex-devel-1.2.1-1.1
+[   53s] [330/468] cumulate libgudev-1_0-0-237-2.1
+[   53s] [331/468] cumulate libjack-devel-1.9.21-1.3
+[   53s] [332/468] cumulate libssh4-0.10.4-1.2
+[   53s] [333/468] cumulate libQt5Core5-5.15.8+kde185-1.1
+[   53s] [334/468] cumulate libdrm-devel-2.4.115-2.1
+[   53s] [335/468] cumulate libgnutls30-3.8.0-1.1
+[   53s] [336/468] cumulate libQt5Concurrent5-5.15.8+kde185-1.1
+[   53s] [337/468] cumulate libQt5Sql5-5.15.8+kde185-1.1
+[   53s] [338/468] cumulate libQt5Test5-5.15.8+kde185-1.1
+[   53s] [339/468] cumulate libQt5Xml5-5.15.8+kde185-1.1
+[   53s] [340/468] cumulate libXcomposite1-0.4.6-1.1
+[   53s] [341/468] cumulate libXdamage1-1.1.6-1.2
+[   53s] [342/468] cumulate libXext6-1.3.5-1.1
+[   53s] [343/468] cumulate libXfixes3-6.0.0-2.1
+[   53s] [344/468] cumulate libXrender1-0.9.11-1.1
+[   53s] [345/468] cumulate qml-autoreqprov-1.1-2.1
+[   53s] [346/468] cumulate sndio-devel-1.7.0-1.1
+[   53s] [347/468] cumulate libQt5DBus5-5.15.8+kde185-1.1
+[   53s] [348/468] cumulate libxcb-render-util0-0.3.10-1.1
+[   53s] [349/468] cumulate libharfbuzz0-7.1.0-1.1
+[   53s] [350/468] cumulate libopenmpt0-0.6.9-1.1
+[   53s] [351/468] cumulate libxcb-image0-0.4.1-1.1
+[   53s] [352/468] cumulate libxkbcommon-x11-0-1.5.0-1.1
+[   53s] [353/468] cumulate rtmidi-devel-5.0.0-1.1
+[   53s] [354/468] cumulate flac-devel-1.4.2-2.1
+[   53s] [355/468] cumulate libvorbis-devel-1.3.7-3.1
+[   53s] [356/468] cumulate libwacom9-2.5.0-1.1
+[   53s] [357/468] cumulate libcups2-2.4.2-4.2
+[   53s] [358/468] cumulate libsndfile1-1.2.0-1.1
+[   53s] [359/468] cumulate wayland-devel-1.21.0-4.2
+[   53s] [360/468] cumulate libcurl4-8.0.1-1.1
+[   53s] [361/468] cumulate libxcb-devel-1.15-2.1
+[   53s] [362/468] cumulate curl-8.0.1-1.1
+[   53s] [363/468] cumulate libharfbuzz-subset0-7.1.0-1.1
+[   53s] [364/468] cumulate libQt5Positioning5-5.15.8+kde4-1.1
+[   53s] [365/468] cumulate libXtst6-1.2.4-1.1
+[   53s] [366/468] cumulate libXxf86vm1-1.1.5-1.1
+[   53s] [367/468] cumulate libvdpau1-1.5-1.1
+[   53s] [368/468] cumulate libQt5Sql5-sqlite-5.15.8+kde185-1.1
+[   53s] [369/468] cumulate libXrandr2-1.5.3-1.1
+[   53s] [370/468] cumulate libQt5Network5-5.15.8+kde185-1.1
+[   53s] [371/468] cumulate libX11-devel-1.8.4-1.1
+[   53s] [372/468] cumulate libinput10-1.23.0-1.1
+[   53s] [373/468] cumulate libpulse0-16.1-3.1
+[   53s] [374/468] cumulate libXext-devel-1.3.5-1.1
+[   53s] [375/468] cumulate libXrender-devel-0.9.11-1.1
+[   53s] [376/468] cumulate libavutil56_70-4.4.3-4.3
+[   53s] [377/468] cumulate libswresample3_9-4.4.3-4.3
+[   53s] [378/468] cumulate libXrandr-devel-1.5.3-1.1
+[   53s] [379/468] cumulate libavcodec58_134-4.4.3-4.3
+[   53s] [380/468] cumulate ruby3.2-rubygem-gem2rpm-0.10.1-20.1
+[   53s] [381/468] cumulate libglvnd-1.6.0-1.1
+[   53s] [382/468] cumulate erlang-epmd-25.3-1.1
+[   53s] [383/468] cumulate libfontconfig1-2.14.2-1.1
+[   53s] [384/468] cumulate openssl-3-3.0.8-2.1
+[   53s] [385/468] cumulate mozilla-nss-3.88.1-1.1
+[   53s] [386/468] cumulate python310-base-3.10.10-2.1
+[   53s] [387/468] cumulate libgio-2_0-0-2.76.1-1.1
+[   53s] [388/468] cumulate gio-branding-upstream-2.76.1-1.1
+[   53s] [389/468] cumulate libGLU1-9.0.2-2.1
+[   53s] [390/468] cumulate libglvnd-devel-1.6.0-1.1
+[   53s] [391/468] cumulate libpython3_10-1_0-3.10.10-2.1
+[   53s] [392/468] cumulate openssl-3.0.8-1.1
+[   53s] [393/468] cumulate python310-packaging-23.0-2.1
+[   53s] [394/468] cumulate fontconfig-2.14.2-1.1
+[   53s] [395/468] cumulate ruby-common-3.2-2.1
+[   53s] [396/468] cumulate erlang-25.3-1.1
+[   53s] [397/468] cumulate libbluray2-1.3.4-1.1
+[   53s] [398/468] cumulate Mesa-23.0.1-355.1
+[   53s] [399/468] cumulate glib2-tools-2.76.1-1.1
+[   53s] [400/468] cumulate libsoftokn3-3.88.1-1.1
+[   53s] [401/468] cumulate cmake-mini-3.26.3-1.1
+[   53s] [402/468] cumulate vulkan-headers-1.3.243.0-1.1
+[   53s] [403/468] cumulate Mesa-libEGL1-23.0.1-355.1
+[   53s] [404/468] cumulate Mesa-libGL1-23.0.1-355.1
+[   53s] [405/468] cumulate libQt5Gui5-5.15.8+kde185-1.1
+[   53s] [406/468] cumulate cmake-3.26.3-1.1
+[   53s] [407/468] cumulate elixir-1.14.2-2.1
+[   53s] [408/468] cumulate erlang-cf-0.3.1-1.1
+[   53s] [409/468] cumulate erlang-getopt-1.0.2-1.1
+[   53s] [410/468] cumulate libQt5Widgets5-5.15.8+kde185-1.1
+[   53s] [411/468] cumulate vulkan-devel-1.3.243.0-1.1
+[   53s] [412/468] cumulate libopenssl-devel-3.0.8-1.1
+[   53s] [413/468] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   53s] [414/468] cumulate Mesa-libEGL-devel-23.0.1-355.1
+[   53s] [415/468] cumulate Mesa-libGL-devel-23.0.1-355.1
+[   53s] [416/468] cumulate ruby3.2-3.2.2-1.1
+[   53s] [417/468] cumulate Mesa-dri-23.0.1-355.2
+[   53s] [418/468] cumulate libavformat58_76-4.4.3-4.3
+[   53s] [419/468] cumulate elixir-hex-1.0.1-1.1
+[   53s] [420/468] cumulate ruby-3.2-1.1
+[   53s] [421/468] cumulate ruby3.2-devel-3.2.2-1.1
+[   53s] [422/468] cumulate erlang-erlware_commons-1.6.0-1.1
+[   53s] [423/468] cumulate erlang-providers-1.8.1-1.1
+[   53s] [424/468] cumulate glu-devel-9.0.2-2.1
+[   53s] [425/468] cumulate Mesa-libGLESv1_CM-devel-23.0.1-355.1
+[   53s] [426/468] cumulate Mesa-libGLESv2-devel-23.0.1-355.1
+[   53s] [427/468] cumulate libQt5OpenGL5-5.15.8+kde185-1.1
+[   53s] [428/468] cumulate libQt5Svg5-5.15.8+kde8-1.1
+[   53s] [429/468] cumulate libopenssl-3-devel-3.0.8-2.1
+[   53s] [430/468] cumulate libqt5-qtbase-common-devel-5.15.8+kde185-1.1
+[   53s] [431/468] cumulate libQt5PrintSupport5-5.15.8+kde185-1.1
+[   53s] [432/468] cumulate libaubio5-0.4.9-8.2
+[   53s] [433/468] cumulate libQtQuick5-5.15.8+kde22-2.1
+[   53s] [434/468] cumulate libaubio-devel-0.4.9-8.2
+[   53s] [435/468] cumulate qtdeclarative-imports-provides-qt5-1.0-1.10
+[   53s] [436/468] cumulate libQt5Core-devel-5.15.8+kde185-1.1
+[   53s] [437/468] cumulate libQt5WebChannel5-5.15.8+kde3-1.1
+[   53s] [438/468] cumulate ruby-devel-3.2-1.1
+[   53s] [439/468] cumulate erlang-rebar3-3.18.0-1.1
+[   53s] [440/468] cumulate libQt5QuickTemplates2-5-5.15.8+kde7-1.1
+[   53s] [441/468] cumulate qmlpluginexports-qt5-1.0-1.5
+[   53s] [442/468] cumulate libQt5PositioningQuick5-5.15.8+kde4-1.1
+[   53s] [443/468] cumulate libqscintilla2_qt5-15-2.13.4-1.3
+[   53s] [444/468] cumulate libqt5-linguist-5.15.8+kde1-1.1
+[   53s] [445/468] cumulate libqt5-qtdeclarative-tools-5.15.8+kde22-2.1
+[   53s] [446/468] cumulate SDL2-devel-2.26.4-1.1
+[   53s] [447/468] cumulate libQt5Concurrent-devel-5.15.8+kde185-1.1
+[   53s] [448/468] cumulate libQt5Network-devel-5.15.8+kde185-1.1
+[   53s] [449/468] cumulate libQt5Test-devel-5.15.8+kde185-1.1
+[   53s] [450/468] cumulate libQt5Xml-devel-5.15.8+kde185-1.1
+[   53s] [451/468] cumulate libqt5-linguist-devel-5.15.8+kde1-1.1
+[   53s] [452/468] cumulate qscintilla-qt5-2.13.4-1.3
+[   53s] [453/468] cumulate libQt5QuickControls2-5-5.15.8+kde7-1.1
+[   53s] [454/468] cumulate libqt5-qtgraphicaleffects-5.15.8+kde0-1.1
+[   53s] [455/468] cumulate libQt5Gui-devel-5.15.8+kde185-1.1
+[   53s] [456/468] cumulate libQt5Location5-5.15.8+kde4-1.1
+[   53s] [457/468] cumulate libQt5Widgets-devel-5.15.8+kde185-1.1
+[   53s] [458/468] cumulate libqt5-qtquickcontrols-5.15.8+kde0-1.1
+[   53s] [459/468] cumulate libqt5-qtquickcontrols2-5.15.8+kde7-1.1
+[   53s] [460/468] cumulate libQt5PrintSupport-devel-5.15.8+kde185-1.1
+[   53s] [461/468] cumulate libqt5-qtsvg-devel-5.15.8+kde8-1.1
+[   53s] [462/468] cumulate libQt5OpenGL-devel-5.15.8+kde185-1.1
+[   53s] [463/468] cumulate libqt5-qtdeclarative-devel-5.15.8+kde22-2.1
+[   53s] [464/468] cumulate libqt5-qtwebengine-5.15.13-96.1
+[   53s] [465/468] cumulate libqt5-qtwebchannel-devel-5.15.8+kde3-1.1
+[   53s] [466/468] cumulate qscintilla-qt5-devel-2.13.4-1.3
+[   53s] [467/468] cumulate libqt5-qtlocation-devel-5.15.8+kde4-1.1
+[   53s] [468/468] cumulate libqt5-qtwebengine-devel-5.15.13-96.1
+[   53s] now installing cumulated packages
+[   55s] Preparing...                          ########################################
+[   55s] Updating / installing...
+[   55s] libglib-2_0-0-2.76.1-1.1              ########################################
+[   56s] libdrm2-2.4.115-2.1                   ########################################
+[   56s] libffi8-3.4.4-1.1                     ########################################
+[   56s] xorgproto-devel-2022.2-2.1            ########################################
+[   56s] libxml2-2-2.10.3-3.1                  ########################################
+[   56s] libopus0-1.3.1-3.2                    ########################################
+[   56s] libogg0-1.3.5-1.1                     ########################################
+[   56s] libvorbis0-1.3.7-3.1                  ########################################
+[   56s] libexpat1-2.5.0-2.1                   ########################################
+[   57s] libgobject-2_0-0-2.76.1-1.1           ########################################
+[   57s] libasound2-1.2.8-1.1                  ########################################
+[   57s] mozilla-nspr-4.35-1.1                 ########################################
+[   57s] libwebp7-1.2.4-1.2                    ########################################
+[   57s] libsystemd0-mini-253.3-1.1            ########################################
+[   57s] Mesa-KHR-devel-23.0.1-355.1           ########################################
+[   57s] libvorbisenc2-1.3.7-3.1               ########################################
+[   58s] libFLAC12-1.4.2-2.1                   ########################################
+[   58s] libwayland-client0-1.21.0-4.2         ########################################
+[   58s] libwayland-server0-1.21.0-4.2         ########################################
+[   58s] libva2-2.17.0-1.1                     ########################################
+[   58s] libunistring5-1.1-1.1                 ########################################
+[   58s] libidn2-0-2.3.4-1.1                   ########################################
+[   58s] libudev-mini1-253.3-1.1               ########################################
+[   59s] libsqlite3-0-3.41.2-1.1               ########################################
+[   59s] libspeex1-1.2.1-1.1                   ########################################
+[   59s] libpng16-16-1.6.39-2.1                ########################################
+[   59s] libcelt0-2-0.11.3-1.3                 ########################################
+[   59s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   60s] libopenssl3-3.0.8-2.1                 ########################################
+[   60s] Mesa-libglapi0-23.0.1-355.1           ########################################
+[   60s] openssl-3.0.8-1.1                     ########################################
+[   60s] openssl-3-3.0.8-2.1                   ########################################
+[   60s] libsndfile1-1.2.0-1.1                 ########################################
+[   61s] libgbm1-23.0.1-355.1                  ########################################
+[   61s] libwebpmux3-1.2.4-1.2                 ########################################
+[   61s] libvorbisfile3-1.3.7-3.1              ########################################
+[   61s] libogg-devel-1.3.5-1.1                ########################################
+[   61s] libdrm_amdgpu1-2.4.115-2.1            ########################################
+[   61s] libdrm_nouveau2-2.4.115-2.1           ########################################
+[   61s] libdrm_radeon1-2.4.115-2.1            ########################################
+[   61s] libgmodule-2_0-0-2.76.1-1.1           ########################################
+[   61s] libxshmfence1-1.3.2-1.1               ########################################
+[   61s] libvulkan1-1.3.243.0-1.1              ########################################
+[   62s] libvpx8-1.13.0-1.1                    ########################################
+[   74s] libstdc++6-devel-gcc13-13.0.1+git6995-########################################
+[   74s] libsamplerate0-0.2.2-1.1              ########################################
+[   74s] libreproc14-14.2.4-2.1                ########################################
+[   74s] libpciaccess0-0.17-1.1                ########################################
+[   75s] libnettle8-3.8.1-2.1                  ########################################
+[   75s] libmtdev1-1.1.6-1.1                   ########################################
+[   75s] libjpeg8-8.2.2-74.1                   ########################################
+[   75s] libjack0-1.9.21-1.3                   ########################################
+[   75s] libfreebl3-3.88.1-1.1                 ########################################
+[   75s] libavahi-common3-0.8-22.4             ########################################
+[   75s] libXau6-1.0.11-1.1                    ########################################
+[   75s] libxcb1-1.15-2.1                      ########################################
+[   75s] libxcb-randr0-1.15-2.1                ########################################
+[   76s] libxcb-shm0-1.15-2.1                  ########################################
+[   76s] libxcb-sync1-1.15-2.1                 ########################################
+[   76s] libxcb-xfixes0-1.15-2.1               ########################################
+[   76s] libxcb-dri2-0-1.15-2.1                ########################################
+[   76s] libxcb-dri3-0-1.15-2.1                ########################################
+[   76s] libxcb-glx0-1.15-2.1                  ########################################
+[   76s] libxcb-present0-1.15-2.1              ########################################
+[   76s] libxcb-render0-1.15-2.1               ########################################
+[   76s] libxcb-xkb1-1.15-2.1                  ########################################
+[   76s] libxcb-shape0-1.15-2.1                ########################################
+[   76s] libxcb-xinerama0-1.15-2.1             ########################################
+[   76s] libxcb-xinput0-1.15-2.1               ########################################
+[   77s] libX11-data-1.8.4-1.1                 ########################################
+[   77s] libX11-6-1.8.4-1.1                    ########################################
+[   77s] libXext6-1.3.5-1.1                    ########################################
+[   77s] libX11-xcb1-1.8.4-1.1                 ########################################
+[   77s] libXfixes3-6.0.0-2.1                  ########################################
+[   77s] libXrender1-0.9.11-1.1                ########################################
+[   77s] libXrandr2-1.5.3-1.1                  ########################################
+[   77s] libICE6-1.1.1-1.1                     ########################################
+[   77s] libSM6-1.2.4-2.1                      ########################################
+[   77s] libXtst6-1.2.4-1.1                    ########################################
+[   77s] libXxf86vm1-1.1.5-1.1                 ########################################
+[   78s] libvdpau1-1.5-1.1                     ########################################
+[   78s] libXcomposite1-0.4.6-1.1              ########################################
+[   78s] libXdamage1-1.1.6-1.2                 ########################################
+[   78s] libxcb-render-util0-0.3.10-1.1        ########################################
+[   78s] libxcb-composite0-1.15-2.1            ########################################
+[   78s] libxcb-damage0-1.15-2.1               ########################################
+[   78s] libxcb-dpms0-1.15-2.1                 ########################################
+[   78s] libxcb-icccm4-0.4.2-1.1               ########################################
+[   78s] libxcb-keysyms1-0.4.1-1.1             ########################################
+[   78s] libxcb-record0-1.15-2.1               ########################################
+[   78s] libxcb-res0-1.15-2.1                  ########################################
+[   78s] libxcb-screensaver0-1.15-2.1          ########################################
+[   78s] libxcb-util1-0.4.1-1.1                ########################################
+[   79s] libxcb-image0-0.4.1-1.1               ########################################
+[   79s] libxcb-xf86dri0-1.15-2.1              ########################################
+[   79s] libxcb-xtest0-1.15-2.1                ########################################
+[   79s] libxcb-xv0-1.15-2.1                   ########################################
+[   79s] libxcb-xvmc0-1.15-2.1                 ########################################
+[   79s] libXau-devel-1.0.11-1.1               ########################################
+[   79s] libxcb-devel-1.15-2.1                 ########################################
+[   80s] libX11-devel-1.8.4-1.1                ########################################
+[   80s] libXext-devel-1.3.5-1.1               ########################################
+[   80s] libXrender-devel-0.9.11-1.1           ########################################
+[   80s] libXrandr-devel-1.5.3-1.1             ########################################
+[   80s] librtmidi6-5.0.0-1.1                  ########################################
+[   81s] libhogweed6-3.8.1-2.1                 ########################################
+[   81s] libpciaccess-devel-0.17-1.1           ########################################
+[   81s] libdrm_intel1-2.4.115-2.1             ########################################
+[   81s] libdrm-devel-2.4.115-2.1              ########################################
+[   81s] libreproc++14-14.2.4-2.1              ########################################
+[   81s] libjacknet0-1.9.21-1.3                ########################################
+[   85s] gcc13-c++-13.0.1+git6995-8.1          ########################################
+[   85s] gcc-c++-13-1.1                        ########################################
+[   85s] libstdc++-devel-13-1.1                ########################################
+[   85s] libevent-2_1-7-2.1.12-3.2             ########################################
+[   86s] libsrt1_5-1.5.1-1.2                   ########################################
+[   86s] libjackserver0-1.9.21-1.3             ########################################
+[   86s] libjack-devel-1.9.21-1.3              ########################################
+[   86s] libgudev-1_0-0-237-2.1                ########################################
+[   86s] libpsl5-0.21.2-1.1                    ########################################
+[   86s] libva-drm2-2.17.0-1.1                 ########################################
+[   87s] libavutil56_70-4.4.3-4.3              ########################################
+[   87s] libwayland-cursor0-1.21.0-4.2         ########################################
+[   87s] libFLAC++10-1.4.2-2.1                 ########################################
+[   87s] libwebpdemux2-1.2.4-1.2               ########################################
+[   87s] mozilla-nss-certs-3.88.1-1.1          ########################################
+[   87s] mozilla-nss-3.88.1-1.1                ########################################
+[   87s] libsoftokn3-3.88.1-1.1                ########################################
+[   88s] alsa-devel-1.2.8-1.1                  ########################################
+[   88s] libSDL2-2_0-0-2.26.4-1.1              ########################################
+[   88s] libtheoraenc1-1.1.1-30.1              ########################################
+[   88s] libxslt1-1.1.37-1.1                   ########################################
+[   88s] shared-mime-info-2.2-2.1              ########################################
+[   97s] gio-branding-upstream-2.76.1-1.1      ########################################
+[   97s] libgio-2_0-0-2.76.1-1.1               ########################################
+[   98s] glib2-tools-2.76.1-1.1                ########################################
+[   98s] No schema files found: doing nothing.
+[   98s] libffi-devel-3.4.4-1.1                ########################################
+[   98s] libp11-kit0-0.24.1-2.1                ########################################
+[   98s] desktop-file-utils-0.26-5.1           ########################################
+[  106s] zlib-devel-1.2.13-3.1                 ########################################
+[  108s] libopenssl-3-devel-3.0.8-2.1          ########################################
+[  110s] xkeyboard-config-2.38-1.1             ########################################
+[  110s] libxkbcommon0-1.5.0-1.1               ########################################
+[  110s] libxkbcommon-x11-0-1.5.0-1.1          ########################################
+[  111s] timezone-2023c-1.1                    ########################################
+[  111s] systemd-mini-253.3-1.1                warning: group systemd-journal does not exist - using root
+[  112s] ########################################
+[  113s] Creating group 'systemd-journal' with GID 486.
+[  113s] Creating group 'systemd-timesync' with GID 485.
+[  113s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[  113s] Running in chroot, ignoring command 'daemon-reexec'
+[  113s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[  113s] All rules containing unresolvable specifiers will be skipped.
+[  115s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-user-lp.conf -
+[  115s] Creating user 'lp' (Printing daemon) with UID 491 and GID 491.
+[  115s] system-user-lp-20170617-24.1          ########################################
+[  115s] cups-config-2.4.2-4.2                 ########################################
+[  115s] python-rpm-macros-20230403.29b58f8-1.1########################################
+[  115s] libyaml-0-2-0.2.5-2.1                 ########################################
+[  115s] libwayland-egl1-1.21.0-4.2            ########################################
+[  115s] wayland-devel-1.21.0-4.2              ########################################
+[  116s] libwacom-data-2.5.0-1.1               ########################################
+[  116s] libwacom9-2.5.0-1.1                   ########################################
+[  116s] libverto1-0.3.2-1.1                   ########################################
+[  116s] libuv1-1.44.2-3.1                     ########################################
+[  116s] libunwind8-1.6.2-4.1                  ########################################
+[  116s] libtwolame0-0.4.0-1.2                 ########################################
+[  116s] libts0-1.22-1.1                       ########################################
+[  116s] libtheoradec1-1.1.1-30.1              ########################################
+[  116s] libtasn1-6-4.19.0-1.1                 ########################################
+[  116s] libssh-config-0.10.4-1.2              ########################################
+[  116s] libspeexdsp1-1.2.1-1.1                ########################################
+[  117s] speexdsp-devel-1.2.1-1.1              ########################################
+[  117s] libsoxr0-0.1.3-2.2                    ########################################
+[  117s] libswresample3_9-4.4.3-4.3            ########################################
+[  117s] libsodium23-1.0.18-2.2                ########################################
+[  117s] libzmq5-4.3.4-4.1                     ########################################
+[  117s] libsnappy1-1.1.9-2.1                  ########################################
+[  117s] libsasl2-3-2.1.28-4.2                 ########################################
+[  117s] libldap2-2.6.3-3.2                    ########################################
+[  118s] libruby3_2-3_2-3.2.2-1.1              ########################################
+[  118s] librhash0-1.4.3-1.1                   ########################################
+[  118s] librav1e0-0.6.2+0-1.1                 ########################################
+[  118s] libproxy1-0.4.18-1.1                  ########################################
+[  118s] libpcre2-16-0-10.42-3.2               ########################################
+[  119s] libopenjp2-7-2.5.0-3.1                ########################################
+[  119s] libonig5-6.9.8-1.1                    ########################################
+[  119s] libjq1-1.6-3.1                        ########################################
+[  119s] jq-1.6-3.1                            ########################################
+[  119s] libnghttp2-14-1.51.0-7.2              ########################################
+[  119s] libmpg123-0-1.31.3-1.1                ########################################
+[  119s] libopenmpt0-0.6.9-1.1                 ########################################
+[  120s] libmpdec3-2.5.1-2.1                   ########################################
+[  120s] libpython3_10-1_0-3.10.10-2.1         ########################################
+[  124s] python310-base-3.10.10-2.1            ########################################
+[  124s] python310-packaging-23.0-2.1          ########################################
+[  131s] cmake-mini-3.26.3-1.1                 ########################################
+[  131s] cmake-3.26.3-1.1                      ########################################
+[  133s] vulkan-headers-1.3.243.0-1.1          ########################################
+[  133s] vulkan-devel-1.3.243.0-1.1            ########################################
+[  133s] libmp3lame0-3.100-5.1                 ########################################
+[  133s] libminizip1-1.2.13-3.1                ########################################
+[  133s] libmd0-1.0.4-1.1                      ########################################
+[  134s] libbsd0-0.11.7-2.1                    ########################################
+[  134s] libsndio7_1-1.7.0-1.1                 ########################################
+[  134s] libltdl7-2.4.7-3.2                    ########################################
+[  134s] libodbc2-2.3.11-2.1                   ########################################
+[  134s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/epmd-user.conf -
+[  135s] Creating group 'epmd' with GID 484.
+[  135s] Creating user 'epmd' (Erlang Port Mapper Daemon) with UID 484 and GID 484.
+[  135s] erlang-epmd-25.3-1.1                  ########################################
+[  141s] erlang-25.3-1.1                       ########################################
+[  142s] elixir-1.14.2-2.1                     ########################################
+[  142s] erlang-cf-0.3.1-1.1                   ########################################
+[  142s] erlang-erlware_commons-1.6.0-1.1      ########################################
+[  142s] erlang-getopt-1.0.2-1.1               ########################################
+[  142s] erlang-providers-1.8.1-1.1            ########################################
+[  142s] liblcms2-2-2.14-3.3                   ########################################
+[  142s] libkissfft-float131-131.1.0-2.1       ########################################
+[  142s] libjitterentropy3-3.4.1-2.1           ########################################
+[  143s] libgnutls30-3.8.0-1.1                 ########################################
+[  147s] libicu72-ledata-72.1-2.1              ########################################
+[  147s] libicu72-72.1-2.1                     ########################################
+[  148s] libre2-10-20230301-53.1               ########################################
+[  148s] libgsm1-1.0.22-1.1                    ########################################
+[  148s] libgraphite2-3-1.3.14-3.1             ########################################
+[  148s] libfmt9-9.1.0-2.1                     ########################################
+[  149s] libfftw3-3-3.3.10-3.1                 ########################################
+[  149s] libevdev2-1.13.0-1.1                  ########################################
+[  149s] libinput10-1.23.0-1.1                 ########################################
+[  149s] libedit0-20210910.3.1-1.1             ########################################
+[  161s] libLLVM16-16.0.1-1.1                  ########################################
+[  161s] Mesa-libEGL1-23.0.1-355.1             ########################################
+[  162s] libglvnd-1.6.0-1.1                    ########################################
+[  162s] Mesa-libGL1-23.0.1-355.1              ########################################
+[  162s] Mesa-23.0.1-355.1                     ########################################
+[  164s] Mesa-dri-23.0.1-355.2                 ########################################
+[  164s] libglvnd-devel-1.6.0-1.1              ########################################
+[  165s] Mesa-libGL-devel-23.0.1-355.1         ########################################
+[  165s] Mesa-libEGL-devel-23.0.1-355.1        ########################################
+[  165s] Mesa-libGLESv1_CM-devel-23.0.1-355.1  ########################################
+[  165s] Mesa-libGLESv2-devel-23.0.1-355.1     ########################################
+[  165s] libGLU1-9.0.2-2.1                     ########################################
+[  165s] glu-devel-9.0.2-2.1                   ########################################
+[  165s] libdouble-conversion3-3.2.1-1.1       ########################################
+[  166s] libQt5Core5-5.15.8+kde185-1.1         ########################################
+[  166s] libQt5Sql5-5.15.8+kde185-1.1          ########################################
+[  166s] libQt5Sql5-sqlite-5.15.8+kde185-1.1   ########################################
+[  167s] libQt5Test5-5.15.8+kde185-1.1         ########################################
+[  167s] libQt5Xml5-5.15.8+kde185-1.1          ########################################
+[  167s] libQt5Concurrent5-5.15.8+kde185-1.1   ########################################
+[  168s] libqt5-qtbase-common-devel-5.15.8+kde1########################################
+[  169s] libQt5Core-devel-5.15.8+kde185-1.1    ########################################
+[  169s] libQt5Test-devel-5.15.8+kde185-1.1    ########################################
+[  169s] libdav1d6-1.1.0-3.1                   ########################################
+[  169s] libcrossguid0-0.2.2.20190529T083634.ca########################################
+[  169s] libcom_err2-1.46.5-4.1                ########################################
+[  170s] krb5-mini-1.20.1-5.1                  ########################################
+[  171s] Updating /etc/sysconfig/kadmind ...
+[  171s] Updating /etc/sysconfig/krb5kdc ...
+[  171s] libssh4-0.10.4-1.2                    ########################################
+[  171s] libcodec2-1_0-1.0.5-1.1               ########################################
+[  171s] libbrotlicommon1-1.0.9-3.1            ########################################
+[  172s] libbrotlidec1-1.0.9-3.1               ########################################
+[  172s] libfreetype6-2.13.0-1.1               ########################################
+[  172s] libfontconfig1-2.14.2-1.1             ########################################
+[  172s] fontconfig-2.14.2-1.1                 ########################################
+[  172s] libharfbuzz0-7.1.0-1.1                ########################################
+[  172s] libharfbuzz-subset0-7.1.0-1.1         ########################################
+[  173s] libbluray2-1.3.4-1.1                  ########################################
+[  173s] libcurl4-8.0.1-1.1                    ########################################
+[  173s] libaom3-3.6.0-1.1                     ########################################
+[  174s] libavcodec58_134-4.4.3-4.3            ########################################
+[  174s] libavformat58_76-4.4.3-4.3            ########################################
+[  174s] libaubio5-0.4.9-8.2                   ########################################
+[  175s] ffmpeg-5-mini-libs-5.1.2-12.1         ########################################
+[  176s] fdupes-2.2.1-1.1                      ########################################
+[  176s] ruby-common-3.2-2.1                   ########################################
+[  179s] ruby3.2-3.2.2-1.1                     ########################################
+[  179s] update-alternatives: using /usr/bin/bundle.ruby.ruby3.2 to provide /usr/bin/bundle (bundle) in auto mode
+[  179s] update-alternatives: using /usr/bin/bundle.ruby.ruby3.2 to provide /usr/bin/bundle.ruby3.2 (bundle.ruby3.2) in auto mode
+[  179s] update-alternatives: using /usr/bin/bundler.ruby.ruby3.2 to provide /usr/bin/bundler (bundler) in auto mode
+[  180s] update-alternatives: using /usr/bin/bundler.ruby.ruby3.2 to provide /usr/bin/bundler.ruby3.2 (bundler.ruby3.2) in auto mode
+[  180s] update-alternatives: using /usr/bin/racc.ruby.ruby3.2 to provide /usr/bin/racc (racc) in auto mode
+[  180s] update-alternatives: using /usr/bin/racc.ruby.ruby3.2 to provide /usr/bin/racc.ruby3.2 (racc.ruby3.2) in auto mode
+[  180s] update-alternatives: using /usr/bin/rake.ruby.ruby3.2 to provide /usr/bin/rake (rake) in auto mode
+[  180s] update-alternatives: using /usr/bin/rake.ruby.ruby3.2 to provide /usr/bin/rake.ruby3.2 (rake.ruby3.2) in auto mode
+[  180s] update-alternatives: using /usr/bin/rbs.ruby.ruby3.2 to provide /usr/bin/rbs (rbs) in auto mode
+[  180s] update-alternatives: using /usr/bin/rbs.ruby.ruby3.2 to provide /usr/bin/rbs.ruby3.2 (rbs.ruby3.2) in auto mode
+[  180s] update-alternatives: using /usr/bin/rdoc.ruby.ruby3.2 to provide /usr/bin/rdoc (rdoc) in auto mode
+[  180s] update-alternatives: using /usr/bin/rdoc.ruby.ruby3.2 to provide /usr/bin/rdoc.ruby3.2 (rdoc.ruby3.2) in auto mode
+[  180s] update-alternatives: using /usr/bin/ri.ruby.ruby3.2 to provide /usr/bin/ri (ri) in auto mode
+[  180s] update-alternatives: using /usr/bin/ri.ruby.ruby3.2 to provide /usr/bin/ri.ruby3.2 (ri.ruby3.2) in auto mode
+[  180s] update-alternatives: using /usr/bin/typeprof.ruby.ruby3.2 to provide /usr/bin/typeprof (typeprof) in auto mode
+[  180s] update-alternatives: using /usr/bin/typeprof.ruby.ruby3.2 to provide /usr/bin/typeprof.ruby3.2 (typeprof.ruby3.2) in auto mode
+[  180s] update-alternatives: using /usr/bin/rdbg.ruby.ruby3.2 to provide /usr/bin/rdbg (rdbg) in auto mode
+[  181s] update-alternatives: using /usr/bin/rdbg.ruby.ruby3.2 to provide /usr/bin/rdbg.ruby3.2 (rdbg.ruby3.2) in auto mode
+[  181s] ruby3.2-rubygem-gem2rpm-0.10.1-20.1   ########################################
+[  181s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm (gem2rpm) in auto mode
+[  181s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm-0.10.1 (gem2rpm-0.10.1) in auto mode
+[  181s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm.ruby3.2 (gem2rpm.ruby3.2) in auto mode
+[  181s] ruby-3.2-1.1                          ########################################
+[  181s] ruby3.2-devel-3.2.2-1.1               ########################################
+[  182s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/dbus.conf -
+[  182s] Creating group 'messagebus' with GID 483.
+[  182s] Creating user 'messagebus' (User for D-Bus) with UID 483 and GID 483.
+[  182s] dbus-1-common-1.14.6-2.1              ########################################
+[  182s] libdbus-1-3-1.14.6-2.1                ########################################
+[  182s] libQt5DBus5-5.15.8+kde185-1.1         ########################################
+[  183s] libQt5Network5-5.15.8+kde185-1.1      ########################################
+[  184s] libQt5Gui5-5.15.8+kde185-1.1          ########################################
+[  186s] libQt5Widgets5-5.15.8+kde185-1.1      ########################################
+[  186s] qmlpluginexports-qt5-1.0-1.5          ########################################
+[  186s] qml-autoreqprov-1.1-2.1               ########################################
+[  187s] libQtQuick5-5.15.8+kde22-2.1          ########################################
+[  188s] libqt5-qtdeclarative-tools-5.15.8+kde2########################################
+[  189s] libQt5Gui-devel-5.15.8+kde185-1.1     ########################################
+[  189s] libQt5Widgets-devel-5.15.8+kde185-1.1 ########################################
+[  189s] qtdeclarative-imports-provides-qt5-1.0########################################
+[  189s] libQt5Positioning5-5.15.8+kde4-1.1    ########################################
+[  189s] libQt5Network-devel-5.15.8+kde185-1.1 ########################################
+[  196s] libqt5-qtdeclarative-devel-5.15.8+kde2########################################
+[  197s] libQt5PositioningQuick5-5.15.8+kde4-1.########################################
+[  197s] libqt5-qtgraphicaleffects-5.15.8+kde0-########################################
+[  197s] libQt5WebChannel5-5.15.8+kde3-1.1     ########################################
+[  197s] libQt5QuickTemplates2-5-5.15.8+kde7-1.########################################
+[  197s] libQt5QuickControls2-5-5.15.8+kde7-1.1########################################
+[  198s] libqt5-qtquickcontrols2-5.15.8+kde7-1.########################################
+[  198s] libqt5-qtwebchannel-devel-5.15.8+kde3-########################################
+[  199s] libqt5-qtquickcontrols-5.15.8+kde0-1.1########################################
+[  200s] libQt5Location5-5.15.8+kde4-1.1       ########################################
+[  200s] libqt5-qtlocation-devel-5.15.8+kde4-1.########################################
+[  200s] libQt5OpenGL5-5.15.8+kde185-1.1       ########################################
+[  200s] libQt5Svg5-5.15.8+kde8-1.1            ########################################
+[  200s] libavahi-client3-0.8-22.4             ########################################
+[  200s] libcups2-2.4.2-4.2                    ########################################
+[  201s] libQt5PrintSupport5-5.15.8+kde185-1.1 ########################################
+[  201s] libqscintilla2_qt5-15-2.13.4-1.3      ########################################
+[  202s] qscintilla-qt5-2.13.4-1.3             ########################################
+[  202s] libQt5PrintSupport-devel-5.15.8+kde185########################################
+[  202s] libqt5-linguist-5.15.8+kde1-1.1       ########################################
+[  206s] libpulse0-16.1-3.1                    ########################################
+[  224s] libqt5-qtwebengine-5.15.13-96.1       ########################################
+[  225s] PlatformFolders-4.2.0-1.1             ########################################
+[  225s] PlatformFolders-devel-4.2.0-1.1       ########################################
+[  225s] libqt5-qtwebengine-devel-5.15.13-96.1 ########################################
+[  225s] libqt5-linguist-devel-5.15.8+kde1-1.1 ########################################
+[  225s] qscintilla-qt5-devel-2.13.4-1.3       ########################################
+[  225s] libqt5-qtsvg-devel-5.15.8+kde8-1.1    ########################################
+[  225s] libQt5OpenGL-devel-5.15.8+kde185-1.1  ########################################
+[  225s] ruby-devel-3.2-1.1                    ########################################
+[  225s] libaubio-devel-0.4.9-8.2              ########################################
+[  225s] curl-8.0.1-1.1                        ########################################
+[  225s] crossguid-devel-0.2.2.20190529T083634.########################################
+[  225s] libQt5Concurrent-devel-5.15.8+kde185-1########################################
+[  225s] libQt5Xml-devel-5.15.8+kde185-1.1     ########################################
+[  226s] SDL2-devel-2.26.4-1.1                 ########################################
+[  226s] fmt-devel-9.1.0-2.1                   ########################################
+[  226s] kissfft-devel-131.1.0-2.1             ########################################
+[  226s] erlang-rebar3-3.18.0-1.1              ########################################
+[  226s] elixir-hex-1.0.1-1.1                  ########################################
+[  226s] sndio-devel-1.7.0-1.1                 ########################################
+[  226s] python-rpm-packaging-20210526+a18ca48-########################################
+[  226s] speex-devel-1.2.1-1.1                 ########################################
+[  226s] libopenssl-devel-3.0.8-1.1            ########################################
+[  226s] update-desktop-files-84.87-6.1        ########################################
+[  226s] rtmidi-devel-5.0.0-1.1                ########################################
+[  227s] flac-devel-1.4.2-2.1                  ########################################
+[  227s] reproc-devel-14.2.4-2.1               ########################################
+[  227s] libvorbis-devel-1.3.7-3.1             ########################################
+[  227s] sqlite3-devel-3.41.2-1.1              ########################################
+[  227s] libopus-devel-1.3.1-3.2               ########################################
+[  227s] zip-3.0-22.1                          ########################################
+[  227s] unzip-6.00-41.1                       ########################################
+[  227s] update-alternatives: using /usr/bin/unzip-plain to provide /usr/bin/unzip (unzip) in auto mode
+[  228s] update-alternatives: using /usr/bin/funzip-plain to provide /usr/bin/funzip (funzip) in auto mode
+[  228s] update-alternatives: using /usr/bin/unzipsfx-plain to provide /usr/bin/unzipsfx (unzipsfx) in auto mode
+[  228s] update-alternatives: using /usr/bin/zipgrep-plain to provide /usr/bin/zipgrep (zipgrep) in auto mode
+[  228s] libuuid-devel-2.38.1-12.1             ########################################
+[  228s] hicolor-icon-theme-0.17-4.1           ########################################
+[  228s] gl3w-devel-2022.03.24-2.1             ########################################
+[  229s] esbuild-0.17.5-1.1                    ########################################
+[  236s] Catch2-devel-3.3.2-1.1                ########################################
+[  253s] now finalizing build dir...
+[  254s] ... running 01-add_abuild_user_to_trusted_group
+[  254s] ... running 02-set_timezone_to_utc
+[  254s] ... running 03-set-permissions-secure
+[  255s] ... running 11-hack_uname_version_to_kernel_version
+[  263s] -----------------------------------------------------------------
+[  263s] I have the following modifications for sonic-pi.spec:
+[  263s] 22c22
+[  263s] < Release:        0
+[  263s] ---
+[  263s] > Release:        1.1
+[  270s] build target is riscv64-suse-linux
+[  270s] -----------------------------------------------------------------
+[  270s] ----- building sonic-pi.spec (user abuild)
+[  270s] -----------------------------------------------------------------
+[  270s] -----------------------------------------------------------------
+[  274s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/5b8fe395786be0e614b4879cf65238e4-sonic-pi' /home/abuild/rpmbuild/SOURCES/sonic-pi.spec
+[  275s] Building target platforms: riscv64-suse-linux
+[  275s] Building for target riscv64-suse-linux
+[  275s] setting SOURCE_DATE_EPOCH=1677369600
+[  275s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.9AlARY
+[  275s] + umask 022
+[  275s] + cd /home/abuild/rpmbuild/BUILD
+[  275s] + cd /home/abuild/rpmbuild/BUILD
+[  275s] + rm -rf sonic-pi-4.3.0
+[  275s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/v4.3.0.tar.gz
+[  289s] + STATUS=0
+[  289s] + '[' 0 -ne 0 ']'
+[  289s] + cd sonic-pi-4.3.0
+[  289s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  290s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/ruby32.patch
+[  290s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  290s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  290s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/qscintilla-detection.patch
+[  290s] + sed -i s/lrelease/lrelease-qt5/g app/linux-prebuild.sh app/gui/qt/rp-build-app
+[  290s] + tar xf /home/abuild/rpmbuild/SOURCES/sonic-pi-mix-deps.tar.gz -C app/server/beam/tau
+[  291s] + cp -af /home/abuild/rpmbuild/SOURCES/sonic-pi.desktop .
+[  291s] + RPM_EC=0
+[  291s] ++ jobs -p
+[  291s] + exit 0
+[  291s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.7H58fh
+[  291s] + umask 022
+[  291s] + cd /home/abuild/rpmbuild/BUILD
+[  291s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/sonic-pi-4.3.0-1.1.riscv64
+[  291s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/sonic-pi-4.3.0-1.1.riscv64
+[  291s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  291s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/sonic-pi-4.3.0-1.1.riscv64
+[  291s] + cd sonic-pi-4.3.0
+[  291s] + ref=/usr/lib/rpm
+[  291s] + mints=0
+[  291s] + case $(uname -m) in
+[  291s] ++ uname -m
+[  292s] + mints=20160911
+[  292s] + for s in guess sub
+[  292s] ++ find -maxdepth 8 -name config.guess
+[  292s] + for s in guess sub
+[  292s] ++ find -maxdepth 8 -name config.sub
+[  292s] + cd app
+[  292s] + export MIX_DEPS_PATH=/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/beam/tau/deps
+[  292s] + MIX_DEPS_PATH=/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/beam/tau/deps
+[  292s] + export MIX_ENV=prod
+[  292s] + MIX_ENV=prod
+[  292s] + export HEX_OFFLINE=1
+[  292s] + HEX_OFFLINE=1
+[  292s] + MIX_ESBUILD_PATH=/usr/bin/esbuild
+[  292s] + MIX_REBAR3=/usr/bin/rebar3
+[  292s] + ./linux-build-all.sh -s -o
+[  293s] Compiling native ruby extensions...
+[  295s] Clearing /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/bin/../rb-native/3.2.0
+[  295s] Creating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/bin/../rb-native/3.2.0
+[  295s] Compiling native extension in /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/rugged-1.3.0/ext/rugged
+[ 2132s] Copying /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/rugged-1.3.0/ext/rugged/rugged.so to /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/bin/../rb-native/3.2.0/
+[ 2132s] Compiling native extension in /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/ffi-1.11.3/ext/ffi_c
+[ 2219s] AbstractMemory.c:481:1: warning: 'memory_read_array_of_string' defined but not used [-Wunused-function]
+[ 2219s]   481 | memory_read_array_of_string(int argc, VALUE* argv, VALUE self)
+[ 2219s]       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:176:1: warning: 'memory_read_array_of_bool' defined but not used [-Wunused-function]
+[ 2219s]   176 | memory_read_array_of_##name(VALUE self, VALUE length) \
+[ 2219s]       | ^~~~~~~~~~~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:299:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   299 | NUM_OP(bool, unsigned char, rbffi_bool_value, rbffi_bool_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:152:1: warning: 'memory_write_array_of_bool' defined but not used [-Wunused-function]
+[ 2219s]   152 | memory_write_array_of_##name(VALUE self, VALUE ary) \
+[ 2219s]       | ^~~~~~~~~~~~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:299:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   299 | NUM_OP(bool, unsigned char, rbffi_bool_value, rbffi_bool_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:126:1: warning: 'memory_read_bool' defined but not used [-Wunused-function]
+[ 2219s]   126 | memory_read_##name(VALUE self) \
+[ 2219s]       | ^~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:299:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   299 | NUM_OP(bool, unsigned char, rbffi_bool_value, rbffi_bool_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:118:1: warning: 'memory_get_bool' defined but not used [-Wunused-function]
+[ 2219s]   118 | memory_get_##name(VALUE self, VALUE offset) \
+[ 2219s]       | ^~~~~~~~~~~
+[ 2219s] AbstractMemory.c:299:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   299 | NUM_OP(bool, unsigned char, rbffi_bool_value, rbffi_bool_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:99:1: warning: 'memory_write_bool' defined but not used [-Wunused-function]
+[ 2219s]    99 | memory_write_##name(VALUE self, VALUE value) \
+[ 2219s]       | ^~~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:299:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   299 | NUM_OP(bool, unsigned char, rbffi_bool_value, rbffi_bool_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:90:1: warning: 'memory_put_bool' defined but not used [-Wunused-function]
+[ 2219s]    90 | memory_put_##name(VALUE self, VALUE offset, VALUE value) \
+[ 2219s]       | ^~~~~~~~~~~
+[ 2219s] AbstractMemory.c:299:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   299 | NUM_OP(bool, unsigned char, rbffi_bool_value, rbffi_bool_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:176:1: warning: 'memory_read_array_of_longdouble' defined but not used [-Wunused-function]
+[ 2219s]   176 | memory_read_array_of_##name(VALUE self, VALUE length) \
+[ 2219s]       | ^~~~~~~~~~~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:263:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   263 | NUM_OP(longdouble, long double, rbffi_num2longdouble, rbffi_longdouble_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:152:1: warning: 'memory_write_array_of_longdouble' defined but not used [-Wunused-function]
+[ 2219s]   152 | memory_write_array_of_##name(VALUE self, VALUE ary) \
+[ 2219s]       | ^~~~~~~~~~~~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:263:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   263 | NUM_OP(longdouble, long double, rbffi_num2longdouble, rbffi_longdouble_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:126:1: warning: 'memory_read_longdouble' defined but not used [-Wunused-function]
+[ 2219s]   126 | memory_read_##name(VALUE self) \
+[ 2219s]       | ^~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:263:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   263 | NUM_OP(longdouble, long double, rbffi_num2longdouble, rbffi_longdouble_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:118:1: warning: 'memory_get_longdouble' defined but not used [-Wunused-function]
+[ 2219s]   118 | memory_get_##name(VALUE self, VALUE offset) \
+[ 2219s]       | ^~~~~~~~~~~
+[ 2219s] AbstractMemory.c:263:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   263 | NUM_OP(longdouble, long double, rbffi_num2longdouble, rbffi_longdouble_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:99:1: warning: 'memory_write_longdouble' defined but not used [-Wunused-function]
+[ 2219s]    99 | memory_write_##name(VALUE self, VALUE value) \
+[ 2219s]       | ^~~~~~~~~~~~~
+[ 2219s] AbstractMemory.c:263:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   263 | NUM_OP(longdouble, long double, rbffi_num2longdouble, rbffi_longdouble_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2219s] AbstractMemory.c:90:1: warning: 'memory_put_longdouble' defined but not used [-Wunused-function]
+[ 2219s]    90 | memory_put_##name(VALUE self, VALUE offset, VALUE value) \
+[ 2219s]       | ^~~~~~~~~~~
+[ 2219s] AbstractMemory.c:263:1: note: in expansion of macro 'NUM_OP'
+[ 2219s]   263 | NUM_OP(longdouble, long double, rbffi_num2longdouble, rbffi_longdouble_new, NOSWAP);
+[ 2219s]       | ^~~~~~
+[ 2245s] Function.c: In function 'callback_invoke':
+[ 2245s] Function.c:487:14: warning: variable 'empty' set but not used [-Wunused-but-set-variable]
+[ 2245s]   487 |         bool empty = false;
+[ 2245s]       |              ^~~~~
+[ 2245s] Function.c: In function 'callback_prep':
+[ 2245s] Function.c:867:5: warning: 'ffi_prep_closure' is deprecated: use ffi_prep_closure_loc instead [-Wdeprecated-declarations]
+[ 2245s]   867 |     ffiStatus = ffi_prep_closure(code, &fnInfo->ffi_cif, callback_invoke, closure);
+[ 2245s]       |     ^~~~~~~~~
+[ 2245s] In file included from Function.c:52:
+[ 2245s] /usr/include/ffi.h:375:1: note: declared here
+[ 2245s]   375 | ffi_prep_closure (ffi_closure*,
+[ 2245s]       | ^~~~~~~~~~~~~~~~
+[ 2251s] FunctionInfo.c: In function 'fntype_initialize':
+[ 2251s] FunctionInfo.c:121:27: warning: variable 'rbConvention' set but not used [-Wunused-but-set-variable]
+[ 2251s]   121 |     VALUE rbEnums = Qnil, rbConvention = Qnil, rbBlocking = Qnil;
+[ 2251s]       |                           ^~~~~~~~~~~~
+[ 2269s] MethodHandle.c: In function 'prep_trampoline':
+[ 2269s] MethodHandle.c:151:5: warning: 'ffi_prep_closure' is deprecated: use ffi_prep_closure_loc instead [-Wdeprecated-declarations]
+[ 2269s]   151 |     ffiStatus = ffi_prep_closure(code, &mh_cif, attached_method_invoke, closure);
+[ 2269s]       |     ^~~~~~~~~
+[ 2269s] In file included from MethodHandle.c:53:
+[ 2269s] /usr/include/ffi.h:375:1: note: declared here
+[ 2269s]   375 | ffi_prep_closure (ffi_closure*,
+[ 2269s]       | ^~~~~~~~~~~~~~~~
+[ 2292s] StructLayout.c: In function 'struct_field_initialize':
+[ 2292s] StructLayout.c:102:9: warning: variable 'nargs' set but not used [-Wunused-but-set-variable]
+[ 2292s]   102 |     int nargs;
+[ 2292s]       |         ^~~~~
+[ 2307s] Variadic.c: In function 'variadic_initialize':
+[ 2307s] Variadic.c:106:11: warning: variable 'convention' set but not used [-Wunused-but-set-variable]
+[ 2307s]   106 |     VALUE convention = Qnil;
+[ 2307s]       |           ^~~~~~~~~~
+[ 2347s] Copying /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/ffi-1.11.3/ext/ffi_c/ffi_c.so to /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/bin/../rb-native/3.2.0/
+[ 2347s] Compiling native extension in /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/atomic/ext
+[ 2366s] atomic_reference.c: In function 'ir_alloc':
+[ 2366s] atomic_reference.c:27:5: warning: 'rb_data_object_alloc' is deprecated: by: rb_data_object_wrap [-Wdeprecated-declarations]
+[ 2366s]    27 |     return rb_data_object_alloc(klass, (void *) Qnil, ir_mark, NULL);
+[ 2366s]       |     ^~~~~~
+[ 2366s] In file included from /usr/include/ruby-3.2.0/ruby/internal/core.h:27,
+[ 2366s]                  from /usr/include/ruby-3.2.0/ruby/ruby.h:29,
+[ 2366s]                  from /usr/include/ruby-3.2.0/ruby.h:38,
+[ 2366s]                  from atomic_reference.c:13:
+[ 2366s] /usr/include/ruby-3.2.0/ruby/internal/core/rdata.h:367:1: note: declared here
+[ 2366s]   367 | rb_data_object_alloc(VALUE klass, void *data, RUBY_DATA_FUNC dmark, RUBY_DATA_FUNC dfree)
+[ 2366s]       | ^~~~~~~~~~~~~~~~~~~~
+[ 2371s] Copying /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/atomic/ext/atomic_reference.so to /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/bin/../rb-native/3.2.0/
+[ 2371s] Compiling native extension in /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/ruby-prof-0.15.8/ext/ruby_prof
+[ 2485s] rp_measure_cpu_time.c: In function 'get_cpu_time':
+[ 2485s] rp_measure_cpu_time.c:34:1: error: no return statement in function returning non-void [-Werror=return-type]
+[ 2485s]    34 | }
+[ 2485s]       | ^
+[ 2486s] cc1: some warnings being treated as errors
+[ 2486s] make: *** [Makefile:248: rp_measure_cpu_time.o] Error 1
+[ 2486s] Compiling native extension in /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/ruby/vendor/interception/ext
+[ 2488s] make: *** No rule to make target 'clean'.  Stop.
+[ 2488s] Translating tutorial...
+[ 2514s] Translated tutorial bs: 0.0% ready, 0.0% fuzzy.
+[ 2526s] Translated tutorial ca: 13.6% ready, 1.0% fuzzy.
+[ 2542s] Translated tutorial cs: 0.0% ready, 0.0% fuzzy.
+[ 2554s] Translated tutorial da: 15.7% ready, 0.4% fuzzy.
+[ 2568s] Translated tutorial de: 85.2% ready, 1.8% fuzzy.
+[ 2581s] Translated tutorial el: 3.1% ready, 0.4% fuzzy.
+[ 2595s] Translated tutorial es: 92.2% ready, 32.2% fuzzy.
+[ 2607s] Translated tutorial et: 0.1% ready, 0.0% fuzzy.
+[ 2619s] Translated tutorial fi: 0.1% ready, 0.1% fuzzy.
+[ 2631s] Translated tutorial fr: 100.0% ready, 1.5% fuzzy.
+[ 2642s] Translated tutorial gl: 0.0% ready, 0.0% fuzzy.
+[ 2653s] Translated tutorial hi: 0.0% ready, 0.0% fuzzy.
+[ 2664s] Translated tutorial hu: 1.4% ready, 0.3% fuzzy.
+[ 2675s] Translated tutorial id: 2.4% ready, 0.1% fuzzy.
+[ 2685s] Translated tutorial is: 12.5% ready, 2.7% fuzzy.
+[ 2696s] Translated tutorial it: 100.0% ready, 5.9% fuzzy.
+[ 2707s] Translated tutorial ja: 87.5% ready, 7.5% fuzzy.
+[ 2719s] Translated tutorial ko: 3.1% ready, 0.3% fuzzy.
+[ 2729s] Translated tutorial nb: 21.4% ready, 3.2% fuzzy.
+[ 2742s] Translated tutorial nl: 96.2% ready, 1.8% fuzzy.
+[ 2754s] Translated tutorial pl: 91.1% ready, 3.2% fuzzy.
+[ 2765s] Translated tutorial pt: 70.6% ready, 5.7% fuzzy.
+[ 2777s] Translated tutorial pt-BR: 37.5% ready, 2.6% fuzzy.
+[ 2791s] Translated tutorial ro: 88.3% ready, 7.9% fuzzy.
+[ 2803s] Translated tutorial ru: 99.8% ready, 18.3% fuzzy.
+[ 2817s] Translated tutorial sl: 3.5% ready, 0.4% fuzzy.
+[ 2831s] Translated tutorial sv: 8.0% ready, 0.3% fuzzy.
+[ 2843s] Translated tutorial tr: 3.7% ready, 0.1% fuzzy.
+[ 2855s] Translated tutorial zh-Hans: 24.7% ready, 0.6% fuzzy.
+[ 2867s] Translated tutorial zh-Hk: 0.0% ready, 0.0% fuzzy.
+[ 2877s] Translated tutorial zh-TW: 2.5% ready, 0.4% fuzzy.
+[ 2878s] Generating docs for the Qt GUI...
+[ 3066s] Creating build directory...
+[ 3066s] Generating makefiles...
+[ 3066s] -- CMakeLists: Sonic Pi
+[ 3069s] -- The C compiler identification is GNU 13.0.1
+[ 3072s] -- The CXX compiler identification is GNU 13.0.1
+[ 3072s] -- Detecting C compiler ABI info
+[ 3076s] -- Detecting C compiler ABI info - done
+[ 3077s] -- Check for working C compiler: /usr/bin/cc - skipped
+[ 3077s] -- Detecting C compile features
+[ 3077s] -- Detecting C compile features - done
+[ 3077s] -- Detecting CXX compiler ABI info
+[ 3081s] -- Detecting CXX compiler ABI info - done
+[ 3081s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[ 3081s] -- Detecting CXX compile features
+[ 3081s] -- Detecting CXX compile features - done
+[ 3081s] -- TARGET_LINUX
+[ 3081s] -- System: Linux-6.2.9-1-default
+[ 3081s] -- Compiler: GNU
+[ 3081s] -- Compiler Version: 13.0.1
+[ 3081s] -- Debug Flags: -g -D_DEBUG -DDEBUG
+[ 3081s] -- Release Flags: -O3 -DNDEBUG
+[ 3081s] -- Externals Builder
+[ 3085s] -- ERLANG_INCLUDE_PATH: /usr/lib64/erlang/erts-13.2/include
+[ 3085s] -- USE_SYSTEM_LIBS: ON
+[ 3086s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.0") 
+[ 3086s] -- Checking for module 'aubio'
+[ 3087s] --   Found aubio, version 0.4.9
+[ 3090s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[ 3094s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[ 3094s] -- Found Threads: TRUE  
+[ 3094s] -- Checking for module 'kissfft-float'
+[ 3095s] --   Found kissfft-float, version 131.1.0
+[ 3100s] -- ImGui Interface: ON
+[ 3100s] -- CMakeLists: Sonic Pi Qt GUI
+[ 3100s] -- Found QScintilla: /lib64/libqscintilla2_qt5.so (found version "2.13.4") 
+[ 3100s] -- App Root: /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app
+[ 3100s] -- Found OpenGL: /usr/lib64/libOpenGL.so   
+[ 3100s] -- Configuring done (34.3s)
+[ 3103s] -- Generating done (0.9s)
+[ 3103s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/build
+[ 3106s] [  1%] Creating directories for 'sp_midi'
+[ 3107s] [  1%] No download step for 'sp_midi'
+[ 3108s] [  2%] No update step for 'sp_midi'
+[ 3109s] [  3%] No patch step for 'sp_midi'
+[ 3110s] [  4%] Performing configure step for 'sp_midi'
+[ 3110s] CMake Warning (dev) at CMakeLists.txt:1 (project):
+[ 3110s]   cmake_minimum_required() should be called prior to this top-level project()
+[ 3110s]   call.  Please see the cmake-commands(7) manual for usage documentation of
+[ 3110s]   both commands.
+[ 3110s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[ 3110s] 
+[ 3113s] -- The C compiler identification is GNU 13.0.1
+[ 3115s] -- The CXX compiler identification is GNU 13.0.1
+[ 3116s] -- Detecting C compiler ABI info
+[ 3119s] -- Detecting C compiler ABI info - done
+[ 3119s] -- Check for working C compiler: /usr/bin/cc - skipped
+[ 3119s] -- Detecting C compile features
+[ 3119s] -- Detecting C compile features - done
+[ 3119s] -- Detecting CXX compiler ABI info
+[ 3122s] -- Detecting CXX compiler ABI info - done
+[ 3122s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[ 3122s] -- Detecting CXX compile features
+[ 3123s] -- Detecting CXX compile features - done
+[ 3123s] -- Found ALSA: /usr/lib64/libasound.so (found version "1.2.8") 
+[ 3123s] -- Configuring done (12.6s)
+[ 3123s] -- Generating done (0.1s)
+[ 3123s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/build/external/sp_midi-prefix/src/sp_midi-build
+[ 3123s] [  5%] Performing build step for 'sp_midi'
+[ 3125s] [ 14%] Building CXX object CMakeFiles/libsp_midi.dir/src/sp_midi.cpp.o
+[ 3226s] [ 28%] Building CXX object CMakeFiles/libsp_midi.dir/src/midiin.cpp.o
+[ 3310s] [ 42%] Building CXX object CMakeFiles/libsp_midi.dir/src/midiout.cpp.o
+[ 3391s] [ 57%] Building CXX object CMakeFiles/libsp_midi.dir/src/midicommon.cpp.o
+[ 3480s] [ 71%] Building CXX object CMakeFiles/libsp_midi.dir/src/midisendprocessor.cpp.o
+[ 3569s] [ 85%] Building CXX object CMakeFiles/libsp_midi.dir/src/utils.cpp.o
+[ 3654s] [100%] Linking CXX shared library libsp_midi.so
+[ 3654s] /usr/bin/c++ -fPIC  -std=c++14 -shared -Wl,-soname,libsp_midi.so -o libsp_midi.so CMakeFiles/libsp_midi.dir/src/sp_midi.cpp.o CMakeFiles/libsp_midi.dir/src/midiin.cpp.o CMakeFiles/libsp_midi.dir/src/midiout.cpp.o CMakeFiles/libsp_midi.dir/src/midicommon.cpp.o CMakeFiles/libsp_midi.dir/src/midisendprocessor.cpp.o CMakeFiles/libsp_midi.dir/src/utils.cpp.o  -lpthread -lasound -ldl -lrtmidi 
+[ 3658s] [100%] Built target libsp_midi
+[ 3659s] [  6%] Performing install step for 'sp_midi'
+[ 3660s] [100%] Built target libsp_midi
+[ 3661s] Install the project...
+[ 3661s] -- Install configuration: ""
+[ 3661s] -- Installing: /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/beam/tau/priv/libsp_midi.so
+[ 3661s] [  7%] Completed 'sp_midi'
+[ 3662s] [  7%] Built target sp_midi
+[ 3663s] [  8%] Creating directories for 'sp_link'
+[ 3664s] [  8%] No download step for 'sp_link'
+[ 3664s] [  8%] No update step for 'sp_link'
+[ 3665s] [  9%] No patch step for 'sp_link'
+[ 3666s] [ 10%] Performing configure step for 'sp_link'
+[ 3666s] CMake Warning (dev) at CMakeLists.txt:1 (project):
+[ 3666s]   cmake_minimum_required() should be called prior to this top-level project()
+[ 3666s]   call.  Please see the cmake-commands(7) manual for usage documentation of
+[ 3666s]   both commands.
+[ 3666s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[ 3666s] 
+[ 3668s] -- The C compiler identification is GNU 13.0.1
+[ 3670s] -- The CXX compiler identification is GNU 13.0.1
+[ 3671s] -- Detecting C compiler ABI info
+[ 3673s] -- Detecting C compiler ABI info - done
+[ 3674s] -- Check for working C compiler: /usr/bin/cc - skipped
+[ 3674s] -- Detecting C compile features
+[ 3674s] -- Detecting C compile features - done
+[ 3674s] -- Detecting CXX compiler ABI info
+[ 3676s] -- Detecting CXX compiler ABI info - done
+[ 3677s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[ 3677s] -- Detecting CXX compile features
+[ 3677s] -- Detecting CXX compile features - done
+[ 3677s] -- Configuring done (10.7s)
+[ 3677s] -- Generating done (0.1s)
+[ 3677s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/build/external/sp_link-prefix/src/sp_link-build
+[ 3677s] [ 11%] Performing build step for 'sp_link'
+[ 3679s] [ 25%] Building CXX object CMakeFiles/libsp_link.dir/src/sp_link.cpp.o
+[ 3860s] [ 50%] Building CXX object CMakeFiles/libsp_link.dir/src/sp_link_nifs.cpp.o
+[ 3951s] [ 75%] Building CXX object CMakeFiles/libsp_link.dir/src/sp_link_nif_callbacks.cpp.o
+[ 3954s] [100%] Linking CXX shared library libsp_link.so
+[ 3954s] /usr/bin/c++ -fPIC  -std=c++14 -shared -Wl,-soname,libsp_link.so -o libsp_link.so CMakeFiles/libsp_link.dir/src/sp_link.cpp.o CMakeFiles/libsp_link.dir/src/sp_link_nifs.cpp.o CMakeFiles/libsp_link.dir/src/sp_link_nif_callbacks.cpp.o 
+[ 3959s] [100%] Built target libsp_link
+[ 3959s] [ 12%] Performing install step for 'sp_link'
+[ 3961s] [100%] Built target libsp_link
+[ 3961s] Install the project...
+[ 3962s] -- Install configuration: ""
+[ 3962s] -- Installing: /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/server/beam/tau/priv/libsp_link.so
+[ 3962s] [ 13%] Completed 'sp_link'
+[ 3963s] [ 13%] Built target sp_link
+[ 3964s] [ 14%] Building C object external/CMakeFiles/aubio_onset.dir/aubio/aubioonset.c.o
+[ 3966s] [ 15%] Building C object external/CMakeFiles/aubio_onset.dir/aubio/utils.c.o
+[ 3968s] [ 16%] Linking C executable aubio_onset
+[ 3970s] [ 16%] Built target aubio_onset
+[ 3971s] [ 16%] Building CXX object external/CMakeFiles/ExternalsBuilder.dir/externals.cpp.o
+[ 3972s] [ 17%] Linking CXX static library libExternalsBuilder.a
+[ 3972s] [ 17%] Built target ExternalsBuilder
+[ 3973s] [ 18%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/sonicpi_api.cpp.o
+[ 4031s] [ 19%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/string_utils.cpp.o
+[ 4042s] [ 19%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/file_utils.cpp.o
+[ 4060s] [ 20%] Building C object api/CMakeFiles/sonic-pi-api.dir/__/external/TLSF-2.4.6/src/tlsf.c.o
+[ 4062s] [ 21%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/osc/osc_handler.cpp.o
+[ 4085s] [ 22%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/osc/osc_sender.cpp.o
+[ 4097s] [ 22%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/osc/osc_server.cpp.o
+[ 4107s] [ 23%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/osc/tcp_osc_server.cpp.o
+[ 4116s] [ 24%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/osc/udp_osc_server.cpp.o
+[ 4136s] [ 25%] Building CXX object api/CMakeFiles/sonic-pi-api.dir/src/audio/audio_processor.cpp.o
+[ 4205s] [ 26%] Linking CXX static library libsonic-pi-api.a
+[ 4207s] [ 26%] Built target sonic-pi-api
+[ 4208s] [ 27%] Building CXX object api-tests/CMakeFiles/api-tests.dir/__/api/src/sonicpi_api.test.cpp.o
+[ 4231s] [ 27%] Linking CXX executable api-tests
+[ 4240s] [ 27%] Built target api-tests
+[ 4241s] [ 28%] Automatic MOC and UIC for target SingleApplication
+[ 4244s] [ 28%] Built target SingleApplication_autogen
+[ 4245s] [ 29%] Building CXX object gui/qt/vendor/SingleApplication/CMakeFiles/SingleApplication.dir/SingleApplication_autogen/mocs_compilation.cpp.o
+[ 4269s] [ 30%] Building CXX object gui/qt/vendor/SingleApplication/CMakeFiles/SingleApplication.dir/singleapplication.cpp.o
+[ 4295s] [ 30%] Building CXX object gui/qt/vendor/SingleApplication/CMakeFiles/SingleApplication.dir/singleapplication_p.cpp.o
+[ 4327s] [ 31%] Linking CXX static library libSingleApplication.a
+[ 4328s] [ 31%] Built target SingleApplication
+[ 4328s] [ 31%] Automatic MOC and UIC for target sonic-pi
+[ 4336s] [ 31%] Built target sonic-pi_autogen
+[ 4336s] [ 31%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh_TW.qm
+[ 4337s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh_TW.qm'...
+[ 4337s]     Generated 176 translation(s) (110 finished and 66 unfinished)
+[ 4337s]     Ignored 192 untranslated source text(s)
+[ 4337s] [ 32%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_fa.qm
+[ 4337s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_fa.qm'...
+[ 4337s]     Generated 209 translation(s) (151 finished and 58 unfinished)
+[ 4337s]     Ignored 159 untranslated source text(s)
+[ 4337s] [ 33%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_pl.qm
+[ 4338s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_pl.qm'...
+[ 4338s]     Generated 273 translation(s) (267 finished and 6 unfinished)
+[ 4338s]     Ignored 95 untranslated source text(s)
+[ 4338s] [ 34%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_th.qm
+[ 4338s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_th.qm'...
+[ 4338s]     Generated 22 translation(s) (17 finished and 5 unfinished)
+[ 4338s]     Ignored 346 untranslated source text(s)
+[ 4339s] [ 35%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sk.qm
+[ 4339s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sk.qm'...
+[ 4339s]     Generated 83 translation(s) (80 finished and 3 unfinished)
+[ 4339s]     Ignored 285 untranslated source text(s)
+[ 4339s] [ 35%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_eo.qm
+[ 4339s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_eo.qm'...
+[ 4339s]     Generated 0 translation(s) (0 finished and 0 unfinished)
+[ 4339s]     Ignored 368 untranslated source text(s)
+[ 4340s] [ 36%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sv.qm
+[ 4340s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sv.qm'...
+[ 4340s]     Generated 181 translation(s) (172 finished and 9 unfinished)
+[ 4340s]     Ignored 187 untranslated source text(s)
+[ 4340s] [ 36%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_fi.qm
+[ 4340s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_fi.qm'...
+[ 4341s]     Generated 359 translation(s) (359 finished and 0 unfinished)
+[ 4341s]     Ignored 9 untranslated source text(s)
+[ 4341s] [ 36%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_pt.qm
+[ 4341s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_pt.qm'...
+[ 4341s]     Generated 292 translation(s) (292 finished and 0 unfinished)
+[ 4341s]     Ignored 76 untranslated source text(s)
+[ 4341s] [ 37%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_el.qm
+[ 4342s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_el.qm'...
+[ 4342s]     Generated 177 translation(s) (95 finished and 82 unfinished)
+[ 4342s]     Ignored 191 untranslated source text(s)
+[ 4342s] [ 38%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_hy.qm
+[ 4342s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_hy.qm'...
+[ 4342s]     Generated 5 translation(s) (4 finished and 1 unfinished)
+[ 4342s]     Ignored 363 untranslated source text(s)
+[ 4342s] [ 38%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_da.qm
+[ 4343s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_da.qm'...
+[ 4343s]     Generated 201 translation(s) (192 finished and 9 unfinished)
+[ 4343s]     Ignored 167 untranslated source text(s)
+[ 4343s] [ 39%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_nl.qm
+[ 4343s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_nl.qm'...
+[ 4343s]     Generated 368 translation(s) (368 finished and 0 unfinished)
+[ 4343s] [ 39%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_is.qm
+[ 4344s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_is.qm'...
+[ 4344s]     Generated 233 translation(s) (152 finished and 81 unfinished)
+[ 4344s]     Ignored 135 untranslated source text(s)
+[ 4344s] [ 40%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_bg.qm
+[ 4344s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_bg.qm'...
+[ 4344s]     Generated 161 translation(s) (135 finished and 26 unfinished)
+[ 4344s]     Ignored 207 untranslated source text(s)
+[ 4345s] [ 41%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ug.qm
+[ 4345s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ug.qm'...
+[ 4345s]     Generated 84 translation(s) (80 finished and 4 unfinished)
+[ 4345s]     Ignored 284 untranslated source text(s)
+[ 4345s] [ 42%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_et.qm
+[ 4345s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_et.qm'...
+[ 4345s]     Generated 293 translation(s) (293 finished and 0 unfinished)
+[ 4345s]     Ignored 75 untranslated source text(s)
+[ 4346s] [ 43%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ca.qm
+[ 4346s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ca.qm'...
+[ 4346s]     Generated 359 translation(s) (359 finished and 0 unfinished)
+[ 4346s]     Ignored 9 untranslated source text(s)
+[ 4346s] [ 43%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_he.qm
+[ 4346s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_he.qm'...
+[ 4346s]     Generated 357 translation(s) (357 finished and 0 unfinished)
+[ 4346s]     Ignored 11 untranslated source text(s)
+[ 4347s] [ 44%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh_HK.qm
+[ 4347s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh_HK.qm'...
+[ 4347s]     Generated 9 translation(s) (9 finished and 0 unfinished)
+[ 4347s]     Ignored 359 untranslated source text(s)
+[ 4347s] [ 45%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh.qm
+[ 4348s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh.qm'...
+[ 4348s]     Generated 157 translation(s) (80 finished and 77 unfinished)
+[ 4348s]     Ignored 211 untranslated source text(s)
+[ 4348s] [ 46%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_tr.qm
+[ 4348s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_tr.qm'...
+[ 4348s]     Generated 295 translation(s) (295 finished and 0 unfinished)
+[ 4348s]     Ignored 73 untranslated source text(s)
+[ 4348s] [ 46%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ko.qm
+[ 4349s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ko.qm'...
+[ 4349s]     Generated 288 translation(s) (246 finished and 42 unfinished)
+[ 4349s]     Ignored 80 untranslated source text(s)
+[ 4349s] [ 46%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_vi.qm
+[ 4349s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_vi.qm'...
+[ 4349s]     Generated 161 translation(s) (91 finished and 70 unfinished)
+[ 4349s]     Ignored 207 untranslated source text(s)
+[ 4349s] [ 47%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ka.qm
+[ 4350s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ka.qm'...
+[ 4350s]     Generated 80 translation(s) (80 finished and 0 unfinished)
+[ 4350s]     Ignored 288 untranslated source text(s)
+[ 4350s] [ 48%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ru.qm
+[ 4350s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ru.qm'...
+[ 4350s]     Generated 191 translation(s) (111 finished and 80 unfinished)
+[ 4350s]     Ignored 177 untranslated source text(s)
+[ 4351s] [ 49%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ja.qm
+[ 4351s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ja.qm'...
+[ 4351s]     Generated 210 translation(s) (202 finished and 8 unfinished)
+[ 4351s]     Ignored 158 untranslated source text(s)
+[ 4351s] [ 50%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_en_US.qm
+[ 4351s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_en_US.qm'...
+[ 4351s]     Generated 359 translation(s) (359 finished and 0 unfinished)
+[ 4351s]     Ignored 9 untranslated source text(s)
+[ 4352s] [ 51%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_id.qm
+[ 4352s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_id.qm'...
+[ 4352s]     Generated 246 translation(s) (187 finished and 59 unfinished)
+[ 4352s]     Ignored 122 untranslated source text(s)
+[ 4352s] [ 52%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_hu.qm
+[ 4353s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_hu.qm'...
+[ 4353s]     Generated 235 translation(s) (175 finished and 60 unfinished)
+[ 4353s]     Ignored 133 untranslated source text(s)
+[ 4353s] [ 53%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_pt_BR.qm
+[ 4353s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_pt_BR.qm'...
+[ 4353s]     Generated 306 translation(s) (303 finished and 3 unfinished)
+[ 4353s]     Ignored 62 untranslated source text(s)
+[ 4353s] [ 54%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ca@valencia.qm
+[ 4354s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ca@valencia.qm'...
+[ 4354s]     Generated 14 translation(s) (2 finished and 12 unfinished)
+[ 4354s]     Ignored 327 untranslated source text(s)
+[ 4354s] [ 55%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_es.qm
+[ 4354s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_es.qm'...
+[ 4354s]     Generated 359 translation(s) (359 finished and 0 unfinished)
+[ 4354s]     Ignored 9 untranslated source text(s)
+[ 4354s] [ 56%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sl.qm
+[ 4355s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sl.qm'...
+[ 4355s]     Generated 293 translation(s) (293 finished and 0 unfinished)
+[ 4355s]     Ignored 75 untranslated source text(s)
+[ 4355s] [ 57%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ro.qm
+[ 4355s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ro.qm'...
+[ 4355s]     Generated 157 translation(s) (80 finished and 77 unfinished)
+[ 4355s]     Ignored 211 untranslated source text(s)
+[ 4355s] [ 57%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_bn.qm
+[ 4356s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_bn.qm'...
+[ 4356s]     Generated 0 translation(s) (0 finished and 0 unfinished)
+[ 4356s]     Ignored 368 untranslated source text(s)
+[ 4356s] [ 57%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sw.qm
+[ 4356s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_sw.qm'...
+[ 4356s]     Generated 14 translation(s) (6 finished and 8 unfinished)
+[ 4356s]     Ignored 354 untranslated source text(s)
+[ 4356s] [ 58%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_de.qm
+[ 4357s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_de.qm'...
+[ 4357s]     Generated 296 translation(s) (296 finished and 0 unfinished)
+[ 4357s]     Ignored 72 untranslated source text(s)
+[ 4357s] [ 58%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_si.qm
+[ 4357s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_si.qm'...
+[ 4357s]     Generated 151 translation(s) (142 finished and 9 unfinished)
+[ 4357s]     Ignored 217 untranslated source text(s)
+[ 4358s] [ 59%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_nb.qm
+[ 4358s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_nb.qm'...
+[ 4358s]     Generated 210 translation(s) (136 finished and 74 unfinished)
+[ 4358s]     Ignored 158 untranslated source text(s)
+[ 4358s] [ 60%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_uk.qm
+[ 4358s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_uk.qm'...
+[ 4358s]     Generated 154 translation(s) (79 finished and 75 unfinished)
+[ 4358s]     Ignored 214 untranslated source text(s)
+[ 4359s] [ 61%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_cs.qm
+[ 4359s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_cs.qm'...
+[ 4359s]     Generated 157 translation(s) (80 finished and 77 unfinished)
+[ 4359s]     Ignored 211 untranslated source text(s)
+[ 4359s] [ 62%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_it.qm
+[ 4359s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_it.qm'...
+[ 4359s]     Generated 359 translation(s) (359 finished and 0 unfinished)
+[ 4359s]     Ignored 9 untranslated source text(s)
+[ 4360s] [ 63%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ga.qm
+[ 4360s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_ga.qm'...
+[ 4360s]     Generated 24 translation(s) (20 finished and 4 unfinished)
+[ 4360s]     Ignored 344 untranslated source text(s)
+[ 4360s] [ 64%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_fr.qm
+[ 4360s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_fr.qm'...
+[ 4360s]     Generated 359 translation(s) (359 finished and 0 unfinished)
+[ 4360s]     Ignored 9 untranslated source text(s)
+[ 4361s] [ 65%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_hi.qm
+[ 4361s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_hi.qm'...
+[ 4361s]     Generated 157 translation(s) (80 finished and 77 unfinished)
+[ 4361s]     Ignored 211 untranslated source text(s)
+[ 4361s] [ 66%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_gl.qm
+[ 4361s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_gl.qm'...
+[ 4361s]     Generated 71 translation(s) (39 finished and 32 unfinished)
+[ 4361s]     Ignored 297 untranslated source text(s)
+[ 4362s] [ 67%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh-Hans.qm
+[ 4362s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_zh-Hans.qm'...
+[ 4362s]     Generated 265 translation(s) (265 finished and 0 unfinished)
+[ 4362s]     Ignored 103 untranslated source text(s)
+[ 4362s] [ 68%] Generating /home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_bs.qm
+[ 4363s] Updating '/home/abuild/rpmbuild/BUILD/sonic-pi-4.3.0/app/gui/qt/lang/sonic-pi_bs.qm'...
+[ 4363s]     Generated 133 translation(s) (74 finished and 59 unfinished)
+[ 4363s]     Ignored 235 untranslated source text(s)
+[ 4363s] [ 68%] Automatic RCC for SonicPi.qrc
+[ 4368s] [ 69%] Automatic RCC for help_files.qrc
+[ 4376s] [ 70%] Automatic RCC for info_files.qrc
+[ 4377s] [ 71%] Building CXX object gui/qt/CMakeFiles/sonic-pi.dir/sonic-pi_autogen/mocs_compilation.cpp.o
+[ 4432s] [ 72%] Building CXX object gui/qt/CMakeFiles/sonic-pi.dir/widgets/infowidget.cpp.o
+[ 4456s] [ 73%] Building CXX object gui/qt/CMakeFiles/sonic-pi.dir/widgets/settingswidget.cpp.o
+[ 4504s] [ 73%] Building CXX object gui/qt/CMakeFiles/sonic-pi.dir/widgets/bpmscrubwidget.cpp.o
+[ 4557s] [ 74%] Building CXX object gui/qt/CMakeFiles/sonic-pi.dir/mainwindow.cpp.o
+[ 6601s] c++: internal compiler error: Segmentation fault signal terminated program cc1plus
+[ 6601s] Please submit a full bug report, with preprocessed source (by using -freport-bug).
+[ 6601s] See <https://bugs.opensuse.org/> for instructions.
+[ 6601s] gmake[2]: *** [gui/qt/CMakeFiles/sonic-pi.dir/build.make:3618: gui/qt/CMakeFiles/sonic-pi.dir/mainwindow.cpp.o] Error 4
+[ 6601s] gmake[1]: *** [CMakeFiles/Makefile2:368: gui/qt/CMakeFiles/sonic-pi.dir/all] Error 2
+[ 6601s] gmake: *** [Makefile:91: all] Error 2
+[ 6601s] error: Bad exit status from /var/tmp/rpm-tmp.7H58fh (%build)
+[ 6601s] 
+[ 6601s] RPM build errors:
+[ 6601s]     Bad exit status from /var/tmp/rpm-tmp.7H58fh (%build)
+[ 6601s] ### VM INTERACTION START ###
+[ 6602s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[ 6602s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[ 6602s] Powering off.
+[ 6602s] [ 6595.353269][T29508] reboot: Power down
+[ 6602s] ### VM INTERACTION END ###
+[ 6602s] 
+[ 6602s] lamb71 failed "build sonic-pi.spec" at Wed Apr 12 10:26:47 UTC 2023.
+[ 6602s] 

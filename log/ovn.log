@@ -1,0 +1,961 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_8/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_8/root
+[    0s] 
+[    0s] 
+[    0s] lamb10 started "build ovn.spec" at Fri Apr 14 20:03:11 UTC 2023.
+[    0s] 
+[    0s] Building ovn for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '739ad5992c286d6651af08bd0cfb81cc'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_8/.build-srcdir/ovn.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_8/.build-srcdir/ovn.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/8/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_8/.build.rpmlist /var/cache/obs/worker/root_8/.build-srcdir/ovn.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [94b81b64984331d682dcdc187ad423a3]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: libpython3_10-1_0 -> python310-base
+[    3s]   breaking dependency python310-base -> libpython3_10-1_0
+[    3s] cycle: openssl -> openssl-3
+[    3s]   breaking dependency openssl-3 -> openssl
+[    3s] cycle: python310-sphinx_rtd_theme -> python310-Sphinx
+[    3s]   breaking dependency python310-Sphinx -> python310-sphinx_rtd_theme
+[    3s] cycle: python310-Sphinx -> python310-sphinxcontrib-applehelp
+[    3s]   breaking dependency python310-Sphinx -> python310-sphinxcontrib-applehelp
+[    3s] cycle: python310-Sphinx -> python310-sphinxcontrib-devhelp
+[    3s]   breaking dependency python310-Sphinx -> python310-sphinxcontrib-devhelp
+[    3s] cycle: python310-Sphinx -> python310-sphinxcontrib-htmlhelp
+[    3s]   breaking dependency python310-Sphinx -> python310-sphinxcontrib-htmlhelp
+[    3s] cycle: python310-Sphinx -> python310-sphinxcontrib-jsmath
+[    3s]   breaking dependency python310-Sphinx -> python310-sphinxcontrib-jsmath
+[    3s] cycle: python310-Sphinx -> python310-sphinxcontrib-qthelp
+[    3s]   breaking dependency python310-Sphinx -> python310-sphinxcontrib-qthelp
+[    3s] cycle: python310-Sphinx -> python310-sphinxcontrib-serializinghtml
+[    3s]   breaking dependency python310-Sphinx -> python310-sphinxcontrib-serializinghtml
+[    3s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    3s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    3s] cycle: graphviz-plugins-core -> graphviz
+[    3s]   breaking dependency graphviz-plugins-core -> graphviz
+[    3s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_8/.mount/boot/kernel -initrd /var/cache/obs/worker/root_8/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_8/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_8/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_8/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.2.10-1-default #1 SMP PREEMPT_DYNAMIC Thu Apr 6 10:36:55 UTC 2023 (ba7816e)
+[   10s] Increasing log level from now on...
+[   10s] [    5.017168][  T414] sysrq: Changing Loglevel
+[   10s] [    5.017284][  T414] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=6f2fcfbb-d2f7-4b88-9ea0-2cbd0bb43843
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/ovn.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/ovn.spec build ...
+[   13s] initializing rpm db...
+[   13s] querying package ids...
+[   39s] [1/208] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   39s] [2/208] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   39s] [3/208] preinstalled attr-2.5.1-1.1
+[   39s] [4/208] preinstalled bash-5.2.15-8.1
+[   39s] [5/208] preinstalled bash-sh-5.2.15-8.1
+[   39s] [6/208] preinstalled binutils-2.40-4.1
+[   39s] [7/208] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   39s] [8/208] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   39s] [9/208] preinstalled build-mkbaselibs-20230314-1.1
+[   39s] [10/208] preinstalled bzip2-1.0.8-5.1
+[   39s] [11/208] preinstalled chkstat-1599_20230217-1.1
+[   39s] [12/208] preinstalled compat-usrmerge-build-84.87-5.1
+[   39s] [13/208] preinstalled compat-usrmerge-tools-84.87-5.1
+[   39s] [14/208] preinstalled coreutils-9.2-2.1
+[   39s] [15/208] preinstalled cpio-2.13-5.1
+[   39s] [16/208] preinstalled cpp-13-1.1
+[   39s] [17/208] preinstalled cpp13-13.0.1+git6995-8.1
+[   39s] [18/208] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   39s] [19/208] preinstalled debugedit-5.0-5.1
+[   39s] [20/208] preinstalled diffutils-3.9-1.1
+[   39s] [21/208] preinstalled dwz-0.15-2.1
+[   39s] [22/208] preinstalled elfutils-0.189-2.1
+[   39s] [23/208] preinstalled file-5.44-1.3
+[   39s] [24/208] preinstalled file-magic-5.44-1.3
+[   39s] [25/208] preinstalled filesystem-84.87-12.1
+[   39s] [26/208] preinstalled fillup-1.42-279.1
+[   39s] [27/208] preinstalled findutils-4.9.0-2.1
+[   39s] [28/208] preinstalled gawk-5.2.1-2.1
+[   39s] [29/208] preinstalled gcc-13-1.1
+[   39s] [30/208] preinstalled gcc-PIE-13-1.1
+[   39s] [31/208] preinstalled gcc13-13.0.1+git6995-8.1
+[   39s] [32/208] preinstalled gcc13-PIE-13.0.1+git6995-8.1
+[   39s] [33/208] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   39s] [34/208] preinstalled gettext-tools-mini-0.21.1-1.1
+[   39s] [35/208] preinstalled glibc-2.37-3.1
+[   39s] [36/208] preinstalled glibc-devel-2.37-3.1
+[   39s] [37/208] preinstalled glibc-locale-base-2.37-3.1
+[   39s] [38/208] preinstalled grep-3.9-1.1
+[   39s] [39/208] preinstalled gzip-1.12-3.1
+[   39s] [40/208] preinstalled kernel-obs-build-6.2.10-1.1
+[   39s] [41/208] preinstalled libacl1-2.3.1-2.1
+[   39s] [42/208] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   39s] [43/208] preinstalled libasan8-13.0.1+git6995-8.1
+[   39s] [44/208] preinstalled libasm1-0.189-2.1
+[   39s] [45/208] preinstalled libatomic1-13.0.1+git6995-8.1
+[   39s] [46/208] preinstalled libattr1-2.5.1-1.1
+[   39s] [47/208] preinstalled libaudit1-3.0.9-1.1
+[   39s] [48/208] preinstalled libblkid1-2.38.1-12.1
+[   39s] [49/208] preinstalled libbz2-1-1.0.8-5.1
+[   39s] [50/208] preinstalled libcap-ng0-0.8.3-1.1
+[   39s] [51/208] preinstalled libcap2-2.68-1.1
+[   39s] [52/208] cumulate libcdt5-2.49.3-6.1
+[   39s] [53/208] preinstalled libcrypt1-4.4.33-3.1
+[   39s] [54/208] preinstalled libctf-nobfd0-2.40-4.1
+[   39s] [55/208] preinstalled libctf0-2.40-4.1
+[   39s] [56/208] preinstalled libdb-4_8-4.8.30-40.1
+[   39s] [57/208] preinstalled libdw1-0.189-2.1
+[   39s] [58/208] preinstalled libeconf0-0.5.2-1.1
+[   39s] [59/208] preinstalled libelf1-0.189-2.1
+[   39s] [60/208] cumulate libexpat1-2.5.0-2.1
+[   39s] [61/208] preinstalled libfdisk1-2.38.1-12.1
+[   39s] [62/208] cumulate libffi8-3.4.4-1.1
+[   39s] [63/208] preinstalled libgcc_s1-13.0.1+git6995-8.1
+[   39s] [64/208] preinstalled libgcrypt20-1.10.2-1.1
+[   39s] [65/208] preinstalled libgdbm6-1.23-1.1
+[   39s] [66/208] preinstalled libgdbm_compat4-1.23-1.1
+[   39s] [67/208] cumulate libglib-2_0-0-2.76.1-1.1
+[   39s] [68/208] preinstalled libgmp10-6.2.1-4.1
+[   39s] [69/208] preinstalled libgomp1-13.0.1+git6995-8.1
+[   39s] [70/208] preinstalled libgpg-error0-1.47-1.1
+[   39s] [71/208] preinstalled libisl23-0.26-1.1
+[   39s] [72/208] preinstalled libitm1-13.0.1+git6995-8.1
+[   39s] [73/208] cumulate liblab_gamut1-2.49.3-6.1
+[   39s] [74/208] cumulate libltdl7-2.4.7-3.2
+[   39s] [75/208] preinstalled liblua5_4-5-5.4.4-10.1
+[   39s] [76/208] preinstalled liblzma5-5.4.2-2.1
+[   39s] [77/208] preinstalled libmagic1-5.44-1.3
+[   39s] [78/208] preinstalled libmount1-2.38.1-12.1
+[   39s] [79/208] preinstalled libmpc3-1.3.1-1.2
+[   39s] [80/208] cumulate libmpdec3-2.5.1-2.1
+[   39s] [81/208] preinstalled libmpfr6-4.2.0-1.1
+[   39s] [82/208] preinstalled libncurses6-6.4.20230408-9.1
+[   39s] [83/208] cumulate libpathplan4-2.49.3-6.1
+[   39s] [84/208] preinstalled libpcre2-8-0-10.42-3.2
+[   39s] [85/208] preinstalled libpkgconf3-1.8.0-2.1
+[   39s] [86/208] preinstalled libpopt0-1.19-1.1
+[   39s] [87/208] preinstalled libreadline8-8.2-2.1
+[   39s] [88/208] preinstalled librpmbuild9-4.18.0-4.2
+[   39s] [89/208] preinstalled libseccomp2-2.5.4-2.1
+[   39s] [90/208] preinstalled libselinux1-3.5-1.1
+[   39s] [91/208] preinstalled libsemanage-conf-3.5-1.2
+[   39s] [92/208] preinstalled libsemanage2-3.5-1.2
+[   39s] [93/208] preinstalled libsepol2-3.5-1.1
+[   39s] [94/208] preinstalled libsmartcols1-2.38.1-12.1
+[   39s] [95/208] cumulate libsodium23-1.0.18-2.2
+[   39s] [96/208] cumulate libsqlite3-0-3.41.2-1.1
+[   39s] [97/208] preinstalled libstdc++6-13.0.1+git6995-8.1
+[   39s] [98/208] preinstalled libsubid4-4.13-4.1
+[   39s] [99/208] cumulate libtasn1-6-4.19.0-1.1
+[   39s] [100/208] preinstalled libubsan1-13.0.1+git6995-8.1
+[   39s] [101/208] preinstalled libutempter0-1.2.0-3.2
+[   39s] [102/208] preinstalled libuuid1-2.38.1-12.1
+[   39s] [103/208] preinstalled libxcrypt-devel-4.4.33-3.1
+[   39s] [104/208] preinstalled libz1-1.2.13-3.1
+[   39s] [105/208] preinstalled libzstd1-1.5.4-2.1
+[   39s] [106/208] preinstalled linux-glibc-devel-6.2-1.1
+[   39s] [107/208] preinstalled login_defs-4.13-4.1
+[   39s] [108/208] preinstalled lua54-5.4.4-10.1
+[   39s] [109/208] cumulate m4-1.4.18-7.1
+[   39s] [110/208] preinstalled make-4.4.1-2.1
+[   39s] [111/208] preinstalled ncurses-utils-6.4.20230408-9.1
+[   39s] [112/208] preinstalled pam-1.5.2-14.1
+[   39s] [113/208] preinstalled patch-2.7.6-6.1
+[   39s] [114/208] preinstalled perl-5.36.0-4.1
+[   39s] [115/208] preinstalled perl-base-5.36.0-4.1
+[   39s] [116/208] preinstalled permissions-1599_20230217-1.1
+[   39s] [117/208] preinstalled permissions-config-1599_20230217-1.1
+[   39s] [118/208] preinstalled pkgconf-1.8.0-2.1
+[   39s] [119/208] preinstalled pkgconf-m4-1.8.0-2.1
+[   39s] [120/208] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   39s] [121/208] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   39s] [122/208] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   39s] [123/208] cumulate python-rpm-macros-20230403.29b58f8-1.1
+[   39s] [124/208] preinstalled qemu-linux-user-7.1.0-58.1
+[   39s] [125/208] preinstalled rpm-4.18.0-4.2
+[   39s] [126/208] preinstalled rpm-build-4.18.0-4.2
+[   39s] [127/208] preinstalled rpm-build-perl-4.18.0-4.2
+[   39s] [128/208] preinstalled rpm-config-SUSE-20220926-1.1
+[   39s] [129/208] preinstalled rpmlint-mini-2.4.0+git20230403.7ce263c-10.5
+[   39s] [130/208] preinstalled rpmlint-strict-2.4.0+git20230411.8f9c3d4-1.1
+[   39s] [131/208] preinstalled sed-4.9-2.1
+[   39s] [132/208] preinstalled shadow-4.13-4.1
+[   39s] [133/208] preinstalled system-group-hardware-20170617-24.1
+[   39s] [134/208] preinstalled system-user-root-20190513-2.1
+[   39s] [135/208] preinstalled systemd-rpm-macros-20-1.1
+[   39s] [136/208] preinstalled sysuser-shadow-3.1-5.1
+[   39s] [137/208] preinstalled tar-1.34-10.1
+[   39s] [138/208] preinstalled terminfo-base-6.4.20230408-9.1
+[   39s] [139/208] cumulate timezone-2023c-1.1
+[   39s] [140/208] preinstalled update-alternatives-1.21.8-1.1
+[   39s] [141/208] preinstalled util-linux-2.38.1-12.1
+[   39s] [142/208] preinstalled which-2.21-5.1
+[   39s] [143/208] preinstalled xz-5.4.2-2.1
+[   39s] [144/208] cumulate zlib-devel-1.2.13-3.1
+[   39s] [145/208] cumulate alts-1.2+3.b848aad-3.1
+[   39s] [146/208] cumulate autoconf-2.71-2.1
+[   39s] [147/208] cumulate libcgraph6-2.49.3-6.1
+[   39s] [148/208] cumulate libgts-0_7-5-0.7.6_p20121130-4.3
+[   39s] [149/208] cumulate libopenssl3-3.0.8-2.1
+[   39s] [150/208] cumulate libp11-kit0-0.24.1-2.1
+[   39s] [151/208] cumulate automake-1.16.5-3.1
+[   39s] [152/208] cumulate libevent-2_1-7-2.1.12-3.2
+[   39s] [153/208] cumulate libgvpr2-2.49.3-6.1
+[   39s] [154/208] cumulate p11-kit-0.24.1-2.1
+[   39s] [155/208] cumulate p11-kit-tools-0.24.1-2.1
+[   39s] [156/208] cumulate libgvc6-2.49.3-6.1
+[   39s] [157/208] cumulate ca-certificates-2+git20230406.2dae8b7-1.1
+[   39s] [158/208] cumulate libtool-2.4.7-3.2
+[   39s] [159/208] cumulate ca-certificates-mozilla-2.60-2.1
+[   39s] [160/208] cumulate openssl-3-3.0.8-2.1
+[   39s] [161/208] cumulate python310-base-3.10.10-2.1
+[   39s] [162/208] cumulate graphviz-plugins-core-2.49.3-6.1
+[   39s] [163/208] cumulate libpython3_10-1_0-3.10.10-2.1
+[   39s] [164/208] cumulate openssl-3.0.8-1.1
+[   39s] [165/208] cumulate python310-MarkupSafe-2.1.2-1.3
+[   39s] [166/208] cumulate python310-alabaster-0.7.13-1.3
+[   39s] [167/208] cumulate python310-apipkg-3.0.1-2.2
+[   39s] [168/208] cumulate python310-charset-normalizer-3.1.0-1.2
+[   39s] [169/208] cumulate python310-idna-3.4-1.3
+[   39s] [170/208] cumulate python310-imagesize-1.4.1-1.3
+[   39s] [171/208] cumulate python310-iniconfig-2.0.0-1.2
+[   39s] [172/208] cumulate python310-packaging-23.0-2.1
+[   39s] [173/208] cumulate python310-pycparser-2.21-1.6
+[   39s] [174/208] cumulate python310-setuptools-67.6.0-1.2
+[   39s] [175/208] cumulate python310-six-1.16.0-2.6
+[   39s] [176/208] cumulate python310-snowballstemmer-2.2.0-1.6
+[   39s] [177/208] cumulate python310-sortedcontainers-2.4.0-1.6
+[   39s] [178/208] cumulate libevent-devel-2.1.12-3.2
+[   39s] [179/208] cumulate python310-3.10.10-2.1
+[   39s] [180/208] cumulate python310-Pygments-2.14.0-1.3
+[   39s] [181/208] cumulate python310-pytz-2023.3-1.1
+[   39s] [182/208] cumulate python310-certifi-2022.9.24-1.3
+[   39s] [183/208] cumulate graphviz-2.49.3-6.1
+[   39s] [184/208] cumulate python310-Jinja2-3.1.2-2.3
+[   39s] [185/208] cumulate python310-docutils-0.19-3.3
+[   39s] [186/208] cumulate libopenssl-devel-3.0.8-1.1
+[   39s] [187/208] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   39s] [188/208] cumulate python310-Babel-2.11.0-1.3
+[   39s] [189/208] cumulate python310-cffi-1.15.1-3.3
+[   39s] [190/208] cumulate python310-py-1.11.0-3.3
+[   39s] [191/208] cumulate libunbound-devel-mini-1.17.1-1.1
+[   39s] [192/208] cumulate libopenvswitch-3_1-0-3.1.0-16.1
+[   39s] [193/208] cumulate python310-pyOpenSSL-23.1.1-1.2
+[   39s] [194/208] cumulate libopenssl-3-devel-3.0.8-2.1
+[   39s] [195/208] cumulate python310-sphinxcontrib-websupport-1.2.4-3.1
+[   39s] [196/208] cumulate python310-cryptography-40.0.1-2.1
+[   39s] [197/208] cumulate python3-ovs-3.1.0-16.1
+[   39s] [198/208] cumulate python310-urllib3-1.26.15-1.2
+[   39s] [199/208] cumulate openvswitch-devel-3.1.0-16.1
+[   39s] [200/208] cumulate python310-requests-2.28.2-2.2
+[   39s] [201/208] cumulate python310-Sphinx-6.1.3-2.3
+[   39s] [202/208] cumulate python310-sphinx_rtd_theme-1.1.1-1.4
+[   39s] [203/208] cumulate python310-sphinxcontrib-applehelp-1.0.4-1.2
+[   39s] [204/208] cumulate python310-sphinxcontrib-devhelp-1.0.2-1.11
+[   39s] [205/208] cumulate python310-sphinxcontrib-htmlhelp-2.0.1-1.2
+[   39s] [206/208] cumulate python310-sphinxcontrib-jsmath-1.0.1-3.5
+[   39s] [207/208] cumulate python310-sphinxcontrib-qthelp-1.0.3-2.5
+[   39s] [208/208] cumulate python310-sphinxcontrib-serializinghtml-1.1.5-1.7
+[   39s] now installing cumulated packages
+[   40s] Preparing...                          ########################################
+[   40s] Updating / installing...
+[   40s] libcdt5-2.49.3-6.1                    ########################################
+[   40s] libcgraph6-2.49.3-6.1                 ########################################
+[   41s] libglib-2_0-0-2.76.1-1.1              ########################################
+[   41s] libffi8-3.4.4-1.1                     ########################################
+[   41s] libexpat1-2.5.0-2.1                   ########################################
+[   41s] libp11-kit0-0.24.1-2.1                ########################################
+[   41s] libgts-0_7-5-0.7.6_p20121130-4.3      ########################################
+[   41s] m4-1.4.18-7.1                         ########################################
+[   41s] libtasn1-6-4.19.0-1.1                 ########################################
+[   42s] libpathplan4-2.49.3-6.1               ########################################
+[   42s] libltdl7-2.4.7-3.2                    ########################################
+[   42s] libgvc6-2.49.3-6.1                    ########################################
+[   42s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   42s] p11-kit-0.24.1-2.1                    ########################################
+[   42s] p11-kit-tools-0.24.1-2.1              ########################################
+[   42s] ca-certificates-2+git20230406.2dae8b7-########################################
+[   45s] ca-certificates-mozilla-2.60-2.1      ########################################
+[   51s] libopenssl3-3.0.8-2.1                 ########################################
+[   51s] libevent-2_1-7-2.1.12-3.2             ########################################
+[   51s] openssl-3.0.8-1.1                     ########################################
+[   51s] openssl-3-3.0.8-2.1                   ########################################
+[   52s] autoconf-2.71-2.1                     ########################################
+[   52s] automake-1.16.5-3.1                   ########################################
+[   52s] libgvpr2-2.49.3-6.1                   ########################################
+[   53s] zlib-devel-1.2.13-3.1                 ########################################
+[   54s] libopenssl-3-devel-3.0.8-2.1          ########################################
+[   56s] timezone-2023c-1.1                    ########################################
+[   56s] python-rpm-macros-20230403.29b58f8-1.1########################################
+[   57s] libsqlite3-0-3.41.2-1.1               ########################################
+[   57s] libsodium23-1.0.18-2.2                ########################################
+[   57s] libmpdec3-2.5.1-2.1                   ########################################
+[   57s] libpython3_10-1_0-3.10.10-2.1         ########################################
+[   57s] python310-3.10.10-2.1                 ########################################
+[   62s] python310-base-3.10.10-2.1            ########################################
+[   62s] python310-packaging-23.0-2.1          ########################################
+[   62s] python310-idna-3.4-1.3                ########################################
+[   62s] python310-certifi-2022.9.24-1.3       ########################################
+[   62s] python310-MarkupSafe-2.1.2-1.3        ########################################
+[   62s] python310-alabaster-0.7.13-1.3        ########################################
+[   62s] python310-apipkg-3.0.1-2.2            ########################################
+[   62s] python310-charset-normalizer-3.1.0-1.2########################################
+[   62s] python310-imagesize-1.4.1-1.3         ########################################
+[   62s] python310-iniconfig-2.0.0-1.2         ########################################
+[   62s] python310-py-1.11.0-3.3               ########################################
+[   62s] python310-pycparser-2.21-1.6          ########################################
+[   63s] python310-cffi-1.15.1-3.3             ########################################
+[   63s] python310-cryptography-40.0.1-2.1     ########################################
+[   63s] python310-pyOpenSSL-23.1.1-1.2        ########################################
+[   64s] python310-setuptools-67.6.0-1.2       ########################################
+[   64s] python310-six-1.16.0-2.6              ########################################
+[   64s] python310-urllib3-1.26.15-1.2         ########################################
+[   64s] python310-requests-2.28.2-2.2         ########################################
+[   65s] python310-snowballstemmer-2.2.0-1.6   ########################################
+[   65s] python310-sortedcontainers-2.4.0-1.6  ########################################
+[   65s] libevent-devel-2.1.12-3.2             ########################################
+[   65s] libunbound-devel-mini-1.17.1-1.1      ########################################
+[   66s] libopenvswitch-3_1-0-3.1.0-16.1       ########################################
+[   66s] python3-ovs-3.1.0-16.1                ########################################
+[   66s] python310-pytz-2023.3-1.1             ########################################
+[   66s] liblab_gamut1-2.49.3-6.1              ########################################
+[   66s] graphviz-2.49.3-6.1                   ########################################
+[   66s] graphviz-plugins-core-2.49.3-6.1      ########################################
+[   67s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   67s] alts-1.2+3.b848aad-3.1                ########################################
+[   68s] python310-Pygments-2.14.0-1.3         ########################################
+[   69s] python310-docutils-0.19-3.3           ########################################
+[   73s] python310-Babel-2.11.0-1.3            ########################################
+[   74s] python310-Jinja2-3.1.2-2.3            ########################################
+[   74s] python310-sphinxcontrib-websupport-1.2########################################
+[   74s] python310-sphinx_rtd_theme-1.1.1-1.4  ########################################
+[   74s] python310-sphinxcontrib-applehelp-1.0.########################################
+[   74s] python310-sphinxcontrib-devhelp-1.0.2-########################################
+[   74s] python310-sphinxcontrib-htmlhelp-2.0.1########################################
+[   74s] python310-sphinxcontrib-jsmath-1.0.1-3########################################
+[   74s] python310-sphinxcontrib-qthelp-1.0.3-2########################################
+[   74s] python310-sphinxcontrib-serializinghtm########################################
+[   76s] python310-Sphinx-6.1.3-2.3            ########################################
+[   77s] openvswitch-devel-3.1.0-16.1          ########################################
+[   77s] python-rpm-packaging-20210526+a18ca48-########################################
+[   77s] libopenssl-devel-3.0.8-1.1            ########################################
+[   77s] libtool-2.4.7-3.2                     ########################################
+[   87s] now finalizing build dir...
+[   87s] ... running 01-add_abuild_user_to_trusted_group
+[   88s] ... running 02-set_timezone_to_utc
+[   88s] ... running 03-set-permissions-secure
+[   88s] ... running 11-hack_uname_version_to_kernel_version
+[   96s] -----------------------------------------------------------------
+[   96s] I have the following modifications for ovn.spec:
+[   96s] 30c30
+[   96s] < Release:        0
+[   96s] ---
+[   96s] > Release:        1.2
+[  103s] build target is riscv64-suse-linux
+[  103s] -----------------------------------------------------------------
+[  103s] ----- building ovn.spec (user abuild)
+[  103s] -----------------------------------------------------------------
+[  103s] -----------------------------------------------------------------
+[  106s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/739ad5992c286d6651af08bd0cfb81cc-ovn' /home/abuild/rpmbuild/SOURCES/ovn.spec
+[  107s] Building target platforms: riscv64-suse-linux
+[  107s] Building for target riscv64-suse-linux
+[  107s] setting SOURCE_DATE_EPOCH=1664841600
+[  107s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Li79Nz
+[  107s] + umask 022
+[  107s] + cd /home/abuild/rpmbuild/BUILD
+[  107s] + cd /home/abuild/rpmbuild/BUILD
+[  107s] + rm -rf ovn-21.09.1
+[  107s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/ovn-21.09.1.tar.gz
+[  108s] + STATUS=0
+[  108s] + '[' 0 -ne 0 ']'
+[  108s] + cd ovn-21.09.1
+[  108s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  108s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0001-Run-ovn-as-openvswitch-openvswitch.patch
+[  108s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  108s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0001-build-allow-building-with-installed-ovs.patch
+[  108s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  109s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0002-build-Add-missing-troff-macros.patch
+[  109s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  109s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0003-build-Fix-ovs-include-paths.patch
+[  109s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  109s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0004-add-xml.patch
+[  109s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  110s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/0005-build-fix-ovs-function-signature.patch
+[  110s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  110s] + RPM_EC=0
+[  110s] ++ jobs -p
+[  110s] + exit 0
+[  110s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Aq16RH
+[  110s] + umask 022
+[  110s] + cd /home/abuild/rpmbuild/BUILD
+[  110s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/ovn-21.09.1-1.2.riscv64
+[  111s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/ovn-21.09.1-1.2.riscv64
+[  111s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  111s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/ovn-21.09.1-1.2.riscv64
+[  111s] + cd ovn-21.09.1
+[  111s] + ref=/usr/lib/rpm
+[  111s] + mints=0
+[  111s] + case $(uname -m) in
+[  111s] ++ uname -m
+[  111s] + mints=20160911
+[  111s] + for s in guess sub
+[  111s] ++ find -maxdepth 8 -name config.guess
+[  111s] + for s in guess sub
+[  111s] ++ find -maxdepth 8 -name config.sub
+[  111s] + bash -x boot.sh
+[  111s] + autoreconf --install --force
+[  149s] libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+[  149s] libtoolize: copying file 'build-aux/ltmain.sh'
+[  150s] libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+[  150s] libtoolize: copying file 'm4/libtool.m4'
+[  153s] libtoolize: copying file 'm4/ltoptions.m4'
+[  155s] libtoolize: copying file 'm4/ltsugar.m4'
+[  157s] libtoolize: copying file 'm4/ltversion.m4'
+[  159s] libtoolize: copying file 'm4/lt~obsolete.m4'
+[  188s] configure.ac:25: warning: The macro `AC_PROG_CC_C99' is obsolete.
+[  188s] configure.ac:25: You should run autoupdate.
+[  188s] ./lib/autoconf/c.m4:1659: AC_PROG_CC_C99 is expanded from...
+[  188s] configure.ac:25: the top level
+[  188s] configure.ac:88: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:88: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+[  188s] m4/ovn.m4:20: OVN_CHECK_COVERAGE is expanded from...
+[  188s] configure.ac:88: the top level
+[  188s] configure.ac:89: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:89: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+[  188s] m4/ovn.m4:50: OVS_CHECK_NDEBUG is expanded from...
+[  188s] configure.ac:89: the top level
+[  188s] configure.ac:90: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:90: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+[  188s] m4/ovn.m4:197: OVS_CHECK_OPENSSL is expanded from...
+[  188s] configure.ac:90: the top level
+[  188s] configure.ac:91: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:91: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] m4/ovn.m4:270: OVN_CHECK_LOGDIR is expanded from...
+[  188s] configure.ac:91: the top level
+[  188s] configure.ac:114: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:114: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] m4/ovn.m4:249: OVS_CHECK_PKIDIR is expanded from...
+[  188s] configure.ac:114: the top level
+[  188s] configure.ac:115: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:115: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] m4/ovn.m4:259: OVN_CHECK_RUNDIR is expanded from...
+[  188s] configure.ac:115: the top level
+[  188s] configure.ac:116: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:116: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] m4/ovn.m4:280: OVN_CHECK_DBDIR is expanded from...
+[  188s] configure.ac:116: the top level
+[  188s] configure.ac:132: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:132: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+[  188s] acinclude.m4:18: OVS_ENABLE_WERROR is expanded from...
+[  188s] m4/ovn.m4:556: OVS_CHECK_CXX is expanded from...
+[  188s] configure.ac:132: the top level
+[  188s] configure.ac:133: warning: The macro `AC_TRY_RUN' is obsolete.
+[  188s] configure.ac:133: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  188s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  188s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  188s] ./lib/autoconf/general.m4:2249: AC_CACHE_VAL is expanded from...
+[  188s] ./lib/autoconf/general.m4:2270: AC_CACHE_CHECK is expanded from...
+[  188s] m4/ax_func_posix_memalign.m4:27: AX_FUNC_POSIX_MEMALIGN is expanded from...
+[  188s] configure.ac:133: the top level
+[  188s] configure.ac:135: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:135: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+[  188s] m4/ovn.m4:581: OVS_CHECK_DDLOG_FAST_BUILD is expanded from...
+[  188s] configure.ac:135: the top level
+[  188s] configure.ac:170: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:170: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+[  188s] acinclude.m4:314: OVS_ENABLE_SPARSE is expanded from...
+[  188s] configure.ac:170: the top level
+[  188s] configure.ac:172: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:172: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  188s] acinclude.m4:53: OVS_CHECK_DDLOG is expanded from...
+[  188s] configure.ac:172: the top level
+[  188s] configure.ac:175: warning: The macro `AC_HELP_STRING' is obsolete.
+[  188s] configure.ac:175: You should run autoupdate.
+[  188s] ./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+[  188s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  188s] acinclude.m4:401: OVN_CHECK_OVS is expanded from...
+[  188s] configure.ac:175: the top level
+[  188s] configure.ac:175: warning: The macro `AC_ERROR' is obsolete.
+[  188s] configure.ac:175: You should run autoupdate.
+[  188s] ./lib/autoconf/oldnames.m4:34: AC_ERROR is expanded from...
+[  188s] acinclude.m4:401: OVN_CHECK_OVS is expanded from...
+[  188s] configure.ac:175: the top level
+[  212s] configure.ac:25: installing 'build-aux/compile'
+[  212s] configure.ac:40: installing 'build-aux/config.guess'
+[  212s] configure.ac:40: installing 'build-aux/config.sub'
+[  212s] configure.ac:21: installing 'build-aux/install-sh'
+[  212s] configure.ac:21: installing 'build-aux/missing'
+[  213s] Makefile.am: installing 'build-aux/depcomp'
+[  214s] + CONFIG_SHELL=/usr/bin/bash
+[  214s] + export CONFIG_SHELL
+[  214s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  214s] + export CFLAGS
+[  214s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  214s] + export CXXFLAGS
+[  214s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  214s] + export FFLAGS
+[  214s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  214s] + export FCFLAGS
+[  214s] + LDFLAGS=-flto=auto
+[  214s] + export LDFLAGS
+[  214s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-static --enable-shared --enable-libcapng --enable-ssl --with-dbdir=/var/lib/ovn --with-rundir=/run/ovn --with-logdir=/var/log/ovn --with-pkidir=/var/lib/openvswitch/pki PYTHON3=/usr/bin/python3
+[  219s] configure: WARNING: unrecognized options: --enable-libcapng
+[  222s] checking for a BSD-compatible install... /usr/bin/install -c
+[  222s] checking whether build environment is sane... yes
+[  223s] checking for a race-free mkdir -p... /usr/bin/mkdir -p
+[  223s] checking for gawk... gawk
+[  223s] checking whether make sets $(MAKE)... yes
+[  223s] checking whether make supports nested variables... yes
+[  224s] checking how to create a pax tar archive... gnutar
+[  225s] checking whether make supports the include directive... yes (GNU style)
+[  225s] checking for riscv64-suse-linux-gnu-gcc... no
+[  225s] checking for gcc... gcc
+[  229s] checking whether the C compiler works... yes
+[  229s] checking for C compiler default output file name... a.out
+[  233s] checking for suffix of executables... 
+[  237s] checking whether we are cross compiling... no
+[  238s] checking for suffix of object files... o
+[  239s] checking whether the compiler supports GNU C... yes
+[  240s] checking whether gcc accepts -g... yes
+[  242s] checking for gcc option to enable C11 features... none needed
+[  244s] checking whether gcc understands -c and -o together... yes
+[  244s] checking dependency style of gcc... none
+[  244s] checking for riscv64-suse-linux-gnu-g++... no
+[  244s] checking for riscv64-suse-linux-gnu-c++... no
+[  244s] checking for riscv64-suse-linux-gnu-gpp... no
+[  244s] checking for riscv64-suse-linux-gnu-aCC... no
+[  244s] checking for riscv64-suse-linux-gnu-CC... no
+[  244s] checking for riscv64-suse-linux-gnu-cxx... no
+[  244s] checking for riscv64-suse-linux-gnu-cc++... no
+[  244s] checking for riscv64-suse-linux-gnu-cl.exe... no
+[  244s] checking for riscv64-suse-linux-gnu-FCC... no
+[  244s] checking for riscv64-suse-linux-gnu-KCC... no
+[  244s] checking for riscv64-suse-linux-gnu-RCC... no
+[  244s] checking for riscv64-suse-linux-gnu-xlC_r... no
+[  244s] checking for riscv64-suse-linux-gnu-xlC... no
+[  244s] checking for riscv64-suse-linux-gnu-clang++... no
+[  244s] checking for g++... no
+[  244s] checking for c++... no
+[  244s] checking for gpp... no
+[  244s] checking for aCC... no
+[  244s] checking for CC... no
+[  244s] checking for cxx... no
+[  244s] checking for cc++... no
+[  244s] checking for cl.exe... no
+[  244s] checking for FCC... no
+[  244s] checking for KCC... no
+[  244s] checking for RCC... no
+[  244s] checking for xlC_r... no
+[  244s] checking for xlC... no
+[  244s] checking for clang++... no
+[  245s] checking whether the compiler supports GNU C++... no
+[  247s] checking whether g++ accepts -g... no
+[  247s] checking for g++ option to enable C++11 features... none needed
+[  247s] checking dependency style of g++... none
+[  249s] checking how to run the C preprocessor... gcc -E
+[  250s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  250s] checking for fgrep... /usr/bin/grep -F
+[  250s] checking for egrep... /usr/bin/grep -E
+[  250s] checking for riscv64-suse-linux-gnu-pkg-config... /usr/bin/riscv64-suse-linux-gnu-pkg-config
+[  251s] checking pkg-config is at least version 0.9.0... yes
+[  252s] checking for stdio.h... yes
+[  253s] checking for stdlib.h... yes
+[  254s] checking for string.h... yes
+[  256s] checking for inttypes.h... yes
+[  257s] checking for stdint.h... yes
+[  258s] checking for strings.h... yes
+[  260s] checking for sys/stat.h... yes
+[  261s] checking for sys/types.h... yes
+[  263s] checking for unistd.h... yes
+[  265s] checking for wchar.h... yes
+[  266s] checking for minix/config.h... no
+[  268s] checking whether it is safe to define __EXTENSIONS__... yes
+[  269s] checking whether _XOPEN_SOURCE should be defined... no
+[  274s] checking whether byte ordering is bigendian... no
+[  274s] checking for special C compiler options needed for large files... no
+[  275s] checking for _FILE_OFFSET_BITS value needed for large files... no
+[  276s] checking build system type... riscv64-suse-linux-gnu
+[  276s] checking host system type... riscv64-suse-linux-gnu
+[  276s] checking how to print strings... printf
+[  276s] checking for a sed that does not truncate output... /usr/bin/sed
+[  277s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  277s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  277s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  278s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  278s] checking whether ln -s works... yes
+[  279s] checking the maximum length of command line arguments... 1572864
+[  279s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  279s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  279s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  279s] checking for riscv64-suse-linux-gnu-file... no
+[  279s] checking for file... file
+[  279s] checking for riscv64-suse-linux-gnu-objdump... no
+[  279s] checking for objdump... objdump
+[  279s] checking how to recognize dependent libraries... pass_all
+[  279s] checking for riscv64-suse-linux-gnu-dlltool... no
+[  279s] checking for dlltool... no
+[  279s] checking how to associate runtime and link libraries... printf %s\n
+[  279s] checking for riscv64-suse-linux-gnu-ar... no
+[  279s] checking for ar... ar
+[  280s] checking for archiver @FILE support... @
+[  280s] checking for riscv64-suse-linux-gnu-strip... no
+[  280s] checking for strip... strip
+[  280s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  280s] checking for ranlib... ranlib
+[  286s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  286s] checking for sysroot... no
+[  286s] checking for a working dd... /usr/bin/dd
+[  286s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[  286s] checking for riscv64-suse-linux-gnu-mt... no
+[  286s] checking for mt... no
+[  286s] checking if : is a manifest tool... no
+[  288s] checking for dlfcn.h... yes
+[  288s] checking for objdir... .libs
+[  294s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  294s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  295s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  296s] checking if gcc static flag -static works... no
+[  298s] checking if gcc supports -c -o file.o... yes
+[  298s] checking if gcc supports -c -o file.o... (cached) yes
+[  298s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  301s] checking whether -lc should be explicitly linked in... no
+[  306s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  306s] checking how to hardcode library paths into programs... immediate
+[  306s] checking whether stripping libraries is possible... yes
+[  306s] checking if libtool supports shared libraries... yes
+[  306s] checking whether to build shared libraries... yes
+[  306s] checking whether to build static libraries... no
+[  315s] checking for library containing pow... -lm
+[  319s] checking for library containing clock_gettime... none required
+[  323s] checking for library containing timer_create... none required
+[  327s] checking for library containing pthread_rwlock_tryrdlock... none required
+[  331s] checking for library containing pthread_rwlockattr_destroy... none required
+[  333s] checking for gcc options needed to detect all undeclared functions... none needed
+[  334s] checking whether strerror_r is declared... yes
+[  336s] checking whether strerror_r returns char *... yes
+[  336s] checking for MSVC x64 compiler... no
+[  337s] checking for windows.h... no
+[  337s] checking for pkg-config... (cached) /usr/bin/riscv64-suse-linux-gnu-pkg-config
+[  344s] checking whether compiling and linking against OpenSSL works... yes
+[  346s] checking whether SSL_set_tlsext_host_name is declared... yes
+[  346s] checking for Python 3 (version 3.4 or later)... /usr/bin/python3
+[  346s] checking for flake8... no
+[  346s] checking for sphinx... yes
+[  347s] checking for dot... yes
+[  348s] checking for net/if_dl.h... no
+[  353s] checking whether strtok_r macro segfaults on some inputs... no
+[  354s] checking whether sys_siglist is declared... no
+[  356s] checking whether malloc_trim is declared... yes
+[  357s] checking for struct stat.st_mtim.tv_nsec... yes
+[  359s] checking for struct stat.st_mtimensec... no
+[  362s] checking for struct ifreq.ifr_flagshigh... no
+[  363s] checking for struct mmsghdr.msg_len... yes
+[  364s] checking for struct sockaddr_in6.sin6_scope_id... yes
+[  368s] checking for strnlen... yes
+[  371s] checking for getloadavg... yes
+[  375s] checking for statvfs... yes
+[  379s] checking for getmntent_r... yes
+[  383s] checking for sendmmsg... yes
+[  386s] checking for clock_gettime... yes
+[  388s] checking for mntent.h... yes
+[  389s] checking for sys/statvfs.h... yes
+[  391s] checking for linux/types.h... yes
+[  392s] checking for linux/if_ether.h... yes
+[  393s] checking for linux/net_namespace.h... yes
+[  395s] checking for stdatomic.h... yes
+[  396s] checking for bits/floatn-common.h... yes
+[  397s] checking for net/if_mib.h... no
+[  401s] checking for library containing backtrace... none required
+[  402s] checking for linux/perf_event.h... yes
+[  404s] checking for valgrind/valgrind.h... no
+[  404s] checking for groff... no
+[  407s] checking whether gcc has <threads.h> that supports thread_local... yes
+[  415s] checking for library containing __atomic_load_8... -latomic
+[  420s] checking whether gcc supports GCC 4.0+ atomic built-ins... yes
+[  425s] checking value of __atomic_always_lock_free(1)... 1
+[  429s] checking value of __atomic_always_lock_free(2)... 1
+[  434s] checking value of __atomic_always_lock_free(4)... 1
+[  438s] checking value of __atomic_always_lock_free(8)... 1
+[  442s] checking for library containing aio_write... none required
+[  446s] checking for pthread_set_name_np... no
+[  450s] checking for pthread_setname_np() variant... glibc
+[  451s] checking whether __linux__ is defined... true
+[  451s] checking linker output version information... libX-21.09.so.0.0.1)
+[  451s] checking whether g++ supports C++11 features by default... no
+[  452s] checking whether g++ supports C++11 features with -std=gnu++11... no
+[  452s] checking whether g++ supports C++11 features with -std=gnu++0x... no
+[  453s] checking whether g++ supports C++11 features with -std=c++11... no
+[  453s] checking whether g++ supports C++11 features with +std=c++11... no
+[  454s] checking whether g++ supports C++11 features with -h std=c++11... no
+[  454s] checking whether g++ supports C++11 features with -std=c++0x... no
+[  455s] checking whether g++ supports C++11 features with +std=c++0x... no
+[  455s] checking whether g++ supports C++11 features with -h std=c++0x... no
+[  455s] configure: No compiler with C++11 support was found
+[  459s] checking for working posix_memalign... yes
+[  463s] checking for ub_ctx_create in -lunbound... yes
+[  464s] checking whether the preprocessor supports include_next... yes
+[  465s] checking whether system header files limit the line length... no
+[  466s] checking whether gcc accepts -Werror... yes
+[  466s] checking whether gcc accepts -Wall... yes
+[  467s] checking whether gcc accepts -Wextra... yes
+[  468s] checking whether gcc accepts -Wno-sign-compare... yes
+[  469s] checking whether gcc accepts -Wpointer-arith... yes
+[  470s] checking whether gcc accepts -Wformat -Wformat-security... yes
+[  470s] checking whether gcc accepts -Wswitch-enum... yes
+[  471s] checking whether gcc accepts -Wunused-parameter... yes
+[  472s] checking whether gcc accepts -Wbad-function-cast... yes
+[  473s] checking whether gcc accepts -Wcast-align... yes
+[  474s] checking whether gcc accepts -Wstrict-prototypes... yes
+[  474s] checking whether gcc accepts -Wold-style-definition... yes
+[  475s] checking whether gcc accepts -Wmissing-prototypes... yes
+[  476s] checking whether gcc accepts -Wmissing-field-initializers... yes
+[  477s] checking whether gcc accepts -Wthread-safety... no
+[  478s] checking whether gcc accepts -fno-strict-aliasing... yes
+[  478s] checking whether gcc accepts -Wswitch-bool... yes
+[  479s] checking whether gcc accepts -Wlogical-not-parentheses... yes
+[  480s] checking whether gcc accepts -Wsizeof-array-argument... yes
+[  481s] checking whether gcc accepts -Wbool-compare... yes
+[  482s] checking whether gcc accepts -Wshift-negative-value... yes
+[  482s] checking whether gcc accepts -Wduplicated-cond... yes
+[  483s] checking whether gcc accepts -Qunused-arguments... no
+[  484s] checking whether gcc accepts -Wshadow... yes
+[  485s] checking whether gcc accepts -Wmultistatement-macros... yes
+[  485s] checking whether gcc accepts -Wcast-align=strict... yes
+[  486s] checking whether gcc accepts -Wno-null-pointer-arithmetic... no
+[  487s] checking whether gcc accepts -Warray-bounds-pointer-arithmetic... no
+[  487s] checking whether gcc accepts -Wno-unused... yes
+[  488s] checking whether gcc accepts -Wno-unused-parameter... yes
+[  488s] checking target hint for cgcc... other
+[  489s] checking for DDlog library directory... no
+[  491s] checking for OVSlib... yes
+[  491s] checking for OVSDB... yes
+[  492s] checking OVS version... 3.1.0
+[  492s] configure: Checking for OVSDB development tools
+[  492s] checking for ovsdb-idlc... /usr/bin/ovsdb-idlc
+[  492s] configure: Checking for OVSDB dot
+[  492s] checking for /usr/share/openvswitch/ovsdb/ovsdb-dot... yes
+[  492s] configure: Checking for OVSDB doc program
+[  492s] checking for /usr/share/openvswitch/ovsdb/ovsdb-doc... yes
+[  492s] checking whether make supports nested variables... (cached) yes
+[  493s] checking that generated files are newer than configure... done
+[  493s] configure: creating ./config.status
+[  515s] config.status: creating lib/libovn.sym
+[  515s] config.status: creating Makefile
+[  516s] config.status: creating tests/atlocal
+[  517s] config.status: creating include/ovn/version.h
+[  517s] config.status: creating config.h
+[  518s] config.status: executing tests/atconfig commands
+[  518s] config.status: executing depfiles commands
+[  518s] config.status: executing libtool commands
+[  519s] config.status: executing include/openflow/openflow.h.stamp commands
+[  519s] config.status: executing utilities/bugtool/dummy commands
+[  519s] config.status: executing utilities/dummy commands
+[  519s] config.status: executing ipsec/dummy commands
+[  519s] configure: WARNING: unrecognized options: --enable-libcapng
+[  520s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[  523s] /usr/bin/ovsdb-idlc annotate ./ovn-ic-nb.ovsschema ./lib/ovn-ic-nb-idl.ann > lib/ovn-ic-nb-idl.ovsidl.tmp && \
+[  523s] mv lib/ovn-ic-nb-idl.ovsidl.tmp lib/ovn-ic-nb-idl.ovsidl
+[  523s] /usr/bin/ovsdb-idlc annotate ./ovn-ic-sb.ovsschema ./lib/ovn-ic-sb-idl.ann > lib/ovn-ic-sb-idl.ovsidl.tmp && \
+[  523s] mv lib/ovn-ic-sb-idl.ovsidl.tmp lib/ovn-ic-sb-idl.ovsidl
+[  523s] /usr/bin/ovsdb-idlc annotate ./ovn-sb.ovsschema ./lib/ovn-sb-idl.ann > lib/ovn-sb-idl.ovsidl.tmp && \
+[  523s] mv lib/ovn-sb-idl.ovsidl.tmp lib/ovn-sb-idl.ovsidl
+[  523s] /usr/bin/ovsdb-idlc annotate ./ovn-nb.ovsschema ./lib/ovn-nb-idl.ann > lib/ovn-nb-idl.ovsidl.tmp && \
+[  523s] mv lib/ovn-nb-idl.ovsidl.tmp lib/ovn-nb-idl.ovsidl
+[  525s] /usr/bin/ovsdb-idlc c-idl-header lib/ovn-ic-nb-idl.ovsidl > lib/ovn-ic-nb-idl.h.tmp && mv lib/ovn-ic-nb-idl.h.tmp lib/ovn-ic-nb-idl.h
+[  525s] /usr/bin/ovsdb-idlc c-idl-source lib/ovn-ic-nb-idl.ovsidl > lib/ovn-ic-nb-idl.c.tmp && mv lib/ovn-ic-nb-idl.c.tmp lib/ovn-ic-nb-idl.c
+[  525s] /usr/bin/ovsdb-idlc c-idl-header lib/ovn-ic-sb-idl.ovsidl > lib/ovn-ic-sb-idl.h.tmp && mv lib/ovn-ic-sb-idl.h.tmp lib/ovn-ic-sb-idl.h
+[  525s] /usr/bin/ovsdb-idlc c-idl-source lib/ovn-ic-sb-idl.ovsidl > lib/ovn-ic-sb-idl.c.tmp && mv lib/ovn-ic-sb-idl.c.tmp lib/ovn-ic-sb-idl.c
+[  526s] /usr/bin/ovsdb-idlc c-idl-header lib/ovn-sb-idl.ovsidl > lib/ovn-sb-idl.h.tmp && mv lib/ovn-sb-idl.h.tmp lib/ovn-sb-idl.h
+[  526s] /usr/bin/ovsdb-idlc c-idl-header lib/ovn-nb-idl.ovsidl > lib/ovn-nb-idl.h.tmp && mv lib/ovn-nb-idl.h.tmp lib/ovn-nb-idl.h
+[  526s] /usr/bin/ovsdb-idlc c-idl-source lib/ovn-sb-idl.ovsidl > lib/ovn-sb-idl.c.tmp && mv lib/ovn-sb-idl.c.tmp lib/ovn-sb-idl.c
+[  526s] /usr/bin/ovsdb-idlc c-idl-source lib/ovn-nb-idl.ovsidl > lib/ovn-nb-idl.c.tmp && mv lib/ovn-nb-idl.c.tmp lib/ovn-nb-idl.c
+[  526s] /usr/bin/make  all-am
+[  527s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  527s] (echo '/* -*- mode: c; buffer-read-only: t -*- */' && sed < ./lib/ovn-dirs.c.in \
+[  527s] 	-e 's,[@]srcdir[@],.,g' \
+[  527s] 	-e 's,[@]LOGDIR[@],"/var/log/ovn",g' \
+[  527s] 	-e 's,[@]OVN_RUNDIR[@],"/run/ovn",g' \
+[  527s] 	-e 's,[@]DBDIR[@],"/var/lib/ovn",g' \
+[  527s] 	-e 's,[@]bindir[@],"/usr/bin",g' \
+[  527s] 	-e 's,[@]sysconfdir[@],"/etc",g' \
+[  527s] 	-e 's,[@]pkgdatadir[@],"/usr/share/ovn",g') \
+[  527s]      > lib/ovn-dirs.c.tmp && \
+[  527s] mv lib/ovn-dirs.c.tmp lib/ovn-dirs.c
+[  527s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  528s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  528s] gcc -DHAVE_CONFIG_H -I.   -I ./include  -I ./include -I ./ovn -I ./include -I ./lib -I ./lib     -Wstrict-prototypes -Wall -Wextra -Wno-sign-compare -Wpointer-arith -Wformat -Wformat-security -Wswitch-enum -Wunused-parameter -Wbad-function-cast -Wcast-align -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-field-initializers -fno-strict-aliasing -Wswitch-bool -Wlogical-not-parentheses -Wsizeof-array-argument -Wbool-compare -Wshift-negative-value -Wduplicated-cond -Wshadow -Wmultistatement-macros -Wcast-align=strict   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o lib/test-ovn-features.o lib/test-ovn-features.c
+[  528s] In file included from lib/test-ovn-features.c:18:
+[  528s] ./include/ovn/features.h:21:10: fatal error: internal/smap.h: No such file or directory
+[  528s]    21 | #include "internal/smap.h"
+[  528s]       |          ^~~~~~~~~~~~~~~~~
+[  528s] compilation terminated.
+[  528s] make[1]: *** [Makefile:2223: lib/test-ovn-features.o] Error 1
+[  528s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  528s] make[1]: *** Waiting for unfinished jobs....
+[  528s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  528s] gcc -DHAVE_CONFIG_H -I.   -I ./include  -I ./include -I ./ovn -I ./include -I ./lib -I ./lib     -Wstrict-prototypes -Wall -Wextra -Wno-sign-compare -Wpointer-arith -Wformat -Wformat-security -Wswitch-enum -Wunused-parameter -Wbad-function-cast -Wcast-align -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-field-initializers -fno-strict-aliasing -Wswitch-bool -Wlogical-not-parentheses -Wsizeof-array-argument -Wbool-compare -Wshift-negative-value -Wduplicated-cond -Wshadow -Wmultistatement-macros -Wcast-align=strict   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o controller/test-lflow-cache.o controller/test-lflow-cache.c
+[  528s] controller/test-lflow-cache.c:18:10: fatal error: internal/uuid.h: No such file or directory
+[  528s]    18 | #include "internal/uuid.h"
+[  528s]       |          ^~~~~~~~~~~~~~~~~
+[  528s] compilation terminated.
+[  528s] make[1]: *** [Makefile:2223: controller/test-lflow-cache.o] Error 1
+[  528s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  528s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  528s] gcc -DHAVE_CONFIG_H -I.   -I ./include  -I ./include -I ./ovn -I ./include -I ./lib -I ./lib     -Wstrict-prototypes -Wall -Wextra -Wno-sign-compare -Wpointer-arith -Wformat -Wformat-security -Wswitch-enum -Wunused-parameter -Wbad-function-cast -Wcast-align -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-field-initializers -fno-strict-aliasing -Wswitch-bool -Wlogical-not-parentheses -Wsizeof-array-argument -Wbool-compare -Wshift-negative-value -Wduplicated-cond -Wshadow -Wmultistatement-macros -Wcast-align=strict   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o controller/test-ofctrl-seqno.o controller/test-ofctrl-seqno.c
+[  528s] In file included from controller/test-ofctrl-seqno.c:18:
+[  528s] ./tests/ovstest.h:20:10: fatal error: compiler.h: No such file or directory
+[  528s]    20 | #include "compiler.h"
+[  528s]       |          ^~~~~~~~~~~~
+[  528s] compilation terminated.
+[  528s] make[1]: *** [Makefile:2223: controller/test-ofctrl-seqno.o] Error 1
+[  528s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] PYTHONPATH=$PYTHONPATH":"./python /usr/bin/python3 ./build-aux/soexpand.py -I. -I/usr/include/openvswitch -I/usr/include < utilities/ovn-docker-overlay-driver.in | \
+[  529s]   /usr/bin/python3 ./build-aux/dpdkstrip.py  | \
+[  529s]   sed \
+[  529s]     -e 's,[@]PKIDIR[@],/var/lib/openvswitch/pki,g' \
+[  529s]     -e 's,[@]LOGDIR[@],/var/log/ovn,g' \
+[  529s]     -e 's,[@]DBDIR[@],/var/lib/ovn,g' \
+[  529s]     -e 's,[@]PYTHON3[@],/usr/bin/python3,g' \
+[  529s]     -e 's,[@]OVN_RUNDIR[@],/run/ovn,g' \
+[  529s]     -e 's,[@]OVSBUILDDIR[@],/usr/share/openvswitch/,g' \
+[  529s]     -e 's,[@]VERSION[@],21.09.1,g' \
+[  529s]     -e 's,[@]OVSVERSION[@],3.1.0,g' \
+[  529s]     -e 's,[@]localstatedir[@],/var,g' \
+[  529s]     -e 's,[@]pkgdatadir[@],/usr/share/ovn,g' \
+[  529s]     -e 's,[@]sysconfdir[@],/etc,g' \
+[  529s]     -e 's,[@]bindir[@],/usr/bin,g' \
+[  529s]     -e 's,[@]sbindir[@],/usr/sbin,g' \
+[  529s]     -e 's,[@]abs_builddir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]     -e 's,[@]abs_top_srcdir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]   > utilities/ovn-docker-overlay-driver.tmp
+[  529s] mv utilities/ovn-docker-overlay-driver.tmp utilities/ovn-docker-overlay-driver
+[  529s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] PYTHONPATH=$PYTHONPATH":"./python /usr/bin/python3 ./build-aux/soexpand.py -I. -I/usr/include/openvswitch -I/usr/include < utilities/ovn-detrace.in | \
+[  529s]   /usr/bin/python3 ./build-aux/dpdkstrip.py  | \
+[  529s]   sed \
+[  529s]     -e 's,[@]PKIDIR[@],/var/lib/openvswitch/pki,g' \
+[  529s]     -e 's,[@]LOGDIR[@],/var/log/ovn,g' \
+[  529s]     -e 's,[@]DBDIR[@],/var/lib/ovn,g' \
+[  529s]     -e 's,[@]PYTHON3[@],/usr/bin/python3,g' \
+[  529s]     -e 's,[@]OVN_RUNDIR[@],/run/ovn,g' \
+[  529s]     -e 's,[@]OVSBUILDDIR[@],/usr/share/openvswitch/,g' \
+[  529s]     -e 's,[@]VERSION[@],21.09.1,g' \
+[  529s]     -e 's,[@]OVSVERSION[@],3.1.0,g' \
+[  529s]     -e 's,[@]localstatedir[@],/var,g' \
+[  529s]     -e 's,[@]pkgdatadir[@],/usr/share/ovn,g' \
+[  529s]     -e 's,[@]sysconfdir[@],/etc,g' \
+[  529s]     -e 's,[@]bindir[@],/usr/bin,g' \
+[  529s]     -e 's,[@]sbindir[@],/usr/sbin,g' \
+[  529s]     -e 's,[@]abs_builddir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]     -e 's,[@]abs_top_srcdir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]   > utilities/ovn-detrace.tmp
+[  529s] mv utilities/ovn-detrace.tmp utilities/ovn-detrace
+[  529s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] PYTHONPATH=$PYTHONPATH":"./python /usr/bin/python3 ./build-aux/soexpand.py -I. -I/usr/include/openvswitch -I/usr/include < utilities/ovn-docker-underlay-driver.in | \
+[  529s]   /usr/bin/python3 ./build-aux/dpdkstrip.py  | \
+[  529s]   sed \
+[  529s]     -e 's,[@]PKIDIR[@],/var/lib/openvswitch/pki,g' \
+[  529s]     -e 's,[@]LOGDIR[@],/var/log/ovn,g' \
+[  529s]     -e 's,[@]DBDIR[@],/var/lib/ovn,g' \
+[  529s]     -e 's,[@]PYTHON3[@],/usr/bin/python3,g' \
+[  529s]     -e 's,[@]OVN_RUNDIR[@],/run/ovn,g' \
+[  529s]     -e 's,[@]OVSBUILDDIR[@],/usr/share/openvswitch/,g' \
+[  529s]     -e 's,[@]VERSION[@],21.09.1,g' \
+[  529s]     -e 's,[@]OVSVERSION[@],3.1.0,g' \
+[  529s]     -e 's,[@]localstatedir[@],/var,g' \
+[  529s]     -e 's,[@]pkgdatadir[@],/usr/share/ovn,g' \
+[  529s]     -e 's,[@]sysconfdir[@],/etc,g' \
+[  529s]     -e 's,[@]bindir[@],/usr/bin,g' \
+[  529s]     -e 's,[@]sbindir[@],/usr/sbin,g' \
+[  529s]     -e 's,[@]abs_builddir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]     -e 's,[@]abs_top_srcdir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]   > utilities/ovn-docker-underlay-driver.tmp
+[  529s] mv utilities/ovn-docker-underlay-driver.tmp utilities/ovn-docker-underlay-driver
+[  529s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] PYTHONPATH=$PYTHONPATH":"./python /usr/bin/python3 ./build-aux/soexpand.py -I. -I/usr/include/openvswitch -I/usr/include < utilities/ovn-sim.in | \
+[  529s]   /usr/bin/python3 ./build-aux/dpdkstrip.py  | \
+[  529s]   sed \
+[  529s]     -e 's,[@]PKIDIR[@],/var/lib/openvswitch/pki,g' \
+[  529s]     -e 's,[@]LOGDIR[@],/var/log/ovn,g' \
+[  529s]     -e 's,[@]DBDIR[@],/var/lib/ovn,g' \
+[  529s]     -e 's,[@]PYTHON3[@],/usr/bin/python3,g' \
+[  529s]     -e 's,[@]OVN_RUNDIR[@],/run/ovn,g' \
+[  529s]     -e 's,[@]OVSBUILDDIR[@],/usr/share/openvswitch/,g' \
+[  529s]     -e 's,[@]VERSION[@],21.09.1,g' \
+[  529s]     -e 's,[@]OVSVERSION[@],3.1.0,g' \
+[  529s]     -e 's,[@]localstatedir[@],/var,g' \
+[  529s]     -e 's,[@]pkgdatadir[@],/usr/share/ovn,g' \
+[  529s]     -e 's,[@]sysconfdir[@],/etc,g' \
+[  529s]     -e 's,[@]bindir[@],/usr/bin,g' \
+[  529s]     -e 's,[@]sbindir[@],/usr/sbin,g' \
+[  529s]     -e 's,[@]abs_builddir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]     -e 's,[@]abs_top_srcdir[@],/home/abuild/rpmbuild/BUILD/ovn-21.09.1,g' \
+[  529s]   > utilities/ovn-sim.tmp
+[  529s] mv utilities/ovn-sim.tmp utilities/ovn-sim
+[  529s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] PYTHONPATH=$PYTHONPATH./build-aux PYTHONDONTWRITEBYTECODE=yes /usr/bin/python3 ./build-aux/xml2nroff ovn-architecture.7.xml > ovn-architecture.7.tmp \
+[  529s]   -I . \
+[  529s]   -I @ovs_mandir@ \
+[  529s]   --version=21.09.1 \
+[  529s]   PKIDIR='/var/lib/openvswitch/pki' \
+[  529s]   LOGDIR='/var/log/ovn' \
+[  529s]   DBDIR='/var/lib/ovn' \
+[  529s]   PYTHON3='/usr/bin/python3' \
+[  529s]   RUNDIR='' \
+[  529s]   OVN_RUNDIR='/run/ovn' \
+[  529s]   VERSION='21.09.1' \
+[  529s]   localstatedir='/var' \
+[  529s]   pkgdatadir='/usr/share/ovn' \
+[  529s]   sysconfdir='/etc' \
+[  529s]   bindir='/usr/bin' \
+[  529s]   sbindir='/usr/sbin'
+[  529s] mv ovn-architecture.7.tmp ovn-architecture.7
+[  529s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/ovn-21.09.1'
+[  529s] make: *** [Makefile:1473: all] Error 2
+[  529s] error: Bad exit status from /var/tmp/rpm-tmp.Aq16RH (%build)
+[  529s] 
+[  529s] RPM build errors:
+[  529s]     Bad exit status from /var/tmp/rpm-tmp.Aq16RH (%build)
+[  529s] ### VM INTERACTION START ###
+[  530s] [  524.778428][    T1] sysrq: Power Off
+[  530s] [  524.781643][   T18] reboot: Power down
+[  530s] ### VM INTERACTION END ###
+[  530s] 
+[  530s] lamb10 failed "build ovn.spec" at Fri Apr 14 20:12:01 UTC 2023.
+[  530s] 

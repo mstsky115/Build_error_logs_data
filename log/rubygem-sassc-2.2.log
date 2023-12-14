@@ -1,0 +1,1397 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] build79 started "build rubygem-sassc-2.2.spec" at Wed Apr 19 16:08:28 UTC 2023.
+[    0s] 
+[    0s] Building rubygem-sassc-2.2 for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'b2538ab60ae022a95f2b4938aaba9ceb'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/rubygem-sassc-2.2.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/rubygem-sassc-2.2.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/rubygem-sassc-2.2.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [dfcd5cb3338f49f0d25e684137761894]
+[    2s] 
+[    2s] copying packages...
+[    3s] reordering...cycle: ruby3.2 -> ruby-common -> ruby3.2-rubygem-gem2rpm
+[    3s]   breaking dependency ruby3.2-rubygem-gem2rpm -> ruby3.2
+[    3s] done
+[    3s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 7250 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 3
+[   10s] ### VM INTERACTION END ###
+[   10s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.2.10-1-default #1 SMP PREEMPT_DYNAMIC Thu Apr 6 10:36:55 UTC 2023 (ba7816e)
+[   10s] Increasing log level from now on...
+[   10s] [    3.849939][  T360] sysrq: Changing Loglevel
+[   10s] [    3.850030][  T360] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   11s] no label, UUID=7fedcb57-a821-4f67-bbe0-98a5fd5847c5
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/rubygem-sassc-2.2.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/rubygem-sassc-2.2.spec build ...
+[   12s] initializing rpm db...
+[   13s] querying package ids...
+[   29s] [1/140] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   29s] [2/140] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   29s] [3/140] preinstalled attr-2.5.1-1.1
+[   29s] [4/140] preinstalled bash-5.2.15-8.1
+[   29s] [5/140] preinstalled bash-sh-5.2.15-8.1
+[   29s] [6/140] preinstalled binutils-2.40-4.1
+[   29s] [7/140] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   29s] [8/140] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   29s] [9/140] preinstalled build-mkbaselibs-20230314-1.1
+[   29s] [10/140] preinstalled bzip2-1.0.8-5.1
+[   29s] [11/140] preinstalled chkstat-1599_20230217-1.1
+[   29s] [12/140] preinstalled compat-usrmerge-build-84.87-5.1
+[   29s] [13/140] preinstalled compat-usrmerge-tools-84.87-5.1
+[   29s] [14/140] preinstalled coreutils-9.2-2.1
+[   29s] [15/140] preinstalled cpio-2.13-5.1
+[   29s] [16/140] preinstalled cpp-13-1.1
+[   29s] [17/140] preinstalled cpp13-13.0.1+git7162-1.1
+[   29s] [18/140] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   29s] [19/140] preinstalled debugedit-5.0-5.1
+[   29s] [20/140] preinstalled diffutils-3.9-1.1
+[   29s] [21/140] preinstalled dwz-0.15-2.1
+[   29s] [22/140] preinstalled elfutils-0.189-2.1
+[   29s] [23/140] cumulate fdupes-2.2.1-1.1
+[   29s] [24/140] preinstalled file-5.44-1.3
+[   29s] [25/140] preinstalled file-magic-5.44-1.3
+[   29s] [26/140] preinstalled filesystem-84.87-12.1
+[   29s] [27/140] preinstalled fillup-1.42-279.1
+[   29s] [28/140] preinstalled findutils-4.9.0-2.1
+[   29s] [29/140] preinstalled gawk-5.2.1-2.1
+[   29s] [30/140] preinstalled gcc-13-1.1
+[   29s] [31/140] preinstalled gcc-PIE-13-1.1
+[   29s] [32/140] preinstalled gcc13-13.0.1+git7162-1.1
+[   29s] [33/140] preinstalled gcc13-PIE-13.0.1+git7162-1.1
+[   29s] [34/140] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   29s] [35/140] preinstalled gettext-tools-mini-0.21.1-1.1
+[   29s] [36/140] preinstalled glibc-2.37-3.1
+[   29s] [37/140] preinstalled glibc-devel-2.37-3.1
+[   29s] [38/140] preinstalled glibc-locale-base-2.37-3.1
+[   29s] [39/140] preinstalled grep-3.9-1.1
+[   29s] [40/140] preinstalled gzip-1.12-3.1
+[   29s] [41/140] preinstalled kernel-obs-build-6.2.10-1.1
+[   29s] [42/140] preinstalled libacl1-2.3.1-2.1
+[   29s] [43/140] preinstalled libasan8-13.0.1+git7162-1.1
+[   29s] [44/140] preinstalled libasm1-0.189-2.1
+[   29s] [45/140] preinstalled libatomic1-13.0.1+git7162-1.1
+[   29s] [46/140] preinstalled libattr1-2.5.1-1.1
+[   29s] [47/140] preinstalled libaudit1-3.0.9-1.1
+[   29s] [48/140] preinstalled libblkid1-2.38.1-12.1
+[   29s] [49/140] preinstalled libbz2-1-1.0.8-5.1
+[   29s] [50/140] preinstalled libcap-ng0-0.8.3-1.1
+[   29s] [51/140] preinstalled libcap2-2.68-1.1
+[   29s] [52/140] preinstalled libcrypt1-4.4.33-3.1
+[   29s] [53/140] preinstalled libctf-nobfd0-2.40-4.1
+[   29s] [54/140] preinstalled libctf0-2.40-4.1
+[   29s] [55/140] preinstalled libdb-4_8-4.8.30-40.1
+[   29s] [56/140] preinstalled libdw1-0.189-2.1
+[   29s] [57/140] preinstalled libeconf0-0.5.2-1.1
+[   29s] [58/140] preinstalled libelf1-0.189-2.1
+[   29s] [59/140] preinstalled libfdisk1-2.38.1-12.1
+[   29s] [60/140] cumulate libffi8-3.4.4-1.1
+[   29s] [61/140] preinstalled libgcc_s1-13.0.1+git7162-1.1
+[   29s] [62/140] preinstalled libgcrypt20-1.10.2-1.1
+[   29s] [63/140] preinstalled libgdbm6-1.23-1.1
+[   29s] [64/140] preinstalled libgdbm_compat4-1.23-1.1
+[   29s] [65/140] preinstalled libgmp10-6.2.1-4.1
+[   29s] [66/140] preinstalled libgomp1-13.0.1+git7162-1.1
+[   29s] [67/140] preinstalled libgpg-error0-1.47-1.1
+[   29s] [68/140] preinstalled libisl23-0.26-1.1
+[   29s] [69/140] preinstalled libitm1-13.0.1+git7162-1.1
+[   29s] [70/140] preinstalled liblua5_4-5-5.4.4-10.1
+[   29s] [71/140] preinstalled liblzma5-5.4.2-2.1
+[   29s] [72/140] preinstalled libmagic1-5.44-1.3
+[   29s] [73/140] preinstalled libmount1-2.38.1-12.1
+[   29s] [74/140] preinstalled libmpc3-1.3.1-1.2
+[   29s] [75/140] preinstalled libmpfr6-4.2.0-1.1
+[   29s] [76/140] preinstalled libncurses6-6.4.20230408-9.1
+[   29s] [77/140] preinstalled libpcre2-8-0-10.42-3.2
+[   29s] [78/140] preinstalled libpkgconf3-1.8.0-2.1
+[   29s] [79/140] preinstalled libpopt0-1.19-1.1
+[   29s] [80/140] preinstalled libreadline8-8.2-2.1
+[   29s] [81/140] preinstalled librpmbuild9-4.18.0-4.2
+[   29s] [82/140] cumulate libruby3_2-3_2-3.2.2-1.1
+[   29s] [83/140] preinstalled libseccomp2-2.5.4-2.1
+[   29s] [84/140] preinstalled libselinux1-3.5-1.1
+[   29s] [85/140] preinstalled libsemanage-conf-3.5-1.2
+[   29s] [86/140] preinstalled libsemanage2-3.5-1.2
+[   29s] [87/140] preinstalled libsepol2-3.5-1.1
+[   29s] [88/140] preinstalled libsmartcols1-2.38.1-12.1
+[   29s] [89/140] preinstalled libstdc++6-13.0.1+git7162-1.1
+[   29s] [90/140] cumulate libstdc++6-devel-gcc13-13.0.1+git7162-1.1
+[   29s] [91/140] preinstalled libsubid4-4.13-5.1
+[   29s] [92/140] preinstalled libubsan1-13.0.1+git7162-1.1
+[   29s] [93/140] preinstalled libutempter0-1.2.0-3.2
+[   29s] [94/140] preinstalled libuuid1-2.38.1-12.1
+[   29s] [95/140] preinstalled libxcrypt-devel-4.4.33-3.1
+[   29s] [96/140] cumulate libyaml-0-2-0.2.5-2.1
+[   29s] [97/140] preinstalled libz1-1.2.13-3.1
+[   29s] [98/140] preinstalled libzstd1-1.5.4-2.1
+[   29s] [99/140] preinstalled linux-glibc-devel-6.2-1.1
+[   29s] [100/140] preinstalled login_defs-4.13-5.1
+[   29s] [101/140] preinstalled lua54-5.4.4-10.1
+[   29s] [102/140] preinstalled make-4.4.1-2.1
+[   29s] [103/140] preinstalled ncurses-utils-6.4.20230408-9.1
+[   29s] [104/140] preinstalled pam-1.5.2-14.1
+[   29s] [105/140] preinstalled patch-2.7.6-6.1
+[   29s] [106/140] preinstalled perl-5.36.0-4.1
+[   29s] [107/140] preinstalled perl-base-5.36.0-4.1
+[   29s] [108/140] preinstalled permissions-1599_20230217-1.1
+[   29s] [109/140] preinstalled permissions-config-1599_20230217-1.1
+[   29s] [110/140] preinstalled pkgconf-1.8.0-2.1
+[   29s] [111/140] preinstalled pkgconf-m4-1.8.0-2.1
+[   29s] [112/140] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   29s] [113/140] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   29s] [114/140] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   29s] [115/140] preinstalled qemu-linux-user-7.1.0-61.1
+[   29s] [116/140] preinstalled rpm-4.18.0-4.2
+[   29s] [117/140] preinstalled rpm-build-4.18.0-4.2
+[   29s] [118/140] preinstalled rpm-build-perl-4.18.0-4.2
+[   29s] [119/140] preinstalled rpm-config-SUSE-20220926-1.1
+[   29s] [120/140] preinstalled rpmlint-mini-2.4.0+git20230411.8f9c3d4-10.7
+[   29s] [121/140] preinstalled rpmlint-strict-2.4.0+git20230411.8f9c3d4-1.1
+[   29s] [122/140] preinstalled sed-4.9-2.1
+[   29s] [123/140] preinstalled shadow-4.13-5.1
+[   29s] [124/140] preinstalled system-group-hardware-20170617-24.1
+[   29s] [125/140] preinstalled system-user-root-20190513-2.1
+[   29s] [126/140] preinstalled systemd-rpm-macros-20-1.1
+[   29s] [127/140] preinstalled sysuser-shadow-3.1-5.1
+[   29s] [128/140] preinstalled tar-1.34-10.1
+[   29s] [129/140] preinstalled terminfo-base-6.4.20230408-9.1
+[   29s] [130/140] preinstalled update-alternatives-1.21.8-1.1
+[   29s] [131/140] preinstalled util-linux-2.38.1-12.1
+[   29s] [132/140] preinstalled which-2.21-5.1
+[   29s] [133/140] preinstalled xz-5.4.2-2.1
+[   29s] [134/140] cumulate gcc13-c++-13.0.1+git7162-1.1
+[   29s] [135/140] cumulate libopenssl3-3.0.8-2.1
+[   29s] [136/140] cumulate gcc-c++-13-1.1
+[   29s] [137/140] cumulate ruby3.2-rubygem-gem2rpm-0.10.1-20.2
+[   29s] [138/140] cumulate ruby-common-3.2-2.1
+[   29s] [139/140] cumulate ruby3.2-3.2.2-1.1
+[   29s] [140/140] cumulate ruby3.2-devel-3.2.2-1.1
+[   29s] now installing cumulated packages
+[   29s] Preparing...                          ########################################
+[   29s] Updating / installing...
+[   29s] libyaml-0-2-0.2.5-2.1                 ########################################
+[   41s] libstdc++6-devel-gcc13-13.0.1+git7162-########################################
+[   45s] gcc13-c++-13.0.1+git7162-1.1          ########################################
+[   46s] libruby3_2-3_2-3.2.2-1.1              ########################################
+[   46s] libffi8-3.4.4-1.1                     ########################################
+[   46s] fdupes-2.2.1-1.1                      ########################################
+[   46s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   46s] libopenssl3-3.0.8-2.1                 ########################################
+[   47s] ruby-common-3.2-2.1                   ########################################
+[   50s] ruby3.2-3.2.2-1.1                     ########################################
+[   50s] update-alternatives: using /usr/bin/bundle.ruby.ruby3.2 to provide /usr/bin/bundle (bundle) in auto mode
+[   50s] update-alternatives: using /usr/bin/bundle.ruby.ruby3.2 to provide /usr/bin/bundle.ruby3.2 (bundle.ruby3.2) in auto mode
+[   50s] update-alternatives: using /usr/bin/bundler.ruby.ruby3.2 to provide /usr/bin/bundler (bundler) in auto mode
+[   50s] update-alternatives: using /usr/bin/bundler.ruby.ruby3.2 to provide /usr/bin/bundler.ruby3.2 (bundler.ruby3.2) in auto mode
+[   50s] update-alternatives: using /usr/bin/racc.ruby.ruby3.2 to provide /usr/bin/racc (racc) in auto mode
+[   50s] update-alternatives: using /usr/bin/racc.ruby.ruby3.2 to provide /usr/bin/racc.ruby3.2 (racc.ruby3.2) in auto mode
+[   50s] update-alternatives: using /usr/bin/rake.ruby.ruby3.2 to provide /usr/bin/rake (rake) in auto mode
+[   50s] update-alternatives: using /usr/bin/rake.ruby.ruby3.2 to provide /usr/bin/rake.ruby3.2 (rake.ruby3.2) in auto mode
+[   50s] update-alternatives: using /usr/bin/rbs.ruby.ruby3.2 to provide /usr/bin/rbs (rbs) in auto mode
+[   50s] update-alternatives: using /usr/bin/rbs.ruby.ruby3.2 to provide /usr/bin/rbs.ruby3.2 (rbs.ruby3.2) in auto mode
+[   50s] update-alternatives: using /usr/bin/rdoc.ruby.ruby3.2 to provide /usr/bin/rdoc (rdoc) in auto mode
+[   50s] update-alternatives: using /usr/bin/rdoc.ruby.ruby3.2 to provide /usr/bin/rdoc.ruby3.2 (rdoc.ruby3.2) in auto mode
+[   50s] update-alternatives: using /usr/bin/ri.ruby.ruby3.2 to provide /usr/bin/ri (ri) in auto mode
+[   50s] update-alternatives: using /usr/bin/ri.ruby.ruby3.2 to provide /usr/bin/ri.ruby3.2 (ri.ruby3.2) in auto mode
+[   51s] update-alternatives: using /usr/bin/typeprof.ruby.ruby3.2 to provide /usr/bin/typeprof (typeprof) in auto mode
+[   51s] update-alternatives: using /usr/bin/typeprof.ruby.ruby3.2 to provide /usr/bin/typeprof.ruby3.2 (typeprof.ruby3.2) in auto mode
+[   51s] update-alternatives: using /usr/bin/rdbg.ruby.ruby3.2 to provide /usr/bin/rdbg (rdbg) in auto mode
+[   51s] update-alternatives: using /usr/bin/rdbg.ruby.ruby3.2 to provide /usr/bin/rdbg.ruby3.2 (rdbg.ruby3.2) in auto mode
+[   51s] ruby3.2-rubygem-gem2rpm-0.10.1-20.2   ########################################
+[   51s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm (gem2rpm) in auto mode
+[   51s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm-0.10.1 (gem2rpm-0.10.1) in auto mode
+[   51s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm.ruby3.2 (gem2rpm.ruby3.2) in auto mode
+[   51s] ruby3.2-devel-3.2.2-1.1               ########################################
+[   51s] gcc-c++-13-1.1                        ########################################
+[   52s] now finalizing build dir...
+[   52s] ... running 01-add_abuild_user_to_trusted_group
+[   53s] ... running 02-set_timezone_to_utc
+[   53s] ... running 03-set-permissions-secure
+[   53s] ... running 11-hack_uname_version_to_kernel_version
+[   59s] -----------------------------------------------------------------
+[   59s] I have the following modifications for rubygem-sassc-2.2.spec:
+[   59s] 30c30
+[   59s] < Release:        0
+[   59s] ---
+[   59s] > Release:        2.5
+[   66s] build target is riscv64-suse-linux
+[   66s] -----------------------------------------------------------------
+[   66s] ----- building rubygem-sassc-2.2.spec (user abuild)
+[   66s] -----------------------------------------------------------------
+[   66s] -----------------------------------------------------------------
+[   68s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/b2538ab60ae022a95f2b4938aaba9ceb-rubygem-sassc-2.2' /home/abuild/rpmbuild/SOURCES/rubygem-sassc-2.2.spec
+[   69s] ++ /usr/bin/ruby-find-versioned gem2rpm
+[   70s] + for gr in $(/usr/bin/ruby-find-versioned gem2rpm)
+[   70s] + /usr/bin/gem2rpm.ruby3.2 --local -t /usr/lib/rpm/gem_packages.template --config=./rpmbuild/SOURCES/gem2rpm.yml ./rpmbuild/SOURCES/sassc-2.2.1.gem
+[   73s] /usr/lib64/ruby/gems/3.2.0/gems/gem2rpm-0.10.1/lib/gem2rpm.rb:52: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+[   73s] /usr/lib64/ruby/gems/3.2.0/gems/gem2rpm-0.10.1/lib/gem2rpm.rb:52: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+[   73s] NOTE: Gem::Specification#has_rdoc? is deprecated with no replacement. It will be removed in Rubygems 4
+[   73s] Gem::Specification#has_rdoc? called from /usr/lib64/ruby/3.2.0/delegate.rb:87.
+[   73s] NOTE: Gem::Specification#has_rdoc is deprecated with no replacement. It will be removed in Rubygems 4
+[   73s] Gem::Specification#has_rdoc called from /usr/lib64/ruby/3.2.0/rubygems/deprecate.rb:139.
+[   73s] NOTE: Gem::Specification#has_rdoc? is deprecated with no replacement. It will be removed in Rubygems 4
+[   73s] Gem::Specification#has_rdoc? called from /usr/lib64/ruby/3.2.0/delegate.rb:87.
+[   73s] NOTE: Gem::Specification#has_rdoc is deprecated with no replacement. It will be removed in Rubygems 4
+[   73s] Gem::Specification#has_rdoc called from /usr/lib64/ruby/3.2.0/rubygems/deprecate.rb:139.
+[   74s] Building target platforms: riscv64-suse-linux
+[   74s] Building for target riscv64-suse-linux
+[   74s] setting SOURCE_DATE_EPOCH=1633478400
+[   74s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.v1celZ
+[   74s] + umask 022
+[   74s] + cd /home/abuild/rpmbuild/BUILD
+[   74s] + source=/home/abuild/rpmbuild/SOURCES/sassc-2.2.1.gem
+[   74s] + /usr/bin/gem.ruby3.2 unpack --verbose /home/abuild/rpmbuild/SOURCES/sassc-2.2.1.gem
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/.gitignore
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/.gitmodules
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/.travis.yml
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/CHANGELOG.md
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/CODE_OF_CONDUCT.md
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/Gemfile
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/LICENSE.txt
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/README.md
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/Rakefile
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/depend
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/extconf.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/VERSION
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/contrib/plugin.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/include/sass.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/include/sass/base.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/include/sass/context.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/include/sass/functions.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/include/sass/values.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/include/sass/version.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/include/sass2scss.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast2c.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast2c.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_def_macros.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_fwd_decl.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_fwd_decl.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_sel_cmp.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_sel_unify.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_selectors.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_selectors.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_supports.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_supports.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_values.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/ast_values.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/b64/cencode.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/b64/encode.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/backtrace.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/backtrace.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/base64vlq.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/base64vlq.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/bind.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/bind.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/c2ast.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/c2ast.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/c99func.c
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/cencode.c
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/check_nesting.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/check_nesting.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/color_maps.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/color_maps.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/constants.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/constants.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/context.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/context.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/cssize.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/cssize.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/debug.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/debugger.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/emitter.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/emitter.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/environment.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/environment.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/error_handling.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/error_handling.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/eval.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/eval.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/expand.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/expand.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/extend.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/extend.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/file.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/file.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_colors.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_colors.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_lists.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_lists.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_maps.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_maps.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_miscs.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_miscs.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_numbers.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_numbers.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_selectors.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_selectors.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_strings.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_strings.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_utils.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/fn_utils.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/inspect.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/inspect.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/json.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/json.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/kwd_arg_macros.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/lexer.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/lexer.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/listize.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/listize.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/mapping.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/memory/SharedPtr.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/memory/SharedPtr.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/node.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/node.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/operation.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/operators.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/operators.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/output.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/output.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/parser.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/parser.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/paths.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/plugins.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/plugins.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/position.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/position.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/prelexer.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/prelexer.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/remove_placeholders.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/remove_placeholders.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass2scss.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_context.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_context.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_functions.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_functions.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_util.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_util.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_values.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/sass_values.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/source_map.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/source_map.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/subset_map.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/subset_map.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/to_value.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/to_value.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/units.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/units.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/utf8.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/utf8/checked.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/utf8/core.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/utf8/unchecked.h
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/utf8_string.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/utf8_string.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/util.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/util.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/util_string.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/util_string.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/values.cpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/ext/libsass/src/values.hpp
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/dependency.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/engine.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/error.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/functions_handler.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/import_handler.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/importer.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/lib_c.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/native_context_api.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/native_functions_api.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/sass2scss_api.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/sass_input_style.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/sass_output_style.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/sass_value.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/native/string_list.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/sass_2_scss.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/functions.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value/bool.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value/color.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value/list.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value/map.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value/number.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value/string.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion/base.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion/bool.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion/color.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion/list.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion/map.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion/number.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/script/value_conversion/string.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/util.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/util/normalized_map.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/lib/sassc/version.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/sassc.gemspec
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/custom_importer_test.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/engine_test.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/error_test.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/fixtures/paths.scss
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/functions_test.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/native_test.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/output_style_test.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/sass_2_scss_test.rb
+[   77s] /home/abuild/rpmbuild/BUILD/sassc-2.2.1/test/test_helper.rb
+[   77s] Unpacked gem: '/home/abuild/rpmbuild/BUILD/sassc-2.2.1'
+[   77s] + cd sassc-2.2.1
+[   77s] + chmod og-w -R .
+[   77s] + /usr/bin/gem.ruby3.2 specification --ruby /home/abuild/rpmbuild/SOURCES/sassc-2.2.1.gem
+[   80s] + echo 'Patch #0 (reproducible.patch):'
+[   80s] Patch #0 (reproducible.patch):
+[   80s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   80s] patching file ext/extconf.rb
+[   80s] + xargs -0 touch -r /home/abuild/rpmbuild/SOURCES/sassc-2.2.1.gem
+[   80s] + find -type f -print0
+[   80s] ++ xargs dirname
+[   80s] ++ find . -maxdepth 2 -type f -name sassc-2.2.1.gemspec
+[   80s] + GEMSPEC_SOURCE_DIR=.
+[   80s] + cd .
+[   80s] + /usr/bin/gem.ruby3.2 build --verbose sassc-2.2.1.gemspec
+[   83s] WARNING:  description and summary are identical
+[   83s] WARNING:  open-ended dependency on minitest-around (>= 0, development) is not recommended
+[   83s]   use a bounded requirement, such as '~> x.y'
+[   83s] WARNING:  open-ended dependency on test_construct (>= 0, development) is not recommended
+[   83s]   use a bounded requirement, such as '~> x.y'
+[   83s] WARNING:  open-ended dependency on pry (>= 0, development) is not recommended
+[   83s]   use a bounded requirement, such as '~> x.y'
+[   83s] WARNING:  open-ended dependency on bundler (>= 0, development) is not recommended
+[   83s]   use a bounded requirement, such as '~> x.y'
+[   83s] WARNING:  open-ended dependency on rake (>= 0, development) is not recommended
+[   83s]   use a bounded requirement, such as '~> x.y'
+[   83s] WARNING:  open-ended dependency on rake-compiler (>= 0, development) is not recommended
+[   83s]   use a bounded requirement, such as '~> x.y'
+[   83s] WARNING:  open-ended dependency on rake-compiler-dock (>= 0, development) is not recommended
+[   83s]   use a bounded requirement, such as '~> x.y'
+[   83s] WARNING:  See https://guides.rubygems.org/specification-reference/ for help
+[   84s]   Successfully built RubyGem
+[   84s]   Name: sassc
+[   84s]   Version: 2.2.1
+[   84s]   File: sassc-2.2.1.gem
+[   84s] + RPM_EC=0
+[   84s] ++ jobs -p
+[   84s] + exit 0
+[   84s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.8DIg3I
+[   84s] + umask 022
+[   84s] + cd /home/abuild/rpmbuild/BUILD
+[   84s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64
+[   84s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64
+[   84s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   84s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64
+[   84s] + ref=/usr/lib/rpm
+[   84s] + mints=0
+[   84s] + case $(uname -m) in
+[   84s] ++ uname -m
+[   84s] + mints=20160911
+[   84s] + for s in guess sub
+[   84s] ++ find -maxdepth 8 -name config.guess
+[   84s] + for s in guess sub
+[   84s] ++ find -maxdepth 8 -name config.sub
+[   85s] + RPM_EC=0
+[   85s] ++ jobs -p
+[   85s] + exit 0
+[   85s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.k210if
+[   85s] + umask 022
+[   85s] + cd /home/abuild/rpmbuild/BUILD
+[   85s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64
+[   85s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   85s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64
+[   85s] + /usr/lib/rpm/gem_install.sh --default-gem sassc-2.2.1.gem --gem-name=sassc --gem-version=2.2.1 --build-root /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64 --gem-suffix=-2.2 --gem-binary /usr/bin/gem.ruby3.2 --extconf-opts=--disable-march-tune-native '--doc-files=CHANGELOG.md LICENSE.txt README.md' -f
+[   88s] W, [2023-04-19T16:09:55.144273 #2174]  WARN -- : The --gem-binary option is deprecated.
+[   88s] I, [2023-04-19T16:09:55.149941 #2174]  INFO -- : unhandled options: ["-f"]
+[   88s] I, [2023-04-19T16:09:55.151963 #2174]  INFO -- : Found gem sassc-2.2.1/sassc-2.2.1.gem
+[   88s] I, [2023-04-19T16:09:55.307389 #2174]  INFO -- : Using prefix ruby3.2
+[   88s] I, [2023-04-19T16:09:55.307765 #2174]  INFO -- : Using suffix .ruby3.2
+[   88s] I, [2023-04-19T16:09:55.308377 #2174]  INFO -- : install cmdline: ["/usr/bin/gem.ruby3.2", "install", "--verbose", "--local", "--build-root", "/home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64", "-f", "--no-document", "sassc-2.2.1/sassc-2.2.1.gem", "--", "--disable-march-tune-native"]
+[   93s] WARNING:  You build with buildroot.
+[   93s]   Build root: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64
+[   93s]   Bin dir: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/bin
+[   93s]   Gem home: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0
+[   93s]   Plugins dir: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/plugins
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/.gitignore
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/.gitmodules
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/.travis.yml
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/CHANGELOG.md
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/CODE_OF_CONDUCT.md
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/Gemfile
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/LICENSE.txt
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/README.md
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/Rakefile
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/depend
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/extconf.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/VERSION
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/contrib/plugin.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/include/sass.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/include/sass/base.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/include/sass/context.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/include/sass/functions.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/include/sass/values.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/include/sass/version.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/include/sass2scss.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast2c.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast2c.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_def_macros.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_fwd_decl.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_fwd_decl.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_sel_cmp.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_sel_unify.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_selectors.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_selectors.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_supports.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_supports.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_values.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/ast_values.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/b64/cencode.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/b64/encode.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/backtrace.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/backtrace.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/base64vlq.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/base64vlq.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/bind.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/bind.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/c2ast.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/c2ast.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/c99func.c
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/cencode.c
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/check_nesting.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/check_nesting.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/color_maps.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/color_maps.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/constants.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/constants.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/context.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/context.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/cssize.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/cssize.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/debug.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/debugger.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/emitter.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/emitter.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/environment.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/environment.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/error_handling.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/error_handling.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/eval.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/eval.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/expand.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/expand.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/extend.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/extend.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/file.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/file.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_colors.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_colors.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_lists.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_lists.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_maps.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_maps.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_miscs.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_miscs.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_numbers.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_numbers.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_selectors.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_selectors.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_strings.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_strings.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_utils.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/fn_utils.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/inspect.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/inspect.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/json.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/json.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/kwd_arg_macros.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/lexer.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/lexer.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/listize.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/listize.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/mapping.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/memory/SharedPtr.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/memory/SharedPtr.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/node.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/node.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/operation.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/operators.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/operators.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/output.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/output.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/parser.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/parser.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/paths.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/plugins.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/plugins.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/position.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/position.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/prelexer.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/prelexer.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/remove_placeholders.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/remove_placeholders.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass2scss.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_context.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_context.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_functions.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_functions.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_util.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_util.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_values.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/sass_values.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/source_map.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/source_map.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/subset_map.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/subset_map.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/to_value.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/to_value.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/units.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/units.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/utf8.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/utf8/checked.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/utf8/core.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/utf8/unchecked.h
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/utf8_string.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/utf8_string.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/util.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/util.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/util_string.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/util_string.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/values.cpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext/libsass/src/values.hpp
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/dependency.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/engine.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/error.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/functions_handler.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/import_handler.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/importer.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/lib_c.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/native_context_api.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/native_functions_api.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/sass2scss_api.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/sass_input_style.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/sass_output_style.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/sass_value.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/native/string_list.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/sass_2_scss.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/functions.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value/bool.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value/color.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value/list.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value/map.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value/number.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value/string.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion/base.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion/bool.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion/color.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion/list.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion/map.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion/number.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/script/value_conversion/string.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/util.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/util/normalized_map.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/lib/sassc/version.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/sassc.gemspec
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/custom_importer_test.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/engine_test.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/error_test.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/fixtures/paths.scss
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/functions_test.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/native_test.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/output_style_test.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/sass_2_scss_test.rb
+[   93s] /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/test/test_helper.rb
+[   93s] Building native extensions with: '--disable-march-tune-native'
+[   93s] This could take a while...
+[   93s] current directory: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext
+[   93s] ["/usr/bin/ruby.ruby3.2", "extconf.rb", "--disable-march-tune-native"]
+[   95s] creating Makefile
+[   95s] current directory: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext
+[   95s] ["make", "DESTDIR=", "sitearchdir=./.gem.20230419-2177-jv988i", "sitelibdir=./.gem.20230419-2177-jv988i", "clean"]
+[   95s] 
+[   95s] current directory: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext
+[   95s] ["make", "DESTDIR=", "sitearchdir=./.gem.20230419-2177-jv988i", "sitelibdir=./.gem.20230419-2177-jv988i"]
+[  221s] compiling ./libsass/src/ast.cpp
+[  221s] In file included from ./libsass/src/inspect.hpp:5,
+[  221s]                  from ./libsass/src/output.hpp:8,
+[  221s]                  from ./libsass/src/context.hpp:19,
+[  221s]                  from ./libsass/src/ast.hpp:21,
+[  221s]                  from ./libsass/src/ast.cpp:2:
+[  221s] ./libsass/src/operation.hpp:185:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameters*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   185 |     T operator()(Parameters* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] In file included from ./libsass/src/ast.cpp:5:
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:184:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameter*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   184 |     T operator()(Parameter* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:173:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Condition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   173 |     T operator()(Supports_Condition* x)     { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:166:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Color*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   166 |     T operator()(Color* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:163:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Error*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   163 |     T operator()(Custom_Error* x)           { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:162:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Warning*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   162 |     T operator()(Custom_Warning* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:158:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Function*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   158 |     T operator()(Function* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:153:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Mixin_Call*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   153 |     T operator()(Mixin_Call* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:152:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Definition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   152 |     T operator()(Definition* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:151:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Extension*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   151 |     T operator()(Extension* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:150:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Content*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   150 |     T operator()(Content* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:140:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import_Stub*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   140 |     T operator()(Import_Stub* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:139:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   139 |     T operator()(Import* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:137:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Declaration*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   137 |     T operator()(Declaration* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:136:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Keyframe_Rule*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   136 |     T operator()(Keyframe_Rule* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:135:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Directive*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   135 |     T operator()(Directive* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:134:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::At_Root_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   134 |     T operator()(At_Root_Block* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:133:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Media_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   133 |     T operator()(Media_Block* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:132:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   132 |     T operator()(Supports_Block* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:131:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Trace*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   131 |     T operator()(Trace* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:130:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Bubble*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   130 |     T operator()(Bubble* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:129:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Ruleset*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   129 |     T operator()(Ruleset* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:126:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::AST_Node*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   126 |     T operator()(AST_Node* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] compiling ./libsass/src/ast2c.cpp
+[  221s] compiling ./libsass/src/ast_fwd_decl.cpp
+[  221s] compiling ./libsass/src/ast_sel_cmp.cpp
+[  221s] In file included from ./libsass/src/inspect.hpp:5,
+[  221s]                  from ./libsass/src/output.hpp:8,
+[  221s]                  from ./libsass/src/context.hpp:19,
+[  221s]                  from ./libsass/src/ast.hpp:21,
+[  221s]                  from ./libsass/src/ast_sel_cmp.cpp:5:
+[  221s] ./libsass/src/operation.hpp:185:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameters*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   185 |     T operator()(Parameters* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] In file included from ./libsass/src/ast_sel_cmp.cpp:8:
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:184:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameter*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   184 |     T operator()(Parameter* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:173:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Condition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   173 |     T operator()(Supports_Condition* x)     { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:166:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Color*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   166 |     T operator()(Color* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:163:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Error*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   163 |     T operator()(Custom_Error* x)           { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:162:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Warning*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   162 |     T operator()(Custom_Warning* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:158:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Function*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   158 |     T operator()(Function* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:153:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Mixin_Call*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   153 |     T operator()(Mixin_Call* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:152:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Definition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   152 |     T operator()(Definition* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:151:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Extension*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   151 |     T operator()(Extension* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:150:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Content*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   150 |     T operator()(Content* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:140:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import_Stub*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   140 |     T operator()(Import_Stub* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:139:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   139 |     T operator()(Import* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:137:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Declaration*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   137 |     T operator()(Declaration* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:136:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Keyframe_Rule*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   136 |     T operator()(Keyframe_Rule* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:135:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Directive*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   135 |     T operator()(Directive* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:134:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::At_Root_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   134 |     T operator()(At_Root_Block* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:133:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Media_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   133 |     T operator()(Media_Block* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:132:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   132 |     T operator()(Supports_Block* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:131:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Trace*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   131 |     T operator()(Trace* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:130:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Bubble*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   130 |     T operator()(Bubble* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:129:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Ruleset*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   129 |     T operator()(Ruleset* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:126:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::AST_Node*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   126 |     T operator()(AST_Node* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] compiling ./libsass/src/ast_sel_unify.cpp
+[  221s] In file included from ./libsass/src/inspect.hpp:5,
+[  221s]                  from ./libsass/src/output.hpp:8,
+[  221s]                  from ./libsass/src/context.hpp:19,
+[  221s]                  from ./libsass/src/ast.hpp:21,
+[  221s]                  from ./libsass/src/ast_sel_unify.cpp:2:
+[  221s] ./libsass/src/operation.hpp:185:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameters*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   185 |     T operator()(Parameters* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] In file included from ./libsass/src/ast_sel_unify.cpp:5:
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:184:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameter*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   184 |     T operator()(Parameter* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:173:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Condition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   173 |     T operator()(Supports_Condition* x)     { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:166:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Color*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   166 |     T operator()(Color* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:163:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Error*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   163 |     T operator()(Custom_Error* x)           { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:162:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Warning*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   162 |     T operator()(Custom_Warning* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:158:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Function*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   158 |     T operator()(Function* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:153:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Mixin_Call*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   153 |     T operator()(Mixin_Call* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:152:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Definition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   152 |     T operator()(Definition* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:151:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Extension*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   151 |     T operator()(Extension* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:150:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Content*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   150 |     T operator()(Content* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:140:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import_Stub*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   140 |     T operator()(Import_Stub* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:139:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   139 |     T operator()(Import* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:137:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Declaration*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   137 |     T operator()(Declaration* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:136:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Keyframe_Rule*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   136 |     T operator()(Keyframe_Rule* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:135:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Directive*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   135 |     T operator()(Directive* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:134:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::At_Root_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   134 |     T operator()(At_Root_Block* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:133:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Media_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   133 |     T operator()(Media_Block* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:132:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   132 |     T operator()(Supports_Block* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:131:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Trace*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   131 |     T operator()(Trace* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:130:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Bubble*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   130 |     T operator()(Bubble* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:129:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Ruleset*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   129 |     T operator()(Ruleset* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:126:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::AST_Node*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   126 |     T operator()(AST_Node* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] compiling ./libsass/src/ast_selectors.cpp
+[  221s] In file included from ./libsass/src/inspect.hpp:5,
+[  221s]                  from ./libsass/src/output.hpp:8,
+[  221s]                  from ./libsass/src/context.hpp:19,
+[  221s]                  from ./libsass/src/ast.hpp:21,
+[  221s]                  from ./libsass/src/ast_selectors.cpp:2:
+[  221s] ./libsass/src/operation.hpp:185:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameters*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   185 |     T operator()(Parameters* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] In file included from ./libsass/src/ast_selectors.cpp:5:
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:184:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Parameter*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   184 |     T operator()(Parameter* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:173:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Condition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   173 |     T operator()(Supports_Condition* x)     { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:166:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Color*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   166 |     T operator()(Color* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:163:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Error*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   163 |     T operator()(Custom_Error* x)           { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:162:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Custom_Warning*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   162 |     T operator()(Custom_Warning* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:158:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Function*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   158 |     T operator()(Function* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:153:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Mixin_Call*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   153 |     T operator()(Mixin_Call* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:152:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Definition*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   152 |     T operator()(Definition* x)             { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:151:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Extension*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   151 |     T operator()(Extension* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:150:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Content*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   150 |     T operator()(Content* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:140:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import_Stub*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   140 |     T operator()(Import_Stub* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:139:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Import*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   139 |     T operator()(Import* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:137:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Declaration*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   137 |     T operator()(Declaration* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:136:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Keyframe_Rule*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   136 |     T operator()(Keyframe_Rule* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:135:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Directive*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   135 |     T operator()(Directive* x)              { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:134:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::At_Root_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   134 |     T operator()(At_Root_Block* x)          { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:133:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Media_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   133 |     T operator()(Media_Block* x)            { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:132:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Supports_Block*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   132 |     T operator()(Supports_Block* x)         { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:131:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Trace*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   131 |     T operator()(Trace* x)                  { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:130:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Bubble*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   130 |     T operator()(Bubble* x)                 { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:129:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::Ruleset*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   129 |     T operator()(Ruleset* x)                { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] ./libsass/src/operation.hpp:126:7: warning: ‘T Sass::Operation_CRTP<T, D>::operator()(Sass::AST_Node*) [with T = Sass::Expression*; D = Sass::Eval]’ was hidden [-Woverloaded-virtual=]
+[  221s]   126 |     T operator()(AST_Node* x)               { return static_cast<D*>(this)->fallback(x); }
+[  221s]       |       ^~~~~~~~
+[  221s] ./libsass/src/eval.hpp:98:17: note:   by ‘Sass::Eval::operator()’
+[  221s]    98 |     Expression* operator()(Parent_Reference*);
+[  221s]       |                 ^~~~~~~~
+[  221s] In file included from /usr/include/c++/13/bits/hashtable.h:35,
+[  221s]                  from /usr/include/c++/13/bits/unordered_map.h:33,
+[  221s]                  from /usr/include/c++/13/unordered_map:41,
+[  221s]                  from ./libsass/src/ast_fwd_decl.hpp:11,
+[  221s]                  from ./libsass/src/ast.hpp:17:
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h: In instantiation of ‘bool std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _Traits>::_M_key_equals_tr(const _Kt&, const std::__detail::_Hash_node_value<_Value, typename _Traits::__hash_cached::value>&) const [with _Kt = Sass::SharedImpl<Sass::Simple_Selector>; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _Traits = std::__detail::_Hashtable_traits<true, true, true>; typename _Traits::__hash_cached = std::__detail::_Hashtable_traits<true, true, true>::__hash_cached]’:
+[  221s] /usr/include/c++/13/bits/hashtable.h:2246:32:   required from ‘std::pair<typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator, bool> std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert_unique(_Kt&&, _Arg&&, const _NodeGenerator&) [with _Kt = const Sass::SharedImpl<Sass::Simple_Selector>&; _Arg = const Sass::SharedImpl<Sass::Simple_Selector>&; _NodeGenerator = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<const Sass::Simple_Selector*, const Sass::Simple_Selector*, std::allocator<const Sass::Simple_Selector*>, std::__detail::_Identity, Sass::ComparePtrs, Sass::HashPtr, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; typename _Traits::__constant_iterators = std::__detail::_Hashtable_traits<true, true, true>::__constant_iterators]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:904:27:   required from ‘std::pair<typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator, bool> std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert_unique_aux(_Arg&&, const _NodeGenerator&) [with _Arg = const Sass::SharedImpl<Sass::Simple_Selector>&; _NodeGenerator = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<const Sass::Simple_Selector*, const Sass::Simple_Selector*, std::allocator<const Sass::Simple_Selector*>, std::__detail::_Identity, Sass::ComparePtrs, Sass::HashPtr, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; typename _Traits::__constant_iterators = std::__detail::_Hashtable_traits<true, true, true>::__constant_iterators]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:916:31:   required from ‘std::pair<typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator, bool> std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert(_Arg&&, const _NodeGenerator&, std::true_type) [with _Arg = const Sass::SharedImpl<Sass::Simple_Selector>&; _NodeGenerator = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<const Sass::Simple_Selector*, const Sass::Simple_Selector*, std::allocator<const Sass::Simple_Selector*>, std::__detail::_Identity, Sass::ComparePtrs, Sass::HashPtr, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; typename _Traits::__constant_iterators = std::__detail::_Hashtable_traits<true, true, true>::__constant_iterators; std::true_type = std::integral_constant<bool, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:990:17:   required from ‘void std::__detail::_Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert_range(_InputIterator, _InputIterator, const _NodeGetter&, std::true_type) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _NodeGetter = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; std::true_type = std::integral_constant<bool, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:972:26:   required from ‘void std::__detail::_Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::insert(_InputIterator, _InputIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:1200:21:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable(_InputIterator, _InputIterator, size_type, const _Hash&, const _Equal&, const allocator_type&, std::true_type) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; size_type = long unsigned int; allocator_type = std::allocator<const Sass::Simple_Selector*>; std::true_type = std::integral_constant<bool, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:568:23:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable(_InputIterator, _InputIterator, size_type, const _Hash&, const key_equal&, const allocator_type&) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; size_type = long unsigned int; key_equal = Sass::ComparePtrs; allocator_type = std::allocator<const Sass::Simple_Selector*>]’
+[  221s] /usr/include/c++/13/bits/unordered_set.h:176:4:   required from ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set(_InputIterator, _InputIterator, size_type, const hasher&, const key_equal&, const allocator_type&) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Value = const Sass::Simple_Selector*; _Hash = Sass::HashPtr; _Pred = Sass::ComparePtrs; _Alloc = std::allocator<const Sass::Simple_Selector*>; size_type = long unsigned int; hasher = Sass::HashPtr; key_equal = Sass::ComparePtrs; allocator_type = std::allocator<const Sass::Simple_Selector*>]’
+[  221s] ./libsass/src/ast_selectors.cpp:525:118:   required from here
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1734:13: error: static assertion failed: key equality predicate must be invocable with two arguments of key type
+[  221s]  1734 |             __is_invocable<const _Equal&, const _Kt&, const _Key&>{},
+[  221s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1734:13: note: ‘std::__is_invocable<const Sass::ComparePtrs&, const Sass::SharedImpl<Sass::Simple_Selector>&, const Sass::Simple_Selector* const&>()’ evaluates to false
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1737:25: error: no match for call to ‘(const Sass::ComparePtrs) (const Sass::SharedImpl<Sass::Simple_Selector>&, const Sass::Simple_Selector* const&)’
+[  221s]  1737 |           return _M_eq()(__k, _ExtractKey{}(__n._M_v()));
+[  221s]       |                  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  221s] ./libsass/src/ast_fwd_decl.hpp:254:10: note: candidate: ‘template<class T> bool Sass::ComparePtrs::operator()(const T*, const T*) const’
+[  221s]   254 |     bool operator() (const T *lhs, const T *rhs) const {
+[  221s]       |          ^~~~~~~~
+[  221s] ./libsass/src/ast_fwd_decl.hpp:254:10: note:   template argument deduction/substitution failed:
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1737:25: note:   mismatched types ‘const T*’ and ‘Sass::SharedImpl<Sass::Simple_Selector>’
+[  221s]  1737 |           return _M_eq()(__k, _ExtractKey{}(__n._M_v()));
+[  221s]       |                  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h: In instantiation of ‘std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::__hash_code std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::_M_hash_code_tr(const _Kt&) const [with _Kt = Sass::SharedImpl<Sass::Simple_Selector>; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _ExtractKey = std::__detail::_Identity; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; bool __cache_hash_code = true; __hash_code = long unsigned int]’:
+[  221s] /usr/include/c++/13/bits/hashtable.h:2249:44:   required from ‘std::pair<typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator, bool> std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert_unique(_Kt&&, _Arg&&, const _NodeGenerator&) [with _Kt = const Sass::SharedImpl<Sass::Simple_Selector>&; _Arg = const Sass::SharedImpl<Sass::Simple_Selector>&; _NodeGenerator = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<const Sass::Simple_Selector*, const Sass::Simple_Selector*, std::allocator<const Sass::Simple_Selector*>, std::__detail::_Identity, Sass::ComparePtrs, Sass::HashPtr, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; typename _Traits::__constant_iterators = std::__detail::_Hashtable_traits<true, true, true>::__constant_iterators]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:904:27:   required from ‘std::pair<typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator, bool> std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert_unique_aux(_Arg&&, const _NodeGenerator&) [with _Arg = const Sass::SharedImpl<Sass::Simple_Selector>&; _NodeGenerator = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<const Sass::Simple_Selector*, const Sass::Simple_Selector*, std::allocator<const Sass::Simple_Selector*>, std::__detail::_Identity, Sass::ComparePtrs, Sass::HashPtr, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; typename _Traits::__constant_iterators = std::__detail::_Hashtable_traits<true, true, true>::__constant_iterators]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:916:31:   required from ‘std::pair<typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator, bool> std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert(_Arg&&, const _NodeGenerator&, std::true_type) [with _Arg = const Sass::SharedImpl<Sass::Simple_Selector>&; _NodeGenerator = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; typename std::__detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<const Sass::Simple_Selector*, const Sass::Simple_Selector*, std::allocator<const Sass::Simple_Selector*>, std::__detail::_Identity, Sass::ComparePtrs, Sass::HashPtr, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; typename _Traits::__constant_iterators = std::__detail::_Hashtable_traits<true, true, true>::__constant_iterators; std::true_type = std::integral_constant<bool, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:990:17:   required from ‘void std::__detail::_Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_M_insert_range(_InputIterator, _InputIterator, const _NodeGetter&, std::true_type) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _NodeGetter = std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<const Sass::Simple_Selector*, true> > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; std::true_type = std::integral_constant<bool, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:972:26:   required from ‘void std::__detail::_Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::insert(_InputIterator, _InputIterator) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:1200:21:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable(_InputIterator, _InputIterator, size_type, const _Hash&, const _Equal&, const allocator_type&, std::true_type) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; size_type = long unsigned int; allocator_type = std::allocator<const Sass::Simple_Selector*>; std::true_type = std::integral_constant<bool, true>]’
+[  221s] /usr/include/c++/13/bits/hashtable.h:568:23:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable(_InputIterator, _InputIterator, size_type, const _Hash&, const key_equal&, const allocator_type&) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Key = const Sass::Simple_Selector*; _Value = const Sass::Simple_Selector*; _Alloc = std::allocator<const Sass::Simple_Selector*>; _ExtractKey = std::__detail::_Identity; _Equal = Sass::ComparePtrs; _Hash = Sass::HashPtr; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; size_type = long unsigned int; key_equal = Sass::ComparePtrs; allocator_type = std::allocator<const Sass::Simple_Selector*>]’
+[  221s] /usr/include/c++/13/bits/unordered_set.h:176:4:   required from ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set(_InputIterator, _InputIterator, size_type, const hasher&, const key_equal&, const allocator_type&) [with _InputIterator = __gnu_cxx::__normal_iterator<const Sass::SharedImpl<Sass::Simple_Selector>*, std::vector<Sass::SharedImpl<Sass::Simple_Selector>, std::allocator<Sass::SharedImpl<Sass::Simple_Selector> > > >; _Value = const Sass::Simple_Selector*; _Hash = Sass::HashPtr; _Pred = Sass::ComparePtrs; _Alloc = std::allocator<const Sass::Simple_Selector*>; size_type = long unsigned int; hasher = Sass::HashPtr; key_equal = Sass::ComparePtrs; allocator_type = std::allocator<const Sass::Simple_Selector*>]’
+[  221s] ./libsass/src/ast_selectors.cpp:525:118:   required from here
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1313:25: error: static assertion failed: hash function must be invocable with an argument of key type
+[  221s]  1313 |           static_assert(__is_invocable<const _Hash&, const _Kt&>{},
+[  221s]       |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1313:25: note: ‘std::__is_invocable<const Sass::HashPtr&, const Sass::SharedImpl<Sass::Simple_Selector>&>()’ evaluates to false
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1315:27: error: no match for call to ‘(const Sass::HashPtr) (const Sass::SharedImpl<Sass::Simple_Selector>&)’
+[  221s]  1315 |           return _M_hash()(__k);
+[  221s]       |                  ~~~~~~~~~^~~~~
+[  221s] ./libsass/src/ast_fwd_decl.hpp:248:12: note: candidate: ‘template<class T> size_t Sass::HashPtr::operator()(const T*) const’
+[  221s]   248 |     size_t operator() (const T *ref) const {
+[  221s]       |            ^~~~~~~~
+[  221s] ./libsass/src/ast_fwd_decl.hpp:248:12: note:   template argument deduction/substitution failed:
+[  221s] /usr/include/c++/13/bits/hashtable_policy.h:1315:27: note:   mismatched types ‘const T*’ and ‘Sass::SharedImpl<Sass::Simple_Selector>’
+[  221s]  1315 |           return _M_hash()(__k);
+[  221s]       |                  ~~~~~~~~~^~~~~
+[  221s] make: *** [Makefile:240: ast_selectors.o] Error 1
+[  221s] ERROR:  Error installing sassc-2.2.1/sassc-2.2.1.gem:
+[  221s] 	ERROR: Failed to build gem native extension.
+[  221s] 
+[  221s]     current directory: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext
+[  221s] /usr/bin/ruby.ruby3.2 extconf.rb --disable-march-tune-native
+[  221s] current directory: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext
+[  221s] make DESTDIR\= sitearchdir\=./.gem.20230419-2177-jv988i sitelibdir\=./.gem.20230419-2177-jv988i clean
+[  221s] current directory: /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1/ext
+[  221s] make DESTDIR\= sitearchdir\=./.gem.20230419-2177-jv988i sitelibdir\=./.gem.20230419-2177-jv988i
+[  221s] Building has failed. See above output for more information on the failure.
+[  221s] make failed, exit code 2
+[  221s] 
+[  221s] Gem files will remain installed in /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/gems/sassc-2.2.1 for inspection.
+[  221s] Results logged to /home/abuild/rpmbuild/BUILDROOT/rubygem-sassc-2.2-2.2.1-2.5.riscv64/usr/lib64/ruby/gems/3.2.0/extensions/riscv64-linux-gnu/3.2.0/sassc-2.2.1/gem_make.out
+[  221s] error: Bad exit status from /var/tmp/rpm-tmp.k210if (%install)
+[  221s] 
+[  221s] RPM build errors:
+[  221s]     Bad exit status from /var/tmp/rpm-tmp.k210if (%install)
+[  221s] ### VM INTERACTION START ###
+[  221s] [  214.738290][    T1] sysrq: Power Off
+[  221s] [  214.739237][    T7] reboot: Power down
+[  221s] ### VM INTERACTION END ###
+[  221s] 
+[  221s] build79 failed "build rubygem-sassc-2.2.spec" at Wed Apr 19 16:12:09 UTC 2023.
+[  221s] 

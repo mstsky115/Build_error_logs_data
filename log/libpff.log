@@ -1,0 +1,1052 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_6/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_6/root
+[    0s] 
+[    1s] 
+[    1s] old-atreju5 started "build libpff.spec" at Fri Mar 24 15:05:53 UTC 2023.
+[    1s] 
+[    1s] Building libpff for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'c8e980ddb7075d000e0675262715617c'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_6/.build-srcdir/libpff.spec ...
+[    2s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_6/.build-srcdir/libpff.spec
+[    2s] init_buildsystem --configdir /var/run/obs/worker/6/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_6/.build.rpmlist /var/cache/obs/worker/root_6/.build-srcdir/libpff.spec build ...
+[    3s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [c1f8473d022be10c636d148a7469c472]
+[   12s] 
+[   12s] copying packages...
+[   13s] reordering...cycle: libpython3_10-1_0 -> python310-base
+[   13s]   breaking dependency python310-base -> libpython3_10-1_0
+[   13s] cycle: libpython3_11-1_0 -> python311-base
+[   13s]   breaking dependency python311-base -> libpython3_11-1_0
+[   13s] cycle: libpython3_8-1_0 -> python38-base
+[   13s]   breaking dependency python38-base -> libpython3_8-1_0
+[   13s] cycle: libpython3_9-1_0 -> python39-base
+[   13s]   breaking dependency python39-base -> libpython3_9-1_0
+[   13s] done
+[   13s] Detected virtio-serial support
+[   15s] booting kvm...
+[   15s] ### VM INTERACTION START ###
+[   15s] Using virtio-serial support
+[   15s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_6/.mount/boot/kernel -initrd /var/cache/obs/worker/root_6/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_6/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_6/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_6/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   30s] ### VM INTERACTION END ###
+[   30s] 2nd stage started in virtual machine
+[   32s] machine type: riscv64
+[   32s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   32s] Increasing log level from now on...
+[   32s] [   15.032495][  T371] sysrq: Changing Loglevel
+[   32s] [   15.058248][  T371] sysrq: Loglevel set to 4
+[   32s] Enable sysrq operations
+[   34s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   34s] no label, UUID=8c5d892b-55ab-4da4-9f54-84a7d90bed3a
+[   35s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   35s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   35s] swapon /dev/vdb
+[   35s] WARNING: udev not running, creating extra device nodes
+[   37s] logging output to //.build.log...
+[   38s] processing recipe /.build-srcdir/libpff.spec ...
+[   38s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/libpff.spec build ...
+[   40s] initializing rpm db...
+[   42s] querying package ids...
+[  127s] [1/182] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[  127s] [2/182] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[  127s] [3/182] preinstalled attr-2.5.1-1.1
+[  127s] [4/182] preinstalled bash-5.2.15-8.1
+[  127s] [5/182] preinstalled bash-sh-5.2.15-8.1
+[  127s] [6/182] preinstalled binutils-2.40-2.1
+[  127s] [7/182] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[  127s] [8/182] preinstalled build-compare-20221206T204012.bb70754-1.2
+[  127s] [9/182] preinstalled build-mkbaselibs-20230314-1.1
+[  127s] [10/182] preinstalled bzip2-1.0.8-5.1
+[  127s] [11/182] preinstalled chkstat-1599_20230217-1.1
+[  127s] [12/182] preinstalled compat-usrmerge-build-84.87-5.1
+[  127s] [13/182] preinstalled compat-usrmerge-tools-84.87-5.1
+[  127s] [14/182] preinstalled coreutils-9.1-5.1
+[  127s] [15/182] preinstalled cpio-2.13-5.1
+[  127s] [16/182] preinstalled cpp-13-1.1
+[  127s] [17/182] preinstalled cpp13-13.0.1+git6669-7.1
+[  127s] [18/182] cumulate crypto-policies-20210917.c9d86d1-1.1
+[  127s] [19/182] preinstalled debugedit-5.0-5.1
+[  127s] [20/182] preinstalled diffutils-3.9-1.1
+[  127s] [21/182] preinstalled dwz-0.15-2.1
+[  127s] [22/182] preinstalled elfutils-0.189-2.1
+[  127s] [23/182] preinstalled file-5.44-1.2
+[  127s] [24/182] preinstalled file-magic-5.44-1.2
+[  127s] [25/182] preinstalled filesystem-84.87-12.1
+[  127s] [26/182] preinstalled fillup-1.42-279.1
+[  127s] [27/182] preinstalled findutils-4.9.0-2.1
+[  127s] [28/182] preinstalled gawk-5.2.1-2.1
+[  127s] [29/182] preinstalled gcc-13-1.1
+[  127s] [30/182] preinstalled gcc-PIE-13-1.1
+[  127s] [31/182] preinstalled gcc13-13.0.1+git6669-7.1
+[  127s] [32/182] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[  127s] [33/182] preinstalled gettext-runtime-mini-0.21.1-1.1
+[  127s] [34/182] preinstalled gettext-tools-mini-0.21.1-1.1
+[  127s] [35/182] preinstalled glibc-2.37-1.1
+[  127s] [36/182] preinstalled glibc-devel-2.37-1.1
+[  127s] [37/182] preinstalled glibc-locale-base-2.37-1.1
+[  127s] [38/182] preinstalled grep-3.9-1.1
+[  127s] [39/182] preinstalled gzip-1.12-3.1
+[  127s] [40/182] preinstalled kernel-obs-build-6.2.6-1.2
+[  127s] [41/182] preinstalled libacl1-2.3.1-2.1
+[  127s] [42/182] preinstalled libasan8-13.0.1+git6669-7.1
+[  127s] [43/182] preinstalled libasm1-0.189-2.1
+[  127s] [44/182] preinstalled libatomic1-13.0.1+git6669-7.1
+[  127s] [45/182] preinstalled libattr1-2.5.1-1.1
+[  127s] [46/182] preinstalled libaudit1-3.0.9-1.1
+[  127s] [47/182] preinstalled libblkid1-2.38.1-10.1
+[  127s] [48/182] preinstalled libbz2-1-1.0.8-5.1
+[  127s] [49/182] preinstalled libcap-ng0-0.8.3-1.1
+[  127s] [50/182] preinstalled libcap2-2.67-1.1
+[  127s] [51/182] cumulate libcerror1-20220101-4.1
+[  127s] [52/182] preinstalled libcrypt1-4.4.33-2.1
+[  127s] [53/182] preinstalled libctf-nobfd0-2.40-2.1
+[  127s] [54/182] preinstalled libctf0-2.40-2.1
+[  127s] [55/182] preinstalled libdb-4_8-4.8.30-40.1
+[  127s] [56/182] preinstalled libdw1-0.189-2.1
+[  127s] [57/182] preinstalled libeconf0-0.5.1-1.1
+[  127s] [58/182] preinstalled libelf1-0.189-2.1
+[  127s] [59/182] cumulate libexpat1-2.5.0-2.1
+[  127s] [60/182] preinstalled libfdisk1-2.38.1-10.1
+[  127s] [61/182] cumulate libffi8-3.4.4-1.1
+[  127s] [62/182] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[  127s] [63/182] preinstalled libgcrypt20-1.10.1-2.1
+[  127s] [64/182] preinstalled libgdbm6-1.23-1.1
+[  127s] [65/182] preinstalled libgdbm_compat4-1.23-1.1
+[  127s] [66/182] preinstalled libgmp10-6.2.1-4.1
+[  127s] [67/182] preinstalled libgomp1-13.0.1+git6669-7.1
+[  127s] [68/182] preinstalled libgpg-error0-1.46-1.1
+[  127s] [69/182] preinstalled libisl23-0.25-1.1
+[  127s] [70/182] preinstalled libitm1-13.0.1+git6669-7.1
+[  127s] [71/182] preinstalled liblua5_4-5-5.4.4-9.1
+[  127s] [72/182] preinstalled liblzma5-5.4.2-1.1
+[  127s] [73/182] preinstalled libmagic1-5.44-1.2
+[  127s] [74/182] preinstalled libmount1-2.38.1-10.1
+[  127s] [75/182] preinstalled libmpc3-1.3.1-1.2
+[  127s] [76/182] cumulate libmpdec3-2.5.1-2.1
+[  127s] [77/182] preinstalled libmpfr6-4.2.0-1.1
+[  127s] [78/182] preinstalled libncurses6-6.4.20230311-8.1
+[  127s] [79/182] preinstalled libpcre2-8-0-10.42-3.2
+[  127s] [80/182] preinstalled libpkgconf3-1.8.0-2.1
+[  127s] [81/182] preinstalled libpopt0-1.19-1.1
+[  127s] [82/182] preinstalled libreadline8-8.2-2.1
+[  127s] [83/182] preinstalled librpmbuild9-4.18.0-4.1
+[  127s] [84/182] preinstalled libseccomp2-2.5.4-2.1
+[  127s] [85/182] preinstalled libselinux1-3.5-1.1
+[  127s] [86/182] preinstalled libsemanage-conf-3.5-1.1
+[  127s] [87/182] preinstalled libsemanage2-3.5-1.1
+[  127s] [88/182] preinstalled libsepol2-3.5-1.1
+[  127s] [89/182] preinstalled libsmartcols1-2.38.1-10.1
+[  127s] [90/182] preinstalled libstdc++6-13.0.1+git6669-7.1
+[  127s] [91/182] preinstalled libsubid4-4.13-4.1
+[  127s] [92/182] preinstalled libubsan1-13.0.1+git6669-7.1
+[  127s] [93/182] preinstalled libutempter0-1.2.0-3.2
+[  127s] [94/182] preinstalled libuuid1-2.38.1-10.1
+[  127s] [95/182] preinstalled libxcrypt-devel-4.4.33-2.1
+[  127s] [96/182] preinstalled libz1-1.2.13-3.1
+[  127s] [97/182] preinstalled libzstd1-1.5.4-2.1
+[  127s] [98/182] preinstalled linux-glibc-devel-6.2-1.1
+[  127s] [99/182] preinstalled login_defs-4.13-4.1
+[  127s] [100/182] preinstalled lua54-5.4.4-9.1
+[  127s] [101/182] preinstalled make-4.4.1-1.1
+[  127s] [102/182] preinstalled ncurses-utils-6.4.20230311-8.1
+[  127s] [103/182] preinstalled pam-1.5.2-14.1
+[  127s] [104/182] preinstalled patch-2.7.6-6.1
+[  127s] [105/182] preinstalled perl-5.36.0-4.1
+[  127s] [106/182] preinstalled perl-base-5.36.0-4.1
+[  127s] [107/182] preinstalled permissions-1599_20230217-1.1
+[  127s] [108/182] preinstalled permissions-config-1599_20230217-1.1
+[  127s] [109/182] preinstalled pkgconf-1.8.0-2.1
+[  127s] [110/182] preinstalled pkgconf-m4-1.8.0-2.1
+[  127s] [111/182] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[  127s] [112/182] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[  127s] [113/182] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[  127s] [114/182] cumulate python-rpm-macros-20230304.050c1a4-1.1
+[  127s] [115/182] preinstalled qemu-linux-user-7.1.0-54.1
+[  127s] [116/182] preinstalled rpm-4.18.0-4.1
+[  127s] [117/182] preinstalled rpm-build-4.18.0-4.1
+[  127s] [118/182] preinstalled rpm-build-perl-4.18.0-4.1
+[  127s] [119/182] preinstalled rpm-config-SUSE-20220926-1.1
+[  127s] [120/182] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.20
+[  127s] [121/182] preinstalled rpmlint-strict-2.4.0+git20230322.717aa4d-1.1
+[  127s] [122/182] preinstalled sed-4.9-2.1
+[  127s] [123/182] preinstalled shadow-4.13-4.1
+[  127s] [124/182] preinstalled system-group-hardware-20170617-24.1
+[  127s] [125/182] preinstalled system-user-root-20190513-2.1
+[  127s] [126/182] preinstalled systemd-rpm-macros-19-1.1
+[  127s] [127/182] preinstalled sysuser-shadow-3.1-5.1
+[  127s] [128/182] preinstalled tar-1.34-10.1
+[  127s] [129/182] preinstalled terminfo-base-6.4.20230311-8.1
+[  127s] [130/182] preinstalled update-alternatives-1.21.8-1.1
+[  127s] [131/182] preinstalled util-linux-2.38.1-10.1
+[  127s] [132/182] preinstalled which-2.21-5.1
+[  127s] [133/182] preinstalled xz-5.4.2-1.1
+[  127s] [134/182] cumulate zlib-devel-1.2.13-3.1
+[  127s] [135/182] cumulate libcdata1-20230108-1.1
+[  127s] [136/182] cumulate libcerror-devel-20220101-4.1
+[  127s] [137/182] cumulate libclocale1-20221218-1.2
+[  127s] [138/182] cumulate libcnotify1-20220108-3.1
+[  127s] [139/182] cumulate libcsplit1-20220109-3.1
+[  127s] [140/182] cumulate libcthreads1-20220102-3.1
+[  127s] [141/182] cumulate libfdatetime1-20220112-4.1
+[  127s] [142/182] cumulate libfguid1-20220113-3.1
+[  127s] [143/182] cumulate libopenssl3-3.0.8-2.1
+[  127s] [144/182] cumulate libuna1-mini-20220611-4.1
+[  127s] [145/182] cumulate libcdata-devel-20230108-1.1
+[  127s] [146/182] cumulate libclocale-devel-20221218-1.2
+[  127s] [147/182] cumulate libcnotify-devel-20220108-3.1
+[  127s] [148/182] cumulate libcsplit-devel-20220109-3.1
+[  128s] [149/182] cumulate libcthreads-devel-20220102-3.1
+[  128s] [150/182] cumulate libfdatetime-devel-20220112-4.1
+[  128s] [151/182] cumulate libfguid-devel-20220113-3.1
+[  128s] [152/182] cumulate libuna-mini-devel-20220611-4.1
+[  128s] [153/182] cumulate libfcache1-20230115-1.1
+[  128s] [154/182] cumulate libfmapi1-20220114-3.1
+[  128s] [155/182] cumulate libfwnt1-20220922-2.3
+[  128s] [156/182] cumulate libcfile1-20220106-2.3
+[  128s] [157/182] cumulate libcpath1-20220108-4.3
+[  128s] [158/182] cumulate libcfile-devel-20220106-2.3
+[  128s] [159/182] cumulate libcpath-devel-20220108-4.3
+[  128s] [160/182] cumulate libfcache-devel-20230115-1.1
+[  128s] [161/182] cumulate libfmapi-devel-20220114-3.1
+[  128s] [162/182] cumulate libfwnt-devel-20220922-2.3
+[  128s] [163/182] cumulate libfdata1-20230319-1.1
+[  128s] [164/182] cumulate libbfio1-20221025-2.3
+[  128s] [165/182] cumulate libfvalue1-20220120-3.2
+[  128s] [166/182] cumulate libbfio-devel-20221025-2.3
+[  128s] [167/182] cumulate libfdata-devel-20230319-1.1
+[  128s] [168/182] cumulate libfvalue-devel-20220120-3.2
+[  128s] [169/182] cumulate python310-base-3.10.10-2.1
+[  128s] [170/182] cumulate python311-base-3.11.2-1.2
+[  128s] [171/182] cumulate python38-base-3.8.16-5.1
+[  128s] [172/182] cumulate python39-base-3.9.16-5.1
+[  128s] [173/182] cumulate libpython3_10-1_0-3.10.10-2.1
+[  128s] [174/182] cumulate libpython3_11-1_0-3.11.2-1.2
+[  128s] [175/182] cumulate libpython3_8-1_0-3.8.16-5.1
+[  128s] [176/182] cumulate libpython3_9-1_0-3.9.16-5.1
+[  128s] [177/182] cumulate python310-packaging-23.0-2.1
+[  128s] [178/182] cumulate python311-devel-3.11.2-1.2
+[  128s] [179/182] cumulate python38-devel-3.8.16-5.1
+[  128s] [180/182] cumulate python39-devel-3.9.16-5.1
+[  128s] [181/182] cumulate python310-devel-3.10.10-2.1
+[  128s] [182/182] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[  128s] now installing cumulated packages
+[  129s] Preparing...                          ########################################
+[  129s] Updating / installing...
+[  129s] libcerror1-20220101-4.1               ########################################
+[  129s] libcdata1-20230108-1.1                ########################################
+[  129s] libuna1-mini-20220611-4.1             ########################################
+[  130s] libcnotify1-20220108-3.1              ########################################
+[  130s] libclocale1-20221218-1.2              ########################################
+[  130s] libmpdec3-2.5.1-2.1                   ########################################
+[  130s] libffi8-3.4.4-1.1                     ########################################
+[  130s] libexpat1-2.5.0-2.1                   ########################################
+[  130s] libcfile1-20220106-2.3                ########################################
+[  131s] libfwnt1-20220922-2.3                 ########################################
+[  131s] libfcache1-20230115-1.1               ########################################
+[  131s] libcsplit1-20220109-3.1               ########################################
+[  131s] libcpath1-20220108-4.3                ########################################
+[  131s] libcthreads1-20220102-3.1             ########################################
+[  131s] libfdatetime1-20220112-4.1            ########################################
+[  132s] libfguid1-20220113-3.1                ########################################
+[  132s] libfvalue1-20220120-3.2               ########################################
+[  132s] libbfio1-20221025-2.3                 ########################################
+[  132s] libfdata1-20230319-1.1                ########################################
+[  132s] libfmapi1-20220114-3.1                ########################################
+[  132s] python-rpm-macros-20230304.050c1a4-1.1########################################
+[  132s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[  134s] libopenssl3-3.0.8-2.1                 ########################################
+[  135s] libpython3_10-1_0-3.10.10-2.1         ########################################
+[  147s] python310-base-3.10.10-2.1            ########################################
+[  149s] libpython3_11-1_0-3.11.2-1.2          ########################################
+[  167s] python311-base-3.11.2-1.2             ########################################
+[  168s] libpython3_8-1_0-3.8.16-5.1           ########################################
+[  182s] python38-base-3.8.16-5.1              ########################################
+[  184s] libpython3_9-1_0-3.9.16-5.1           ########################################
+[  196s] python39-base-3.9.16-5.1              ########################################
+[  197s] python310-packaging-23.0-2.1          ########################################
+[  197s] python-rpm-packaging-20210526+a18ca48-########################################
+[  197s] python39-devel-3.9.16-5.1             ########################################
+[  198s] python38-devel-3.8.16-5.1             ########################################
+[  198s] python311-devel-3.11.2-1.2            ########################################
+[  199s] python310-devel-3.10.10-2.1           ########################################
+[  199s] libfmapi-devel-20220114-3.1           ########################################
+[  199s] libfdata-devel-20230319-1.1           ########################################
+[  199s] libbfio-devel-20221025-2.3            ########################################
+[  199s] libfvalue-devel-20220120-3.2          ########################################
+[  199s] libfguid-devel-20220113-3.1           ########################################
+[  199s] libfdatetime-devel-20220112-4.1       ########################################
+[  199s] libcthreads-devel-20220102-3.1        ########################################
+[  199s] libcpath-devel-20220108-4.3           ########################################
+[  199s] libcsplit-devel-20220109-3.1          ########################################
+[  199s] libfcache-devel-20230115-1.1          ########################################
+[  199s] libfwnt-devel-20220922-2.3            ########################################
+[  199s] libcfile-devel-20220106-2.3           ########################################
+[  199s] libclocale-devel-20221218-1.2         ########################################
+[  199s] libcnotify-devel-20220108-3.1         ########################################
+[  199s] libuna-mini-devel-20220611-4.1        ########################################
+[  199s] libcdata-devel-20230108-1.1           ########################################
+[  199s] libcerror-devel-20220101-4.1          ########################################
+[  200s] zlib-devel-1.2.13-3.1                 ########################################
+[  205s] now finalizing build dir...
+[  205s] ... running 01-add_abuild_user_to_trusted_group
+[  206s] ... running 02-set_timezone_to_utc
+[  207s] ... running 03-set-permissions-secure
+[  207s] ... running 11-hack_uname_version_to_kernel_version
+[  231s] -----------------------------------------------------------------
+[  231s] I have the following modifications for libpff.spec:
+[  231s] 22c22
+[  232s] < Release:        0
+[  232s] ---
+[  232s] > Release:        4.5
+[  232s] 37c37
+[  232s] < BuildRequires:  pkg-config
+[  232s] ---
+[  232s] > BuildRequires:  pkgconf-pkg-config
+[  256s] build target is riscv64-suse-linux
+[  256s] -----------------------------------------------------------------
+[  256s] ----- building libpff.spec (user abuild)
+[  256s] -----------------------------------------------------------------
+[  256s] -----------------------------------------------------------------
+[  266s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/c8e980ddb7075d000e0675262715617c-libpff' /home/abuild/rpmbuild/SOURCES/libpff.spec
+[  280s] Building target platforms: riscv64-suse-linux
+[  280s] Building for target riscv64-suse-linux
+[  280s] setting SOURCE_DATE_EPOCH=1672704000
+[  280s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.l0e61E
+[  281s] + umask 022
+[  281s] + cd /home/abuild/rpmbuild/BUILD
+[  281s] + cd /home/abuild/rpmbuild/BUILD
+[  281s] + rm -rf libpff-20211114
+[  281s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/libpff-alpha-20211114.tar.gz
+[  282s] + STATUS=0
+[  282s] + '[' 0 -ne 0 ']'
+[  282s] + cd libpff-20211114
+[  282s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  282s] + cp -av /home/abuild/rpmbuild/SOURCES/MAPI_definitions.pdf /home/abuild/rpmbuild/SOURCES/PFF_Forensics_-_analyzing_the_horrible_reference_file_format.pdf /home/abuild/rpmbuild/SOURCES/PFF_forensics_-_e-mail_and_appoinment_falsification_analysis.pdf /home/abuild/rpmbuild/SOURCES/Personal_Folder_File_PFF_format.pdf /home/abuild/rpmbuild/SOURCES/libpff-libfdata.pdf .
+[  282s] '/home/abuild/rpmbuild/SOURCES/MAPI_definitions.pdf' -> './MAPI_definitions.pdf'
+[  282s] '/home/abuild/rpmbuild/SOURCES/PFF_Forensics_-_analyzing_the_horrible_reference_file_format.pdf' -> './PFF_Forensics_-_analyzing_the_horrible_reference_file_format.pdf'
+[  282s] '/home/abuild/rpmbuild/SOURCES/PFF_forensics_-_e-mail_and_appoinment_falsification_analysis.pdf' -> './PFF_forensics_-_e-mail_and_appoinment_falsification_analysis.pdf'
+[  282s] '/home/abuild/rpmbuild/SOURCES/Personal_Folder_File_PFF_format.pdf' -> './Personal_Folder_File_PFF_format.pdf'
+[  282s] '/home/abuild/rpmbuild/SOURCES/libpff-libfdata.pdf' -> './libpff-libfdata.pdf'
+[  282s] + RPM_EC=0
+[  282s] ++ jobs -p
+[  282s] + exit 0
+[  283s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.XfhkyD
+[  283s] + umask 022
+[  283s] + cd /home/abuild/rpmbuild/BUILD
+[  283s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/libpff-20211114-4.5.riscv64
+[  283s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/libpff-20211114-4.5.riscv64
+[  283s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  283s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/libpff-20211114-4.5.riscv64
+[  283s] + cd libpff-20211114
+[  283s] + ref=/usr/lib/rpm
+[  283s] + mints=0
+[  283s] + case $(uname -m) in
+[  284s] ++ uname -m
+[  284s] + mints=20160911
+[  284s] + for s in guess sub
+[  284s] ++ find -maxdepth 8 -name config.guess
+[  284s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  284s] + grep -q config-patches@ ./config.guess
+[  284s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.guess
+[  284s] + timestamp=20180829
+[  284s] + test -n 20180829
+[  284s] + test 20180829 -ge 20160911
+[  284s] + for s in guess sub
+[  284s] ++ find -maxdepth 8 -name config.sub
+[  285s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  285s] + grep -q config-patches@ ./config.sub
+[  285s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.sub
+[  285s] + timestamp=20180829
+[  285s] + test -n 20180829
+[  285s] + test 20180829 -ge 20160911
+[  285s] + echo 'V_20211114 { global: *; };'
+[  285s] ++ '[' -f _current_flavor ']'
+[  285s] ++ true
+[  285s] + last_flavor=
+[  285s] + '[' -z '' ']'
+[  285s] + last_flavor=tmp
+[  285s] + '[' tmp '!=' python38 ']'
+[  285s] + '[' -d build ']'
+[  285s] + '[' -d _build.python38 ']'
+[  285s] + echo python38
+[  285s] + python_flavor=python38
+[  285s] + CONFIG_SHELL=/usr/bin/bash
+[  285s] + export CONFIG_SHELL
+[  285s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  285s] + export CFLAGS
+[  285s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  285s] + export CXXFLAGS
+[  285s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  285s] + export FFLAGS
+[  285s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  285s] + export FCFLAGS
+[  285s] + LDFLAGS=-flto=auto
+[  285s] + export LDFLAGS
+[  285s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-static --enable-wide-character-type --enable-python PYTHON_VERSION=3.8
+[  297s] checking for a BSD-compatible install... /usr/bin/install -c
+[  297s] checking whether build environment is sane... yes
+[  298s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[  298s] checking for gawk... gawk
+[  298s] checking whether make sets $(MAKE)... yes
+[  299s] checking whether make supports nested variables... yes
+[  299s] checking whether UID '399' is supported by ustar format... yes
+[  299s] checking whether GID '399' is supported by ustar format... yes
+[  300s] checking how to create a ustar tar archive... gnutar
+[  302s] checking build system type... riscv64-suse-linux-gnu
+[  302s] checking host system type... riscv64-suse-linux-gnu
+[  302s] checking for riscv64-suse-linux-gnu-gcc... no
+[  302s] checking for gcc... gcc
+[  313s] checking whether the C compiler works... yes
+[  313s] checking for C compiler default output file name... a.out
+[  320s] checking for suffix of executables... 
+[  329s] checking whether we are cross compiling... no
+[  331s] checking for suffix of object files... o
+[  332s] checking whether we are using the GNU C compiler... yes
+[  334s] checking whether gcc accepts -g... yes
+[  338s] checking for gcc option to accept ISO C89... none needed
+[  343s] checking whether gcc understands -c and -o together... yes
+[  343s] checking whether make supports the include directive... yes (GNU style)
+[  343s] checking dependency style of gcc... none
+[  345s] checking how to run the C preprocessor... gcc -E
+[  347s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  347s] checking for egrep... /usr/bin/grep -E
+[  350s] checking whether gcc needs -traditional... no
+[  350s] checking for riscv64-suse-linux-gnu-g++... no
+[  350s] checking for riscv64-suse-linux-gnu-c++... no
+[  350s] checking for riscv64-suse-linux-gnu-gpp... no
+[  350s] checking for riscv64-suse-linux-gnu-aCC... no
+[  350s] checking for riscv64-suse-linux-gnu-CC... no
+[  350s] checking for riscv64-suse-linux-gnu-cxx... no
+[  350s] checking for riscv64-suse-linux-gnu-cc++... no
+[  350s] checking for riscv64-suse-linux-gnu-cl.exe... no
+[  350s] checking for riscv64-suse-linux-gnu-FCC... no
+[  350s] checking for riscv64-suse-linux-gnu-KCC... no
+[  350s] checking for riscv64-suse-linux-gnu-RCC... no
+[  350s] checking for riscv64-suse-linux-gnu-xlC_r... no
+[  350s] checking for riscv64-suse-linux-gnu-xlC... no
+[  350s] checking for g++... no
+[  350s] checking for c++... no
+[  350s] checking for gpp... no
+[  350s] checking for aCC... no
+[  350s] checking for CC... no
+[  350s] checking for cxx... no
+[  350s] checking for cc++... no
+[  350s] checking for cl.exe... no
+[  350s] checking for FCC... no
+[  350s] checking for KCC... no
+[  350s] checking for RCC... no
+[  350s] checking for xlC_r... no
+[  350s] checking for xlC... no
+[  352s] checking whether we are using the GNU C++ compiler... no
+[  354s] checking whether g++ accepts -g... no
+[  354s] checking dependency style of g++... none
+[  354s] checking whether make sets $(MAKE)... (cached) yes
+[  354s] checking how to print strings... printf
+[  355s] checking for a sed that does not truncate output... /usr/bin/sed
+[  355s] checking for fgrep... /usr/bin/grep -F
+[  357s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  358s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  358s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  360s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  360s] checking whether ln -s works... yes
+[  360s] checking the maximum length of command line arguments... 1572864
+[  360s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  360s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  360s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  360s] checking for riscv64-suse-linux-gnu-objdump... objdump
+[  360s] checking how to recognize dependent libraries... pass_all
+[  360s] checking for riscv64-suse-linux-gnu-dlltool... dlltool
+[  360s] checking how to associate runtime and link libraries... printf %s\n
+[  360s] checking for riscv64-suse-linux-gnu-ar... no
+[  360s] checking for ar... ar
+[  363s] checking for archiver @FILE support... @
+[  363s] checking for riscv64-suse-linux-gnu-strip... no
+[  363s] checking for strip... strip
+[  363s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  363s] checking for ranlib... ranlib
+[  372s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  372s] checking for sysroot... no
+[  372s] checking for a working dd... /usr/bin/dd
+[  373s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[  373s] checking for riscv64-suse-linux-gnu-mt... no
+[  373s] checking for mt... no
+[  373s] checking if : is a manifest tool... no
+[  388s] checking for ANSI C header files... yes
+[  389s] checking for sys/types.h... yes
+[  392s] checking for sys/stat.h... yes
+[  395s] checking for stdlib.h... yes
+[  397s] checking for string.h... yes
+[  400s] checking for memory.h... yes
+[  403s] checking for strings.h... yes
+[  406s] checking for inttypes.h... yes
+[  409s] checking for stdint.h... yes
+[  413s] checking for unistd.h... yes
+[  416s] checking for dlfcn.h... yes
+[  416s] checking for objdir... .libs
+[  426s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  426s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  427s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  429s] checking if gcc static flag -static works... no
+[  431s] checking if gcc supports -c -o file.o... yes
+[  431s] checking if gcc supports -c -o file.o... (cached) yes
+[  431s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  436s] checking whether -lc should be explicitly linked in... no
+[  442s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  442s] checking how to hardcode library paths into programs... immediate
+[  442s] checking whether stripping libraries is possible... yes
+[  442s] checking if libtool supports shared libraries... yes
+[  442s] checking whether to build shared libraries... yes
+[  442s] checking whether to build static libraries... no
+[  442s] checking for pkg-config... /usr/bin/pkg-config
+[  442s] checking whether NLS is requested... yes
+[  443s] checking for msgfmt... /usr/bin/msgfmt
+[  443s] checking for gmsgfmt... /usr/bin/msgfmt
+[  443s] checking for xgettext... /usr/bin/xgettext
+[  444s] checking for msgmerge... /usr/bin/msgmerge
+[  446s] checking for ld used by GCC... /usr/riscv64-suse-linux/bin/ld
+[  446s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  448s] checking for shared library run path origin... done
+[  450s] checking for CFPreferencesCopyAppValue... no
+[  451s] checking for CFLocaleCopyCurrent... no
+[  458s] checking for GNU gettext in libc... yes
+[  458s] checking whether to use NLS... yes
+[  458s] checking where the gettext function comes from... libc
+[  459s] checking for an ANSI C-conforming const... yes
+[  462s] checking for working volatile... yes
+[  462s] checking for special C compiler options needed for large files... no
+[  464s] checking for _FILE_OFFSET_BITS value needed for large files... no
+[  464s] checking whether to disable disable shared library support... (cached) yes
+[  465s] checking whether to enable build static executables (binaries)... (cached) no
+[  465s] checking whether to enable enable WINAPI support for cross-compilation... (cached) auto-detect
+[  465s] checking whether to enable enable wide character type support... (cached) yes
+[  465s] checking whether to enable enable verbose output... (cached) no
+[  465s] checking whether to enable enable debug output... (cached) no
+[  465s] checking for sys/types.h... (cached) yes
+[  465s] checking for inttypes.h... (cached) yes
+[  465s] checking for stdint.h... (cached) yes
+[  470s] checking wchar.h usability... yes
+[  471s] checking wchar.h presence... yes
+[  471s] checking for wchar.h... yes
+[  479s] checking for mode_t... yes
+[  487s] checking for off_t... yes
+[  495s] checking for size_t... yes
+[  500s] checking for size32_t... no
+[  503s] checking for ssize32_t... no
+[  507s] checking for size64_t... no
+[  511s] checking for ssize64_t... no
+[  516s] checking for off64_t... no
+[  523s] checking for ssize_t... yes
+[  528s] checking for u64... no
+[  539s] checking size of int... 4
+[  551s] checking size of long... 8
+[  565s] checking size of off_t... 8
+[  578s] checking size of size_t... 8
+[  591s] checking size of wchar_t... 4
+[  595s] checking libintl.h usability... yes
+[  596s] checking libintl.h presence... yes
+[  596s] checking for libintl.h... yes
+[  599s] checking limits.h usability... yes
+[  600s] checking limits.h presence... yes
+[  600s] checking for limits.h... yes
+[  600s] checking for stdlib.h... (cached) yes
+[  601s] checking for string.h... (cached) yes
+[  601s] checking for wchar.h... (cached) yes
+[  605s] checking wctype.h usability... yes
+[  607s] checking wctype.h presence... yes
+[  607s] checking for wctype.h... yes
+[  613s] checking for fclose... yes
+[  622s] checking for feof... yes
+[  630s] checking for fgets... yes
+[  640s] checking for fopen... yes
+[  648s] checking for fread... yes
+[  658s] checking for fseeko... yes
+[  668s] checking for fseeko64... yes
+[  679s] checking for fwrite... yes
+[  689s] checking for vfprintf... yes
+[  700s] checking for fgetws... yes
+[  712s] checking for free... yes
+[  725s] checking for malloc... yes
+[  738s] checking for memcmp... yes
+[  750s] checking for memcpy... yes
+[  761s] checking for memset... yes
+[  775s] checking for realloc... yes
+[  787s] checking for memchr... yes
+[  799s] checking for memrchr... yes
+[  812s] checking for snprintf... yes
+[  824s] checking for sscanf... yes
+[  833s] checking for strcasecmp... yes
+[  844s] checking for strchr... yes
+[  853s] checking for strlen... yes
+[  862s] checking for strncasecmp... yes
+[  869s] checking for strncmp... yes
+[  879s] checking for strncpy... yes
+[  887s] checking for strnicmp... no
+[  896s] checking for strrchr... yes
+[  903s] checking for strstr... yes
+[  912s] checking for vsnprintf... yes
+[  916s] checking whether memrchr is declared... no
+[  923s] checking for swprintf... yes
+[  931s] checking for towlower... yes
+[  938s] checking for wcscasecmp... yes
+[  947s] checking for wcschr... yes
+[  955s] checking for wcslen... yes
+[  963s] checking for wcsncasecmp... yes
+[  972s] checking for wcsncmp... yes
+[  980s] checking for wcsncpy... yes
+[  988s] checking for wcsnicmp... no
+[  997s] checking for wcsrchr... yes
+[ 1007s] checking for wcsstr... yes
+[ 1016s] checking for wmemchr... yes
+[ 1026s] checking for wmemcmp... yes
+[ 1034s] checking for wmemcpy... yes
+[ 1042s] checking for wmemrchr... no
+[ 1068s] checking whether printf supports the conversion specifier "%jd"... yes
+[ 1096s] checking whether printf supports the conversion specifier "%zd"... yes
+[ 1096s] checking for riscv64-suse-linux-gnu-pkg-config... /usr/bin/riscv64-suse-linux-gnu-pkg-config
+[ 1097s] checking pkg-config is at least version 0.9.0... yes
+[ 1097s] checking whether to use search for libcerror in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1099s] checking for libcerror... yes
+[ 1099s] checking whether to enable enable multi-threading support... (cached) yes
+[ 1099s] checking whether to use search for libcthreads in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1101s] checking for libcthreads... yes
+[ 1101s] checking whether to use search for libcdata in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1102s] checking for libcdata... yes
+[ 1103s] checking whether to use search for libclocale in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1104s] checking for libclocale... yes
+[ 1107s] checking whether libclocale/features.h defines LIBCLOCALE_HAVE_WIDE_CHARACTER_TYPE as 1... yes
+[ 1107s] checking whether to use search for libcnotify in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1108s] checking for libcnotify... yes
+[ 1108s] checking whether to use search for libcsplit in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1111s] checking for libcsplit... yes
+[ 1114s] checking whether libcsplit/features.h defines LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE as 1... yes
+[ 1114s] checking whether to use search for libuna in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1116s] checking for libuna... yes
+[ 1116s] checking whether to use search for libcfile in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1117s] checking for libcfile... yes
+[ 1120s] checking whether libcfile/features.h defines LIBCFILE_HAVE_WIDE_CHARACTER_TYPE as 1... yes
+[ 1120s] checking whether to use search for libcpath in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1122s] checking for libcpath... yes
+[ 1125s] checking whether libcpath/features.h defines LIBCPATH_HAVE_WIDE_CHARACTER_TYPE as 1... yes
+[ 1125s] checking whether to use search for libbfio in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1127s] checking for libbfio... yes
+[ 1130s] checking whether libbfio/features.h defines LIBBFIO_HAVE_WIDE_CHARACTER_TYPE as 1... yes
+[ 1130s] checking whether to use search for libfcache in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1132s] checking for libfcache... yes
+[ 1132s] checking whether to use search for libfdata in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1134s] checking for libfdata... yes
+[ 1134s] checking whether to use search for libfdatetime in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1136s] checking for libfdatetime... yes
+[ 1136s] checking whether to use search for libfguid in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1138s] checking for libfguid... yes
+[ 1138s] checking whether to use search for libfvalue in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1140s] checking for libfvalue... yes
+[ 1140s] checking whether to use search for libfwnt in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1142s] checking for libfwnt... yes
+[ 1142s] checking whether to use search for libfmapi in includedir and libdir or in the specified DIR, or no if to use local version... (cached) auto-detect
+[ 1144s] checking for libfmapi... yes
+[ 1144s] checking whether to use search for zlib in includedir and libdir or in the specified DIR, or no if not to use zlib... (cached) auto-detect
+[ 1147s] checking for zlib... yes
+[ 1160s] checking for uncompress in -lz... yes
+[ 1174s] checking for bindtextdomain... yes
+[ 1174s] checking whether to use use `python-config --prefix' to determine the prefix of pythondir instead of --prefix... (cached) no
+[ 1174s] checking whether to enable build Python bindings... (cached) yes
+[ 1174s] checking whether to use use to specify the Python directory (pythondir)... (cached) no
+[ 1174s] checking whether to enable build Python 2 bindings... (cached) no
+[ 1175s] checking whether to use use to specify the Python 2 directory (pythondir2)... (cached) no
+[ 1175s] checking whether to enable build Python 3 bindings... (cached) no
+[ 1175s] checking whether to use use to specify the Python 3 directory (pythondir3)... (cached) no
+[ 1175s] checking for python3.8... python3.8
+[ 1178s] checking for python3.8-config... python3.8-config
+[ 1180s] checking for Python includes... -I/usr/include/python3.8 -I/usr/include/python3.8
+[ 1182s] checking for Python libraries...  -L/usr/lib64  -lcrypt -ldl  -lm -lm 
+[ 1191s] checking Python.h usability... yes
+[ 1196s] checking Python.h presence... yes
+[ 1196s] checking for Python.h... yes
+[ 1209s] checking stdarg.h usability... yes
+[ 1211s] checking stdarg.h presence... yes
+[ 1211s] checking for stdarg.h... yes
+[ 1216s] checking varargs.h usability... no
+[ 1218s] checking varargs.h presence... no
+[ 1218s] checking for varargs.h... no
+[ 1218s] checking whether to enable build Java bindings... (cached) no
+[ 1224s] checking signal.h usability... yes
+[ 1226s] checking signal.h presence... yes
+[ 1226s] checking for signal.h... yes
+[ 1231s] checking sys/signal.h usability... yes
+[ 1233s] checking sys/signal.h presence... yes
+[ 1233s] checking for sys/signal.h... yes
+[ 1233s] checking for unistd.h... (cached) yes
+[ 1245s] checking for close... yes
+[ 1258s] checking for getopt... yes
+[ 1272s] checking for setvbuf... yes
+[ 1273s] checking for stdarg.h... (cached) yes
+[ 1274s] checking for varargs.h... (cached) no
+[ 1274s] checking for dlfcn.h... (cached) yes
+[ 1287s] checking for fmemopen... yes
+[ 1288s] checking for getopt... (cached) yes
+[ 1302s] checking for mkstemp... yes
+[ 1317s] checking for setenv... yes
+[ 1331s] checking for tzset... yes
+[ 1347s] checking for unlink... yes
+[ 1363s] checking for dlsym in -ldl... yes
+[ 1367s] checking that generated files are newer than configure... done
+[ 1367s] configure: creating ./config.status
+[ 1432s] config.status: creating Makefile
+[ 1434s] config.status: creating include/Makefile
+[ 1437s] config.status: creating common/Makefile
+[ 1439s] config.status: creating libcerror/Makefile
+[ 1441s] config.status: creating libcthreads/Makefile
+[ 1443s] config.status: creating libcdata/Makefile
+[ 1445s] config.status: creating libclocale/Makefile
+[ 1447s] config.status: creating libcnotify/Makefile
+[ 1449s] config.status: creating libcsplit/Makefile
+[ 1451s] config.status: creating libuna/Makefile
+[ 1454s] config.status: creating libcfile/Makefile
+[ 1456s] config.status: creating libcpath/Makefile
+[ 1457s] config.status: creating libbfio/Makefile
+[ 1460s] config.status: creating libfcache/Makefile
+[ 1462s] config.status: creating libfdata/Makefile
+[ 1463s] config.status: creating libfdatetime/Makefile
+[ 1465s] config.status: creating libfguid/Makefile
+[ 1466s] config.status: creating libfvalue/Makefile
+[ 1469s] config.status: creating libfwnt/Makefile
+[ 1470s] config.status: creating libfmapi/Makefile
+[ 1471s] config.status: creating libpff/Makefile
+[ 1473s] config.status: creating pypff/Makefile
+[ 1475s] config.status: creating pypff-python2/Makefile
+[ 1477s] config.status: creating pypff-python3/Makefile
+[ 1480s] config.status: creating jpff/Makefile
+[ 1482s] config.status: creating pfftools/Makefile
+[ 1484s] config.status: creating po/Makefile.in
+[ 1485s] config.status: creating po/Makevars
+[ 1487s] config.status: creating manuals/Makefile
+[ 1489s] config.status: creating tests/Makefile
+[ 1491s] config.status: creating ossfuzz/Makefile
+[ 1493s] config.status: creating msvscpp/Makefile
+[ 1496s] config.status: creating include/libpff.h
+[ 1498s] config.status: creating include/libpff/definitions.h
+[ 1499s] config.status: creating include/libpff/features.h
+[ 1502s] config.status: creating include/libpff/types.h
+[ 1504s] config.status: creating libpff/libpff_definitions.h
+[ 1506s] config.status: creating common/types.h
+[ 1508s] config.status: creating dpkg/changelog
+[ 1510s] config.status: creating libpff/libpff.rc
+[ 1512s] config.status: creating libpff.pc
+[ 1514s] config.status: creating libpff.spec
+[ 1516s] config.status: creating common/config.h
+[ 1517s] config.status: executing depfiles commands
+[ 1517s] config.status: executing libtool commands
+[ 1519s] config.status: executing po-directories commands
+[ 1520s] config.status: creating po/POTFILES
+[ 1520s] config.status: creating po/Makefile
+[ 1520s] configure:
+[ 1520s] Building:
+[ 1520s]    libcerror support:                        yes
+[ 1520s]    libcthreads support:                      yes
+[ 1520s]    libcdata support:                         yes
+[ 1520s]    libclocale support:                       yes
+[ 1520s]    libcnotify support:                       yes
+[ 1520s]    libcsplit support:                        yes
+[ 1520s]    libuna support:                           yes
+[ 1520s]    libcfile support:                         yes
+[ 1520s]    libcpath support:                         yes
+[ 1520s]    libbfio support:                          yes
+[ 1520s]    libfcache support:                        yes
+[ 1520s]    libfdata support:                         yes
+[ 1520s]    libfdatetime support:                     yes
+[ 1520s]    libfguid support:                         yes
+[ 1520s]    libfvalue support:                        yes
+[ 1520s]    libfwnt support:                          yes
+[ 1520s]    libfmapi support:                         yes
+[ 1520s]    DEFLATE compression support:              zlib
+[ 1520s] 
+[ 1520s] Features:
+[ 1520s]    Multi-threading support:                  libcthreads
+[ 1520s]    Wide character type support:              yes
+[ 1520s]    pfftools are build as static executables: no
+[ 1520s]    Python (pypff) support:                   3.8
+[ 1520s]    Verbose output:                           no
+[ 1520s]    Debug output:                             no
+[ 1520s] 
+[ 1524s] + grep '  local' config.log
+[ 1524s] + /usr/bin/make -O -j4 V=1 VERBOSE=1 LDFLAGS=-Wl,--version-script=/home/abuild/rpmbuild/BUILD/libpff-20211114/sym.ver
+[ 1525s] Making all in include
+[ 1526s] make[1]: Nothing to be done for 'all'.
+[ 1526s] Making all in common
+[ 1526s] /usr/bin/make  all-am
+[ 1527s] Making all in libcerror
+[ 1528s] make[1]: Nothing to be done for 'all'.
+[ 1528s] Making all in libcthreads
+[ 1528s] make[1]: Nothing to be done for 'all'.
+[ 1528s] Making all in libcdata
+[ 1528s] make[1]: Nothing to be done for 'all'.
+[ 1528s] Making all in libclocale
+[ 1529s] make[1]: Nothing to be done for 'all'.
+[ 1529s] Making all in libcnotify
+[ 1529s] make[1]: Nothing to be done for 'all'.
+[ 1529s] Making all in libcsplit
+[ 1530s] make[1]: Nothing to be done for 'all'.
+[ 1530s] Making all in libuna
+[ 1530s] make[1]: Nothing to be done for 'all'.
+[ 1530s] Making all in libcfile
+[ 1530s] make[1]: Nothing to be done for 'all'.
+[ 1530s] Making all in libcpath
+[ 1531s] make[1]: Nothing to be done for 'all'.
+[ 1531s] Making all in libbfio
+[ 1531s] make[1]: Nothing to be done for 'all'.
+[ 1531s] Making all in libfcache
+[ 1532s] make[1]: Nothing to be done for 'all'.
+[ 1532s] Making all in libfdata
+[ 1532s] make[1]: Nothing to be done for 'all'.
+[ 1532s] Making all in libfdatetime
+[ 1533s] make[1]: Nothing to be done for 'all'.
+[ 1533s] Making all in libfguid
+[ 1533s] make[1]: Nothing to be done for 'all'.
+[ 1533s] Making all in libfvalue
+[ 1534s] make[1]: Nothing to be done for 'all'.
+[ 1534s] Making all in libfwnt
+[ 1534s] make[1]: Nothing to be done for 'all'.
+[ 1534s] Making all in libfmapi
+[ 1535s] make[1]: Nothing to be done for 'all'.
+[ 1535s] Making all in libpff
+[ 1544s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1544s] /usr/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../common  -I../include -I../common    -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c -o libpff.lo libpff.c
+[ 1544s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../common -I../include -I../common -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c libpff.c  -fPIC -DPIC -o .libs/libpff.o
+[ 1544s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1550s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1550s] /usr/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../common  -I../include -I../common    -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c -o libpff_attached_file_io_handle.lo libpff_attached_file_io_handle.c
+[ 1550s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../common -I../include -I../common -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c libpff_attached_file_io_handle.c  -fPIC -DPIC -o .libs/libpff_attached_file_io_handle.o
+[ 1550s] In file included from libpff_descriptors_index.h:28,
+[ 1550s]                  from libpff_item.h:28,
+[ 1550s]                  from libpff_attachment.h:29,
+[ 1550s]                  from libpff_attached_file_io_handle.c:27:
+[ 1550s] libpff_index_tree.h:45:9: error: unknown type name 'libfdata_tree_t'
+[ 1550s]    45 |         libfdata_tree_t *tree;
+[ 1550s]       |         ^~~~~~~~~~~~~~~
+[ 1550s] libpff_index_tree.h:65:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]    65 |      libfdata_tree_node_t **root_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:89:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]    89 |      libfdata_tree_node_t *index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:101:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   101 |      libfdata_tree_node_t **leaf_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:110:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   110 |      libfdata_tree_node_t **leaf_index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:114:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   114 |      libfdata_tree_node_t *index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:119:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   119 |      libfdata_tree_node_t **leaf_index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:135:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   135 |      libfdata_tree_node_t **deleted_leaf_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:148:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   148 |      libfdata_tree_node_t *index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_index_tree.h:152:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   152 |      libfdata_tree_node_t **upper_branch_index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] In file included from libpff_file.h:32,
+[ 1550s]                  from libpff_item.h:30:
+[ 1550s] libpff_item_tree.h:94:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]    94 |      libfdata_tree_node_t *descriptor_index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_item_tree.h:105:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   105 |      libfdata_tree_node_t *descriptor_index_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] In file included from libpff_table.h:36,
+[ 1550s]                  from libpff_item_values.h:36,
+[ 1550s]                  from libpff_item.h:34:
+[ 1550s] libpff_local_descriptors_tree.h:70:9: error: unknown type name 'libfdata_tree_t'
+[ 1550s]    70 |         libfdata_tree_t *tree;
+[ 1550s]       |         ^~~~~~~~~~~~~~~
+[ 1550s] libpff_local_descriptors_tree.h:97:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]    97 |      libfdata_tree_node_t **leaf_local_descriptors_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_local_descriptors_tree.h:101:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   101 |      libfdata_tree_node_t *local_descriptors_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] libpff_local_descriptors_tree.h:105:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1550s]   105 |      libfdata_tree_node_t **leaf_local_descriptors_tree_node,
+[ 1550s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1550s]       |      libcdata_tree_node_t
+[ 1550s] make[1]: *** [Makefile:950: libpff_attached_file_io_handle.lo] Error 1
+[ 1550s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1550s] make[1]: *** Waiting for unfinished jobs....
+[ 1550s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1550s] /usr/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../common  -I../include -I../common    -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c -o libpff_attachment.lo libpff_attachment.c
+[ 1550s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../common -I../include -I../common -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c libpff_attachment.c  -fPIC -DPIC -o .libs/libpff_attachment.o
+[ 1550s] In file included from libpff_descriptors_index.h:28,
+[ 1551s]                  from libpff_item.h:28,
+[ 1551s]                  from libpff_attachment.h:29,
+[ 1551s]                  from libpff_attachment.c:28:
+[ 1551s] libpff_index_tree.h:45:9: error: unknown type name 'libfdata_tree_t'
+[ 1551s]    45 |         libfdata_tree_t *tree;
+[ 1551s]       |         ^~~~~~~~~~~~~~~
+[ 1551s] libpff_index_tree.h:65:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]    65 |      libfdata_tree_node_t **root_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:89:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]    89 |      libfdata_tree_node_t *index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:101:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   101 |      libfdata_tree_node_t **leaf_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:110:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   110 |      libfdata_tree_node_t **leaf_index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:114:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   114 |      libfdata_tree_node_t *index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:119:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   119 |      libfdata_tree_node_t **leaf_index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:135:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   135 |      libfdata_tree_node_t **deleted_leaf_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:148:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   148 |      libfdata_tree_node_t *index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_index_tree.h:152:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   152 |      libfdata_tree_node_t **upper_branch_index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] In file included from libpff_file.h:32,
+[ 1551s]                  from libpff_item.h:30:
+[ 1551s] libpff_item_tree.h:94:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]    94 |      libfdata_tree_node_t *descriptor_index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_item_tree.h:105:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   105 |      libfdata_tree_node_t *descriptor_index_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] In file included from libpff_table.h:36,
+[ 1551s]                  from libpff_item_values.h:36,
+[ 1551s]                  from libpff_item.h:34:
+[ 1551s] libpff_local_descriptors_tree.h:70:9: error: unknown type name 'libfdata_tree_t'
+[ 1551s]    70 |         libfdata_tree_t *tree;
+[ 1551s]       |         ^~~~~~~~~~~~~~~
+[ 1551s] libpff_local_descriptors_tree.h:97:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]    97 |      libfdata_tree_node_t **leaf_local_descriptors_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_local_descriptors_tree.h:101:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   101 |      libfdata_tree_node_t *local_descriptors_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] libpff_local_descriptors_tree.h:105:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1551s]   105 |      libfdata_tree_node_t **leaf_local_descriptors_tree_node,
+[ 1551s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1551s]       |      libcdata_tree_node_t
+[ 1551s] make[1]: *** [Makefile:950: libpff_attachment.lo] Error 1
+[ 1551s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1553s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1553s] /usr/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../common  -I../include -I../common    -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c -o libpff_allocation_table.lo libpff_allocation_table.c
+[ 1553s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../common -I../include -I../common -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c libpff_allocation_table.c  -fPIC -DPIC -o .libs/libpff_allocation_table.o
+[ 1553s] libpff_allocation_table.c: In function 'libpff_allocation_table_read_data':
+[ 1553s] libpff_allocation_table.c:270:13: warning: implicit declaration of function 'libfmapi_checksum_calculate_weak_crc32' [-Wimplicit-function-declaration]
+[ 1553s]   270 |         if( libfmapi_checksum_calculate_weak_crc32(
+[ 1553s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 1553s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1556s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1556s] /usr/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../common  -I../include -I../common    -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c -o libpff_column_definition.lo libpff_column_definition.c
+[ 1556s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../common -I../include -I../common -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -c libpff_column_definition.c  -fPIC -DPIC -o .libs/libpff_column_definition.o
+[ 1556s] In file included from libpff_descriptors_index.h:28,
+[ 1556s]                  from libpff_name_to_id_map.h:28,
+[ 1556s]                  from libpff_column_definition.h:29,
+[ 1556s]                  from libpff_column_definition.c:26:
+[ 1556s] libpff_index_tree.h:45:9: error: unknown type name 'libfdata_tree_t'
+[ 1556s]    45 |         libfdata_tree_t *tree;
+[ 1556s]       |         ^~~~~~~~~~~~~~~
+[ 1556s] libpff_index_tree.h:65:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]    65 |      libfdata_tree_node_t **root_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:89:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]    89 |      libfdata_tree_node_t *index_tree_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:101:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]   101 |      libfdata_tree_node_t **leaf_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:110:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]   110 |      libfdata_tree_node_t **leaf_index_tree_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:114:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]   114 |      libfdata_tree_node_t *index_tree_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:119:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]   119 |      libfdata_tree_node_t **leaf_index_tree_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:135:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]   135 |      libfdata_tree_node_t **deleted_leaf_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:148:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]   148 |      libfdata_tree_node_t *index_tree_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] libpff_index_tree.h:152:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1556s]   152 |      libfdata_tree_node_t **upper_branch_index_tree_node,
+[ 1556s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1556s]       |      libcdata_tree_node_t
+[ 1556s] In file included from libpff_table.h:36,
+[ 1557s]                  from libpff_column_definition.h:30:
+[ 1557s] libpff_local_descriptors_tree.h:70:9: error: unknown type name 'libfdata_tree_t'
+[ 1557s]    70 |         libfdata_tree_t *tree;
+[ 1557s]       |         ^~~~~~~~~~~~~~~
+[ 1557s] libpff_local_descriptors_tree.h:97:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1557s]    97 |      libfdata_tree_node_t **leaf_local_descriptors_tree_node,
+[ 1557s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1557s]       |      libcdata_tree_node_t
+[ 1557s] libpff_local_descriptors_tree.h:101:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1557s]   101 |      libfdata_tree_node_t *local_descriptors_tree_node,
+[ 1557s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1557s]       |      libcdata_tree_node_t
+[ 1557s] libpff_local_descriptors_tree.h:105:6: error: unknown type name 'libfdata_tree_node_t'; did you mean 'libcdata_tree_node_t'?
+[ 1557s]   105 |      libfdata_tree_node_t **leaf_local_descriptors_tree_node,
+[ 1557s]       |      ^~~~~~~~~~~~~~~~~~~~
+[ 1557s]       |      libcdata_tree_node_t
+[ 1557s] make[1]: *** [Makefile:950: libpff_column_definition.lo] Error 1
+[ 1557s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/libpff-20211114/libpff'
+[ 1557s] make: *** [Makefile:796: all-recursive] Error 1
+[ 1557s] error: Bad exit status from /var/tmp/rpm-tmp.XfhkyD (%build)
+[ 1557s] 
+[ 1557s] RPM build errors:
+[ 1557s]     Bad exit status from /var/tmp/rpm-tmp.XfhkyD (%build)
+[ 1557s] ### VM INTERACTION START ###
+[ 1558s] [ 1541.227447][    T1] sysrq: Power Off
+[ 1558s] [ 1541.277359][  T260] reboot: Power down
+[ 1559s] ### VM INTERACTION END ###
+[ 1559s] 
+[ 1559s] old-atreju5 failed "build libpff.spec" at Fri Mar 24 15:31:51 UTC 2023.
+[ 1559s] 

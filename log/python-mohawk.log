@@ -1,0 +1,649 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    0s] 
+[    0s] build77 started "build python-mohawk.spec" at Fri Apr  7 07:38:59 UTC 2023.
+[    0s] 
+[    0s] Building python-mohawk for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '3ff59eb97644d1eb606d2b5ccf3818ec'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/python-mohawk.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/python-mohawk.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/python-mohawk.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [36c9c3bdb3f35be0a262d03307368673]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...done
+[    3s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 7250 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 3
+[    8s] ### VM INTERACTION END ###
+[    8s] 2nd stage started in virtual machine
+[    8s] machine type: riscv64
+[    9s] Linux version: 6.2.9-1-default #1 SMP PREEMPT_DYNAMIC Thu Mar 30 11:30:50 UTC 2023 (7a187a3)
+[    9s] Increasing log level from now on...
+[    9s] [    2.806462][  T359] sysrq: Changing Loglevel
+[    9s] [    2.806562][  T359] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[    9s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[    9s] no label, UUID=72adc0ac-2358-4b27-908e-817600cb8c47
+[    9s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    9s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[    9s] swapon /dev/vdb
+[    9s] WARNING: udev not running, creating extra device nodes
+[    9s] logging output to //.build.log...
+[    9s] processing recipe /.build-srcdir/python-mohawk.spec ...
+[    9s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-mohawk.spec build ...
+[   10s] initializing rpm db...
+[   10s] querying package ids...
+[   24s] [1/148] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   24s] [2/148] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   24s] [3/148] preinstalled attr-2.5.1-1.1
+[   24s] [4/148] preinstalled bash-5.2.15-8.1
+[   24s] [5/148] preinstalled bash-sh-5.2.15-8.1
+[   24s] [6/148] preinstalled binutils-2.40-3.1
+[   24s] [7/148] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   24s] [8/148] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   24s] [9/148] preinstalled build-mkbaselibs-20230314-1.1
+[   24s] [10/148] preinstalled bzip2-1.0.8-5.1
+[   24s] [11/148] preinstalled chkstat-1599_20230217-1.1
+[   24s] [12/148] preinstalled compat-usrmerge-build-84.87-5.1
+[   24s] [13/148] preinstalled compat-usrmerge-tools-84.87-5.1
+[   24s] [14/148] preinstalled coreutils-9.2-1.1
+[   24s] [15/148] preinstalled cpio-2.13-5.1
+[   24s] [16/148] preinstalled cpp-13-1.1
+[   24s] [17/148] preinstalled cpp13-13.0.1+git6669-7.1
+[   24s] [18/148] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   24s] [19/148] preinstalled debugedit-5.0-5.1
+[   24s] [20/148] preinstalled diffutils-3.9-1.1
+[   24s] [21/148] preinstalled dwz-0.15-2.1
+[   24s] [22/148] preinstalled elfutils-0.189-2.1
+[   24s] [23/148] cumulate fdupes-2.2.1-1.1
+[   24s] [24/148] preinstalled file-5.44-1.2
+[   24s] [25/148] preinstalled file-magic-5.44-1.2
+[   24s] [26/148] preinstalled filesystem-84.87-12.1
+[   24s] [27/148] preinstalled fillup-1.42-279.1
+[   24s] [28/148] preinstalled findutils-4.9.0-2.1
+[   24s] [29/148] preinstalled gawk-5.2.1-2.1
+[   24s] [30/148] preinstalled gcc-13-1.1
+[   24s] [31/148] preinstalled gcc-PIE-13-1.1
+[   24s] [32/148] preinstalled gcc13-13.0.1+git6669-7.1
+[   24s] [33/148] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   24s] [34/148] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   24s] [35/148] preinstalled gettext-tools-mini-0.21.1-1.1
+[   24s] [36/148] preinstalled glibc-2.37-3.1
+[   24s] [37/148] preinstalled glibc-devel-2.37-3.1
+[   24s] [38/148] preinstalled glibc-locale-base-2.37-3.1
+[   24s] [39/148] preinstalled grep-3.9-1.1
+[   24s] [40/148] preinstalled gzip-1.12-3.1
+[   24s] [41/148] preinstalled kernel-obs-build-6.2.9-1.1
+[   24s] [42/148] preinstalled libacl1-2.3.1-2.1
+[   24s] [43/148] preinstalled libasan8-13.0.1+git6669-7.1
+[   24s] [44/148] preinstalled libasm1-0.189-2.1
+[   24s] [45/148] preinstalled libatomic1-13.0.1+git6669-7.1
+[   24s] [46/148] preinstalled libattr1-2.5.1-1.1
+[   24s] [47/148] preinstalled libaudit1-3.0.9-1.1
+[   24s] [48/148] preinstalled libblkid1-2.38.1-11.1
+[   24s] [49/148] preinstalled libbz2-1-1.0.8-5.1
+[   24s] [50/148] preinstalled libcap-ng0-0.8.3-1.1
+[   24s] [51/148] preinstalled libcap2-2.68-1.1
+[   24s] [52/148] preinstalled libcrypt1-4.4.33-3.1
+[   24s] [53/148] preinstalled libctf-nobfd0-2.40-3.1
+[   24s] [54/148] preinstalled libctf0-2.40-3.1
+[   24s] [55/148] preinstalled libdb-4_8-4.8.30-40.1
+[   24s] [56/148] preinstalled libdw1-0.189-2.1
+[   24s] [57/148] preinstalled libeconf0-0.5.2-1.1
+[   24s] [58/148] preinstalled libelf1-0.189-2.1
+[   24s] [59/148] preinstalled libexpat1-2.5.0-2.1
+[   24s] [60/148] preinstalled libfdisk1-2.38.1-11.1
+[   24s] [61/148] preinstalled libffi8-3.4.4-1.1
+[   24s] [62/148] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   24s] [63/148] preinstalled libgcrypt20-1.10.1-2.1
+[   24s] [64/148] preinstalled libgdbm6-1.23-1.1
+[   24s] [65/148] preinstalled libgdbm_compat4-1.23-1.1
+[   24s] [66/148] preinstalled libgmp10-6.2.1-4.1
+[   24s] [67/148] preinstalled libgomp1-13.0.1+git6669-7.1
+[   24s] [68/148] preinstalled libgpg-error0-1.46-1.1
+[   24s] [69/148] preinstalled libisl23-0.25-1.1
+[   24s] [70/148] preinstalled libitm1-13.0.1+git6669-7.1
+[   24s] [71/148] preinstalled liblua5_4-5-5.4.4-10.1
+[   24s] [72/148] preinstalled liblzma5-5.4.2-1.1
+[   24s] [73/148] preinstalled libmagic1-5.44-1.2
+[   24s] [74/148] preinstalled libmount1-2.38.1-11.1
+[   24s] [75/148] preinstalled libmpc3-1.3.1-1.2
+[   24s] [76/148] preinstalled libmpdec3-2.5.1-2.1
+[   24s] [77/148] preinstalled libmpfr6-4.2.0-1.1
+[   24s] [78/148] preinstalled libncurses6-6.4.20230311-8.1
+[   24s] [79/148] preinstalled libopenssl3-3.0.8-2.1
+[   24s] [80/148] preinstalled libpcre2-8-0-10.42-3.2
+[   24s] [81/148] preinstalled libpkgconf3-1.8.0-2.1
+[   24s] [82/148] preinstalled libpopt0-1.19-1.1
+[   24s] [83/148] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   24s] [84/148] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   24s] [85/148] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   24s] [86/148] preinstalled libreadline8-8.2-2.1
+[   24s] [87/148] preinstalled librpmbuild9-4.18.0-4.1
+[   24s] [88/148] preinstalled libseccomp2-2.5.4-2.1
+[   24s] [89/148] preinstalled libselinux1-3.5-1.1
+[   24s] [90/148] preinstalled libsemanage-conf-3.5-1.1
+[   24s] [91/148] preinstalled libsemanage2-3.5-1.1
+[   24s] [92/148] preinstalled libsepol2-3.5-1.1
+[   24s] [93/148] preinstalled libsmartcols1-2.38.1-11.1
+[   24s] [94/148] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   24s] [95/148] preinstalled libsubid4-4.13-4.1
+[   24s] [96/148] preinstalled libubsan1-13.0.1+git6669-7.1
+[   24s] [97/148] preinstalled libutempter0-1.2.0-3.2
+[   24s] [98/148] preinstalled libuuid1-2.38.1-11.1
+[   24s] [99/148] preinstalled libxcrypt-devel-4.4.33-3.1
+[   24s] [100/148] preinstalled libz1-1.2.13-3.1
+[   24s] [101/148] preinstalled libzstd1-1.5.4-2.1
+[   24s] [102/148] preinstalled linux-glibc-devel-6.2-1.1
+[   24s] [103/148] preinstalled login_defs-4.13-4.1
+[   24s] [104/148] preinstalled lua54-5.4.4-10.1
+[   24s] [105/148] preinstalled make-4.4.1-1.1
+[   24s] [106/148] preinstalled ncurses-utils-6.4.20230311-8.1
+[   24s] [107/148] preinstalled pam-1.5.2-14.1
+[   24s] [108/148] preinstalled patch-2.7.6-6.1
+[   24s] [109/148] preinstalled perl-5.36.0-4.1
+[   24s] [110/148] preinstalled perl-base-5.36.0-4.1
+[   24s] [111/148] preinstalled permissions-1599_20230217-1.1
+[   24s] [112/148] preinstalled permissions-config-1599_20230217-1.1
+[   24s] [113/148] preinstalled pkgconf-1.8.0-2.1
+[   24s] [114/148] preinstalled pkgconf-m4-1.8.0-2.1
+[   24s] [115/148] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   24s] [116/148] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   24s] [117/148] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   24s] [118/148] preinstalled python-rpm-macros-20230403.29b58f8-1.1
+[   24s] [119/148] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   24s] [120/148] preinstalled python310-base-3.10.10-2.1
+[   24s] [121/148] preinstalled python310-packaging-23.0-2.1
+[   24s] [122/148] preinstalled python310-setuptools-67.6.0-1.2
+[   24s] [123/148] cumulate python310-six-1.16.0-2.6
+[   24s] [124/148] preinstalled python311-base-3.11.2-1.2
+[   24s] [125/148] preinstalled python311-setuptools-67.6.0-1.2
+[   24s] [126/148] cumulate python311-six-1.16.0-2.6
+[   24s] [127/148] preinstalled python39-base-3.9.16-5.1
+[   24s] [128/148] preinstalled python39-setuptools-67.6.0-1.2
+[   24s] [129/148] cumulate python39-six-1.16.0-2.6
+[   24s] [130/148] preinstalled qemu-linux-user-7.1.0-58.1
+[   24s] [131/148] preinstalled rpm-4.18.0-4.1
+[   24s] [132/148] preinstalled rpm-build-4.18.0-4.1
+[   24s] [133/148] preinstalled rpm-build-perl-4.18.0-4.1
+[   24s] [134/148] preinstalled rpm-config-SUSE-20220926-1.1
+[   24s] [135/148] preinstalled rpmlint-mini-2.4.0+git20230403.7ce263c-10.3
+[   24s] [136/148] preinstalled rpmlint-strict-2.4.0+git20230403.7ce263c-1.1
+[   24s] [137/148] preinstalled sed-4.9-2.1
+[   24s] [138/148] preinstalled shadow-4.13-4.1
+[   24s] [139/148] preinstalled system-group-hardware-20170617-24.1
+[   24s] [140/148] preinstalled system-user-root-20190513-2.1
+[   24s] [141/148] preinstalled systemd-rpm-macros-20-1.1
+[   24s] [142/148] preinstalled sysuser-shadow-3.1-5.1
+[   24s] [143/148] preinstalled tar-1.34-10.1
+[   24s] [144/148] preinstalled terminfo-base-6.4.20230311-8.1
+[   24s] [145/148] preinstalled update-alternatives-1.21.8-1.1
+[   24s] [146/148] preinstalled util-linux-2.38.1-11.1
+[   24s] [147/148] preinstalled which-2.21-5.1
+[   24s] [148/148] preinstalled xz-5.4.2-1.1
+[   24s] now installing cumulated packages
+[   24s] Preparing...                          ########################################
+[   24s] Updating / installing...
+[   24s] python39-six-1.16.0-2.6               ########################################
+[   24s] python311-six-1.16.0-2.6              ########################################
+[   24s] python310-six-1.16.0-2.6              ########################################
+[   24s] fdupes-2.2.1-1.1                      ########################################
+[   25s] now finalizing build dir...
+[   25s] ... running 01-add_abuild_user_to_trusted_group
+[   25s] ... running 02-set_timezone_to_utc
+[   25s] ... running 03-set-permissions-secure
+[   25s] ... running 11-hack_uname_version_to_kernel_version
+[   31s] -----------------------------------------------------------------
+[   31s] I have the following modifications for python-mohawk.spec:
+[   31s] 22c22
+[   31s] < Release:        0
+[   31s] ---
+[   31s] > Release:        5.3
+[   36s] build target is riscv64-suse-linux
+[   36s] -----------------------------------------------------------------
+[   36s] ----- building python-mohawk.spec (user abuild)
+[   36s] -----------------------------------------------------------------
+[   36s] -----------------------------------------------------------------
+[   38s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/3ff59eb97644d1eb606d2b5ccf3818ec-python-mohawk' /home/abuild/rpmbuild/SOURCES/python-mohawk.spec
+[   50s] Building target platforms: riscv64-suse-linux
+[   50s] Building for target riscv64-suse-linux
+[   50s] setting SOURCE_DATE_EPOCH=1659398400
+[   51s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.GU1w75
+[   51s] + umask 022
+[   51s] + cd /home/abuild/rpmbuild/BUILD
+[   51s] + cd /home/abuild/rpmbuild/BUILD
+[   51s] + rm -rf mohawk-1.1.0
+[   51s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/mohawk-1.1.0.tar.gz
+[   51s] + STATUS=0
+[   51s] + '[' 0 -ne 0 ']'
+[   51s] + cd mohawk-1.1.0
+[   51s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   51s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/remove-nose.patch
+[   51s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   51s] + RPM_EC=0
+[   51s] ++ jobs -p
+[   51s] + exit 0
+[   51s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.XfjTyK
+[   51s] + umask 022
+[   51s] + cd /home/abuild/rpmbuild/BUILD
+[   51s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64
+[   51s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64
+[   51s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   51s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64
+[   51s] + cd mohawk-1.1.0
+[   51s] + ref=/usr/lib/rpm
+[   51s] + mints=0
+[   51s] + case $(uname -m) in
+[   51s] ++ uname -m
+[   51s] + mints=20160911
+[   51s] + for s in guess sub
+[   51s] ++ find -maxdepth 8 -name config.guess
+[   51s] + for s in guess sub
+[   51s] ++ find -maxdepth 8 -name config.sub
+[   51s] ++ '[' -f _current_flavor ']'
+[   51s] ++ true
+[   51s] + last_flavor=
+[   51s] + '[' -z '' ']'
+[   51s] + last_flavor=tmp
+[   51s] + '[' tmp '!=' python39 ']'
+[   51s] + '[' -d build ']'
+[   51s] + '[' -d _build.python39 ']'
+[   51s] + echo python39
+[   51s] + python_flavor=python39
+[   51s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[   53s] running build
+[   53s] running build_py
+[   53s] creating build
+[   53s] creating build/lib
+[   53s] creating build/lib/mohawk
+[   53s] copying mohawk/__init__.py -> build/lib/mohawk
+[   53s] copying mohawk/base.py -> build/lib/mohawk
+[   53s] copying mohawk/bewit.py -> build/lib/mohawk
+[   53s] copying mohawk/exc.py -> build/lib/mohawk
+[   53s] copying mohawk/receiver.py -> build/lib/mohawk
+[   53s] copying mohawk/sender.py -> build/lib/mohawk
+[   53s] copying mohawk/tests.py -> build/lib/mohawk
+[   53s] copying mohawk/util.py -> build/lib/mohawk
+[   53s] running egg_info
+[   53s] writing mohawk.egg-info/PKG-INFO
+[   53s] writing dependency_links to mohawk.egg-info/dependency_links.txt
+[   53s] writing requirements to mohawk.egg-info/requires.txt
+[   53s] writing top-level names to mohawk.egg-info/top_level.txt
+[   53s] reading manifest file 'mohawk.egg-info/SOURCES.txt'
+[   53s] writing manifest file 'mohawk.egg-info/SOURCES.txt'
+[   53s] ++ '[' -f _current_flavor ']'
+[   53s] ++ cat _current_flavor
+[   53s] + last_flavor=python39
+[   53s] + '[' -z python39 ']'
+[   53s] + '[' python39 '!=' python311 ']'
+[   53s] + '[' -d build ']'
+[   53s] + mv build _build.python39
+[   53s] + '[' -d _build.python311 ']'
+[   53s] + echo python311
+[   53s] + python_flavor=python311
+[   53s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[   55s] running build
+[   55s] running build_py
+[   55s] creating build
+[   55s] creating build/lib
+[   55s] creating build/lib/mohawk
+[   55s] copying mohawk/__init__.py -> build/lib/mohawk
+[   55s] copying mohawk/base.py -> build/lib/mohawk
+[   55s] copying mohawk/bewit.py -> build/lib/mohawk
+[   55s] copying mohawk/exc.py -> build/lib/mohawk
+[   55s] copying mohawk/receiver.py -> build/lib/mohawk
+[   55s] copying mohawk/sender.py -> build/lib/mohawk
+[   55s] copying mohawk/tests.py -> build/lib/mohawk
+[   55s] copying mohawk/util.py -> build/lib/mohawk
+[   55s] running egg_info
+[   55s] writing mohawk.egg-info/PKG-INFO
+[   55s] writing dependency_links to mohawk.egg-info/dependency_links.txt
+[   55s] writing requirements to mohawk.egg-info/requires.txt
+[   55s] writing top-level names to mohawk.egg-info/top_level.txt
+[   55s] reading manifest file 'mohawk.egg-info/SOURCES.txt'
+[   55s] writing manifest file 'mohawk.egg-info/SOURCES.txt'
+[   55s] ++ '[' -f _current_flavor ']'
+[   55s] ++ cat _current_flavor
+[   55s] + last_flavor=python311
+[   55s] + '[' -z python311 ']'
+[   55s] + '[' python311 '!=' python310 ']'
+[   55s] + '[' -d build ']'
+[   55s] + mv build _build.python311
+[   55s] + '[' -d _build.python310 ']'
+[   55s] + echo python310
+[   55s] + python_flavor=python310
+[   55s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[   57s] running build
+[   57s] running build_py
+[   57s] creating build
+[   57s] creating build/lib
+[   57s] creating build/lib/mohawk
+[   57s] copying mohawk/__init__.py -> build/lib/mohawk
+[   57s] copying mohawk/base.py -> build/lib/mohawk
+[   57s] copying mohawk/bewit.py -> build/lib/mohawk
+[   57s] copying mohawk/exc.py -> build/lib/mohawk
+[   57s] copying mohawk/receiver.py -> build/lib/mohawk
+[   57s] copying mohawk/sender.py -> build/lib/mohawk
+[   57s] copying mohawk/tests.py -> build/lib/mohawk
+[   57s] copying mohawk/util.py -> build/lib/mohawk
+[   57s] running egg_info
+[   57s] writing mohawk.egg-info/PKG-INFO
+[   57s] writing dependency_links to mohawk.egg-info/dependency_links.txt
+[   57s] writing requirements to mohawk.egg-info/requires.txt
+[   57s] writing top-level names to mohawk.egg-info/top_level.txt
+[   57s] reading manifest file 'mohawk.egg-info/SOURCES.txt'
+[   57s] writing manifest file 'mohawk.egg-info/SOURCES.txt'
+[   57s] + RPM_EC=0
+[   57s] ++ jobs -p
+[   57s] + exit 0
+[   58s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.cJiRPR
+[   58s] + umask 022
+[   58s] + cd /home/abuild/rpmbuild/BUILD
+[   58s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64
+[   58s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   58s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64
+[   58s] + cd mohawk-1.1.0
+[   58s] ++ '[' -f _current_flavor ']'
+[   58s] ++ cat _current_flavor
+[   58s] + last_flavor=python310
+[   58s] + '[' -z python310 ']'
+[   58s] + '[' python310 '!=' python39 ']'
+[   58s] + '[' -d build ']'
+[   58s] + mv build _build.python310
+[   58s] + '[' -d _build.python39 ']'
+[   58s] + mv _build.python39 build
+[   58s] + echo python39
+[   58s] + python_flavor=python39
+[   58s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64 --prefix /usr
+[   60s] running install
+[   60s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   60s]   warnings.warn(
+[   60s] running install_lib
+[   60s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr
+[   60s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib
+[   60s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9
+[   60s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages
+[   60s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/bewit.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/exc.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/receiver.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/sender.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/tests.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] copying build/lib/mohawk/util.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__init__.py to __init__.cpython-39.pyc
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/base.py to base.cpython-39.pyc
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/bewit.py to bewit.cpython-39.pyc
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/exc.py to exc.cpython-39.pyc
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/receiver.py to receiver.cpython-39.pyc
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/sender.py to sender.cpython-39.pyc
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/tests.py to tests.cpython-39.pyc
+[   60s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/util.py to util.cpython-39.pyc
+[   60s] writing byte-compilation script '/tmp/tmpgue0pgm_.py'
+[   60s] /usr/bin/python3.9 /tmp/tmpgue0pgm_.py
+[   62s] removing /tmp/tmpgue0pgm_.py
+[   62s] running install_egg_info
+[   62s] running egg_info
+[   62s] writing mohawk.egg-info/PKG-INFO
+[   62s] writing dependency_links to mohawk.egg-info/dependency_links.txt
+[   62s] writing requirements to mohawk.egg-info/requires.txt
+[   62s] writing top-level names to mohawk.egg-info/top_level.txt
+[   62s] reading manifest file 'mohawk.egg-info/SOURCES.txt'
+[   62s] writing manifest file 'mohawk.egg-info/SOURCES.txt'
+[   62s] Copying mohawk.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk-1.1.0-py3.9.egg-info
+[   62s] running install_scripts
+[   63s] ++ '[' -f _current_flavor ']'
+[   63s] ++ cat _current_flavor
+[   63s] + last_flavor=python39
+[   63s] + '[' -z python39 ']'
+[   63s] + '[' python39 '!=' python311 ']'
+[   63s] + '[' -d build ']'
+[   63s] + mv build _build.python39
+[   63s] + '[' -d _build.python311 ']'
+[   63s] + mv _build.python311 build
+[   63s] + echo python311
+[   63s] + python_flavor=python311
+[   63s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64 --prefix /usr
+[   64s] running install
+[   64s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   64s]   warnings.warn(
+[   65s] running install_lib
+[   65s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11
+[   65s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages
+[   65s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/bewit.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/exc.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/receiver.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/sender.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/tests.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] copying build/lib/mohawk/util.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__init__.py to __init__.cpython-311.pyc
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/base.py to base.cpython-311.pyc
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/bewit.py to bewit.cpython-311.pyc
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/exc.py to exc.cpython-311.pyc
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/receiver.py to receiver.cpython-311.pyc
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/sender.py to sender.cpython-311.pyc
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/tests.py to tests.cpython-311.pyc
+[   65s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/util.py to util.cpython-311.pyc
+[   65s] writing byte-compilation script '/tmp/tmpsv2ish67.py'
+[   65s] /usr/bin/python3.11 /tmp/tmpsv2ish67.py
+[   67s] removing /tmp/tmpsv2ish67.py
+[   67s] running install_egg_info
+[   67s] running egg_info
+[   67s] writing mohawk.egg-info/PKG-INFO
+[   67s] writing dependency_links to mohawk.egg-info/dependency_links.txt
+[   67s] writing requirements to mohawk.egg-info/requires.txt
+[   67s] writing top-level names to mohawk.egg-info/top_level.txt
+[   67s] reading manifest file 'mohawk.egg-info/SOURCES.txt'
+[   67s] writing manifest file 'mohawk.egg-info/SOURCES.txt'
+[   67s] Copying mohawk.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk-1.1.0-py3.11.egg-info
+[   67s] running install_scripts
+[   67s] ++ '[' -f _current_flavor ']'
+[   67s] ++ cat _current_flavor
+[   67s] + last_flavor=python311
+[   67s] + '[' -z python311 ']'
+[   67s] + '[' python311 '!=' python310 ']'
+[   67s] + '[' -d build ']'
+[   67s] + mv build _build.python311
+[   67s] + '[' -d _build.python310 ']'
+[   67s] + mv _build.python310 build
+[   67s] + echo python310
+[   67s] + python_flavor=python310
+[   67s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64 --prefix /usr
+[   69s] running install
+[   69s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   69s]   warnings.warn(
+[   69s] running install_lib
+[   69s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10
+[   69s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages
+[   69s] creating /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/base.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/bewit.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/exc.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/receiver.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/sender.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/tests.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] copying build/lib/mohawk/util.py -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk
+[   69s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__init__.py to __init__.cpython-310.pyc
+[   69s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/base.py to base.cpython-310.pyc
+[   70s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/bewit.py to bewit.cpython-310.pyc
+[   70s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/exc.py to exc.cpython-310.pyc
+[   70s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/receiver.py to receiver.cpython-310.pyc
+[   70s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/sender.py to sender.cpython-310.pyc
+[   70s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/tests.py to tests.cpython-310.pyc
+[   70s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/util.py to util.cpython-310.pyc
+[   70s] writing byte-compilation script '/tmp/tmpioya0oks.py'
+[   70s] /usr/bin/python3.10 /tmp/tmpioya0oks.py
+[   72s] removing /tmp/tmpioya0oks.py
+[   72s] running install_egg_info
+[   72s] running egg_info
+[   72s] writing mohawk.egg-info/PKG-INFO
+[   72s] writing dependency_links to mohawk.egg-info/dependency_links.txt
+[   72s] writing requirements to mohawk.egg-info/requires.txt
+[   72s] writing top-level names to mohawk.egg-info/top_level.txt
+[   72s] reading manifest file 'mohawk.egg-info/SOURCES.txt'
+[   72s] writing manifest file 'mohawk.egg-info/SOURCES.txt'
+[   72s] Copying mohawk.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk-1.1.0-py3.10.egg-info
+[   72s] running install_scripts
+[   73s] ++ '[' -f _current_flavor ']'
+[   73s] ++ cat _current_flavor
+[   73s] + last_flavor=python310
+[   73s] + '[' -z python310 ']'
+[   73s] + '[' python310 '!=' python39 ']'
+[   73s] + '[' -d build ']'
+[   73s] + mv build _build.python310
+[   73s] + '[' -d _build.python39 ']'
+[   73s] + mv _build.python39 build
+[   73s] + echo python39
+[   73s] + python_flavor=python39
+[   73s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/util.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/util.cpython-39.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/tests.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/tests.cpython-39.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/sender.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/sender.cpython-39.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/receiver.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/receiver.cpython-39.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/exc.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/exc.cpython-39.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/bewit.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/bewit.cpython-39.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/base.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/base.cpython-39.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages/mohawk/__pycache__/__init__.cpython-39.pyc
+[   73s] ++ '[' -f _current_flavor ']'
+[   73s] ++ cat _current_flavor
+[   73s] + last_flavor=python39
+[   73s] + '[' -z python39 ']'
+[   73s] + '[' python39 '!=' python311 ']'
+[   73s] + '[' -d build ']'
+[   73s] + mv build _build.python39
+[   73s] + '[' -d _build.python311 ']'
+[   73s] + mv _build.python311 build
+[   73s] + echo python311
+[   73s] + python_flavor=python311
+[   73s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/util.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/util.cpython-311.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/tests.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/tests.cpython-311.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/sender.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/sender.cpython-311.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/receiver.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/receiver.cpython-311.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/exc.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/exc.cpython-311.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/bewit.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/bewit.cpython-311.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/base.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/base.cpython-311.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.11/site-packages/mohawk/__pycache__/__init__.cpython-311.pyc
+[   73s] ++ '[' -f _current_flavor ']'
+[   73s] ++ cat _current_flavor
+[   73s] + last_flavor=python311
+[   73s] + '[' -z python311 ']'
+[   73s] + '[' python311 '!=' python310 ']'
+[   73s] + '[' -d build ']'
+[   73s] + mv build _build.python311
+[   73s] + '[' -d _build.python310 ']'
+[   73s] + mv _build.python310 build
+[   73s] + echo python310
+[   73s] + python_flavor=python310
+[   73s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/util.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/util.cpython-310.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/tests.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/tests.cpython-310.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/sender.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/sender.cpython-310.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/receiver.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/receiver.cpython-310.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/exc.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/exc.cpython-310.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/bewit.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/bewit.cpython-310.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/base.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/base.cpython-310.pyc
+[   73s] Linking /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.10/site-packages/mohawk/__pycache__/__init__.cpython-310.pyc
+[   73s] + /usr/lib/rpm/find-debuginfo -j3 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/mohawk-1.1.0
+[   73s] + /usr/lib/rpm/brp-compress
+[   74s] + /usr/lib/rpm/brp-suse
+[   74s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[   74s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[   74s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[   74s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[   74s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[   74s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.ZGJkg1
+[   74s] + umask 022
+[   74s] + cd /home/abuild/rpmbuild/BUILD
+[   74s] + cd mohawk-1.1.0
+[   74s] + set +x
+[   75s] + export PATH=/home/abuild/rpmbuild/BUILD/mohawk-1.1.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[   75s] + PATH=/home/abuild/rpmbuild/BUILD/mohawk-1.1.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[   75s] ++ '[' -f _current_flavor ']'
+[   75s] ++ cat _current_flavor
+[   75s] + last_flavor=python310
+[   75s] + '[' -z python310 ']'
+[   75s] + '[' python310 '!=' python39 ']'
+[   75s] + '[' -d build ']'
+[   75s] + mv build _build.python310
+[   75s] + '[' -d _build.python39 ']'
+[   75s] + mv _build.python39 build
+[   75s] + echo python39
+[   75s] + python_flavor=python39
+[   75s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-mohawk-1.1.0-5.3.riscv64/usr/lib/python3.9/site-packages
+[   75s] + PYTHONDONTWRITEBYTECODE=1
+[   75s] + python3.9 -m unittest
+[   76s] ............................seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] ...seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] ..seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] ..seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] ...seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] .seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   76s] seen_nonce was None; not checking nonce. You may be vulnerable to replay attacks
+[   77s] ............................E........................
+[   77s] ======================================================================
+[   77s] ERROR: test_localtime_skew (mohawk.tests.TestSender)
+[   77s] ----------------------------------------------------------------------
+[   77s] Traceback (most recent call last):
+[   77s]   File "/home/abuild/rpmbuild/BUILD/mohawk-1.1.0/mohawk/tests.py", line 314, in test_localtime_skew
+[   77s]     self.receive(sn.request_header, timestamp_skew_in_seconds=120)
+[   77s]   File "/home/abuild/rpmbuild/BUILD/mohawk-1.1.0/mohawk/tests.py", line 105, in receive
+[   77s]     return Receiver(credentials_map, request_header,
+[   77s]   File "/home/abuild/rpmbuild/BUILD/mohawk-1.1.0/mohawk/receiver.py", line 110, in __init__
+[   77s]     self._authorize(
+[   77s]   File "/home/abuild/rpmbuild/BUILD/mohawk-1.1.0/mohawk/base.py", line 125, in _authorize
+[   77s]     raise TokenExpired(message,
+[   77s] mohawk.exc.TokenExpired: token with UTC timestamp 1680853095 has expired; it was compared to 1680853216
+[   77s] 
+[   77s] ----------------------------------------------------------------------
+[   77s] Ran 108 tests in 0.677s
+[   77s] 
+[   77s] FAILED (errors=1)
+[   77s] error: Bad exit status from /var/tmp/rpm-tmp.ZGJkg1 (%check)
+[   77s] 
+[   77s] RPM build errors:
+[   77s]     Bad exit status from /var/tmp/rpm-tmp.ZGJkg1 (%check)
+[   77s] ### VM INTERACTION START ###
+[   77s] [   71.453059][    T1] sysrq: Power Off
+[   77s] [   71.453745][   T18] reboot: Power down
+[   77s] ### VM INTERACTION END ###
+[   77s] 
+[   77s] build77 failed "build python-mohawk.spec" at Fri Apr  7 07:40:16 UTC 2023.
+[   77s] 

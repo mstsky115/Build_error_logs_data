@@ -1,0 +1,1599 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_5/root
+[    0s] 
+[    0s] 
+[    0s] sheep88 started "build python-pdm.spec" at Sat Feb 25 00:42:56 UTC 2023.
+[    0s] 
+[    0s] Building python-pdm:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'dbea2244a5b1bdad186e30c89abca026'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/python-pdm.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/python-pdm.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/python-pdm.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [70f457c6a25842d3b89d5b661f0305dc]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/hwrng,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_5/.mount/boot/kernel -initrd /var/cache/obs/worker/root_5/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_5/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_5/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_5/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 6
+[    7s] ### VM INTERACTION END ###
+[    7s] 2nd stage started in virtual machine
+[    7s] machine type: riscv64
+[    8s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[    8s] Increasing log level from now on...
+[    8s] [    3.189175][  T391] sysrq: Changing Loglevel
+[    8s] [    3.189291][  T391] sysrq: Loglevel set to 4
+[    8s] Enable sysrq operations
+[    8s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[    8s] no label, UUID=e0eed801-18d1-4828-8bb7-9dea09dcdab2
+[    8s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    8s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[    8s] swapon /dev/vdb
+[    8s] WARNING: udev not running, creating extra device nodes
+[    9s] logging output to //.build.log...
+[    9s] processing recipe /.build-srcdir/python-pdm.spec ...
+[    9s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-pdm.spec build ...
+[    9s] initializing rpm db...
+[    9s] querying package ids...
+[   32s] [1/360] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   32s] [2/360] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   32s] [3/360] preinstalled attr-2.5.1-1.1
+[   32s] [4/360] preinstalled bash-5.2.15-8.1
+[   32s] [5/360] preinstalled bash-sh-5.2.15-8.1
+[   32s] [6/360] preinstalled binutils-2.40-1.1
+[   32s] [7/360] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   32s] [8/360] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   32s] [9/360] preinstalled build-mkbaselibs-20230215-1.1
+[   32s] [10/360] preinstalled bzip2-1.0.8-4.1
+[   32s] [11/360] preinstalled chkstat-1599_20230217-1.1
+[   32s] [12/360] preinstalled compat-usrmerge-build-84.87-5.1
+[   32s] [13/360] preinstalled compat-usrmerge-tools-84.87-5.1
+[   32s] [14/360] preinstalled coreutils-9.1-5.1
+[   32s] [15/360] preinstalled cpio-2.13-5.1
+[   32s] [16/360] preinstalled cpp-12-2.1
+[   32s] [17/360] preinstalled cpp12-12.2.1+git749-4.1
+[   32s] [18/360] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   32s] [19/360] preinstalled debugedit-5.0-5.1
+[   32s] [20/360] preinstalled diffutils-3.9-1.1
+[   32s] [21/360] preinstalled dwz-0.15-2.1
+[   32s] [22/360] preinstalled elfutils-0.188-4.1
+[   32s] [23/360] cumulate fdupes-2.2.1-1.1
+[   32s] [24/360] preinstalled file-5.44-1.2
+[   32s] [25/360] preinstalled file-magic-5.44-1.2
+[   32s] [26/360] preinstalled filesystem-84.87-12.1
+[   32s] [27/360] preinstalled fillup-1.42-279.1
+[   32s] [28/360] preinstalled findutils-4.9.0-2.1
+[   32s] [29/360] preinstalled gawk-5.2.1-2.1
+[   32s] [30/360] preinstalled gcc-12-2.1
+[   32s] [31/360] preinstalled gcc-PIE-12-2.1
+[   32s] [32/360] preinstalled gcc12-12.2.1+git749-4.1
+[   32s] [33/360] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   32s] [34/360] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   32s] [35/360] preinstalled gettext-tools-mini-0.21.1-1.1
+[   32s] [36/360] preinstalled glibc-2.37-1.1
+[   32s] [37/360] preinstalled glibc-devel-2.37-1.1
+[   32s] [38/360] preinstalled glibc-locale-base-2.37-1.1
+[   32s] [39/360] preinstalled grep-3.8-3.1
+[   32s] [40/360] preinstalled gzip-1.12-3.1
+[   32s] [41/360] preinstalled kernel-obs-build-6.1.12-1.1
+[   32s] [42/360] preinstalled libacl1-2.3.1-2.1
+[   32s] [43/360] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   32s] [44/360] preinstalled libasan8-13.0.1+git5428-6.1
+[   32s] [45/360] preinstalled libasm1-0.188-4.1
+[   32s] [46/360] preinstalled libatomic1-13.0.1+git5428-6.1
+[   32s] [47/360] preinstalled libattr1-2.5.1-1.1
+[   32s] [48/360] preinstalled libaudit1-3.0.9-1.1
+[   32s] [49/360] preinstalled libblkid1-2.38.1-7.1
+[   32s] [50/360] preinstalled libbz2-1-1.0.8-4.1
+[   32s] [51/360] preinstalled libcap-ng0-0.8.3-1.1
+[   32s] [52/360] preinstalled libcap2-2.67-1.1
+[   32s] [53/360] preinstalled libcrypt1-4.4.33-1.1
+[   32s] [54/360] preinstalled libctf-nobfd0-2.40-1.1
+[   32s] [55/360] preinstalled libctf0-2.40-1.1
+[   32s] [56/360] preinstalled libdb-4_8-4.8.30-39.1
+[   32s] [57/360] preinstalled libdw1-0.188-4.1
+[   32s] [58/360] preinstalled libeconf0-0.5.1-1.1
+[   32s] [59/360] preinstalled libelf1-0.188-4.1
+[   32s] [60/360] preinstalled libexpat1-2.5.0-2.1
+[   32s] [61/360] preinstalled libfdisk1-2.38.1-7.1
+[   32s] [62/360] preinstalled libffi8-3.4.4-1.1
+[   32s] [63/360] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   32s] [64/360] preinstalled libgcrypt20-1.10.1-1.1
+[   32s] [65/360] preinstalled libgdbm6-1.23-1.1
+[   32s] [66/360] preinstalled libgdbm_compat4-1.23-1.1
+[   32s] [67/360] preinstalled libgmp10-6.2.1-4.1
+[   32s] [68/360] preinstalled libgomp1-13.0.1+git5428-6.1
+[   32s] [69/360] preinstalled libgpg-error0-1.46-1.1
+[   32s] [70/360] preinstalled libisl23-0.25-1.1
+[   32s] [71/360] preinstalled liblua5_4-5-5.4.4-8.1
+[   32s] [72/360] preinstalled liblzma5-5.4.1-1.1
+[   32s] [73/360] preinstalled libmagic1-5.44-1.2
+[   32s] [74/360] preinstalled libmount1-2.38.1-7.1
+[   32s] [75/360] preinstalled libmpc3-1.3.1-1.2
+[   32s] [76/360] preinstalled libmpdec3-2.5.1-2.1
+[   32s] [77/360] preinstalled libmpfr6-4.2.0-1.1
+[   32s] [78/360] preinstalled libncurses6-6.4.20230218-6.1
+[   32s] [79/360] preinstalled libopenssl3-3.0.8-1.1
+[   32s] [80/360] cumulate libp11-kit0-0.24.1-2.1
+[   32s] [81/360] preinstalled libpcre2-8-0-10.42-3.2
+[   32s] [82/360] preinstalled libpkgconf3-1.8.0-2.1
+[   32s] [83/360] preinstalled libpopt0-1.19-1.1
+[   32s] [84/360] preinstalled libpython3_10-1_0-3.10.9-3.1
+[   32s] [85/360] preinstalled libpython3_11-1_0-3.11.1-5.1
+[   32s] [86/360] preinstalled libpython3_8-1_0-3.8.16-4.1
+[   32s] [87/360] preinstalled libpython3_9-1_0-3.9.16-4.1
+[   32s] [88/360] preinstalled libreadline8-8.2-2.1
+[   32s] [89/360] preinstalled librpmbuild9-4.18.0-3.2
+[   32s] [90/360] preinstalled libseccomp2-2.5.4-2.1
+[   32s] [91/360] preinstalled libselinux1-3.4-2.1
+[   32s] [92/360] preinstalled libsemanage-conf-3.4-1.1
+[   32s] [93/360] preinstalled libsemanage2-3.4-1.1
+[   32s] [94/360] preinstalled libsepol2-3.4-1.1
+[   32s] [95/360] preinstalled libsmartcols1-2.38.1-7.1
+[   32s] [96/360] cumulate libsqlite3-0-3.41.0-1.1
+[   32s] [97/360] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   32s] [98/360] preinstalled libsubid4-4.13-4.1
+[   32s] [99/360] cumulate libtasn1-6-4.19.0-1.1
+[   32s] [100/360] preinstalled libubsan1-13.0.1+git5428-6.1
+[   32s] [101/360] preinstalled libutempter0-1.2.0-3.2
+[   32s] [102/360] preinstalled libuuid1-2.38.1-7.1
+[   32s] [103/360] preinstalled libxcrypt-devel-4.4.33-1.1
+[   32s] [104/360] preinstalled libz1-1.2.13-2.1
+[   32s] [105/360] preinstalled libzstd1-1.5.2-2.1
+[   32s] [106/360] preinstalled linux-glibc-devel-6.1-1.1
+[   32s] [107/360] preinstalled login_defs-4.13-4.1
+[   32s] [108/360] preinstalled lua54-5.4.4-8.1
+[   32s] [109/360] preinstalled make-4.4-2.1
+[   32s] [110/360] preinstalled ncurses-utils-6.4.20230218-6.1
+[   32s] [111/360] preinstalled pam-1.5.2-12.1
+[   32s] [112/360] preinstalled patch-2.7.6-6.1
+[   32s] [113/360] preinstalled perl-5.36.0-4.1
+[   32s] [114/360] preinstalled perl-base-5.36.0-4.1
+[   32s] [115/360] preinstalled permissions-1599_20230217-1.1
+[   32s] [116/360] preinstalled permissions-config-1599_20230217-1.1
+[   32s] [117/360] preinstalled pkgconf-1.8.0-2.1
+[   32s] [118/360] preinstalled pkgconf-m4-1.8.0-2.1
+[   32s] [119/360] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   32s] [120/360] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   32s] [121/360] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   32s] [122/360] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   32s] [123/360] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   32s] [124/360] cumulate python310-CommonMark-0.9.1-6.5
+[   32s] [125/360] cumulate python310-apipkg-3.0.1-1.2
+[   32s] [126/360] cumulate python310-attrs-22.2.0-1.2
+[   32s] [127/360] cumulate python310-backports.entry_points_selectable-1.1.1-1.3
+[   32s] [128/360] preinstalled python310-base-3.10.9-3.1
+[   32s] [129/360] cumulate python310-blinker-1.5-1.2
+[   32s] [130/360] cumulate python310-charset-normalizer-3.0.1-1.2
+[   32s] [131/360] cumulate python310-click-8.1.3-1.3
+[   32s] [132/360] cumulate python310-distlib-0.3.6-1.2
+[   33s] [133/360] cumulate python310-exceptiongroup-1.1.0-1.2
+[   33s] [134/360] cumulate python310-execnet-1.9.0-2.2
+[   33s] [135/360] cumulate python310-filelock-3.9.0-1.3
+[   33s] [136/360] cumulate python310-findpython-0.2.4-1.2
+[   33s] [137/360] cumulate python310-idna-3.4-1.2
+[   33s] [138/360] cumulate python310-iniconfig-1.1.1-3.2
+[   33s] [139/360] cumulate python310-installer-0.6.0-2.2
+[   33s] [140/360] cumulate python310-lockfile-0.12.2-2.7
+[   33s] [141/360] cumulate python310-msgpack-1.0.4-1.2
+[   33s] [142/360] preinstalled python310-packaging-23.0-1.1
+[   33s] [143/360] cumulate python310-pdm-pep517-1.1.2-1.1
+[   33s] [144/360] cumulate python310-platformdirs-2.5.2-1.2
+[   33s] [145/360] cumulate python310-pluggy-1.0.0-1.5
+[   33s] [146/360] cumulate python310-pycparser-2.21-1.5
+[   33s] [147/360] cumulate python310-resolvelib-0.8.1-6.2
+[   33s] [148/360] preinstalled python310-setuptools-65.6.3-1.2
+[   33s] [149/360] cumulate python310-shellingham-1.5.0-1.2
+[   33s] [150/360] cumulate python310-six-1.16.0-2.5
+[   33s] [151/360] cumulate python310-tomli-2.0.1-1.3
+[   33s] [152/360] cumulate python310-tomlkit-0.11.6-1.2
+[   33s] [153/360] cumulate python310-zipp-3.8.1-1.2
+[   33s] [154/360] cumulate python311-CommonMark-0.9.1-6.5
+[   33s] [155/360] cumulate python311-apipkg-3.0.1-1.2
+[   33s] [156/360] cumulate python311-attrs-22.2.0-1.2
+[   33s] [157/360] cumulate python311-backports.entry_points_selectable-1.1.1-1.3
+[   33s] [158/360] preinstalled python311-base-3.11.1-5.1
+[   33s] [159/360] cumulate python311-blinker-1.5-1.2
+[   33s] [160/360] cumulate python311-charset-normalizer-3.0.1-1.2
+[   33s] [161/360] cumulate python311-click-8.1.3-1.3
+[   33s] [162/360] cumulate python311-distlib-0.3.6-1.2
+[   33s] [163/360] cumulate python311-exceptiongroup-1.1.0-1.2
+[   33s] [164/360] cumulate python311-execnet-1.9.0-2.2
+[   33s] [165/360] cumulate python311-filelock-3.9.0-1.3
+[   33s] [166/360] cumulate python311-idna-3.4-1.2
+[   33s] [167/360] cumulate python311-iniconfig-1.1.1-3.2
+[   33s] [168/360] cumulate python311-installer-0.6.0-2.2
+[   33s] [169/360] cumulate python311-lockfile-0.12.2-2.7
+[   33s] [170/360] cumulate python311-msgpack-1.0.4-1.2
+[   33s] [171/360] cumulate python311-packaging-23.0-1.2
+[   33s] [172/360] cumulate python311-pdm-pep517-1.1.2-1.1
+[   33s] [173/360] cumulate python311-pep517-0.13.0-2.2
+[   33s] [174/360] cumulate python311-platformdirs-2.5.2-1.2
+[   33s] [175/360] cumulate python311-pluggy-1.0.0-1.5
+[   33s] [176/360] cumulate python311-pycparser-2.21-1.5
+[   33s] [177/360] cumulate python311-pyproject-hooks-1.0.0-1.3
+[   33s] [178/360] cumulate python311-resolvelib-0.8.1-6.2
+[   33s] [179/360] preinstalled python311-setuptools-65.6.3-1.2
+[   33s] [180/360] cumulate python311-shellingham-1.5.0-1.2
+[   33s] [181/360] cumulate python311-six-1.16.0-2.5
+[   33s] [182/360] cumulate python311-tomli-2.0.1-1.3
+[   33s] [183/360] cumulate python311-tomlkit-0.11.6-1.2
+[   33s] [184/360] cumulate python311-zipp-3.8.1-1.2
+[   33s] [185/360] cumulate python38-CommonMark-0.9.1-6.5
+[   33s] [186/360] cumulate python38-apipkg-3.0.1-1.2
+[   33s] [187/360] cumulate python38-attrs-22.2.0-1.2
+[   33s] [188/360] cumulate python38-backports.entry_points_selectable-1.1.1-1.3
+[   33s] [189/360] preinstalled python38-base-3.8.16-4.1
+[   33s] [190/360] cumulate python38-blinker-1.5-1.2
+[   33s] [191/360] cumulate python38-charset-normalizer-3.0.1-1.2
+[   33s] [192/360] cumulate python38-click-8.1.3-1.3
+[   33s] [193/360] cumulate python38-distlib-0.3.6-1.2
+[   33s] [194/360] cumulate python38-exceptiongroup-1.1.0-1.2
+[   33s] [195/360] cumulate python38-execnet-1.9.0-2.2
+[   33s] [196/360] cumulate python38-filelock-3.9.0-1.3
+[   33s] [197/360] cumulate python38-idna-3.4-1.2
+[   33s] [198/360] cumulate python38-iniconfig-1.1.1-3.2
+[   33s] [199/360] cumulate python38-installer-0.6.0-2.2
+[   33s] [200/360] cumulate python38-lockfile-0.12.2-2.7
+[   33s] [201/360] cumulate python38-msgpack-1.0.4-1.2
+[   33s] [202/360] cumulate python38-packaging-23.0-1.2
+[   33s] [203/360] cumulate python38-pdm-pep517-1.1.2-1.1
+[   33s] [204/360] cumulate python38-platformdirs-2.5.2-1.2
+[   33s] [205/360] cumulate python38-pluggy-1.0.0-1.5
+[   33s] [206/360] cumulate python38-pycparser-2.21-1.5
+[   33s] [207/360] cumulate python38-resolvelib-0.8.1-6.2
+[   33s] [208/360] preinstalled python38-setuptools-65.6.3-1.2
+[   33s] [209/360] cumulate python38-shellingham-1.5.0-1.2
+[   33s] [210/360] cumulate python38-six-1.16.0-2.5
+[   33s] [211/360] cumulate python38-tomli-2.0.1-1.3
+[   33s] [212/360] cumulate python38-tomlkit-0.11.6-1.2
+[   33s] [213/360] cumulate python38-typing_extensions-4.4.0-2.2
+[   33s] [214/360] cumulate python38-zipp-3.8.1-1.2
+[   33s] [215/360] cumulate python39-CommonMark-0.9.1-6.5
+[   33s] [216/360] cumulate python39-apipkg-3.0.1-1.2
+[   33s] [217/360] cumulate python39-attrs-22.2.0-1.2
+[   33s] [218/360] cumulate python39-backports.entry_points_selectable-1.1.1-1.3
+[   33s] [219/360] preinstalled python39-base-3.9.16-4.1
+[   33s] [220/360] cumulate python39-blinker-1.5-1.2
+[   33s] [221/360] cumulate python39-charset-normalizer-3.0.1-1.2
+[   33s] [222/360] cumulate python39-click-8.1.3-1.3
+[   33s] [223/360] cumulate python39-distlib-0.3.6-1.2
+[   33s] [224/360] cumulate python39-exceptiongroup-1.1.0-1.2
+[   33s] [225/360] cumulate python39-execnet-1.9.0-2.2
+[   33s] [226/360] cumulate python39-filelock-3.9.0-1.3
+[   33s] [227/360] cumulate python39-idna-3.4-1.2
+[   33s] [228/360] cumulate python39-iniconfig-1.1.1-3.2
+[   33s] [229/360] cumulate python39-installer-0.6.0-2.2
+[   33s] [230/360] cumulate python39-lockfile-0.12.2-2.7
+[   33s] [231/360] cumulate python39-msgpack-1.0.4-1.2
+[   33s] [232/360] cumulate python39-packaging-23.0-1.2
+[   33s] [233/360] cumulate python39-pdm-pep517-1.1.2-1.1
+[   33s] [234/360] cumulate python39-platformdirs-2.5.2-1.2
+[   33s] [235/360] cumulate python39-pluggy-1.0.0-1.5
+[   33s] [236/360] cumulate python39-pycparser-2.21-1.5
+[   33s] [237/360] cumulate python39-resolvelib-0.8.1-6.2
+[   33s] [238/360] preinstalled python39-setuptools-65.6.3-1.2
+[   33s] [239/360] cumulate python39-shellingham-1.5.0-1.2
+[   33s] [240/360] cumulate python39-six-1.16.0-2.5
+[   33s] [241/360] cumulate python39-tomli-2.0.1-1.3
+[   33s] [242/360] cumulate python39-tomlkit-0.11.6-1.2
+[   33s] [243/360] cumulate python39-zipp-3.8.1-1.2
+[   33s] [244/360] preinstalled qemu-linux-user-7.1.0-50.1
+[   33s] [245/360] preinstalled rpm-4.18.0-3.2
+[   33s] [246/360] preinstalled rpm-build-4.18.0-3.2
+[   33s] [247/360] preinstalled rpm-build-perl-4.18.0-3.2
+[   33s] [248/360] preinstalled rpm-config-SUSE-20220926-1.1
+[   33s] [249/360] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.8
+[   33s] [250/360] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   33s] [251/360] preinstalled sed-4.9-2.1
+[   33s] [252/360] preinstalled shadow-4.13-4.1
+[   33s] [253/360] preinstalled system-group-hardware-20170617-24.1
+[   33s] [254/360] preinstalled system-user-root-20190513-2.1
+[   33s] [255/360] preinstalled systemd-rpm-macros-19-1.1
+[   33s] [256/360] preinstalled sysuser-shadow-3.1-5.1
+[   33s] [257/360] preinstalled tar-1.34-9.1
+[   33s] [258/360] preinstalled terminfo-base-6.4.20230218-6.1
+[   33s] [259/360] preinstalled update-alternatives-1.21.8-1.1
+[   33s] [260/360] preinstalled util-linux-2.38.1-7.1
+[   33s] [261/360] preinstalled which-2.21-5.1
+[   33s] [262/360] preinstalled xz-5.4.1-1.1
+[   33s] [263/360] cumulate alts-1.2+3.b848aad-3.1
+[   33s] [264/360] cumulate python310-3.10.9-3.1
+[   33s] [265/360] cumulate python310-cffi-1.15.1-3.2
+[   33s] [266/360] cumulate python310-importlib-metadata-6.0.0-1.2
+[   33s] [267/360] cumulate python310-pep517-0.13.0-2.2
+[   33s] [268/360] cumulate python310-pyproject-hooks-1.0.0-1.3
+[   33s] [269/360] cumulate python310-python-dotenv-0.20.0-1.3
+[   33s] [270/360] cumulate python311-3.11.1-5.1
+[   33s] [271/360] cumulate python311-cffi-1.15.1-3.2
+[   33s] [272/360] cumulate python311-findpython-0.2.4-1.2
+[   33s] [273/360] cumulate python311-importlib-metadata-6.0.0-1.2
+[   33s] [274/360] cumulate python311-python-dotenv-0.20.0-1.3
+[   33s] [275/360] cumulate python38-3.8.16-4.1
+[   33s] [276/360] cumulate python38-cffi-1.15.1-3.2
+[   33s] [277/360] cumulate python38-findpython-0.2.4-1.2
+[   33s] [278/360] cumulate python38-importlib-metadata-6.0.0-1.2
+[   33s] [279/360] cumulate python38-pep517-0.13.0-2.2
+[   33s] [280/360] cumulate python38-pyproject-hooks-1.0.0-1.3
+[   33s] [281/360] cumulate python38-python-dotenv-0.20.0-1.3
+[   33s] [282/360] cumulate python39-3.9.16-4.1
+[   33s] [283/360] cumulate python39-cffi-1.15.1-3.2
+[   33s] [284/360] cumulate python39-findpython-0.2.4-1.2
+[   33s] [285/360] cumulate python39-importlib-metadata-6.0.0-1.2
+[   33s] [286/360] cumulate python39-pep517-0.13.0-2.2
+[   33s] [287/360] cumulate python39-pyproject-hooks-1.0.0-1.3
+[   33s] [288/360] cumulate python39-python-dotenv-0.20.0-1.3
+[   33s] [289/360] cumulate p11-kit-0.24.1-2.1
+[   33s] [290/360] cumulate p11-kit-tools-0.24.1-2.1
+[   33s] [291/360] cumulate python310-py-1.11.0-3.2
+[   33s] [292/360] cumulate python311-py-1.11.0-3.2
+[   33s] [293/360] cumulate python38-py-1.11.0-3.2
+[   33s] [294/360] cumulate python39-py-1.11.0-3.2
+[   33s] [295/360] cumulate python310-virtualenv-20.16.7-2.2
+[   33s] [296/360] cumulate python311-virtualenv-20.16.7-2.2
+[   33s] [297/360] cumulate python38-virtualenv-20.16.7-2.2
+[   33s] [298/360] cumulate python39-virtualenv-20.16.7-2.2
+[   33s] [299/360] cumulate python310-Pygments-2.14.0-1.2
+[   33s] [300/360] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   33s] [301/360] cumulate python311-Pygments-2.14.0-1.2
+[   33s] [302/360] cumulate python311-pyOpenSSL-23.0.0-1.2
+[   33s] [303/360] cumulate python38-Pygments-2.14.0-1.2
+[   33s] [304/360] cumulate python38-pyOpenSSL-23.0.0-1.2
+[   33s] [305/360] cumulate python39-Pygments-2.14.0-1.2
+[   33s] [306/360] cumulate python39-pyOpenSSL-23.0.0-1.2
+[   33s] [307/360] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   33s] [308/360] cumulate python310-cryptography-39.0.1-1.2
+[   33s] [309/360] cumulate python311-cryptography-39.0.1-1.2
+[   33s] [310/360] cumulate python38-cryptography-39.0.1-1.2
+[   33s] [311/360] cumulate python39-cryptography-39.0.1-1.2
+[   33s] [312/360] cumulate python310-pytest-7.2.0-2.2
+[   33s] [313/360] cumulate python311-pytest-7.2.0-2.2
+[   33s] [314/360] cumulate python38-pytest-7.2.0-2.2
+[   33s] [315/360] cumulate python39-pytest-7.2.0-2.2
+[   33s] [316/360] cumulate ca-certificates-mozilla-2.60-1.2
+[   33s] [317/360] cumulate python310-pip-22.3.1-1.2
+[   33s] [318/360] cumulate python310-pytest-mock-3.10.0-1.2
+[   33s] [319/360] cumulate python310-pytest-xdist-3.0.2-1.2
+[   33s] [320/360] cumulate python310-rich-12.6.0-1.2
+[   33s] [321/360] cumulate python311-pip-22.3.1-1.2
+[   33s] [322/360] cumulate python311-pytest-mock-3.10.0-1.2
+[   33s] [323/360] cumulate python311-pytest-xdist-3.0.2-1.2
+[   33s] [324/360] cumulate python311-rich-12.6.0-1.2
+[   33s] [325/360] cumulate python38-pip-22.3.1-1.2
+[   33s] [326/360] cumulate python38-pytest-mock-3.10.0-1.2
+[   33s] [327/360] cumulate python38-pytest-xdist-3.0.2-1.2
+[   33s] [328/360] cumulate python39-pip-22.3.1-1.2
+[   33s] [329/360] cumulate python39-pytest-mock-3.10.0-1.2
+[   33s] [330/360] cumulate python39-pytest-xdist-3.0.2-1.2
+[   33s] [331/360] cumulate python39-rich-12.6.0-1.2
+[   33s] [332/360] cumulate python38-rich-12.6.0-1.2
+[   33s] [333/360] cumulate python310-certifi-2022.9.24-1.2
+[   33s] [334/360] cumulate python311-certifi-2022.9.24-1.2
+[   33s] [335/360] cumulate python38-certifi-2022.9.24-1.2
+[   33s] [336/360] cumulate python39-certifi-2022.9.24-1.2
+[   33s] [337/360] cumulate python310-urllib3-1.26.14-1.2
+[   33s] [338/360] cumulate python311-urllib3-1.26.14-1.2
+[   33s] [339/360] cumulate python38-urllib3-1.26.14-1.2
+[   33s] [340/360] cumulate python39-urllib3-1.26.14-1.2
+[   33s] [341/360] cumulate python310-requests-2.28.2-1.2
+[   33s] [342/360] cumulate python311-requests-2.28.2-1.2
+[   33s] [343/360] cumulate python38-requests-2.28.2-1.2
+[   33s] [344/360] cumulate python39-requests-2.28.2-1.2
+[   33s] [345/360] cumulate python310-requests-toolbelt-0.9.1-7.2
+[   33s] [346/360] cumulate python310-unearth-0.7.0-1.3
+[   33s] [347/360] cumulate python311-requests-toolbelt-0.9.1-7.2
+[   33s] [348/360] cumulate python38-requests-toolbelt-0.9.1-7.2
+[   33s] [349/360] cumulate python39-requests-toolbelt-0.9.1-7.2
+[   33s] [350/360] cumulate python310-CacheControl-0.12.11-1.2
+[   33s] [351/360] cumulate python311-CacheControl-0.12.11-1.2
+[   33s] [352/360] cumulate python311-unearth-0.7.0-1.3
+[   33s] [353/360] cumulate python38-CacheControl-0.12.11-1.2
+[   33s] [354/360] cumulate python38-unearth-0.7.0-1.3
+[   33s] [355/360] cumulate python39-CacheControl-0.12.11-1.2
+[   33s] [356/360] cumulate python39-unearth-0.7.0-1.3
+[   33s] [357/360] cumulate python310-pdm-2.3.3-1.3
+[   33s] [358/360] cumulate python311-pdm-2.3.3-1.3
+[   33s] [359/360] cumulate python38-pdm-2.3.3-1.3
+[   33s] [360/360] cumulate python39-pdm-2.3.3-1.3
+[   33s] now installing cumulated packages
+[   34s] Preparing...                          ########################################
+[   34s] Updating / installing...
+[   34s] python39-tomli-2.0.1-1.3              ########################################
+[   34s] python39-packaging-23.0-1.2           ########################################
+[   34s] python38-tomli-2.0.1-1.3              ########################################
+[   34s] python38-packaging-23.0-1.2           ########################################
+[   34s] python311-packaging-23.0-1.2          ########################################
+[   34s] python310-tomli-2.0.1-1.3             ########################################
+[   34s] libsqlite3-0-3.41.0-1.1               ########################################
+[   34s] python39-six-1.16.0-2.5               ########################################
+[   34s] python39-platformdirs-2.5.2-1.2       ########################################
+[   34s] python39-lockfile-0.12.2-2.7          ########################################
+[   34s] python39-iniconfig-1.1.1-3.2          ########################################
+[   34s] python39-idna-3.4-1.2                 ########################################
+[   34s] python38-six-1.16.0-2.5               ########################################
+[   35s] python38-platformdirs-2.5.2-1.2       ########################################
+[   35s] python38-lockfile-0.12.2-2.7          ########################################
+[   35s] python38-iniconfig-1.1.1-3.2          ########################################
+[   35s] python38-idna-3.4-1.2                 ########################################
+[   35s] python311-six-1.16.0-2.5              ########################################
+[   35s] python311-platformdirs-2.5.2-1.2      ########################################
+[   35s] python311-lockfile-0.12.2-2.7         ########################################
+[   35s] python311-iniconfig-1.1.1-3.2         ########################################
+[   35s] python311-idna-3.4-1.2                ########################################
+[   35s] python310-six-1.16.0-2.5              ########################################
+[   35s] python310-platformdirs-2.5.2-1.2      ########################################
+[   35s] python310-lockfile-0.12.2-2.7         ########################################
+[   35s] python310-iniconfig-1.1.1-3.2         ########################################
+[   35s] python310-idna-3.4-1.2                ########################################
+[   35s] libtasn1-6-4.19.0-1.1                 ########################################
+[   35s] libp11-kit0-0.24.1-2.1                ########################################
+[   35s] p11-kit-0.24.1-2.1                    ########################################
+[   35s] p11-kit-tools-0.24.1-2.1              ########################################
+[   35s] ca-certificates-2+git20211004.3efbea9-########################################
+[   37s] ca-certificates-mozilla-2.60-1.2      ########################################
+[   41s] python310-certifi-2022.9.24-1.2       ########################################
+[   41s] python311-certifi-2022.9.24-1.2       ########################################
+[   41s] python38-certifi-2022.9.24-1.2        ########################################
+[   41s] python39-certifi-2022.9.24-1.2        ########################################
+[   41s] python310-pep517-0.13.0-2.2           ########################################
+[   41s] python310-pyproject-hooks-1.0.0-1.3   ########################################
+[   41s] python311-findpython-0.2.4-1.2        ########################################
+[   41s] python38-findpython-0.2.4-1.2         ########################################
+[   41s] python38-pep517-0.13.0-2.2            ########################################
+[   41s] python38-pyproject-hooks-1.0.0-1.3    ########################################
+[   41s] python39-findpython-0.2.4-1.2         ########################################
+[   41s] python39-pep517-0.13.0-2.2            ########################################
+[   41s] python39-pyproject-hooks-1.0.0-1.3    ########################################
+[   41s] python39-zipp-3.8.1-1.2               ########################################
+[   41s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   41s] python39-tomlkit-0.11.6-1.2           ########################################
+[   41s] python39-shellingham-1.5.0-1.2        ########################################
+[   41s] python39-resolvelib-0.8.1-6.2         ########################################
+[   42s] python39-pycparser-2.21-1.5           ########################################
+[   42s] python39-cffi-1.15.1-3.2              ########################################
+[   42s] python39-pluggy-1.0.0-1.5             ########################################
+[   42s] python39-msgpack-1.0.4-1.2            ########################################
+[   42s] python39-installer-0.6.0-2.2          ########################################
+[   42s] python39-filelock-3.9.0-1.3           ########################################
+[   42s] python39-execnet-1.9.0-2.2            ########################################
+[   42s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   42s] python39-distlib-0.3.6-1.2            ########################################
+[   42s] python39-click-8.1.3-1.3              ########################################
+[   42s] python39-python-dotenv-0.20.0-1.3     ########################################
+[   42s] python39-charset-normalizer-3.0.1-1.2 ########################################
+[   42s] python39-blinker-1.5-1.2              ########################################
+[   42s] python39-backports.entry_points_select########################################
+[   43s] python39-virtualenv-20.16.7-2.2       ########################################
+[   43s] python39-attrs-22.2.0-1.2             ########################################
+[   43s] python39-apipkg-3.0.1-1.2             ########################################
+[   43s] python39-py-1.11.0-3.2                ########################################
+[   43s] python39-CommonMark-0.9.1-6.5         ########################################
+[   44s] python38-zipp-3.8.1-1.2               ########################################
+[   44s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   44s] python38-typing_extensions-4.4.0-2.2  ########################################
+[   44s] python38-tomlkit-0.11.6-1.2           ########################################
+[   44s] python38-shellingham-1.5.0-1.2        ########################################
+[   44s] python38-resolvelib-0.8.1-6.2         ########################################
+[   44s] python38-pycparser-2.21-1.5           ########################################
+[   44s] python38-cffi-1.15.1-3.2              ########################################
+[   44s] python38-pluggy-1.0.0-1.5             ########################################
+[   44s] python38-msgpack-1.0.4-1.2            ########################################
+[   44s] python38-installer-0.6.0-2.2          ########################################
+[   44s] python38-filelock-3.9.0-1.3           ########################################
+[   44s] python38-execnet-1.9.0-2.2            ########################################
+[   44s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   44s] python38-distlib-0.3.6-1.2            ########################################
+[   44s] python38-click-8.1.3-1.3              ########################################
+[   44s] python38-python-dotenv-0.20.0-1.3     ########################################
+[   45s] python38-charset-normalizer-3.0.1-1.2 ########################################
+[   45s] python38-blinker-1.5-1.2              ########################################
+[   45s] python38-backports.entry_points_select########################################
+[   45s] python38-virtualenv-20.16.7-2.2       ########################################
+[   46s] python38-attrs-22.2.0-1.2             ########################################
+[   46s] python38-apipkg-3.0.1-1.2             ########################################
+[   46s] python38-py-1.11.0-3.2                ########################################
+[   46s] python38-CommonMark-0.9.1-6.5         ########################################
+[   46s] python311-zipp-3.8.1-1.2              ########################################
+[   46s] python311-importlib-metadata-6.0.0-1.2########################################
+[   46s] python311-tomlkit-0.11.6-1.2          ########################################
+[   46s] python311-tomli-2.0.1-1.3             ########################################
+[   46s] python311-shellingham-1.5.0-1.2       ########################################
+[   46s] python311-resolvelib-0.8.1-6.2        ########################################
+[   46s] python311-pyproject-hooks-1.0.0-1.3   ########################################
+[   46s] python311-pycparser-2.21-1.5          ########################################
+[   46s] python311-cffi-1.15.1-3.2             ########################################
+[   46s] python311-pluggy-1.0.0-1.5            ########################################
+[   46s] python311-pep517-0.13.0-2.2           ########################################
+[   46s] python311-msgpack-1.0.4-1.2           ########################################
+[   46s] python311-installer-0.6.0-2.2         ########################################
+[   46s] python311-filelock-3.9.0-1.3          ########################################
+[   47s] python311-execnet-1.9.0-2.2           ########################################
+[   47s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   47s] python311-distlib-0.3.6-1.2           ########################################
+[   47s] python311-click-8.1.3-1.3             ########################################
+[   47s] python311-python-dotenv-0.20.0-1.3    ########################################
+[   47s] python311-charset-normalizer-3.0.1-1.2########################################
+[   47s] python311-blinker-1.5-1.2             ########################################
+[   47s] python311-backports.entry_points_selec########################################
+[   48s] python311-virtualenv-20.16.7-2.2      ########################################
+[   48s] python311-attrs-22.2.0-1.2            ########################################
+[   48s] python311-apipkg-3.0.1-1.2            ########################################
+[   48s] python311-py-1.11.0-3.2               ########################################
+[   48s] python311-CommonMark-0.9.1-6.5        ########################################
+[   48s] python310-zipp-3.8.1-1.2              ########################################
+[   48s] python310-importlib-metadata-6.0.0-1.2########################################
+[   48s] python310-tomlkit-0.11.6-1.2          ########################################
+[   48s] python310-shellingham-1.5.0-1.2       ########################################
+[   48s] python310-resolvelib-0.8.1-6.2        ########################################
+[   49s] python310-pycparser-2.21-1.5          ########################################
+[   49s] python310-cffi-1.15.1-3.2             ########################################
+[   49s] python310-pluggy-1.0.0-1.5            ########################################
+[   49s] python310-msgpack-1.0.4-1.2           ########################################
+[   49s] python310-installer-0.6.0-2.2         ########################################
+[   49s] python310-findpython-0.2.4-1.2        ########################################
+[   49s] python310-filelock-3.9.0-1.3          ########################################
+[   49s] python310-execnet-1.9.0-2.2           ########################################
+[   49s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   49s] python310-distlib-0.3.6-1.2           ########################################
+[   49s] python310-click-8.1.3-1.3             ########################################
+[   49s] python310-python-dotenv-0.20.0-1.3    ########################################
+[   49s] python310-charset-normalizer-3.0.1-1.2########################################
+[   50s] python310-blinker-1.5-1.2             ########################################
+[   50s] python310-backports.entry_points_selec########################################
+[   50s] python310-virtualenv-20.16.7-2.2      ########################################
+[   50s] python310-attrs-22.2.0-1.2            ########################################
+[   51s] python310-apipkg-3.0.1-1.2            ########################################
+[   51s] python310-py-1.11.0-3.2               ########################################
+[   51s] python310-CommonMark-0.9.1-6.5        ########################################
+[   51s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   51s] alts-1.2+3.b848aad-3.1                ########################################
+[   51s] python310-pytest-7.2.0-2.2            ########################################
+[   52s] python311-pytest-7.2.0-2.2            ########################################
+[   52s] python38-pytest-7.2.0-2.2             ########################################
+[   53s] python39-pytest-7.2.0-2.2             ########################################
+[   54s] python310-Pygments-2.14.0-1.2         ########################################
+[   54s] python310-rich-12.6.0-1.2             ########################################
+[   55s] python311-Pygments-2.14.0-1.2         ########################################
+[   56s] python311-rich-12.6.0-1.2             ########################################
+[   57s] python38-Pygments-2.14.0-1.2          ########################################
+[   57s] python38-rich-12.6.0-1.2              ########################################
+[   58s] python39-Pygments-2.14.0-1.2          ########################################
+[   58s] python39-rich-12.6.0-1.2              ########################################
+[   60s] python310-pip-22.3.1-1.2              ########################################
+[   60s] python310-3.10.9-3.1                  ########################################
+[   61s] python310-cryptography-39.0.1-1.2     ########################################
+[   61s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[   61s] python310-urllib3-1.26.14-1.2         ########################################
+[   61s] python310-requests-2.28.2-1.2         ########################################
+[   61s] python310-requests-toolbelt-0.9.1-7.2 ########################################
+[   61s] python310-unearth-0.7.0-1.3           ########################################
+[   61s] python310-CacheControl-0.12.11-1.2    ########################################
+[   63s] python311-pip-22.3.1-1.2              ########################################
+[   63s] python311-3.11.1-5.1                  ########################################
+[   63s] python311-cryptography-39.0.1-1.2     ########################################
+[   64s] python311-pyOpenSSL-23.0.0-1.2        ########################################
+[   64s] python311-urllib3-1.26.14-1.2         ########################################
+[   64s] python311-requests-2.28.2-1.2         ########################################
+[   64s] python311-requests-toolbelt-0.9.1-7.2 ########################################
+[   64s] python311-CacheControl-0.12.11-1.2    ########################################
+[   64s] python311-unearth-0.7.0-1.3           ########################################
+[   66s] python38-pip-22.3.1-1.2               ########################################
+[   66s] python38-3.8.16-4.1                   ########################################
+[   66s] python38-cryptography-39.0.1-1.2      ########################################
+[   66s] python38-pyOpenSSL-23.0.0-1.2         ########################################
+[   66s] python38-urllib3-1.26.14-1.2          ########################################
+[   66s] python38-requests-2.28.2-1.2          ########################################
+[   66s] python38-requests-toolbelt-0.9.1-7.2  ########################################
+[   67s] python38-CacheControl-0.12.11-1.2     ########################################
+[   67s] python38-unearth-0.7.0-1.3            ########################################
+[   68s] python39-pip-22.3.1-1.2               ########################################
+[   69s] python39-3.9.16-4.1                   ########################################
+[   69s] python39-cryptography-39.0.1-1.2      ########################################
+[   69s] python39-pyOpenSSL-23.0.0-1.2         ########################################
+[   69s] python39-urllib3-1.26.14-1.2          ########################################
+[   69s] python39-requests-2.28.2-1.2          ########################################
+[   69s] python39-requests-toolbelt-0.9.1-7.2  ########################################
+[   69s] python39-CacheControl-0.12.11-1.2     ########################################
+[   69s] python39-unearth-0.7.0-1.3            ########################################
+[   70s] python39-pdm-2.3.3-1.3                ########################################
+[   70s] python38-pdm-2.3.3-1.3                ########################################
+[   71s] python311-pdm-2.3.3-1.3               ########################################
+[   71s] python310-pdm-2.3.3-1.3               ########################################
+[   71s] python39-pytest-mock-3.10.0-1.2       ########################################
+[   71s] python39-pytest-xdist-3.0.2-1.2       ########################################
+[   71s] python38-pytest-mock-3.10.0-1.2       ########################################
+[   71s] python38-pytest-xdist-3.0.2-1.2       ########################################
+[   71s] python311-pytest-mock-3.10.0-1.2      ########################################
+[   71s] python311-pytest-xdist-3.0.2-1.2      ########################################
+[   71s] python310-pytest-mock-3.10.0-1.2      ########################################
+[   71s] python310-pytest-xdist-3.0.2-1.2      ########################################
+[   71s] python39-pdm-pep517-1.1.2-1.1         ########################################
+[   72s] python38-pdm-pep517-1.1.2-1.1         ########################################
+[   72s] python311-pdm-pep517-1.1.2-1.1        ########################################
+[   72s] python310-pdm-pep517-1.1.2-1.1        ########################################
+[   72s] fdupes-2.2.1-1.1                      ########################################
+[   83s] now finalizing build dir...
+[   83s] ... running 01-add_abuild_user_to_trusted_group
+[   83s] ... running 02-set_timezone_to_utc
+[   83s] ... running 03-set-permissions-secure
+[   84s] ... running 11-hack_uname_version_to_kernel_version
+[   89s] -----------------------------------------------------------------
+[   89s] I have the following modifications for python-pdm.spec:
+[   89s] 19c19
+[   89s] < %global flavor @BUILD_FLAVOR@%{nil}
+[   89s] ---
+[   89s] > %global flavor test%{nil}
+[   89s] 30c30
+[   89s] < Release:        0
+[   89s] ---
+[   89s] > Release:        1.1
+[   93s] build target is riscv64-suse-linux
+[   93s] -----------------------------------------------------------------
+[   93s] ----- building python-pdm.spec (user abuild)
+[   93s] -----------------------------------------------------------------
+[   93s] -----------------------------------------------------------------
+[   96s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/dbea2244a5b1bdad186e30c89abca026-python-pdm:test' /home/abuild/rpmbuild/SOURCES/python-pdm.spec
+[  130s] Building target platforms: riscv64-suse-linux
+[  130s] Building for target riscv64-suse-linux
+[  130s] setting SOURCE_DATE_EPOCH=1671494400
+[  130s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.3apR3R
+[  130s] + umask 022
+[  130s] + cd /home/abuild/rpmbuild/BUILD
+[  130s] + cd /home/abuild/rpmbuild/BUILD
+[  130s] + rm -rf pdm-2.3.3
+[  130s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pdm-2.3.3.tar.gz
+[  131s] + STATUS=0
+[  131s] + '[' 0 -ne 0 ']'
+[  131s] + cd pdm-2.3.3
+[  131s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  131s] + sed -i 's/"certifi>=[0-9.]*"/"certifi"/' pyproject.toml
+[  131s] + RPM_EC=0
+[  131s] ++ jobs -p
+[  131s] + exit 0
+[  131s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Nu5oSC
+[  131s] + umask 022
+[  131s] + cd /home/abuild/rpmbuild/BUILD
+[  131s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pdm-test-2.3.3-1.1.riscv64
+[  131s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-pdm-test-2.3.3-1.1.riscv64
+[  131s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  131s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pdm-test-2.3.3-1.1.riscv64
+[  131s] + cd pdm-2.3.3
+[  131s] + ref=/usr/lib/rpm
+[  131s] + mints=0
+[  131s] + case $(uname -m) in
+[  131s] ++ uname -m
+[  131s] + mints=20160911
+[  131s] + for s in guess sub
+[  131s] ++ find -maxdepth 8 -name config.guess
+[  131s] + for s in guess sub
+[  131s] ++ find -maxdepth 8 -name config.sub
+[  131s] + RPM_EC=0
+[  131s] ++ jobs -p
+[  131s] + exit 0
+[  132s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.aNMxLk
+[  132s] + umask 022
+[  132s] + cd /home/abuild/rpmbuild/BUILD
+[  132s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pdm-test-2.3.3-1.1.riscv64
+[  132s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  132s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pdm-test-2.3.3-1.1.riscv64
+[  132s] + cd pdm-2.3.3
+[  132s] + /usr/lib/rpm/find-debuginfo -j6 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/pdm-2.3.3
+[  132s] + /usr/lib/rpm/brp-compress
+[  132s] + /usr/lib/rpm/brp-suse
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  132s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  133s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  133s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  133s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.gbrAmU
+[  133s] + umask 022
+[  133s] + cd /home/abuild/rpmbuild/BUILD
+[  133s] + cd pdm-2.3.3
+[  133s] + donttest=network
+[  133s] + donttest='network or test_project_packages_path or test_conda_backend_create'
+[  133s] + donttest='network or test_project_packages_path or test_conda_backend_create or test_init_non_interactive'
+[  133s] + set +x
+[  133s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  133s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  133s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  133s] Using libalternatives variant 38 for pygmentize in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  133s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  134s] Using alternative cmark-3.8 for cmark in ./build/flavorbin during Python 3.8 expansions.
+[  134s] Using alternative doesitcache-3.8 for doesitcache in ./build/flavorbin during Python 3.8 expansions.
+[  134s] Using alternative dotenv-3.8 for dotenv in ./build/flavorbin during Python 3.8 expansions.
+[  134s] Using alternative findpython-3.8 for findpython in ./build/flavorbin during Python 3.8 expansions.
+[  134s] Using alternative normalizer-3.8 for normalizer in ./build/flavorbin during Python 3.8 expansions.
+[  134s] Using alternative pdm-3.8 for pdm in ./build/flavorbin during Python 3.8 expansions.
+[  135s] Using alternative unearth-3.8 for unearth in ./build/flavorbin during Python 3.8 expansions.
+[  135s] Using alternative virtualenv-3.8 for virtualenv in ./build/flavorbin during Python 3.8 expansions.
+[  135s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  135s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  135s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  135s] Using libalternatives variant 39 for pygmentize in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  135s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  135s] Using alternative cmark-3.9 for cmark in ./build/flavorbin during Python 3.9 expansions.
+[  135s] Using alternative doesitcache-3.9 for doesitcache in ./build/flavorbin during Python 3.9 expansions.
+[  136s] Using alternative dotenv-3.9 for dotenv in ./build/flavorbin during Python 3.9 expansions.
+[  136s] Using alternative findpython-3.9 for findpython in ./build/flavorbin during Python 3.9 expansions.
+[  136s] Using alternative normalizer-3.9 for normalizer in ./build/flavorbin during Python 3.9 expansions.
+[  136s] Using alternative pdm-3.9 for pdm in ./build/flavorbin during Python 3.9 expansions.
+[  136s] Using alternative unearth-3.9 for unearth in ./build/flavorbin during Python 3.9 expansions.
+[  136s] Using alternative virtualenv-3.9 for virtualenv in ./build/flavorbin during Python 3.9 expansions.
+[  137s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  137s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  137s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  137s] Using libalternatives variant 311 for pygmentize in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  137s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  137s] Using alternative cmark-3.11 for cmark in ./build/flavorbin during Python 3.11 expansions.
+[  137s] Using alternative doesitcache-3.11 for doesitcache in ./build/flavorbin during Python 3.11 expansions.
+[  137s] Using alternative dotenv-3.11 for dotenv in ./build/flavorbin during Python 3.11 expansions.
+[  137s] Using alternative findpython-3.11 for findpython in ./build/flavorbin during Python 3.11 expansions.
+[  138s] Using alternative normalizer-3.11 for normalizer in ./build/flavorbin during Python 3.11 expansions.
+[  138s] Using alternative pdm-3.11 for pdm in ./build/flavorbin during Python 3.11 expansions.
+[  138s] Using alternative unearth-3.11 for unearth in ./build/flavorbin during Python 3.11 expansions.
+[  138s] Using alternative virtualenv-3.11 for virtualenv in ./build/flavorbin during Python 3.11 expansions.
+[  139s] Using alternative cmark-3.10 for cmark in ./build/flavorbin during Python 3.10 expansions.
+[  139s] Using alternative doesitcache-3.10 for doesitcache in ./build/flavorbin during Python 3.10 expansions.
+[  139s] Using alternative dotenv-3.10 for dotenv in ./build/flavorbin during Python 3.10 expansions.
+[  139s] Using alternative findpython-3.10 for findpython in ./build/flavorbin during Python 3.10 expansions.
+[  139s] Using alternative normalizer-3.10 for normalizer in ./build/flavorbin during Python 3.10 expansions.
+[  139s] Using alternative pdm-3.10 for pdm in ./build/flavorbin during Python 3.10 expansions.
+[  140s] Using alternative unearth-3.10 for unearth in ./build/flavorbin during Python 3.10 expansions.
+[  140s] Using alternative virtualenv-3.10 for virtualenv in ./build/flavorbin during Python 3.10 expansions.
+[  140s] + export PATH=/home/abuild/rpmbuild/BUILD/pdm-2.3.3/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  140s] + PATH=/home/abuild/rpmbuild/BUILD/pdm-2.3.3/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  140s] ++ '[' -f _current_flavor ']'
+[  140s] ++ cat _current_flavor
+[  140s] + last_flavor=python310
+[  140s] + '[' -z python310 ']'
+[  140s] + '[' python310 '!=' python38 ']'
+[  140s] + '[' -d build ']'
+[  140s] + mv build _build.python310
+[  140s] + '[' -d _build.python38 ']'
+[  140s] + mv _build.python38 build
+[  140s] + echo python38
+[  140s] + python_flavor=python38
+[  140s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-pdm-test-2.3.3-1.1.riscv64/usr/lib/python3.8/site-packages
+[  140s] + PYTHONDONTWRITEBYTECODE=1
+[  140s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not (network or test_project_packages_path or test_conda_backend_create or test_init_non_interactive)'
+[  145s] ============================= test session starts ==============================
+[  145s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  145s] cachedir: .pytest_cache
+[  145s] rootdir: /home/abuild/rpmbuild/BUILD/pdm-2.3.3, configfile: pyproject.toml, testpaths: tests/
+[  145s] plugins: mock-3.10.0, xdist-3.0.2
+[  184s] collecting ... collected 626 items / 13 deselected / 613 selected
+[  184s] 
+[  197s] tests/test_formats.py::test_convert_pipfile PASSED                       [  0%]
+[  197s] tests/test_formats.py::test_convert_requirements_file[False] PASSED      [  0%]
+[  198s] tests/test_formats.py::test_convert_requirements_file[True] PASSED       [  0%]
+[  198s] tests/test_formats.py::test_convert_requirements_file_without_name PASSED [  0%]
+[  198s] tests/test_formats.py::test_convert_poetry PASSED                        [  0%]
+[  199s] tests/test_formats.py::test_convert_flit PASSED                          [  0%]
+[  199s] tests/test_formats.py::test_import_requirements_with_group PASSED        [  1%]
+[  199s] tests/test_formats.py::test_export_expand_env_vars_in_source PASSED      [  1%]
+[  200s] tests/test_formats.py::test_export_replace_project_root PASSED           [  1%]
+[  203s] tests/test_formats.py::test_convert_setup_py_project PASSED              [  1%]
+[  205s] tests/test_installer.py::test_install_wheel_with_inconsistent_dist_info PASSED [  1%]
+[  207s] tests/test_installer.py::test_install_with_file_existing PASSED          [  1%]
+[  208s] tests/test_installer.py::test_uninstall_commit_rollback PASSED           [  2%]
+[  209s] tests/test_installer.py::test_rollback_after_commit PASSED               [  2%]
+[  211s] tests/test_installer.py::test_uninstall_with_console_scripts[False] PASSED [  2%]
+[  213s] tests/test_installer.py::test_uninstall_with_console_scripts[True] PASSED [  2%]
+[  215s] tests/test_installer.py::test_install_wheel_with_cache PASSED            [  2%]
+[  216s] tests/test_installer.py::test_url_requirement_is_not_cached PASSED       [  2%]
+[  218s] tests/test_installer.py::test_install_wheel_with_data_scripts[False] PASSED [  3%]
+[  219s] tests/test_installer.py::test_install_wheel_with_data_scripts[True] PASSED [  3%]
+[  219s] tests/test_installer.py::test_compress_file_list_for_rename PASSED       [  3%]
+[  232s] tests/test_integration.py::test_actual_list_freeze PASSED                [  3%]
+[  233s] tests/test_plugin.py::test_plugin_new_command PASSED                     [  3%]
+[  233s] tests/test_plugin.py::test_plugin_replace_command PASSED                 [  3%]
+[  234s] tests/test_plugin.py::test_load_multiple_plugings PASSED                 [  4%]
+[  234s] tests/test_plugin.py::test_old_entry_point_compatibility PASSED          [  4%]
+[  235s] tests/test_project.py::test_project_python_with_pyenv_support PASSED     [  4%]
+[  235s] tests/test_project.py::test_project_config_items PASSED                  [  4%]
+[  235s] tests/test_project.py::test_project_config_set_invalid_key PASSED        [  4%]
+[  236s] tests/test_project.py::test_project_sources_overriding PASSED            [  4%]
+[  236s] tests/test_project.py::test_project_sources_env_var_expansion PASSED     [  5%]
+[  238s] tests/test_project.py::test_global_project PASSED                        [  5%]
+[  239s] tests/test_project.py::test_auto_global_project PASSED                   [  5%]
+[  240s] tests/test_project.py::test_project_use_venv PASSED                      [  5%]
+[  241s] tests/test_project.py::test_project_auto_detect_venv PASSED              [  5%]
+[  242s] tests/test_project.py::test_ignore_saved_python PASSED                   [  5%]
+[  243s] tests/test_project.py::test_select_dependencies PASSED                   [  6%]
+[  244s] tests/test_project.py::test_global_python_path_config PASSED             [  6%]
+[  247s] tests/test_project.py::test_set_non_exist_python_path PASSED             [  6%]
+[  267s] tests/test_project.py::test_create_venv_first_time[virtualenv] PASSED    [  6%]
+[  283s] tests/test_project.py::test_create_venv_first_time[venv] PASSED          [  6%]
+[  306s] tests/test_project.py::test_create_venv_in_project[virtualenv-True] PASSED [  6%]
+[  327s] tests/test_project.py::test_create_venv_in_project[virtualenv-False] PASSED [  7%]
+[  379s] tests/test_project.py::test_create_venv_in_project[venv-True] PASSED     [  7%]
+[  396s] tests/test_project.py::test_create_venv_in_project[venv-False] PASSED    [  7%]
+[  418s] tests/test_project.py::test_find_interpreters_from_venv[virtualenv] PASSED [  7%]
+[  436s] tests/test_project.py::test_find_interpreters_from_venv[venv] PASSED     [  7%]
+[  437s] tests/test_project.py::test_find_interpreters_without_duplicate_relative_paths PASSED [  7%]
+[  437s] tests/test_project.py::test_iter_project_venvs PASSED                    [  7%]
+[  440s] tests/test_signals.py::test_post_init_signal PASSED                      [  8%]
+[  442s] tests/test_signals.py::test_post_lock_and_install_signals PASSED         [  8%]
+[  442s] tests/test_utils.py::test_expand_env_vars[test-test] PASSED              [  8%]
+[  442s] tests/test_utils.py::test_expand_env_vars[-] PASSED                      [  8%]
+[  442s] tests/test_utils.py::test_expand_env_vars[${FOO}-hello] PASSED           [  8%]
+[  442s] tests/test_utils.py::test_expand_env_vars[$FOO-$FOO] PASSED              [  8%]
+[  442s] tests/test_utils.py::test_expand_env_vars[${BAR}-${BAR}] PASSED          [  9%]
+[  442s] tests/test_utils.py::test_expand_env_vars[%FOO%-%FOO%] PASSED            [  9%]
+[  442s] tests/test_utils.py::test_expand_env_vars[${FOO}_${FOO}-hello_hello] PASSED [  9%]
+[  442s] tests/test_utils.py::test_expend_env_vars_in_auth[https://example.org/path?arg=1-https://example.org/path?arg=1] PASSED [  9%]
+[  442s] tests/test_utils.py::test_expend_env_vars_in_auth[https://${FOO}@example.org/path?arg=1-https://hello@example.org/path?arg=1] PASSED [  9%]
+[  442s] tests/test_utils.py::test_expend_env_vars_in_auth[https://${FOO}:${BAR}@example.org/path?arg=1-https://hello:wo%3Arld@example.org/path?arg=1] PASSED [  9%]
+[  442s] tests/test_utils.py::test_expend_env_vars_in_auth[https://${FOOBAR}@example.org/path?arg=1-https://%24%7BFOOBAR%7D@example.org/path?arg=1] PASSED [ 10%]
+[  442s] tests/test_utils.py::test_find_python_in_path PASSED                     [ 10%]
+[  442s] tests/test_utils.py::test_merge_dictionary PASSED                        [ 10%]
+[  443s] tests/test_utils.py::test_dependency_group_selection[args0-golden0] PASSED [ 10%]
+[  443s] tests/test_utils.py::test_dependency_group_selection[args1-golden1] PASSED [ 10%]
+[  443s] tests/test_utils.py::test_dependency_group_selection[args2-golden2] PASSED [ 10%]
+[  444s] tests/test_utils.py::test_dependency_group_selection[args3-golden3] PASSED [ 11%]
+[  444s] tests/test_utils.py::test_dependency_group_selection[args4-golden4] PASSED [ 11%]
+[  444s] tests/test_utils.py::test_dependency_group_selection[args5-golden5] PASSED [ 11%]
+[  445s] tests/test_utils.py::test_dependency_group_selection[args6-golden6] PASSED [ 11%]
+[  445s] tests/test_utils.py::test_dependency_group_selection[args7-golden7] PASSED [ 11%]
+[  446s] tests/test_utils.py::test_prod_should_not_be_with_dev PASSED             [ 11%]
+[  446s] tests/test_utils.py::test_deprecation_warning PASSED                     [ 12%]
+[  448s] tests/cli/test_add.py::test_add_package[False] PASSED                    [ 12%]
+[  450s] tests/cli/test_add.py::test_add_package[True] PASSED                     [ 12%]
+[  451s] tests/cli/test_add.py::test_add_command PASSED                           [ 12%]
+[  453s] tests/cli/test_add.py::test_add_package_to_custom_group PASSED           [ 12%]
+[  456s] tests/cli/test_add.py::test_add_package_to_custom_dev_group PASSED       [ 12%]
+[  460s] tests/cli/test_add.py::test_add_editable_package FAILED                  [ 13%]
+[  461s] tests/cli/test_add.py::test_add_editable_package_to_metadata_forbidden PASSED [ 13%]
+[  488s] tests/cli/test_add.py::test_non_editable_override_editable PASSED        [ 13%]
+[  490s] tests/cli/test_add.py::test_add_remote_package_url[False] PASSED         [ 13%]
+[  492s] tests/cli/test_add.py::test_add_remote_package_url[True] PASSED          [ 13%]
+[  494s] tests/cli/test_add.py::test_add_no_install PASSED                        [ 13%]
+[  495s] tests/cli/test_add.py::test_add_package_save_exact PASSED                [ 14%]
+[  496s] tests/cli/test_add.py::test_add_package_save_wildcard PASSED             [ 14%]
+[  497s] tests/cli/test_add.py::test_add_package_save_minimum PASSED              [ 14%]
+[  499s] tests/cli/test_add.py::test_add_package_update_reuse PASSED              [ 14%]
+[  500s] tests/cli/test_add.py::test_add_package_update_eager PASSED              [ 14%]
+[  502s] tests/cli/test_add.py::test_add_package_with_mismatch_marker PASSED      [ 14%]
+[  504s] tests/cli/test_add.py::test_add_dependency_from_multiple_parents PASSED  [ 15%]
+[  507s] tests/cli/test_add.py::test_add_packages_without_self PASSED             [ 15%]
+[  509s] tests/cli/test_add.py::test_add_package_unconstrained_rewrite_specifier PASSED [ 15%]
+[  511s] tests/cli/test_add.py::test_add_cached_vcs_requirement PASSED            [ 15%]
+[  514s] tests/cli/test_add.py::test_add_with_dry_run PASSED                      [ 15%]
+[  516s] tests/cli/test_add.py::test_add_with_prerelease PASSED                   [ 15%]
+[  541s] tests/cli/test_add.py::test_add_editable_package_with_extras PASSED      [ 15%]
+[  544s] tests/cli/test_add.py::test_add_package_with_local_version PASSED        [ 16%]
+[  544s] tests/cli/test_build.py::test_build_command PASSED                       [ 16%]
+[  544s] tests/cli/test_build.py::test_build_global_project_forbidden PASSED      [ 16%]
+[  564s] tests/cli/test_build.py::test_build_single_module PASSED                 [ 16%]
+[  584s] tests/cli/test_build.py::test_build_single_module_with_readme PASSED     [ 16%]
+[  604s] tests/cli/test_build.py::test_build_package PASSED                       [ 16%]
+[  623s] tests/cli/test_build.py::test_build_src_package PASSED                   [ 17%]
+[  644s] tests/cli/test_build.py::test_build_package_include PASSED               [ 17%]
+[  664s] tests/cli/test_build.py::test_build_src_package_by_include PASSED        [ 17%]
+[  684s] tests/cli/test_build.py::test_build_with_config_settings PASSED          [ 17%]
+[  704s] tests/cli/test_build.py::test_cli_build_with_config_settings PASSED      [ 17%]
+[  724s] tests/cli/test_build.py::test_build_ignoring_pip_environment PASSED      [ 17%]
+[  724s] tests/cli/test_cache.py::test_cache_list PASSED                          [ 18%]
+[  724s] tests/cli/test_cache.py::test_cache_list_pattern PASSED                  [ 18%]
+[  725s] tests/cli/test_cache.py::test_cache_remove_pattern PASSED                [ 18%]
+[  725s] tests/cli/test_cache.py::test_cache_remove_wildcard PASSED               [ 18%]
+[  725s] tests/cli/test_cache.py::test_cache_clear PASSED                         [ 18%]
+[  726s] tests/cli/test_cache.py::test_cache_remove_no_pattern PASSED             [ 18%]
+[  726s] tests/cli/test_cache.py::test_cache_info PASSED                          [ 19%]
+[  727s] tests/cli/test_cache.py::test_hash_cache[http://fixtures.test/artifacts/demo-0.0.1.tar.gz-sha256:d57bf5e3b8723e4fc68275159dcc4ca983d86d4c84220a4d715d491401f27db2] PASSED [ 19%]
+[  729s] tests/cli/test_cache.py::test_hash_cache[file:///home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/artifacts/demo-0.0.1.tar.gz-sha256:d57bf5e3b8723e4fc68275159dcc4ca983d86d4c84220a4d715d491401f27db2] PASSED [ 19%]
+[  730s] tests/cli/test_cache.py::test_hash_cache[http://fixtures.test/artifacts/demo-0.0.1.tar.gz#sha384=9130e5e4912bc78b1ffabbf406d56bc74b9165b0adc8c627168b7b563b80d5ff6c30e269398d01144ee52aa33292682d-sha384:9130e5e4912bc78b1ffabbf406d56bc74b9165b0adc8c627168b7b563b80d5ff6c30e269398d01144ee52aa33292682d] PASSED [ 19%]
+[  731s] tests/cli/test_cache.py::test_hash_cache[http://fixtures.test/artifacts/demo-0.0.1.tar.gz#md5=5218509812c9fcb4646adde8fd3307e1-sha256:d57bf5e3b8723e4fc68275159dcc4ca983d86d4c84220a4d715d491401f27db2] PASSED [ 19%]
+[  731s] tests/cli/test_cache.py::test_clear_package_cache PASSED                 [ 19%]
+[  732s] tests/cli/test_config.py::test_config_command PASSED                     [ 20%]
+[  732s] tests/cli/test_config.py::test_config_get_command PASSED                 [ 20%]
+[  733s] tests/cli/test_config.py::test_config_set_command PASSED                 [ 20%]
+[  733s] tests/cli/test_config.py::test_config_del_command PASSED                 [ 20%]
+[  734s] tests/cli/test_config.py::test_config_env_var_shadowing PASSED           [ 20%]
+[  734s] tests/cli/test_config.py::test_config_project_global_precedence PASSED   [ 20%]
+[  734s] tests/cli/test_config.py::test_specify_config_file PASSED                [ 21%]
+[  735s] tests/cli/test_config.py::test_default_repository_setting PASSED         [ 21%]
+[  735s] tests/cli/test_config.py::test_repository_config_not_available_on_project PASSED [ 21%]
+[  735s] tests/cli/test_config.py::test_repository_config_key_short PASSED        [ 21%]
+[  736s] tests/cli/test_config.py::test_repository_overwrite_default PASSED       [ 21%]
+[  736s] tests/cli/test_config.py::test_hide_password_in_output PASSED            [ 21%]
+[  736s] tests/cli/test_config.py::test_config_get_repository PASSED              [ 22%]
+[  737s] tests/cli/test_config.py::test_config_set_repository PASSED              [ 22%]
+[  737s] tests/cli/test_config.py::test_config_del_repository PASSED              [ 22%]
+[  739s] tests/cli/test_hooks.py::test_pre_script_fail_fast PASSED                [ 22%]
+[  744s] tests/cli/test_hooks.py::test_pre_and_post_scripts PASSED                [ 22%]
+[  752s] tests/cli/test_hooks.py::test_composite_runs_all_hooks PASSED            [ 22%]
+[  755s] tests/cli/test_hooks.py::test_skip_all_hooks_option[:all] PASSED         [ 23%]
+[  758s] tests/cli/test_hooks.py::test_skip_all_hooks_option[:pre,:post] PASSED   [ 23%]
+[  761s] tests/cli/test_hooks.py::test_skip_option[--skip pre_test,post_first,second] PASSED [ 23%]
+[  763s] tests/cli/test_hooks.py::test_skip_option[-k pre_test,post_first,second] PASSED [ 23%]
+[  766s] tests/cli/test_hooks.py::test_skip_option[--skip pre_test --skip post_first --skip second] PASSED [ 23%]
+[  769s] tests/cli/test_hooks.py::test_skip_option[-k pre_test -k post_first -k second] PASSED [ 23%]
+[  772s] tests/cli/test_hooks.py::test_skip_option[--skip pre_test --skip post_first,second] PASSED [ 23%]
+[  775s] tests/cli/test_hooks.py::test_skip_option[-k pre_test -k post_first,second] PASSED [ 24%]
+[  776s] tests/cli/test_hooks.py::test_skip_option_default_from_env[pre_test-expected0] PASSED [ 24%]
+[  777s] tests/cli/test_hooks.py::test_skip_option_default_from_env[pre_test,post_test-expected1] PASSED [ 24%]
+[  777s] tests/cli/test_hooks.py::test_skip_option_default_from_env[pre_test , post_test-expected2] PASSED [ 24%]
+[  778s] tests/cli/test_hooks.py::test_skip_option_default_from_env[None-None] PASSED [ 24%]
+[  779s] tests/cli/test_hooks.py::test_skip_option_default_from_env[ -None] PASSED [ 24%]
+[  780s] tests/cli/test_hooks.py::test_skip_option_default_from_env[ , -None] PASSED [ 25%]
+[  785s] tests/cli/test_hooks.py::test_hooks[add] PASSED                          [ 25%]
+[  806s] tests/cli/test_hooks.py::test_hooks[build] PASSED                        [ 25%]
+[  810s] tests/cli/test_hooks.py::test_hooks[init] PASSED                         [ 25%]
+[  814s] tests/cli/test_hooks.py::test_hooks[install] PASSED                      [ 25%]
+[  816s] tests/cli/test_hooks.py::test_hooks[lock] PASSED                         [ 25%]
+[  838s] tests/cli/test_hooks.py::test_hooks[publish] PASSED                      [ 26%]
+[  843s] tests/cli/test_hooks.py::test_hooks[remove] PASSED                       [ 26%]
+[  847s] tests/cli/test_hooks.py::test_hooks[sync] PASSED                         [ 26%]
+[  851s] tests/cli/test_hooks.py::test_hooks[update] PASSED                       [ 26%]
+[  859s] tests/cli/test_hooks.py::test_hooks[use] PASSED                          [ 26%]
+[  863s] tests/cli/test_hooks.py::test_skip_option_from_signal[add-pre_lock] PASSED [ 26%]
+[  867s] tests/cli/test_hooks.py::test_skip_option_from_signal[add-post_lock] PASSED [ 27%]
+[  888s] tests/cli/test_hooks.py::test_skip_option_from_signal[build-pre_build] PASSED [ 27%]
+[  908s] tests/cli/test_hooks.py::test_skip_option_from_signal[build-post_build] PASSED [ 27%]
+[  912s] tests/cli/test_hooks.py::test_skip_option_from_signal[init-post_init] PASSED [ 27%]
+[  915s] tests/cli/test_hooks.py::test_skip_option_from_signal[install-pre_install] PASSED [ 27%]
+[  918s] tests/cli/test_hooks.py::test_skip_option_from_signal[install-post_install] PASSED [ 27%]
+[  921s] tests/cli/test_hooks.py::test_skip_option_from_signal[install-pre_lock] PASSED [ 28%]
+[  924s] tests/cli/test_hooks.py::test_skip_option_from_signal[install-post_lock] PASSED [ 28%]
+[  926s] tests/cli/test_hooks.py::test_skip_option_from_signal[lock-pre_lock] PASSED [ 28%]
+[  928s] tests/cli/test_hooks.py::test_skip_option_from_signal[lock-post_lock] PASSED [ 28%]
+[  950s] tests/cli/test_hooks.py::test_skip_option_from_signal[publish-pre_publish] PASSED [ 28%]
+[  971s] tests/cli/test_hooks.py::test_skip_option_from_signal[publish-pre_build] PASSED [ 28%]
+[  992s] tests/cli/test_hooks.py::test_skip_option_from_signal[publish-post_build] PASSED [ 29%]
+[ 1014s] tests/cli/test_hooks.py::test_skip_option_from_signal[publish-post_publish] PASSED [ 29%]
+[ 1019s] tests/cli/test_hooks.py::test_skip_option_from_signal[remove-pre_lock] PASSED [ 29%]
+[ 1023s] tests/cli/test_hooks.py::test_skip_option_from_signal[remove-post_lock] PASSED [ 29%]
+[ 1027s] tests/cli/test_hooks.py::test_skip_option_from_signal[sync-pre_install] PASSED [ 29%]
+[ 1031s] tests/cli/test_hooks.py::test_skip_option_from_signal[sync-post_install] PASSED [ 29%]
+[ 1034s] tests/cli/test_hooks.py::test_skip_option_from_signal[update-pre_install] PASSED [ 30%]
+[ 1038s] tests/cli/test_hooks.py::test_skip_option_from_signal[update-post_install] PASSED [ 30%]
+[ 1041s] tests/cli/test_hooks.py::test_skip_option_from_signal[update-pre_lock] PASSED [ 30%]
+[ 1044s] tests/cli/test_hooks.py::test_skip_option_from_signal[update-post_lock] PASSED [ 30%]
+[ 1050s] tests/cli/test_hooks.py::test_skip_option_from_signal[use-post_use] PASSED [ 30%]
+[ 1053s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-add] PASSED [ 30%]
+[ 1073s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-build] PASSED [ 30%]
+[ 1076s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-init] PASSED [ 31%]
+[ 1078s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-install] PASSED [ 31%]
+[ 1079s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-lock] PASSED [ 31%]
+[ 1099s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-publish] PASSED [ 31%]
+[ 1102s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-remove] PASSED [ 31%]
+[ 1106s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-sync] PASSED [ 31%]
+[ 1107s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-update] PASSED [ 32%]
+[ 1114s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:all-use] PASSED [ 32%]
+[ 1117s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-add] PASSED [ 32%]
+[ 1137s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-build] PASSED [ 32%]
+[ 1140s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-init] PASSED [ 32%]
+[ 1141s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-install] PASSED [ 32%]
+[ 1142s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-lock] PASSED [ 33%]
+[ 1163s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-publish] PASSED [ 33%]
+[ 1166s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-remove] PASSED [ 33%]
+[ 1169s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-sync] PASSED [ 33%]
+[ 1171s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-update] PASSED [ 33%]
+[ 1177s] tests/cli/test_hooks.py::test_skip_all_option_from_signal[:pre,:post-use] PASSED [ 33%]
+[ 1181s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-add] PASSED [ 34%]
+[ 1201s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-build] PASSED [ 34%]
+[ 1205s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-init] PASSED [ 34%]
+[ 1208s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-install] PASSED [ 34%]
+[ 1210s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-lock] PASSED [ 34%]
+[ 1231s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-publish] PASSED [ 34%]
+[ 1235s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-remove] PASSED [ 35%]
+[ 1239s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-sync] PASSED [ 35%]
+[ 1242s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-update] PASSED [ 35%]
+[ 1249s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[pre-use] PASSED [ 35%]
+[ 1253s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-add] PASSED [ 35%]
+[ 1273s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-build] PASSED [ 35%]
+[ 1276s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-init] PASSED [ 36%]
+[ 1279s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-install] PASSED [ 36%]
+[ 1281s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-lock] PASSED [ 36%]
+[ 1302s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-publish] PASSED [ 36%]
+[ 1306s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-remove] PASSED [ 36%]
+[ 1310s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-sync] PASSED [ 36%]
+[ 1313s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-update] PASSED [ 37%]
+[ 1319s] tests/cli/test_hooks.py::test_skip_pre_post_option_from_signal[post-use] PASSED [ 37%]
+[ 1319s] tests/cli/test_init.py::test_init_validate_python_requires PASSED        [ 37%]
+[ 1323s] tests/cli/test_init.py::test_init_command PASSED                         [ 37%]
+[ 1326s] tests/cli/test_init.py::test_init_command_library PASSED                 [ 37%]
+[ 1335s] tests/cli/test_init.py::test_init_auto_create_venv PASSED                [ 37%]
+[ 1346s] tests/cli/test_init.py::test_init_auto_create_venv_specify_python PASSED [ 38%]
+[ 1349s] tests/cli/test_init.py::test_init_auto_create_venv_answer_no PASSED      [ 38%]
+[ 1351s] tests/cli/test_install.py::test_sync_packages_with_group_all PASSED      [ 38%]
+[ 1354s] tests/cli/test_install.py::test_sync_packages_with_all_dev PASSED        [ 38%]
+[ 1354s] tests/cli/test_install.py::test_sync_no_lockfile PASSED                  [ 38%]
+[ 1357s] tests/cli/test_install.py::test_sync_clean_packages PASSED               [ 38%]
+[ 1359s] tests/cli/test_install.py::test_sync_dry_run PASSED                      [ 38%]
+[ 1362s] tests/cli/test_install.py::test_sync_only_different PASSED               [ 39%]
+[ 1364s] tests/cli/test_install.py::test_sync_in_sequential_mode PASSED           [ 39%]
+[ 1367s] tests/cli/test_install.py::test_sync_packages_with_groups PASSED         [ 39%]
+[ 1369s] tests/cli/test_install.py::test_sync_production_packages[False] PASSED   [ 39%]
+[ 1372s] tests/cli/test_install.py::test_sync_production_packages[True] PASSED    [ 39%]
+[ 1374s] tests/cli/test_install.py::test_sync_without_self PASSED                 [ 39%]
+[ 1377s] tests/cli/test_install.py::test_sync_with_index_change PASSED            [ 40%]
+[ 1377s] tests/cli/test_install.py::test_install_command PASSED                   [ 40%]
+[ 1378s] tests/cli/test_install.py::test_sync_command PASSED                      [ 40%]
+[ 1380s] tests/cli/test_install.py::test_install_with_lockfile PASSED             [ 40%]
+[ 1382s] tests/cli/test_install.py::test_install_with_dry_run PASSED              [ 40%]
+[ 1384s] tests/cli/test_install.py::test_install_check PASSED                     [ 40%]
+[ 1386s] tests/cli/test_install.py::test_sync_with_pure_option PASSED             [ 41%]
+[ 1389s] tests/cli/test_install.py::test_install_referencing_self_package PASSED  [ 41%]
+[ 1391s] tests/cli/test_list.py::test_list_command PASSED                         [ 41%]
+[ 1393s] tests/cli/test_list.py::test_list_graph_command PASSED                   [ 41%]
+[ 1395s] tests/cli/test_list.py::test_list_dependency_graph PASSED                [ 41%]
+[ 1399s] tests/cli/test_list.py::test_list_dependency_graph_include_exclude PASSED [ 41%]
+[ 1401s] tests/cli/test_list.py::test_list_dependency_graph_with_circular_forward PASSED [ 42%]
+[ 1403s] tests/cli/test_list.py::test_list_dependency_graph_with_circular_reverse PASSED [ 42%]
+[ 1405s] tests/cli/test_list.py::test_list_reverse_without_graph_flag PASSED      [ 42%]
+[ 1408s] tests/cli/test_list.py::test_list_reverse_dependency_graph PASSED        [ 42%]
+[ 1410s] tests/cli/test_list.py::test_list_json PASSED                            [ 42%]
+[ 1413s] tests/cli/test_list.py::test_list_json_reverse PASSED                    [ 42%]
+[ 1415s] tests/cli/test_list.py::test_list_json_with_circular_forward PASSED      [ 43%]
+[ 1417s] tests/cli/test_list.py::test_list_json_with_circular_reverse PASSED      [ 43%]
+[ 1419s] tests/cli/test_list.py::test_list_field_unknown PASSED                   [ 43%]
+[ 1421s] tests/cli/test_list.py::test_list_sort_unknown PASSED                    [ 43%]
+[ 1421s] tests/cli/test_list.py::test_list_freeze_banned_options PASSED           [ 43%]
+[ 1422s] tests/cli/test_list.py::test_list_multiple_export_formats PASSED         [ 43%]
+[ 1424s] tests/cli/test_list.py::test_list_bare PASSED                            [ 44%]
+[ 1427s] tests/cli/test_list.py::test_list_bare_sorted_name PASSED                [ 44%]
+[ 1429s] tests/cli/test_list.py::test_list_freeze PASSED                          [ 44%]
+[ 1432s] tests/cli/test_list.py::test_list_bare_sorted_version PASSED             [ 44%]
+[ 1434s] tests/cli/test_list.py::test_list_bare_sorted_version_resolve PASSED     [ 44%]
+[ 1436s] tests/cli/test_list.py::test_list_bare_fields_licences PASSED            [ 44%]
+[ 1438s] tests/cli/test_list.py::test_list_csv_fields_licences PASSED             [ 45%]
+[ 1440s] tests/cli/test_list.py::test_list_json_fields_licences PASSED            [ 45%]
+[ 1442s] tests/cli/test_list.py::test_list_markdown_fields_licences PASSED        [ 45%]
+[ 1445s] tests/cli/test_list.py::test_list_csv_include_exclude_valid PASSED       [ 45%]
+[ 1448s] tests/cli/test_list.py::test_list_csv_include_exclude PASSED             [ 45%]
+[ 1448s] tests/cli/test_lock.py::test_lock_command PASSED                         [ 45%]
+[ 1450s] tests/cli/test_lock.py::test_lock_dependencies PASSED                    [ 46%]
+[ 1451s] tests/cli/test_lock.py::test_lock_refresh PASSED                         [ 46%]
+[ 1452s] tests/cli/test_lock.py::test_lock_refresh_keep_consistent PASSED         [ 46%]
+[ 1453s] tests/cli/test_lock.py::test_lock_check_no_change_success PASSED         [ 46%]
+[ 1455s] tests/cli/test_lock.py::test_lock_check_change_fails PASSED              [ 46%]
+[ 1457s] tests/cli/test_lock.py::test_innovations_with_specified_lockfile PASSED  [ 46%]
+[ 1458s] tests/cli/test_lock.py::test_skip_editable_dependencies_in_metadata PASSED [ 46%]
+[ 1481s] tests/cli/test_others.py::test_build_distributions PASSED                [ 47%]
+[ 1482s] tests/cli/test_others.py::test_project_no_init_error PASSED              [ 47%]
+[ 1482s] tests/cli/test_others.py::test_help_option PASSED                        [ 47%]
+[ 1484s] tests/cli/test_others.py::test_info_command PASSED                       [ 47%]
+[ 1486s] tests/cli/test_others.py::test_info_global_project PASSED                [ 47%]
+[ 1487s] tests/cli/test_others.py::test_global_project_other_location PASSED      [ 47%]
+[ 1487s] tests/cli/test_others.py::test_uncaught_error PASSED                     [ 48%]
+[ 1488s] tests/cli/test_others.py::test_import_other_format_file[requirements.txt] PASSED [ 48%]
+[ 1489s] tests/cli/test_others.py::test_import_other_format_file[Pipfile] PASSED  [ 48%]
+[ 1489s] tests/cli/test_others.py::test_import_other_format_file[pyproject.toml] PASSED [ 48%]
+[ 1490s] tests/cli/test_others.py::test_import_other_format_file[projects/flit-demo/pyproject.toml] PASSED [ 48%]
+[ 1491s] tests/cli/test_others.py::test_import_requirement_no_overwrite PASSED    [ 48%]
+[ 1492s] tests/cli/test_others.py::test_show_self_package PASSED                  [ 49%]
+[ 1498s] tests/cli/test_others.py::test_export_to_requirements_txt PASSED         [ 49%]
+[ 1501s] tests/cli/test_others.py::test_export_doesnt_include_dep_with_extras PASSED [ 49%]
+[ 1501s] tests/cli/test_others.py::test_completion_command PASSED                 [ 49%]
+[ 1501s] tests/cli/test_publish.py::test_package_parse_metadata[demo-0.0.1-py2.py3-none-any.whl] PASSED [ 49%]
+[ 1501s] tests/cli/test_publish.py::test_package_parse_metadata[demo-0.0.1.tar.gz] PASSED [ 49%]
+[ 1501s] tests/cli/test_publish.py::test_package_parse_metadata[demo-0.0.1.zip] PASSED [ 50%]
+[ 1501s] tests/cli/test_publish.py::test_parse_metadata_with_non_ascii_chars PASSED [ 50%]
+[ 1501s] tests/cli/test_publish.py::test_package_add_signature PASSED             [ 50%]
+[ 1501s] tests/cli/test_publish.py::test_package_call_gpg_sign PASSED             [ 50%]
+[ 1502s] tests/cli/test_publish.py::test_repository_get_release_urls PASSED       [ 50%]
+[ 1503s] tests/cli/test_publish.py::test_publish_pick_up_asc_files PASSED         [ 50%]
+[ 1504s] tests/cli/test_publish.py::test_publish_package_with_signature PASSED    [ 51%]
+[ 1524s] tests/cli/test_publish.py::test_publish_and_build_in_one_run PASSED      [ 51%]
+[ 1525s] tests/cli/test_publish.py::test_publish_cli_args_and_env_var_precedence PASSED [ 51%]
+[ 1525s] tests/cli/test_remove.py::test_remove_command PASSED                     [ 51%]
+[ 1528s] tests/cli/test_remove.py::test_remove_editable_packages_while_keeping_normal PASSED [ 51%]
+[ 1531s] tests/cli/test_remove.py::test_remove_package[False] PASSED              [ 51%]
+[ 1535s] tests/cli/test_remove.py::test_remove_package[True] PASSED               [ 52%]
+[ 1537s] tests/cli/test_remove.py::test_remove_package_with_dry_run PASSED        [ 52%]
+[ 1540s] tests/cli/test_remove.py::test_remove_package_no_sync PASSED             [ 52%]
+[ 1543s] tests/cli/test_remove.py::test_remove_package_not_exist PASSED           [ 52%]
+[ 1546s] tests/cli/test_remove.py::test_remove_package_exist_in_multi_groups PASSED [ 52%]
+[ 1547s] tests/cli/test_remove.py::test_add_remove_no_package PASSED              [ 52%]
+[ 1548s] tests/cli/test_remove.py::test_remove_package_wont_break_toml PASSED     [ 53%]
+[ 1560s] tests/cli/test_run.py::test_pep582_launcher_for_python_interpreter PASSED [ 53%]
+[ 1562s] tests/cli/test_run.py::test_auto_isolate_site_packages PASSED            [ 53%]
+[ 1564s] tests/cli/test_run.py::test_run_with_site_packages PASSED                [ 53%]
+[ 1566s] tests/cli/test_run.py::test_run_command_not_found PASSED                 [ 53%]
+[ 1568s] tests/cli/test_run.py::test_run_pass_exit_code PASSED                    [ 53%]
+[ 1570s] tests/cli/test_run.py::test_run_cmd_script PASSED                        [ 53%]
+[ 1572s] tests/cli/test_run.py::test_run_cmd_script_with_array PASSED             [ 54%]
+[ 1573s] tests/cli/test_run.py::test_run_script_pass_project_root PASSED          [ 54%]
+[ 1575s] tests/cli/test_run.py::test_run_shell_script PASSED                      [ 54%]
+[ 1576s] tests/cli/test_run.py::test_run_shell_script_with_args_placeholder[with-args] PASSED [ 54%]
+[ 1577s] tests/cli/test_run.py::test_run_shell_script_with_args_placeholder[without-args] PASSED [ 54%]
+[ 1579s] tests/cli/test_run.py::test_run_shell_script_with_args_placeholder_with_default[with-args] PASSED [ 54%]
+[ 1580s] tests/cli/test_run.py::test_run_shell_script_with_args_placeholder_with_default[with-default] PASSED [ 55%]
+[ 1583s] tests/cli/test_run.py::test_run_call_script PASSED                       [ 55%]
+[ 1584s] tests/cli/test_run.py::test_run_script_with_extra_args PASSED            [ 55%]
+[ 1586s] tests/cli/test_run.py::test_run_script_with_args_placeholder[as-str-with-args] PASSED [ 55%]
+[ 1588s] tests/cli/test_run.py::test_run_script_with_args_placeholder[as-str-without-args] PASSED [ 55%]
+[ 1590s] tests/cli/test_run.py::test_run_script_with_args_placeholder[as-list-with-args] PASSED [ 55%]
+[ 1592s] tests/cli/test_run.py::test_run_script_with_args_placeholder[as-list-without-args] PASSED [ 56%]
+[ 1593s] tests/cli/test_run.py::test_run_script_with_args_placeholder_with_default[as-str-with-args] PASSED [ 56%]
+[ 1595s] tests/cli/test_run.py::test_run_script_with_args_placeholder_with_default[as-str-default] PASSED [ 56%]
+[ 1597s] tests/cli/test_run.py::test_run_script_with_args_placeholder_with_default[as-list-with-args] PASSED [ 56%]
+[ 1599s] tests/cli/test_run.py::test_run_script_with_args_placeholder_with_default[as-list-default] PASSED [ 56%]
+[ 1602s] tests/cli/test_run.py::test_run_expand_env_vars PASSED                   [ 56%]
+[ 1604s] tests/cli/test_run.py::test_run_script_with_env_defined PASSED           [ 57%]
+[ 1606s] tests/cli/test_run.py::test_run_script_with_dotenv_file PASSED           [ 57%]
+[ 1609s] tests/cli/test_run.py::test_run_script_override_global_env PASSED        [ 57%]
+[ 1609s] tests/cli/test_run.py::test_run_show_list_of_scripts PASSED              [ 57%]
+[ 1622s] tests/cli/test_run.py::test_run_with_another_project_root PASSED         [ 57%]
+[ 1624s] tests/cli/test_run.py::test_import_another_sitecustomize PASSED          [ 57%]
+[ 1626s] tests/cli/test_run.py::test_run_with_patched_sysconfig PASSED            [ 58%]
+[ 1628s] tests/cli/test_run.py::test_run_composite PASSED                         [ 58%]
+[ 1630s] tests/cli/test_run.py::test_composite_stops_on_first_failure PASSED      [ 58%]
+[ 1633s] tests/cli/test_run.py::test_composite_inherit_env PASSED                 [ 58%]
+[ 1635s] tests/cli/test_run.py::test_composite_fail_on_first_missing_task PASSED  [ 58%]
+[ 1639s] tests/cli/test_run.py::test_composite_runs_all_hooks PASSED              [ 58%]
+[ 1643s] tests/cli/test_run.py::test_composite_pass_parameters_to_subtasks PASSED [ 59%]
+[ 1647s] tests/cli/test_run.py::test_composite_can_pass_parameters PASSED         [ 59%]
+[ 1650s] tests/cli/test_run.py::test_composite_only_pass_parameters_to_subtasks_with_args[with-args] PASSED [ 59%]
+[ 1652s] tests/cli/test_run.py::test_composite_only_pass_parameters_to_subtasks_with_args[without-args] PASSED [ 59%]
+[ 1654s] tests/cli/test_run.py::test_composite_only_pass_parameters_to_subtasks_with_args_with_default[with-args] PASSED [ 59%]
+[ 1657s] tests/cli/test_run.py::test_composite_only_pass_parameters_to_subtasks_with_args_with_default[default] PASSED [ 59%]
+[ 1659s] tests/cli/test_run.py::test_composite_hooks_inherit_env PASSED           [ 60%]
+[ 1662s] tests/cli/test_run.py::test_composite_inherit_env_in_cascade PASSED      [ 60%]
+[ 1665s] tests/cli/test_run.py::test_composite_inherit_dotfile PASSED             [ 60%]
+[ 1667s] tests/cli/test_run.py::test_composite_can_have_commands PASSED           [ 60%]
+[ 1668s] tests/cli/test_run.py::test_run_shortcut PASSED                          [ 60%]
+[ 1669s] tests/cli/test_run.py::test_run_shortcuts_dont_override_commands PASSED  [ 60%]
+[ 1669s] tests/cli/test_run.py::test_run_shortcut_fail_with_usage_if_script_not_found PASSED [ 61%]
+[ 1670s] tests/cli/test_run.py::test_empty_positionnal_args_still_display_usage[no args] PASSED [ 61%]
+[ 1670s] tests/cli/test_run.py::test_empty_positionnal_args_still_display_usage[unknown param] PASSED [ 61%]
+[ 1670s] tests/cli/test_run.py::test_empty_positionnal_args_still_display_usage[not an user script] PASSED [ 61%]
+[ 1671s] tests/cli/test_self_command.py::test_self_list PASSED                    [ 61%]
+[ 1671s] tests/cli/test_self_command.py::test_self_list_plugins PASSED            [ 61%]
+[ 1671s] tests/cli/test_self_command.py::test_self_add PASSED                     [ 61%]
+[ 1671s] tests/cli/test_self_command.py::test_self_remove PASSED                  [ 62%]
+[ 1672s] tests/cli/test_self_command.py::test_self_update[args0-expected0] PASSED [ 62%]
+[ 1672s] tests/cli/test_self_command.py::test_self_update[args1-expected1] PASSED [ 62%]
+[ 1672s] tests/cli/test_self_command.py::test_self_update[args2-expected2] PASSED [ 62%]
+[ 1672s] tests/cli/test_self_command.py::test_self_update_already_latest PASSED   [ 62%]
+[ 1675s] tests/cli/test_update.py::test_update_packages_with_top PASSED           [ 62%]
+[ 1675s] tests/cli/test_update.py::test_update_command PASSED                     [ 63%]
+[ 1678s] tests/cli/test_update.py::test_update_ignore_constraints PASSED          [ 63%]
+[ 1681s] tests/cli/test_update.py::test_update_all_packages[reuse] PASSED         [ 63%]
+[ 1685s] tests/cli/test_update.py::test_update_all_packages[all] PASSED           [ 63%]
+[ 1688s] tests/cli/test_update.py::test_update_dry_run PASSED                     [ 63%]
+[ 1691s] tests/cli/test_update.py::test_update_top_packages_dry_run PASSED        [ 63%]
+[ 1695s] tests/cli/test_update.py::test_update_specified_packages PASSED          [ 64%]
+[ 1697s] tests/cli/test_update.py::test_update_specified_packages_eager_mode PASSED [ 64%]
+[ 1700s] tests/cli/test_update.py::test_update_with_package_and_groups_argument PASSED [ 64%]
+[ 1702s] tests/cli/test_update.py::test_update_with_prerelease_without_package_argument PASSED [ 64%]
+[ 1705s] tests/cli/test_update.py::test_update_existing_package_with_prerelease PASSED [ 64%]
+[ 1708s] tests/cli/test_update.py::test_update_package_with_extras PASSED         [ 64%]
+[ 1716s] tests/cli/test_use.py::test_use_command PASSED                           [ 65%]
+[ 1721s] tests/cli/test_use.py::test_use_python_by_version PASSED                 [ 65%]
+[ 1723s] tests/cli/test_use.py::test_use_wrapper_python PASSED                    [ 65%]
+[ 1724s] tests/cli/test_use.py::test_use_invalid_wrapper_python PASSED            [ 65%]
+[ 1731s] tests/cli/test_use.py::test_use_remember_last_selection PASSED           [ 65%]
+[ 1733s] tests/cli/test_venv.py::test_venv_create PASSED                          [ 65%]
+[ 1735s] tests/cli/test_venv.py::test_venv_create_in_project PASSED               [ 66%]
+[ 1736s] tests/cli/test_venv.py::test_venv_list PASSED                            [ 66%]
+[ 1737s] tests/cli/test_venv.py::test_venv_remove PASSED                          [ 66%]
+[ 1739s] tests/cli/test_venv.py::test_venv_recreate PASSED                        [ 66%]
+[ 1746s] tests/cli/test_venv.py::test_venv_activate[virtualenv] PASSED            [ 66%]
+[ 1748s] tests/cli/test_venv.py::test_venv_activate[venv] PASSED                  [ 66%]
+[ 1749s] tests/cli/test_venv.py::test_venv_activate_custom_prompt[virtualenv] PASSED [ 67%]
+[ 1749s] tests/cli/test_venv.py::test_venv_activate_custom_prompt[venv] PASSED    [ 67%]
+[ 1749s] tests/cli/test_venv.py::test_venv_activate_project_without_python PASSED [ 67%]
+[ 1750s] tests/cli/test_venv.py::test_venv_activate_error PASSED                  [ 67%]
+[ 1762s] tests/cli/test_venv.py::test_venv_auto_create[True] PASSED               [ 67%]
+[ 1763s] tests/cli/test_venv.py::test_venv_auto_create[False] PASSED              [ 67%]
+[ 1764s] tests/cli/test_venv.py::test_venv_purge PASSED                           [ 68%]
+[ 1765s] tests/cli/test_venv.py::test_venv_purge_force PASSED                     [ 68%]
+[ 1770s] tests/cli/test_venv.py::test_venv_purge_interactive[virtualenv-none-True] PASSED [ 68%]
+[ 1775s] tests/cli/test_venv.py::test_venv_purge_interactive[virtualenv-0-False] PASSED [ 68%]
+[ 1780s] tests/cli/test_venv.py::test_venv_purge_interactive[virtualenv-all-False] PASSED [ 68%]
+[ 1782s] tests/cli/test_venv.py::test_venv_purge_interactive[venv-none-True] PASSED [ 68%]
+[ 1784s] tests/cli/test_venv.py::test_venv_purge_interactive[venv-0-False] PASSED [ 69%]
+[ 1786s] tests/cli/test_venv.py::test_venv_purge_interactive[venv-all-False] PASSED [ 69%]
+[ 1787s] tests/cli/test_venv.py::test_virtualenv_backend_create[True] PASSED      [ 69%]
+[ 1788s] tests/cli/test_venv.py::test_virtualenv_backend_create[False] PASSED     [ 69%]
+[ 1790s] tests/cli/test_venv.py::test_venv_backend_create[True] PASSED            [ 69%]
+[ 1791s] tests/cli/test_venv.py::test_venv_backend_create[False] PASSED           [ 69%]
+[ 1805s] tests/models/test_backends.py::test_project_backend[pdm-pep517] PASSED   [ 69%]
+[ 1820s] tests/models/test_backends.py::test_project_backend[setuptools] PASSED   [ 70%]
+[ 1834s] tests/models/test_backends.py::test_project_backend[flit] PASSED         [ 70%]
+[ 1848s] tests/models/test_backends.py::test_project_backend[hatchling] PASSED    [ 70%]
+[ 1850s] tests/models/test_backends.py::test_project_backend[pdm-backend] PASSED  [ 70%]
+[ 1850s] tests/models/test_backends.py::test_hatch_expand_variables PASSED        [ 70%]
+[ 1850s] tests/models/test_backends.py::test_pdm_pep517_expand_variables PASSED   [ 70%]
+[ 1850s] tests/models/test_backends.py::test_get_relative_path[file:///foo/bar-None] PASSED [ 71%]
+[ 1850s] tests/models/test_backends.py::test_get_relative_path[https://example.org-None] PASSED [ 71%]
+[ 1850s] tests/models/test_backends.py::test_get_relative_path[file:///${PROJECT_ROOT}/demo%20package-demo package] PASSED [ 71%]
+[ 1850s] tests/models/test_backends.py::test_get_relative_path[file:///${PROJECT_ROOT}/../demo-../demo] PASSED [ 71%]
+[ 1850s] tests/models/test_backends.py::test_get_relative_path[{root:uri}/demo%20package-demo package] PASSED [ 71%]
+[ 1863s] tests/models/test_candidates.py::test_parse_local_directory_metadata[False] PASSED [ 71%]
+[ 1877s] tests/models/test_candidates.py::test_parse_local_directory_metadata[True] PASSED [ 72%]
+[ 1890s] tests/models/test_candidates.py::test_parse_vcs_metadata[False] PASSED   [ 72%]
+[ 1903s] tests/models/test_candidates.py::test_parse_vcs_metadata[True] PASSED    [ 72%]
+[ 1916s] tests/models/test_candidates.py::test_parse_artifact_metadata[/home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/artifacts/demo-0.0.1.tar.gz] PASSED [ 72%]
+[ 1918s] tests/models/test_candidates.py::test_parse_artifact_metadata[/home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/artifacts/demo-0.0.1-py2.py3-none-any.whl] PASSED [ 72%]
+[ 1919s] tests/models/test_candidates.py::test_parse_metadata_with_extras PASSED  [ 72%]
+[ 1920s] tests/models/test_candidates.py::test_parse_remote_link_metadata PASSED  [ 73%]
+[ 1922s] tests/models/test_candidates.py::test_extras_warning PASSED              [ 73%]
+[ 1923s] tests/models/test_candidates.py::test_parse_abnormal_specifiers PASSED   [ 73%]
+[ 1926s] tests/models/test_candidates.py::test_expand_project_root_in_url[demo @ file:///${PROJECT_ROOT}/tests/fixtures/artifacts/demo-0.0.1-py2.py3-none-any.whl] PASSED [ 73%]
+[ 1940s] tests/models/test_candidates.py::test_expand_project_root_in_url[demo @ file:///${PROJECT_ROOT}/tests/fixtures/artifacts/demo-0.0.1.tar.gz] PASSED [ 73%]
+[ 1955s] tests/models/test_candidates.py::test_expand_project_root_in_url[demo @ file:///${PROJECT_ROOT}/tests/fixtures/projects/demo] PASSED [ 73%]
+[ 1969s] tests/models/test_candidates.py::test_expand_project_root_in_url[-e ./tests/fixtures/projects/demo] PASSED [ 74%]
+[ 1984s] tests/models/test_candidates.py::test_expand_project_root_in_url[-e file:///${PROJECT_ROOT}/tests/fixtures/projects/demo#egg=demo] PASSED [ 74%]
+[ 1999s] tests/models/test_candidates.py::test_expand_project_root_in_url[-e file:///${PROJECT_ROOT}/tests/fixtures/projects/demo-#-with-hash#egg=demo] PASSED [ 74%]
+[ 2007s] tests/models/test_candidates.py::test_parse_project_file_on_build_error PASSED [ 74%]
+[ 2015s] tests/models/test_candidates.py::test_parse_project_file_on_build_error_with_extras PASSED [ 74%]
+[ 2022s] tests/models/test_candidates.py::test_parse_project_file_on_build_error_no_dep PASSED [ 74%]
+[ 2023s] tests/models/test_candidates.py::test_parse_poetry_project_metadata[False] PASSED [ 75%]
+[ 2025s] tests/models/test_candidates.py::test_parse_poetry_project_metadata[True] PASSED [ 75%]
+[ 2026s] tests/models/test_candidates.py::test_parse_flit_project_metadata[False] PASSED [ 75%]
+[ 2028s] tests/models/test_candidates.py::test_parse_flit_project_metadata[True] PASSED [ 75%]
+[ 2050s] tests/models/test_candidates.py::test_vcs_candidate_in_subdirectory[False] PASSED [ 75%]
+[ 2072s] tests/models/test_candidates.py::test_vcs_candidate_in_subdirectory[True] PASSED [ 75%]
+[ 2073s] tests/models/test_candidates.py::test_sdist_candidate_with_wheel_cache PASSED [ 76%]
+[ 2100s] tests/models/test_candidates.py::test_cache_vcs_immutable_revision PASSED [ 76%]
+[ 2114s] tests/models/test_candidates.py::test_cache_egg_info_sdist PASSED        [ 76%]
+[ 2115s] tests/models/test_candidates.py::test_invalidate_incompatible_wheel_link PASSED [ 76%]
+[ 2116s] tests/models/test_candidates.py::test_legacy_pep345_tag_link PASSED      [ 76%]
+[ 2118s] tests/models/test_candidates.py::test_ignore_invalid_py_version PASSED   [ 76%]
+[ 2119s] tests/models/test_candidates.py::test_find_candidates_from_find_links PASSED [ 76%]
+[ 2120s] tests/models/test_candidates.py::test_parse_metadata_from_pep621 PASSED  [ 77%]
+[ 2131s] tests/models/test_candidates.py::test_parse_metadata_with_dynamic_fields PASSED [ 77%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[extra == 'foo'-extras0-] PASSED [ 77%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[extra != 'foo'-extras1-extra != "foo"] PASSED [ 77%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[extra == 'foo' or extra == 'bar'-extras2-] PASSED [ 77%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[os_name == 'nt'-extras3-os_name == "nt"] PASSED [ 77%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[extra in 'foo,bar'-extras4-] PASSED [ 78%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[os_name == 'nt' and (extra == 'foo' or extra == 'bar')-extras5-os_name == "nt"] PASSED [ 78%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[extra == "foo" and extra == "bar"-extras6-extra == "foo" and extra == "bar"] PASSED [ 78%]
+[ 2131s] tests/models/test_marker.py::test_split_marker_extras[os_name == 'nt' and (extra == 'foo' or sys_platform == 'Windows')-extras7-os_name == "nt" and (extra == "foo" or sys_platform == "Windows")] PASSED [ 78%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_version > '3'-None->=3.1] PASSED [ 78%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_version > '3.8'-None->=3.9] PASSED [ 78%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_version != '3.8'-None-!=3.8.*] PASSED [ 79%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_version == '3.7'-None->=3.7,<3.8] PASSED [ 79%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_version in '3.6 3.7'-None->=3.6,<3.8] PASSED [ 79%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_full_version >= '3.6.0'-None->=3.6] PASSED [ 79%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_full_version not in '3.8.3'-None-!=3.8.3] PASSED [ 79%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_version > '3.7' and os_name == 'nt'-os_name == "nt"->=3.8] PASSED [ 79%]
+[ 2131s] tests/models/test_marker.py::test_split_pyspec[python_version > '3.7' or os_name == 'nt'-python_version > "3.7" or os_name == "nt"-] PASSED [ 80%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[requests-None] PASSED [ 80%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[requests<2.21.0,>=2.20.0-None] PASSED [ 80%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[requests==2.19.0; os_name == "nt"-None] PASSED [ 80%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[requests[security,tests]==2.8.*,>=2.8.1; python_version < "2.7"-None] PASSED [ 80%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[pip @ https://github.com/pypa/pip/archive/1.3.1.zip ; python_version > "3.4"-None] PASSED [ 80%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[git+http://git.example.com/MyProject.git@master#egg=MyProject-MyProject @ git+http://git.example.com/MyProject.git@master] PASSED [ 81%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[https://github.com/pypa/pip/archive/1.3.1.zip-None] PASSED [ 81%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[/home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/projects/demo-demo @ file:///home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/projects/demo] PASSED [ 81%]
+[ 2131s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[/home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/artifacts/demo-0.0.1-py2.py3-none-any.whl-demo @ file:///home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/artifacts/demo-0.0.1-py2.py3-none-any.whl] PASSED [ 81%]
+[ 2132s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[/home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/projects/demo[security]-demo[security] @ file:///home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/projects/demo] PASSED [ 81%]
+[ 2132s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[requests; python_version=="3.7.*"-requests; python_version == "3.7.*"] PASSED [ 81%]
+[ 2132s] tests/models/test_requirements.py::test_convert_req_dict_to_req_line[git+git@github.com:pypa/pip.git#egg=pip-pip @ git+ssh://git@github.com/pypa/pip.git] PASSED [ 82%]
+[ 2132s] tests/models/test_requirements.py::test_illegal_requirement_line[requests; os_name=>'nt'-Invalid marker:] PASSED [ 82%]
+[ 2132s] tests/models/test_requirements.py::test_illegal_requirement_line[./tests-The local path (.+)? is not installable] PASSED [ 82%]
+[ 2132s] tests/models/test_requirements.py::test_not_supported_editable_requirement[requests >= 2.19.0] PASSED [ 82%]
+[ 2132s] tests/models/test_requirements.py::test_not_supported_editable_requirement[https://github.com/pypa/pip/archive/1.3.1.zip] PASSED [ 82%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_cfg[[metadata]\nname = foo\nversion = 0.1.0\n-result0] PASSED [ 82%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_cfg[[metadata]\nname = foo\nversion = attr:foo.__version__\n-result1] PASSED [ 83%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_cfg[[metadata]\nname = foo\nversion = 0.1.0\n\n[options]\npython_requires = >=3.6\ninstall_requires =\n    click\n    requests\n[options.extras_require]\ntui =\n    rich\n-result2] PASSED [ 83%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_py[from setuptools import setup\n\nsetup(name="foo", version="0.1.0")\n-result0] PASSED [ 83%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_py[import setuptools\n\nsetuptools.setup(name="foo", version="0.1.0")\n-result1] PASSED [ 83%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_py[from setuptools import setup\n\nkwargs = {"name": "foo", "version": "0.1.0"}\nsetup(**kwargs)\n-result2] PASSED [ 83%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_py[from setuptools import setup\nname = 'foo'\nsetup(name=name, version="0.1.0")\n-result3] PASSED [ 83%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_py[from setuptools import setup\n\nsetup(name="foo", version="0.1.0", install_requires=['click', 'requests'],\n      python_requires='>=3.6', extras_require={'tui': ['rich']})\n-result4] PASSED [ 84%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_setup_py[from setuptools import setup\n\nversion = open('__version__.py').read().strip()\n\nsetup(name="foo", version=version)\n-result5] PASSED [ 84%]
+[ 2132s] tests/models/test_setup_parsing.py::test_parse_pyproject_toml PASSED     [ 84%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>=3.6->=3.6] PASSED [ 84%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[<3.8-<3.8] PASSED [ 84%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[~=2.7.0->=2.7,<2.8] PASSED [ 84%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[-] PASSED         [ 84%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>=3.6,<3.8->=3.6,<3.8] PASSED [ 85%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>3.6->=3.6.1] PASSED [ 85%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[<=3.7-<3.7.1] PASSED [ 85%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[<3.3,!=3.4.*,!=3.5.*-<3.3] PASSED [ 85%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>=3.6,!=3.4.*->=3.6] PASSED [ 85%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>=3.6,!=3.6.*->=3.7] PASSED [ 85%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>=3.6,<3.8,!=3.8.*->=3.6,<3.8] PASSED [ 86%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>=2.7,<3.2,!=3.0.*,!=3.1.*->=2.7,<3.0] PASSED [ 86%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[!=3.0.*,!=3.0.2-!=3.0.*] PASSED [ 86%]
+[ 2132s] tests/models/test_specifiers.py::test_normalize_pyspec[>=3.4.*->=3.4] XFAIL [ 86%]
+[ 2133s] tests/models/test_specifiers.py::test_normalize_pyspec[>3.4.*->=3.5] XFAIL [ 86%]
+[ 2133s] tests/models/test_specifiers.py::test_normalize_pyspec[<=3.4.*-<3.4] XFAIL [ 86%]
+[ 2133s] tests/models/test_specifiers.py::test_normalize_pyspec[<3.4.*-<3.4] XFAIL [ 87%]
+[ 2133s] tests/models/test_specifiers.py::test_normalize_pyspec[<3.10.0a6-<3.10.0a6] PASSED [ 87%]
+[ 2133s] tests/models/test_specifiers.py::test_normalize_pyspec[<3.10.2a3-<3.10.2a3] PASSED [ 87%]
+[ 2133s] tests/models/test_specifiers.py::test_pyspec_and_op[>=3.6->=3.0->=3.6] PASSED [ 87%]
+[ 2133s] tests/models/test_specifiers.py::test_pyspec_and_op[>=3.6-<3.8->=3.6,<3.8] PASSED [ 87%]
+[ 2133s] tests/models/test_specifiers.py::test_pyspec_and_op[->=3.6->=3.6] PASSED [ 87%]
+[ 2133s] tests/models/test_specifiers.py::test_pyspec_and_op[>=3.6-<3.2-impossible] PASSED [ 88%]
+[ 2133s] tests/models/test_specifiers.py::test_pyspec_and_op[>=2.7,!=3.0.*-!=3.1.*->=2.7,!=3.0.*,!=3.1.*] PASSED [ 88%]
+[ 2133s] tests/models/test_specifiers.py::test_pyspec_and_op[>=3.11.0a2-<3.11.0b->=3.11.0a2,<3.11.0b0] PASSED [ 88%]
+[ 2133s] tests/models/test_specifiers.py::test_pyspec_and_op[<3.11.0a2->3.11.0b-impossible] PASSED [ 88%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_or_op[>=3.6->=3.0->=3.0] PASSED [ 88%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_or_op[->=3.6-] PASSED       [ 88%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_or_op[>=3.6-<3.7-] PASSED   [ 89%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_or_op[>=3.6,<3.8->=3.4,<3.7->=3.4,<3.8] PASSED [ 89%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_or_op[~=2.7->=3.6->=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*] PASSED [ 89%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_or_op[<2.7.15->=3.0-!=2.7.15,!=2.7.16,!=2.7.17,!=2.7.18] PASSED [ 89%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_or_op[>3.11.0a2->3.11.0b->=3.11.0a3] PASSED [ 89%]
+[ 2134s] tests/models/test_specifiers.py::test_impossible_pyspec PASSED           [ 89%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_is_subset_superset[~=2.7->=2.7] PASSED [ 90%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_is_subset_superset[>=3.6-] PASSED [ 90%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_is_subset_superset[>=3.7->=3.6,<4.0] PASSED [ 90%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_is_subset_superset[>=2.7,<3.0->=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*] PASSED [ 90%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_is_subset_superset[>=3.6->=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*] PASSED [ 90%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_is_subset_superset[>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*->=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*] PASSED [ 90%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_is_subset_superset[>=3.11.*->=3.11.0rc] XFAIL [ 91%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_isnot_subset_superset[~=2.7->=2.6,<2.7.15] PASSED [ 91%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_isnot_subset_superset[>=3.7->=3.6,<3.9] PASSED [ 91%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_isnot_subset_superset[>=3.7,<3.6-==2.7] PASSED [ 91%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_isnot_subset_superset[>=3.0,!=3.4.*->=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*] PASSED [ 91%]
+[ 2134s] tests/models/test_specifiers.py::test_pyspec_isnot_subset_superset[>=3.11.0-<3.11.0a] PASSED [ 91%]
+[ 2134s] tests/models/test_versions.py::test_unsupported_post_version PASSED      [ 92%]
+[ 2134s] tests/models/test_versions.py::test_support_prerelease_version PASSED    [ 92%]
+[ 2134s] tests/models/test_versions.py::test_normalize_non_standard_version PASSED [ 92%]
+[ 2134s] tests/models/test_versions.py::test_version_comparison PASSED            [ 92%]
+[ 2134s] tests/models/test_versions.py::test_version_is_wildcard PASSED           [ 92%]
+[ 2134s] tests/models/test_versions.py::test_version_is_py2 PASSED                [ 92%]
+[ 2134s] tests/models/test_versions.py::test_version_complete[3.9-args0-3.9.0] PASSED [ 92%]
+[ 2134s] tests/models/test_versions.py::test_version_complete[3.9-args1-3.9.*] PASSED [ 93%]
+[ 2134s] tests/models/test_versions.py::test_version_complete[3-args2-3.0] PASSED [ 93%]
+[ 2134s] tests/models/test_versions.py::test_version_bump[3.8.0--1-3.8.1] PASSED  [ 93%]
+[ 2134s] tests/models/test_versions.py::test_version_bump[3.8--1-3.9.0] PASSED    [ 93%]
+[ 2134s] tests/models/test_versions.py::test_version_bump[3-0-4.0.0] PASSED       [ 93%]
+[ 2134s] tests/models/test_versions.py::test_version_bump[3.8.1-1-3.9.0] PASSED   [ 93%]
+[ 2134s] tests/models/test_versions.py::test_version_startswith[3.8.0-3.8-True] PASSED [ 94%]
+[ 2134s] tests/models/test_versions.py::test_version_startswith[3.8.*-3.8-True] PASSED [ 94%]
+[ 2134s] tests/models/test_versions.py::test_version_startswith[3.8.1-3.7-False] PASSED [ 94%]
+[ 2134s] tests/models/test_versions.py::test_version_startswith[3.8-3.8.2-False] PASSED [ 94%]
+[ 2134s] tests/models/test_versions.py::test_version_getitem PASSED               [ 94%]
+[ 2134s] tests/models/test_versions.py::test_version_setitem PASSED               [ 94%]
+[ 2135s] tests/resolver/test_resolve.py::test_resolve_named_requirement PASSED    [ 95%]
+[ 2137s] tests/resolver/test_resolve.py::test_resolve_requires_python PASSED      [ 95%]
+[ 2138s] tests/resolver/test_resolve.py::test_resolve_allow_prereleases PASSED    [ 95%]
+[ 2139s] tests/resolver/test_resolve.py::test_resolve_with_extras PASSED          [ 95%]
+[ 2152s] tests/resolver/test_resolve.py::test_resolve_local_artifacts[sdist] PASSED [ 95%]
+[ 2154s] tests/resolver/test_resolve.py::test_resolve_local_artifacts[wheel] PASSED [ 95%]
+[ 2167s] tests/resolver/test_resolve.py::test_resolve_vcs_and_local_requirements[False-/home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/projects/demo] PASSED [ 96%]
+[ 2168s] tests/resolver/test_resolve.py::test_resolve_vcs_and_local_requirements[False-git+https://github.com/test-root/demo.git#egg=demo] PASSED [ 96%]
+[ 2169s] tests/resolver/test_resolve.py::test_resolve_vcs_and_local_requirements[True-/home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/fixtures/projects/demo] PASSED [ 96%]
+[ 2171s] tests/resolver/test_resolve.py::test_resolve_vcs_and_local_requirements[True-git+https://github.com/test-root/demo.git#egg=demo] PASSED [ 96%]
+[ 2184s] tests/resolver/test_resolve.py::test_resolve_vcs_without_explicit_name PASSED [ 96%]
+[ 2185s] tests/resolver/test_resolve.py::test_resolve_local_and_named_requirement PASSED [ 96%]
+[ 2186s] tests/resolver/test_resolve.py::test_resolving_auto_avoid_conflicts PASSED [ 97%]
+[ 2187s] tests/resolver/test_resolve.py::test_resolve_conflicting_dependencies PASSED [ 97%]
+[ 2188s] tests/resolver/test_resolve.py::test_resolve_conflicting_dependencies_with_overrides[2.1] PASSED [ 97%]
+[ 2189s] tests/resolver/test_resolve.py::test_resolve_conflicting_dependencies_with_overrides[>=1.8] PASSED [ 97%]
+[ 2190s] tests/resolver/test_resolve.py::test_resolve_conflicting_dependencies_with_overrides[==2.1] PASSED [ 97%]
+[ 2191s] tests/resolver/test_resolve.py::test_resolve_no_available_versions PASSED [ 97%]
+[ 2192s] tests/resolver/test_resolve.py::test_exclude_incompatible_requirements PASSED [ 98%]
+[ 2193s] tests/resolver/test_resolve.py::test_union_markers_from_different_parents PASSED [ 98%]
+[ 2194s] tests/resolver/test_resolve.py::test_requirements_from_different_groups PASSED [ 98%]
+[ 2219s] tests/resolver/test_resolve.py::test_resolve_two_extras_from_the_same_package PASSED [ 98%]
+[ 2220s] tests/resolver/test_resolve.py::test_resolve_package_with_dummy_upbound PASSED [ 98%]
+[ 2221s] tests/resolver/test_resolve.py::test_resolve_dependency_with_extra_marker PASSED [ 98%]
+[ 2222s] tests/resolver/test_resolve.py::test_resolve_circular_dependencies PASSED [ 99%]
+[ 2224s] tests/resolver/test_resolve.py::test_resolve_candidates_to_install PASSED [ 99%]
+[ 2225s] tests/resolver/test_resolve.py::test_resolve_prefer_requirement_with_prereleases PASSED [ 99%]
+[ 2226s] tests/resolver/test_resolve.py::test_resolve_with_python_marker PASSED   [ 99%]
+[ 2240s] tests/resolver/test_resolve.py::test_resolve_file_req_with_prerelease PASSED [ 99%]
+[ 2241s] tests/resolver/test_resolve.py::test_resolve_extra_requirements_no_break_constraints PASSED [ 99%]
+[ 2242s] tests/resolver/test_resolve.py::test_resolve_extra_and_underlying_to_the_same_version PASSED [100%]
+[ 2242s] 
+[ 2242s] =================================== FAILURES ===================================
+[ 2242s] __________________________ test_add_editable_package ___________________________
+[ 2242s] 
+[ 2242s] project = <Project '/tmp/pytest-of-abuild/pytest-0/test_add_editable_package0'>
+[ 2242s] working_set = <tests.conftest.MockWorkingSet object at 0x4034a6feb0>
+[ 2242s] 
+[ 2242s]     @pytest.mark.usefixtures("repository", "vcs")
+[ 2242s]     def test_add_editable_package(project, working_set):
+[ 2242s]         # Ensure that correct python version is used.
+[ 2242s]         project.environment.python_requires = PySpecSet(">=3.6")
+[ 2242s]         actions.do_add(project, True, packages=["demo"])
+[ 2242s] >       actions.do_add(
+[ 2242s]             project,
+[ 2242s]             True,
+[ 2242s]             editables=["git+https://github.com/test-root/demo.git#egg=demo"],
+[ 2242s]         )
+[ 2242s] 
+[ 2242s] tests/cli/test_add.py:63: 
+[ 2242s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[ 2242s] /usr/lib/python3.8/site-packages/pdm/cli/actions.py:284: in do_add
+[ 2242s]     resolved = do_lock(
+[ 2242s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[ 2242s] 
+[ 2242s] project = <Project '/tmp/pytest-of-abuild/pytest-0/test_add_editable_package0'>
+[ 2242s] strategy = 'reuse', tracked_names = {'demo'}
+[ 2242s] requirements = [VcsRequirement(name='demo', marker=None, extras=None, specifier=None, editable=True, prerelease=False, url='git+https...honRequirement(name='python', marker=None, extras=None, specifier=<PySpecSet >=3.6>, editable=False, prerelease=False)]
+[ 2242s] dry_run = False, refresh = False
+[ 2242s] hooks = <pdm.cli.hooks.HookManager object at 0x4034a7f340>
+[ 2242s] 
+[ 2242s]     def do_lock(
+[ 2242s]         project: Project,
+[ 2242s]         strategy: str = "all",
+[ 2242s]         tracked_names: Iterable[str] | None = None,
+[ 2242s]         requirements: list[Requirement] | None = None,
+[ 2242s]         dry_run: bool = False,
+[ 2242s]         refresh: bool = False,
+[ 2242s]         hooks: HookManager | None = None,
+[ 2242s]     ) -> dict[str, Candidate]:
+[ 2242s]         """Performs the locking process and update lockfile."""
+[ 2242s]         hooks = hooks or HookManager(project)
+[ 2242s]         check_project_file(project)
+[ 2242s]         if refresh:
+[ 2242s]             locked_repo = project.locked_repository
+[ 2242s]             repo = project.get_repository()
+[ 2242s]             mapping: dict[str, Candidate] = {}
+[ 2242s]             dependencies: dict[tuple[str, str | None], list[Requirement]] = {}
+[ 2242s]             with project.core.ui.open_spinner("Re-calculating hashes..."):
+[ 2242s]                 for key, candidate in locked_repo.packages.items():
+[ 2242s]                     reqs, python_requires, summary = locked_repo.candidate_info[key]
+[ 2242s]                     candidate.summary = summary
+[ 2242s]                     candidate.requires_python = python_requires
+[ 2242s]                     mapping[candidate.identify()] = candidate
+[ 2242s]                     dependencies[candidate.dep_key] = list(map(parse_requirement, reqs))
+[ 2242s]                 fetch_hashes(repo, mapping)
+[ 2242s]                 lockfile = format_lockfile(project, mapping, dependencies)
+[ 2242s]             project.write_lockfile(lockfile)
+[ 2242s]             return mapping
+[ 2242s]         # TODO: multiple dependency definitions for the same package.
+[ 2242s]         provider = project.get_provider(strategy, tracked_names)
+[ 2242s]         if not requirements:
+[ 2242s]             requirements = [
+[ 2242s]                 r for deps in project.all_dependencies.values() for r in deps.values()
+[ 2242s]             ]
+[ 2242s]         resolve_max_rounds = int(project.config["strategy.resolve_max_rounds"])
+[ 2242s]         ui = project.core.ui
+[ 2242s]         with ui.logging("lock"):
+[ 2242s]             # The context managers are nested to ensure the spinner is stopped before
+[ 2242s]             # any message is thrown to the output.
+[ 2242s]             try:
+[ 2242s]                 with ui.open_spinner(title="Resolving dependencies") as spin:
+[ 2242s]                     reporter = project.get_reporter(requirements, tracked_names, spin)
+[ 2242s]                     resolver: Resolver = project.core.resolver_class(provider, reporter)
+[ 2242s]                     hooks.try_emit("pre_lock", requirements=requirements, dry_run=dry_run)
+[ 2242s]                     mapping, dependencies = resolve(
+[ 2242s]                         resolver,
+[ 2242s]                         requirements,
+[ 2242s]                         project.environment.python_requires,
+[ 2242s]                         resolve_max_rounds,
+[ 2242s]                     )
+[ 2242s]                     fetch_hashes(provider.repository, mapping)
+[ 2242s]             except ResolutionTooDeep:
+[ 2242s]                 ui.echo(f"{termui.Emoji.LOCK} Lock failed", err=True)
+[ 2242s]                 ui.echo(
+[ 2242s]                     "The dependency resolution exceeds the maximum loop depth of "
+[ 2242s]                     f"{resolve_max_rounds}, there may be some circular dependencies "
+[ 2242s]                     "in your project. Try to solve them or increase the "
+[ 2242s]                     f"[success]`strategy.resolve_max_rounds`[/] config.",
+[ 2242s]                     err=True,
+[ 2242s]                 )
+[ 2242s]                 raise
+[ 2242s]             except ResolutionImpossible as err:
+[ 2242s]                 ui.echo(f"{termui.Emoji.LOCK} Lock failed", err=True)
+[ 2242s]                 ui.echo(format_resolution_impossible(err), err=True)
+[ 2242s] >               raise ResolutionImpossible("Unable to find a resolution") from None
+[ 2242s] E               resolvelib.resolvers.ResolutionImpossible: Unable to find a resolution
+[ 2242s] 
+[ 2242s] /usr/lib/python3.8/site-packages/pdm/cli/actions.py:114: ResolutionImpossible
+[ 2242s] ---------------------------- Captured stdout setup -----------------------------
+[ 2242s] Changes are written to pyproject.toml.
+[ 2242s] Changes are written to pyproject.toml.
+[ 2242s] ----------------------------- Captured stdout call -----------------------------
+[ 2242s] Adding packages to dev dev-dependencies: demo
+[ 2242s] 🔒 Lock successful
+[ 2242s] Changes are written to pdm.lock.
+[ 2242s] Changes are written to pyproject.toml.
+[ 2242s] Synchronizing working set with lock file: 2 to add, 0 to update, 0 to remove
+[ 2242s] 
+[ 2242s]   ✔ Install demo 0.0.1 successful
+[ 2242s]   ✔ Install idna 2.7 successful
+[ 2242s] 
+[ 2242s] 🎉 All complete!
+[ 2242s] 
+[ 2242s] Adding packages to dev dev-dependencies: -e git+https://github.com/test-root/demo.git#egg=demo
+[ 2242s] ----------------------------- Captured stderr call -----------------------------
+[ 2242s] 🔒 Lock failed
+[ 2242s] Unable to find a resolution for wheel
+[ 2242s] Please make sure the package name is correct.
+[ 2242s] See /tmp/pdm-lock-uh8p9yuv.log for detailed debug log.
+[ 2242s] ------------------------------ Captured log call -------------------------------
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Start resolving requirements ========
+[ 2242s] INFO     pdm.termui:reporters.py:41   demo
+[ 2242s] INFO     pdm.termui:reporters.py:41   python>=3.6
+[ 2242s] INFO     pdm.termui:reporters.py:76   Adding requirement demo
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate demo@0.0.1>
+[ 2242s] INFO     pdm.termui:reporters.py:76   Adding requirement python>=3.6
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Starting round 0 ========
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate demo@0.0.1>
+[ 2242s] INFO     pdm.termui:reporters.py:94 Pinning: python None
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Ending round 0 ========
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Starting round 1 ========
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate demo@0.0.1>
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate demo@0.0.1>
+[ 2242s] INFO     pdm.termui:reporters.py:76   Adding requirement idna(from demo 0.0.1)
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate idna@2.7>
+[ 2242s] INFO     pdm.termui:reporters.py:76   Adding requirement chardet; os_name == "nt"(from demo 0.0.1)
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate chardet@3.0.4>
+[ 2242s] INFO     pdm.termui:reporters.py:94 Pinning: demo 0.0.1
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Ending round 1 ========
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Starting round 2 ========
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate idna@2.7>
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate chardet@3.0.4>
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate chardet@3.0.4>
+[ 2242s] INFO     pdm.termui:reporters.py:94 Pinning: chardet 3.0.4
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Ending round 2 ========
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Starting round 3 ========
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate idna@2.7>
+[ 2242s] DEBUG    pdm.termui:repositories.py:197 	Found matching candidates:
+[ 2242s] DEBUG    pdm.termui:repositories.py:209 	  <Candidate idna@2.7>
+[ 2242s] INFO     pdm.termui:reporters.py:94 Pinning: idna 2.7
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Ending round 3 ========
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Starting round 4 ========
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Resolution Result ========
+[ 2242s] INFO     pdm.termui:reporters.py:54 Stable pins:
+[ 2242s] INFO     pdm.termui:reporters.py:64    python None
+[ 2242s] INFO     pdm.termui:reporters.py:64      demo 0.0.1
+[ 2242s] INFO     pdm.termui:reporters.py:64   chardet 3.0.4
+[ 2242s] INFO     pdm.termui:reporters.py:64      idna 2.7
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Start resolving requirements ========
+[ 2242s] INFO     pdm.termui:reporters.py:41   -e git+https://github.com/test-root/demo.git#egg=demo
+[ 2242s] INFO     pdm.termui:reporters.py:41   python>=3.6
+[ 2242s] INFO     pdm.termui:reporters.py:76   Adding requirement -e git+https://github.com/test-root/demo.git#egg=demo
+[ 2242s] INFO     pdm.termui:reporters.py:76   Adding requirement python>=3.6
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Starting round 0 ========
+[ 2242s] INFO     pdm.termui:reporters.py:94 Pinning: python None
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Ending round 0 ========
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Starting round 1 ========
+[ 2242s] INFO     pdm.termui:candidates.py:495 Running PEP 517 backend to get metadata for <Link git+https://github.com/test-root/demo.git (from None)>
+[ 2242s] INFO     pdm.termui:base.py:192 Preparing isolated env for PEP 517 build...
+[ 2242s] INFO     pdm.termui:reporters.py:22 ======== Start resolving requirements ========
+[ 2242s] INFO     pdm.termui:reporters.py:41   wheel
+[ 2242s] INFO     pdm.termui:reporters.py:41   setuptools>=40.8.0
+[ 2242s] INFO     pdm.termui:reporters.py:41   python>=3.10.9,<3.10.10
+[ 2242s] INFO     pdm.termui:reporters.py:76   Adding requirement wheel
+[ 2242s] DEBUG    pdm.termui:repositories.py:170 	Could not find any matching candidates.
+[ 2242s] DEBUG    pdm.termui:repositories.py:189 	Could not find any matching candidates even when considering pre-releases.
+[ 2242s] ERROR    pdm.termui:termui.py:230 Error occurs
+[ 2242s] Traceback (most recent call last):
+[ 2242s]   File "/usr/lib/python3.8/site-packages/pdm/termui.py", line 227, in logging
+[ 2242s]     yield logger
+[ 2242s]   File "/usr/lib/python3.8/site-packages/pdm/cli/actions.py", line 114, in do_lock
+[ 2242s]     raise ResolutionImpossible("Unable to find a resolution") from None
+[ 2242s] resolvelib.resolvers.ResolutionImpossible: Unable to find a resolution
+[ 2242s] =============================== warnings summary ===============================
+[ 2242s] tests/test_integration.py:25
+[ 2242s]   /home/abuild/rpmbuild/BUILD/pdm-2.3.3/tests/test_integration.py:25: PytestUnknownMarkWarning: Unknown pytest.mark.flaky - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[ 2242s]     @pytest.mark.flaky(reruns=3)
+[ 2242s] 
+[ 2242s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[ 2242s] =========================== short test summary info ============================
+[ 2242s] XFAIL tests/models/test_specifiers.py::test_normalize_pyspec[>=3.4.*->=3.4] - packaging 22.0 doesn't parse it
+[ 2242s] XFAIL tests/models/test_specifiers.py::test_normalize_pyspec[>3.4.*->=3.5] - packaging 22.0 doesn't parse it
+[ 2242s] XFAIL tests/models/test_specifiers.py::test_normalize_pyspec[<=3.4.*-<3.4] - packaging 22.0 doesn't parse it
+[ 2242s] XFAIL tests/models/test_specifiers.py::test_normalize_pyspec[<3.4.*-<3.4] - packaging 22.0 doesn't parse it
+[ 2242s] XFAIL tests/models/test_specifiers.py::test_pyspec_is_subset_superset[>=3.11.*->=3.11.0rc] - packaging 22.0 doesn't parse it
+[ 2242s] FAILED tests/cli/test_add.py::test_add_editable_package - resolvelib.resolvers.ResolutionImpossible: Unable to find a resolution
+[ 2242s] = 1 failed, 607 passed, 13 deselected, 5 xfailed, 1 warning in 2097.26s (0:34:57) =
+[ 2244s] error: Bad exit status from /var/tmp/rpm-tmp.gbrAmU (%check)
+[ 2244s] 
+[ 2244s] RPM build errors:
+[ 2244s]     Bad exit status from /var/tmp/rpm-tmp.gbrAmU (%check)
+[ 2244s] ### VM INTERACTION START ###
+[ 2245s] [ 2240.120567][    T1] sysrq: Power Off
+[ 2245s] [ 2240.123071][   T18] reboot: Power down
+[ 2245s] ### VM INTERACTION END ###
+[ 2245s] 
+[ 2245s] sheep88 failed "build python-pdm.spec" at Sat Feb 25 01:20:21 UTC 2023.
+[ 2245s] 

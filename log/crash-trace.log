@@ -1,0 +1,248 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    1s] 
+[    1s] lamb52 started "build crash-trace.spec" at Thu Apr 20 23:47:08 UTC 2023.
+[    1s] 
+[    1s] Building crash-trace for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '9c84beb081728894c7c63bea1ecb165c'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/crash-trace.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/crash-trace.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/crash-trace.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [dfcd5cb3338f49f0d25e684137761894]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...done
+[    4s] Detected virtio-serial support
+[    4s] QEMU 7.1.0 detected: Skipping iothreads because of bsc#1204082
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   10s] ### VM INTERACTION END ###
+[   10s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.2.10-1-default #1 SMP PREEMPT_DYNAMIC Thu Apr 6 10:36:55 UTC 2023 (ba7816e)
+[   10s] Increasing log level from now on...
+[   10s] [    4.946714][  T408] sysrq: Changing Loglevel
+[   10s] [    4.947041][  T408] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=3465fda3-b8ab-4572-bb6d-a525585e01a3
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/crash-trace.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/crash-trace.spec build ...
+[   12s] initializing rpm db...
+[   13s] querying package ids...
+[   34s] [1/132] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   34s] [2/132] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   34s] [3/132] preinstalled attr-2.5.1-1.1
+[   34s] [4/132] preinstalled bash-5.2.15-8.1
+[   34s] [5/132] preinstalled bash-sh-5.2.15-8.1
+[   34s] [6/132] preinstalled binutils-2.40-4.1
+[   34s] [7/132] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   34s] [8/132] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   34s] [9/132] preinstalled build-mkbaselibs-20230314-1.1
+[   34s] [10/132] preinstalled bzip2-1.0.8-5.1
+[   34s] [11/132] preinstalled chkstat-1599_20230217-1.1
+[   34s] [12/132] preinstalled compat-usrmerge-build-84.87-5.1
+[   34s] [13/132] preinstalled compat-usrmerge-tools-84.87-5.1
+[   34s] [14/132] preinstalled coreutils-9.2-2.1
+[   34s] [15/132] preinstalled cpio-2.13-5.1
+[   34s] [16/132] preinstalled cpp-13-1.1
+[   34s] [17/132] preinstalled cpp13-13.0.1+git7162-1.1
+[   34s] [18/132] preinstalled debugedit-5.0-5.1
+[   34s] [19/132] preinstalled diffutils-3.9-1.1
+[   34s] [20/132] preinstalled dwz-0.15-2.1
+[   34s] [21/132] preinstalled elfutils-0.189-2.1
+[   34s] [22/132] preinstalled file-5.44-1.3
+[   34s] [23/132] preinstalled file-magic-5.44-1.3
+[   34s] [24/132] preinstalled filesystem-84.87-12.1
+[   34s] [25/132] preinstalled fillup-1.42-279.1
+[   34s] [26/132] preinstalled findutils-4.9.0-2.1
+[   34s] [27/132] preinstalled gawk-5.2.1-2.1
+[   34s] [28/132] preinstalled gcc-13-1.1
+[   34s] [29/132] preinstalled gcc-PIE-13-1.1
+[   34s] [30/132] preinstalled gcc13-13.0.1+git7162-1.1
+[   34s] [31/132] preinstalled gcc13-PIE-13.0.1+git7162-1.1
+[   34s] [32/132] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   34s] [33/132] preinstalled gettext-tools-mini-0.21.1-1.1
+[   34s] [34/132] preinstalled glibc-2.37-3.1
+[   34s] [35/132] preinstalled glibc-devel-2.37-3.1
+[   34s] [36/132] preinstalled glibc-locale-base-2.37-3.1
+[   34s] [37/132] preinstalled grep-3.9-1.1
+[   34s] [38/132] preinstalled gzip-1.12-3.1
+[   34s] [39/132] preinstalled kernel-obs-build-6.2.10-1.1
+[   34s] [40/132] preinstalled libacl1-2.3.1-2.1
+[   34s] [41/132] preinstalled libasan8-13.0.1+git7162-1.1
+[   34s] [42/132] preinstalled libasm1-0.189-2.1
+[   34s] [43/132] preinstalled libatomic1-13.0.1+git7162-1.1
+[   34s] [44/132] preinstalled libattr1-2.5.1-1.1
+[   34s] [45/132] preinstalled libaudit1-3.0.9-1.1
+[   34s] [46/132] preinstalled libblkid1-2.38.1-12.1
+[   34s] [47/132] preinstalled libbz2-1-1.0.8-5.1
+[   34s] [48/132] preinstalled libcap-ng0-0.8.3-1.1
+[   34s] [49/132] preinstalled libcap2-2.68-1.1
+[   34s] [50/132] preinstalled libcrypt1-4.4.33-3.1
+[   34s] [51/132] preinstalled libctf-nobfd0-2.40-4.1
+[   34s] [52/132] preinstalled libctf0-2.40-4.1
+[   34s] [53/132] preinstalled libdb-4_8-4.8.30-40.1
+[   34s] [54/132] preinstalled libdw1-0.189-2.1
+[   34s] [55/132] preinstalled libeconf0-0.5.2-1.1
+[   34s] [56/132] preinstalled libelf1-0.189-2.1
+[   34s] [57/132] preinstalled libfdisk1-2.38.1-12.1
+[   34s] [58/132] preinstalled libgcc_s1-13.0.1+git7162-1.1
+[   34s] [59/132] preinstalled libgcrypt20-1.10.2-1.1
+[   34s] [60/132] preinstalled libgdbm6-1.23-1.1
+[   34s] [61/132] preinstalled libgdbm_compat4-1.23-1.1
+[   34s] [62/132] preinstalled libgmp10-6.2.1-4.1
+[   34s] [63/132] preinstalled libgomp1-13.0.1+git7162-1.1
+[   34s] [64/132] preinstalled libgpg-error0-1.47-1.1
+[   34s] [65/132] preinstalled libisl23-0.26-1.1
+[   34s] [66/132] preinstalled libitm1-13.0.1+git7162-1.1
+[   34s] [67/132] preinstalled liblua5_4-5-5.4.4-10.1
+[   34s] [68/132] preinstalled liblzma5-5.4.2-2.1
+[   34s] [69/132] cumulate liblzo2-2-2.10-8.1
+[   34s] [70/132] preinstalled libmagic1-5.44-1.3
+[   34s] [71/132] preinstalled libmount1-2.38.1-12.1
+[   34s] [72/132] preinstalled libmpc3-1.3.1-1.2
+[   34s] [73/132] preinstalled libmpfr6-4.2.0-1.1
+[   34s] [74/132] preinstalled libncurses6-6.4.20230408-9.1
+[   34s] [75/132] preinstalled libpcre2-8-0-10.42-3.2
+[   34s] [76/132] preinstalled libpkgconf3-1.8.0-2.1
+[   34s] [77/132] preinstalled libpopt0-1.19-1.1
+[   34s] [78/132] preinstalled libreadline8-8.2-2.1
+[   34s] [79/132] preinstalled librpmbuild9-4.18.0-4.2
+[   34s] [80/132] preinstalled libseccomp2-2.5.4-2.1
+[   34s] [81/132] preinstalled libselinux1-3.5-1.1
+[   34s] [82/132] preinstalled libsemanage-conf-3.5-1.2
+[   34s] [83/132] preinstalled libsemanage2-3.5-1.2
+[   34s] [84/132] preinstalled libsepol2-3.5-1.1
+[   34s] [85/132] preinstalled libsmartcols1-2.38.1-12.1
+[   34s] [86/132] cumulate libsnappy1-1.1.9-2.1
+[   34s] [87/132] preinstalled libstdc++6-13.0.1+git7162-1.1
+[   34s] [88/132] preinstalled libsubid4-4.13-5.1
+[   34s] [89/132] preinstalled libubsan1-13.0.1+git7162-1.1
+[   34s] [90/132] preinstalled libutempter0-1.2.0-3.2
+[   34s] [91/132] preinstalled libuuid1-2.38.1-12.1
+[   34s] [92/132] preinstalled libxcrypt-devel-4.4.33-3.1
+[   34s] [93/132] preinstalled libz1-1.2.13-3.1
+[   34s] [94/132] preinstalled libzstd1-1.5.4-2.1
+[   34s] [95/132] preinstalled linux-glibc-devel-6.2-1.1
+[   34s] [96/132] preinstalled login_defs-4.13-5.1
+[   34s] [97/132] preinstalled lua54-5.4.4-10.1
+[   34s] [98/132] preinstalled make-4.4.1-2.1
+[   34s] [99/132] preinstalled ncurses-utils-6.4.20230408-9.1
+[   34s] [100/132] preinstalled pam-1.5.2-14.1
+[   34s] [101/132] preinstalled patch-2.7.6-6.1
+[   34s] [102/132] preinstalled perl-5.36.0-4.1
+[   34s] [103/132] preinstalled perl-base-5.36.0-4.1
+[   34s] [104/132] preinstalled permissions-1599_20230217-1.1
+[   34s] [105/132] preinstalled permissions-config-1599_20230217-1.1
+[   34s] [106/132] preinstalled pkgconf-1.8.0-2.1
+[   34s] [107/132] preinstalled pkgconf-m4-1.8.0-2.1
+[   34s] [108/132] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   34s] [109/132] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   34s] [110/132] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   34s] [111/132] preinstalled qemu-linux-user-7.1.0-61.1
+[   34s] [112/132] preinstalled rpm-4.18.0-4.2
+[   34s] [113/132] preinstalled rpm-build-4.18.0-4.2
+[   34s] [114/132] preinstalled rpm-build-perl-4.18.0-4.2
+[   34s] [115/132] preinstalled rpm-config-SUSE-20220926-1.1
+[   34s] [116/132] preinstalled rpmlint-mini-2.4.0+git20230411.8f9c3d4-10.7
+[   34s] [117/132] preinstalled rpmlint-strict-2.4.0+git20230411.8f9c3d4-1.1
+[   34s] [118/132] preinstalled sed-4.9-2.1
+[   34s] [119/132] preinstalled shadow-4.13-5.1
+[   34s] [120/132] preinstalled system-group-hardware-20170617-24.1
+[   34s] [121/132] preinstalled system-user-root-20190513-2.1
+[   34s] [122/132] preinstalled systemd-rpm-macros-20-1.1
+[   34s] [123/132] preinstalled sysuser-shadow-3.1-5.1
+[   34s] [124/132] preinstalled tar-1.34-10.1
+[   34s] [125/132] preinstalled terminfo-base-6.4.20230408-9.1
+[   34s] [126/132] preinstalled update-alternatives-1.21.8-1.1
+[   34s] [127/132] preinstalled util-linux-2.38.1-12.1
+[   34s] [128/132] preinstalled which-2.21-5.1
+[   34s] [129/132] preinstalled xz-5.4.2-2.1
+[   34s] [130/132] cumulate zlib-devel-1.2.13-3.1
+[   34s] [131/132] cumulate crash-8.0.2-2.1
+[   34s] [132/132] cumulate crash-devel-8.0.2-2.1
+[   34s] now installing cumulated packages
+[   34s] Preparing...                          ########################################
+[   34s] Updating / installing...
+[   34s] zlib-devel-1.2.13-3.1                 ########################################
+[   34s] libsnappy1-1.1.9-2.1                  ########################################
+[   35s] liblzo2-2-2.10-8.1                    ########################################
+[   36s] crash-8.0.2-2.1                       ########################################
+[   36s] crash-devel-8.0.2-2.1                 ########################################
+[   36s] now finalizing build dir...
+[   37s] ... running 01-add_abuild_user_to_trusted_group
+[   37s] ... running 02-set_timezone_to_utc
+[   37s] ... running 03-set-permissions-secure
+[   37s] ... running 11-hack_uname_version_to_kernel_version
+[   45s] -----------------------------------------------------------------
+[   45s] I have the following modifications for crash-trace.spec:
+[   45s] 21c21
+[   45s] < Release:        0
+[   45s] ---
+[   45s] > Release:        2.1
+[   51s] build target is riscv64-suse-linux
+[   51s] -----------------------------------------------------------------
+[   51s] ----- building crash-trace.spec (user abuild)
+[   51s] -----------------------------------------------------------------
+[   51s] -----------------------------------------------------------------
+[   54s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/9c84beb081728894c7c63bea1ecb165c-crash-trace' /home/abuild/rpmbuild/SOURCES/crash-trace.spec
+[   55s] Building target platforms: riscv64-suse-linux
+[   55s] Building for target riscv64-suse-linux
+[   55s] setting SOURCE_DATE_EPOCH=1668816000
+[   55s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.lSGI55
+[   55s] + umask 022
+[   55s] + cd /home/abuild/rpmbuild/BUILD
+[   55s] + cd /home/abuild/rpmbuild/BUILD
+[   55s] + rm -rf crash-trace-3.0
+[   55s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/crash-trace-3.0.tar.gz
+[   56s] + STATUS=0
+[   56s] + '[' 0 -ne 0 ']'
+[   56s] + cd crash-trace-3.0
+[   56s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   56s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/crash-trace-fix-aarch64-ppc64le.patch
+[   56s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   56s] + RPM_EC=0
+[   56s] ++ jobs -p
+[   56s] + exit 0
+[   56s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.YrG2YY
+[   56s] + umask 022
+[   56s] + cd /home/abuild/rpmbuild/BUILD
+[   56s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/crash-trace-3.0-2.1.riscv64
+[   56s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/crash-trace-3.0-2.1.riscv64
+[   56s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   56s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/crash-trace-3.0-2.1.riscv64
+[   56s] + cd crash-trace-3.0
+[   56s] + ref=/usr/lib/rpm
+[   56s] + mints=0
+[   56s] + case $(uname -m) in
+[   56s] ++ uname -m
+[   57s] + mints=20160911
+[   57s] + for s in guess sub
+[   57s] ++ find -maxdepth 8 -name config.guess
+[   57s] + for s in guess sub
+[   57s] ++ find -maxdepth 8 -name config.sub
+[   57s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[   57s] gcc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -I/usr/include/crash -nostartfiles -shared -rdynamic -o trace.so trace.c -fPIC -D 
+[   57s] gcc: error: macro name missing after '-D'
+[   57s] make: *** [Makefile:39: trace.so] Error 1
+[   57s] error: Bad exit status from /var/tmp/rpm-tmp.YrG2YY (%build)
+[   57s] 
+[   57s] RPM build errors:
+[   57s]     Bad exit status from /var/tmp/rpm-tmp.YrG2YY (%build)
+[   58s] ### VM INTERACTION START ###
+[   58s] [   52.628028][    T1] sysrq: Power Off
+[   58s] [   52.630980][   T18] reboot: Power down
+[   58s] ### VM INTERACTION END ###
+[   58s] 
+[   58s] lamb52 failed "build crash-trace.spec" at Thu Apr 20 23:48:05 UTC 2023.
+[   58s] 

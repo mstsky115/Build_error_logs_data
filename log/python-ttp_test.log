@@ -1,0 +1,1175 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    0s] 
+[    0s] cloud118 started "build python-ttp.spec" at Fri Dec  9 01:06:25 UTC 2022.
+[    0s] 
+[    0s] Building python-ttp:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f50aebdda71995a7062a479b2b398ef5'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/python-ttp.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/python-ttp.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/python-ttp.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [0d8dcff889372c6d5c4932bedd1b8b5b]
+[   10s] 
+[   10s] copying packages...
+[   13s] reordering...cycle: python310-poetry-plugin-export -> python310-poetry
+[   13s]   breaking dependency python310-poetry-plugin-export -> python310-poetry
+[   13s] cycle: python38-poetry-plugin-export -> python38-poetry
+[   13s]   breaking dependency python38-poetry-plugin-export -> python38-poetry
+[   13s] cycle: python39-poetry-plugin-export -> python39-poetry
+[   13s]   breaking dependency python39-poetry-plugin-export -> python39-poetry
+[   13s] done
+[   14s] Detected virtio-serial support
+[   30s] booting kvm...
+[   30s] ### VM INTERACTION START ###
+[   30s] Using virtio-serial support
+[   30s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   35s] ### VM INTERACTION END ###
+[   35s] 2nd stage started in virtual machine
+[   36s] machine type: riscv64
+[   36s] Linux version: 6.0.10-1-default #1 SMP PREEMPT_DYNAMIC Sat Nov 26 17:59:17 UTC 2022 (582305b)
+[   36s] Increasing log level from now on...
+[   36s] [    5.332073][  T368] sysrq: Changing Loglevel
+[   36s] [    5.332395][  T368] sysrq: Loglevel set to 4
+[   36s] Enable sysrq operations
+[   37s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   37s] no label, UUID=6d0f4bdb-00fa-4e4b-8435-6cdb56c227b8
+[   37s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   37s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   37s] swapon /dev/vdb
+[   37s] WARNING: udev not running, creating extra device nodes
+[   37s] logging output to //.build.log...
+[   38s] processing recipe /.build-srcdir/python-ttp.spec ...
+[   38s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-ttp.spec build ...
+[   38s] initializing rpm db...
+[   39s] querying package ids...
+[   78s] [1/379] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   78s] [2/379] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   78s] [3/379] preinstalled attr-2.5.1-1.1
+[   78s] [4/379] preinstalled bash-5.2.12-6.1
+[   78s] [5/379] preinstalled bash-sh-5.2.12-6.1
+[   78s] [6/379] preinstalled binutils-2.39-1.1
+[   78s] [7/379] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   78s] [8/379] preinstalled build-compare-20220926T095347.40c240f-1.1
+[   78s] [9/379] preinstalled build-mkbaselibs-20221118-1.1
+[   78s] [10/379] preinstalled bzip2-1.0.8-4.1
+[   78s] [11/379] preinstalled chkstat-1599_20220912-2.1
+[   78s] [12/379] preinstalled compat-usrmerge-build-84.87-5.1
+[   78s] [13/379] preinstalled compat-usrmerge-tools-84.87-5.1
+[   78s] [14/379] preinstalled coreutils-9.1-5.1
+[   78s] [15/379] preinstalled cpio-2.13-4.1
+[   78s] [16/379] preinstalled cpp-12-2.1
+[   78s] [17/379] preinstalled cpp12-12.2.1+git537-1.1
+[   78s] [18/379] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   78s] [19/379] preinstalled debugedit-5.0-5.1
+[   78s] [20/379] preinstalled diffutils-3.8-3.1
+[   78s] [21/379] preinstalled dwz-0.15-2.1
+[   78s] [22/379] preinstalled elfutils-0.188-2.1
+[   78s] [23/379] cumulate fdupes-2.2.1-1.1
+[   78s] [24/379] preinstalled file-5.43-1.1
+[   78s] [25/379] preinstalled file-magic-5.43-1.1
+[   78s] [26/379] preinstalled filesystem-84.87-10.1
+[   78s] [27/379] preinstalled fillup-1.42-278.1
+[   78s] [28/379] preinstalled findutils-4.9.0-1.1
+[   78s] [29/379] preinstalled gawk-5.2.1-1.1
+[   78s] [30/379] preinstalled gcc-12-2.1
+[   78s] [31/379] preinstalled gcc-PIE-12-2.1
+[   78s] [32/379] preinstalled gcc12-12.2.1+git537-1.1
+[   78s] [33/379] preinstalled gcc12-PIE-12.2.1+git537-1.1
+[   78s] [34/379] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   78s] [35/379] preinstalled gettext-tools-mini-0.21.1-1.1
+[   78s] [36/379] preinstalled glibc-2.36-8.1
+[   78s] [37/379] preinstalled glibc-devel-2.36-8.1
+[   78s] [38/379] preinstalled glibc-locale-base-2.36-8.1
+[   78s] [39/379] preinstalled grep-3.8-2.1
+[   78s] [40/379] preinstalled gzip-1.12-2.1
+[   78s] [41/379] preinstalled kernel-obs-build-6.0.10-1.1
+[   78s] [42/379] preinstalled libacl1-2.3.1-2.1
+[   78s] [43/379] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   78s] [44/379] preinstalled libasan8-12.2.1+git537-1.1
+[   78s] [45/379] preinstalled libasm1-0.188-2.1
+[   78s] [46/379] preinstalled libatomic1-12.2.1+git537-1.1
+[   78s] [47/379] preinstalled libattr1-2.5.1-1.1
+[   78s] [48/379] preinstalled libaudit1-3.0.6-4.1
+[   78s] [49/379] preinstalled libblkid1-2.37.4-4.1
+[   78s] [50/379] preinstalled libbz2-1-1.0.8-4.1
+[   78s] [51/379] preinstalled libcap-ng0-0.8.3-1.1
+[   78s] [52/379] preinstalled libcap2-2.66-1.1
+[   78s] [53/379] cumulate libcom_err2-1.46.5-3.1
+[   78s] [54/379] preinstalled libcrypt1-4.4.33-1.1
+[   78s] [55/379] preinstalled libctf-nobfd0-2.39-1.1
+[   78s] [56/379] preinstalled libctf0-2.39-1.1
+[   78s] [57/379] preinstalled libdb-4_8-4.8.30-39.1
+[   78s] [58/379] preinstalled libdw1-0.188-2.1
+[   78s] [59/379] preinstalled libeconf0-0.5.0-1.1
+[   78s] [60/379] preinstalled libelf1-0.188-2.1
+[   78s] [61/379] preinstalled libexpat1-2.5.0-1.1
+[   78s] [62/379] preinstalled libfdisk1-2.37.4-4.1
+[   78s] [63/379] preinstalled libffi8-3.4.4-1.1
+[   78s] [64/379] preinstalled libgcc_s1-12.2.1+git537-1.1
+[   78s] [65/379] preinstalled libgcrypt20-1.10.1-1.1
+[   78s] [66/379] preinstalled libgdbm6-1.23-1.1
+[   78s] [67/379] preinstalled libgdbm_compat4-1.23-1.1
+[   78s] [68/379] preinstalled libgmp10-6.2.1-4.1
+[   78s] [69/379] preinstalled libgomp1-12.2.1+git537-1.1
+[   78s] [70/379] preinstalled libgpg-error0-1.46-1.1
+[   78s] [71/379] preinstalled libisl23-0.25-1.1
+[   78s] [72/379] cumulate libkeyutils1-1.6.3-4.1
+[   78s] [73/379] preinstalled liblua5_4-5-5.4.4-6.1
+[   78s] [74/379] preinstalled liblzma5-5.2.8-1.1
+[   78s] [75/379] preinstalled libmagic1-5.43-1.1
+[   78s] [76/379] preinstalled libmount1-2.37.4-4.1
+[   78s] [77/379] preinstalled libmpc3-1.2.1-1.2
+[   78s] [78/379] preinstalled libmpdec3-2.5.1-2.1
+[   78s] [79/379] preinstalled libmpfr6-4.1.1-3.1
+[   78s] [80/379] preinstalled libncurses6-6.3.20221126-31.1
+[   78s] [81/379] preinstalled libopenssl1_1-1.1.1s-1.1
+[   78s] [82/379] cumulate libp11-kit0-0.24.1-2.1
+[   78s] [83/379] preinstalled libpcre2-8-0-10.40-3.1
+[   78s] [84/379] preinstalled libpkgconf3-1.8.0-1.1
+[   78s] [85/379] preinstalled libpopt0-1.19-1.1
+[   78s] [86/379] preinstalled libpython3_10-1_0-3.10.8-3.1
+[   78s] [87/379] preinstalled libpython3_8-1_0-3.8.15-4.1
+[   78s] [88/379] preinstalled libpython3_9-1_0-3.9.15-3.1
+[   78s] [89/379] preinstalled libreadline8-8.2-2.1
+[   78s] [90/379] preinstalled librpmbuild9-4.17.1.1-3.1
+[   78s] [91/379] preinstalled libseccomp2-2.5.4-2.1
+[   78s] [92/379] preinstalled libselinux1-3.4-2.1
+[   78s] [93/379] preinstalled libsemanage-conf-3.4-1.1
+[   78s] [94/379] preinstalled libsemanage2-3.4-1.1
+[   78s] [95/379] preinstalled libsepol2-3.4-1.1
+[   78s] [96/379] preinstalled libsmartcols1-2.37.4-4.1
+[   78s] [97/379] cumulate libsqlite3-0-3.40.0-1.1
+[   78s] [98/379] preinstalled libstdc++6-12.2.1+git537-1.1
+[   78s] [99/379] preinstalled libsubid4-4.13-1.1
+[   78s] [100/379] cumulate libtasn1-6-4.19.0-1.1
+[   78s] [101/379] cumulate libtirpc-netconfig-1.3.3-1.1
+[   78s] [102/379] preinstalled libubsan1-12.2.1+git537-1.1
+[   78s] [103/379] preinstalled libutempter0-1.2.0-3.2
+[   78s] [104/379] preinstalled libuuid1-2.37.4-4.1
+[   78s] [105/379] cumulate libverto1-0.3.2-1.1
+[   78s] [106/379] preinstalled libxcrypt-devel-4.4.33-1.1
+[   78s] [107/379] cumulate libxml2-2-2.10.3-2.1
+[   78s] [108/379] cumulate libyaml-0-2-0.2.5-2.1
+[   78s] [109/379] preinstalled libz1-1.2.12-2.1
+[   78s] [110/379] preinstalled libzstd1-1.5.2-1.1
+[   78s] [111/379] preinstalled linux-glibc-devel-6.0-1.1
+[   78s] [112/379] preinstalled login_defs-4.13-1.1
+[   78s] [113/379] preinstalled lua54-5.4.4-6.1
+[   78s] [114/379] preinstalled make-4.4-2.1
+[   78s] [115/379] preinstalled ncurses-utils-6.3.20221126-31.1
+[   78s] [116/379] preinstalled pam-1.5.2-9.1
+[   78s] [117/379] preinstalled pam_unix-1.5.2-9.1
+[   78s] [118/379] preinstalled patch-2.7.6-6.1
+[   78s] [119/379] preinstalled perl-5.36.0-3.1
+[   78s] [120/379] preinstalled perl-base-5.36.0-3.1
+[   78s] [121/379] preinstalled permissions-1599_20220912-2.1
+[   78s] [122/379] preinstalled permissions-config-1599_20220912-2.1
+[   78s] [123/379] preinstalled pkgconf-1.8.0-1.1
+[   78s] [124/379] preinstalled pkgconf-m4-1.8.0-1.1
+[   78s] [125/379] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   78s] [126/379] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   78s] [127/379] preinstalled post-build-checks-84.87+git20221125.a8b2d0e-1.1
+[   78s] [128/379] preinstalled python-rpm-macros-20221117.8687578-1.1
+[   78s] [129/379] preinstalled python-rpm-packaging-20210526+a18ca48-1.1
+[   78s] [130/379] cumulate python310-Cerberus-1.3.2-6.1
+[   78s] [131/379] cumulate python310-MarkupSafe-2.1.1-3.1
+[   78s] [132/379] cumulate python310-apipkg-3.0.1-1.1
+[   78s] [133/379] cumulate python310-attrs-22.1.0-2.1
+[   78s] [134/379] cumulate python310-backports.entry_points_selectable-1.1.1-1.2
+[   78s] [135/379] preinstalled python310-base-3.10.8-3.1
+[   78s] [136/379] cumulate python310-cachy-0.3.0-3.2
+[   78s] [137/379] cumulate python310-charset-normalizer-3.0.1-1.1
+[   78s] [138/379] cumulate python310-crashtest-0.4.1-1.1
+[   78s] [139/379] cumulate python310-cssselect-1.2.0-1.1
+[   78s] [140/379] cumulate python310-deepdiff-5.8.1-2.1
+[   78s] [141/379] cumulate python310-distlib-0.3.6-1.1
+[   78s] [142/379] cumulate python310-filelock-3.8.0-1.1
+[   78s] [143/379] cumulate python310-idna-3.4-1.1
+[   78s] [144/379] cumulate python310-iniconfig-1.1.1-3.1
+[   78s] [145/379] cumulate python310-jdcal-1.4.1-1.9
+[   78s] [146/379] cumulate python310-jeepney-0.8.0-1.1
+[   78s] [147/379] cumulate python310-lark-1.1.4-1.1
+[   78s] [148/379] cumulate python310-lockfile-0.12.2-2.6
+[   78s] [149/379] cumulate python310-more-itertools-9.0.0-1.1
+[   78s] [150/379] cumulate python310-msgpack-1.0.4-1.1
+[   78s] [151/379] cumulate python310-ordered-set-4.1.0-1.1
+[   78s] [152/379] preinstalled python310-packaging-21.3-4.1
+[   78s] [153/379] cumulate python310-pkginfo-1.5.0.1-2.6
+[   78s] [154/379] cumulate python310-platformdirs-2.5.2-1.1
+[   78s] [155/379] cumulate python310-pluggy-1.0.0-1.4
+[   78s] [156/379] cumulate python310-ptyprocess-0.7.0-1.5
+[   78s] [157/379] cumulate python310-pycparser-2.21-1.4
+[   78s] [158/379] cumulate python310-pylev-1.4.0-1.1
+[   78s] [159/379] preinstalled python310-pyparsing-3.0.9-2.1
+[   78s] [160/379] cumulate python310-pyrsistent-0.18.1-1.2
+[   78s] [161/379] preinstalled python310-setuptools-65.6.3-1.1
+[   78s] [162/379] cumulate python310-shellingham-1.5.0-1.1
+[   78s] [163/379] cumulate python310-six-1.16.0-2.4
+[   78s] [164/379] cumulate python310-tabulate-0.8.10-1.1
+[   78s] [165/379] cumulate python310-tomli-2.0.1-1.2
+[   78s] [166/379] cumulate python310-tomlkit-0.11.6-1.1
+[   78s] [167/379] cumulate python310-ttp-0.9.2-1.1
+[   78s] [168/379] cumulate python310-ttp-templates-0.3.1-1.1
+[   78s] [169/379] cumulate python310-typing_extensions-4.4.0-2.1
+[   78s] [170/379] cumulate python310-webencodings-0.5.1-4.8
+[   78s] [171/379] cumulate python310-zipp-3.8.1-1.1
+[   78s] [172/379] cumulate python38-Cerberus-1.3.2-6.1
+[   78s] [173/379] cumulate python38-MarkupSafe-2.1.1-3.1
+[   78s] [174/379] cumulate python38-apipkg-3.0.1-1.1
+[   78s] [175/379] cumulate python38-attrs-22.1.0-2.1
+[   78s] [176/379] cumulate python38-backports.entry_points_selectable-1.1.1-1.2
+[   78s] [177/379] preinstalled python38-base-3.8.15-4.1
+[   78s] [178/379] cumulate python38-cachy-0.3.0-3.2
+[   78s] [179/379] cumulate python38-charset-normalizer-3.0.1-1.1
+[   78s] [180/379] cumulate python38-crashtest-0.4.1-1.1
+[   78s] [181/379] cumulate python38-cssselect-1.2.0-1.1
+[   78s] [182/379] cumulate python38-deepdiff-5.8.1-2.1
+[   78s] [183/379] cumulate python38-distlib-0.3.6-1.1
+[   78s] [184/379] cumulate python38-filelock-3.8.0-1.1
+[   78s] [185/379] cumulate python38-idna-3.4-1.1
+[   78s] [186/379] cumulate python38-iniconfig-1.1.1-3.1
+[   78s] [187/379] cumulate python38-jdcal-1.4.1-1.9
+[   78s] [188/379] cumulate python38-jeepney-0.8.0-1.1
+[   78s] [189/379] cumulate python38-lark-1.1.4-1.1
+[   78s] [190/379] cumulate python38-lockfile-0.12.2-2.6
+[   78s] [191/379] cumulate python38-more-itertools-9.0.0-1.1
+[   78s] [192/379] cumulate python38-msgpack-1.0.4-1.1
+[   78s] [193/379] cumulate python38-ordered-set-4.1.0-1.1
+[   78s] [194/379] cumulate python38-pkginfo-1.5.0.1-2.6
+[   78s] [195/379] cumulate python38-pkgutil-resolve-name-1.3.10-1.1
+[   78s] [196/379] cumulate python38-platformdirs-2.5.2-1.1
+[   78s] [197/379] cumulate python38-pluggy-1.0.0-1.4
+[   78s] [198/379] cumulate python38-ptyprocess-0.7.0-1.5
+[   78s] [199/379] cumulate python38-pycparser-2.21-1.4
+[   78s] [200/379] cumulate python38-pylev-1.4.0-1.1
+[   78s] [201/379] cumulate python38-pyparsing-3.0.9-2.1
+[   78s] [202/379] cumulate python38-pyrsistent-0.18.1-1.2
+[   78s] [203/379] preinstalled python38-setuptools-65.6.3-1.1
+[   78s] [204/379] cumulate python38-shellingham-1.5.0-1.1
+[   78s] [205/379] cumulate python38-six-1.16.0-2.4
+[   78s] [206/379] cumulate python38-tabulate-0.8.10-1.1
+[   78s] [207/379] cumulate python38-tomli-2.0.1-1.2
+[   79s] [208/379] cumulate python38-tomlkit-0.11.6-1.1
+[   79s] [209/379] cumulate python38-ttp-0.9.2-1.1
+[   79s] [210/379] cumulate python38-ttp-templates-0.3.1-1.1
+[   79s] [211/379] cumulate python38-typing_extensions-4.4.0-2.1
+[   79s] [212/379] cumulate python38-webencodings-0.5.1-4.8
+[   79s] [213/379] cumulate python38-zipp-3.8.1-1.1
+[   79s] [214/379] cumulate python39-Cerberus-1.3.2-6.1
+[   79s] [215/379] cumulate python39-MarkupSafe-2.1.1-3.1
+[   79s] [216/379] cumulate python39-apipkg-3.0.1-1.1
+[   79s] [217/379] cumulate python39-attrs-22.1.0-2.1
+[   79s] [218/379] cumulate python39-backports.entry_points_selectable-1.1.1-1.2
+[   79s] [219/379] preinstalled python39-base-3.9.15-3.1
+[   79s] [220/379] cumulate python39-cachy-0.3.0-3.2
+[   79s] [221/379] cumulate python39-charset-normalizer-3.0.1-1.1
+[   79s] [222/379] cumulate python39-crashtest-0.4.1-1.1
+[   79s] [223/379] cumulate python39-cssselect-1.2.0-1.1
+[   79s] [224/379] cumulate python39-deepdiff-5.8.1-2.1
+[   79s] [225/379] cumulate python39-distlib-0.3.6-1.1
+[   79s] [226/379] cumulate python39-filelock-3.8.0-1.1
+[   79s] [227/379] cumulate python39-idna-3.4-1.1
+[   79s] [228/379] cumulate python39-iniconfig-1.1.1-3.1
+[   79s] [229/379] cumulate python39-jdcal-1.4.1-1.9
+[   79s] [230/379] cumulate python39-jeepney-0.8.0-1.1
+[   79s] [231/379] cumulate python39-lark-1.1.4-1.1
+[   79s] [232/379] cumulate python39-lockfile-0.12.2-2.6
+[   79s] [233/379] cumulate python39-more-itertools-9.0.0-1.1
+[   79s] [234/379] cumulate python39-msgpack-1.0.4-1.1
+[   79s] [235/379] cumulate python39-ordered-set-4.1.0-1.1
+[   79s] [236/379] cumulate python39-pkginfo-1.5.0.1-2.6
+[   79s] [237/379] cumulate python39-platformdirs-2.5.2-1.1
+[   79s] [238/379] cumulate python39-pluggy-1.0.0-1.4
+[   79s] [239/379] cumulate python39-ptyprocess-0.7.0-1.5
+[   79s] [240/379] cumulate python39-pycparser-2.21-1.4
+[   79s] [241/379] cumulate python39-pylev-1.4.0-1.1
+[   79s] [242/379] cumulate python39-pyparsing-3.0.9-2.1
+[   79s] [243/379] cumulate python39-pyrsistent-0.18.1-1.2
+[   79s] [244/379] preinstalled python39-setuptools-65.6.3-1.1
+[   79s] [245/379] cumulate python39-shellingham-1.5.0-1.1
+[   79s] [246/379] cumulate python39-six-1.16.0-2.4
+[   79s] [247/379] cumulate python39-tabulate-0.8.10-1.1
+[   79s] [248/379] cumulate python39-tomli-2.0.1-1.2
+[   79s] [249/379] cumulate python39-tomlkit-0.11.6-1.1
+[   79s] [250/379] cumulate python39-ttp-0.9.2-1.1
+[   79s] [251/379] cumulate python39-ttp-templates-0.3.1-1.1
+[   79s] [252/379] cumulate python39-typing_extensions-4.4.0-2.1
+[   79s] [253/379] cumulate python39-webencodings-0.5.1-4.8
+[   79s] [254/379] cumulate python39-zipp-3.8.1-1.1
+[   79s] [255/379] preinstalled qemu-linux-user-7.1.0-45.1
+[   79s] [256/379] preinstalled rpm-4.17.1.1-3.1
+[   79s] [257/379] preinstalled rpm-build-4.17.1.1-3.1
+[   79s] [258/379] preinstalled rpm-build-perl-4.17.1.1-3.1
+[   79s] [259/379] preinstalled rpm-config-SUSE-20220926-1.1
+[   79s] [260/379] preinstalled rpmlint-mini-2.4.0+git20221201.82b8b0c-8.32
+[   79s] [261/379] preinstalled rpmlint-strict-2.4.0+git20221201.82b8b0c-1.1
+[   79s] [262/379] preinstalled sed-4.9-1.1
+[   79s] [263/379] preinstalled shadow-4.13-1.1
+[   79s] [264/379] preinstalled system-group-hardware-20170617-24.1
+[   79s] [265/379] preinstalled system-user-root-20190513-2.1
+[   79s] [266/379] preinstalled systemd-rpm-macros-18-1.1
+[   79s] [267/379] preinstalled sysuser-shadow-3.1-5.1
+[   79s] [268/379] preinstalled tar-1.34-8.1
+[   79s] [269/379] preinstalled terminfo-base-6.3.20221126-31.1
+[   79s] [270/379] preinstalled update-alternatives-1.21.8-1.1
+[   79s] [271/379] preinstalled util-linux-2.37.4-4.1
+[   79s] [272/379] preinstalled which-2.21-5.1
+[   79s] [273/379] preinstalled xz-5.2.8-1.1
+[   79s] [274/379] cumulate alts-1.2+3.b848aad-3.1
+[   79s] [275/379] cumulate libxslt1-1.1.37-1.1
+[   79s] [276/379] cumulate python310-Jinja2-3.1.2-2.1
+[   79s] [277/379] cumulate python310-PyYAML-6.0-4.1
+[   79s] [278/379] cumulate python310-cffi-1.15.1-2.1
+[   79s] [279/379] cumulate python310-importlib-metadata-5.1.0-1.1
+[   79s] [280/379] cumulate python310-jaraco.classes-3.2.3-1.1
+[   79s] [281/379] cumulate python310-pexpect-4.8.0-21.1
+[   79s] [282/379] cumulate python38-Jinja2-3.1.2-2.1
+[   79s] [283/379] cumulate python38-PyYAML-6.0-4.1
+[   79s] [284/379] cumulate python38-cffi-1.15.1-2.1
+[   79s] [285/379] cumulate python38-importlib-metadata-5.1.0-1.1
+[   79s] [286/379] cumulate python38-importlib-resources-5.10.0-1.1
+[   79s] [287/379] cumulate python38-jaraco.classes-3.2.3-1.1
+[   79s] [288/379] cumulate python38-packaging-21.3-4.1
+[   79s] [289/379] cumulate python38-pexpect-4.8.0-21.1
+[   79s] [290/379] cumulate python39-Jinja2-3.1.2-2.1
+[   79s] [291/379] cumulate python39-PyYAML-6.0-4.1
+[   79s] [292/379] cumulate python39-cffi-1.15.1-2.1
+[   79s] [293/379] cumulate python39-importlib-metadata-5.1.0-1.1
+[   79s] [294/379] cumulate python39-jaraco.classes-3.2.3-1.1
+[   79s] [295/379] cumulate python39-packaging-21.3-4.1
+[   79s] [296/379] cumulate python39-pexpect-4.8.0-21.1
+[   79s] [297/379] cumulate p11-kit-0.24.1-2.1
+[   79s] [298/379] cumulate p11-kit-tools-0.24.1-2.1
+[   79s] [299/379] cumulate python310-cleo-1.0.0~a5-1.1
+[   79s] [300/379] cumulate python310-html5lib-1.1-3.1
+[   79s] [301/379] cumulate python310-py-1.11.0-3.1
+[   79s] [302/379] cumulate python38-cleo-1.0.0~a5-1.1
+[   79s] [303/379] cumulate python38-html5lib-1.1-3.1
+[   79s] [304/379] cumulate python38-py-1.11.0-3.1
+[   79s] [305/379] cumulate python39-cleo-1.0.0~a5-1.1
+[   79s] [306/379] cumulate python39-html5lib-1.1-3.1
+[   79s] [307/379] cumulate python39-py-1.11.0-3.1
+[   79s] [308/379] cumulate krb5-mini-1.20.1-1.1
+[   79s] [309/379] cumulate python310-virtualenv-20.16.7-1.1
+[   79s] [310/379] cumulate python38-virtualenv-20.16.7-1.1
+[   79s] [311/379] cumulate python39-virtualenv-20.16.7-1.1
+[   79s] [312/379] cumulate python310-pyOpenSSL-22.1.0-1.1
+[   79s] [313/379] cumulate python310-wheel-0.38.4-1.1
+[   79s] [314/379] cumulate python38-pyOpenSSL-22.1.0-1.1
+[   79s] [315/379] cumulate python38-wheel-0.38.4-1.1
+[   79s] [316/379] cumulate python39-pyOpenSSL-22.1.0-1.1
+[   79s] [317/379] cumulate python39-wheel-0.38.4-1.1
+[   79s] [318/379] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   79s] [319/379] cumulate libexslt0-1.1.37-1.1
+[   79s] [320/379] cumulate libtirpc3-1.3.3-1.1
+[   79s] [321/379] cumulate python310-jsonschema-4.17.3-1.1
+[   79s] [322/379] cumulate python39-jsonschema-4.17.3-1.1
+[   79s] [323/379] cumulate python38-jsonschema-4.17.3-1.1
+[   79s] [324/379] cumulate python310-pytest-7.1.2-1.1
+[   79s] [325/379] cumulate python38-pytest-7.1.2-1.1
+[   79s] [326/379] cumulate python39-pytest-7.1.2-1.1
+[   79s] [327/379] cumulate ca-certificates-mozilla-2.56-1.1
+[   79s] [328/379] cumulate libnsl3-2.0.0-1.1
+[   79s] [329/379] cumulate python310-pip-22.0.4-2.1
+[   79s] [330/379] cumulate python38-pip-22.0.4-2.1
+[   79s] [331/379] cumulate python39-pip-22.0.4-2.1
+[   79s] [332/379] cumulate python310-lxml-4.9.1-4.1
+[   79s] [333/379] cumulate python38-lxml-4.9.1-4.1
+[   79s] [334/379] cumulate python39-lxml-4.9.1-4.1
+[   79s] [335/379] cumulate python310-poetry-core-1.3.2-3.1
+[   79s] [336/379] cumulate python38-poetry-core-1.3.2-3.1
+[   79s] [337/379] cumulate python39-poetry-core-1.3.2-3.1
+[   79s] [338/379] cumulate python310-certifi-2022.9.24-1.1
+[   79s] [339/379] cumulate python310-et_xmlfile-1.0.1-3.8
+[   79s] [340/379] cumulate python38-certifi-2022.9.24-1.1
+[   79s] [341/379] cumulate python38-et_xmlfile-1.0.1-3.8
+[   79s] [342/379] cumulate python39-certifi-2022.9.24-1.1
+[   79s] [343/379] cumulate python39-et_xmlfile-1.0.1-3.8
+[   79s] [344/379] cumulate python310-3.10.8-3.1
+[   79s] [345/379] cumulate python38-3.8.15-4.1
+[   79s] [346/379] cumulate python39-3.9.15-3.1
+[   79s] [347/379] cumulate python310-openpyxl-3.0.10-1.1
+[   79s] [348/379] cumulate python38-openpyxl-3.0.10-1.1
+[   79s] [349/379] cumulate python39-openpyxl-3.0.10-1.1
+[   79s] [350/379] cumulate python310-cryptography-38.0.3-1.1
+[   79s] [351/379] cumulate python38-cryptography-38.0.3-1.1
+[   79s] [352/379] cumulate python39-cryptography-38.0.3-1.1
+[   79s] [353/379] cumulate python310-SecretStorage-3.3.3-2.1
+[   79s] [354/379] cumulate python38-SecretStorage-3.3.3-2.1
+[   79s] [355/379] cumulate python39-SecretStorage-3.3.3-2.1
+[   79s] [356/379] cumulate python310-urllib3-1.26.12-2.1
+[   79s] [357/379] cumulate python38-urllib3-1.26.12-2.1
+[   79s] [358/379] cumulate python39-urllib3-1.26.12-2.1
+[   79s] [359/379] cumulate python310-dulwich-0.20.50-1.1
+[   79s] [360/379] cumulate python38-dulwich-0.20.50-1.1
+[   79s] [361/379] cumulate python39-dulwich-0.20.50-1.1
+[   79s] [362/379] cumulate python310-keyring-23.11.0-1.1
+[   79s] [363/379] cumulate python38-keyring-23.11.0-1.1
+[   79s] [364/379] cumulate python39-keyring-23.11.0-1.1
+[   79s] [365/379] cumulate python310-requests-2.28.1-3.1
+[   79s] [366/379] cumulate python38-requests-2.28.1-3.1
+[   79s] [367/379] cumulate python39-requests-2.28.1-3.1
+[   79s] [368/379] cumulate python310-requests-toolbelt-0.9.1-7.1
+[   79s] [369/379] cumulate python38-requests-toolbelt-0.9.1-7.1
+[   79s] [370/379] cumulate python39-requests-toolbelt-0.9.1-7.1
+[   79s] [371/379] cumulate python310-CacheControl-0.12.11-1.1
+[   79s] [372/379] cumulate python38-CacheControl-0.12.11-1.1
+[   79s] [373/379] cumulate python39-CacheControl-0.12.11-1.1
+[   79s] [374/379] cumulate python310-poetry-plugin-export-1.1.2-1.1
+[   79s] [375/379] cumulate python38-poetry-plugin-export-1.1.2-1.1
+[   79s] [376/379] cumulate python39-poetry-plugin-export-1.1.2-1.1
+[   79s] [377/379] cumulate python310-poetry-1.2.2-1.1
+[   79s] [378/379] cumulate python38-poetry-1.2.2-1.1
+[   79s] [379/379] cumulate python39-poetry-1.2.2-1.1
+[   79s] now installing cumulated packages
+[   81s] Preparing...                          ########################################
+[   81s] Updating / installing...
+[   82s] libxml2-2-2.10.3-2.1                  ########################################
+[   82s] libxslt1-1.1.37-1.1                   ########################################
+[   82s] libexslt0-1.1.37-1.1                  ########################################
+[   82s] python39-six-1.16.0-2.4               ########################################
+[   82s] python39-attrs-22.1.0-2.1             ########################################
+[   82s] python38-six-1.16.0-2.4               ########################################
+[   82s] python38-attrs-22.1.0-2.1             ########################################
+[   83s] python310-six-1.16.0-2.4              ########################################
+[   83s] python310-attrs-22.1.0-2.1            ########################################
+[   83s] libyaml-0-2-0.2.5-2.1                 ########################################
+[   83s] libsqlite3-0-3.40.0-1.1               ########################################
+[   83s] python39-tomlkit-0.11.6-1.1           ########################################
+[   83s] python39-pyrsistent-0.18.1-1.2        ########################################
+[   83s] python39-pyparsing-3.0.9-2.1          ########################################
+[   83s] python39-packaging-21.3-4.1           ########################################
+[   83s] python39-msgpack-1.0.4-1.1            ########################################
+[   84s] python39-lockfile-0.12.2-2.6          ########################################
+[   84s] python39-jeepney-0.8.0-1.1            ########################################
+[   84s] python39-iniconfig-1.1.1-3.1          ########################################
+[   84s] python39-idna-3.4-1.1                 ########################################
+[   84s] python39-crashtest-0.4.1-1.1          ########################################
+[   84s] python38-zipp-3.8.1-1.1               ########################################
+[   84s] python38-importlib-metadata-5.1.0-1.1 ########################################
+[   84s] python38-tomlkit-0.11.6-1.1           ########################################
+[   84s] python38-pyrsistent-0.18.1-1.2        ########################################
+[   84s] python38-pyparsing-3.0.9-2.1          ########################################
+[   84s] python38-packaging-21.3-4.1           ########################################
+[   84s] python38-msgpack-1.0.4-1.1            ########################################
+[   84s] python38-lockfile-0.12.2-2.6          ########################################
+[   84s] python38-jeepney-0.8.0-1.1            ########################################
+[   84s] python38-iniconfig-1.1.1-3.1          ########################################
+[   85s] python38-idna-3.4-1.1                 ########################################
+[   85s] python38-crashtest-0.4.1-1.1          ########################################
+[   85s] python310-tomlkit-0.11.6-1.1          ########################################
+[   85s] python310-pyrsistent-0.18.1-1.2       ########################################
+[   85s] python310-msgpack-1.0.4-1.1           ########################################
+[   85s] python310-lockfile-0.12.2-2.6         ########################################
+[   85s] python310-jeepney-0.8.0-1.1           ########################################
+[   85s] python310-iniconfig-1.1.1-3.1         ########################################
+[   85s] python310-idna-3.4-1.1                ########################################
+[   85s] python310-crashtest-0.4.1-1.1         ########################################
+[   85s] libtasn1-6-4.19.0-1.1                 ########################################
+[   85s] libp11-kit0-0.24.1-2.1                ########################################
+[   86s] p11-kit-0.24.1-2.1                    ########################################
+[   86s] p11-kit-tools-0.24.1-2.1              ########################################
+[   86s] ca-certificates-2+git20211004.3efbea9-########################################
+[   88s] ca-certificates-mozilla-2.56-1.1      ########################################
+[   94s] python310-certifi-2022.9.24-1.1       ########################################
+[   94s] python38-certifi-2022.9.24-1.1        ########################################
+[   94s] python39-certifi-2022.9.24-1.1        ########################################
+[   94s] python310-cachy-0.3.0-3.2             ########################################
+[   94s] python38-cachy-0.3.0-3.2              ########################################
+[   94s] python38-importlib-resources-5.10.0-1.########################################
+[   94s] python39-cachy-0.3.0-3.2              ########################################
+[   94s] python39-zipp-3.8.1-1.1               ########################################
+[   94s] python39-importlib-metadata-5.1.0-1.1 ########################################
+[   94s] python39-webencodings-0.5.1-4.8       ########################################
+[   95s] python39-typing_extensions-4.4.0-2.1  ########################################
+[   95s] python39-tomli-2.0.1-1.2              ########################################
+[   95s] python39-shellingham-1.5.0-1.1        ########################################
+[   95s] python39-pylev-1.4.0-1.1              ########################################
+[   95s] python39-cleo-1.0.0~a5-1.1            ########################################
+[   95s] python39-pycparser-2.21-1.4           ########################################
+[   95s] python39-cffi-1.15.1-2.1              ########################################
+[   95s] python39-ptyprocess-0.7.0-1.5         ########################################
+[   95s] python39-pexpect-4.8.0-21.1           ########################################
+[   96s] python39-pluggy-1.0.0-1.4             ########################################
+[   96s] python39-platformdirs-2.5.2-1.1       ########################################
+[   96s] python39-pkginfo-1.5.0.1-2.6          ########################################
+[   96s] python39-ordered-set-4.1.0-1.1        ########################################
+[   96s] python39-more-itertools-9.0.0-1.1     ########################################
+[   96s] python39-jaraco.classes-3.2.3-1.1     ########################################
+[   96s] python39-lark-1.1.4-1.1               ########################################
+[   96s] python39-jdcal-1.4.1-1.9              ########################################
+[   96s] python39-filelock-3.8.0-1.1           ########################################
+[   96s] python39-distlib-0.3.6-1.1            ########################################
+[   96s] python39-cssselect-1.2.0-1.1          ########################################
+[   97s] python39-lxml-4.9.1-4.1               ########################################
+[   97s] python39-html5lib-1.1-3.1             ########################################
+[   97s] python39-et_xmlfile-1.0.1-3.8         ########################################
+[   98s] python39-charset-normalizer-3.0.1-1.1 ########################################
+[   98s] python39-backports.entry_points_select########################################
+[   99s] python39-virtualenv-20.16.7-1.1       ########################################
+[   99s] python39-apipkg-3.0.1-1.1             ########################################
+[   99s] python39-py-1.11.0-3.1                ########################################
+[   99s] python39-MarkupSafe-2.1.1-3.1         ########################################
+[   99s] python38-webencodings-0.5.1-4.8       ########################################
+[   99s] python38-typing_extensions-4.4.0-2.1  ########################################
+[   99s] python38-tomli-2.0.1-1.2              ########################################
+[   99s] python38-shellingham-1.5.0-1.1        ########################################
+[   99s] python38-pylev-1.4.0-1.1              ########################################
+[  100s] python38-cleo-1.0.0~a5-1.1            ########################################
+[  100s] python38-pycparser-2.21-1.4           ########################################
+[  100s] python38-cffi-1.15.1-2.1              ########################################
+[  100s] python38-ptyprocess-0.7.0-1.5         ########################################
+[  100s] python38-pexpect-4.8.0-21.1           ########################################
+[  100s] python38-pluggy-1.0.0-1.4             ########################################
+[  100s] python38-platformdirs-2.5.2-1.1       ########################################
+[  100s] python38-pkgutil-resolve-name-1.3.10-1########################################
+[  100s] python38-pkginfo-1.5.0.1-2.6          ########################################
+[  101s] python38-ordered-set-4.1.0-1.1        ########################################
+[  101s] python38-more-itertools-9.0.0-1.1     ########################################
+[  101s] python38-jaraco.classes-3.2.3-1.1     ########################################
+[  101s] python38-lark-1.1.4-1.1               ########################################
+[  101s] python38-jdcal-1.4.1-1.9              ########################################
+[  101s] python38-filelock-3.8.0-1.1           ########################################
+[  101s] python38-distlib-0.3.6-1.1            ########################################
+[  101s] python38-cssselect-1.2.0-1.1          ########################################
+[  102s] python38-lxml-4.9.1-4.1               ########################################
+[  102s] python38-html5lib-1.1-3.1             ########################################
+[  102s] python38-et_xmlfile-1.0.1-3.8         ########################################
+[  102s] python38-charset-normalizer-3.0.1-1.1 ########################################
+[  103s] python38-backports.entry_points_select########################################
+[  104s] python38-virtualenv-20.16.7-1.1       ########################################
+[  104s] python38-apipkg-3.0.1-1.1             ########################################
+[  104s] python38-py-1.11.0-3.1                ########################################
+[  104s] python38-MarkupSafe-2.1.1-3.1         ########################################
+[  104s] python310-zipp-3.8.1-1.1              ########################################
+[  104s] python310-importlib-metadata-5.1.0-1.1########################################
+[  104s] python310-webencodings-0.5.1-4.8      ########################################
+[  104s] python310-typing_extensions-4.4.0-2.1 ########################################
+[  104s] python310-tomli-2.0.1-1.2             ########################################
+[  104s] python310-shellingham-1.5.0-1.1       ########################################
+[  104s] python310-pylev-1.4.0-1.1             ########################################
+[  105s] python310-cleo-1.0.0~a5-1.1           ########################################
+[  105s] python310-pycparser-2.21-1.4          ########################################
+[  105s] python310-cffi-1.15.1-2.1             ########################################
+[  105s] python310-ptyprocess-0.7.0-1.5        ########################################
+[  105s] python310-pexpect-4.8.0-21.1          ########################################
+[  105s] python310-pluggy-1.0.0-1.4            ########################################
+[  105s] python310-platformdirs-2.5.2-1.1      ########################################
+[  105s] python310-pkginfo-1.5.0.1-2.6         ########################################
+[  106s] python310-ordered-set-4.1.0-1.1       ########################################
+[  106s] python310-more-itertools-9.0.0-1.1    ########################################
+[  106s] python310-jaraco.classes-3.2.3-1.1    ########################################
+[  106s] python310-lark-1.1.4-1.1              ########################################
+[  106s] python310-jdcal-1.4.1-1.9             ########################################
+[  106s] python310-filelock-3.8.0-1.1          ########################################
+[  106s] python310-distlib-0.3.6-1.1           ########################################
+[  106s] python310-cssselect-1.2.0-1.1         ########################################
+[  107s] python310-lxml-4.9.1-4.1              ########################################
+[  107s] python310-html5lib-1.1-3.1            ########################################
+[  107s] python310-et_xmlfile-1.0.1-3.8        ########################################
+[  107s] python310-charset-normalizer-3.0.1-1.1########################################
+[  108s] python310-backports.entry_points_selec########################################
+[  109s] python310-virtualenv-20.16.7-1.1      ########################################
+[  109s] python310-apipkg-3.0.1-1.1            ########################################
+[  109s] python310-py-1.11.0-3.1               ########################################
+[  109s] python310-MarkupSafe-2.1.1-3.1        ########################################
+[  109s] libverto1-0.3.2-1.1                   ########################################
+[  109s] libtirpc-netconfig-1.3.3-1.1          ########################################
+[  109s] libkeyutils1-1.6.3-4.1                ########################################
+[  109s] libcom_err2-1.46.5-3.1                ########################################
+[  110s] krb5-mini-1.20.1-1.1                  ########################################
+[  110s] Updating /etc/sysconfig/kadmind ...
+[  110s] Updating /etc/sysconfig/krb5kdc ...
+[  111s] libtirpc3-1.3.3-1.1                   ########################################
+[  111s] libnsl3-2.0.0-1.1                     ########################################
+[  111s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  111s] alts-1.2+3.b848aad-3.1                ########################################
+[  111s] python310-jsonschema-4.17.3-1.1       ########################################
+[  111s] python310-poetry-core-1.3.2-3.1       ########################################
+[  112s] python39-jsonschema-4.17.3-1.1        ########################################
+[  112s] python39-poetry-core-1.3.2-3.1        ########################################
+[  112s] python38-jsonschema-4.17.3-1.1        ########################################
+[  113s] python38-poetry-core-1.3.2-3.1        ########################################
+[  116s] python310-pip-22.0.4-2.1              ########################################
+[  116s] python310-3.10.8-3.1                  ########################################
+[  117s] python310-cryptography-38.0.3-1.1     ########################################
+[  117s] python310-pyOpenSSL-22.1.0-1.1        ########################################
+[  117s] python310-urllib3-1.26.12-2.1         ########################################
+[  117s] python310-requests-2.28.1-3.1         ########################################
+[  117s] python310-requests-toolbelt-0.9.1-7.1 ########################################
+[  117s] python310-CacheControl-0.12.11-1.1    ########################################
+[  118s] python310-dulwich-0.20.50-1.1         ########################################
+[  118s] python310-SecretStorage-3.3.3-2.1     ########################################
+[  119s] python310-keyring-23.11.0-1.1         ########################################
+[  119s] python310-poetry-plugin-export-1.1.2-1########################################
+[  119s] python310-poetry-1.2.2-1.1            ########################################
+[  122s] python38-pip-22.0.4-2.1               ########################################
+[  122s] python38-3.8.15-4.1                   ########################################
+[  123s] python38-cryptography-38.0.3-1.1      ########################################
+[  123s] python38-pyOpenSSL-22.1.0-1.1         ########################################
+[  124s] python38-urllib3-1.26.12-2.1          ########################################
+[  124s] python38-requests-2.28.1-3.1          ########################################
+[  124s] python38-requests-toolbelt-0.9.1-7.1  ########################################
+[  124s] python38-CacheControl-0.12.11-1.1     ########################################
+[  125s] python38-dulwich-0.20.50-1.1          ########################################
+[  125s] python38-SecretStorage-3.3.3-2.1      ########################################
+[  125s] python38-keyring-23.11.0-1.1          ########################################
+[  125s] python38-poetry-plugin-export-1.1.2-1.########################################
+[  126s] python38-poetry-1.2.2-1.1             ########################################
+[  129s] python39-pip-22.0.4-2.1               ########################################
+[  129s] python39-3.9.15-3.1                   ########################################
+[  130s] python39-cryptography-38.0.3-1.1      ########################################
+[  130s] python39-pyOpenSSL-22.1.0-1.1         ########################################
+[  130s] python39-urllib3-1.26.12-2.1          ########################################
+[  130s] python39-requests-2.28.1-3.1          ########################################
+[  130s] python39-requests-toolbelt-0.9.1-7.1  ########################################
+[  130s] python39-CacheControl-0.12.11-1.1     ########################################
+[  131s] python39-dulwich-0.20.50-1.1          ########################################
+[  132s] python39-SecretStorage-3.3.3-2.1      ########################################
+[  132s] python39-keyring-23.11.0-1.1          ########################################
+[  132s] python39-poetry-plugin-export-1.1.2-1.########################################
+[  132s] python39-poetry-1.2.2-1.1             ########################################
+[  133s] python310-wheel-0.38.4-1.1            ########################################
+[  133s] python38-wheel-0.38.4-1.1             ########################################
+[  134s] python39-wheel-0.38.4-1.1             ########################################
+[  134s] python310-pytest-7.1.2-1.1            ########################################
+[  135s] python38-pytest-7.1.2-1.1             ########################################
+[  136s] python39-pytest-7.1.2-1.1             ########################################
+[  136s] python310-Jinja2-3.1.2-2.1            ########################################
+[  137s] python310-openpyxl-3.0.10-1.1         ########################################
+[  137s] python310-deepdiff-5.8.1-2.1          ########################################
+[  137s] python38-Jinja2-3.1.2-2.1             ########################################
+[  138s] python38-openpyxl-3.0.10-1.1          ########################################
+[  138s] python38-deepdiff-5.8.1-2.1           ########################################
+[  138s] python39-Jinja2-3.1.2-2.1             ########################################
+[  139s] python39-openpyxl-3.0.10-1.1          ########################################
+[  139s] python39-deepdiff-5.8.1-2.1           ########################################
+[  139s] python310-PyYAML-6.0-4.1              ########################################
+[  140s] python38-PyYAML-6.0-4.1               ########################################
+[  140s] python39-PyYAML-6.0-4.1               ########################################
+[  140s] python39-ttp-templates-0.3.1-1.1      ########################################
+[  140s] python39-ttp-0.9.2-1.1                ########################################
+[  140s] python39-tabulate-0.8.10-1.1          ########################################
+[  141s] python39-Cerberus-1.3.2-6.1           ########################################
+[  141s] python38-ttp-templates-0.3.1-1.1      ########################################
+[  141s] python38-ttp-0.9.2-1.1                ########################################
+[  141s] python38-tabulate-0.8.10-1.1          ########################################
+[  142s] python38-Cerberus-1.3.2-6.1           ########################################
+[  142s] python310-ttp-templates-0.3.1-1.1     ########################################
+[  142s] python310-ttp-0.9.2-1.1               ########################################
+[  142s] python310-tabulate-0.8.10-1.1         ########################################
+[  142s] python310-Cerberus-1.3.2-6.1          ########################################
+[  142s] fdupes-2.2.1-1.1                      ########################################
+[  160s] now finalizing build dir...
+[  160s] ... running 01-add_abuild_user_to_trusted_group
+[  161s] ... running 02-set_timezone_to_utc
+[  161s] ... running 03-set-permissions-secure
+[  162s] ... running 11-hack_uname_version_to_kernel_version
+[  180s] build target is riscv64-suse-linux
+[  181s] -----------------------------------------------------------------
+[  181s] I have the following modifications for python-ttp.spec:
+[  181s] 20c20
+[  181s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  181s] ---
+[  181s] > %global flavor test%{nil}
+[  181s] 30c30
+[  181s] < Release:        0
+[  181s] ---
+[  181s] > Release:        1.1
+[  181s] -----------------------------------------------------------------
+[  181s] ----- building python-ttp.spec (user abuild)
+[  181s] -----------------------------------------------------------------
+[  181s] -----------------------------------------------------------------
+[  185s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f50aebdda71995a7062a479b2b398ef5-python-ttp:test' /home/abuild/rpmbuild/SOURCES/python-ttp.spec
+[  220s] Building target platforms: riscv64-suse-linux
+[  220s] Building for target riscv64-suse-linux
+[  220s] setting SOURCE_DATE_EPOCH=1670371200
+[  221s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Ue9eUf
+[  221s] + umask 022
+[  221s] + cd /home/abuild/rpmbuild/BUILD
+[  221s] + cd /home/abuild/rpmbuild/BUILD
+[  221s] + rm -rf ttp-0.9.2
+[  221s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/ttp-0.9.2.tar.gz
+[  221s] + /usr/bin/tar -xof -
+[  221s] + STATUS=0
+[  221s] + '[' 0 -ne 0 ']'
+[  221s] + cd ttp-0.9.2
+[  221s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  221s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/fix-tests.patch
+[  221s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  221s] + rm ttp/utils/load_python_exec_py2.py
+[  221s] + RPM_EC=0
+[  221s] ++ jobs -p
+[  221s] + exit 0
+[  221s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.PQqY6z
+[  222s] + umask 022
+[  222s] + cd /home/abuild/rpmbuild/BUILD
+[  222s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-ttp-test-0.9.2-1.1.riscv64
+[  222s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-ttp-test-0.9.2-1.1.riscv64
+[  222s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  222s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-ttp-test-0.9.2-1.1.riscv64
+[  222s] + cd ttp-0.9.2
+[  222s] + ref=/usr/lib/rpm
+[  222s] + mints=0
+[  222s] + case $(uname -m) in
+[  222s] ++ uname -m
+[  222s] + mints=20160911
+[  222s] + for s in guess sub
+[  222s] ++ find -maxdepth 8 -name config.guess
+[  222s] + for s in guess sub
+[  222s] ++ find -maxdepth 8 -name config.sub
+[  222s] + RPM_EC=0
+[  222s] ++ jobs -p
+[  222s] + exit 0
+[  222s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.QJBq2x
+[  222s] + umask 022
+[  222s] + cd /home/abuild/rpmbuild/BUILD
+[  222s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-ttp-test-0.9.2-1.1.riscv64
+[  223s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  223s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-ttp-test-0.9.2-1.1.riscv64
+[  223s] + cd ttp-0.9.2
+[  223s] + /usr/lib/rpm/find-debuginfo -j4 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/ttp-0.9.2
+[  223s] + /usr/lib/rpm/brp-compress
+[  223s] + /usr/lib/rpm/brp-suse
+[  223s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  224s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  224s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  224s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  224s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  224s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.2LPcU7
+[  224s] + umask 022
+[  224s] + cd /home/abuild/rpmbuild/BUILD
+[  224s] + cd ttp-0.9.2
+[  224s] + pushd test/pytest
+[  224s] ~/rpmbuild/BUILD/ttp-0.9.2/test/pytest ~/rpmbuild/BUILD/ttp-0.9.2
+[  224s] + donttest=yangson
+[  224s] + set +x
+[  225s] Using libalternatives variant 38 for jsonschema in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  225s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  225s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  225s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  225s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  225s] Using libalternatives variant 38 for wheel in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  225s] Using alternative deep-3.8 for deep in ./build/flavorbin during Python 3.8 expansions.
+[  226s] Using alternative doesitcache-3.8 for doesitcache in ./build/flavorbin during Python 3.8 expansions.
+[  226s] Using alternative dul-receive-pack-3.8 for dul-receive-pack in ./build/flavorbin during Python 3.8 expansions.
+[  226s] Using alternative dul-upload-pack-3.8 for dul-upload-pack in ./build/flavorbin during Python 3.8 expansions.
+[  226s] Using alternative dulwich-3.8 for dulwich in ./build/flavorbin during Python 3.8 expansions.
+[  226s] Using alternative keyring-3.8 for keyring in ./build/flavorbin during Python 3.8 expansions.
+[  226s] Using alternative normalizer-3.8 for normalizer in ./build/flavorbin during Python 3.8 expansions.
+[  227s] Using alternative pkginfo-3.8 for pkginfo in ./build/flavorbin during Python 3.8 expansions.
+[  227s] Using alternative poetry-3.8 for poetry in ./build/flavorbin during Python 3.8 expansions.
+[  227s] Using alternative tabulate-3.8 for tabulate in ./build/flavorbin during Python 3.8 expansions.
+[  228s] Using alternative ttp-3.8 for ttp in ./build/flavorbin during Python 3.8 expansions.
+[  228s] Using alternative virtualenv-3.8 for virtualenv in ./build/flavorbin during Python 3.8 expansions.
+[  228s] Using libalternatives variant 39 for jsonschema in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  228s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  228s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  228s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  228s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  228s] Using libalternatives variant 39 for wheel in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  229s] Using alternative deep-3.9 for deep in ./build/flavorbin during Python 3.9 expansions.
+[  229s] Using alternative doesitcache-3.9 for doesitcache in ./build/flavorbin during Python 3.9 expansions.
+[  229s] Using alternative dul-receive-pack-3.9 for dul-receive-pack in ./build/flavorbin during Python 3.9 expansions.
+[  229s] Using alternative dul-upload-pack-3.9 for dul-upload-pack in ./build/flavorbin during Python 3.9 expansions.
+[  229s] Using alternative dulwich-3.9 for dulwich in ./build/flavorbin during Python 3.9 expansions.
+[  230s] Using alternative keyring-3.9 for keyring in ./build/flavorbin during Python 3.9 expansions.
+[  230s] Using alternative normalizer-3.9 for normalizer in ./build/flavorbin during Python 3.9 expansions.
+[  230s] Using alternative pkginfo-3.9 for pkginfo in ./build/flavorbin during Python 3.9 expansions.
+[  230s] Using alternative poetry-3.9 for poetry in ./build/flavorbin during Python 3.9 expansions.
+[  231s] Using alternative tabulate-3.9 for tabulate in ./build/flavorbin during Python 3.9 expansions.
+[  231s] Using alternative ttp-3.9 for ttp in ./build/flavorbin during Python 3.9 expansions.
+[  231s] Using alternative virtualenv-3.9 for virtualenv in ./build/flavorbin during Python 3.9 expansions.
+[  231s] Using alternative deep-3.10 for deep in ./build/flavorbin during Python 3.10 expansions.
+[  232s] Using alternative doesitcache-3.10 for doesitcache in ./build/flavorbin during Python 3.10 expansions.
+[  232s] Using alternative dul-receive-pack-3.10 for dul-receive-pack in ./build/flavorbin during Python 3.10 expansions.
+[  232s] Using alternative dul-upload-pack-3.10 for dul-upload-pack in ./build/flavorbin during Python 3.10 expansions.
+[  232s] Using alternative dulwich-3.10 for dulwich in ./build/flavorbin during Python 3.10 expansions.
+[  232s] Using alternative keyring-3.10 for keyring in ./build/flavorbin during Python 3.10 expansions.
+[  233s] Using alternative normalizer-3.10 for normalizer in ./build/flavorbin during Python 3.10 expansions.
+[  233s] Using alternative pkginfo-3.10 for pkginfo in ./build/flavorbin during Python 3.10 expansions.
+[  233s] Using alternative poetry-3.10 for poetry in ./build/flavorbin during Python 3.10 expansions.
+[  233s] Using alternative tabulate-3.10 for tabulate in ./build/flavorbin during Python 3.10 expansions.
+[  234s] Using alternative ttp-3.10 for ttp in ./build/flavorbin during Python 3.10 expansions.
+[  234s] Using alternative virtualenv-3.10 for virtualenv in ./build/flavorbin during Python 3.10 expansions.
+[  234s] + export PATH=/home/abuild/rpmbuild/BUILD/ttp-0.9.2/test/pytest/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  234s] + PATH=/home/abuild/rpmbuild/BUILD/ttp-0.9.2/test/pytest/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  234s] ++ '[' -f _current_flavor ']'
+[  234s] ++ cat _current_flavor
+[  234s] + last_flavor=python310
+[  234s] + '[' -z python310 ']'
+[  234s] + '[' python310 '!=' python38 ']'
+[  234s] + '[' -d build ']'
+[  234s] + mv build _build.python310
+[  234s] + '[' -d _build.python38 ']'
+[  234s] + mv _build.python38 build
+[  234s] + echo python38
+[  234s] + python_flavor=python38
+[  234s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-ttp-test-0.9.2-1.1.riscv64/usr/lib/python3.8/site-packages
+[  234s] + PYTHONDONTWRITEBYTECODE=1
+[  234s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python310 -v . -k 'not (yangson)'
+[  243s] ============================= test session starts ==============================
+[  243s] platform linux -- Python 3.8.15, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3.8
+[  243s] cachedir: .pytest_cache
+[  243s] rootdir: /home/abuild/rpmbuild/BUILD/ttp-0.9.2/test/pytest
+[  256s] collecting ... collected 275 items / 10 deselected / 265 selected
+[  256s] 
+[  256s] test_N2G_formatter.py::test_n2g_formatter SKIPPED (Failed to import ...) [  0%]
+[  256s] test_anonymous_group.py::test_simple_anonymous_template PASSED           [  0%]
+[  257s] test_anonymous_group.py::test_anonymous_group_with_vars PASSED           [  1%]
+[  257s] test_anonymous_group.py::test_anonymous_group_with_child_group_empty_absolute_path PASSED [  1%]
+[  257s] test_anonymous_group.py::test_anonymous_group_with_per_template_mode PASSED [  1%]
+[  257s] test_answers_and_docs.py::test_answer_1 PASSED                           [  2%]
+[  257s] test_answers_and_docs.py::test_answer_2 PASSED                           [  2%]
+[  257s] test_answers_and_docs.py::test_issue_20_answer PASSED                    [  3%]
+[  257s] test_answers_and_docs.py::test_answer_3 PASSED                           [  3%]
+[  258s] test_answers_and_docs.py::test_answer_4 PASSED                           [  3%]
+[  258s] test_answers_and_docs.py::test_issue_20_answer_2 PASSED                  [  4%]
+[  258s] test_answers_and_docs.py::test_docs_ttp_dictionary_usage_example PASSED  [  4%]
+[  258s] test_answers_and_docs.py::test_github_issue_21_answer PASSED             [  4%]
+[  258s] test_answers_and_docs.py::test_github_issue_22 PASSED                    [  5%]
+[  258s] test_answers_and_docs.py::test_github_issue_24 PASSED                    [  5%]
+[  258s] test_answers_and_docs.py::test_reddit_answer_1 PASSED                    [  6%]
+[  259s] test_answers_and_docs.py::test_reddit_answer_2 PASSED                    [  6%]
+[  259s] test_answers_and_docs.py::test_github_issue_32 PASSED                    [  6%]
+[  259s] test_answers_and_docs.py::test_slack_answer_1 PASSED                     [  7%]
+[  259s] test_answers_and_docs.py::test_group_default_docs PASSED                 [  7%]
+[  259s] test_answers_and_docs.py::test_github_issue_34_answer PASSED             [  7%]
+[  259s] test_answers_and_docs.py::test_github_issue_33_answer_1 PASSED           [  8%]
+[  259s] test_answers_and_docs.py::test_issue_36 PASSED                           [  8%]
+[  260s] test_answers_and_docs.py::test_github_issue_37_original_data_template PASSED [  9%]
+[  260s] test_answers_and_docs.py::test_github_issue_37_cleaned_up_data PASSED    [  9%]
+[  260s] test_answers_and_docs.py::test_github_issue_37_cleaned_data_template PASSED [  9%]
+[  260s] test_answers_and_docs.py::test_github_issue_42 PASSED                    [ 10%]
+[  260s] test_answers_and_docs.py::test_github_issue_42_answer PASSED             [ 10%]
+[  261s] test_answers_and_docs.py::test_issue_45 PASSED                           [ 10%]
+[  261s] test_answers_and_docs.py::test_issue_45_1 PASSED                         [ 11%]
+[  261s] test_answers_and_docs.py::test_issue_45_filtering_fix PASSED             [ 11%]
+[  261s] test_answers_and_docs.py::test_issue_47_answer PASSED                    [ 12%]
+[  261s] test_answers_and_docs.py::test_issue_48_answer PASSED                    [ 12%]
+[  261s] test_answers_and_docs.py::test_issue_48_answer_more PASSED               [ 12%]
+[  261s] test_answers_and_docs.py::test_slack_channel_answer_for_Noif PASSED      [ 13%]
+[  261s] test_answers_and_docs.py::test_slack_answer_2 PASSED                     [ 13%]
+[  262s] test_answers_and_docs.py::test_slack_answer_3 PASSED                     [ 13%]
+[  263s] test_answers_and_docs.py::test_slack_answer_3_full PASSED                [ 14%]
+[  263s] test_answers_and_docs.py::test_issue_45_for_junos_cfg PASSED             [ 14%]
+[  263s] test_answers_and_docs.py::test_faq_multiline_output_matching PASSED      [ 15%]
+[  263s] test_answers_and_docs.py::test_issue_52_answer PASSED                    [ 15%]
+[  263s] test_answers_and_docs.py::test_issue_51_answer PASSED                    [ 15%]
+[  263s] test_answers_and_docs.py::test_issue_50 PASSED                           [ 16%]
+[  263s] test_answers_and_docs.py::test_start_with_set PASSED                     [ 16%]
+[  265s] test_answers_and_docs.py::test_ios_bgp_pers_pars PASSED                  [ 16%]
+[  265s] test_answers_and_docs.py::test_ip_address_parsing PASSED                 [ 17%]
+[  267s] test_answers_and_docs.py::test_vlans_parsing PASSED                      [ 17%]
+[  267s] test_answers_and_docs.py::test_asa_acls_issue_55_uses_itemize_with_dynamic_path PASSED [ 18%]
+[  268s] test_answers_and_docs.py::test_asa_acls_issue_55 PASSED                  [ 18%]
+[  268s] test_answers_and_docs.py::test_issue_57_headers_parsing PASSED           [ 18%]
+[  268s] test_answers_and_docs.py::test_issue_57_headers_parsing_using_columns PASSED [ 19%]
+[  268s] test_answers_and_docs.py::test_interface_template_not_collecting_all_data_solution PASSED [ 19%]
+[  268s] test_answers_and_docs.py::test_interface_template_not_collecting_all_data SKIPPED [ 20%]
+[  268s] test_answers_and_docs.py::test_interface_template_not_collecting_all_data_reduced PASSED [ 20%]
+[  268s] test_answers_and_docs.py::test_interface_template_not_collecting_all_data_reduced_2 SKIPPED [ 20%]
+[  268s] test_answers_and_docs.py::test_issue_61 PASSED                           [ 21%]
+[  268s] test_answers_and_docs.py::test_fortigate_intf_parsing PASSED             [ 21%]
+[  269s] test_answers_and_docs.py::test_issue_57_one_more PASSED                  [ 21%]
+[  269s] test_answers_and_docs.py::test_issue_57_one_more_answer PASSED           [ 22%]
+[  269s] test_answers_and_docs.py::test_issue_57_one_more_empty_dict_in_res PASSED [ 22%]
+[  269s] test_answers_and_docs.py::test_issue_62 PASSED                           [ 23%]
+[  269s] test_answers_and_docs.py::test_issue_62_fix PASSED                       [ 23%]
+[  269s] test_answers_and_docs.py::test_lookup_crosstemplates PASSED              [ 23%]
+[  269s] test_answers_and_docs.py::test_answer_hpe_bgp PASSED                     [ 24%]
+[  269s] test_answers_and_docs.py::test_stackoverflow_62421344_python_parse_text PASSED [ 24%]
+[  269s] test_answers_and_docs.py::test_same_config_different_contexts PASSED     [ 24%]
+[  270s] test_answers_and_docs.py::test_to_int_with_dynamic_path_issue_67 PASSED  [ 25%]
+[  270s] test_answers_and_docs.py::test_to_int_with_dynamic_path_issue_67_multiptocess_mode PASSED [ 25%]
+[  271s] test_answers_and_docs.py::test_issue_69_fix PASSED                       [ 26%]
+[  271s] test_answers_and_docs.py::test_issue_77 PASSED                           [ 26%]
+[  271s] test_answers_and_docs.py::test_issue_94 PASSED                           [ 26%]
+[  271s] test_answers_and_docs.py::test_issue_94_1 PASSED                         [ 27%]
+[  271s] test_answers_and_docs.py::test_issue_89 PASSED                           [ 27%]
+[  271s] test_empty_group_results.py::test_empty_group_results PASSED             [ 27%]
+[  271s] test_extend_tag.py::test_extend_tag_from_file PASSED                     [ 28%]
+[  271s] test_extend_tag.py::test_extend_tag_from_file_anonymous PASSED           [ 28%]
+[  271s] test_extend_tag.py::test_extend_tag_from_file_with_template_tag PASSED   [ 29%]
+[  271s] test_extend_tag.py::test_extend_tag_from_file_wrong_path PASSED          [ 29%]
+[  271s] test_extend_tag.py::test_extend_tag_from_ttp_templates PASSED            [ 29%]
+[  272s] test_extend_tag.py::test_extend_tag_from_file_vars_and_lookup PASSED     [ 30%]
+[  272s] test_extend_tag.py::test_extend_tag_within_group PASSED                  [ 30%]
+[  272s] test_extend_tag.py::test_extend_tag_within_group_with_child_groups_above PASSED [ 30%]
+[  272s] test_extend_tag.py::test_extend_tag_within_group_with_non_hierarch_template PASSED [ 31%]
+[  272s] test_extend_tag.py::test_extend_tag_within_group_with_anonymous_group PASSED [ 31%]
+[  272s] test_extend_tag.py::test_extend_tag_within_group_with_multiple_groups PASSED [ 32%]
+[  272s] test_extend_tag.py::test_extend_tag_from_file_group_name_filter PASSED   [ 32%]
+[  272s] test_extend_tag.py::test_extend_tag_from_file_group_index_filter PASSED  [ 32%]
+[  272s] test_extend_tag.py::test_extend_tag_from_file_vars_filter PASSED         [ 33%]
+[  272s] test_extend_tag.py::test_extend_tag_from_file_with_vars_inputs_filter PASSED [ 33%]
+[  272s] test_extend_tag.py::test_extend_tag_from_file_lookups_filter PASSED      [ 33%]
+[  273s] test_extend_tag.py::test_extend_tag_from_file_output_filter PASSED       [ 34%]
+[  273s] test_extend_tag.py::test_extend_tag_from_file_nested_group_filter PASSED [ 34%]
+[  273s] test_extend_tag.py::test_extend_tag_groups_recursive_extend_load PASSED  [ 35%]
+[  273s] test_extend_tag.py::test_extend_tag_groups_recursive_extend_load_several_top_groups PASSED [ 35%]
+[  273s] test_extend_tag.py::test_extend_tag_from_file_with_macro PASSED          [ 35%]
+[  273s] test_extend_tag.py::test_ttp_templates_dir_env_variable_with_extend PASSED [ 36%]
+[  273s] test_group_chain_attribute.py::test_group_chain_attribute_list PASSED    [ 36%]
+[  273s] test_group_chain_attribute.py::test_group_chain_attribute_list_multi_func PASSED [ 36%]
+[  273s] test_group_chain_attribute.py::test_group_chain_attribute_string_var PASSED [ 37%]
+[  273s] test_group_chain_attribute.py::test_group_chain_attribute_string_inline PASSED [ 37%]
+[  281s] test_group_functions.py::test_group_validate_function PASSED             [ 38%]
+[  281s] test_group_functions.py::test_group_default_referencing_variable_parent_group_no_re_two_inputs PASSED [ 38%]
+[  281s] test_group_functions.py::test_group_default_referencing_variable_parent_group_no_re_one_input PASSED [ 38%]
+[  281s] test_group_functions.py::test_top_group_default_referencing_variable_dictionary PASSED [ 39%]
+[  281s] test_group_functions.py::test_group_default PASSED                       [ 39%]
+[  281s] test_group_functions.py::test_child_group_default_referencing_variable PASSED [ 40%]
+[  281s] test_group_functions.py::test_group_set_function_source_from_global_vars PASSED [ 40%]
+[  281s] test_group_functions.py::test_group_macro_returns_false PASSED           [ 40%]
+[  281s] test_group_functions.py::test_group_macro_returns_true PASSED            [ 41%]
+[  281s] test_group_functions.py::test_group_macro_returns_none PASSED            [ 41%]
+[  281s] test_group_functions.py::test_group_macro_chaining PASSED                [ 41%]
+[  281s] test_group_functions.py::test_group_macro_chaining_returns_dictionary PASSED [ 42%]
+[  282s] test_group_functions.py::test_itemize PASSED                             [ 42%]
+[  282s] test_group_functions.py::test_itemize_dynamic_path PASSED                [ 43%]
+[  282s] test_group_functions.py::test_itemize_dynamic_path_attribute PASSED      [ 43%]
+[  282s] test_group_functions.py::test_items2dict_function PASSED                 [ 43%]
+[  282s] test_group_functions.py::test_expand PASSED                              [ 44%]
+[  282s] test_group_functions.py::test_expand_issue_65 PASSED                     [ 44%]
+[  282s] test_group_lookup.py::test_group_lookup_using_lookup_table_action_replace PASSED [ 44%]
+[  282s] test_group_lookup.py::test_group_lookup_using_lookup_table_action_add_field PASSED [ 45%]
+[  282s] test_group_lookup.py::test_group_lookup_using_lookup_table_action_update PASSED [ 45%]
+[  282s] test_group_lookup.py::test_group_lookup_using_group_in_same_input_action_update PASSED [ 46%]
+[  282s] test_group_lookup.py::test_group_lookup_using_group_from_another_input_action_update PASSED [ 46%]
+[  282s] test_group_lookup.py::test_group_lookup_in_template_results_per_input_action_update PASSED [ 46%]
+[  282s] test_group_lookup.py::test_group_lookup_in_template_results_per_template_action_add_field PASSED [ 47%]
+[  282s] test_group_name_attribute.py::test_group_same_null_path_for_several_groups PASSED [ 47%]
+[  282s] test_headers_indicator.py::test_headers_indicator_left_aligned PASSED    [ 47%]
+[  282s] test_headers_indicator.py::test_headers_indicator_space_indented_header PASSED [ 48%]
+[  283s] test_headers_indicator.py::test_headers_indicator_multiline_header PASSED [ 48%]
+[  283s] test_headers_indicator.py::test_headers_indicator_columns_merged PASSED  [ 49%]
+[  283s] test_headers_indicator.py::test_headers_indicator_tab_indented_header PASSED [ 49%]
+[  283s] test_headers_indicator.py::test_headers_docs_example PASSED              [ 49%]
+[  283s] test_headers_indicator.py::test_headers_shorter_lines PASSED             [ 50%]
+[  283s] test_headers_indicator.py::test_headers_last_column_empty PASSED         [ 50%]
+[  283s] test_headers_indicator.py::test_with_garbage PASSED                      [ 50%]
+[  293s] test_headers_indicator.py::test_headers_with_column PASSED               [ 51%]
+[  293s] test_headers_indicator.py::test_headers_on_tabular_output PASSED         [ 51%]
+[  293s] test_inputs.py::test_inputs_url_filters_extensions PASSED                [ 52%]
+[  293s] test_inputs.py::test_group_inputs PASSED                                 [ 52%]
+[  293s] test_inputs.py::test_inputs_with_template_base_path PASSED               [ 52%]
+[  293s] test_inputs.py::test_input_to_groups_mapping PASSED                      [ 53%]
+[  293s] test_line_indicator.py::test_line_when_its_start_re PASSED               [ 53%]
+[  293s] test_lookups.py::test_lookup_include_csv PASSED                          [ 53%]
+[  294s] test_lookups.py::test_lookup_include_yaml PASSED                         [ 54%]
+[  294s] test_match_condition_fun.py::test_contains_re_inline PASSED              [ 54%]
+[  294s] test_match_condition_fun.py::test_contains_re_from_vars PASSED           [ 55%]
+[  294s] test_match_condition_fun.py::test_startswith_re_inline PASSED            [ 55%]
+[  294s] test_match_condition_fun.py::test_startswith_re_from_vars PASSED         [ 55%]
+[  294s] test_match_condition_fun.py::test_endswith_re_inline PASSED              [ 56%]
+[  294s] test_match_condition_fun.py::test_endswith_re_from_vars PASSED           [ 56%]
+[  294s] test_match_condition_fun.py::test_notstartswith_re_inline PASSED         [ 56%]
+[  294s] test_match_condition_fun.py::test_notstartswith_re_from_vars PASSED      [ 57%]
+[  294s] test_match_condition_fun.py::test_notendswith_re_inline PASSED           [ 57%]
+[  294s] test_match_condition_fun.py::test_notendswith_re_from_vars PASSED        [ 58%]
+[  294s] test_match_condition_fun.py::test_exclude_re_inline PASSED               [ 58%]
+[  294s] test_match_condition_fun.py::test_exclude_re_from_vars PASSED            [ 58%]
+[  294s] test_match_condition_fun.py::test_exclude_inline PASSED                  [ 59%]
+[  294s] test_match_condition_fun.py::test_exclude_from_vars PASSED               [ 59%]
+[  294s] test_match_condition_fun.py::test_contains_inline PASSED                 [ 60%]
+[  294s] test_match_condition_fun.py::test_contains_from_vars PASSED              [ 60%]
+[  294s] test_match_condition_fun.py::test_contains_multi PASSED                  [ 60%]
+[  295s] test_match_condition_fun.py::test_equal_inline PASSED                    [ 61%]
+[  295s] test_match_condition_fun.py::test_equal_from_vars PASSED                 [ 61%]
+[  295s] test_match_condition_fun.py::test_notequal_inline PASSED                 [ 61%]
+[  295s] test_match_condition_fun.py::test_notequal_from_vars PASSED              [ 62%]
+[  295s] test_match_functions.py::test_sformat_inline PASSED                      [ 62%]
+[  295s] test_match_functions.py::test_sformat_from_vars PASSED                   [ 63%]
+[  295s] test_match_functions.py::test_to_list_with_joinmatches PASSED            [ 63%]
+[  295s] test_match_functions.py::test_multiple_joinmatches PASSED                [ 63%]
+[  295s] test_match_functions.py::test_joinmatches_with_ignore PASSED             [ 64%]
+[  295s] test_match_functions.py::test_match_variable_default_set_to_list PASSED  [ 64%]
+[  295s] test_match_functions.py::test_match_variable_default_set_to_string PASSED [ 64%]
+[  295s] test_match_functions.py::test_match_variable_default_for_start_regex PASSED [ 65%]
+[  295s] test_match_functions.py::test_match_variable_default_set_to_dictionary PASSED [ 65%]
+[  295s] test_match_functions.py::test_match_variable_set_and_let_for_same_variable_with_special_chars PASSED [ 66%]
+[  296s] test_match_functions.py::test_let_and_set PASSED                         [ 66%]
+[  296s] test_match_functions.py::test_line_with_joinmatches PASSED               [ 66%]
+[  296s] test_match_functions.py::test_raise PASSED                               [ 67%]
+[  296s] test_match_functions.py::test_copy PASSED                                [ 67%]
+[  296s] test_misc.py::test_match_vars_with_hyphen PASSED                         [ 67%]
+[  296s] test_misc.py::test_match_vars_with_dot PASSED                            [ 68%]
+[  296s] test_misc.py::test_match_vars_starts_with_digit PASSED                   [ 68%]
+[  296s] test_misc.py::test_match_vars_multiple_non_alpha_chars PASSED            [ 69%]
+[  296s] test_misc.py::test_match_vars_set_with_hyphen PASSED                     [ 69%]
+[  296s] test_misc.py::test_per_template_mode PASSED                              [ 69%]
+[  296s] test_misc.py::test_newline_with_carriage_return PASSED                   [ 70%]
+[  296s] test_misc.py::test_groups_with_defaults_only_and_with_children_with_defaults_only PASSED [ 70%]
+[  297s] test_misc.py::test_hierarch_template PASSED                              [ 70%]
+[  297s] test_misc.py::test_comments_with_indentation PASSED                      [ 71%]
+[  297s] test_misc.py::test_TTP_CACHE_FOLDER_env_variable_usage PASSED            [ 71%]
+[  297s] test_misc.py::test_child_group_do_not_start_if_no_parent_started PASSED  [ 72%]
+[  297s] test_misc.py::test_group_end_indicator_when_last_start_is_bigger_than_last_end PASSED [ 72%]
+[  298s] test_misc.py::test_tabs_and_spaces_mixed_within_line PASSED              [ 72%]
+[  298s] test_misc.py::test_inner_group_strange_parsing_results PASSED            [ 73%]
+[  338s] test_misc.py::test_in_threads_parsing FAILED                             [ 73%]
+[  338s] test_misc.py::test_ttp_templates_dir_env_variable PASSED                 [ 73%]
+[  338s] test_output_formatters.py::test_csv_formatter_simple PASSED              [ 74%]
+[  338s] test_output_formatters.py::test_csv_formatter_simple_empty_tag PASSED    [ 74%]
+[  338s] test_output_formatters.py::test_csv_formatter_with_is_equal PASSED       [ 75%]
+[  343s] test_output_formatters.py::test_excel_formatter PASSED                   [ 75%]
+[  343s] test_output_formatters.py::test_excel_formatter_file_returner_incomplete_url PASSED [ 75%]
+[  344s] test_output_formatters.py::test_excel_formatter_update PASSED            [ 76%]
+[  345s] test_output_formatters.py::test_excel_formatter_update_using_result_kwargs PASSED [ 76%]
+[  345s] test_output_formatters.py::test_excel_formatter_no_results_at_path_strict_false PASSED [ 76%]
+[  345s] test_output_formatters.py::test_excel_formatter_no_results_at_path_strict_true PASSED [ 77%]
+[  345s] test_output_formatters.py::test_tabulate_formatter PASSED                [ 77%]
+[  345s] test_output_formatters.py::test_table_formatter PASSED                   [ 78%]
+[  345s] test_output_formatters.py::test_table_formatter_with_key PASSED          [ 78%]
+[  345s] test_output_formatters.py::test_table_formatter_multiple_input PASSED    [ 78%]
+[  346s] test_output_formatters.py::test_jinja2_formatter PASSED                  [ 79%]
+[  346s] test_output_functions.py::test_cerberus_validate_per_input PASSED        [ 79%]
+[  346s] test_output_functions.py::test_cerberus_validate_per_template PASSED     [ 80%]
+[  347s] test_output_functions.py::test_global_output_deepdiff_with_var_before PASSED [ 80%]
+[  347s] test_output_functions.py::test_group_specific_output_deepdiff_with_var_before PASSED [ 80%]
+[  347s] test_output_functions.py::test_group_specific_output_deepdiff_with_var_before_with_add_field PASSED [ 81%]
+[  347s] test_output_functions.py::test_output_condition_attribute PASSED         [ 81%]
+[  347s] test_output_returners.py::test_file_returner_format_raw PASSED           [ 81%]
+[  347s] test_output_returners.py::test_file_returner_format_raw_incomplete_url PASSED [ 82%]
+[  347s] test_output_returners.py::test_file_returner_format_raw_1 PASSED         [ 82%]
+[  347s] test_output_returners.py::test_file_returner_filename_format PASSED      [ 83%]
+[  347s] test_output_returners.py::test_file_returner_filename_format_group_specific_output PASSED [ 83%]
+[  347s] test_regexes.py::test_pipe_separated_regexes PASSED                      [ 83%]
+[  347s] test_regexes.py::test_multiple_inline_regexes PASSED                     [ 84%]
+[  347s] test_regexes.py::test_MAC_regex_formatter PASSED                         [ 84%]
+[  347s] test_structure.py::test_list_structure PASSED                            [ 84%]
+[  347s] test_structure.py::test_list_structure_with_outputter PASSED             [ 85%]
+[  347s] test_structure.py::test_dictionary_structure PASSED                      [ 85%]
+[  347s] test_structure.py::test_dictionary_structure_with_outputter PASSED       [ 86%]
+[  347s] test_structure.py::test_flat_list_structure PASSED                       [ 86%]
+[  348s] test_structure.py::test_flat_list_structure_with_outputter PASSED        [ 86%]
+[  348s] test_syslog_returner.py::test_syslog_returner PASSED                     [ 87%]
+[  348s] test_template_variables.py::test_include_attribute_with_yaml_loader PASSED [ 87%]
+[  348s] test_template_variables.py::test_sros_gethostname_getter PASSED          [ 87%]
+[  348s] test_ttp_parser_methods.py::test_clear_result_all PASSED                 [ 88%]
+[  348s] test_ttp_parser_methods.py::test_clear_result_by_name PASSED             [ 88%]
+[  348s] test_ttp_parser_methods.py::test_add_input_with_default_options PASSED   [ 89%]
+[  348s] test_ttp_parser_methods.py::test_add_input_to_non_existing_template PASSED [ 89%]
+[  348s] test_ttp_parser_methods.py::test_add_input_to_non_default_root_template PASSED [ 89%]
+[  348s] test_ttp_parser_methods.py::test_add_inputs_to_child_templates_default_input PASSED [ 90%]
+[  348s] test_ttp_parser_methods.py::test_add_inputs_to_child_templates_non_default_input PASSED [ 90%]
+[  349s] test_ttp_parser_methods.py::test_set_input_for_child_template PASSED     [ 90%]
+[  349s] test_ttp_parser_methods.py::test_add_template PASSED                     [ 91%]
+[  349s] test_ttp_parser_methods.py::test_adding_data_from_files PASSED           [ 91%]
+[  349s] test_ttp_parser_methods.py::test_get_input_load_default_template PASSED  [ 92%]
+[  349s] test_ttp_parser_methods.py::test_get_input_load_child_templates PASSED   [ 92%]
+[  349s] test_ttp_parser_methods.py::test_default_behaviour_with_named_templates PASSED [ 92%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_match_var PASSED    [ 93%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_match_var_multiproc PASSED [ 93%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_group PASSED        [ 93%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_input PASSED        [ 94%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_output PASSED       [ 94%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_output_returner PASSED [ 95%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_output_formatter PASSED [ 95%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_variable_getter PASSED [ 95%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_macro_match_var PASSED [ 96%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_macro_output PASSED [ 96%]
+[  349s] test_ttp_parser_methods.py::test_get_input_load_anonymous_template PASSED [ 96%]
+[  349s] test_ttp_parser_methods.py::test_add_function_method_group_globals_injection PASSED [ 97%]
+[  350s] test_ttp_parser_methods.py::test_add_input_structured_data_list PASSED   [ 97%]
+[  350s] test_ttp_parser_methods.py::test_loading_template_from_ttp_templates PASSED [ 98%]
+[  350s] test_ttp_parser_methods.py::test_quick_parse_function PASSED             [ 98%]
+[  350s] test_ttp_parser_methods.py::test_quick_parse_function_with_kwargs PASSED [ 98%]
+[  350s] test_ttp_parser_methods.py::test_quick_parse_function_template_only PASSED [ 99%]
+[  350s] test_ttp_parser_methods.py::test_get_template_method PASSED              [ 99%]
+[  350s] test_ttp_parser_methods.py::test_get_template_method_nested_templates PASSED [100%]
+[  350s] 
+[  350s] =================================== FAILURES ===================================
+[  350s] ___________________________ test_in_threads_parsing ____________________________
+[  350s] 
+[  350s]     def test_in_threads_parsing():
+[  350s]         """
+[  350s]         Function to test parsing in multiple threads
+[  350s]         """
+[  350s]         res_data = {}
+[  350s]         max_workers = 800
+[  350s]         template="""
+[  350s]     <group name="interfaces" containsall="interface, vrf">
+[  350s]     interface {{ interface }}
+[  350s]      description {{ description | re(".+") }}
+[  350s]      vrf {{ vrf }}
+[  350s]      ipv4 address {{ ip }} {{ mask }}
+[  350s]     ! {{ _end_ }}
+[  350s]     </group>
+[  350s]         """
+[  350s]     
+[  350s]         def worker():
+[  350s]             data="""
+[  350s]     interface GigabitEthernet0/0/0/23
+[  350s]      description GigabitEthernet0/0/0/23 description
+[  350s]      vrf IPRAN-MGMT
+[  350s]      ipv4 address 10.1.1.253 255.255.255.252
+[  350s]     !
+[  350s]     interface GigabitEthernet0/0/0/22
+[  350s]      description GigabitEthernet0/0/0/22 description
+[  350s]      vrf IPRAN-MGMT
+[  350s]      ipv4 address 10.1.2.253 255.255.255.252
+[  350s]     !
+[  350s]             """
+[  350s]             parser = ttp(data=data, template=template, log_level="warning")
+[  350s]             parser.parse(one=True)
+[  350s]             return parser.result(format="json")
+[  350s]     
+[  350s]         with ThreadPoolExecutor(max_workers=max_workers) as executor:
+[  350s]             futures = {executor.submit(worker): worker_id for worker_id in range(max_workers)}
+[  350s]             for future in as_completed(futures):
+[  350s]                 worker_id = futures[future]
+[  350s]                 res_data[worker_id] = future.result()
+[  350s]     
+[  350s]         # pprint.pprint(res_data)
+[  350s]         assert len(res_data) == max_workers
+[  350s] >       assert all([
+[  350s]             i == ['[\n'
+[  350s]                   '    {\n'
+[  350s]                   '        "interfaces": [\n'
+[  350s]                   '            {\n'
+[  350s]                   '                "description": "GigabitEthernet0/0/0/23 description",\n'
+[  350s]                   '                "interface": "GigabitEthernet0/0/0/23",\n'
+[  350s]                   '                "ip": "10.1.1.253",\n'
+[  350s]                   '                "mask": "255.255.255.252",\n'
+[  350s]                   '                "vrf": "IPRAN-MGMT"\n'
+[  350s]                   '            },\n'
+[  350s]                   '            {\n'
+[  350s]                   '                "description": "GigabitEthernet0/0/0/22 description",\n'
+[  350s]                   '                "interface": "GigabitEthernet0/0/0/22",\n'
+[  350s]                   '                "ip": "10.1.2.253",\n'
+[  350s]                   '                "mask": "255.255.255.252",\n'
+[  350s]                   '                "vrf": "IPRAN-MGMT"\n'
+[  350s]                   '            }\n'
+[  350s]                   '        ]\n'
+[  350s]                   '    }\n'
+[  350s]                   ']']
+[  350s]             for i in res_data.values()
+[  350s]         ])
+[  350s] E       assert False
+[  350s] E        +  where False = all([True, True, True, True, True, True, ...])
+[  350s] 
+[  350s] test_misc.py:1112: AssertionError
+[  350s] =============================== warnings summary ===============================
+[  350s] test_answers_and_docs.py:6747
+[  350s]   /home/abuild/rpmbuild/BUILD/ttp-0.9.2/test/pytest/test_answers_and_docs.py:6747: DeprecationWarning: invalid escape sequence \s
+[  350s]     template = """
+[  350s] 
+[  350s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  350s] =========================== short test summary info ============================
+[  350s] FAILED test_misc.py::test_in_threads_parsing - assert False
+[  350s] = 1 failed, 261 passed, 3 skipped, 10 deselected, 1 warning in 106.85s (0:01:46) =
+[  350s] error: Bad exit status from /var/tmp/rpm-tmp.2LPcU7 (%check)
+[  350s] 
+[  350s] RPM build errors:
+[  350s]     Bad exit status from /var/tmp/rpm-tmp.2LPcU7 (%check)
+[  351s] ### VM INTERACTION START ###
+[  351s] [  320.673972][    T1] sysrq: Power Off
+[  351s] [  320.676373][   T18] reboot: Power down
+[  352s] ### VM INTERACTION END ###
+[  352s] 
+[  352s] cloud118 failed "build python-ttp.spec" at Fri Dec  9 01:12:17 UTC 2022.
+[  352s] 

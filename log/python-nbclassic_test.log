@@ -1,0 +1,1309 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    0s] 
+[    0s] old-atreju2 started "build python-nbclassic.spec" at Tue Mar 21 17:44:10 UTC 2023.
+[    0s] 
+[    0s] Building python-nbclassic:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'af2c592b043863542bde227c8f355016'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/python-nbclassic.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/python-nbclassic.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/python-nbclassic.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [0c1b49753efb324b70435b093a3c06c1]
+[    6s] 
+[    6s] copying packages...
+[    7s] reordering...cycle: gio-branding-upstream -> libgio-2_0-0
+[    7s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    7s] cycle: libgio-2_0-0 -> glib2-tools
+[    7s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    7s] cycle: girepository-1_0 -> libgirepository-1_0-1
+[    7s]   breaking dependency libgirepository-1_0-1 -> girepository-1_0
+[    7s] cycle: jupyter-jupyter-client -> python310-jupyter-client
+[    7s]   breaking dependency python310-jupyter-client -> jupyter-jupyter-client
+[    7s] cycle: jupyter-nbclassic -> python310-nbclassic
+[    7s]   breaking dependency python310-nbclassic -> jupyter-nbclassic
+[    7s] cycle: python310-nbconvert -> jupyter-nbconvert
+[    7s]   breaking dependency python310-nbconvert -> jupyter-nbconvert
+[    7s] done
+[    7s] Detected virtio-serial support
+[    9s] booting kvm...
+[    9s] ### VM INTERACTION START ###
+[    9s] Using virtio-serial support
+[    9s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   14s] ### VM INTERACTION END ###
+[   14s] 2nd stage started in virtual machine
+[   15s] machine type: riscv64
+[   15s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   15s] Increasing log level from now on...
+[   15s] [    5.800452][  T369] sysrq: Changing Loglevel
+[   15s] [    5.800617][  T369] sysrq: Loglevel set to 4
+[   15s] Enable sysrq operations
+[   16s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   16s] no label, UUID=9a9b10ef-6f52-4346-8146-af858616a644
+[   16s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   16s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   16s] swapon /dev/vdb
+[   16s] WARNING: udev not running, creating extra device nodes
+[   17s] logging output to //.build.log...
+[   17s] processing recipe /.build-srcdir/python-nbclassic.spec ...
+[   17s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-nbclassic.spec build ...
+[   18s] initializing rpm db...
+[   18s] querying package ids...
+[   74s] [1/556] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   74s] [2/556] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   74s] [3/556] preinstalled attr-2.5.1-1.1
+[   74s] [4/556] preinstalled bash-5.2.15-8.1
+[   74s] [5/556] preinstalled bash-sh-5.2.15-8.1
+[   74s] [6/556] preinstalled binutils-2.40-2.1
+[   74s] [7/556] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   74s] [8/556] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   74s] [9/556] preinstalled build-mkbaselibs-20230314-1.1
+[   74s] [10/556] preinstalled bzip2-1.0.8-5.1
+[   74s] [11/556] preinstalled chkstat-1599_20230217-1.1
+[   74s] [12/556] preinstalled compat-usrmerge-build-84.87-5.1
+[   74s] [13/556] preinstalled compat-usrmerge-tools-84.87-5.1
+[   74s] [14/556] preinstalled coreutils-9.1-5.1
+[   74s] [15/556] preinstalled cpio-2.13-5.1
+[   74s] [16/556] preinstalled cpp-13-1.1
+[   74s] [17/556] preinstalled cpp13-13.0.1+git6669-7.1
+[   74s] [18/556] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   74s] [19/556] preinstalled debugedit-5.0-5.1
+[   74s] [20/556] preinstalled diffutils-3.9-1.1
+[   74s] [21/556] preinstalled dwz-0.15-2.1
+[   74s] [22/556] preinstalled elfutils-0.189-2.1
+[   74s] [23/556] cumulate fdupes-2.2.1-1.1
+[   74s] [24/556] preinstalled file-5.44-1.2
+[   74s] [25/556] preinstalled file-magic-5.44-1.2
+[   74s] [26/556] preinstalled filesystem-84.87-12.1
+[   74s] [27/556] preinstalled fillup-1.42-279.1
+[   74s] [28/556] preinstalled findutils-4.9.0-2.1
+[   74s] [29/556] preinstalled gawk-5.2.1-2.1
+[   74s] [30/556] preinstalled gcc-13-1.1
+[   74s] [31/556] preinstalled gcc-PIE-13-1.1
+[   74s] [32/556] preinstalled gcc13-13.0.1+git6669-7.1
+[   74s] [33/556] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   74s] [34/556] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   74s] [35/556] preinstalled gettext-tools-mini-0.21.1-1.1
+[   74s] [36/556] preinstalled glibc-2.37-1.1
+[   74s] [37/556] preinstalled glibc-devel-2.37-1.1
+[   74s] [38/556] preinstalled glibc-locale-base-2.37-1.1
+[   74s] [39/556] preinstalled grep-3.9-1.1
+[   74s] [40/556] preinstalled gzip-1.12-3.1
+[   74s] [41/556] cumulate hicolor-icon-theme-0.17-4.1
+[   74s] [42/556] cumulate jupyter-jupyter_core-filesystem-20221227-9.1
+[   74s] [43/556] cumulate jupyter-jupyterlab-pygments-0.2.2-3.2
+[   74s] [44/556] cumulate jupyter-notebook-shim-0.2.2-1.2
+[   74s] [45/556] cumulate jupyter-server-terminals-0.4.4-1.2
+[   74s] [46/556] preinstalled kernel-obs-build-6.2.6-1.2
+[   74s] [47/556] preinstalled libacl1-2.3.1-2.1
+[   74s] [48/556] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   74s] [49/556] cumulate libargon2-1-20190702-2.1
+[   74s] [50/556] preinstalled libasan8-13.0.1+git6669-7.1
+[   74s] [51/556] preinstalled libasm1-0.189-2.1
+[   74s] [52/556] preinstalled libatomic1-13.0.1+git6669-7.1
+[   74s] [53/556] preinstalled libattr1-2.5.1-1.1
+[   74s] [54/556] preinstalled libaudit1-3.0.9-1.1
+[   74s] [55/556] preinstalled libblkid1-2.38.1-10.1
+[   74s] [56/556] preinstalled libbz2-1-1.0.8-5.1
+[   74s] [57/556] preinstalled libcap-ng0-0.8.3-1.1
+[   74s] [58/556] preinstalled libcap2-2.67-1.1
+[   74s] [59/556] preinstalled libcrypt1-4.4.33-2.1
+[   74s] [60/556] preinstalled libctf-nobfd0-2.40-2.1
+[   74s] [61/556] preinstalled libctf0-2.40-2.1
+[   74s] [62/556] preinstalled libdb-4_8-4.8.30-40.1
+[   74s] [63/556] preinstalled libdw1-0.189-2.1
+[   74s] [64/556] preinstalled libeconf0-0.5.1-1.1
+[   74s] [65/556] preinstalled libelf1-0.189-2.1
+[   74s] [66/556] preinstalled libexpat1-2.5.0-2.1
+[   74s] [67/556] preinstalled libfdisk1-2.38.1-10.1
+[   74s] [68/556] preinstalled libffi8-3.4.4-1.1
+[   74s] [69/556] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   74s] [70/556] preinstalled libgcrypt20-1.10.1-2.1
+[   74s] [71/556] preinstalled libgdbm6-1.23-1.1
+[   74s] [72/556] preinstalled libgdbm_compat4-1.23-1.1
+[   74s] [73/556] cumulate libglib-2_0-0-2.74.6-1.1
+[   74s] [74/556] preinstalled libgmp10-6.2.1-4.1
+[   74s] [75/556] preinstalled libgomp1-13.0.1+git6669-7.1
+[   74s] [76/556] preinstalled libgpg-error0-1.46-1.1
+[   74s] [77/556] preinstalled libisl23-0.25-1.1
+[   74s] [78/556] preinstalled libitm1-13.0.1+git6669-7.1
+[   74s] [79/556] preinstalled liblua5_4-5-5.4.4-8.1
+[   74s] [80/556] preinstalled liblzma5-5.4.1-2.1
+[   74s] [81/556] preinstalled libmagic1-5.44-1.2
+[   74s] [82/556] preinstalled libmount1-2.38.1-10.1
+[   74s] [83/556] preinstalled libmpc3-1.3.1-1.2
+[   74s] [84/556] preinstalled libmpdec3-2.5.1-2.1
+[   74s] [85/556] preinstalled libmpfr6-4.2.0-1.1
+[   74s] [86/556] preinstalled libncurses6-6.4.20230311-8.1
+[   74s] [87/556] preinstalled libopenssl3-3.0.8-2.1
+[   74s] [88/556] preinstalled libpcre2-8-0-10.42-3.2
+[   74s] [89/556] preinstalled libpkgconf3-1.8.0-2.1
+[   74s] [90/556] preinstalled libpopt0-1.19-1.1
+[   74s] [91/556] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   74s] [92/556] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   74s] [93/556] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   74s] [94/556] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   74s] [95/556] preinstalled libreadline8-8.2-2.1
+[   74s] [96/556] preinstalled librpmbuild9-4.18.0-4.1
+[   74s] [97/556] preinstalled libseccomp2-2.5.4-2.1
+[   74s] [98/556] preinstalled libselinux1-3.5-1.1
+[   74s] [99/556] preinstalled libsemanage-conf-3.5-1.1
+[   74s] [100/556] preinstalled libsemanage2-3.5-1.1
+[   74s] [101/556] preinstalled libsepol2-3.5-1.1
+[   74s] [102/556] preinstalled libsmartcols1-2.38.1-10.1
+[   74s] [103/556] cumulate libsodium23-1.0.18-2.2
+[   74s] [104/556] cumulate libsqlite3-0-3.41.0-2.1
+[   74s] [105/556] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   74s] [106/556] preinstalled libsubid4-4.13-4.1
+[   74s] [107/556] cumulate libsystemd0-mini-253.1-2.1
+[   74s] [108/556] preinstalled libubsan1-13.0.1+git6669-7.1
+[   74s] [109/556] cumulate libunwind8-1.6.2-4.1
+[   74s] [110/556] preinstalled libutempter0-1.2.0-3.2
+[   74s] [111/556] preinstalled libuuid1-2.38.1-10.1
+[   74s] [112/556] preinstalled libxcrypt-devel-4.4.33-2.1
+[   74s] [113/556] cumulate libxml2-2-2.10.3-3.1
+[   74s] [114/556] cumulate libyaml-0-2-0.2.5-2.1
+[   74s] [115/556] preinstalled libz1-1.2.13-3.1
+[   74s] [116/556] preinstalled libzstd1-1.5.4-2.1
+[   74s] [117/556] preinstalled linux-glibc-devel-6.2-1.1
+[   74s] [118/556] preinstalled login_defs-4.13-4.1
+[   74s] [119/556] preinstalled lua54-5.4.4-8.1
+[   74s] [120/556] preinstalled make-4.4.1-1.1
+[   74s] [121/556] preinstalled ncurses-utils-6.4.20230311-8.1
+[   74s] [122/556] preinstalled pam-1.5.2-13.1
+[   74s] [123/556] preinstalled patch-2.7.6-6.1
+[   74s] [124/556] preinstalled perl-5.36.0-4.1
+[   74s] [125/556] preinstalled perl-base-5.36.0-4.1
+[   74s] [126/556] preinstalled permissions-1599_20230217-1.1
+[   74s] [127/556] preinstalled permissions-config-1599_20230217-1.1
+[   74s] [128/556] preinstalled pkgconf-1.8.0-2.1
+[   74s] [129/556] preinstalled pkgconf-m4-1.8.0-2.1
+[   74s] [130/556] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   74s] [131/556] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   74s] [132/556] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   74s] [133/556] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   74s] [134/556] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   74s] [135/556] cumulate python310-MarkupSafe-2.1.2-1.2
+[   74s] [136/556] cumulate python310-attrs-22.2.0-1.2
+[   74s] [137/556] cumulate python310-backcall-0.2.0-1.8
+[   74s] [138/556] preinstalled python310-base-3.10.10-2.1
+[   74s] [139/556] cumulate python310-cssselect-1.2.0-1.2
+[   74s] [140/556] cumulate python310-debugpy-1.6.6-3.1
+[   74s] [141/556] cumulate python310-decorator-5.1.1-1.3
+[   74s] [142/556] cumulate python310-defusedxml-0.7.1-2.5
+[   74s] [143/556] cumulate python310-entrypoints-0.4-1.2
+[   74s] [144/556] cumulate python310-exceptiongroup-1.1.1-1.1
+[   74s] [145/556] cumulate python310-executing-1.2.0-4.2
+[   74s] [146/556] cumulate python310-fastjsonschema-2.16.3-1.1
+[   74s] [147/556] cumulate python310-fqdn-1.5.1-1.2
+[   74s] [148/556] cumulate python310-idna-3.4-1.2
+[   74s] [149/556] cumulate python310-iniconfig-2.0.0-1.1
+[   74s] [150/556] cumulate python310-jedi-0.18.2-4.2
+[   74s] [151/556] cumulate python310-mistune-2.0.4-1.2
+[   74s] [152/556] cumulate python310-nest-asyncio-1.5.6-1.2
+[   74s] [153/556] preinstalled python310-packaging-23.0-2.1
+[   74s] [154/556] cumulate python310-pandocfilters-1.5.0-1.2
+[   74s] [155/556] cumulate python310-parso-0.8.3-2.2
+[   74s] [156/556] cumulate python310-pickleshare-0.7.5-4.2
+[   74s] [157/556] cumulate python310-platformdirs-2.5.2-1.2
+[   74s] [158/556] cumulate python310-pluggy-1.0.0-1.5
+[   74s] [159/556] cumulate python310-prometheus-client-0.16.0-1.2
+[   74s] [160/556] cumulate python310-ptyprocess-0.7.0-1.6
+[   74s] [161/556] cumulate python310-pure-eval-0.2.2-1.2
+[   74s] [162/556] cumulate python310-pycparser-2.21-1.5
+[   74s] [163/556] cumulate python310-pyrsistent-0.19.3-1.2
+[   74s] [164/556] cumulate python310-python-json-logger-2.0.4-1.2
+[   74s] [165/556] cumulate python310-rfc3986-validator-0.1.1-1.2
+[   74s] [166/556] preinstalled python310-setuptools-65.6.3-1.2
+[   74s] [167/556] cumulate python310-six-1.16.0-2.5
+[   74s] [168/556] cumulate python310-sniffio-1.3.0-1.2
+[   74s] [169/556] cumulate python310-soupsieve-2.3.2.post1-1.2
+[   74s] [170/556] cumulate python310-tomli-2.0.1-1.3
+[   74s] [171/556] cumulate python310-traitlets-5.9.0-1.2
+[   74s] [172/556] cumulate python310-uri-template-1.2.0-1.2
+[   74s] [173/556] cumulate python310-wcwidth-0.2.6-1.2
+[   74s] [174/556] cumulate python310-webcolors-1.12-1.2
+[   74s] [175/556] cumulate python310-webencodings-0.5.1-4.9
+[   74s] [176/556] cumulate python310-zipp-3.8.1-1.2
+[   74s] [177/556] cumulate python311-MarkupSafe-2.1.2-1.2
+[   74s] [178/556] cumulate python311-attrs-22.2.0-1.2
+[   74s] [179/556] cumulate python311-backcall-0.2.0-1.8
+[   74s] [180/556] preinstalled python311-base-3.11.2-1.2
+[   74s] [181/556] cumulate python311-cssselect-1.2.0-1.2
+[   74s] [182/556] cumulate python311-debugpy-1.6.6-3.1
+[   74s] [183/556] cumulate python311-decorator-5.1.1-1.3
+[   74s] [184/556] cumulate python311-defusedxml-0.7.1-2.5
+[   74s] [185/556] cumulate python311-entrypoints-0.4-1.2
+[   74s] [186/556] cumulate python311-exceptiongroup-1.1.1-1.1
+[   74s] [187/556] cumulate python311-executing-1.2.0-4.2
+[   74s] [188/556] cumulate python311-fastjsonschema-2.16.3-1.1
+[   74s] [189/556] cumulate python311-fqdn-1.5.1-1.2
+[   74s] [190/556] cumulate python311-idna-3.4-1.2
+[   74s] [191/556] cumulate python311-iniconfig-2.0.0-1.1
+[   74s] [192/556] cumulate python311-jedi-0.18.2-4.2
+[   74s] [193/556] cumulate python311-mistune-2.0.4-1.2
+[   74s] [194/556] cumulate python311-nest-asyncio-1.5.6-1.2
+[   74s] [195/556] cumulate python311-packaging-23.0-2.1
+[   74s] [196/556] cumulate python311-pandocfilters-1.5.0-1.2
+[   74s] [197/556] cumulate python311-parso-0.8.3-2.2
+[   74s] [198/556] cumulate python311-pickleshare-0.7.5-4.2
+[   74s] [199/556] cumulate python311-platformdirs-2.5.2-1.2
+[   74s] [200/556] cumulate python311-pluggy-1.0.0-1.5
+[   74s] [201/556] cumulate python311-prometheus-client-0.16.0-1.2
+[   74s] [202/556] cumulate python311-ptyprocess-0.7.0-1.6
+[   74s] [203/556] cumulate python311-pure-eval-0.2.2-1.2
+[   74s] [204/556] cumulate python311-pycparser-2.21-1.5
+[   74s] [205/556] cumulate python311-pyrsistent-0.19.3-1.2
+[   74s] [206/556] cumulate python311-python-json-logger-2.0.4-1.2
+[   74s] [207/556] cumulate python311-rfc3986-validator-0.1.1-1.2
+[   74s] [208/556] preinstalled python311-setuptools-65.6.3-1.2
+[   74s] [209/556] cumulate python311-six-1.16.0-2.5
+[   74s] [210/556] cumulate python311-sniffio-1.3.0-1.2
+[   74s] [211/556] cumulate python311-soupsieve-2.3.2.post1-1.2
+[   74s] [212/556] cumulate python311-tomli-2.0.1-1.3
+[   74s] [213/556] cumulate python311-traitlets-5.9.0-1.2
+[   74s] [214/556] cumulate python311-uri-template-1.2.0-1.2
+[   74s] [215/556] cumulate python311-wcwidth-0.2.6-1.2
+[   74s] [216/556] cumulate python311-webcolors-1.12-1.2
+[   74s] [217/556] cumulate python311-webencodings-0.5.1-4.9
+[   74s] [218/556] cumulate python311-zipp-3.8.1-1.2
+[   74s] [219/556] cumulate python38-MarkupSafe-2.1.2-1.2
+[   74s] [220/556] cumulate python38-attrs-22.2.0-1.2
+[   74s] [221/556] cumulate python38-backcall-0.2.0-1.8
+[   74s] [222/556] preinstalled python38-base-3.8.16-5.1
+[   74s] [223/556] cumulate python38-cssselect-1.2.0-1.2
+[   74s] [224/556] cumulate python38-debugpy-1.6.6-3.1
+[   75s] [225/556] cumulate python38-decorator-5.1.1-1.3
+[   75s] [226/556] cumulate python38-defusedxml-0.7.1-2.5
+[   75s] [227/556] cumulate python38-entrypoints-0.4-1.2
+[   75s] [228/556] cumulate python38-exceptiongroup-1.1.1-1.1
+[   75s] [229/556] cumulate python38-executing-1.2.0-4.2
+[   75s] [230/556] cumulate python38-fastjsonschema-2.16.3-1.1
+[   75s] [231/556] cumulate python38-fqdn-1.5.1-1.2
+[   75s] [232/556] cumulate python38-idna-3.4-1.2
+[   75s] [233/556] cumulate python38-iniconfig-2.0.0-1.1
+[   75s] [234/556] cumulate python38-jedi-0.18.2-4.2
+[   75s] [235/556] cumulate python38-mistune-2.0.4-1.2
+[   75s] [236/556] cumulate python38-nest-asyncio-1.5.6-1.2
+[   75s] [237/556] cumulate python38-packaging-23.0-2.1
+[   75s] [238/556] cumulate python38-pandocfilters-1.5.0-1.2
+[   75s] [239/556] cumulate python38-parso-0.8.3-2.2
+[   75s] [240/556] cumulate python38-pickleshare-0.7.5-4.2
+[   75s] [241/556] cumulate python38-pkgutil-resolve-name-1.3.10-1.2
+[   75s] [242/556] cumulate python38-platformdirs-2.5.2-1.2
+[   75s] [243/556] cumulate python38-pluggy-1.0.0-1.5
+[   75s] [244/556] cumulate python38-prometheus-client-0.16.0-1.2
+[   75s] [245/556] cumulate python38-ptyprocess-0.7.0-1.6
+[   75s] [246/556] cumulate python38-pure-eval-0.2.2-1.2
+[   75s] [247/556] cumulate python38-pycparser-2.21-1.5
+[   75s] [248/556] cumulate python38-pyrsistent-0.19.3-1.2
+[   75s] [249/556] cumulate python38-python-json-logger-2.0.4-1.2
+[   75s] [250/556] cumulate python38-rfc3986-validator-0.1.1-1.2
+[   75s] [251/556] preinstalled python38-setuptools-65.6.3-1.2
+[   75s] [252/556] cumulate python38-six-1.16.0-2.5
+[   75s] [253/556] cumulate python38-sniffio-1.3.0-1.2
+[   75s] [254/556] cumulate python38-soupsieve-2.3.2.post1-1.2
+[   75s] [255/556] cumulate python38-tomli-2.0.1-1.3
+[   75s] [256/556] cumulate python38-traitlets-5.9.0-1.2
+[   75s] [257/556] cumulate python38-uri-template-1.2.0-1.2
+[   75s] [258/556] cumulate python38-wcwidth-0.2.6-1.2
+[   75s] [259/556] cumulate python38-webcolors-1.12-1.2
+[   75s] [260/556] cumulate python38-webencodings-0.5.1-4.9
+[   75s] [261/556] cumulate python38-zipp-3.8.1-1.2
+[   75s] [262/556] cumulate python39-MarkupSafe-2.1.2-1.2
+[   75s] [263/556] cumulate python39-attrs-22.2.0-1.2
+[   75s] [264/556] cumulate python39-backcall-0.2.0-1.8
+[   75s] [265/556] preinstalled python39-base-3.9.16-5.1
+[   75s] [266/556] cumulate python39-cssselect-1.2.0-1.2
+[   75s] [267/556] cumulate python39-debugpy-1.6.6-3.1
+[   75s] [268/556] cumulate python39-decorator-5.1.1-1.3
+[   75s] [269/556] cumulate python39-defusedxml-0.7.1-2.5
+[   75s] [270/556] cumulate python39-entrypoints-0.4-1.2
+[   75s] [271/556] cumulate python39-exceptiongroup-1.1.1-1.1
+[   75s] [272/556] cumulate python39-executing-1.2.0-4.2
+[   75s] [273/556] cumulate python39-fastjsonschema-2.16.3-1.1
+[   75s] [274/556] cumulate python39-fqdn-1.5.1-1.2
+[   75s] [275/556] cumulate python39-idna-3.4-1.2
+[   75s] [276/556] cumulate python39-iniconfig-2.0.0-1.1
+[   75s] [277/556] cumulate python39-jedi-0.18.2-4.2
+[   75s] [278/556] cumulate python39-mistune-2.0.4-1.2
+[   75s] [279/556] cumulate python39-nest-asyncio-1.5.6-1.2
+[   75s] [280/556] cumulate python39-packaging-23.0-2.1
+[   75s] [281/556] cumulate python39-pandocfilters-1.5.0-1.2
+[   75s] [282/556] cumulate python39-parso-0.8.3-2.2
+[   75s] [283/556] cumulate python39-pickleshare-0.7.5-4.2
+[   75s] [284/556] cumulate python39-platformdirs-2.5.2-1.2
+[   75s] [285/556] cumulate python39-pluggy-1.0.0-1.5
+[   75s] [286/556] cumulate python39-prometheus-client-0.16.0-1.2
+[   75s] [287/556] cumulate python39-ptyprocess-0.7.0-1.6
+[   75s] [288/556] cumulate python39-pure-eval-0.2.2-1.2
+[   75s] [289/556] cumulate python39-pycparser-2.21-1.5
+[   75s] [290/556] cumulate python39-pyrsistent-0.19.3-1.2
+[   75s] [291/556] cumulate python39-python-json-logger-2.0.4-1.2
+[   75s] [292/556] cumulate python39-rfc3986-validator-0.1.1-1.2
+[   75s] [293/556] preinstalled python39-setuptools-65.6.3-1.2
+[   75s] [294/556] cumulate python39-six-1.16.0-2.5
+[   75s] [295/556] cumulate python39-sniffio-1.3.0-1.2
+[   75s] [296/556] cumulate python39-soupsieve-2.3.2.post1-1.2
+[   75s] [297/556] cumulate python39-tomli-2.0.1-1.3
+[   75s] [298/556] cumulate python39-traitlets-5.9.0-1.2
+[   75s] [299/556] cumulate python39-uri-template-1.2.0-1.2
+[   75s] [300/556] cumulate python39-wcwidth-0.2.6-1.2
+[   75s] [301/556] cumulate python39-webcolors-1.12-1.2
+[   75s] [302/556] cumulate python39-webencodings-0.5.1-4.9
+[   75s] [303/556] cumulate python39-zipp-3.8.1-1.2
+[   75s] [304/556] preinstalled qemu-linux-user-7.1.0-54.1
+[   75s] [305/556] preinstalled rpm-4.18.0-4.1
+[   75s] [306/556] preinstalled rpm-build-4.18.0-4.1
+[   75s] [307/556] preinstalled rpm-build-perl-4.18.0-4.1
+[   75s] [308/556] preinstalled rpm-config-SUSE-20220926-1.1
+[   75s] [309/556] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.18
+[   75s] [310/556] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   75s] [311/556] preinstalled sed-4.9-2.1
+[   75s] [312/556] preinstalled shadow-4.13-4.1
+[   75s] [313/556] preinstalled system-group-hardware-20170617-24.1
+[   75s] [314/556] preinstalled system-user-root-20190513-2.1
+[   75s] [315/556] preinstalled systemd-rpm-macros-19-1.1
+[   75s] [316/556] preinstalled sysuser-shadow-3.1-5.1
+[   75s] [317/556] preinstalled tar-1.34-10.1
+[   75s] [318/556] preinstalled terminfo-base-6.4.20230311-8.1
+[   75s] [319/556] preinstalled update-alternatives-1.21.8-1.1
+[   75s] [320/556] preinstalled util-linux-2.38.1-10.1
+[   75s] [321/556] preinstalled which-2.21-5.1
+[   75s] [322/556] preinstalled xz-5.4.1-2.1
+[   75s] [323/556] cumulate alts-1.2+3.b848aad-3.1
+[   75s] [324/556] cumulate desktop-file-utils-0.26-5.1
+[   75s] [325/556] cumulate jupyter-jupyterlab-filesystem-20221227-9.1
+[   75s] [326/556] cumulate jupyter-notebook-filesystem-20221227-9.1
+[   75s] [327/556] cumulate libgmodule-2_0-0-2.74.6-1.1
+[   75s] [328/556] cumulate libgobject-2_0-0-2.74.6-1.1
+[   75s] [329/556] cumulate libprocps8-3.3.17-12.1
+[   75s] [330/556] cumulate libxslt1-1.1.37-1.1
+[   75s] [331/556] cumulate python310-3.10.10-2.1
+[   75s] [332/556] cumulate python310-Jinja2-3.1.2-2.2
+[   75s] [333/556] cumulate python310-PyYAML-6.0-4.2
+[   75s] [334/556] cumulate python310-asttokens-2.2.1-1.2
+[   75s] [335/556] cumulate python310-beautifulsoup4-4.10.0-1.3
+[   75s] [336/556] cumulate python310-cffi-1.15.1-3.2
+[   75s] [337/556] cumulate python310-comm-0.1.2-1.3
+[   75s] [338/556] cumulate python310-importlib-metadata-6.1.0-1.1
+[   75s] [339/556] cumulate python310-matplotlib-inline-0.1.6-1.2
+[   75s] [340/556] cumulate python310-notebook-shim-0.2.2-1.2
+[   75s] [341/556] cumulate python310-pexpect-4.8.0-23.1
+[   75s] [342/556] cumulate python310-prompt_toolkit-3.0.36-1.3
+[   75s] [343/556] cumulate python310-python-dateutil-2.8.2-1.5
+[   75s] [344/556] cumulate python310-rfc3339-validator-0.1.4-1.2
+[   75s] [345/556] cumulate python310-tinycss2-1.2.1-2.2
+[   75s] [346/556] cumulate python311-3.11.2-1.1
+[   75s] [347/556] cumulate python311-Jinja2-3.1.2-2.2
+[   75s] [348/556] cumulate python311-PyYAML-6.0-4.2
+[   75s] [349/556] cumulate python311-asttokens-2.2.1-1.2
+[   75s] [350/556] cumulate python311-beautifulsoup4-4.10.0-1.3
+[   75s] [351/556] cumulate python311-cffi-1.15.1-3.2
+[   75s] [352/556] cumulate python311-comm-0.1.2-1.3
+[   75s] [353/556] cumulate python311-importlib-metadata-6.1.0-1.1
+[   75s] [354/556] cumulate python311-matplotlib-inline-0.1.6-1.2
+[   75s] [355/556] cumulate python311-notebook-shim-0.2.2-1.2
+[   75s] [356/556] cumulate python311-pexpect-4.8.0-23.1
+[   75s] [357/556] cumulate python311-prompt_toolkit-3.0.36-1.3
+[   75s] [358/556] cumulate python311-python-dateutil-2.8.2-1.5
+[   75s] [359/556] cumulate python311-rfc3339-validator-0.1.4-1.2
+[   75s] [360/556] cumulate python311-tinycss2-1.2.1-2.2
+[   75s] [361/556] cumulate python38-3.8.16-5.1
+[   75s] [362/556] cumulate python38-Jinja2-3.1.2-2.2
+[   75s] [363/556] cumulate python38-PyYAML-6.0-4.2
+[   75s] [364/556] cumulate python38-asttokens-2.2.1-1.2
+[   75s] [365/556] cumulate python38-beautifulsoup4-4.10.0-1.3
+[   75s] [366/556] cumulate python38-cffi-1.15.1-3.2
+[   75s] [367/556] cumulate python38-comm-0.1.2-1.3
+[   75s] [368/556] cumulate python38-importlib-metadata-6.1.0-1.1
+[   75s] [369/556] cumulate python38-importlib-resources-5.10.2-2.2
+[   75s] [370/556] cumulate python38-matplotlib-inline-0.1.6-1.2
+[   75s] [371/556] cumulate python38-notebook-shim-0.2.2-1.2
+[   75s] [372/556] cumulate python38-pexpect-4.8.0-23.1
+[   75s] [373/556] cumulate python38-prompt_toolkit-3.0.36-1.3
+[   75s] [374/556] cumulate python38-python-dateutil-2.8.2-1.5
+[   75s] [375/556] cumulate python38-rfc3339-validator-0.1.4-1.2
+[   75s] [376/556] cumulate python38-tinycss2-1.2.1-2.2
+[   75s] [377/556] cumulate python39-3.9.16-5.1
+[   75s] [378/556] cumulate python39-Jinja2-3.1.2-2.2
+[   75s] [379/556] cumulate python39-PyYAML-6.0-4.2
+[   75s] [380/556] cumulate python39-asttokens-2.2.1-1.2
+[   75s] [381/556] cumulate python39-beautifulsoup4-4.10.0-1.3
+[   75s] [382/556] cumulate python39-cffi-1.15.1-3.2
+[   75s] [383/556] cumulate python39-comm-0.1.2-1.3
+[   75s] [384/556] cumulate python39-importlib-metadata-6.1.0-1.1
+[   75s] [385/556] cumulate python39-matplotlib-inline-0.1.6-1.2
+[   75s] [386/556] cumulate python39-notebook-shim-0.2.2-1.2
+[   75s] [387/556] cumulate python39-pexpect-4.8.0-23.1
+[   75s] [388/556] cumulate python39-prompt_toolkit-3.0.36-1.3
+[   75s] [389/556] cumulate python39-python-dateutil-2.8.2-1.5
+[   75s] [390/556] cumulate python39-rfc3339-validator-0.1.4-1.2
+[   75s] [391/556] cumulate python39-tinycss2-1.2.1-2.2
+[   75s] [392/556] cumulate libzmq5-4.3.4-4.1
+[   75s] [393/556] cumulate python310-anyio-3.6.2-3.1
+[   75s] [394/556] cumulate python310-html5lib-1.1-3.2
+[   75s] [395/556] cumulate python311-anyio-3.6.2-3.1
+[   75s] [396/556] cumulate python311-html5lib-1.1-3.2
+[   75s] [397/556] cumulate python38-anyio-3.6.2-3.1
+[   75s] [398/556] cumulate python38-html5lib-1.1-3.2
+[   75s] [399/556] cumulate python39-anyio-3.6.2-3.1
+[   75s] [400/556] cumulate python39-html5lib-1.1-3.2
+[   75s] [401/556] cumulate shared-mime-info-2.2-1.1
+[   75s] [402/556] cumulate procps-3.3.17-12.1
+[   75s] [403/556] cumulate python310-Pygments-2.14.0-1.2
+[   75s] [404/556] cumulate python310-arrow-1.2.3-1.2
+[   75s] [405/556] cumulate python310-bleach-5.0.1-2.2
+[   75s] [406/556] cumulate python310-jsonpointer-2.3-1.3
+[   75s] [407/556] cumulate python310-pip-22.3.1-1.2
+[   75s] [408/556] cumulate python310-pyzmq-24.0.1-3.2
+[   75s] [409/556] cumulate python310-tornado6-6.2-5.2
+[   75s] [410/556] cumulate python310-websocket-client-1.4.2-2.2
+[   75s] [411/556] cumulate python311-Pygments-2.14.0-1.2
+[   75s] [412/556] cumulate python311-arrow-1.2.3-1.2
+[   75s] [413/556] cumulate python311-jsonpointer-2.3-1.3
+[   75s] [414/556] cumulate python311-pip-22.3.1-1.2
+[   75s] [415/556] cumulate python311-pyzmq-24.0.1-3.2
+[   75s] [416/556] cumulate python311-tornado6-6.2-5.2
+[   75s] [417/556] cumulate python311-websocket-client-1.4.2-2.2
+[   75s] [418/556] cumulate python38-Pygments-2.14.0-1.2
+[   75s] [419/556] cumulate python38-arrow-1.2.3-1.2
+[   75s] [420/556] cumulate python38-jsonpointer-2.3-1.3
+[   75s] [421/556] cumulate python38-pip-22.3.1-1.2
+[   75s] [422/556] cumulate python38-pyzmq-24.0.1-3.2
+[   75s] [423/556] cumulate python38-tornado6-6.2-5.2
+[   75s] [424/556] cumulate python38-websocket-client-1.4.2-2.2
+[   75s] [425/556] cumulate python39-Pygments-2.14.0-1.2
+[   75s] [426/556] cumulate python39-arrow-1.2.3-1.2
+[   75s] [427/556] cumulate python39-jsonpointer-2.3-1.3
+[   75s] [428/556] cumulate python39-pip-22.3.1-1.2
+[   75s] [429/556] cumulate python39-pyzmq-24.0.1-3.2
+[   75s] [430/556] cumulate python39-tornado6-6.2-5.2
+[   75s] [431/556] cumulate python39-websocket-client-1.4.2-2.2
+[   75s] [432/556] cumulate update-desktop-files-84.87-6.1
+[   75s] [433/556] cumulate libexslt0-1.1.37-1.1
+[   75s] [434/556] cumulate python310-argon2-cffi-bindings-21.2.0-2.2
+[   75s] [435/556] cumulate python311-argon2-cffi-bindings-21.2.0-2.2
+[   75s] [436/556] cumulate python311-bleach-5.0.1-2.2
+[   75s] [437/556] cumulate python38-argon2-cffi-bindings-21.2.0-2.2
+[   75s] [438/556] cumulate python38-bleach-5.0.1-2.2
+[   75s] [439/556] cumulate python39-argon2-cffi-bindings-21.2.0-2.2
+[   75s] [440/556] cumulate python39-bleach-5.0.1-2.2
+[   75s] [441/556] cumulate jupyter-rpm-macros-20221227-9.1
+[   75s] [442/556] cumulate python310-jsonschema-4.17.3-2.2
+[   75s] [443/556] cumulate python310-jupyter-core-5.2.0-1.2
+[   75s] [444/556] cumulate python310-stack-data-0.2.0-2.2
+[   75s] [445/556] cumulate python311-jsonschema-4.17.3-2.2
+[   75s] [446/556] cumulate python311-jupyter-core-5.2.0-1.2
+[   75s] [447/556] cumulate python311-stack-data-0.2.0-2.2
+[   75s] [448/556] cumulate python38-jupyter-core-5.2.0-1.2
+[   75s] [449/556] cumulate python38-stack-data-0.2.0-2.2
+[   75s] [450/556] cumulate python39-jsonschema-4.17.3-2.2
+[   75s] [451/556] cumulate python39-jupyter-core-5.2.0-1.2
+[   75s] [452/556] cumulate python39-stack-data-0.2.0-2.2
+[   75s] [453/556] cumulate python38-jsonschema-4.17.3-2.2
+[   75s] [454/556] cumulate python310-pytest-7.2.0-3.1
+[   75s] [455/556] cumulate python311-pytest-7.2.0-3.1
+[   75s] [456/556] cumulate python38-pytest-7.2.0-3.1
+[   75s] [457/556] cumulate python39-pytest-7.2.0-3.1
+[   75s] [458/556] cumulate python310-isoduration-20.11.0-1.2
+[   75s] [459/556] cumulate python310-psutil-5.9.4-2.2
+[   75s] [460/556] cumulate python310-pytest-console-scripts-1.3.1-1.3
+[   75s] [461/556] cumulate python310-tornado-6.2-15.5
+[   75s] [462/556] cumulate python311-isoduration-20.11.0-1.2
+[   75s] [463/556] cumulate python311-psutil-5.9.4-2.2
+[   75s] [464/556] cumulate python311-pytest-console-scripts-1.3.1-1.3
+[   75s] [465/556] cumulate python38-isoduration-20.11.0-1.2
+[   75s] [466/556] cumulate python38-psutil-5.9.4-2.2
+[   75s] [467/556] cumulate python38-pytest-console-scripts-1.3.1-1.3
+[   75s] [468/556] cumulate python38-tornado-6.2-15.5
+[   75s] [469/556] cumulate python39-isoduration-20.11.0-1.2
+[   75s] [470/556] cumulate python39-psutil-5.9.4-2.2
+[   75s] [471/556] cumulate python39-pytest-console-scripts-1.3.1-1.3
+[   75s] [472/556] cumulate python39-tornado-6.2-15.5
+[   75s] [473/556] cumulate python310-argon2-cffi-21.3.0-1.3
+[   75s] [474/556] cumulate python310-ipython_genutils-0.2.0-3.7
+[   75s] [475/556] cumulate python310-jupyterlab-pygments-0.2.2-3.2
+[   75s] [476/556] cumulate python310-pytest-jupyter-0.6.2-2.2
+[   75s] [477/556] cumulate python311-argon2-cffi-21.3.0-1.3
+[   75s] [478/556] cumulate python311-ipython_genutils-0.2.0-3.7
+[   75s] [479/556] cumulate python311-jupyterlab-pygments-0.2.2-3.2
+[   75s] [480/556] cumulate python311-pytest-jupyter-0.6.2-2.2
+[   75s] [481/556] cumulate python311-pytest-tornasync-0.6.0.post2-1.8
+[   75s] [482/556] cumulate python311-terminado-0.17.1-1.2
+[   75s] [483/556] cumulate python38-argon2-cffi-21.3.0-1.3
+[   75s] [484/556] cumulate python38-ipython_genutils-0.2.0-3.7
+[   75s] [485/556] cumulate python38-jupyterlab-pygments-0.2.2-3.2
+[   75s] [486/556] cumulate python38-pytest-jupyter-0.6.2-2.2
+[   75s] [487/556] cumulate python39-argon2-cffi-21.3.0-1.3
+[   75s] [488/556] cumulate python39-ipython_genutils-0.2.0-3.7
+[   75s] [489/556] cumulate python39-jupyterlab-pygments-0.2.2-3.2
+[   75s] [490/556] cumulate python39-pytest-jupyter-0.6.2-2.2
+[   75s] [491/556] cumulate python310-lxml-4.9.2-3.1
+[   75s] [492/556] cumulate python311-lxml-4.9.2-3.1
+[   75s] [493/556] cumulate python38-lxml-4.9.2-3.1
+[   75s] [494/556] cumulate python39-lxml-4.9.2-3.1
+[   75s] [495/556] cumulate python310-nbformat-5.7.3-1.2
+[   75s] [496/556] cumulate python311-nbformat-5.7.3-1.2
+[   75s] [497/556] cumulate python38-nbformat-5.7.3-1.2
+[   75s] [498/556] cumulate python39-nbformat-5.7.3-1.2
+[   75s] [499/556] cumulate python310-ipython-8.9.0-1.2
+[   75s] [500/556] cumulate python311-ipython-8.9.0-1.2
+[   75s] [501/556] cumulate python38-ipython-8.9.0-1.2
+[   75s] [502/556] cumulate python39-ipython-8.9.0-1.2
+[   75s] [503/556] cumulate python311-jupyter-server-terminals-0.4.4-1.2
+[   75s] [504/556] cumulate python310-pytest-tornasync-0.6.0.post2-1.8
+[   75s] [505/556] cumulate python310-terminado-0.17.1-1.2
+[   75s] [506/556] cumulate python38-pytest-tornasync-0.6.0.post2-1.8
+[   75s] [507/556] cumulate python38-terminado-0.17.1-1.2
+[   75s] [508/556] cumulate python39-pytest-tornasync-0.6.0.post2-1.8
+[   75s] [509/556] cumulate python39-terminado-0.17.1-1.2
+[   75s] [510/556] cumulate python310-jsonschema-format-nongpl-4.17.3-2.2
+[   75s] [511/556] cumulate python311-jsonschema-format-nongpl-4.17.3-2.2
+[   75s] [512/556] cumulate python38-jsonschema-format-nongpl-4.17.3-2.2
+[   75s] [513/556] cumulate python39-jsonschema-format-nongpl-4.17.3-2.2
+[   75s] [514/556] cumulate python310-jupyter-server-terminals-0.4.4-1.2
+[   75s] [515/556] cumulate python38-jupyter-server-terminals-0.4.4-1.2
+[   75s] [516/556] cumulate python39-jupyter-server-terminals-0.4.4-1.2
+[   75s] [517/556] cumulate python310-jupyter-events-0.6.3-1.2
+[   75s] [518/556] cumulate python311-jupyter-events-0.6.3-1.2
+[   75s] [519/556] cumulate python38-jupyter-events-0.6.3-1.2
+[   75s] [520/556] cumulate python39-jupyter-events-0.6.3-1.2
+[   75s] [521/556] cumulate libgio-2_0-0-2.74.6-1.1
+[   75s] [522/556] cumulate python310-jupyter-client-7.4.9-5.2
+[   75s] [523/556] cumulate gio-branding-upstream-2.74.6-1.1
+[   75s] [524/556] cumulate jupyter-jupyter-client-7.4.9-5.2
+[   75s] [525/556] cumulate glib2-tools-2.74.6-1.1
+[   75s] [526/556] cumulate python310-nbclient-0.7.2-1.2
+[   75s] [527/556] cumulate libgirepository-1_0-1-1.74.0-3.1
+[   75s] [528/556] cumulate girepository-1_0-1.74.0-3.1
+[   75s] [529/556] cumulate python311-jupyter-client-7.4.9-5.2
+[   75s] [530/556] cumulate python38-jupyter-client-7.4.9-5.2
+[   75s] [531/556] cumulate python39-jupyter-client-7.4.9-5.2
+[   75s] [532/556] cumulate python310-ipykernel-6.21.1-1.2
+[   75s] [533/556] cumulate python310-nbconvert-7.2.10-1.1
+[   75s] [534/556] cumulate python310-Send2Trash-1.8.0-1.5
+[   75s] [535/556] cumulate python311-Send2Trash-1.8.0-1.5
+[   75s] [536/556] cumulate python38-Send2Trash-1.8.0-1.5
+[   75s] [537/556] cumulate python39-Send2Trash-1.8.0-1.5
+[   75s] [538/556] cumulate jupyter-nbconvert-7.2.10-1.1
+[   75s] [539/556] cumulate python311-nbclient-0.7.2-1.2
+[   75s] [540/556] cumulate python38-nbclient-0.7.2-1.2
+[   75s] [541/556] cumulate python39-nbclient-0.7.2-1.2
+[   75s] [542/556] cumulate python311-ipykernel-6.21.1-1.2
+[   75s] [543/556] cumulate python38-ipykernel-6.21.1-1.2
+[   75s] [544/556] cumulate python39-ipykernel-6.21.1-1.2
+[   75s] [545/556] cumulate python311-nbconvert-7.2.10-1.1
+[   75s] [546/556] cumulate python310-jupyter-server-2.2.1-1.2
+[   75s] [547/556] cumulate python38-nbconvert-7.2.10-1.1
+[   75s] [548/556] cumulate python39-nbconvert-7.2.10-1.1
+[   75s] [549/556] cumulate python310-nbclassic-0.5.3-1.1
+[   75s] [550/556] cumulate jupyter-nbclassic-0.5.3-1.1
+[   75s] [551/556] cumulate python311-jupyter-server-2.2.1-1.2
+[   75s] [552/556] cumulate python38-jupyter-server-2.2.1-1.2
+[   75s] [553/556] cumulate python39-jupyter-server-2.2.1-1.2
+[   75s] [554/556] cumulate python311-nbclassic-0.5.3-1.1
+[   75s] [555/556] cumulate python38-nbclassic-0.5.3-1.1
+[   75s] [556/556] cumulate python39-nbclassic-0.5.3-1.1
+[   75s] now installing cumulated packages
+[   78s] Preparing...                          ########################################
+[   78s] Updating / installing...
+[   79s] python39-traitlets-5.9.0-1.2          ########################################
+[   79s] python38-traitlets-5.9.0-1.2          ########################################
+[   79s] python311-traitlets-5.9.0-1.2         ########################################
+[   79s] python310-traitlets-5.9.0-1.2         ########################################
+[   80s] libxml2-2-2.10.3-3.1                  ########################################
+[   80s] libglib-2_0-0-2.74.6-1.1              ########################################
+[   80s] libxslt1-1.1.37-1.1                   ########################################
+[   81s] python39-six-1.16.0-2.5               ########################################
+[   81s] python39-packaging-23.0-2.1           ########################################
+[   81s] python38-six-1.16.0-2.5               ########################################
+[   81s] python38-packaging-23.0-2.1           ########################################
+[   81s] python311-six-1.16.0-2.5              ########################################
+[   81s] python311-packaging-23.0-2.1          ########################################
+[   81s] python310-six-1.16.0-2.5              ########################################
+[   81s] libexslt0-1.1.37-1.1                  ########################################
+[   81s] libyaml-0-2-0.2.5-2.1                 ########################################
+[   82s] libsqlite3-0-3.41.0-2.1               ########################################
+[   82s] libargon2-1-20190702-2.1              ########################################
+[   82s] jupyter-jupyterlab-pygments-0.2.2-3.2 ########################################
+[   82s] libgmodule-2_0-0-2.74.6-1.1           ########################################
+[   82s] libgobject-2_0-0-2.74.6-1.1           ########################################
+[   82s] python39-nest-asyncio-1.5.6-1.2       ########################################
+[   82s] python38-nest-asyncio-1.5.6-1.2       ########################################
+[   82s] python311-nest-asyncio-1.5.6-1.2      ########################################
+[   82s] python310-nest-asyncio-1.5.6-1.2      ########################################
+[   82s] jupyter-jupyter_core-filesystem-202212########################################
+[   82s] python310-python-dateutil-2.8.2-1.5   ########################################
+[   82s] python310-rfc3339-validator-0.1.4-1.2 ########################################
+[   83s] python311-python-dateutil-2.8.2-1.5   ########################################
+[   83s] python311-rfc3339-validator-0.1.4-1.2 ########################################
+[   83s] python38-python-dateutil-2.8.2-1.5    ########################################
+[   83s] python38-rfc3339-validator-0.1.4-1.2  ########################################
+[   83s] python39-python-dateutil-2.8.2-1.5    ########################################
+[   83s] python39-rfc3339-validator-0.1.4-1.2  ########################################
+[   83s] python310-matplotlib-inline-0.1.6-1.2 ########################################
+[   83s] python311-matplotlib-inline-0.1.6-1.2 ########################################
+[   83s] python38-matplotlib-inline-0.1.6-1.2  ########################################
+[   83s] python39-matplotlib-inline-0.1.6-1.2  ########################################
+[   83s] python39-webencodings-0.5.1-4.9       ########################################
+[   83s] python39-rfc3986-validator-0.1.1-1.2  ########################################
+[   83s] python39-ptyprocess-0.7.0-1.6         ########################################
+[   83s] python39-pexpect-4.8.0-23.1           ########################################
+[   83s] python39-prometheus-client-0.16.0-1.2 ########################################
+[   83s] python39-idna-3.4-1.2                 ########################################
+[   83s] python39-attrs-22.2.0-1.2             ########################################
+[   83s] python39-MarkupSafe-2.1.2-1.2         ########################################
+[   84s] python39-Jinja2-3.1.2-2.2             ########################################
+[   84s] python38-zipp-3.8.1-1.2               ########################################
+[   84s] python38-importlib-metadata-6.1.0-1.1 ########################################
+[   84s] python38-webencodings-0.5.1-4.9       ########################################
+[   84s] python38-rfc3986-validator-0.1.1-1.2  ########################################
+[   84s] python38-ptyprocess-0.7.0-1.6         ########################################
+[   84s] python38-pexpect-4.8.0-23.1           ########################################
+[   84s] python38-prometheus-client-0.16.0-1.2 ########################################
+[   84s] python38-idna-3.4-1.2                 ########################################
+[   84s] python38-attrs-22.2.0-1.2             ########################################
+[   84s] python38-MarkupSafe-2.1.2-1.2         ########################################
+[   85s] python38-Jinja2-3.1.2-2.2             ########################################
+[   85s] python311-webencodings-0.5.1-4.9      ########################################
+[   85s] python311-rfc3986-validator-0.1.1-1.2 ########################################
+[   85s] python311-ptyprocess-0.7.0-1.6        ########################################
+[   85s] python311-pexpect-4.8.0-23.1          ########################################
+[   85s] python311-prometheus-client-0.16.0-1.2########################################
+[   85s] python311-idna-3.4-1.2                ########################################
+[   85s] python311-attrs-22.2.0-1.2            ########################################
+[   85s] python311-MarkupSafe-2.1.2-1.2        ########################################
+[   85s] python311-Jinja2-3.1.2-2.2            ########################################
+[   85s] python310-webencodings-0.5.1-4.9      ########################################
+[   85s] python310-rfc3986-validator-0.1.1-1.2 ########################################
+[   85s] python310-ptyprocess-0.7.0-1.6        ########################################
+[   86s] python310-pexpect-4.8.0-23.1          ########################################
+[   86s] python310-prometheus-client-0.16.0-1.2########################################
+[   86s] python310-idna-3.4-1.2                ########################################
+[   86s] python310-attrs-22.2.0-1.2            ########################################
+[   86s] python310-MarkupSafe-2.1.2-1.2        ########################################
+[   86s] python310-Jinja2-3.1.2-2.2            ########################################
+[   86s] python310-tinycss2-1.2.1-2.2          ########################################
+[   86s] python311-tinycss2-1.2.1-2.2          ########################################
+[   86s] python38-tinycss2-1.2.1-2.2           ########################################
+[   86s] python38-importlib-resources-5.10.2-2.########################################
+[   86s] python39-tinycss2-1.2.1-2.2           ########################################
+[   87s] python39-arrow-1.2.3-1.2              ########################################
+[   87s] python39-isoduration-20.11.0-1.2      ########################################
+[   87s] python38-arrow-1.2.3-1.2              ########################################
+[   87s] python38-isoduration-20.11.0-1.2      ########################################
+[   87s] python311-arrow-1.2.3-1.2             ########################################
+[   87s] python311-isoduration-20.11.0-1.2     ########################################
+[   87s] python310-arrow-1.2.3-1.2             ########################################
+[   87s] python310-isoduration-20.11.0-1.2     ########################################
+[   87s] jupyter-jupyterlab-filesystem-20221227########################################
+[   87s] jupyter-notebook-filesystem-20221227-9########################################
+[   87s] python310-PyYAML-6.0-4.2              ########################################
+[   87s] python311-PyYAML-6.0-4.2              ########################################
+[   88s] python38-PyYAML-6.0-4.2               ########################################
+[   88s] python39-PyYAML-6.0-4.2               ########################################
+[   88s] python310-asttokens-2.2.1-1.2         ########################################
+[   88s] python311-asttokens-2.2.1-1.2         ########################################
+[   88s] python38-asttokens-2.2.1-1.2          ########################################
+[   88s] python39-asttokens-2.2.1-1.2          ########################################
+[   88s] desktop-file-utils-0.26-5.1           ########################################
+[   92s] shared-mime-info-2.2-1.1              ########################################
+[  104s] gio-branding-upstream-2.74.6-1.1      ########################################
+[  104s] libgio-2_0-0-2.74.6-1.1               ########################################
+[  108s] glib2-tools-2.74.6-1.1                ########################################
+[  109s] No schema files found: doing nothing.
+[  109s] girepository-1_0-1.74.0-3.1           ########################################
+[  109s] libgirepository-1_0-1-1.74.0-3.1      ########################################
+[  109s] python310-Send2Trash-1.8.0-1.5        ########################################
+[  109s] python311-Send2Trash-1.8.0-1.5        ########################################
+[  109s] python38-Send2Trash-1.8.0-1.5         ########################################
+[  110s] python39-Send2Trash-1.8.0-1.5         ########################################
+[  110s] python310-comm-0.1.2-1.3              ########################################
+[  110s] python311-comm-0.1.2-1.3              ########################################
+[  110s] python38-comm-0.1.2-1.3               ########################################
+[  110s] python39-comm-0.1.2-1.3               ########################################
+[  110s] python39-zipp-3.8.1-1.2               ########################################
+[  110s] python39-importlib-metadata-6.1.0-1.1 ########################################
+[  110s] python39-webcolors-1.12-1.2           ########################################
+[  110s] python39-wcwidth-0.2.6-1.2            ########################################
+[  110s] python39-uri-template-1.2.0-1.2       ########################################
+[  110s] python39-tomli-2.0.1-1.3              ########################################
+[  110s] python39-soupsieve-2.3.2.post1-1.2    ########################################
+[  110s] python39-sniffio-1.3.0-1.2            ########################################
+[  111s] python39-anyio-3.6.2-3.1              ########################################
+[  111s] python39-python-json-logger-2.0.4-1.2 ########################################
+[  111s] python39-pyrsistent-0.19.3-1.2        ########################################
+[  111s] python39-pycparser-2.21-1.5           ########################################
+[  111s] python39-cffi-1.15.1-3.2              ########################################
+[  111s] python39-argon2-cffi-bindings-21.2.0-2########################################
+[  111s] python39-argon2-cffi-21.3.0-1.3       ########################################
+[  111s] python39-pure-eval-0.2.2-1.2          ########################################
+[  111s] python39-pluggy-1.0.0-1.5             ########################################
+[  111s] python39-platformdirs-2.5.2-1.2       ########################################
+[  111s] python39-pickleshare-0.7.5-4.2        ########################################
+[  111s] python39-parso-0.8.3-2.2              ########################################
+[  113s] python39-jedi-0.18.2-4.2              ########################################
+[  113s] python39-pandocfilters-1.5.0-1.2      ########################################
+[  113s] python39-mistune-2.0.4-1.2            ########################################
+[  113s] python39-iniconfig-2.0.0-1.1          ########################################
+[  113s] python39-fqdn-1.5.1-1.2               ########################################
+[  113s] python39-executing-1.2.0-4.2          ########################################
+[  113s] python39-exceptiongroup-1.1.1-1.1     ########################################
+[  113s] python39-entrypoints-0.4-1.2          ########################################
+[  113s] python39-defusedxml-0.7.1-2.5         ########################################
+[  113s] python39-decorator-5.1.1-1.3          ########################################
+[  115s] python39-debugpy-1.6.6-3.1            ########################################
+[  115s] python39-cssselect-1.2.0-1.2          ########################################
+[  116s] python39-lxml-4.9.2-3.1               ########################################
+[  116s] python39-html5lib-1.1-3.2             ########################################
+[  116s] python39-beautifulsoup4-4.10.0-1.3    ########################################
+[  116s] python39-bleach-5.0.1-2.2             ########################################
+[  116s] python39-backcall-0.2.0-1.8           ########################################
+[  116s] python38-webcolors-1.12-1.2           ########################################
+[  116s] python38-wcwidth-0.2.6-1.2            ########################################
+[  116s] python38-uri-template-1.2.0-1.2       ########################################
+[  116s] python38-tomli-2.0.1-1.3              ########################################
+[  116s] python38-soupsieve-2.3.2.post1-1.2    ########################################
+[  116s] python38-sniffio-1.3.0-1.2            ########################################
+[  117s] python38-anyio-3.6.2-3.1              ########################################
+[  117s] python38-python-json-logger-2.0.4-1.2 ########################################
+[  117s] python38-pyrsistent-0.19.3-1.2        ########################################
+[  117s] python38-pycparser-2.21-1.5           ########################################
+[  117s] python38-cffi-1.15.1-3.2              ########################################
+[  117s] python38-argon2-cffi-bindings-21.2.0-2########################################
+[  117s] python38-argon2-cffi-21.3.0-1.3       ########################################
+[  117s] python38-pure-eval-0.2.2-1.2          ########################################
+[  117s] python38-pluggy-1.0.0-1.5             ########################################
+[  117s] python38-platformdirs-2.5.2-1.2       ########################################
+[  117s] python38-pkgutil-resolve-name-1.3.10-1########################################
+[  117s] python38-pickleshare-0.7.5-4.2        ########################################
+[  118s] python38-parso-0.8.3-2.2              ########################################
+[  119s] python38-jedi-0.18.2-4.2              ########################################
+[  119s] python38-pandocfilters-1.5.0-1.2      ########################################
+[  119s] python38-mistune-2.0.4-1.2            ########################################
+[  119s] python38-iniconfig-2.0.0-1.1          ########################################
+[  119s] python38-fqdn-1.5.1-1.2               ########################################
+[  119s] python38-executing-1.2.0-4.2          ########################################
+[  119s] python38-exceptiongroup-1.1.1-1.1     ########################################
+[  119s] python38-entrypoints-0.4-1.2          ########################################
+[  119s] python38-defusedxml-0.7.1-2.5         ########################################
+[  119s] python38-decorator-5.1.1-1.3          ########################################
+[  121s] python38-debugpy-1.6.6-3.1            ########################################
+[  121s] python38-cssselect-1.2.0-1.2          ########################################
+[  122s] python38-lxml-4.9.2-3.1               ########################################
+[  122s] python38-html5lib-1.1-3.2             ########################################
+[  122s] python38-beautifulsoup4-4.10.0-1.3    ########################################
+[  123s] python38-bleach-5.0.1-2.2             ########################################
+[  123s] python38-backcall-0.2.0-1.8           ########################################
+[  123s] python311-zipp-3.8.1-1.2              ########################################
+[  123s] python311-importlib-metadata-6.1.0-1.1########################################
+[  123s] python311-webcolors-1.12-1.2          ########################################
+[  123s] python311-wcwidth-0.2.6-1.2           ########################################
+[  123s] python311-uri-template-1.2.0-1.2      ########################################
+[  123s] python311-tomli-2.0.1-1.3             ########################################
+[  123s] python311-soupsieve-2.3.2.post1-1.2   ########################################
+[  123s] python311-sniffio-1.3.0-1.2           ########################################
+[  123s] python311-anyio-3.6.2-3.1             ########################################
+[  123s] python311-python-json-logger-2.0.4-1.2########################################
+[  123s] python311-pyrsistent-0.19.3-1.2       ########################################
+[  123s] python311-pycparser-2.21-1.5          ########################################
+[  123s] python311-cffi-1.15.1-3.2             ########################################
+[  124s] python311-argon2-cffi-bindings-21.2.0-########################################
+[  124s] python311-argon2-cffi-21.3.0-1.3      ########################################
+[  124s] python311-pure-eval-0.2.2-1.2         ########################################
+[  124s] python311-pluggy-1.0.0-1.5            ########################################
+[  124s] python311-platformdirs-2.5.2-1.2      ########################################
+[  124s] python311-pickleshare-0.7.5-4.2       ########################################
+[  124s] python311-parso-0.8.3-2.2             ########################################
+[  125s] python311-jedi-0.18.2-4.2             ########################################
+[  125s] python311-pandocfilters-1.5.0-1.2     ########################################
+[  125s] python311-mistune-2.0.4-1.2           ########################################
+[  125s] python311-iniconfig-2.0.0-1.1         ########################################
+[  126s] python311-fqdn-1.5.1-1.2              ########################################
+[  126s] python311-executing-1.2.0-4.2         ########################################
+[  126s] python311-exceptiongroup-1.1.1-1.1    ########################################
+[  126s] python311-entrypoints-0.4-1.2         ########################################
+[  126s] python311-defusedxml-0.7.1-2.5        ########################################
+[  126s] python311-decorator-5.1.1-1.3         ########################################
+[  127s] python311-debugpy-1.6.6-3.1           ########################################
+[  127s] python311-cssselect-1.2.0-1.2         ########################################
+[  128s] python311-lxml-4.9.2-3.1              ########################################
+[  128s] python311-html5lib-1.1-3.2            ########################################
+[  128s] python311-beautifulsoup4-4.10.0-1.3   ########################################
+[  128s] python311-bleach-5.0.1-2.2            ########################################
+[  128s] python311-backcall-0.2.0-1.8          ########################################
+[  128s] python310-zipp-3.8.1-1.2              ########################################
+[  128s] python310-importlib-metadata-6.1.0-1.1########################################
+[  128s] python310-webcolors-1.12-1.2          ########################################
+[  128s] python310-wcwidth-0.2.6-1.2           ########################################
+[  129s] python310-uri-template-1.2.0-1.2      ########################################
+[  129s] python310-tomli-2.0.1-1.3             ########################################
+[  129s] python310-soupsieve-2.3.2.post1-1.2   ########################################
+[  129s] python310-sniffio-1.3.0-1.2           ########################################
+[  129s] python310-anyio-3.6.2-3.1             ########################################
+[  129s] python310-python-json-logger-2.0.4-1.2########################################
+[  129s] python310-pyrsistent-0.19.3-1.2       ########################################
+[  129s] python310-pycparser-2.21-1.5          ########################################
+[  129s] python310-cffi-1.15.1-3.2             ########################################
+[  129s] python310-argon2-cffi-bindings-21.2.0-########################################
+[  129s] python310-argon2-cffi-21.3.0-1.3      ########################################
+[  129s] python310-pure-eval-0.2.2-1.2         ########################################
+[  129s] python310-pluggy-1.0.0-1.5            ########################################
+[  129s] python310-platformdirs-2.5.2-1.2      ########################################
+[  129s] python310-pickleshare-0.7.5-4.2       ########################################
+[  130s] python310-parso-0.8.3-2.2             ########################################
+[  131s] python310-jedi-0.18.2-4.2             ########################################
+[  131s] python310-pandocfilters-1.5.0-1.2     ########################################
+[  131s] python310-mistune-2.0.4-1.2           ########################################
+[  131s] python310-iniconfig-2.0.0-1.1         ########################################
+[  131s] python310-fqdn-1.5.1-1.2              ########################################
+[  131s] python310-executing-1.2.0-4.2         ########################################
+[  131s] python310-exceptiongroup-1.1.1-1.1    ########################################
+[  131s] python310-entrypoints-0.4-1.2         ########################################
+[  131s] python310-defusedxml-0.7.1-2.5        ########################################
+[  131s] python310-decorator-5.1.1-1.3         ########################################
+[  133s] python310-debugpy-1.6.6-3.1           ########################################
+[  133s] python310-cssselect-1.2.0-1.2         ########################################
+[  134s] python310-lxml-4.9.2-3.1              ########################################
+[  134s] python310-html5lib-1.1-3.2            ########################################
+[  134s] python310-beautifulsoup4-4.10.0-1.3   ########################################
+[  134s] python310-bleach-5.0.1-2.2            ########################################
+[  134s] python310-backcall-0.2.0-1.8          ########################################
+[  134s] libunwind8-1.6.2-4.1                  ########################################
+[  134s] libsystemd0-mini-253.1-2.1            ########################################
+[  134s] libprocps8-3.3.17-12.1                ########################################
+[  135s] procps-3.3.17-12.1                    ########################################
+[  135s] python310-psutil-5.9.4-2.2            ########################################
+[  135s] python311-psutil-5.9.4-2.2            ########################################
+[  135s] python38-psutil-5.9.4-2.2             ########################################
+[  136s] python39-psutil-5.9.4-2.2             ########################################
+[  136s] libsodium23-1.0.18-2.2                ########################################
+[  136s] libzmq5-4.3.4-4.1                     ########################################
+[  136s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  136s] alts-1.2+3.b848aad-3.1                ########################################
+[  137s] python310-pytest-7.2.0-3.1            ########################################
+[  137s] python311-pytest-7.2.0-3.1            ########################################
+[  138s] python38-pytest-7.2.0-3.1             ########################################
+[  139s] python39-pytest-7.2.0-3.1             ########################################
+[  141s] python310-Pygments-2.14.0-1.2         ########################################
+[  143s] python311-Pygments-2.14.0-1.2         ########################################
+[  144s] python38-Pygments-2.14.0-1.2          ########################################
+[  146s] python39-Pygments-2.14.0-1.2          ########################################
+[  147s] python310-jsonschema-4.17.3-2.2       ########################################
+[  147s] python311-jsonschema-4.17.3-2.2       ########################################
+[  148s] python39-jsonschema-4.17.3-2.2        ########################################
+[  148s] python38-jsonschema-4.17.3-2.2        ########################################
+[  148s] python38-fastjsonschema-2.16.3-1.1    ########################################
+[  148s] python39-fastjsonschema-2.16.3-1.1    ########################################
+[  148s] python311-fastjsonschema-2.16.3-1.1   ########################################
+[  148s] python310-fastjsonschema-2.16.3-1.1   ########################################
+[  149s] python39-prompt_toolkit-3.0.36-1.3    ########################################
+[  149s] python39-stack-data-0.2.0-2.2         ########################################
+[  149s] python39-jupyterlab-pygments-0.2.2-3.2########################################
+[  149s] python38-prompt_toolkit-3.0.36-1.3    ########################################
+[  150s] python38-stack-data-0.2.0-2.2         ########################################
+[  150s] python38-jupyterlab-pygments-0.2.2-3.2########################################
+[  151s] python311-prompt_toolkit-3.0.36-1.3   ########################################
+[  151s] python311-stack-data-0.2.0-2.2        ########################################
+[  151s] python311-jupyterlab-pygments-0.2.2-3.########################################
+[  151s] python310-prompt_toolkit-3.0.36-1.3   ########################################
+[  152s] python310-stack-data-0.2.0-2.2        ########################################
+[  152s] python310-jupyterlab-pygments-0.2.2-3.########################################
+[  152s] python310-jsonpointer-2.3-1.3         ########################################
+[  152s] python310-jsonschema-format-nongpl-4.1########################################
+[  152s] python310-jupyter-events-0.6.3-1.2    ########################################
+[  155s] python310-pip-22.3.1-1.2              ########################################
+[  155s] python310-3.10.10-2.1                 ########################################
+[  155s] python310-tornado6-6.2-5.2            ########################################
+[  156s] python310-pyzmq-24.0.1-3.2            ########################################
+[  156s] jupyter-jupyter-client-7.4.9-5.2      ########################################
+[  156s] python310-jupyter-client-7.4.9-5.2    ########################################
+[  156s] python310-jupyter-core-5.2.0-1.2      ########################################
+[  157s] python310-ipykernel-6.21.1-1.2        ########################################
+[  158s] python310-ipython-8.9.0-1.2           ########################################
+[  161s] python310-nbformat-5.7.3-1.2          ########################################
+[  161s] python310-terminado-0.17.1-1.2        ########################################
+[  162s] python310-nbclient-0.7.2-1.2          ########################################
+[  162s] jupyter-nbconvert-7.2.10-1.1          ########################################
+[  162s] python310-nbconvert-7.2.10-1.1        ########################################
+[  163s] python310-ipython_genutils-0.2.0-3.7  ########################################
+[  163s] python310-websocket-client-1.4.2-2.2  ########################################
+[  163s] python311-jsonpointer-2.3-1.3         ########################################
+[  163s] python311-jsonschema-format-nongpl-4.1########################################
+[  163s] python311-jupyter-events-0.6.3-1.2    ########################################
+[  166s] python311-pip-22.3.1-1.2              ########################################
+[  166s] python311-3.11.2-1.1                  ########################################
+[  167s] python311-tornado6-6.2-5.2            ########################################
+[  167s] python311-pyzmq-24.0.1-3.2            ########################################
+[  168s] python311-jupyter-client-7.4.9-5.2    ########################################
+[  168s] python311-jupyter-core-5.2.0-1.2      ########################################
+[  168s] python311-ipykernel-6.21.1-1.2        ########################################
+[  170s] python311-ipython-8.9.0-1.2           ########################################
+[  173s] python311-nbformat-5.7.3-1.2          ########################################
+[  174s] python311-terminado-0.17.1-1.2        ########################################
+[  174s] python311-nbclient-0.7.2-1.2          ########################################
+[  174s] python311-nbconvert-7.2.10-1.1        ########################################
+[  174s] python311-ipython_genutils-0.2.0-3.7  ########################################
+[  175s] python311-websocket-client-1.4.2-2.2  ########################################
+[  175s] python38-jsonpointer-2.3-1.3          ########################################
+[  175s] python38-jsonschema-format-nongpl-4.17########################################
+[  175s] python38-jupyter-events-0.6.3-1.2     ########################################
+[  178s] python38-pip-22.3.1-1.2               ########################################
+[  178s] python38-3.8.16-5.1                   ########################################
+[  178s] python38-tornado6-6.2-5.2             ########################################
+[  179s] python38-pyzmq-24.0.1-3.2             ########################################
+[  179s] python38-jupyter-client-7.4.9-5.2     ########################################
+[  179s] python38-jupyter-core-5.2.0-1.2       ########################################
+[  179s] python38-ipykernel-6.21.1-1.2         ########################################
+[  181s] python38-ipython-8.9.0-1.2            ########################################
+[  184s] python38-nbformat-5.7.3-1.2           ########################################
+[  184s] python38-terminado-0.17.1-1.2         ########################################
+[  184s] python38-nbclient-0.7.2-1.2           ########################################
+[  185s] python38-nbconvert-7.2.10-1.1         ########################################
+[  185s] python38-ipython_genutils-0.2.0-3.7   ########################################
+[  185s] python38-websocket-client-1.4.2-2.2   ########################################
+[  185s] python39-jsonpointer-2.3-1.3          ########################################
+[  186s] python39-jsonschema-format-nongpl-4.17########################################
+[  186s] python39-jupyter-events-0.6.3-1.2     ########################################
+[  188s] python39-pip-22.3.1-1.2               ########################################
+[  188s] python39-3.9.16-5.1                   ########################################
+[  189s] python39-tornado6-6.2-5.2             ########################################
+[  189s] python39-pyzmq-24.0.1-3.2             ########################################
+[  189s] python39-jupyter-client-7.4.9-5.2     ########################################
+[  189s] python39-jupyter-core-5.2.0-1.2       ########################################
+[  190s] python39-ipykernel-6.21.1-1.2         ########################################
+[  191s] python39-ipython-8.9.0-1.2            ########################################
+[  194s] python39-nbformat-5.7.3-1.2           ########################################
+[  194s] python39-terminado-0.17.1-1.2         ########################################
+[  194s] python311-jupyter-server-terminals-0.4########################################
+[  194s] python310-jupyter-server-terminals-0.4########################################
+[  194s] python38-jupyter-server-terminals-0.4.########################################
+[  194s] python39-jupyter-server-terminals-0.4.########################################
+[  194s] jupyter-server-terminals-0.4.4-1.2    ########################################
+[  195s] python38-jupyter-server-2.2.1-1.2     ########################################
+[  195s] python310-jupyter-server-2.2.1-1.2    ########################################
+[  196s] python311-jupyter-server-2.2.1-1.2    ########################################
+[  197s] python39-nbclient-0.7.2-1.2           ########################################
+[  197s] python39-nbconvert-7.2.10-1.1         ########################################
+[  197s] python39-ipython_genutils-0.2.0-3.7   ########################################
+[  197s] python39-websocket-client-1.4.2-2.2   ########################################
+[  198s] python39-jupyter-server-2.2.1-1.2     ########################################
+[  198s] python310-notebook-shim-0.2.2-1.2     ########################################
+[  198s] python311-notebook-shim-0.2.2-1.2     ########################################
+[  198s] python38-notebook-shim-0.2.2-1.2      ########################################
+[  198s] jupyter-notebook-shim-0.2.2-1.2       ########################################
+[  198s] python39-notebook-shim-0.2.2-1.2      ########################################
+[  198s] jupyter-nbclassic-0.5.3-1.1           ########################################
+[  206s] python310-nbclassic-0.5.3-1.1         ########################################
+[  210s] python311-nbclassic-0.5.3-1.1         ########################################
+[  215s] python38-nbclassic-0.5.3-1.1          ########################################
+[  220s] python39-nbclassic-0.5.3-1.1          ########################################
+[  220s] python39-pytest-jupyter-0.6.2-2.2     ########################################
+[  220s] python39-tornado-6.2-15.5             ########################################
+[  220s] python39-pytest-tornasync-0.6.0.post2-########################################
+[  220s] python38-pytest-jupyter-0.6.2-2.2     ########################################
+[  220s] python38-tornado-6.2-15.5             ########################################
+[  220s] python38-pytest-tornasync-0.6.0.post2-########################################
+[  220s] python311-pytest-jupyter-0.6.2-2.2    ########################################
+[  220s] python311-pytest-tornasync-0.6.0.post2########################################
+[  220s] python310-pytest-jupyter-0.6.2-2.2    ########################################
+[  220s] python310-tornado-6.2-15.5            ########################################
+[  220s] python310-pytest-tornasync-0.6.0.post2########################################
+[  220s] python39-pytest-console-scripts-1.3.1-########################################
+[  220s] python38-pytest-console-scripts-1.3.1-########################################
+[  220s] python311-pytest-console-scripts-1.3.1########################################
+[  220s] python310-pytest-console-scripts-1.3.1########################################
+[  220s] update-desktop-files-84.87-6.1        ########################################
+[  220s] jupyter-rpm-macros-20221227-9.1       ########################################
+[  220s] hicolor-icon-theme-0.17-4.1           ########################################
+[  220s] fdupes-2.2.1-1.1                      ########################################
+[  236s] now finalizing build dir...
+[  236s] ... running 01-add_abuild_user_to_trusted_group
+[  237s] ... running 02-set_timezone_to_utc
+[  237s] ... running 03-set-permissions-secure
+[  237s] ... running 11-hack_uname_version_to_kernel_version
+[  245s] -----------------------------------------------------------------
+[  245s] I have the following modifications for python-nbclassic.spec:
+[  245s] 19c19
+[  245s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  245s] ---
+[  245s] > %global flavor test%{nil}
+[  245s] 31c31
+[  245s] < Release:        0
+[  245s] ---
+[  245s] > Release:        1.1
+[  252s] build target is riscv64-suse-linux
+[  252s] -----------------------------------------------------------------
+[  252s] ----- building python-nbclassic.spec (user abuild)
+[  252s] -----------------------------------------------------------------
+[  252s] -----------------------------------------------------------------
+[  256s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/af2c592b043863542bde227c8f355016-python-nbclassic:test' /home/abuild/rpmbuild/SOURCES/python-nbclassic.spec
+[  300s] Building target platforms: riscv64-suse-linux
+[  300s] Building for target riscv64-suse-linux
+[  300s] setting SOURCE_DATE_EPOCH=1679184000
+[  300s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.uLCTTW
+[  301s] + umask 022
+[  301s] + cd /home/abuild/rpmbuild/BUILD
+[  301s] + cd /home/abuild/rpmbuild/BUILD
+[  301s] + rm -rf nbclassic-0.5.3
+[  301s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/nbclassic-0.5.3-gh.tar.gz
+[  302s] + STATUS=0
+[  302s] + '[' 0 -ne 0 ']'
+[  302s] + cd nbclassic-0.5.3
+[  302s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  302s] + RPM_EC=0
+[  302s] ++ jobs -p
+[  302s] + exit 0
+[  302s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.VmPUiZ
+[  302s] + umask 022
+[  302s] + cd /home/abuild/rpmbuild/BUILD
+[  302s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-nbclassic-test-0.5.3-1.1.riscv64
+[  302s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-nbclassic-test-0.5.3-1.1.riscv64
+[  302s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  302s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-nbclassic-test-0.5.3-1.1.riscv64
+[  302s] + cd nbclassic-0.5.3
+[  302s] + ref=/usr/lib/rpm
+[  302s] + mints=0
+[  302s] + case $(uname -m) in
+[  302s] ++ uname -m
+[  302s] + mints=20160911
+[  302s] + for s in guess sub
+[  302s] ++ find -maxdepth 8 -name config.guess
+[  303s] + for s in guess sub
+[  303s] ++ find -maxdepth 8 -name config.sub
+[  303s] + :
+[  303s] + RPM_EC=0
+[  303s] ++ jobs -p
+[  303s] + exit 0
+[  303s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.7fEF3B
+[  303s] + umask 022
+[  303s] + cd /home/abuild/rpmbuild/BUILD
+[  303s] + cd nbclassic-0.5.3
+[  303s] + set +x
+[  303s] Using libalternatives variant 38 for ipython in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  303s] Using libalternatives variant 38 for ipython3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  303s] Using libalternatives variant 38 for jsonpointer in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  303s] Using libalternatives variant 38 for jsonschema in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  303s] Using libalternatives variant 38 for jupyter in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-dejavu in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-events in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-execute in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-nbclassic in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-nbclassic-bundlerextension in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-nbclassic-extension in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-nbclassic-serverextension in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-nbconvert in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-server in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  304s] Using libalternatives variant 38 for jupyter-trust in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  305s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  305s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  305s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  305s] Using libalternatives variant 38 for pygmentize in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  305s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  305s] Using libalternatives variant 38 for wsdump in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  307s] Using alternative send2trash-3.8 for send2trash in ./build/flavorbin during Python 3.8 expansions.
+[  307s] Using libalternatives variant 39 for ipython in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for ipython3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jsonpointer in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jsonschema in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-dejavu in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-events in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-execute in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-nbclassic in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-nbclassic-bundlerextension in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-nbclassic-extension in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  308s] Using libalternatives variant 39 for jupyter-nbclassic-serverextension in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for jupyter-nbconvert in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for jupyter-server in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for jupyter-trust in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for pygmentize in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  309s] Using libalternatives variant 39 for wsdump in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  312s] Using alternative send2trash-3.9 for send2trash in ./build/flavorbin during Python 3.9 expansions.
+[  312s] Using libalternatives variant 311 for ipython in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for ipython3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for jsonpointer in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for jsonschema in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for jupyter in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for jupyter-dejavu in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for jupyter-events in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-execute in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-nbclassic in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-nbclassic-bundlerextension in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-nbclassic-extension in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-nbclassic-serverextension in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-nbconvert in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-server in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] Using libalternatives variant 311 for jupyter-trust in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  314s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  314s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  314s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  314s] Using libalternatives variant 311 for pygmentize in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  314s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  314s] Using libalternatives variant 311 for wsdump in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  317s] Using alternative send2trash-3.11 for send2trash in ./build/flavorbin during Python 3.11 expansions.
+[  319s] Using alternative send2trash-3.10 for send2trash in ./build/flavorbin during Python 3.10 expansions.
+[  319s] + export PATH=/home/abuild/rpmbuild/BUILD/nbclassic-0.5.3/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  319s] + PATH=/home/abuild/rpmbuild/BUILD/nbclassic-0.5.3/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  319s] ++ '[' -f _current_flavor ']'
+[  319s] ++ cat _current_flavor
+[  319s] + last_flavor=python310
+[  319s] + '[' -z python310 ']'
+[  319s] + '[' python310 '!=' python38 ']'
+[  319s] + '[' -d build ']'
+[  319s] + mv build _build.python310
+[  319s] + '[' -d _build.python38 ']'
+[  319s] + mv _build.python38 build
+[  319s] + echo python38
+[  319s] + python_flavor=python38
+[  319s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-nbclassic-test-0.5.3-1.1.riscv64/usr/lib/python3.8/site-packages
+[  319s] + PYTHONDONTWRITEBYTECODE=1
+[  319s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  340s] ============================= test session starts ==============================
+[  340s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  340s] cachedir: .pytest_cache
+[  340s] rootdir: /home/abuild/rpmbuild/BUILD/nbclassic-0.5.3, configfile: pyproject.toml, testpaths: tests
+[  340s] plugins: anyio-3.6.2, tornasync-0.6.0.post2, console-scripts-1.3.1
+[  340s] collecting ... collected 7 items
+[  340s] 
+[  352s] tests/test_notebookapp.py::test_tree_handler[jp_server_config0] PASSED   [ 14%]
+[  356s] tests/test_notebookapp.py::test_tree_handler[jp_server_config1] PASSED   [ 28%]
+[  381s] tests/test_notebookapp.py::test_notebook_handler[jp_server_config0] FAILED [ 42%]
+[  420s] tests/test_notebookapp.py::test_notebook_handler[jp_server_config1] PASSED [ 57%]
+[  422s] tests/test_notebookapp.py::test_edit_handler[jp_server_config0] PASSED   [ 71%]
+[  424s] tests/test_notebookapp.py::test_edit_handler[jp_server_config1] PASSED   [ 85%]
+[  426s] tests/test_notebookapp.py::test_terminal_handler PASSED                  [100%]
+[  426s] 
+[  426s] =================================== FAILURES ===================================
+[  426s] ___________________ test_notebook_handler[jp_server_config0] ___________________
+[  426s] 
+[  426s] notebooks = ('notebook1.ipynb', 'nbclassic_test_notebooks/notebook2.ipynb', 'nbclassic_test_notebooks/level2/notebook3.ipynb')
+[  426s] jp_fetch = <function jp_fetch.<locals>.client_fetch at 0x4012e69a60>
+[  426s] 
+[  426s]     @config
+[  426s]     async def test_notebook_handler(notebooks, jp_fetch):
+[  426s]         for nbpath in notebooks:
+[  426s] >           r = await jp_fetch('notebooks', nbpath)
+[  426s] E           tornado.simple_httpclient.HTTPTimeoutError: Timeout during request
+[  426s] 
+[  426s] tests/test_notebookapp.py:58: HTTPTimeoutError
+[  426s] ---------------------------- Captured stdout setup -----------------------------
+[  426s] 
+[  426s]   _   _          _      _
+[  426s]  | | | |_ __  __| |__ _| |_ ___
+[  426s]  | |_| | '_ \/ _` / _` |  _/ -_)
+[  426s]   \___/| .__/\__,_\__,_|\__\___|
+[  426s]        |_|
+[  426s]                                                                            
+[  426s] Read the migration plan to Notebook 7 to learn about the new features and the actions to take if you are using extensions.
+[  426s] 
+[  426s] https://jupyter-notebook.readthedocs.io/en/latest/migrate_to_notebook7.html
+[  426s] 
+[  426s] Please note that updating to Notebook 7 might break some of your extensions.
+[  426s] 
+[  426s] ---------------------------- Captured stderr setup -----------------------------
+[  426s] [D 2023-03-21 17:50:05.295 ServerApp] Config changed: {'ServerApp': {'contents_manager_class': 'jupyter_server.services.contents.largefilemanager.LargeFileManager', 'jpserver_extensions': {'nbclassic': True, 'notebook_shim': True, 'jupyter_server_terminals': True}}, 'NotebookNotary': {'db_file': ':memory:'}, 'IdentityProvider': {'token': <LazyConfigValue {}>}}
+[  426s] A `_jupyter_server_extension_points` function was not found in nbclassic. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[  426s] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[  426s] ------------------------------ Captured log setup ------------------------------
+[  426s] DEBUG    ServerApp:application.py:457 Config changed: {'ServerApp': {'contents_manager_class': 'jupyter_server.services.contents.largefilemanager.LargeFileManager', 'jpserver_extensions': {'nbclassic': True, 'notebook_shim': True, 'jupyter_server_terminals': True}}, 'NotebookNotary': {'db_file': ':memory:'}, 'IdentityProvider': {'token': <LazyConfigValue {}>}}
+[  426s] DEBUG    ServerApp:application.py:190 Searching ['/tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/config', '/home/abuild/.local/etc/jupyter', '/tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/env/etc/jupyter', '/tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/etc/jupyter'] for config files
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_config in /tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/etc/jupyter
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_config in /tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/env/etc/jupyter
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_config in /home/abuild/.local/etc/jupyter
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_config in /tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/config
+[  426s] DEBUG    ServerApp:application.py:457 Config changed: {'ServerApp': {'contents_manager_class': 'jupyter_server.services.contents.largefilemanager.LargeFileManager', 'jpserver_extensions': {'nbclassic': True, 'notebook_shim': True, 'jupyter_server_terminals': True}}, 'NotebookNotary': {'db_file': ':memory:'}, 'IdentityProvider': {'token': <LazyConfigValue {}>}}
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_server_config in /tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/etc/jupyter
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_server_config in /tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/env/etc/jupyter
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_server_config in /home/abuild/.local/etc/jupyter
+[  426s] DEBUG    ServerApp:application.py:902 Looking for jupyter_server_config in /tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/config
+[  426s] DEBUG    ServerApp:application.py:457 Config changed: {'ServerApp': {'contents_manager_class': 'jupyter_server.services.contents.largefilemanager.LargeFileManager', 'jpserver_extensions': {'nbclassic': True, 'notebook_shim': True, 'jupyter_server_terminals': True}}, 'NotebookNotary': {'db_file': ':memory:'}, 'IdentityProvider': {'token': <LazyConfigValue {}>}}
+[  426s] DEBUG    ServerApp:application.py:457 Config changed: {'ServerApp': {'contents_manager_class': 'jupyter_server.services.contents.largefilemanager.LargeFileManager', 'jpserver_extensions': {'nbclassic': True, 'notebook_shim': True, 'jupyter_server_terminals': True}}, 'NotebookNotary': {'db_file': ':memory:'}, 'IdentityProvider': {'token': <LazyConfigValue {}>}}
+[  426s] DEBUG    ServerApp:config_manager.py:93 Paths used for configuration of jupyter_server_config: 
+[  426s] 	/tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/etc/jupyter/jupyter_server_config.json
+[  426s] DEBUG    ServerApp:config_manager.py:93 Paths used for configuration of jupyter_server_config: 
+[  426s] 	/tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/env/etc/jupyter/jupyter_server_config.json
+[  426s] DEBUG    ServerApp:config_manager.py:93 Paths used for configuration of jupyter_server_config: 
+[  426s] 	/home/abuild/.local/etc/jupyter/jupyter_server_config.json
+[  426s] DEBUG    ServerApp:config_manager.py:93 Paths used for configuration of jupyter_server_config: 
+[  426s] 	/tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/config/jupyter_server_config.json
+[  426s] INFO     ServerApp:serverapp.py:2788 Serving notebooks from local directory: /tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/root_dir
+[  426s] INFO     ServerApp:serverapp.py:2788 Jupyter Server 2.2.1 is running at:
+[  426s] INFO     ServerApp:serverapp.py:2788 http://localhost:44087/a%40b/?token=6833072a0623965c6d3ec8383e751658c98317013cdb5606
+[  426s] INFO     ServerApp:serverapp.py:2788     http://127.0.0.1:44087/a%40b/?token=6833072a0623965c6d3ec8383e751658c98317013cdb5606
+[  426s] INFO     ServerApp:serverapp.py:2789 Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[  426s] CRITICAL ServerApp:serverapp.py:2852 
+[  426s] 
+[  426s] To access the server, open this file in a browser:
+[  426s]     file:///tmp/pytest-of-abuild/pytest-0/test_notebook_handler_jp_serve0/runtime/jpserver-8192-open.html
+[  426s] Or copy and paste one of these URLs:
+[  426s]     http://localhost:44087/a%40b/?token=6833072a0623965c6d3ec8383e751658c98317013cdb5606
+[  426s]     http://127.0.0.1:44087/a%40b/?token=6833072a0623965c6d3ec8383e751658c98317013cdb5606
+[  426s] ----------------------------- Captured stderr call -----------------------------
+[  426s] [I 2023-03-21 17:50:06.310 NotebookApp] Generating new user for token-authenticated request: 9aa85d615f2c4170afd908a8f5207410
+[  426s] ------------------------------ Captured log call -------------------------------
+[  426s] DEBUG    ServerApp:identity.py:447 Accepting token-authenticated request from 127.0.0.1
+[  426s] DEBUG    ServerApp:handlers.py:980 Path base/images/favicon-notebook.ico served from /home/abuild/rpmbuild/BUILD/nbclassic-0.5.3/nbclassic/static/base/images/favicon-notebook.ico
+[  426s] DEBUG    ServerApp:handlers.py:980 Path notebook/css/override.css served from /home/abuild/rpmbuild/BUILD/nbclassic-0.5.3/nbclassic/static/notebook/css/override.css
+[  426s] ---------------------------- Captured log teardown -----------------------------
+[  426s] INFO     ServerApp:serverapp.py:2568 Shutting down 3 extensions
+[  426s] DEBUG    ServerApp:manager.py:369 jupyter_server_terminals | extension app 'jupyter_server_terminals' stopping
+[  426s] DEBUG    ServerApp:manager.py:371 jupyter_server_terminals | extension app 'jupyter_server_terminals' stopped
+[  426s] DEBUG    ServerApp:manager.py:369 nbclassic | extension app 'nbclassic' stopping
+[  426s] DEBUG    ServerApp:manager.py:371 nbclassic | extension app 'nbclassic' stopped
+[  426s] =============================== warnings summary ===============================
+[  426s] ../../../../../usr/lib/python3.8/site-packages/jupyter_server/base/handlers.py:22
+[  426s]   /usr/lib/python3.8/site-packages/jupyter_server/base/handlers.py:22: DeprecationWarning: Jupyter is migrating its paths to use standard platformdirs
+[  426s]   given by the platformdirs library.  To remove this warning and
+[  426s]   see the appropriate new directories, set the environment variable
+[  426s]   `JUPYTER_PLATFORM_DIRS=1` and then run `jupyter --paths`.
+[  426s]   The use of platformdirs will be the default in `jupyter_core` v6
+[  426s]     from jupyter_core.paths import is_hidden
+[  426s] 
+[  426s] nbclassic/notebookapp.py:328
+[  426s]   /home/abuild/rpmbuild/BUILD/nbclassic-0.5.3/nbclassic/notebookapp.py:328: DeprecationWarning: invalid escape sequence \/
+[  426s]     print("""
+[  426s] 
+[  426s] tests/test_notebookapp.py::test_tree_handler[jp_server_config0]
+[  426s] tests/test_notebookapp.py::test_tree_handler[jp_server_config1]
+[  426s] tests/test_notebookapp.py::test_notebook_handler[jp_server_config0]
+[  426s] tests/test_notebookapp.py::test_notebook_handler[jp_server_config1]
+[  426s] tests/test_notebookapp.py::test_edit_handler[jp_server_config0]
+[  426s] tests/test_notebookapp.py::test_edit_handler[jp_server_config1]
+[  426s] tests/test_notebookapp.py::test_terminal_handler
+[  426s]   /usr/lib/python3.8/site-packages/traitlets/traitlets.py:1872: DeprecationWarning: ServerApp.token config is deprecated in jupyter-server 2.0. Use IdentityProvider.token
+[  426s]     return self._get_trait_default_generator(names[0])(self)
+[  426s] 
+[  426s] tests/test_notebookapp.py::test_tree_handler[jp_server_config0]
+[  426s] tests/test_notebookapp.py::test_notebook_handler[jp_server_config0]
+[  426s] tests/test_notebookapp.py::test_edit_handler[jp_server_config0]
+[  426s]   /usr/lib/python3.8/site-packages/jupyter_server/serverapp.py:2535: DeprecationWarning: The synchronous ContentsManager classes are deprecated and will not be supported in Jupyter Server 3.0
+[  426s]     self.init_configurables()
+[  426s] 
+[  426s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  426s] =========================== short test summary info ============================
+[  426s] FAILED tests/test_notebookapp.py::test_notebook_handler[jp_server_config0] - ...
+[  426s] ============= 1 failed, 6 passed, 12 warnings in 86.20s (0:01:26) ==============
+[  427s] error: Bad exit status from /var/tmp/rpm-tmp.7fEF3B (%check)
+[  427s] 
+[  427s] RPM build errors:
+[  427s]     Bad exit status from /var/tmp/rpm-tmp.7fEF3B (%check)
+[  428s] ### VM INTERACTION START ###
+[  428s] [  418.673633][    T1] sysrq: Power Off
+[  428s] [  418.680377][   T18] reboot: Power down
+[  428s] ### VM INTERACTION END ###
+[  428s] 
+[  428s] old-atreju2 failed "build python-nbclassic.spec" at Tue Mar 21 17:51:18 UTC 2023.
+[  428s] 

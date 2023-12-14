@@ -1,0 +1,1599 @@
+[    0s] Memory limit set to 43204520KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_9
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing docker build
+[    0s] 
+[    0s] 
+[    0s] oerv-obs-worker-01 started "build _service:tar_scm:pin-gcc-client.spec" at Mon Apr  3 05:17:18 UTC 2023.
+[    0s] 
+[    0s] Building pin-gcc-client for project 'openEuler:23.03' repository '23.03' arch 'riscv64' srcmd5 'bf471b40287c6db7ee9c00052e99ac70'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_9/.build-srcdir/_service:tar_scm:pin-gcc-client.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_9/.build-srcdir/_service:tar_scm:pin-gcc-client.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/9/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_9/.build.rpmlist /var/cache/obs/worker/root_9/.build-srcdir/_service:tar_scm:pin-gcc-client.spec build ...
+[    2s] cycle: coreutils -> bash
+[    2s]   breaking dependency coreutils -> bash
+[    2s] cycle: coreutils -> info
+[    2s]   breaking dependency coreutils -> info
+[    2s] cycle: filesystem -> coreutils -> glibc
+[    2s]   breaking dependency filesystem -> coreutils
+[    2s] cycle: filesystem -> bash -> coreutils -> glibc
+[    2s]   breaking dependency filesystem -> bash
+[    2s] cycle: coreutils -> libcap
+[    2s]   breaking dependency coreutils -> libcap
+[    2s] cycle: coreutils -> openssl-libs
+[    2s]   breaking dependency coreutils -> openssl-libs
+[    2s] cycle: systemd -> audit
+[    2s]   breaking dependency audit -> systemd
+[    2s] cycle: perl-Carp -> perl-libs
+[    2s]   breaking dependency perl-libs -> perl-Carp
+[    2s] cycle: perl-libs -> perl-Exporter
+[    2s]   breaking dependency perl-libs -> perl-Exporter
+[    2s] cycle: perl-Carp -> perl-Exporter
+[    2s]   breaking dependency perl-Exporter -> perl-Carp
+[    2s] cycle: nss-util -> nss
+[    2s]   breaking dependency nss -> nss-util
+[    2s] cycle: nss-softokn -> nss-util -> nss
+[    2s]   breaking dependency nss -> nss-softokn
+[    2s] cycle: perl-constant -> perl -> perl-Getopt-Long
+[    2s]   breaking dependency perl -> perl-Getopt-Long
+[    2s] cycle: perl-constant -> perl
+[    2s]   breaking dependency perl -> perl-constant
+[    2s] cycle: perl -> perl-Data-Dumper
+[    2s]   breaking dependency perl-Data-Dumper -> perl
+[    2s] cycle: perl-constant -> perl -> perl-Data-Dumper
+[    2s]   breaking dependency perl -> perl-Data-Dumper
+[    2s] cycle: rpm -> rpm-libs
+[    2s]   breaking dependency rpm -> rpm-libs
+[    2s] [1/114] preinstalling avahi-devel...
+[    2s] [2/114] preinstalling kernel-headers...
+[    2s] [3/114] preinstalling libraqm-devel...
+[    2s] [4/114] preinstalling pulseaudio-libs-devel...
+[    2s] [5/114] preinstalling python3-setuptools...
+[    2s] [6/114] preinstalling python3-pip...
+[    2s] [7/114] preinstalling filesystem...
+[    2s] [8/114] preinstalling dbus...
+[    2s] [9/114] preinstalling glibc...
+[    2s] [10/114] preinstalling libgcc...
+[    2s] [11/114] preinstalling diffutils...
+[    2s] [12/114] preinstalling libatomic...
+[    2s] [13/114] preinstalling libcap-ng...
+[    3s] [14/114] preinstalling libffi...
+[    3s] [15/114] preinstalling libgpg-error...
+[    3s] [16/114] preinstalling libpcap...
+[    3s] [17/114] preinstalling libsmartcols...
+[    3s] [18/114] preinstalling libuuid...
+[    3s] [19/114] preinstalling libxcrypt...
+[    3s] [20/114] preinstalling lz4...
+[    3s] [21/114] preinstalling m4...
+[    3s] [22/114] preinstalling nspr...
+[    3s] [23/114] preinstalling xz-libs...
+[    3s] [24/114] preinstalling attr...
+[    3s] [25/114] preinstalling libdb...
+[    3s] [26/114] preinstalling ncurses-libs...
+[    3s] [27/114] preinstalling zlib...
+[    3s] [28/114] preinstalling audit-libs...
+[    3s] [29/114] preinstalling compat-openssl11-libs...
+[    4s] [30/114] preinstalling iptables-libs...
+[    4s] [31/114] preinstalling libacl...
+[    4s] [32/114] preinstalling libffi-devel...
+[    4s] [33/114] preinstalling libgcrypt...
+[    4s] [34/114] preinstalling p11-kit...
+[    4s] [35/114] preinstalling python3-ldb...
+[    4s] [36/114] preinstalling readline...
+[    4s] [37/114] preinstalling cmake...
+[    5s] [38/114] preinstalling ncurses...
+[    5s] [39/114] preinstalling perl-libs...
+[    5s] [40/114] preinstalling python3-libxml2...
+[    5s] [41/114] preinstalling zstd...
+[    5s] [42/114] preinstalling python3-ldb-devel...
+[    5s] [43/114] preinstalling perl-Exporter...
+[    5s] [44/114] preinstalling pcre...
+[    5s] [45/114] preinstalling pcre2...
+[    5s] [46/114] preinstalling acl...
+[    5s] [47/114] preinstalling sqlite...
+[    5s] [48/114] preinstalling libselinux...
+[    6s] [49/114] preinstalling perl-Carp...
+[    6s] [50/114] preinstalling perl-Digest-MD5...
+[    6s] [51/114] preinstalling sed...
+[    6s] [52/114] preinstalling coreutils...
+[    6s] [53/114] preinstalling openssl-libs...
+[    6s] [54/114] preinstalling bash...
+[    6s] [55/114] preinstalling iproute...
+[    6s] [56/114] preinstalling dnf...
+[    6s] [57/114] preinstalling guile-devel...
+[    6s] [58/114] preinstalling ima-evm-utils-libs...
+[    6s] [59/114] preinstalling bzip2...
+[    6s] [60/114] preinstalling hostname...
+[    7s] [61/114] preinstalling luajit...
+[    7s] [62/114] preinstalling pcre-devel...
+[    7s] [63/114] preinstalling popt...
+[    7s] [64/114] preinstalling elfutils...
+[    7s] [65/114] preinstalling grep...
+[    7s] [66/114] preinstalling info...
+[    7s] [67/114] preinstalling kmod-libs...
+[    7s] [68/114] preinstalling libblkid...
+[    7s] [69/114] preinstalling tar...
+[    7s] [70/114] preinstalling libgcrypt-devel...
+[    7s] [71/114] preinstalling lua...
+[    7s] [72/114] preinstalling openssl...
+[    7s] [73/114] preinstalling audit...
+[    7s] [74/114] preinstalling pam...
+[    7s] [75/114] preinstalling nss...
+[    7s] [76/114] preinstalling luajit-devel...
+[    7s] [77/114] preinstalling efibootmgr...
+[    8s] [78/114] preinstalling elfutils-extra...
+[    8s] [79/114] preinstalling chkconfig...
+[    8s] [80/114] preinstalling copy-jdk-configs...
+[    8s] [81/114] preinstalling libfdisk...
+[    8s] [82/114] preinstalling file...
+[    8s] [83/114] preinstalling libcap...
+[    8s] [84/114] preinstalling libmount...
+[    8s] [85/114] preinstalling libsemanage...
+[    8s] [86/114] preinstalling nss-util...
+[    8s] [87/114] preinstalling xz...
+[    8s] [88/114] preinstalling findutils...
+[    8s] [89/114] preinstalling sudo...
+[    8s] [90/114] preinstalling iputils...
+[    8s] [91/114] preinstalling nss-softokn...
+[    8s] [92/114] preinstalling glib2...
+[    9s] [93/114] preinstalling shadow...
+[    9s] [94/114] preinstalling systemd-libs...
+[    9s] [95/114] preinstalling rpm...
+[    9s] [96/114] preinstalling dbus-libs...
+[    9s] [97/114] preinstalling vala-devel...
+[    9s] [98/114] preinstalling gobject-introspection...
+[    9s] [99/114] preinstalling openEuler-rpm-config...
+[    9s] [100/114] preinstalling rpm-libs...
+[    9s] [101/114] preinstalling util-linux...
+[    9s] [102/114] preinstalling systemd...
+[   10s] [103/114] preinstalling erlang...
+[   10s] [104/114] preinstalling net-tools...
+[   10s] [105/114] preinstalling vala...
+[   10s] [106/114] preinstalling device-mapper...
+[   10s] [107/114] preinstalling supermin...
+[   10s] [108/114] preinstalling perl...
+[   10s] [109/114] preinstalling perl-constant...
+[   10s] [110/114] preinstalling cryptsetup...
+[   10s] [111/114] preinstalling lvm2...
+[   11s] [112/114] preinstalling perl-Getopt-Long...
+[   11s] [113/114] preinstalling perl-Data-Dumper...
+[   11s] [114/114] preinstalling git...
+[   11s] 
+[   11s] copying packages...
+[   13s] reordering...cycle: bash -> coreutils
+[   13s]   breaking dependency coreutils -> bash
+[   13s] cycle: bash -> coreutils -> info
+[   13s]   breaking dependency coreutils -> info
+[   13s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[   13s]   breaking dependency filesystem -> bash
+[   13s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[   13s]   breaking dependency filesystem -> coreutils
+[   13s] cycle: glibc -> basesystem -> filesystem -> setup -> openEuler-release -> bash -> coreutils -> gmp
+[   13s]   breaking dependency filesystem -> setup
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> gmp
+[   13s]   breaking dependency coreutils -> gmp
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils
+[   13s]   breaking dependency coreutils -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> libacl
+[   13s]   breaking dependency coreutils -> libacl
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> attr
+[   13s]   breaking dependency coreutils -> attr
+[   13s] cycle: bash -> coreutils -> libcap
+[   13s]   breaking dependency coreutils -> libcap
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> openssl-libs
+[   13s]   breaking dependency coreutils -> openssl-libs
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash -> coreutils -> libselinux
+[   13s]   breaking dependency bash -> coreutils
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bash
+[   13s]   breaking dependency openEuler-release -> bash
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux
+[   13s]   breaking dependency libselinux -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2
+[   13s]   breaking dependency pcre2 -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2 -> readline
+[   13s]   breaking dependency readline -> glibc
+[   13s] cycle: glibc -> basesystem -> setup -> openEuler-release -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   13s]   breaking dependency glibc -> basesystem
+[   13s] cycle: glibc -> glibc-common -> bash
+[   13s]   breaking dependency glibc-common -> bash
+[   13s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   13s]   breaking dependency glibc-common -> coreutils
+[   13s] cycle: glibc -> glibc-common
+[   13s]   breaking dependency glibc-common -> glibc
+[   13s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   13s]   breaking dependency readline -> ncurses-libs
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[   13s]   breaking dependency libsepol -> bash
+[   13s] cycle: libselinux -> libsepol -> coreutils
+[   13s]   breaking dependency coreutils -> libselinux
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses
+[   13s]   breaking dependency ncurses -> glibc
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses -> ncurses-libs
+[   13s]   breaking dependency ncurses -> ncurses-libs
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> ncurses -> libstdc++
+[   13s]   breaking dependency ncurses -> libstdc++
+[   13s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[   13s]   breaking dependency libsepol -> glibc
+[   13s] cycle: adobe-mappings-cmap -> adobe-mappings-cmap-lang
+[   13s]   breaking dependency adobe-mappings-cmap-lang -> adobe-mappings-cmap
+[   13s] cycle: crypto-policies -> python3 -> openssl-libs
+[   13s]   breaking dependency python3 -> openssl-libs
+[   13s] cycle: libnsl2 -> libtirpc -> krb5-libs -> crypto-policies -> python3
+[   13s]   breaking dependency python3 -> libnsl2
+[   13s] cycle: libtirpc -> krb5-libs -> crypto-policies -> python3
+[   13s]   breaking dependency python3 -> libtirpc
+[   13s] cycle: pam -> libpwquality
+[   13s]   breaking dependency pam -> libpwquality
+[   13s] cycle: systemd -> audit
+[   13s]   breaking dependency audit -> systemd
+[   13s] cycle: rpm -> rpm-libs
+[   13s]   breaking dependency rpm -> rpm-libs
+[   13s] cycle: hunspell-en -> hunspell
+[   13s]   breaking dependency hunspell -> hunspell-en
+[   13s] cycle: perl-libs -> perl-Carp
+[   13s]   breaking dependency perl-libs -> perl-Carp
+[   13s] cycle: perl-libs -> perl-Exporter
+[   13s]   breaking dependency perl-libs -> perl-Exporter
+[   13s] cycle: erlang-erts -> erlang-kernel
+[   13s]   breaking dependency erlang-erts -> erlang-kernel
+[   13s] cycle: erlang-erts -> erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   13s]   breaking dependency erlang-erts -> erlang-stdlib
+[   13s] cycle: nss -> nss-util
+[   13s]   breaking dependency nss -> nss-util
+[   13s] cycle: nss -> nss-softokn -> nss-util
+[   13s]   breaking dependency nss -> nss-softokn
+[   13s] cycle: erlang-kernel -> erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   13s]   breaking dependency erlang-crypto -> erlang-kernel
+[   13s] cycle: erlang-stdlib -> erlang-compiler -> erlang-crypto
+[   13s]   breaking dependency erlang-compiler -> erlang-crypto
+[   13s] cycle: erlang-compiler -> erlang-hipe
+[   13s]   breaking dependency erlang-hipe -> erlang-compiler
+[   13s] cycle: erlang-kernel -> erlang-stdlib -> erlang-compiler -> erlang-hipe
+[   13s]   breaking dependency erlang-stdlib -> erlang-compiler
+[   13s] cycle: erlang-stdlib -> erlang-crypto
+[   13s]   breaking dependency erlang-crypto -> erlang-stdlib
+[   13s] cycle: erlang-kernel -> erlang-stdlib
+[   13s]   breaking dependency erlang-stdlib -> erlang-kernel
+[   13s] cycle: fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[   13s] cycle: fontconfig -> urw-base35-c059-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-c059-fonts
+[   13s] cycle: fontconfig -> urw-base35-bookman-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-bookman-fonts
+[   13s] cycle: fontconfig -> urw-base35-nimbus-sans-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-nimbus-sans-fonts
+[   13s] cycle: fontconfig -> urw-base35-z003-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-z003-fonts
+[   13s] cycle: fontconfig -> urw-base35-nimbus-roman-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-nimbus-roman-fonts
+[   13s] cycle: fontconfig -> urw-base35-gothic-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-gothic-fonts
+[   13s] cycle: fontconfig -> urw-base35-d050000l-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-d050000l-fonts
+[   13s] cycle: fontconfig -> urw-base35-p052-fonts
+[   13s]   breaking dependency fontconfig -> urw-base35-p052-fonts
+[   13s] cycle: perl-Carp -> perl-Exporter
+[   13s]   breaking dependency perl-Exporter -> perl-Carp
+[   13s] cycle: perl -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-PathTools
+[   13s] cycle: perl -> perl-ExtUtils-MakeMaker
+[   13s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[   13s] cycle: perl -> perl-File-Path -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-File-Path
+[   13s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[   13s]   breaking dependency perl -> perl-Getopt-Long
+[   13s] cycle: perl -> perl-Locale-Maketext
+[   13s]   breaking dependency perl -> perl-Locale-Maketext
+[   13s] cycle: perl -> perl-Pod-Simple
+[   13s]   breaking dependency perl -> perl-Pod-Simple
+[   13s] cycle: perl -> perl-Socket
+[   13s]   breaking dependency perl -> perl-Socket
+[   13s] cycle: perl -> perl-Storable
+[   13s]   breaking dependency perl -> perl-Storable
+[   13s] cycle: perl -> perl-Text-Tabs+Wrap
+[   13s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[   13s] cycle: perl -> perl-Time-Local -> perl-constant
+[   13s]   breaking dependency perl -> perl-Time-Local
+[   13s] cycle: perl -> perl-constant
+[   13s]   breaking dependency perl -> perl-constant
+[   13s] cycle: perl -> perl-threads
+[   13s]   breaking dependency perl -> perl-threads
+[   13s] cycle: perl -> perl-threads-shared
+[   13s]   breaking dependency perl -> perl-threads-shared
+[   13s] cycle: perl -> perl-Archive-Tar
+[   13s]   breaking dependency perl -> perl-Archive-Tar
+[   13s] cycle: perl-B-Debug -> perl
+[   13s]   breaking dependency perl -> perl-B-Debug
+[   13s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[   13s]   breaking dependency perl -> perl-CPAN-Meta
+[   13s] cycle: perl -> perl-CPAN-Meta-Requirements
+[   13s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[   13s] cycle: perl -> perl-CPAN-Meta-YAML
+[   13s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[   13s] cycle: perl -> perl-Compress-Raw-Bzip2
+[   13s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[   13s] cycle: perl -> perl-Compress-Raw-Zlib
+[   13s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[   13s] cycle: perl -> perl-Config-Perl-V
+[   13s]   breaking dependency perl -> perl-Config-Perl-V
+[   13s] cycle: perl -> perl-Data-Dumper
+[   13s]   breaking dependency perl -> perl-Data-Dumper
+[   13s] cycle: perl -> perl-Devel-PPPort
+[   13s]   breaking dependency perl -> perl-Devel-PPPort
+[   13s] cycle: perl -> perl-Digest-SHA
+[   13s]   breaking dependency perl -> perl-Digest-SHA
+[   13s] cycle: perl -> perl-Encode
+[   13s]   breaking dependency perl -> perl-Encode
+[   13s] cycle: perl -> perl-Env
+[   13s]   breaking dependency perl -> perl-Env
+[   13s] cycle: perl -> perl-ExtUtils-Command
+[   13s]   breaking dependency perl -> perl-ExtUtils-Command
+[   13s] cycle: perl -> perl-ExtUtils-Install
+[   13s]   breaking dependency perl -> perl-ExtUtils-Install
+[   13s] cycle: perl -> perl-ExtUtils-Manifest
+[   13s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[   13s] cycle: perl -> perl-ExtUtils-ParseXS
+[   13s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[   13s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-File-Fetch
+[   13s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-File-Temp
+[   13s] cycle: perl -> perl-Filter
+[   13s]   breaking dependency perl -> perl-Filter
+[   13s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[   13s]   breaking dependency perl -> perl-Filter-Simple
+[   13s] cycle: perl -> perl-HTTP-Tiny
+[   13s]   breaking dependency perl -> perl-HTTP-Tiny
+[   13s] cycle: perl -> perl-IO-Compress
+[   13s]   breaking dependency perl -> perl-IO-Compress
+[   13s] cycle: perl -> perl-IO-Socket-IP
+[   13s]   breaking dependency perl -> perl-IO-Socket-IP
+[   13s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[   13s]   breaking dependency perl -> perl-IPC-Cmd
+[   13s] cycle: perl -> perl-IPC-SysV
+[   13s]   breaking dependency perl -> perl-IPC-SysV
+[   13s] cycle: perl -> perl-JSON-PP
+[   13s]   breaking dependency perl -> perl-JSON-PP
+[   13s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[   13s]   breaking dependency perl -> perl-Locale-Codes
+[   13s] cycle: perl -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-Math-BigInt
+[   13s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[   13s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-Math-BigRat
+[   13s] cycle: perl -> perl-Module-CoreList
+[   13s]   breaking dependency perl -> perl-Module-CoreList
+[   13s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-Module-Load
+[   13s] cycle: perl -> perl-Module-Load-Conditional
+[   13s]   breaking dependency perl -> perl-Module-Load-Conditional
+[   13s] cycle: perl -> perl-Module-Metadata
+[   13s]   breaking dependency perl -> perl-Module-Metadata
+[   13s] cycle: perl -> perl-Params-Check
+[   13s]   breaking dependency perl -> perl-Params-Check
+[   13s] cycle: perl -> perl-Pod-Checker
+[   13s]   breaking dependency perl -> perl-Pod-Checker
+[   13s] cycle: perl -> perl-Pod-Parser
+[   13s]   breaking dependency perl -> perl-Pod-Parser
+[   13s] cycle: perl -> perl-Pod-Perldoc
+[   13s]   breaking dependency perl -> perl-Pod-Perldoc
+[   13s] cycle: perl -> perl-Pod-Usage
+[   13s]   breaking dependency perl -> perl-Pod-Usage
+[   13s] cycle: perl -> perl-Sys-Syslog
+[   13s]   breaking dependency perl -> perl-Sys-Syslog
+[   13s] cycle: perl -> perl-Term-Cap
+[   13s]   breaking dependency perl -> perl-Term-Cap
+[   13s] cycle: perl -> perl-Test-Harness
+[   13s]   breaking dependency perl -> perl-Test-Harness
+[   13s] cycle: perl -> perl-Test-Simple
+[   13s]   breaking dependency perl -> perl-Test-Simple
+[   13s] cycle: perl -> perl-Text-Balanced
+[   13s]   breaking dependency perl -> perl-Text-Balanced
+[   13s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[   13s]   breaking dependency perl -> perl-Thread-Queue
+[   13s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[   13s]   breaking dependency perl -> perl-Unicode-Collate
+[   13s] cycle: perl -> perl-autodie
+[   13s]   breaking dependency perl -> perl-autodie
+[   13s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[   13s]   breaking dependency perl -> perl-bignum
+[   13s] cycle: perl -> perl-Encode-devel
+[   13s]   breaking dependency perl -> perl-Encode-devel
+[   13s] cycle: perl -> perl-experimental
+[   13s]   breaking dependency perl -> perl-experimental
+[   13s] cycle: perl -> perl-libnet
+[   13s]   breaking dependency perl -> perl-libnet
+[   13s] cycle: perl -> perl-podlators
+[   13s]   breaking dependency perl -> perl-podlators
+[   13s] cycle: perl -> perl-version
+[   13s]   breaking dependency perl -> perl-version
+[   13s] cycle: glib2-devel -> sysprof-devel
+[   13s]   breaking dependency glib2-devel -> sysprof-devel
+[   13s] cycle: libglvnd-egl -> mesa-libEGL
+[   13s]   breaking dependency mesa-libEGL -> libglvnd-egl
+[   13s] cycle: libxcrypt-devel -> glibc-devel
+[   13s]   breaking dependency glibc-devel -> libxcrypt-devel
+[   13s] cycle: cmake-data -> cmake
+[   13s]   breaking dependency cmake -> cmake-data
+[   13s] cycle: erlang-compiler -> erlang-hipe -> erlang-syntax_tools
+[   13s]   breaking dependency erlang-syntax_tools -> erlang-compiler
+[   13s] cycle: erlang-inets -> erlang-ssl
+[   13s]   breaking dependency erlang-inets -> erlang-ssl
+[   13s] cycle: libglvnd-glx -> mesa-libGL
+[   13s]   breaking dependency mesa-libGL -> libglvnd-glx
+[   13s] cycle: gupnp-igd -> gssdp -> gtk4 -> gstreamer1-plugins-bad-free -> libnice
+[   13s]   breaking dependency gtk4 -> gstreamer1-plugins-bad-free
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[   13s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[   13s]   breaking dependency perl-podlators -> perl-Encode
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[   13s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[   13s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[   13s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[   13s] cycle: perl-Pod-Usage -> perl-podlators
+[   13s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[   13s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[   13s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[   13s] cycle: openssh -> openssh-server
+[   13s]   breaking dependency openssh-server -> openssh
+[   13s] cycle: perl-Git -> git
+[   13s]   breaking dependency git -> perl-Git
+[   13s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[   13s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[   13s] done
+[   13s] Warning: cross compile not possible due to missing static binaries. please install build-initvm package for that purpose.
+[   13s]          check that the right architecture is available for your build host, you need initvm.x86_64 for this one.
+[   13s] booting docker...
+[   14s] 2nd stage started in virtual machine
+[   14s] machine type: riscv64
+[   14s] Linux version: 5.3.18-150300.59.63-default #1 SMP Tue Apr 5 12:47:31 UTC 2022 (d77db66)
+[   14s] Increasing log level from now on...
+[   14s] Enable sysrq operations
+[   14s] WARNING: udev not running, creating extra device nodes
+[   14s] processing recipe /.build-srcdir/_service:tar_scm:pin-gcc-client.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/_service:tar_scm:pin-gcc-client.spec build ...
+[   15s] initializing rpm db...
+[   15s] querying package ids...
+[   30s] [1/665] installing adobe-mappings-pdf-20190401-2.oe2303
+[   31s] [2/665] installing adwaita-cursor-theme-43-1.oe2303
+[   32s] [3/665] installing cmake-filesystem-3.24.3-1.oe2303
+[   32s] [4/665] installing fonts-filesystem-4.0.2-1.oe2303
+[   32s] [5/665] installing fuse-common-3.13.0-1.oe2303
+[   32s] [6/665] installing javapackages-filesystem-5.3.0-5.oe2303
+[   32s] [7/665] installing kernel-headers-6.1.8-3.oe2303
+[   33s] [8/665] installing libreport-filesystem-2.15.2-6.oe2303
+[   34s] [9/665] installing ncurses-base-6.4-1.oe2303
+[   34s] [10/665] installing openEuler-gpg-keys-1.0-3.3.oe2303
+[   34s] [11/665] installing python-ldb-devel-common-2.6.1-1.oe2303
+[   34s] [12/665] installing python-setuptools-60.9.3-2.oe2303
+[   34s] [13/665] installing python3-setuptools-60.9.3-2.oe2303
+[   35s] [14/665] installing python3-six-1.16.0-3.oe2303
+[   35s] [15/665] installing qt5-srpm-macros-5.15.2-1.oe2303
+[   36s] [16/665] installing tzdata-2022g-3.oe2303
+[   36s] [17/665] installing tzdata-java-2022g-3.oe2303
+[   36s] [18/665] installing wxGTK3-i18n-3.0.4-8.oe2303
+[   37s] [19/665] installing xkeyboard-config-2.38-1.oe2303
+[   38s] [20/665] installing dnf-data-4.14.0-13.oe2303
+[   38s] [21/665] installing google-droid-sans-fonts-20200215-1.oe2303
+[   39s] [22/665] installing openEuler-repos-1.0-3.3.oe2303
+[   39s] [23/665] installing adobe-mappings-cmap-lang-20190730-3.oe2303
+[   41s] [24/665] installing filesystem-3.16-5.oe2303
+[   42s] warning: group mail does not exist - using root
+[   42s] [25/665] installing adobe-mappings-cmap-20190730-3.oe2303
+[   42s] [26/665] installing emacs-filesystem-1:28.2-3.oe2303
+[   42s] [27/665] installing libgcc-10.3.1-25.oe2303
+[   42s] [28/665] installing vim-filesystem-2:9.0-29.oe2303
+[   43s] [29/665] installing urw-base35-fonts-common-20200910-1.oe2303
+[   43s] [30/665] installing readline-8.2-2.oe2303
+[   43s] [31/665] installing pcre2-10.42-1.oe2303
+[   43s] [32/665] installing ncurses-6.4-1.oe2303
+[   44s] [33/665] installing coreutils-9.0-7.oe2303
+[   46s] [34/665] installing libsepol-3.4-1.oe2303
+[   46s] [35/665] installing libselinux-3.4-1.oe2303
+[   47s] [36/665] installing glibc-common-2.36-13.oe2303
+[   49s] [37/665] installing glibc-2.36-13.oe2303
+[   51s] [38/665] installing SDL2-2.0.12-5.oe2303
+[   51s] [39/665] installing brotli-1.0.9-3.oe2303
+[   52s] [40/665] installing c-ares-1.18.1-4.oe2303
+[   52s] [41/665] installing cdparanoia-libs-10.2-31.oe2303
+[   52s] [42/665] installing chrpath-0.16-13.oe2303
+[   53s] [43/665] installing cpio-2.13-7.oe2303
+[   53s] [44/665] installing diffutils-3.9-2.oe2303
+[   53s] [45/665] installing efivar-libs-38-1.oe2303
+[   54s] [46/665] installing expat-2.5.0-1.oe2303
+[   54s] [47/665] installing fribidi-1.0.12-1.oe2303
+[   54s] [48/665] installing gpm-libs-1.20.7-27.oe2303
+[   55s] [49/665] installing gsm-1.0.18-5.oe2303
+[   55s] [50/665] installing hyphen-2.8.8-15.oe2303
+[   55s] [51/665] installing jbigkit-libs-2.1-21.oe2303
+[   55s] [52/665] installing json-c-0.16-2.oe2303
+[   56s] [53/665] installing keyutils-libs-1.6.3-5.oe2303
+[   56s] [54/665] installing lcms2-2.13.1-2.oe2303
+[   56s] [55/665] installing libICE-1.1.1-1.oe2303
+[   57s] [56/665] installing libXau-1.0.10-1.oe2303
+[   57s] [57/665] installing libaio-0.3.113-7.oe2303
+[   57s] [58/665] installing libargon2-20190702-3.oe2303
+[   58s] [59/665] installing libasyncns-0.8-18.oe2303
+[   58s] [60/665] installing libatomic-10.3.1-25.oe2303
+[   58s] [61/665] installing libcap-ng-0.8.3-1.oe2303
+[   59s] [62/665] installing libdaemon-0.14-21.oe2303
+[   59s] [63/665] installing libdatrie-0.2.13-1.oe2303
+[   59s] [64/665] installing libdrm-2.4.114-1.oe2303
+[   59s] [65/665] installing libepoxy-1.5.10-2.oe2303
+[   60s] [66/665] installing libev-4.33-3.oe2303
+[   60s] [67/665] installing libffi-3.4.4-1.oe2303
+[   60s] [68/665] installing libglvnd-1:1.3.4-3.oe2303
+[   61s] [69/665] installing libgomp-10.3.1-25.oe2303
+[   61s] [70/665] installing libgpg-error-1.46-1.oe2303
+[   62s] [71/665] installing libijs-0.35-10.oe2303
+[   62s] [72/665] installing libjpeg-turbo-2.1.1-3.oe2303
+[   62s] [73/665] installing libmnl-1.0.5-2.oe2303
+[   63s] [74/665] installing libmspack-0.10.1-0.1.1.oe2303
+[   63s] [75/665] installing libnfnetlink-1.0.2-1.oe2303
+[   63s] [76/665] installing libnghttp2-1.47.0-3.oe2303
+[   63s] [77/665] installing libogg-2:1.3.5-2.oe2303
+[   64s] [78/665] installing libpcap-14:1.10.3-1.oe2303
+[   64s] [79/665] installing libpipeline-1.5.7-1.oe2303
+[   64s] [80/665] installing libsigsegv-2.14-1.oe2303
+[   65s] [81/665] installing libsmartcols-2.37.2-14.oe2303
+[   65s] [82/665] installing libsndfile-1.2.0-1.oe2303
+[   65s] [83/665] installing libstemmer-0-13.oe2303
+[   66s] [84/665] installing libtalloc-2.3.4-1.oe2303
+[   66s] [85/665] installing libtasn1-4.17.0-3.oe2303
+[   66s] [86/665] installing libtdb-1.4.7-1.oe2303
+[   67s] [87/665] installing libtool-ltdl-2.4.7-2.oe2303
+[   67s] [88/665] installing libunistring-1.1-2.oe2303
+[   68s] [89/665] installing libuuid-2.37.2-14.oe2303
+[   68s] [90/665] installing libuv-1:1.42.0-4.oe2303
+[   68s] [91/665] installing libvisual-1:0.4.1-1.oe2303
+[   69s] [92/665] installing libwebp-1.3.0-1.oe2303
+[   69s] [93/665] installing libxcrypt-4.4.33-1.oe2303
+[   69s] [94/665] installing libxshmfence-1.3.2-1.oe2303
+[   70s] [95/665] installing libyaml-0.2.5-4.oe2303
+[   70s] [96/665] installing lmdb-0.9.30-2.oe2303
+[   70s] [97/665] installing lz4-1.9.4-2.oe2303
+[   71s] [98/665] installing m4-1.4.19-3.oe2303
+[   71s] [99/665] installing nspr-4.35.0-2.oe2303
+[   71s] [100/665] installing openjpeg2-2.5.0-2.oe2303
+[   72s] [101/665] installing opus-1.3.1-4.oe2303
+[   72s] [102/665] installing pixman-0.42.2-1.oe2303
+[   72s] [103/665] installing pkgconf-1.8.0-3.oe2303
+[   73s] [104/665] installing which-2.21-15.oe2303
+[   73s] [105/665] installing xz-libs-5.2.10-1.oe2303
+[   73s] [106/665] installing alsa-lib-1.2.8-1.oe2303
+[   74s] [107/665] installing attr-2.5.1-4.oe2303
+[   74s] [108/665] installing libidn-1.38-4.oe2303
+[   74s] [109/665] installing libstdc++-10.3.1-25.oe2303
+[   75s] [110/665] installing mesa-libglapi-23.0.0-1.oe2303
+[   75s] [111/665] installing zlib-1.2.13-1.oe2303
+[   76s] [112/665] installing ncurses-libs-6.4-1.oe2303
+[   76s] [113/665] installing libglvnd-core-devel-1:1.3.4-3.oe2303
+[   76s] [114/665] installing libstdc++-devel-10.3.1-25.oe2303
+[   78s] [115/665] installing xorg-x11-proto-devel-2021.5-2.oe2303
+[   79s] [116/665] installing audit-libs-1:3.0.9-1.oe2303
+[   79s] [117/665] installing elfutils-libelf-0.187-10.oe2303
+[   79s] [118/665] installing fribidi-devel-1.0.12-1.oe2303
+[   80s] [119/665] installing gmp-1:6.2.1-3.oe2303
+[   80s] [120/665] installing less-608-4.oe2303
+[   80s] [121/665] installing libacl-2.3.1-1.oe2303
+[   81s] [122/665] installing libassuan-2.5.5-2.oe2303
+[   81s] [123/665] installing libedit-3.1-29.oe2303
+[   81s] [124/665] installing libfontenc-1.1.6-1.oe2303
+[   82s] [125/665] installing libgcrypt-1.9.4-1.oe2303
+[   82s] [126/665] installing libglvnd-opengl-1:1.3.4-3.oe2303
+[   82s] [127/665] installing libpng-2:1.6.38-2.oe2303
+[   83s] [128/665] installing libsepol-devel-3.4-1.oe2303
+[   84s] [129/665] installing libtalloc-devel-2.3.4-1.oe2303
+[   84s] [130/665] installing libtdb-devel-1.4.7-1.oe2303
+[   84s] [131/665] installing libtevent-0.13.0-1.oe2303
+[   85s] [132/665] installing libthai-0.1.29-1.oe2303
+[   85s] [133/665] installing libtheora-1:1.1.1-26.oe2303
+[   86s] [134/665] installing libvorbis-1:1.3.7-2.oe2303
+[   86s] [135/665] installing libxcb-1.15-1.oe2303
+[   86s] [136/665] installing p11-kit-0.24.1-1.oe2303
+[   87s] [137/665] installing pixman-devel-0.42.2-1.oe2303
+[   87s] [138/665] installing psmisc-23.6-1.oe2303
+[   87s] [139/665] installing wayland-1.21.0-2.oe2303
+[   88s] [140/665] installing zlib-devel-1.2.13-1.oe2303
+[   88s] [141/665] installing abseil-cpp-20220623.1-3.oe2303
+[   89s] [142/665] installing fuse-2.9.9-11.oe2303
+[   89s] [143/665] installing gdbm-1:1.23-2.oe2303
+[   89s] [144/665] installing libSM-1.2.4-1.oe2303
+[   90s] [145/665] installing libdatrie-devel-0.2.13-1.oe2303
+[   90s] [146/665] installing libdb-5.3.28-41.oe2303
+[   92s] [147/665] installing libffi-devel-3.4.4-1.oe2303
+[   92s] [148/665] installing libicu-72.1-5.oe2303
+[   97s] [149/665] installing libjpeg-turbo-devel-2.1.1-3.oe2303
+[   97s] [150/665] installing libnetfilter_conntrack-1.0.9-4.oe2303
+[   98s] [151/665] installing libxml2-2.9.14-7.oe2303
+[   99s] [152/665] installing patch-2.7.6-20.oe2303
+[   99s] [153/665] installing python3-tdb-1.4.7-1.oe2303
+[   99s] [154/665] installing bash-5.1.8-7.oe2303
+[  100s] [155/665] installing gc-8.2.2-1.oe2303
+[  101s] [156/665] installing pcre-8.45-5.oe2303
+[  101s] [157/665] installing perl-libs-4:5.34.0-4.oe2303
+[  102s] [158/665] installing protobuf-3.14.0-6.oe2303
+[  103s] [159/665] installing woff2-1.0.2-6.oe2303
+[  103s] [160/665] installing hunspell-1.7.0-10.oe2303
+[  104s] [161/665] installing thin-provisioning-tools-0.9.0-4.oe2303
+[  104s] [162/665] installing wxBase3-3.0.4-8.oe2303
+[  105s] [163/665] installing zstd-1.5.2-1.oe2303
+[  106s] [164/665] installing libtiff-4.5.0-3.oe2303
+[  106s] [165/665] installing hunspell-en-2020.12.07-2.oe2303
+[  106s] [166/665] installing perl-parent-1:0.238-2.oe2303
+[  107s] [167/665] installing perl-perlfaq-5.20210520-2.oe2303
+[  107s] [168/665] installing efi-filesystem-4-9.oe2303
+[  107s] [169/665] installing elfutils-default-yama-scope-0.187-10.oe2303
+[  107s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libseccomp.so.2: cannot open shared object file: No such file or directory
+[  107s] [170/665] installing gc-devel-8.2.2-1.oe2303
+[  108s] [171/665] installing hicolor-icon-theme-0.17-7.oe2303
+[  108s] [172/665] installing libX11-1.8.1-3.oe2303
+[  109s] [173/665] installing mpfr-4.1.0-3.oe2303
+[  109s] [174/665] installing nettle-3.8.1-1.oe2303
+[  110s] [175/665] installing perl-Exporter-5.74-2.oe2303
+[  110s] [176/665] installing publicsuffix-list-20211113-3.oe2303
+[  110s] [177/665] installing uname-build-checks-1.0-0.5.oe2303
+[  111s] [178/665] installing abseil-cpp-devel-20220623.1-3.oe2303
+[  111s] [179/665] installing adwaita-icon-theme-43-1.oe2303
+[  113s] [180/665] installing bzip2-1.0.8-7.oe2303
+[  114s] [181/665] installing cyrus-sasl-lib-2.1.28-1.oe2303
+[  114s] [182/665] installing gzip-1.12-3.oe2303
+[  114s] [183/665] installing hostname-3.23-1.oe2303
+[  115s] [184/665] installing jbig2dec-0.19-4.oe2303
+[  115s] [185/665] installing libXau-devel-1.0.10-1.oe2303
+[  115s] [186/665] installing libbpf-2:0.8.1-5.oe2303
+[  116s] [187/665] installing libpaper-1.1.28-2.oe2303
+[  116s] [188/665] installing libpng-devel-2:1.6.38-2.oe2303
+[  116s] [189/665] installing libseccomp-2.5.4-1.oe2303
+[  117s] [190/665] installing libtevent-devel-0.13.0-1.oe2303
+[  117s] [191/665] installing libthai-devel-0.1.29-1.oe2303
+[  118s] [192/665] installing libxkbcommon-1.5.0-1.oe2303
+[  118s] [193/665] installing lksctp-tools-1.0.19-2.oe2303
+[  118s] [194/665] installing luajit-2.1.0-4.5.oe2303
+[  119s] [195/665] installing npth-1.6-7.oe2303
+[  119s] [196/665] installing orc-0.4.33-1.oe2303
+[  120s] [197/665] installing popt-1.19-2.oe2303
+[  120s] [198/665] installing sed-4.9-1.oe2303
+[  120s] [199/665] installing sgml-common-0.6.3-52.oe2303
+[  121s] [200/665] installing acl-2.3.1-1.oe2303
+[  121s] [201/665] installing dwz-0.15-1.oe2303
+[  121s] [202/665] installing grep-3.8-1.oe2303
+[  122s] [203/665] installing info-6.8-5.oe2303
+[  122s] [204/665] installing iptables-libs-1.8.9-2.oe2303
+[  123s] [205/665] installing libblkid-2.37.2-14.oe2303
+[  123s] [206/665] installing libcomps-0.1.19-1.oe2303
+[  123s] [207/665] installing libidn2-2.3.3-2.oe2303
+[  124s] [208/665] installing libksba-1.6.3-1.oe2303
+[  124s] [209/665] installing mesa-libgbm-23.0.0-1.oe2303
+[  125s] [210/665] installing pcre-devel-8.45-5.oe2303
+[  126s] [211/665] installing pcre2-devel-10.42-1.oe2303
+[  127s] [212/665] installing tar-2:1.34-4.oe2303
+[  128s] [213/665] installing tcl-1:8.6.13-2.oe2303
+[  129s] [214/665] installing vim-common-2:9.0-29.oe2303
+[  133s] [215/665] installing gmp-c++-1:6.2.1-3.oe2303
+[  134s] [216/665] installing graphite2-1.3.14-6.oe2303
+[  134s] [217/665] installing groff-base-1.22.4-12.oe2303
+[  135s] [218/665] installing jsoncpp-1.9.5-3.oe2303
+[  135s] [219/665] installing libgpg-error-devel-1.46-1.oe2303
+[  136s] [220/665] installing lua-5.4.4-1.oe2303
+[  136s] [221/665] installing ncurses-devel-6.4-1.oe2303
+[  137s] [222/665] installing python3-libxml2-2.9.14-7.oe2303
+[  137s] [223/665] installing re2-20211101-3.oe2303
+[  138s] [224/665] installing slang-2.3.3-1.oe2303
+[  138s] [225/665] installing unixODBC-2.3.9-3.oe2303
+[  139s] [226/665] installing aspell-12:0.60.8-1.oe2303
+[  140s] [227/665] installing glibc-devel-2.36-13.oe2303
+[  142s] [228/665] installing libunwind-2:1.6.2-4.oe2303
+[  143s] [229/665] installing libxslt-1.1.37-1.oe2303
+[  143s] [230/665] installing protobuf-compiler-3.14.0-6.oe2303
+[  144s] [231/665] installing wayland-devel-1.21.0-2.oe2303
+[  144s] [232/665] installing libicu-devel-72.1-5.oe2303
+[  145s] [233/665] installing gettext-0.21.1-1.oe2303
+[  146s] [234/665] installing llvm-libs-15.0.7-1.oe2303
+[  161s] [235/665] installing guile-5:2.2.7-2.oe2303
+[  165s] [236/665] installing iso-codes-4.7.0-1.oe2303
+[  168s] [237/665] installing bzip2-devel-1.0.8-7.oe2303
+[  168s] [238/665] installing crontabs-1.11-23.oe2303
+[  168s] [239/665] installing gmp-devel-1:6.2.1-3.oe2303
+[  169s] [240/665] installing graphite2-devel-1.3.14-6.oe2303
+[  170s] [241/665] installing libXcomposite-0.4.6-1.oe2303
+[  170s] [242/665] installing libXext-1.3.5-1.oe2303
+[  170s] [243/665] installing libXfixes-6.0.0-2.oe2303
+[  171s] [244/665] installing libXpm-3.5.15-1.oe2303
+[  171s] [245/665] installing libXrender-0.9.11-1.oe2303
+[  171s] [246/665] installing lua-devel-5.4.4-1.oe2303
+[  172s] [247/665] installing luajit-devel-2.1.0-4.5.oe2303
+[  172s] [248/665] installing perl-Carp-1.50-419.oe2303
+[  173s] [249/665] installing perl-Perl-OSType-1.010-422.oe2303
+[  173s] [250/665] installing perl-Pod-Escapes-1:1.07_01-1.oe2303
+[  173s] [251/665] installing perl-Term-ANSIColor-5.01-2.oe2303
+[  173s] [252/665] installing re2-devel-20211101-3.oe2303
+[  174s] [253/665] installing zip-3.0-30.oe2303
+[  174s] [254/665] installing jsoncpp-devel-1.9.5-3.oe2303
+[  174s] [255/665] installing libedit-devel-3.1-29.oe2303
+[  175s] [256/665] installing libfdisk-2.37.2-14.oe2303
+[  175s] [257/665] installing libmpc-1.3.1-1.oe2303
+[  175s] [258/665] installing libxcb-devel-1.15-1.oe2303
+[  176s] [259/665] installing libxcrypt-devel-4.4.33-1.oe2303
+[  176s] [260/665] installing lua-posix-35.0-1.oe2303
+[  177s] [261/665] installing newt-0.52.23-1.oe2303
+[  177s] [262/665] installing bc-1.07.1-12.oe2303
+[  177s] [263/665] installing efibootmgr-18-4.oe2303
+[  178s] [264/665] installing file-libs-5.44-1.oe2303
+[  179s] [265/665] installing libXt-1.2.1-4.oe2303
+[  179s] [266/665] installing libmount-2.37.2-14.oe2303
+[  180s] [267/665] installing libselinux-devel-3.4-1.oe2303
+[  180s] [268/665] installing libwpe-1.6.0-1.oe2303
+[  181s] [269/665] installing unzip-6.0-51.oe2303
+[  181s] [270/665] installing cracklib-2.9.8-1.oe2303
+[  183s] [271/665] installing e2fsprogs-1.46.5-4.oe2303
+[  184s] [272/665] installing libsemanage-3.4-1.oe2303
+[  184s] [273/665] installing llvm-mlir-15.0.7-1.oe2303
+[  192s] [274/665] installing perl-MIME-Base64-3.16-2.oe2303
+[  192s] [275/665] installing sqlite-3.37.2-5.oe2303
+[  193s] [276/665] installing xz-5.2.10-1.oe2303
+[  193s] [277/665] installing findutils-2:4.9.0-1.oe2303
+[  194s] [278/665] installing freetype-2.12.1-1.oe2303
+[  194s] [279/665] installing libpsl-0.21.2-1.oe2303
+[  195s] [280/665] installing logrotate-3.20.1-1.oe2303
+[  195s] [281/665] installing make-1:4.4-2.oe2303
+[  196s] [282/665] installing elfutils-libs-0.187-10.oe2303
+[  196s] [283/665] installing libgcrypt-devel-1.9.4-1.oe2303
+[  196s] [284/665] installing gawk-5.2.0-3.oe2303
+[  197s] [285/665] installing iproute-1:6.1.0-7.oe2303
+[  198s] [286/665] installing vim-enhanced-2:9.0-29.oe2303
+[  198s] [287/665] installing mesa-libEGL-23.0.0-1.oe2303
+[  199s] [288/665] installing llvm-mlir-static-15.0.7-1.oe2303
+[  256s] [289/665] installing perl-PerlIO-via-QuotedPrint-0.10-1.oe2303
+[  256s] [290/665] installing xz-devel-5.2.10-1.oe2303
+[  256s] [291/665] installing libXdamage-1.1.6-1.oe2303
+[  257s] [292/665] installing libXi-1.8-2.oe2303
+[  257s] [293/665] installing libXinerama-1.1.5-1.oe2303
+[  257s] [294/665] installing libXv-1.0.12-1.oe2303
+[  258s] [295/665] installing libXxf86vm-1.1.5-2.oe2303
+[  258s] [296/665] installing libglvnd-egl-1:1.3.4-3.oe2303
+[  258s] [297/665] installing libglvnd-gles-1:1.3.4-3.oe2303
+[  259s] [298/665] installing perl-Text-ParseWords-3.30-420.oe2303
+[  259s] [299/665] installing copy-jdk-configs-4.0-1.oe2303
+[  259s] [300/665] installing libX11-devel-1.8.1-3.oe2303
+[  260s] [301/665] installing libXcursor-1.2.1-1.oe2303
+[  260s] [302/665] installing libXmu-1.1.4-1.oe2303
+[  261s] [303/665] installing libXrandr-1.5.3-1.oe2303
+[  261s] [304/665] installing openEuler-release-23.03-54.oe2303
+[  261s] [305/665] installing perl-Digest-1.20-3.oe2303
+[  262s] [306/665] installing chkconfig-1.21-2.oe2303
+[  262s] [307/665] installing file-5.44-1.oe2303
+[  262s] [308/665] installing protobuf-devel-3.14.0-6.oe2303
+[  272s] [309/665] installing guile-devel-5:2.2.7-2.oe2303
+[  272s] [310/665] installing mpfr-devel-4.1.0-3.oe2303
+[  273s] [311/665] installing perl-Scalar-List-Utils-4:1.60-2.oe2303
+[  273s] [312/665] installing perl-Time-HiRes-4:1.9767-3.oe2303
+[  273s] [313/665] installing perl-Unicode-Normalize-1.28-2.oe2303
+[  274s] [314/665] installing elfutils-0.187-10.oe2303
+[  274s] [315/665] installing freetype-devel-2.12.1-1.oe2303
+[  275s] [316/665] installing xorg-x11-font-utils-1:7.5-44.oe2303
+[  275s] [317/665] installing cpp-10.3.1-25.oe2303
+[  278s] [318/665] installing glib2-2.74.4-2.oe2303
+[  280s] [319/665] installing man-db-2.11.0-1.oe2303
+[  282s] [320/665] installing fontconfig-2.14.2-1.oe2303
+[  284s] [321/665] installing gsettings-desktop-schemas-43.0-1.oe2303
+[  286s] [322/665] installing atk-2.38.0-1.oe2303
+[  286s] [323/665] installing graphene-1.10.6-2.oe2303
+[  286s] [324/665] installing json-glib-1.6.6-2.oe2303
+[  287s] [325/665] installing polkit-help-122-2.oe2303
+[  287s] [326/665] installing setup-2.14.3-1.oe2303
+[  288s] [327/665] installing libsecret-0.20.5-1.oe2303
+[  288s] [328/665] installing libXext-devel-1.3.5-1.oe2303
+[  289s] [329/665] installing libXfixes-devel-6.0.0-2.oe2303
+[  289s] [330/665] installing libXrender-devel-0.9.11-1.oe2303
+[  289s] [331/665] installing libXtst-1.2.4-1.oe2303
+[  290s] [332/665] installing perl-Digest-MD5-2.58-2.oe2303
+[  290s] [333/665] installing urw-base35-bookman-fonts-20200910-1.oe2303
+[  291s] [334/665] installing urw-base35-c059-fonts-20200910-1.oe2303
+[  292s] [335/665] installing urw-base35-d050000l-fonts-20200910-1.oe2303
+[  293s] [336/665] installing urw-base35-gothic-fonts-20200910-1.oe2303
+[  294s] [337/665] installing urw-base35-nimbus-mono-ps-fonts-20200910-1.oe2303
+[  295s] [338/665] installing urw-base35-nimbus-roman-fonts-20200910-1.oe2303
+[  296s] [339/665] installing urw-base35-nimbus-sans-fonts-20200910-1.oe2303
+[  297s] [340/665] installing urw-base35-p052-fonts-20200910-1.oe2303
+[  298s] [341/665] installing urw-base35-standard-symbols-ps-fonts-20200910-1.oe2303
+[  299s] [342/665] installing urw-base35-z003-fonts-20200910-1.oe2303
+[  300s] [343/665] installing xorg-x11-fonts-7.5-25.oe2303
+[  308s] [344/665] installing elfutils-extra-0.187-10.oe2303
+[  308s] [345/665] installing gobject-introspection-1.74.0-1.oe2303
+[  309s] [346/665] installing libXft-2.3.7-1.oe2303
+[  309s] [347/665] installing libmpc-devel-1.3.1-1.oe2303
+[  310s] [348/665] installing libtiff-devel-4.5.0-3.oe2303
+[  310s] [349/665] installing shared-mime-info-2.2-1.oe2303
+[  313s] [350/665] installing binutils-2.37-14.oe2303
+[  315s] [351/665] installing enchant2-2.3.3-1.oe2303
+[  316s] [352/665] installing libXaw-1.0.14-2.oe2303
+[  316s] [353/665] installing harfbuzz-6.0.0-1.oe2303
+[  317s] [354/665] installing libxml2-devel-2.9.14-7.oe2303
+[  319s] [355/665] installing p11-kit-trust-0.24.1-1.oe2303
+[  320s] [356/665] installing babeltrace-1.5.8-6.oe2303
+[  321s] [357/665] installing wpebackend-fdo-1.6.1-2.oe2303
+[  321s] [358/665] installing cairo-1.17.4-3.oe2303
+[  322s] [359/665] installing llvm-mlir-devel-15.0.7-1.oe2303
+[  336s] [360/665] installing mesa-libGL-23.0.0-1.oe2303
+[  336s] [361/665] installing basesystem-12-3.oe2303
+[  336s] [362/665] installing libxkbcommon-devel-1.5.0-1.oe2303
+[  337s] [363/665] installing libraqm-0.7.0-3.oe2303
+[  337s] [364/665] installing fontconfig-devel-2.14.2-1.oe2303
+[  338s] [365/665] installing libXdamage-devel-1.1.6-1.oe2303
+[  338s] [366/665] installing libXinerama-devel-1.1.5-1.oe2303
+[  338s] [367/665] installing libglvnd-glx-1:1.3.4-3.oe2303
+[  339s] [368/665] installing ca-certificates-2021.2.52-2.oe2303
+[  344s] [369/665] installing libXcursor-devel-1.2.1-1.oe2303
+[  345s] [370/665] installing libXi-devel-1.8-2.oe2303
+[  345s] [371/665] installing libXrandr-devel-1.5.3-1.oe2303
+[  345s] [372/665] installing gdk-pixbuf2-2.42.10-2.oe2303
+[  346s] [373/665] installing pango-1.50.12-1.oe2303
+[  347s] [374/665] installing urw-base35-fonts-20200910-1.oe2303
+[  347s] [375/665] installing cairo-gobject-1.17.4-3.oe2303
+[  347s] [376/665] installing gcc-10.3.1-25.oe2303
+[  356s] [377/665] installing python-pip-wheel-22.3.1-1.oe2303
+[  356s] [378/665] installing gtk-update-icon-cache-3.24.36-1.oe2303
+[  357s] [379/665] installing gdk-pixbuf2-modules-2.42.10-2.oe2303
+[  357s] [380/665] installing mesa-libGLU-9.0.2-1.oe2303
+[  358s] [381/665] installing libXft-devel-2.3.7-1.oe2303
+[  358s] [382/665] installing gcc-plugin-devel-10.3.1-25.oe2303
+[  359s] [383/665] installing libglvnd-devel-1:1.3.4-3.oe2303
+[  360s] [384/665] installing gcc-c++-10.3.1-25.oe2303
+[  364s] [385/665] installing gd-2.3.2-1.oe2303
+[  364s] [386/665] installing librsvg2-2.55.1-1.oe2303
+[  366s] [387/665] installing libepoxy-devel-1.5.10-2.oe2303
+[  367s] [388/665] installing python3-3.10.9-1.oe2303
+[  371s] [389/665] installing python3-distro-1.6.0-2.oe2303
+[  372s] [390/665] installing python3-lit-15.0.7-1.oe2303
+[  372s] [391/665] installing python3-markdown-3.3.7-2.oe2303
+[  373s] [392/665] installing python3-markupsafe-2.1.1-1.oe2303
+[  373s] [393/665] installing python3-dateutil-1:2.8.2-3.oe2303
+[  374s] [394/665] installing python3-pip-22.3.1-1.oe2303
+[  376s] [395/665] installing crypto-policies-20200619-3.git781bbd4.oe2303
+[  377s] [396/665] installing python3-libcomps-0.1.19-1.oe2303
+[  377s] [397/665] installing llvm-15.0.7-1.oe2303
+[  386s] [398/665] installing gdb-headless-12.1-2.oe2303
+[  388s] [399/665] installing gdb-12.1-2.oe2303
+[  388s] [400/665] installing python3-mako-1.2.4-1.oe2303
+[  389s] [401/665] installing compat-openssl11-libs-1:1.1.1m-3.oe2303
+[  390s] [402/665] installing openssl-libs-1:3.0.8-3.oe2303
+[  391s] [403/665] installing nss-3.85.0-2.oe2303
+[  392s] [404/665] installing llvm-devel-15.0.7-1.oe2303
+[  515s] [405/665] installing libevent-2.1.12-7.oe2303
+[  515s] [406/665] installing openssl-devel-1:3.0.8-3.oe2303
+[  521s] [407/665] installing openldap-2.6.3-2.oe2303
+[  521s] [408/665] installing kmod-libs-30-2.oe2303
+[  522s] [409/665] installing nss-util-3.85.0-2.oe2303
+[  522s] [410/665] installing kmod-30-2.oe2303
+[  523s] [411/665] installing openssl-1:3.0.8-3.oe2303
+[  523s] [412/665] installing libarchive-3.6.1-2.oe2303
+[  524s] [413/665] installing grpc-1.50.1-1.oe2303
+[  526s] [414/665] installing debugedit-5.0-6.oe2303
+[  527s] [415/665] installing libevent-devel-2.1.12-7.oe2303
+[  527s] [416/665] installing libverto-0.3.2-3.oe2303
+[  527s] [417/665] installing nss-softokn-3.85.0-2.oe2303
+[  528s] [418/665] installing grpc-devel-1.50.1-1.oe2303
+[  529s] [419/665] installing grpc-plugins-1.50.1-1.oe2303
+[  529s] [420/665] installing libldb-2.6.1-1.oe2303
+[  530s] [421/665] installing libldb-devel-2.6.1-1.oe2303
+[  530s] [422/665] installing python3-ldb-2.6.1-1.oe2303
+[  530s] [423/665] installing krb5-libs-1.20.1-1.oe2303
+[  531s] [424/665] installing libtirpc-1.3.3-2.oe2303
+[  532s] [425/665] installing python3-ldb-devel-2.6.1-1.oe2303
+[  532s] [426/665] installing libssh-0.10.4-2.oe2303
+[  532s] [427/665] installing audit-1:3.0.9-1.oe2303
+[  533s] Created symlink /etc/systemd/system/multi-user.target.wants/auditd.service -> /usr/lib/systemd/system/auditd.service.
+[  533s] [428/665] installing libsoup3-3.2.2-1.oe2303
+[  534s] [429/665] installing libnsl2-2.0.0-5.oe2303
+[  534s] [430/665] installing libcurl-7.86.0-3.oe2303
+[  535s] [431/665] installing libtracker-sparql3-3.4.2-1.oe2303
+[  535s] [432/665] installing curl-7.86.0-3.oe2303
+[  536s] [433/665] installing tpm2-tss-3.2.1-2.oe2303
+[  537s] [434/665] installing pam-1.5.2-4.oe2303
+[  537s] [435/665] installing ima-evm-utils-libs-1.4-1.oe2303
+[  538s] [436/665] installing libpwquality-1.4.5-1.oe2303
+[  538s] [437/665] installing libcap-2.66-1.oe2303
+[  539s] [438/665] installing shadow-subid-devel-2:4.13-2.oe2303
+[  539s] [439/665] installing sudo-1.9.12p2-3.oe2303
+[  540s] [440/665] installing bubblewrap-0.4.1-1.oe2303
+[  541s] [441/665] installing iputils-20221126-1.oe2303
+[  541s] [442/665] installing gstreamer1-1.20.4-1.oe2303
+[  542s] [443/665] installing systemd-libs-249-49.oe2303
+[  543s] Detected system with incompatible nobody defined, creating /etc/systemd/dont-synthesize-nobody
+[  543s] [444/665] installing shadow-2:4.13-2.oe2303
+[  544s] [445/665] installing rpm-4.18.0-6.oe2303
+[  545s] [446/665] installing efi-srpm-macros-4-9.oe2303
+[  545s] [447/665] installing cmake-rpm-macros-3.24.3-1.oe2303
+[  546s] [448/665] installing dbus-libs-1:1.14.0-2.oe2303
+[  546s] [449/665] installing libgudev-237-2.oe2303
+[  547s] [450/665] installing libusbx-1.0.26-1.oe2303
+[  547s] [451/665] installing polkit-libs-122-2.oe2303
+[  548s] [452/665] installing procps-ng-4.0.2-1.oe2303
+[  548s] [453/665] installing libutempter-1.2.1-3.oe2303
+[  549s] [454/665] installing webkit2gtk3-jsc-2.38.2-2.oe2303
+[  553s] [455/665] installing erlang-erts-23.3.4.9-3.oe2303
+[  555s] [456/665] installing rpm-libs-4.18.0-6.oe2303
+[  555s] [457/665] installing gstreamer1-plugins-base-1.20.3-3.oe2303
+[  557s] [458/665] installing systemd-249-49.oe2303
+[  560s] [459/665] installing dbus-common-1:1.14.0-2.oe2303
+[  561s] [460/665] installing dbus-tools-1:1.14.0-2.oe2303
+[  561s] [461/665] installing erlang-erl_interface-23.3.4.9-3.oe2303
+[  562s] [462/665] installing avahi-libs-0.8-15.oe2303
+[  562s] [463/665] installing libgusb-0.3.10-1.oe2303
+[  563s] [464/665] installing obs-env-1.0-7.oe2303
+[  565s] fatal library error, lookup self
+[  565s] [465/665] installing python3-dbus-1.3.2-1.oe2303
+[  565s] [466/665] installing erlang-crypto-23.3.4.9-3.oe2303
+[  566s] [467/665] installing libmodulemd-2.14.0-1.oe2303
+[  566s] [468/665] installing net-tools-2.10-3.oe2303
+[  567s] [469/665] installing pulseaudio-libs-16.1-8.oe2303
+[  568s] [470/665] installing sysprof-cli-3.46.0-1.oe2303
+[  568s] [471/665] installing libsolv-0.7.22-1.oe2303
+[  569s] [472/665] installing openEuler-rpm-config-30-37.oe2303
+[  569s] [473/665] installing cmake-3.24.3-1.oe2303
+[  574s] [474/665] installing python3-rpm-4.18.0-6.oe2303
+[  575s] [475/665] installing util-linux-2.37.2-14.oe2303
+[  577s] [476/665] installing pulseaudio-libs-glib2-16.1-8.oe2303
+[  578s] [477/665] installing util-linux-devel-2.37.2-14.oe2303
+[  578s] [478/665] installing cmake-data-3.24.3-1.oe2303
+[  580s] [479/665] installing erlang-stdlib-23.3.4.9-3.oe2303
+[  581s] [480/665] installing colord-libs-1.4.5-4.oe2303
+[  581s] [481/665] installing device-mapper-8:1.02.182-1.oe2303
+[  582s] [482/665] installing dbus-daemon-1:1.14.0-2.oe2303
+[  583s] [483/665] installing rpm-build-4.18.0-6.oe2303
+[  584s] [484/665] installing perl-4:5.34.0-4.oe2303
+[  586s] [485/665] installing dbus-1:1.14.0-2.oe2303
+[  586s] [486/665] installing erlang-kernel-23.3.4.9-3.oe2303
+[  587s] [487/665] installing perl-B-Debug-1.26-6.oe2303
+[  587s] [488/665] installing perl-Env-1.04-398.oe2303
+[  588s] [489/665] installing perl-Text-Tabs+Wrap-2021.0814-2.oe2303
+[  588s] [490/665] installing perl-Devel-PPPort-3.63-2.oe2303
+[  589s] [491/665] installing perl-Algorithm-Diff-1:1.201-2.oe2303
+[  589s] [492/665] installing perl-Params-Check-1:0.38-419.oe2303
+[  589s] [493/665] installing perl-Term-Cap-1.17-511.oe2303
+[  590s] [494/665] installing perl-TermReadKey-2.38-2.oe2303
+[  590s] [495/665] installing perl-Text-Balanced-2.06-1.oe2303
+[  590s] [496/665] installing perl-threads-2:2.26-2.oe2303
+[  591s] [497/665] installing perl-CPAN-Meta-YAML-0.018-421.oe2303
+[  591s] [498/665] installing perl-Config-Perl-V-0.33-2.oe2303
+[  592s] [499/665] installing perl-Error-1:0.17029-3.oe2303
+[  592s] [500/665] installing perl-Filter-2:1.64-1.oe2303
+[  592s] [501/665] installing perl-IPC-SysV-2.09-2.oe2303
+[  593s] [502/665] installing perl-Locale-Maketext-1:1.29-2.oe2303
+[  593s] [503/665] installing perl-constant-1.33-422.oe2303
+[  594s] [504/665] installing perl-Socket-4:2.032-2.oe2303
+[  594s] [505/665] installing perl-Storable-1:3.25-3.oe2303
+[  595s] [506/665] installing device-mapper-event-8:1.02.182-1.oe2303
+[  596s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[  596s] [507/665] installing gcc_secure-1.0-0.12.oe2303
+[  596s] [508/665] installing cryptsetup-2.6.0-2.oe2303
+[  597s] [509/665] installing glib2-devel-2.74.4-2.oe2303
+[  598s] [510/665] installing erlang-eunit-23.3.4.9-3.oe2303
+[  599s] [511/665] installing erlang-ftp-23.3.4.9-3.oe2303
+[  599s] [512/665] installing erlang-mnesia-23.3.4.9-3.oe2303
+[  600s] [513/665] installing erlang-parsetools-23.3.4.9-3.oe2303
+[  600s] [514/665] installing erlang-tftp-23.3.4.9-3.oe2303
+[  601s] [515/665] installing erlang-xmerl-23.3.4.9-3.oe2303
+[  602s] [516/665] installing graphene-devel-1.10.6-2.oe2303
+[  602s] [517/665] installing xdg-dbus-proxy-0.1.2-1.oe2303
+[  603s] [518/665] installing erlang-asn1-23.3.4.9-3.oe2303
+[  603s] [519/665] installing erlang-syntax_tools-23.3.4.9-3.oe2303
+[  604s] [520/665] installing polkit-devel-122-2.oe2303
+[  604s] [521/665] installing erlang-odbc-23.3.4.9-3.oe2303
+[  605s] [522/665] installing json-glib-devel-1.6.6-2.oe2303
+[  605s] [523/665] installing perl-Filter-Simple-1:0.94-1.oe2303
+[  606s] [524/665] installing perl-IO-Socket-IP-0.41-3.oe2303
+[  606s] [525/665] installing perl-Text-Diff-1.45-8.oe2303
+[  606s] [526/665] installing perl-Time-Local-2:1.300-2.oe2303
+[  607s] [527/665] installing perl-version-8:0.99.29-2.oe2303
+[  607s] [528/665] installing pulseaudio-libs-devel-16.1-8.oe2303
+[  608s] [529/665] installing perl-IPC-System-Simple-1.30-3.oe2303
+[  608s] [530/665] installing perl-threads-shared-1.62-2.oe2303
+[  609s] [531/665] installing perl-Compress-Raw-Bzip2-2.201-1.oe2303
+[  609s] [532/665] installing perl-Compress-Raw-Zlib-1:2.202-1.oe2303
+[  610s] [533/665] installing perl-Locale-Codes-3.68-2.oe2303
+[  610s] [534/665] installing perl-PathTools-3.80-2.oe2303
+[  611s] [535/665] installing perl-Sys-Syslog-0.36-2.oe2303
+[  611s] [536/665] installing perl-Math-BigInt-1:1.9998.27-2.oe2303
+[  612s] [537/665] installing gdk-pixbuf2-devel-2.42.10-2.oe2303
+[  612s] [538/665] installing perl-Data-Dumper-2.183-2.oe2303
+[  613s] [539/665] installing unbound-libs-1.17.0-2.oe2303
+[  614s] [540/665] installing at-spi2-core-2.44.1-2.oe2303
+[  614s] [541/665] installing perl-Encode-4:3.16-2.oe2303
+[  616s] [542/665] installing avahi-0.8-15.oe2303
+[  617s] Created symlink /etc/systemd/system/sockets.target.wants/avahi-daemon.socket -> /usr/lib/systemd/system/avahi-daemon.socket.
+[  617s] Created symlink /etc/systemd/system/dbus-org.freedesktop.Avahi.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[  617s] Created symlink /etc/systemd/system/multi-user.target.wants/avahi-daemon.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[  617s] [543/665] installing cairo-devel-1.17.4-3.oe2303
+[  618s] [544/665] installing harfbuzz-devel-6.0.0-1.oe2303
+[  619s] [545/665] installing lvm2-8:2.03.18-1.oe2303
+[  620s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[  620s] [546/665] installing openssh-server-9.1p1-3.oe2303
+[  621s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[  621s] [547/665] installing perl-Module-Load-1:0.36-2.oe2303
+[  622s] [548/665] installing avahi-devel-0.8-15.oe2303
+[  622s] [549/665] installing cairo-gobject-devel-1.17.4-3.oe2303
+[  623s] [550/665] installing perl-Thread-Queue-3.13-4.oe2303
+[  623s] [551/665] installing perl-experimental-0.030-1.oe2303
+[  623s] [552/665] installing at-spi2-atk-2.38.0-2.oe2303
+[  624s] [553/665] installing erlang-hipe-23.3.4.9-3.oe2303
+[  625s] [554/665] installing erlang-public_key-23.3.4.9-3.oe2303
+[  625s] [555/665] installing erlang-runtime_tools-23.3.4.9-3.oe2303
+[  626s] [556/665] installing libraqm-devel-0.7.0-3.oe2303
+[  626s] [557/665] installing perl-File-Path-2.18-2.oe2303
+[  627s] [558/665] installing perl-Module-Metadata-1.000037-2.oe2303
+[  627s] [559/665] installing perl-CPAN-Meta-Requirements-2.140-420.oe2303
+[  628s] [560/665] installing perl-Encode-devel-4:3.16-2.oe2303
+[  628s] [561/665] installing perl-HTTP-Tiny-0.080-1.oe2303
+[  628s] [562/665] installing perl-Math-BigInt-FastCalc-0.5012-3.oe2303
+[  629s] [563/665] installing perl-Math-BigRat-0.2620-2.oe2303
+[  629s] [564/665] installing perl-Unicode-Collate-1.31-2.oe2303
+[  630s] [565/665] installing perl-autodie-2.34-3.oe2303
+[  631s] [566/665] installing openssh-9.1p1-3.oe2303
+[  631s] [567/665] installing perl-libnet-3.14-2.oe2303
+[  632s] [568/665] installing perl-podlators-1:4.14-2.oe2303
+[  632s] [569/665] installing gnutls-3.7.8-2.oe2303
+[  633s] [570/665] installing pango-devel-1.50.12-1.oe2303
+[  634s] [571/665] installing NetworkManager-libnm-1:1.32.12-16.oe2303
+[  636s] [572/665] installing cups-libs-1:2.4.0-5.oe2303
+[  636s] [573/665] installing erlang-compiler-23.3.4.9-3.oe2303
+[  637s] [574/665] installing erlang-ssh-23.3.4.9-3.oe2303
+[  638s] [575/665] installing perl-ExtUtils-Command-1:7.62-2.oe2303
+[  638s] [576/665] installing perl-ExtUtils-Manifest-1:1.73-2.oe2303
+[  639s] [577/665] installing erlang-snmp-23.3.4.9-3.oe2303
+[  640s] [578/665] installing perl-bignum-0.63-2.oe2303
+[  640s] [579/665] installing erlang-inets-23.3.4.9-3.oe2303
+[  641s] [580/665] installing perl-File-Temp-1:0.2311-3.oe2303
+[  641s] [581/665] installing openssh-clients-9.1p1-3.oe2303
+[  642s] [582/665] installing gnupg2-2.3.6-3.oe2303
+[  644s] [583/665] installing gpgme-1.17.0-1.oe2303
+[  644s] [584/665] installing erlang-otp_mibs-23.3.4.9-3.oe2303
+[  645s] [585/665] installing erlang-ssl-23.3.4.9-3.oe2303
+[  645s] [586/665] installing libproxy-0.4.18-1.oe2303
+[  646s] [587/665] installing erlang-edoc-23.3.4.9-3.oe2303
+[  647s] [588/665] installing erlang-tools-23.3.4.9-3.oe2303
+[  647s] [589/665] installing git-core-2.39.1-3.oe2303
+[  651s] [590/665] installing perl-Test-Simple-2:1.302188-2.oe2303
+[  651s] [591/665] installing perl-Pod-Perldoc-1:3.28-5.oe2303
+[  652s] [592/665] installing java-1.8.0-openjdk-headless-1:1.8.0.352.b08-5.oe2303
+[  666s] [593/665] installing gtk2-2.24.33-7.oe2303
+[  668s] [594/665] installing gtk3-3.24.36-1.oe2303
+[  671s] [595/665] installing gtk4-4.9.1-1.oe2303
+[  675s] [596/665] installing python3-gpgme-1.17.0-1.oe2303
+[  675s] [597/665] installing erlang-sasl-23.3.4.9-3.oe2303
+[  676s] [598/665] installing erlang-eldap-23.3.4.9-3.oe2303
+[  676s] [599/665] installing erlang-erl_docgen-23.3.4.9-3.oe2303
+[  677s] [600/665] installing javapackages-tools-5.3.0-5.oe2303
+[  677s] [601/665] installing glib-networking-2.74.0-1.oe2303
+[  678s] [602/665] installing libadwaita-1.2.0-1.oe2303
+[  679s] [603/665] installing erlang-diameter-23.3.4.9-3.oe2303
+[  680s] [604/665] installing librepo-1.15.1-1.oe2303
+[  680s] [605/665] installing perl-Pod-Usage-4:2.03-2.oe2303
+[  681s] [606/665] installing ghostscript-9.56.1-1.oe2303
+[  685s] [607/665] installing gtk4-devel-4.9.1-1.oe2303
+[  695s] [608/665] installing erlang-jinterface-23.3.4.9-3.oe2303
+[  695s] [609/665] installing erlang-os_mon-23.3.4.9-3.oe2303
+[  696s] [610/665] installing libsysprof-ui-3.46.0-1.oe2303
+[  697s] [611/665] installing perl-Getopt-Long-1:2.52-2.oe2303
+[  697s] [612/665] installing libsoup-2.74.3-1.oe2303
+[  698s] [613/665] installing libdnf-0.69.0-3.oe2303
+[  699s] [614/665] installing graphviz-2.48.0-3.oe2303
+[  701s] [615/665] installing graphviz-devel-2.48.0-3.oe2303
+[  701s] [616/665] installing gssdp-1.4.0.1-1.oe2303
+[  702s] [617/665] installing perl-ExtUtils-ParseXS-2:3.35-2.oe2303
+[  702s] [618/665] installing perl-Module-CoreList-1:5.20211020-2.oe2303
+[  703s] [619/665] installing perl-Digest-SHA-1:6.02-8.oe2303
+[  703s] [620/665] installing perl-Pod-Parser-1.63-399.oe2303
+[  703s] [621/665] installing perl-Pod-Simple-1:3.43-2.oe2303
+[  704s] [622/665] installing perl-Test-Harness-2:3.44-1.oe2303
+[  704s] [623/665] installing sysprof-3.46.0-1.oe2303
+[  707s] [624/665] installing perl-IO-Compress-2.201-1.oe2303
+[  707s] [625/665] installing perl-JSON-PP-1:4.12-2.oe2303
+[  708s] [626/665] installing autoconf-2.71-3.oe2303
+[  709s] [627/665] installing python3-libdnf-0.69.0-3.oe2303
+[  710s] [628/665] installing git-2.39.1-3.oe2303
+[  714s] [629/665] installing webkit2gtk3-2.38.2-2.oe2303
+[  726s] [630/665] installing perl-Git-2.39.1-3.oe2303
+[  726s] [631/665] installing vala-devel-0.56.3-3.oe2303
+[  727s] [632/665] installing gupnp-1.4.3-2.oe2303
+[  728s] [633/665] installing perl-Pod-Checker-4:1.74-2.oe2303
+[  728s] [634/665] installing perl-CPAN-Meta-2.150010-420.oe2303
+[  729s] [635/665] installing perl-Module-Load-Conditional-0.74-2.oe2303
+[  729s] [636/665] installing perl-Archive-Tar-2.40-2.oe2303
+[  729s] [637/665] installing automake-1.16.5-4.oe2303
+[  730s] [638/665] installing perl-ExtUtils-MakeMaker-1:7.62-2.oe2303
+[  730s] [639/665] installing python3-hawkey-0.69.0-3.oe2303
+[  731s] [640/665] installing wxGTK3-3.0.4-8.oe2303
+[  734s] [641/665] installing gupnp-igd-1.2.0-1.oe2303
+[  734s] [642/665] installing libtool-2.4.7-2.oe2303
+[  735s] [643/665] installing perl-ExtUtils-Install-2.20-2.oe2303
+[  735s] [644/665] installing python3-dnf-4.14.0-13.oe2303
+[  736s] [645/665] installing erlang-wx-23.3.4.9-3.oe2303
+[  738s] [646/665] installing perl-IPC-Cmd-2:1.04-4.oe2303
+[  738s] [647/665] installing dnf-4.14.0-13.oe2303
+[  739s] [648/665] installing libnice-0.1.19-1.oe2303
+[  739s] [649/665] installing erlang-debugger-23.3.4.9-3.oe2303
+[  740s] [650/665] installing erlang-et-23.3.4.9-3.oe2303
+[  741s] [651/665] installing python3-dnf-plugins-core-4.3.1-2.oe2303
+[  741s] [652/665] installing erlang-reltool-23.3.4.9-3.oe2303
+[  742s] [653/665] installing erlang-dialyzer-23.3.4.9-3.oe2303
+[  743s] [654/665] installing gobject-introspection-devel-1.74.0-1.oe2303
+[  744s] [655/665] installing perl-File-Fetch-1.04-1.oe2303
+[  745s] [656/665] installing dnf-plugins-core-4.3.1-2.oe2303
+[  745s] [657/665] installing erlang-megaco-23.3.4.9-3.oe2303
+[  748s] [658/665] installing erlang-observer-23.3.4.9-3.oe2303
+[  748s] [659/665] installing vala-0.56.3-3.oe2303
+[  750s] [660/665] installing gstreamer1-plugins-bad-free-1.16.2-6.oe2303
+[  752s] [661/665] installing libadwaita-devel-1.2.0-1.oe2303
+[  752s] [662/665] installing supermin-5.3.2-1.oe2303
+[  753s] [663/665] installing erlang-common_test-23.3.4.9-3.oe2303
+[  754s] [664/665] installing sysprof-devel-3.46.0-1.oe2303
+[  754s] [665/665] installing erlang-23.3.4.9-3.oe2303
+[  755s] now finalizing build dir...
+[  756s] egrep: warning: egrep is obsolescent; using grep -E
+[  756s] egrep: warning: egrep is obsolescent; using grep -E
+[  756s] RTNETLINK answers: File exists
+[  756s] RTNETLINK answers: Permission denied
+[  756s] Network setup
+[  756s] Cannot find device "eth0"
+[  756s] Cannot find device "eth0"
+[  756s] Cannot find device "eth0"
+[  756s] Error: Nexthop has invalid gateway.
+[  756s] /home/abuild/rpmbuild
+[  757s] Running build time source services...
+[  761s] -----------------------------------------------------------------
+[  761s] ----- building pin-gcc-client.spec (user abuild)
+[  761s] -----------------------------------------------------------------
+[  761s] -----------------------------------------------------------------
+[  761s] egrep: warning: egrep is obsolescent; using grep -E
+[  762s] /.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[  762s] printenv PATH
+[  762s] export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/.build:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/.build:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[  762s] rpmspec -P /home/abuild/rpmbuild/SOURCES/pin-gcc-client.spec || echo parse spec fail.
+[  762s] #!/bin/sh -x
+[  762s] exec "rpmbuild" "--noclean" "-ba" "--define" "_srcdefattr (-,root,root)" "--nosignature" "--define" "disturl obs://private/openEuler:23.03/23.03/bf471b40287c6db7ee9c00052e99ac70-pin-gcc-client" "/home/abuild/rpmbuild/SOURCES/pin-gcc-client.spec"
+[  762s] /usr/local/bin:/usr/bin
+[  763s] error: bad date in %changelog: Sat 25 2023 dingguangya <dingguangya1@huawei.com> - 0.4.1-6
+[  763s] Name:           pin-gcc-client
+[  763s] Version:        0.4.1
+[  763s] Release:        6
+[  763s] Summary:        A Pin (Plug-IN framework) client is implemented based on GCC plugin and can execute the compiler optimization pass in GCC.
+[  763s] License:        GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
+[  763s] URL:            https://gitee.com/src-openeuler/pin-gcc-client
+[  763s] Source0:        pin-gcc-client-0.4.1.tar.gz
+[  763s] 
+[  763s] BuildRequires:  gcc gcc-c++ gcc-plugin-devel cmake make pkgconfig grpc grpc-plugins grpc-devel protobuf-devel jsoncpp-devel
+[  763s] BuildRequires:  llvm-mlir llvm-mlir-static llvm-mlir-devel llvm-devel
+[  763s] Requires:       gcc grpc protobuf
+[  763s] 
+[  763s] Patch1: 0001-Pin-gcc-client-BugFix-for-SwitchOp-change-it-to-term.patch
+[  763s] Patch2: 0002-Pin-gcc-client-Bugfix-for-GetFunctionById.patch
+[  763s] Patch3: 0003-Pin-gcc-client-Init-a-SimpleIPAPASS.patch
+[  763s] Patch4: 0004-Pin-gcc-client-Add-CGnodeOp.patch
+[  763s] Patch5: 0005-Pin-gcc-client-Add-support-for-decl-and-field-SetDec.patch
+[  763s] Patch6: 0006-Pin-gcc-client-Add-GetDeclType.patch
+[  763s] Patch7: 0007-Pin-gcc-client-Fix-VectorType.patch
+[  763s] Patch8: 0008-Pin-gcc-client-Fix-struct-self-contained-CallOp-Tree.patch
+[  763s] Patch9: 0009-Pin-gcc-client-Fix-TreeToValue-VAR_DECL-and-ARRAY_TY.patch
+[  763s] 
+[  763s] %description
+[  763s] A Pin (Plug-IN framework) client is implemented based on GCC plugin and can execute the compiler optimization pass in GCC.
+[  763s] 
+[  763s] %prep
+[  763s] cd '/home/abuild/rpmbuild/BUILD'
+[  763s] rm -rf 'pin-gcc-client-0.4.1'
+[  763s] /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pin-gcc-client-0.4.1.tar.gz
+[  763s] STATUS=$?
+[  763s] if [ $STATUS -ne 0 ]; then
+[  763s]   exit $STATUS
+[  763s] fi
+[  763s] cd 'pin-gcc-client-0.4.1'
+[  763s] /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  763s] 
+[  763s] echo "Patch #1 (0001-Pin-gcc-client-BugFix-for-SwitchOp-change-it-to-term.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0001-Pin-gcc-client-BugFix-for-SwitchOp-change-it-to-term.patch
+[  763s] 
+[  763s] echo "Patch #2 (0002-Pin-gcc-client-Bugfix-for-GetFunctionById.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0002-Pin-gcc-client-Bugfix-for-GetFunctionById.patch
+[  763s] 
+[  763s] echo "Patch #3 (0003-Pin-gcc-client-Init-a-SimpleIPAPASS.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0003-Pin-gcc-client-Init-a-SimpleIPAPASS.patch
+[  763s] 
+[  763s] echo "Patch #4 (0004-Pin-gcc-client-Add-CGnodeOp.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0004-Pin-gcc-client-Add-CGnodeOp.patch
+[  763s] 
+[  763s] echo "Patch #5 (0005-Pin-gcc-client-Add-support-for-decl-and-field-SetDec.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0005-Pin-gcc-client-Add-support-for-decl-and-field-SetDec.patch
+[  763s] 
+[  763s] echo "Patch #6 (0006-Pin-gcc-client-Add-GetDeclType.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0006-Pin-gcc-client-Add-GetDeclType.patch
+[  763s] 
+[  763s] echo "Patch #7 (0007-Pin-gcc-client-Fix-VectorType.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0007-Pin-gcc-client-Fix-VectorType.patch
+[  763s] 
+[  763s] echo "Patch #8 (0008-Pin-gcc-client-Fix-struct-self-contained-CallOp-Tree.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0008-Pin-gcc-client-Fix-struct-self-contained-CallOp-Tree.patch
+[  763s] 
+[  763s] echo "Patch #9 (0009-Pin-gcc-client-Fix-TreeToValue-VAR_DECL-and-ARRAY_TY.patch):"
+[  763s] /usr/bin/patch --no-backup-if-mismatch -f -p1  --fuzz=0 < /home/abuild/rpmbuild/SOURCES/0009-Pin-gcc-client-Fix-TreeToValue-VAR_DECL-and-ARRAY_TY.patch
+[  763s] 
+[  763s] 
+[  763s] mkdir -p _build
+[  763s] cd _build
+[  763s] 
+[  763s]   CFLAGS="${CFLAGS:--O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection}" ; export CFLAGS ; 
+[  763s]   CXXFLAGS="${CXXFLAGS:--O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection}" ; export CXXFLAGS ; 
+[  763s]   FFLAGS="${FFLAGS:--O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules}" ; export FFLAGS ; 
+[  763s]   FCFLAGS="${FCFLAGS:--O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules}" ; export FCFLAGS ; 
+[  763s]   LDFLAGS="${LDFLAGS:--Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld}" ; export LDFLAGS ; 
+[  763s]   /usr/bin/cmake \
+[  763s]         -DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \
+[  763s]         -DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
+[  763s]         -DCMAKE_Fortran_FLAGS_RELEASE:STRING="-DNDEBUG" \
+[  763s]         -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+[  763s]         -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+[  763s]         -DINCLUDE_INSTALL_DIR:PATH=/usr/include \
+[  763s]         -DLIB_INSTALL_DIR:PATH=/usr/lib64 \
+[  763s]         -DSYSCONF_INSTALL_DIR:PATH=/etc \
+[  763s]         -DSHARE_INSTALL_PREFIX:PATH=/usr/share \
+[  763s]         -DLIB_SUFFIX=64 \
+[  763s]         -DBUILD_SHARED_LIBS:BOOL=ON .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib64 -DCMAKE_SKIP_RPATH=ON -DMLIR_DIR=/usr/lib64/cmake/mlir -DLLVM_DIR=/usr/lib64/cmake/llvm
+[  763s] 
+[  763s] 
+[  763s] cd _build
+[  763s] /usr/bin/make -O -j1 V=1 VERBOSE=1
+[  763s] 
+[  763s] 
+[  763s] 
+[  763s] %package debuginfo
+[  763s] Summary: Debug information for package pin-gcc-client
+[  763s] Group: Development/Debug
+[  763s] AutoReq: 0
+[  763s] AutoProv: 1
+[  763s] %description debuginfo
+[  763s] This package provides debug information for package pin-gcc-client.
+[  763s] Debug information is useful when developing applications that use this
+[  763s] package or when debugging this package.
+[  763s] %files debuginfo -f debugfiles.list
+[  763s] 
+[  763s] 
+[  763s] %package debugsource
+[  763s] Summary: Debug sources for package pin-gcc-client
+[  763s] Group: Development/Debug
+[  763s] AutoReqProv: 0
+[  763s] %description debugsource
+[  763s] This package provides debug sources for package pin-gcc-client.
+[  763s] Debug sources are useful when developing applications that use this
+[  763s] package or when debugging this package.
+[  763s] %files debugsource -f debugsourcefiles.list
+[  763s] 
+[  763s] 
+[  763s] %install
+[  763s] 
+[  763s] cd _build
+[  763s] /usr/bin/make install DESTDIR=/home/abuild/rpmbuild/BUILDROOT/pin-gcc-client-0.4.1-6.oe2303.riscv64 INSTALL="/usr/bin/install -p"
+[  763s] 
+[  763s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/pin-gcc-client-0.4.1-6.oe2303.riscv64/etc/ld.so.conf.d
+[  763s] echo "{_libdir}" > /home/abuild/rpmbuild/BUILDROOT/pin-gcc-client-0.4.1-6.oe2303.riscv64/etc/ld.so.conf.d/pin-gcc-client-riscv64.conf
+[  763s] 
+[  763s] find /usr/lib64 -type f -name "*.so" -exec strip "{}" ";"
+[  763s] 
+[  763s] %post
+[  763s] /sbin/ldconfig
+[  763s] 
+[  763s] %postun
+[  763s] /sbin/ldconfig
+[  763s] 
+[  763s] %files
+[  763s] %license LICENSE
+[  763s] %attr(0755,root,root) /usr/lib64/libpin_gcc_client.so
+[  763s] %attr(0755,root,root) /usr/lib64/libMLIRClientAPI.so
+[  763s] %attr(0755,root,root) /usr/lib64/libMLIRClientAPI.so.12
+[  763s] %attr(0755,root,root) /usr/lib64/libMLIRPlugin.so
+[  763s] %attr(0755,root,root) /usr/lib64/libMLIRPlugin.so.12
+[  763s] %attr(0644,root,root) /usr/bin/pin-gcc-client.json
+[  763s] %config(noreplace) /etc/ld.so.conf.d/pin-gcc-client-riscv64.conf
+[  763s] 
+[  763s] %changelog
+[  763s] * Sat 25 2023 dingguangya <dingguangya1@huawei.com> - 0.4.1-6
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Fix TreeToValue-VAR_DECL and ARRAY_TYPE-getDomainIndex
+[  763s] 
+[  763s] * Fri Mar 17 2023 dingguangya <dingguangya1@huawei.com> - 0.4.1-5
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Fix VectorType CallOp TreeTOValue
+[  763s] 
+[  763s] * Tue Mar 7 2023 dingguangya <dingguangya1@huawei.com> - 0.4.1-4
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Sync patch from openEuler/pin-gcc-client
+[  763s] 
+[  763s] * Mon Mar 6 2023 wumingchuan <wumingchuan1992@foxmail.com> - 0.4.1-3
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC: Fix RPATH problem by ld.so.conf.d
+[  763s] 
+[  763s] * Fri Mar 3 2023 wumingchuan <wumingchuan1992@foxmail.com> - 0.4.1-2
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC: Fix STRIP & RPATH
+[  763s] 
+[  763s] * Sun Feb 26 2023 dingguangya <dingguangya1@huawei.com> - 0.4.1-1
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Update to v0.4.1
+[  763s] 
+[  763s] * Tue Dec 20 2022 zhaowenyu <804544223@qq.com> - 0.4.0-1
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Update to v0.4.0
+[  763s] 
+[  763s] * Thu Dec 08 2022 benniaobufeijiushiji <linda7@huawei.com> - 0.3.0-2
+[  763s] - Type:Sync
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Sync patch from openEuler/pin-gcc-client
+[  763s] 
+[  763s] * Thu Dec 01 2022 wumingchuan <wumingchuan1992@foxmail.com> - 0.3.0-1
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Update to v0.3.0
+[  763s] 
+[  763s] * Thu Sep 29 2022 wumingchuan <wumingchuan1992@foxmail.com> - 0.2.0-1
+[  763s] - Type:Update
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Update to v0.2.0
+[  763s] 
+[  763s] * Sat Aug 27 2022 liyancheng <412998149@qq.com> - 0.1.0-2
+[  763s] - Type:Bugfix
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Static link plg_grpc_proto
+[  763s] 
+[  763s] * Fri Aug 26 2022 liyancheng <412998149@qq.com> - 0.1.0-1
+[  763s] - Type:Init
+[  763s] - ID:NA
+[  763s] - SUG:NA
+[  763s] - DESC:Init pin-gcc-client repository
+[  763s] error: bad date in %changelog: Sat 25 2023 dingguangya <dingguangya1@huawei.com> - 0.4.1-6
+[  763s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.ICd1PE
+[  763s] + umask 022
+[  763s] + cd /home/abuild/rpmbuild/BUILD
+[  763s] + case pin-gcc-client in
+[  763s] + cd /home/abuild/rpmbuild/BUILD
+[  763s] + rm -rf pin-gcc-client-0.4.1
+[  763s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pin-gcc-client-0.4.1.tar.gz
+[  763s] + STATUS=0
+[  763s] + '[' 0 -ne 0 ']'
+[  763s] + cd pin-gcc-client-0.4.1
+[  763s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  763s] + echo 'Patch #1 (0001-Pin-gcc-client-BugFix-for-SwitchOp-change-it-to-term.patch):'
+[  763s] Patch #1 (0001-Pin-gcc-client-BugFix-for-SwitchOp-change-it-to-term.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file include/Dialect/PluginOps.td
+[  763s] Hunk #1 succeeded at 488 (offset 4 lines).
+[  763s] Hunk #2 succeeded at 556 (offset 4 lines).
+[  763s] + echo 'Patch #2 (0002-Pin-gcc-client-Bugfix-for-GetFunctionById.patch):'
+[  763s] Patch #2 (0002-Pin-gcc-client-Bugfix-for-GetFunctionById.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file include/PluginAPI/BasicPluginOpsAPI.h
+[  763s] patching file include/PluginAPI/PluginClientAPI.h
+[  763s] patching file include/PluginClient/PluginJson.h
+[  763s] patching file include/Translate/GimpleToPluginOps.h
+[  763s] patching file lib/PluginAPI/PluginClientAPI.cpp
+[  763s] patching file lib/PluginClient/PluginClient.cpp
+[  763s] patching file lib/PluginClient/PluginInputCheck.cpp
+[  763s] patching file lib/PluginClient/PluginJson.cpp
+[  763s] patching file lib/Translate/GimpleToPluginOps.cpp
+[  763s] patching file lib/Translate/TypeTranslation.cpp
+[  763s] Patch #3 (0003-Pin-gcc-client-Init-a-SimpleIPAPASS.patch):
+[  763s] + echo 'Patch #3 (0003-Pin-gcc-client-Init-a-SimpleIPAPASS.patch):'
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file include/PluginClient/PluginClient.h
+[  763s] patching file lib/gccPlugin/gccPlugin.cpp
+[  763s] + echo 'Patch #4 (0004-Pin-gcc-client-Add-CGnodeOp.patch):'
+[  763s] Patch #4 (0004-Pin-gcc-client-Add-CGnodeOp.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file include/Dialect/PluginOps.td
+[  763s] patching file include/PluginAPI/BasicPluginOpsAPI.h
+[  763s] patching file include/PluginAPI/PluginClientAPI.h
+[  763s] patching file include/PluginClient/PluginJson.h
+[  763s] patching file include/Translate/GimpleToPluginOps.h
+[  763s] patching file lib/Dialect/PluginOps.cpp
+[  763s] patching file lib/PluginAPI/PluginClientAPI.cpp
+[  763s] patching file lib/PluginClient/PluginClient.cpp
+[  763s] patching file lib/PluginClient/PluginJson.cpp
+[  763s] patching file lib/Translate/GimpleToPluginOps.cpp
+[  763s] + echo 'Patch #5 (0005-Pin-gcc-client-Add-support-for-decl-and-field-SetDec.patch):'
+[  763s] Patch #5 (0005-Pin-gcc-client-Add-support-for-decl-and-field-SetDec.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file include/Dialect/PluginDialect.td
+[  763s] patching file include/PluginAPI/BasicPluginOpsAPI.h
+[  763s] patching file include/PluginAPI/PluginClientAPI.h
+[  763s] patching file include/PluginClient/PluginJson.h
+[  763s] patching file include/Translate/GimpleToPluginOps.h
+[  763s] patching file lib/PluginAPI/PluginClientAPI.cpp
+[  763s] patching file lib/PluginClient/PluginClient.cpp
+[  763s] patching file lib/PluginClient/PluginJson.cpp
+[  763s] patching file lib/Translate/GimpleToPluginOps.cpp
+[  763s] + echo 'Patch #6 (0006-Pin-gcc-client-Add-GetDeclType.patch):'
+[  763s] Patch #6 (0006-Pin-gcc-client-Add-GetDeclType.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file include/PluginAPI/BasicPluginOpsAPI.h
+[  763s] patching file include/PluginAPI/PluginClientAPI.h
+[  763s] patching file include/Translate/GimpleToPluginOps.h
+[  763s] patching file lib/PluginAPI/PluginClientAPI.cpp
+[  763s] patching file lib/PluginClient/PluginClient.cpp
+[  763s] patching file lib/PluginClient/PluginInputCheck.cpp
+[  763s] patching file lib/PluginClient/PluginJson.cpp
+[  763s] patching file lib/PluginClient/PluginLog.cpp
+[  763s] patching file lib/Translate/GimpleToPluginOps.cpp
+[  763s] + echo 'Patch #7 (0007-Pin-gcc-client-Fix-VectorType.patch):'
+[  763s] Patch #7 (0007-Pin-gcc-client-Fix-VectorType.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file lib/Dialect/PluginTypes.cpp
+[  763s] patching file lib/Translate/TypeTranslation.cpp
+[  763s] + echo 'Patch #8 (0008-Pin-gcc-client-Fix-struct-self-contained-CallOp-Tree.patch):'
+[  763s] Patch #8 (0008-Pin-gcc-client-Fix-struct-self-contained-CallOp-Tree.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file include/Dialect/PluginOps.td
+[  763s] patching file include/Dialect/PluginTypes.h
+[  763s] patching file lib/Dialect/PluginOps.cpp
+[  763s] patching file lib/Dialect/PluginTypes.cpp
+[  763s] patching file lib/PluginClient/PluginJson.cpp
+[  763s] patching file lib/Translate/GimpleToPluginOps.cpp
+[  763s] patching file lib/Translate/TypeTranslation.cpp
+[  763s] + echo 'Patch #9 (0009-Pin-gcc-client-Fix-TreeToValue-VAR_DECL-and-ARRAY_TY.patch):'
+[  763s] Patch #9 (0009-Pin-gcc-client-Fix-TreeToValue-VAR_DECL-and-ARRAY_TY.patch):
+[  763s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  763s] patching file lib/Translate/GimpleToPluginOps.cpp
+[  763s] patching file lib/Translate/TypeTranslation.cpp
+[  763s] + mkdir -p _build
+[  763s] + cd _build
+[  763s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[  763s] + export CFLAGS
+[  763s] + CXXFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[  763s] + export CXXFLAGS
+[  763s] + FFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules'
+[  763s] + export FFLAGS
+[  763s] + FCFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules'
+[  763s] + export FCFLAGS
+[  763s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[  763s] + export LDFLAGS
+[  763s] + /usr/bin/cmake -DCMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_Fortran_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DLIB_SUFFIX=64 -DBUILD_SHARED_LIBS:BOOL=ON .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib64 -DCMAKE_SKIP_RPATH=ON -DMLIR_DIR=/usr/lib64/cmake/mlir -DLLVM_DIR=/usr/lib64/cmake/llvm
+[  765s] -- The C compiler identification is GNU 10.3.1
+[  766s] -- The CXX compiler identification is GNU 10.3.1
+[  766s] -- Detecting C compiler ABI info
+[  768s] -- Detecting C compiler ABI info - done
+[  768s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  768s] -- Detecting C compile features
+[  768s] -- Detecting C compile features - done
+[  768s] -- Detecting CXX compiler ABI info
+[  769s] -- Detecting CXX compiler ABI info - done
+[  769s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  769s] -- Detecting CXX compile features
+[  769s] -- Detecting CXX compile features - done
+[  769s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[  771s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[  771s] -- Found Threads: TRUE  
+[  771s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.0") 
+[  771s] -- Checking for module 'protobuf>=3.1.0'
+[  771s] --   Found protobuf, version 3.14.0
+[  771s] --  found libprotobuf.so --- works
+[  771s] --  found protoc --- works
+[  771s] --  found grpc_cpp_plugin --- works
+[  771s] --  found grpc/grpc.h --- works
+[  771s] --  found libgrpc++_reflection.so --- works
+[  771s] --  found libgrpc++.so --- works
+[  771s] --  found libgrpc.so --- works
+[  771s] --  found libabsl_synchronization.so --- works
+[  771s] --  found libjsoncpp.so --- works
+[  771s] -- Performing Test HAVE_FFI_CALL
+[  772s] -- Performing Test HAVE_FFI_CALL - Success
+[  772s] -- Found FFI: /usr/lib64/libffi.so  
+[  772s] -- Performing Test Terminfo_LINKABLE
+[  773s] -- Performing Test Terminfo_LINKABLE - Success
+[  773s] -- Found Terminfo: /usr/lib64/libtinfo.so  
+[  773s] -- Found ZLIB: /usr/lib64/libz.so (found version "1.2.13") 
+[  774s] -- Found LibXml2: /usr/lib64/libxml2.so (found version "2.9.14") 
+[  774s] -- Using MLIRConfig.cmake in: /usr/lib64/cmake/mlir
+[  774s] -- Using LLVMConfig.cmake in: /usr/lib64/cmake/llvm
+[  774s] -- Linker detection: GNU ld
+[  775s] -- Configuring done
+[  775s] -- Generating done
+[  775s] CMake Warning:
+[  775s]   Manually-specified variables were not used by the project:
+[  775s] 
+[  775s]     CMAKE_CXX_FLAGS_RELEASE
+[  775s]     CMAKE_C_FLAGS_RELEASE
+[  775s]     CMAKE_Fortran_FLAGS_RELEASE
+[  775s]     INCLUDE_INSTALL_DIR
+[  775s]     LIB_INSTALL_DIR
+[  775s]     LIB_SUFFIX
+[  775s]     SHARE_INSTALL_PREFIX
+[  775s]     SYSCONF_INSTALL_DIR
+[  775s] 
+[  775s] 
+[  775s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build
+[  775s] + RPM_EC=0
+[  775s] ++ jobs -p
+[  775s] + exit 0
+[  775s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.p43PCC
+[  775s] + umask 022
+[  775s] + cd /home/abuild/rpmbuild/BUILD
+[  775s] + case pin-gcc-client in
+[  775s] + cd pin-gcc-client-0.4.1
+[  775s] + cd _build
+[  775s] + /usr/bin/make -O -j1 V=1 VERBOSE=1
+[  775s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1 -B/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build --check-build-system CMakeFiles/Makefile.cmake 0
+[  775s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/CMakeFiles /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build//CMakeFiles/progress.marks
+[  775s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  775s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  775s] /usr/bin/make  -f CMakeFiles/plg_grpc_proto.dir/build.make CMakeFiles/plg_grpc_proto.dir/depend
+[  775s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  775s] [  3%] Generating plugin.pb.cc, plugin.pb.h, plugin.grpc.pb.cc, plugin.grpc.pb.h
+[  775s] /usr/bin/protoc --grpc_out /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build --cpp_out /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build -I /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/protos --plugin=protoc-gen-grpc="/usr/bin/grpc_cpp_plugin" /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/protos/plugin.proto
+[  776s] cd /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1 /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1 /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/CMakeFiles/plg_grpc_proto.dir/DependInfo.cmake --color=
+[  776s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  776s] /usr/bin/make  -f CMakeFiles/plg_grpc_proto.dir/build.make CMakeFiles/plg_grpc_proto.dir/build
+[  776s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  776s] [  7%] Building CXX object CMakeFiles/plg_grpc_proto.dir/plugin.grpc.pb.cc.o
+[  776s] /usr/bin/c++  -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/include -I/usr/lib/gcc/riscv64-linux-gnu/10.3.1/plugin/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection   -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=c++14 -Wall -fPIC -fno-rtti -std=gnu++14 -MD -MT CMakeFiles/plg_grpc_proto.dir/plugin.grpc.pb.cc.o -MF CMakeFiles/plg_grpc_proto.dir/plugin.grpc.pb.cc.o.d -o CMakeFiles/plg_grpc_proto.dir/plugin.grpc.pb.cc.o -c /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/plugin.grpc.pb.cc
+[  811s] [ 11%] Building CXX object CMakeFiles/plg_grpc_proto.dir/plugin.pb.cc.o
+[  811s] /usr/bin/c++  -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/include -I/usr/lib/gcc/riscv64-linux-gnu/10.3.1/plugin/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection   -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=c++14 -Wall -fPIC -fno-rtti -std=gnu++14 -MD -MT CMakeFiles/plg_grpc_proto.dir/plugin.pb.cc.o -MF CMakeFiles/plg_grpc_proto.dir/plugin.pb.cc.o.d -o CMakeFiles/plg_grpc_proto.dir/plugin.pb.cc.o -c /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/plugin.pb.cc
+[  822s] [ 14%] Linking CXX static library libplg_grpc_proto.a
+[  822s] /usr/bin/cmake -P CMakeFiles/plg_grpc_proto.dir/cmake_clean_target.cmake
+[  822s] /usr/bin/cmake -E cmake_link_script CMakeFiles/plg_grpc_proto.dir/link.txt --verbose=1
+[  822s] /usr/bin/ar qc libplg_grpc_proto.a CMakeFiles/plg_grpc_proto.dir/plugin.grpc.pb.cc.o CMakeFiles/plg_grpc_proto.dir/plugin.pb.cc.o
+[  822s] /usr/bin/ranlib libplg_grpc_proto.a
+[  822s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  823s] [ 14%] Built target plg_grpc_proto
+[  823s] /usr/bin/make  -f include/Dialect/CMakeFiles/MLIRPluginOpsIncGen.dir/build.make include/Dialect/CMakeFiles/MLIRPluginOpsIncGen.dir/depend
+[  823s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  823s] cd /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1 /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include/Dialect /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/include/Dialect /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/include/Dialect/CMakeFiles/MLIRPluginOpsIncGen.dir/DependInfo.cmake --color=
+[  823s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  823s] /usr/bin/make  -f include/Dialect/CMakeFiles/MLIRPluginOpsIncGen.dir/build.make include/Dialect/CMakeFiles/MLIRPluginOpsIncGen.dir/build
+[  823s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  823s] [ 18%] Building PluginOpsEnums.h.inc...
+[  823s] cd /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/include/Dialect && mlir-tblgen -gen-enum-decls -I /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include/Dialect -I/usr/include -I/usr/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/include -I/usr/lib/gcc/riscv64-linux-gnu/10.3.1/plugin/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include -I/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include/Dialect/PluginOps.td --write-if-changed -o /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build/include/Dialect/PluginOpsEnums.h.inc
+[  823s] Included from /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include/Dialect/PluginOps.td:23:
+[  823s] /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include/Dialect/PluginDialect.td:48:39: error: Couldn't find class 'OpTrait'
+[  823s] class Plugin_Op<string mnemonic, list<OpTrait> traits = []> :
+[  823s]                                       ^
+[  823s] Included from /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include/Dialect/PluginOps.td:23:
+[  823s] /home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/include/Dialect/PluginDialect.td:48:46: error: unknown class name
+[  823s] class Plugin_Op<string mnemonic, list<OpTrait> traits = []> :
+[  823s]                                              ^
+[  823s] make[2]: *** [include/Dialect/CMakeFiles/MLIRPluginOpsIncGen.dir/build.make:369: include/Dialect/PluginOpsEnums.h.inc] Error 1
+[  823s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  823s] make[1]: *** [CMakeFiles/Makefile2:434: include/Dialect/CMakeFiles/MLIRPluginOpsIncGen.dir/all] Error 2
+[  823s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/pin-gcc-client-0.4.1/_build'
+[  823s] make: *** [Makefile:139: all] Error 2
+[  823s] error: Bad exit status from /var/tmp/rpm-tmp.p43PCC (%build)
+[  823s] 
+[  823s] RPM build errors:
+[  823s]     bad date in %changelog: Sat 25 2023 dingguangya <dingguangya1@huawei.com> - 0.4.1-6
+[  823s]     Bad exit status from /var/tmp/rpm-tmp.p43PCC (%build)
+[  824s] 
+[  824s]  failed "build _service:tar_scm:pin-gcc-client.spec" at Mon Apr  3 05:31:02 UTC 2023.
+[  824s] 
+[  824s] 
+[  824s] oerv-obs-worker-01 failed "build _service:tar_scm:pin-gcc-client.spec" at Mon Apr  3 05:31:02 UTC 2023.
+[  824s] 

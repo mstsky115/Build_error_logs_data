@@ -1,0 +1,864 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] build82 started "build python-rpyc.spec" at Fri Mar 31 16:43:29 UTC 2023.
+[    0s] 
+[    0s] Building python-rpyc:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'c565b1b8c52221c586265ce801fba896'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/python-rpyc.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/python-rpyc.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/python-rpyc.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [279441420aa463a149232fde8da269e8]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...done
+[    3s] Detected virtio-serial support
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using virtio-serial support
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 7250 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 3
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   11s] Linux version: 6.2.8-1-default #1 SMP PREEMPT_DYNAMIC Wed Mar 22 18:56:06 UTC 2023 (221c28f)
+[   11s] Increasing log level from now on...
+[   11s] [    2.972759][  T358] sysrq: Changing Loglevel
+[   11s] [    2.972841][  T358] sysrq: Loglevel set to 4
+[   11s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=dd3fd558-1af0-428f-a4fb-a436e10fcbe2
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/python-rpyc.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-rpyc.spec build ...
+[   12s] initializing rpm db...
+[   12s] querying package ids...
+[   30s] [1/327] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   30s] [2/327] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   30s] [3/327] preinstalled attr-2.5.1-1.1
+[   30s] [4/327] preinstalled bash-5.2.15-8.1
+[   30s] [5/327] preinstalled bash-sh-5.2.15-8.1
+[   30s] [6/327] preinstalled binutils-2.40-3.1
+[   30s] [7/327] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   30s] [8/327] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   30s] [9/327] preinstalled build-mkbaselibs-20230314-1.1
+[   30s] [10/327] preinstalled bzip2-1.0.8-5.1
+[   30s] [11/327] preinstalled chkstat-1599_20230217-1.1
+[   30s] [12/327] preinstalled compat-usrmerge-build-84.87-5.1
+[   30s] [13/327] preinstalled compat-usrmerge-tools-84.87-5.1
+[   30s] [14/327] preinstalled coreutils-9.1-5.1
+[   30s] [15/327] preinstalled cpio-2.13-5.1
+[   30s] [16/327] preinstalled cpp-13-1.1
+[   30s] [17/327] preinstalled cpp13-13.0.1+git6669-7.1
+[   30s] [18/327] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   30s] [19/327] preinstalled debugedit-5.0-5.1
+[   30s] [20/327] preinstalled diffutils-3.9-1.1
+[   30s] [21/327] preinstalled dwz-0.15-2.1
+[   30s] [22/327] preinstalled elfutils-0.189-2.1
+[   30s] [23/327] cumulate fdupes-2.2.1-1.1
+[   30s] [24/327] preinstalled file-5.44-1.2
+[   30s] [25/327] preinstalled file-magic-5.44-1.2
+[   30s] [26/327] preinstalled filesystem-84.87-12.1
+[   30s] [27/327] preinstalled fillup-1.42-279.1
+[   30s] [28/327] preinstalled findutils-4.9.0-2.1
+[   30s] [29/327] preinstalled gawk-5.2.1-2.1
+[   30s] [30/327] preinstalled gcc-13-1.1
+[   30s] [31/327] preinstalled gcc-PIE-13-1.1
+[   30s] [32/327] preinstalled gcc13-13.0.1+git6669-7.1
+[   31s] [33/327] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   31s] [34/327] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   31s] [35/327] preinstalled gettext-tools-mini-0.21.1-1.1
+[   31s] [36/327] preinstalled glibc-2.37-2.1
+[   31s] [37/327] preinstalled glibc-devel-2.37-2.1
+[   31s] [38/327] preinstalled glibc-locale-base-2.37-2.1
+[   31s] [39/327] preinstalled grep-3.9-1.1
+[   31s] [40/327] preinstalled gzip-1.12-3.1
+[   31s] [41/327] preinstalled kernel-obs-build-6.2.8-1.1
+[   31s] [42/327] preinstalled libacl1-2.3.1-2.1
+[   31s] [43/327] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   31s] [44/327] preinstalled libasan8-13.0.1+git6669-7.1
+[   31s] [45/327] preinstalled libasm1-0.189-2.1
+[   31s] [46/327] preinstalled libatomic1-13.0.1+git6669-7.1
+[   31s] [47/327] preinstalled libattr1-2.5.1-1.1
+[   31s] [48/327] preinstalled libaudit1-3.0.9-1.1
+[   31s] [49/327] preinstalled libblkid1-2.38.1-10.1
+[   31s] [50/327] preinstalled libbz2-1-1.0.8-5.1
+[   31s] [51/327] preinstalled libcap-ng0-0.8.3-1.1
+[   31s] [52/327] preinstalled libcap2-2.67-2.1
+[   31s] [53/327] preinstalled libcrypt1-4.4.33-2.1
+[   31s] [54/327] preinstalled libctf-nobfd0-2.40-3.1
+[   31s] [55/327] preinstalled libctf0-2.40-3.1
+[   31s] [56/327] preinstalled libdb-4_8-4.8.30-40.1
+[   31s] [57/327] preinstalled libdw1-0.189-2.1
+[   31s] [58/327] preinstalled libeconf0-0.5.2-1.1
+[   31s] [59/327] preinstalled libelf1-0.189-2.1
+[   31s] [60/327] cumulate libev4-4.33-1.2
+[   31s] [61/327] preinstalled libexpat1-2.5.0-2.1
+[   31s] [62/327] preinstalled libfdisk1-2.38.1-10.1
+[   31s] [63/327] preinstalled libffi8-3.4.4-1.1
+[   31s] [64/327] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   31s] [65/327] preinstalled libgcrypt20-1.10.1-2.1
+[   31s] [66/327] preinstalled libgdbm6-1.23-1.1
+[   31s] [67/327] preinstalled libgdbm_compat4-1.23-1.1
+[   31s] [68/327] preinstalled libgmp10-6.2.1-4.1
+[   31s] [69/327] preinstalled libgomp1-13.0.1+git6669-7.1
+[   31s] [70/327] preinstalled libgpg-error0-1.46-1.1
+[   31s] [71/327] preinstalled libisl23-0.25-1.1
+[   31s] [72/327] preinstalled libitm1-13.0.1+git6669-7.1
+[   31s] [73/327] preinstalled liblua5_4-5-5.4.4-9.1
+[   31s] [74/327] preinstalled liblzma5-5.4.2-1.1
+[   31s] [75/327] preinstalled libmagic1-5.44-1.2
+[   31s] [76/327] preinstalled libmount1-2.38.1-10.1
+[   31s] [77/327] preinstalled libmpc3-1.3.1-1.2
+[   31s] [78/327] preinstalled libmpdec3-2.5.1-2.1
+[   31s] [79/327] preinstalled libmpfr6-4.2.0-1.1
+[   31s] [80/327] preinstalled libncurses6-6.4.20230311-8.1
+[   31s] [81/327] cumulate libnss_usrfiles2-2.27-3.1
+[   31s] [82/327] preinstalled libopenssl3-3.0.8-2.1
+[   31s] [83/327] cumulate libp11-kit0-0.24.1-2.1
+[   31s] [84/327] preinstalled libpcre2-8-0-10.42-3.2
+[   31s] [85/327] preinstalled libpkgconf3-1.8.0-2.1
+[   31s] [86/327] preinstalled libpopt0-1.19-1.1
+[   31s] [87/327] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   31s] [88/327] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   31s] [89/327] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   31s] [90/327] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   31s] [91/327] preinstalled libreadline8-8.2-2.1
+[   31s] [92/327] preinstalled librpmbuild9-4.18.0-4.1
+[   31s] [93/327] preinstalled libseccomp2-2.5.4-2.1
+[   31s] [94/327] preinstalled libselinux1-3.5-1.1
+[   31s] [95/327] preinstalled libsemanage-conf-3.5-1.1
+[   31s] [96/327] preinstalled libsemanage2-3.5-1.1
+[   31s] [97/327] preinstalled libsepol2-3.5-1.1
+[   31s] [98/327] preinstalled libsmartcols1-2.38.1-10.1
+[   31s] [99/327] cumulate libsqlite3-0-3.41.2-1.1
+[   31s] [100/327] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   31s] [101/327] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   31s] [102/327] preinstalled libsubid4-4.13-4.1
+[   31s] [103/327] cumulate libtasn1-6-4.19.0-1.1
+[   31s] [104/327] preinstalled libubsan1-13.0.1+git6669-7.1
+[   31s] [105/327] preinstalled libutempter0-1.2.0-3.2
+[   31s] [106/327] preinstalled libuuid1-2.38.1-10.1
+[   31s] [107/327] preinstalled libxcrypt-devel-4.4.33-2.1
+[   31s] [108/327] preinstalled libz1-1.2.13-3.1
+[   31s] [109/327] preinstalled libzstd1-1.5.4-2.1
+[   31s] [110/327] preinstalled linux-glibc-devel-6.2-1.1
+[   31s] [111/327] preinstalled login_defs-4.13-4.1
+[   31s] [112/327] preinstalled lua54-5.4.4-9.1
+[   31s] [113/327] preinstalled make-4.4.1-1.1
+[   31s] [114/327] preinstalled ncurses-utils-6.4.20230311-8.1
+[   31s] [115/327] preinstalled pam-1.5.2-14.1
+[   31s] [116/327] preinstalled patch-2.7.6-6.1
+[   31s] [117/327] preinstalled perl-5.36.0-4.1
+[   31s] [118/327] preinstalled perl-base-5.36.0-4.1
+[   31s] [119/327] preinstalled permissions-1599_20230217-1.1
+[   31s] [120/327] preinstalled permissions-config-1599_20230217-1.1
+[   31s] [121/327] preinstalled pkgconf-1.8.0-2.1
+[   31s] [122/327] preinstalled pkgconf-m4-1.8.0-2.1
+[   31s] [123/327] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   31s] [124/327] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   31s] [125/327] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   31s] [126/327] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   31s] [127/327] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   31s] [128/327] cumulate python310-apipkg-3.0.1-2.1
+[   31s] [129/327] cumulate python310-attrs-22.2.0-1.2
+[   31s] [130/327] preinstalled python310-base-3.10.10-2.1
+[   31s] [131/327] cumulate python310-charset-normalizer-3.1.0-1.1
+[   31s] [132/327] cumulate python310-editables-0.3-1.3
+[   31s] [133/327] cumulate python310-exceptiongroup-1.1.1-1.1
+[   31s] [134/327] cumulate python310-greenlet-1.1.3-2.2
+[   31s] [135/327] cumulate python310-h11-0.14.0-1.2
+[   31s] [136/327] cumulate python310-idna-3.4-1.2
+[   31s] [137/327] cumulate python310-iniconfig-2.0.0-1.1
+[   31s] [138/327] preinstalled python310-packaging-23.0-2.1
+[   31s] [139/327] cumulate python310-pathspec-0.11.1-1.1
+[   31s] [140/327] cumulate python310-pluggy-1.0.0-1.5
+[   31s] [141/327] cumulate python310-plumbum-1.7.2-1.3
+[   31s] [142/327] cumulate python310-pycparser-2.21-1.5
+[   31s] [143/327] cumulate python310-rfc3986-2.0.0-1.2
+[   31s] [144/327] preinstalled python310-setuptools-65.6.3-1.2
+[   31s] [145/327] cumulate python310-six-1.16.0-2.5
+[   31s] [146/327] cumulate python310-sniffio-1.3.0-1.2
+[   31s] [147/327] cumulate python310-tomli-2.0.1-1.3
+[   31s] [148/327] cumulate python310-zipp-3.8.1-1.2
+[   31s] [149/327] cumulate python310-zope.event-4.6-1.1
+[   31s] [150/327] cumulate python310-zope.interface-5.5.2-1.2
+[   31s] [151/327] cumulate python311-apipkg-3.0.1-2.1
+[   31s] [152/327] cumulate python311-attrs-22.2.0-1.2
+[   31s] [153/327] preinstalled python311-base-3.11.2-1.2
+[   31s] [154/327] cumulate python311-charset-normalizer-3.1.0-1.1
+[   31s] [155/327] cumulate python311-editables-0.3-1.3
+[   31s] [156/327] cumulate python311-exceptiongroup-1.1.1-1.1
+[   31s] [157/327] cumulate python311-greenlet-1.1.3-2.2
+[   31s] [158/327] cumulate python311-h11-0.14.0-1.2
+[   31s] [159/327] cumulate python311-idna-3.4-1.2
+[   31s] [160/327] cumulate python311-iniconfig-2.0.0-1.1
+[   31s] [161/327] cumulate python311-packaging-23.0-2.1
+[   31s] [162/327] cumulate python311-pathspec-0.11.1-1.1
+[   31s] [163/327] cumulate python311-pluggy-1.0.0-1.5
+[   31s] [164/327] cumulate python311-plumbum-1.7.2-1.3
+[   31s] [165/327] cumulate python311-pycparser-2.21-1.5
+[   31s] [166/327] cumulate python311-rfc3986-2.0.0-1.2
+[   31s] [167/327] preinstalled python311-setuptools-65.6.3-1.2
+[   31s] [168/327] cumulate python311-six-1.16.0-2.5
+[   31s] [169/327] cumulate python311-sniffio-1.3.0-1.2
+[   31s] [170/327] cumulate python311-tomli-2.0.1-1.3
+[   31s] [171/327] cumulate python311-zipp-3.8.1-1.2
+[   31s] [172/327] cumulate python311-zope.event-4.6-1.1
+[   31s] [173/327] cumulate python311-zope.interface-5.5.2-1.2
+[   31s] [174/327] cumulate python38-apipkg-3.0.1-2.1
+[   31s] [175/327] cumulate python38-attrs-22.2.0-1.2
+[   31s] [176/327] preinstalled python38-base-3.8.16-5.1
+[   31s] [177/327] cumulate python38-charset-normalizer-3.1.0-1.1
+[   31s] [178/327] cumulate python38-editables-0.3-1.3
+[   31s] [179/327] cumulate python38-exceptiongroup-1.1.1-1.1
+[   31s] [180/327] cumulate python38-greenlet-1.1.3-2.2
+[   31s] [181/327] cumulate python38-h11-0.14.0-1.2
+[   31s] [182/327] cumulate python38-idna-3.4-1.2
+[   31s] [183/327] cumulate python38-iniconfig-2.0.0-1.1
+[   31s] [184/327] cumulate python38-packaging-23.0-2.1
+[   31s] [185/327] cumulate python38-pathspec-0.11.1-1.1
+[   31s] [186/327] cumulate python38-pluggy-1.0.0-1.5
+[   31s] [187/327] cumulate python38-plumbum-1.7.2-1.3
+[   31s] [188/327] cumulate python38-pycparser-2.21-1.5
+[   31s] [189/327] cumulate python38-rfc3986-2.0.0-1.2
+[   31s] [190/327] preinstalled python38-setuptools-65.6.3-1.2
+[   31s] [191/327] cumulate python38-six-1.16.0-2.5
+[   31s] [192/327] cumulate python38-sniffio-1.3.0-1.2
+[   31s] [193/327] cumulate python38-tomli-2.0.1-1.3
+[   31s] [194/327] cumulate python38-zipp-3.8.1-1.2
+[   31s] [195/327] cumulate python38-zope.event-4.6-1.1
+[   31s] [196/327] cumulate python38-zope.interface-5.5.2-1.2
+[   31s] [197/327] cumulate python39-apipkg-3.0.1-2.1
+[   31s] [198/327] cumulate python39-attrs-22.2.0-1.2
+[   31s] [199/327] preinstalled python39-base-3.9.16-5.1
+[   31s] [200/327] cumulate python39-charset-normalizer-3.1.0-1.1
+[   31s] [201/327] cumulate python39-editables-0.3-1.3
+[   31s] [202/327] cumulate python39-exceptiongroup-1.1.1-1.1
+[   31s] [203/327] cumulate python39-greenlet-1.1.3-2.2
+[   31s] [204/327] cumulate python39-h11-0.14.0-1.2
+[   31s] [205/327] cumulate python39-idna-3.4-1.2
+[   31s] [206/327] cumulate python39-iniconfig-2.0.0-1.1
+[   31s] [207/327] cumulate python39-packaging-23.0-2.1
+[   31s] [208/327] cumulate python39-pathspec-0.11.1-1.1
+[   31s] [209/327] cumulate python39-pluggy-1.0.0-1.5
+[   31s] [210/327] cumulate python39-plumbum-1.7.2-1.3
+[   31s] [211/327] cumulate python39-pycparser-2.21-1.5
+[   31s] [212/327] cumulate python39-rfc3986-2.0.0-1.2
+[   31s] [213/327] preinstalled python39-setuptools-65.6.3-1.2
+[   31s] [214/327] cumulate python39-six-1.16.0-2.5
+[   31s] [215/327] cumulate python39-sniffio-1.3.0-1.2
+[   31s] [216/327] cumulate python39-tomli-2.0.1-1.3
+[   31s] [217/327] cumulate python39-zipp-3.8.1-1.2
+[   31s] [218/327] cumulate python39-zope.event-4.6-1.1
+[   31s] [219/327] cumulate python39-zope.interface-5.5.2-1.2
+[   31s] [220/327] preinstalled qemu-linux-user-7.1.0-58.1
+[   31s] [221/327] preinstalled rpm-4.18.0-4.1
+[   31s] [222/327] preinstalled rpm-build-4.18.0-4.1
+[   31s] [223/327] preinstalled rpm-build-perl-4.18.0-4.1
+[   31s] [224/327] preinstalled rpm-config-SUSE-20220926-1.1
+[   31s] [225/327] preinstalled rpmlint-mini-2.4.0+git20230327.f239521-9.23
+[   31s] [226/327] preinstalled rpmlint-strict-2.4.0+git20230327.f239521-1.1
+[   31s] [227/327] preinstalled sed-4.9-2.1
+[   31s] [228/327] preinstalled shadow-4.13-4.1
+[   31s] [229/327] preinstalled system-group-hardware-20170617-24.1
+[   31s] [230/327] preinstalled system-user-root-20190513-2.1
+[   31s] [231/327] preinstalled systemd-rpm-macros-19-1.1
+[   31s] [232/327] preinstalled sysuser-shadow-3.1-5.1
+[   31s] [233/327] preinstalled tar-1.34-10.1
+[   31s] [234/327] preinstalled terminfo-base-6.4.20230311-8.1
+[   31s] [235/327] preinstalled update-alternatives-1.21.8-1.1
+[   31s] [236/327] preinstalled util-linux-2.38.1-10.1
+[   31s] [237/327] preinstalled which-2.21-5.1
+[   31s] [238/327] preinstalled xz-5.4.2-1.1
+[   31s] [239/327] cumulate alts-1.2+3.b848aad-3.1
+[   31s] [240/327] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   31s] [241/327] cumulate netcfg-11.6-10.1
+[   31s] [242/327] cumulate python310-3.10.10-2.1
+[   31s] [243/327] cumulate python310-cffi-1.15.1-3.2
+[   31s] [244/327] cumulate python310-importlib-metadata-6.1.0-1.1
+[   31s] [245/327] cumulate python310-rpyc-5.3.0-2.1
+[   31s] [246/327] cumulate python311-3.11.2-1.1
+[   31s] [247/327] cumulate python311-cffi-1.15.1-3.2
+[   31s] [248/327] cumulate python311-importlib-metadata-6.1.0-1.1
+[   31s] [249/327] cumulate python311-rpyc-5.3.0-2.1
+[   31s] [250/327] cumulate python38-3.8.16-5.1
+[   31s] [251/327] cumulate python38-cffi-1.15.1-3.2
+[   31s] [252/327] cumulate python38-importlib-metadata-6.1.0-1.1
+[   31s] [253/327] cumulate python38-rpyc-5.3.0-2.1
+[   31s] [254/327] cumulate python39-3.9.16-5.1
+[   31s] [255/327] cumulate python39-cffi-1.15.1-3.2
+[   31s] [256/327] cumulate python39-importlib-metadata-6.1.0-1.1
+[   31s] [257/327] cumulate python39-rpyc-5.3.0-2.1
+[   31s] [258/327] cumulate p11-kit-0.24.1-2.1
+[   31s] [259/327] cumulate p11-kit-tools-0.24.1-2.1
+[   31s] [260/327] cumulate python310-anyio-3.6.2-3.1
+[   31s] [261/327] cumulate python310-py-1.11.0-3.2
+[   31s] [262/327] cumulate python311-anyio-3.6.2-3.1
+[   31s] [263/327] cumulate python311-py-1.11.0-3.2
+[   31s] [264/327] cumulate python38-anyio-3.6.2-3.1
+[   31s] [265/327] cumulate python38-py-1.11.0-3.2
+[   31s] [266/327] cumulate python39-anyio-3.6.2-3.1
+[   31s] [267/327] cumulate python39-py-1.11.0-3.2
+[   31s] [268/327] cumulate python310-hatchling-1.13.0-1.2
+[   31s] [269/327] cumulate python311-hatchling-1.13.0-1.2
+[   31s] [270/327] cumulate python38-hatchling-1.13.0-1.2
+[   31s] [271/327] cumulate python39-hatchling-1.13.0-1.2
+[   31s] [272/327] cumulate gcc-c++-13-1.1
+[   31s] [273/327] cumulate python310-pyOpenSSL-23.1.1-1.1
+[   31s] [274/327] cumulate python310-wheel-0.38.4-1.2
+[   31s] [275/327] cumulate python311-pyOpenSSL-23.1.1-1.1
+[   31s] [276/327] cumulate python311-wheel-0.38.4-1.2
+[   31s] [277/327] cumulate python38-pyOpenSSL-23.1.1-1.1
+[   31s] [278/327] cumulate python38-wheel-0.38.4-1.2
+[   31s] [279/327] cumulate python39-pyOpenSSL-23.1.1-1.1
+[   31s] [280/327] cumulate python39-wheel-0.38.4-1.2
+[   31s] [281/327] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   31s] [282/327] cumulate libcares2-1.19.0-2.1
+[   31s] [283/327] cumulate python310-cryptography-40.0.1-1.1
+[   31s] [284/327] cumulate python311-cryptography-40.0.1-1.1
+[   31s] [285/327] cumulate python38-cryptography-40.0.1-1.1
+[   31s] [286/327] cumulate python39-cryptography-40.0.1-1.1
+[   31s] [287/327] cumulate python310-pytest-7.2.0-3.1
+[   31s] [288/327] cumulate python311-pytest-7.2.0-3.1
+[   31s] [289/327] cumulate python38-pytest-7.2.0-3.1
+[   31s] [290/327] cumulate python39-pytest-7.2.0-3.1
+[   31s] [291/327] cumulate ca-certificates-mozilla-2.60-1.2
+[   31s] [292/327] cumulate python310-pip-22.3.1-1.2
+[   31s] [293/327] cumulate python311-pip-22.3.1-1.2
+[   31s] [294/327] cumulate python38-pip-22.3.1-1.2
+[   31s] [295/327] cumulate python39-pip-22.3.1-1.2
+[   31s] [296/327] cumulate python310-certifi-2022.9.24-1.2
+[   31s] [297/327] cumulate python311-certifi-2022.9.24-1.2
+[   31s] [298/327] cumulate python38-certifi-2022.9.24-1.2
+[   31s] [299/327] cumulate python39-certifi-2022.9.24-1.2
+[   31s] [300/327] cumulate python310-httpcore-0.16.3-1.3
+[   31s] [301/327] cumulate python311-httpcore-0.16.3-1.3
+[   31s] [302/327] cumulate python38-httpcore-0.16.3-1.3
+[   31s] [303/327] cumulate python39-httpcore-0.16.3-1.3
+[   31s] [304/327] cumulate python310-urllib3-1.26.15-1.1
+[   31s] [305/327] cumulate python311-urllib3-1.26.15-1.1
+[   31s] [306/327] cumulate python38-urllib3-1.26.15-1.1
+[   31s] [307/327] cumulate python39-urllib3-1.26.15-1.1
+[   31s] [308/327] cumulate python310-httpx-0.23.3-1.2
+[   31s] [309/327] cumulate python311-httpx-0.23.3-1.2
+[   31s] [310/327] cumulate python38-httpx-0.23.3-1.2
+[   31s] [311/327] cumulate python39-httpx-0.23.3-1.2
+[   31s] [312/327] cumulate python310-requests-2.28.2-2.1
+[   31s] [313/327] cumulate python311-requests-2.28.2-2.1
+[   31s] [314/327] cumulate python38-requests-2.28.2-2.1
+[   31s] [315/327] cumulate python39-requests-2.28.2-2.1
+[   31s] [316/327] cumulate python310-requests-toolbelt-0.9.1-7.2
+[   31s] [317/327] cumulate python311-requests-toolbelt-0.9.1-7.2
+[   31s] [318/327] cumulate python38-requests-toolbelt-0.9.1-7.2
+[   31s] [319/327] cumulate python39-requests-toolbelt-0.9.1-7.2
+[   31s] [320/327] cumulate python310-dnspython-2.3.0-1.2
+[   31s] [321/327] cumulate python311-dnspython-2.3.0-1.2
+[   31s] [322/327] cumulate python38-dnspython-2.3.0-1.2
+[   31s] [323/327] cumulate python39-dnspython-2.3.0-1.2
+[   31s] [324/327] cumulate python310-gevent-22.10.1-6.1
+[   31s] [325/327] cumulate python311-gevent-22.10.1-6.1
+[   31s] [326/327] cumulate python38-gevent-22.10.1-6.1
+[   31s] [327/327] cumulate python39-gevent-22.10.1-6.1
+[   31s] now installing cumulated packages
+[   32s] Preparing...                          ########################################
+[   32s] Updating / installing...
+[   32s] python39-idna-3.4-1.2                 ########################################
+[   32s] python38-idna-3.4-1.2                 ########################################
+[   32s] python311-idna-3.4-1.2                ########################################
+[   32s] python310-idna-3.4-1.2                ########################################
+[   32s] python39-sniffio-1.3.0-1.2            ########################################
+[   32s] python38-sniffio-1.3.0-1.2            ########################################
+[   32s] python311-sniffio-1.3.0-1.2           ########################################
+[   32s] python310-sniffio-1.3.0-1.2           ########################################
+[   32s] libsqlite3-0-3.41.2-1.1               ########################################
+[   32s] libev4-4.33-1.2                       ########################################
+[   32s] python39-tomli-2.0.1-1.3              ########################################
+[   32s] python39-pluggy-1.0.0-1.5             ########################################
+[   33s] python39-packaging-23.0-2.1           ########################################
+[   33s] python39-iniconfig-2.0.0-1.1          ########################################
+[   33s] python38-tomli-2.0.1-1.3              ########################################
+[   33s] python38-pluggy-1.0.0-1.5             ########################################
+[   33s] python38-packaging-23.0-2.1           ########################################
+[   33s] python38-iniconfig-2.0.0-1.1          ########################################
+[   33s] python311-pluggy-1.0.0-1.5            ########################################
+[   33s] python311-packaging-23.0-2.1          ########################################
+[   33s] python311-iniconfig-2.0.0-1.1         ########################################
+[   33s] python310-tomli-2.0.1-1.3             ########################################
+[   33s] python310-pluggy-1.0.0-1.5            ########################################
+[   33s] python310-iniconfig-2.0.0-1.1         ########################################
+[   33s] libtasn1-6-4.19.0-1.1                 ########################################
+[   33s] libp11-kit0-0.24.1-2.1                ########################################
+[   33s] libnss_usrfiles2-2.27-3.1             ########################################
+[   33s] netcfg-11.6-10.1                      ########################################
+[   33s] warning: /etc/hosts created as /etc/hosts.rpmnew
+[   33s] libcares2-1.19.0-2.1                  ########################################
+[   33s] p11-kit-0.24.1-2.1                    ########################################
+[   33s] p11-kit-tools-0.24.1-2.1              ########################################
+[   33s] ca-certificates-2+git20211004.3efbea9-########################################
+[   35s] ca-certificates-mozilla-2.60-1.2      ########################################
+[   38s] python310-certifi-2022.9.24-1.2       ########################################
+[   38s] python311-certifi-2022.9.24-1.2       ########################################
+[   38s] python38-certifi-2022.9.24-1.2        ########################################
+[   38s] python39-certifi-2022.9.24-1.2        ########################################
+[   38s] python310-anyio-3.6.2-3.1             ########################################
+[   38s] python311-anyio-3.6.2-3.1             ########################################
+[   38s] python38-anyio-3.6.2-3.1              ########################################
+[   38s] python39-anyio-3.6.2-3.1              ########################################
+[   38s] python39-zope.interface-5.5.2-1.2     ########################################
+[   38s] python39-zope.event-4.6-1.1           ########################################
+[   38s] python39-zipp-3.8.1-1.2               ########################################
+[   38s] python39-importlib-metadata-6.1.0-1.1 ########################################
+[   39s] python39-six-1.16.0-2.5               ########################################
+[   39s] python39-rfc3986-2.0.0-1.2            ########################################
+[   39s] python39-pycparser-2.21-1.5           ########################################
+[   39s] python39-cffi-1.15.1-3.2              ########################################
+[   39s] python39-plumbum-1.7.2-1.3            ########################################
+[   39s] python39-pathspec-0.11.1-1.1          ########################################
+[   39s] python39-h11-0.14.0-1.2               ########################################
+[   39s] python39-httpcore-0.16.3-1.3          ########################################
+[   39s] python39-httpx-0.23.3-1.2             ########################################
+[   39s] python39-greenlet-1.1.3-2.2           ########################################
+[   39s] python39-exceptiongroup-1.1.1-1.1     ########################################
+[   39s] python39-editables-0.3-1.3            ########################################
+[   39s] python39-charset-normalizer-3.1.0-1.1 ########################################
+[   40s] python39-attrs-22.2.0-1.2             ########################################
+[   40s] python39-apipkg-3.0.1-2.1             ########################################
+[   40s] python39-py-1.11.0-3.2                ########################################
+[   40s] python38-zope.interface-5.5.2-1.2     ########################################
+[   40s] python38-zope.event-4.6-1.1           ########################################
+[   40s] python38-zipp-3.8.1-1.2               ########################################
+[   40s] python38-importlib-metadata-6.1.0-1.1 ########################################
+[   40s] python38-six-1.16.0-2.5               ########################################
+[   40s] python38-rfc3986-2.0.0-1.2            ########################################
+[   40s] python38-pycparser-2.21-1.5           ########################################
+[   40s] python38-cffi-1.15.1-3.2              ########################################
+[   41s] python38-plumbum-1.7.2-1.3            ########################################
+[   41s] python38-pathspec-0.11.1-1.1          ########################################
+[   41s] python38-h11-0.14.0-1.2               ########################################
+[   41s] python38-httpcore-0.16.3-1.3          ########################################
+[   41s] python38-httpx-0.23.3-1.2             ########################################
+[   41s] python38-greenlet-1.1.3-2.2           ########################################
+[   41s] python38-exceptiongroup-1.1.1-1.1     ########################################
+[   41s] python38-editables-0.3-1.3            ########################################
+[   41s] python38-charset-normalizer-3.1.0-1.1 ########################################
+[   41s] python38-attrs-22.2.0-1.2             ########################################
+[   41s] python38-apipkg-3.0.1-2.1             ########################################
+[   41s] python38-py-1.11.0-3.2                ########################################
+[   42s] python311-zope.interface-5.5.2-1.2    ########################################
+[   42s] python311-zope.event-4.6-1.1          ########################################
+[   42s] python311-zipp-3.8.1-1.2              ########################################
+[   42s] python311-importlib-metadata-6.1.0-1.1########################################
+[   42s] python311-tomli-2.0.1-1.3             ########################################
+[   42s] python311-six-1.16.0-2.5              ########################################
+[   42s] python311-rfc3986-2.0.0-1.2           ########################################
+[   42s] python311-pycparser-2.21-1.5          ########################################
+[   42s] python311-cffi-1.15.1-3.2             ########################################
+[   42s] python311-plumbum-1.7.2-1.3           ########################################
+[   42s] python311-pathspec-0.11.1-1.1         ########################################
+[   42s] python311-h11-0.14.0-1.2              ########################################
+[   42s] python311-httpcore-0.16.3-1.3         ########################################
+[   42s] python311-httpx-0.23.3-1.2            ########################################
+[   43s] python311-greenlet-1.1.3-2.2          ########################################
+[   43s] python311-exceptiongroup-1.1.1-1.1    ########################################
+[   43s] python311-editables-0.3-1.3           ########################################
+[   43s] python311-charset-normalizer-3.1.0-1.1########################################
+[   43s] python311-attrs-22.2.0-1.2            ########################################
+[   43s] python311-apipkg-3.0.1-2.1            ########################################
+[   43s] python311-py-1.11.0-3.2               ########################################
+[   43s] python310-zope.interface-5.5.2-1.2    ########################################
+[   43s] python310-zope.event-4.6-1.1          ########################################
+[   43s] python310-zipp-3.8.1-1.2              ########################################
+[   43s] python310-importlib-metadata-6.1.0-1.1########################################
+[   43s] python310-six-1.16.0-2.5              ########################################
+[   43s] python310-rfc3986-2.0.0-1.2           ########################################
+[   44s] python310-pycparser-2.21-1.5          ########################################
+[   44s] python310-cffi-1.15.1-3.2             ########################################
+[   44s] python310-plumbum-1.7.2-1.3           ########################################
+[   44s] python310-pathspec-0.11.1-1.1         ########################################
+[   44s] python310-h11-0.14.0-1.2              ########################################
+[   44s] python310-httpcore-0.16.3-1.3         ########################################
+[   44s] python310-httpx-0.23.3-1.2            ########################################
+[   44s] python310-greenlet-1.1.3-2.2          ########################################
+[   44s] python310-exceptiongroup-1.1.1-1.1    ########################################
+[   44s] python310-editables-0.3-1.3           ########################################
+[   44s] python310-charset-normalizer-3.1.0-1.1########################################
+[   45s] python310-attrs-22.2.0-1.2            ########################################
+[   45s] python310-apipkg-3.0.1-2.1            ########################################
+[   45s] python310-py-1.11.0-3.2               ########################################
+[   55s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[   58s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[   59s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   59s] alts-1.2+3.b848aad-3.1                ########################################
+[   60s] python310-pip-22.3.1-1.2              ########################################
+[   60s] python310-3.10.10-2.1                 ########################################
+[   61s] python310-cryptography-40.0.1-1.1     ########################################
+[   61s] python310-pyOpenSSL-23.1.1-1.1        ########################################
+[   61s] python310-urllib3-1.26.15-1.1         ########################################
+[   61s] python310-requests-2.28.2-2.1         ########################################
+[   61s] python310-requests-toolbelt-0.9.1-7.2 ########################################
+[   61s] python310-dnspython-2.3.0-1.2         ########################################
+[   63s] python311-pip-22.3.1-1.2              ########################################
+[   63s] python311-3.11.2-1.1                  ########################################
+[   64s] python311-cryptography-40.0.1-1.1     ########################################
+[   64s] python311-pyOpenSSL-23.1.1-1.1        ########################################
+[   64s] python311-urllib3-1.26.15-1.1         ########################################
+[   64s] python311-requests-2.28.2-2.1         ########################################
+[   64s] python311-requests-toolbelt-0.9.1-7.2 ########################################
+[   64s] python311-dnspython-2.3.0-1.2         ########################################
+[   66s] python38-pip-22.3.1-1.2               ########################################
+[   66s] python38-3.8.16-5.1                   ########################################
+[   67s] python38-cryptography-40.0.1-1.1      ########################################
+[   67s] python38-pyOpenSSL-23.1.1-1.1         ########################################
+[   67s] python38-urllib3-1.26.15-1.1          ########################################
+[   67s] python38-requests-2.28.2-2.1          ########################################
+[   67s] python38-requests-toolbelt-0.9.1-7.2  ########################################
+[   67s] python38-dnspython-2.3.0-1.2          ########################################
+[   69s] python39-pip-22.3.1-1.2               ########################################
+[   69s] python39-3.9.16-5.1                   ########################################
+[   70s] python39-cryptography-40.0.1-1.1      ########################################
+[   70s] python39-pyOpenSSL-23.1.1-1.1         ########################################
+[   70s] python39-urllib3-1.26.15-1.1          ########################################
+[   70s] python39-requests-2.28.2-2.1          ########################################
+[   70s] python39-requests-toolbelt-0.9.1-7.2  ########################################
+[   70s] python39-dnspython-2.3.0-1.2          ########################################
+[   71s] python39-gevent-22.10.1-6.1           ########################################
+[   72s] python38-gevent-22.10.1-6.1           ########################################
+[   73s] python311-gevent-22.10.1-6.1          ########################################
+[   74s] python310-gevent-22.10.1-6.1          ########################################
+[   74s] python310-wheel-0.38.4-1.2            ########################################
+[   75s] python311-wheel-0.38.4-1.2            ########################################
+[   75s] python38-wheel-0.38.4-1.2             ########################################
+[   75s] python39-wheel-0.38.4-1.2             ########################################
+[   75s] python310-pytest-7.2.0-3.1            ########################################
+[   76s] python311-pytest-7.2.0-3.1            ########################################
+[   76s] python38-pytest-7.2.0-3.1             ########################################
+[   77s] python39-pytest-7.2.0-3.1             ########################################
+[   77s] gcc-c++-13-1.1                        ########################################
+[   77s] python310-hatchling-1.13.0-1.2        ########################################
+[   77s] python310-rpyc-5.3.0-2.1              ########################################
+[   78s] python311-hatchling-1.13.0-1.2        ########################################
+[   78s] python311-rpyc-5.3.0-2.1              ########################################
+[   78s] python38-hatchling-1.13.0-1.2         ########################################
+[   78s] python38-rpyc-5.3.0-2.1               ########################################
+[   79s] python39-hatchling-1.13.0-1.2         ########################################
+[   79s] python39-rpyc-5.3.0-2.1               ########################################
+[   79s] fdupes-2.2.1-1.1                      ########################################
+[   87s] now finalizing build dir...
+[   87s] ... running 01-add_abuild_user_to_trusted_group
+[   88s] ... running 02-set_timezone_to_utc
+[   88s] ... running 03-set-permissions-secure
+[   88s] ... running 11-hack_uname_version_to_kernel_version
+[   94s] -----------------------------------------------------------------
+[   94s] I have the following modifications for python-rpyc.spec:
+[   94s] 19c19
+[   94s] < %global flavor @BUILD_FLAVOR@%{nil}
+[   94s] ---
+[   94s] > %global flavor test%{nil}
+[   94s] 30c30
+[   94s] < Release:        0
+[   94s] ---
+[   94s] > Release:        2.1
+[   99s] build target is riscv64-suse-linux
+[   99s] -----------------------------------------------------------------
+[   99s] ----- building python-rpyc.spec (user abuild)
+[   99s] -----------------------------------------------------------------
+[   99s] -----------------------------------------------------------------
+[  102s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/c565b1b8c52221c586265ce801fba896-python-rpyc:test' /home/abuild/rpmbuild/SOURCES/python-rpyc.spec
+[  133s] Building target platforms: riscv64-suse-linux
+[  133s] Building for target riscv64-suse-linux
+[  133s] setting SOURCE_DATE_EPOCH=1676937600
+[  133s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Qn2qrK
+[  133s] + umask 022
+[  133s] + cd /home/abuild/rpmbuild/BUILD
+[  133s] + cd /home/abuild/rpmbuild/BUILD
+[  133s] + rm -rf rpyc-5.3.0
+[  133s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/5.3.0.tar.gz
+[  133s] + STATUS=0
+[  133s] + '[' 0 -ne 0 ']'
+[  133s] + cd rpyc-5.3.0
+[  133s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  133s] + sed -i -e 's|env python|python3.10|' rpyc/cli/rpyc_classic.py rpyc/cli/rpyc_registry.py
+[  133s] + RPM_EC=0
+[  133s] ++ jobs -p
+[  133s] + exit 0
+[  133s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.scIRMU
+[  134s] + umask 022
+[  134s] + cd /home/abuild/rpmbuild/BUILD
+[  134s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-rpyc-test-5.3.0-2.1.riscv64
+[  134s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-rpyc-test-5.3.0-2.1.riscv64
+[  134s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  134s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-rpyc-test-5.3.0-2.1.riscv64
+[  134s] + cd rpyc-5.3.0
+[  134s] + ref=/usr/lib/rpm
+[  134s] + mints=0
+[  134s] + case $(uname -m) in
+[  134s] ++ uname -m
+[  134s] + mints=20160911
+[  134s] + for s in guess sub
+[  134s] ++ find -maxdepth 8 -name config.guess
+[  134s] + for s in guess sub
+[  134s] ++ find -maxdepth 8 -name config.sub
+[  134s] ++ '[' -f _current_flavor ']'
+[  134s] ++ true
+[  134s] + last_flavor=
+[  134s] + '[' -z '' ']'
+[  134s] + last_flavor=tmp
+[  134s] + '[' tmp '!=' python38 ']'
+[  134s] + '[' -d build ']'
+[  134s] + '[' -d _build.python38 ']'
+[  134s] + echo python38
+[  134s] + python_flavor=python38
+[  134s] + myargs=
+[  134s] + '[' -f './dist/*-none-any.whl' ']'
+[  134s] + /usr/bin/python3.8 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  139s] Processing /home/abuild/rpmbuild/BUILD/rpyc-5.3.0
+[  139s]   Preparing metadata (pyproject.toml): started
+[  139s]   Running command Preparing metadata (pyproject.toml)
+[  141s]   Preparing metadata (pyproject.toml): finished with status 'done'
+[  141s] Building wheels for collected packages: rpyc
+[  141s]   Building wheel for rpyc (pyproject.toml): started
+[  141s]   Running command Building wheel for rpyc (pyproject.toml)
+[  142s]   Building wheel for rpyc (pyproject.toml): finished with status 'done'
+[  142s]   Created wheel for rpyc: filename=rpyc-5.3.0-py3-none-any.whl size=73657 sha256=87450a46f0b7502d1d8cd9d76d52ba49e7956ecfe2d5eb09f10e4e2dea8a1914
+[  142s]   Stored in directory: /home/abuild/.cache/pip/wheels/3e/1a/88/a6e446c6400bba2169cf450cc64988de1bd63187fb61c75381
+[  142s] Successfully built rpyc
+[  142s] + '[' -f ./build/rpyc-5.3.0-py3-none-any.whl ']'
+[  142s] + mkdir -p ./dist
+[  142s] + cp ./build/rpyc-5.3.0-py3-none-any.whl ./dist/
+[  142s] ++ '[' -f _current_flavor ']'
+[  142s] ++ cat _current_flavor
+[  142s] + last_flavor=python38
+[  142s] + '[' -z python38 ']'
+[  142s] + '[' python38 '!=' python39 ']'
+[  142s] + '[' -d build ']'
+[  142s] + mv build _build.python38
+[  142s] + '[' -d _build.python39 ']'
+[  142s] + echo python39
+[  142s] + python_flavor=python39
+[  142s] + myargs=
+[  142s] + '[' -f ./dist/rpyc-5.3.0-py3-none-any.whl ']'
+[  142s] + echo 'Already found a compatible wheel in ./dist'
+[  142s] Already found a compatible wheel in ./dist
+[  142s] + mkdir -p ./build
+[  142s] + cp ./dist/rpyc-5.3.0-py3-none-any.whl ./build/
+[  142s] ++ '[' -f _current_flavor ']'
+[  142s] ++ cat _current_flavor
+[  142s] + last_flavor=python39
+[  142s] + '[' -z python39 ']'
+[  142s] + '[' python39 '!=' python311 ']'
+[  142s] + '[' -d build ']'
+[  142s] + mv build _build.python39
+[  142s] + '[' -d _build.python311 ']'
+[  142s] + echo python311
+[  142s] + python_flavor=python311
+[  142s] + myargs=
+[  142s] + '[' -f ./dist/rpyc-5.3.0-py3-none-any.whl ']'
+[  142s] + echo 'Already found a compatible wheel in ./dist'
+[  142s] Already found a compatible wheel in ./dist
+[  142s] + mkdir -p ./build
+[  142s] + cp ./dist/rpyc-5.3.0-py3-none-any.whl ./build/
+[  142s] ++ '[' -f _current_flavor ']'
+[  142s] ++ cat _current_flavor
+[  142s] + last_flavor=python311
+[  142s] + '[' -z python311 ']'
+[  142s] + '[' python311 '!=' python310 ']'
+[  142s] + '[' -d build ']'
+[  142s] + mv build _build.python311
+[  142s] + '[' -d _build.python310 ']'
+[  142s] + echo python310
+[  142s] + python_flavor=python310
+[  142s] + myargs=
+[  142s] + '[' -f ./dist/rpyc-5.3.0-py3-none-any.whl ']'
+[  142s] + echo 'Already found a compatible wheel in ./dist'
+[  142s] Already found a compatible wheel in ./dist
+[  142s] + mkdir -p ./build
+[  142s] + cp ./dist/rpyc-5.3.0-py3-none-any.whl ./build/
+[  142s] + RPM_EC=0
+[  142s] ++ jobs -p
+[  142s] + exit 0
+[  142s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.VMlAuC
+[  143s] + umask 022
+[  143s] + cd /home/abuild/rpmbuild/BUILD
+[  143s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-rpyc-test-5.3.0-2.1.riscv64
+[  143s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  143s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-rpyc-test-5.3.0-2.1.riscv64
+[  143s] + cd rpyc-5.3.0
+[  143s] + /usr/lib/rpm/find-debuginfo -j3 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/rpyc-5.3.0
+[  143s] + /usr/lib/rpm/brp-compress
+[  143s] + /usr/lib/rpm/brp-suse
+[  143s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  143s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  143s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  143s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  143s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  143s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.0R9JSI
+[  144s] + umask 022
+[  144s] + cd /home/abuild/rpmbuild/BUILD
+[  144s] + cd rpyc-5.3.0
+[  144s] + donttest='TestDeploy or Test_Ssh or TestUdpRegistry or win32pipes or test_server_stops or test_immutable_object_return or test_return_of_modified_parameter or test_return_of_unmodified_parameter or test_dataframe_pickling or test_ssl_conenction or test_connection'
+[  144s] + donttest+=' or test_gdb'
+[  144s] + set +x
+[  144s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  144s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  144s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  144s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  144s] Using libalternatives variant 38 for wheel in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  144s] Using alternative hatchling-3.8 for hatchling in ./build/flavorbin during Python 3.8 expansions.
+[  144s] Using alternative httpx-3.8 for httpx in ./build/flavorbin during Python 3.8 expansions.
+[  144s] Using alternative normalizer-3.8 for normalizer in ./build/flavorbin during Python 3.8 expansions.
+[  144s] Using alternative rpyc_classic-3.8 for rpyc_classic in ./build/flavorbin during Python 3.8 expansions.
+[  145s] Using alternative rpyc_registry-3.8 for rpyc_registry in ./build/flavorbin during Python 3.8 expansions.
+[  145s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  145s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  145s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  145s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  145s] Using libalternatives variant 39 for wheel in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  145s] Using alternative hatchling-3.9 for hatchling in ./build/flavorbin during Python 3.9 expansions.
+[  145s] Using alternative httpx-3.9 for httpx in ./build/flavorbin during Python 3.9 expansions.
+[  145s] Using alternative normalizer-3.9 for normalizer in ./build/flavorbin during Python 3.9 expansions.
+[  145s] Using alternative rpyc_classic-3.9 for rpyc_classic in ./build/flavorbin during Python 3.9 expansions.
+[  146s] Using alternative rpyc_registry-3.9 for rpyc_registry in ./build/flavorbin during Python 3.9 expansions.
+[  146s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  146s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  146s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  146s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  146s] Using libalternatives variant 311 for wheel in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  146s] Using alternative hatchling-3.11 for hatchling in ./build/flavorbin during Python 3.11 expansions.
+[  146s] Using alternative httpx-3.11 for httpx in ./build/flavorbin during Python 3.11 expansions.
+[  146s] Using alternative normalizer-3.11 for normalizer in ./build/flavorbin during Python 3.11 expansions.
+[  146s] Using alternative rpyc_classic-3.11 for rpyc_classic in ./build/flavorbin during Python 3.11 expansions.
+[  147s] Using alternative rpyc_registry-3.11 for rpyc_registry in ./build/flavorbin during Python 3.11 expansions.
+[  147s] Using alternative hatchling-3.10 for hatchling in ./build/flavorbin during Python 3.10 expansions.
+[  147s] Using alternative httpx-3.10 for httpx in ./build/flavorbin during Python 3.10 expansions.
+[  147s] Using alternative normalizer-3.10 for normalizer in ./build/flavorbin during Python 3.10 expansions.
+[  147s] Using alternative rpyc_classic-3.10 for rpyc_classic in ./build/flavorbin during Python 3.10 expansions.
+[  147s] Using alternative rpyc_registry-3.10 for rpyc_registry in ./build/flavorbin during Python 3.10 expansions.
+[  147s] + export PATH=/home/abuild/rpmbuild/BUILD/rpyc-5.3.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  147s] + PATH=/home/abuild/rpmbuild/BUILD/rpyc-5.3.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  147s] ++ '[' -f _current_flavor ']'
+[  147s] ++ cat _current_flavor
+[  147s] + last_flavor=python310
+[  147s] + '[' -z python310 ']'
+[  147s] + '[' python310 '!=' python38 ']'
+[  147s] + '[' -d build ']'
+[  147s] + mv build _build.python310
+[  147s] + '[' -d _build.python38 ']'
+[  147s] + mv _build.python38 build
+[  147s] + echo python38
+[  147s] + python_flavor=python38
+[  147s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-rpyc-test-5.3.0-2.1.riscv64/usr/lib/python3.8/site-packages
+[  147s] + PYTHONDONTWRITEBYTECODE=1
+[  147s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not (TestDeploy or Test_Ssh or TestUdpRegistry or win32pipes or test_server_stops or test_immutable_object_return or test_return_of_modified_parameter or test_return_of_unmodified_parameter or test_dataframe_pickling or test_ssl_conenction or test_connection or test_gdb)'
+[  151s] ============================= test session starts ==============================
+[  151s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  151s] cachedir: .pytest_cache
+[  151s] rootdir: /home/abuild/rpmbuild/BUILD/rpyc-5.3.0
+[  151s] plugins: anyio-3.6.2
+[  155s] collecting ... collected 88 items / 23 deselected / 65 selected
+[  155s] 
+[  156s] tests/test_affinity.py::Test_Affinity::test_pinned_to_0 PASSED           [  1%]
+[  158s] tests/test_async.py::TestAsync::test_asyncresult_api PASSED              [  3%]
+[  160s] tests/test_async.py::TestAsync::test_asyncresult_callbacks PASSED        [  4%]
+[  164s] tests/test_async.py::TestAsync::test_asyncresult_expiry PASSED           [  6%]
+[  165s] tests/test_async.py::TestAsync::test_exceptions PASSED                   [  7%]
+[  173s] tests/test_async.py::TestAsync::test_timed PASSED                        [  9%]
+[  173s] tests/test_attr_access.py::TestRestricted::test_restricted PASSED        [ 10%]
+[  173s] tests/test_attr_access.py::TestRestricted::test_restricted2 PASSED       [ 12%]
+[  174s] tests/test_attr_access.py::TestConfigAllows::test_allow_all PASSED       [ 13%]
+[  174s] tests/test_attr_access.py::TestConfigAllows::test_allow_exposed PASSED   [ 15%]
+[  174s] tests/test_attr_access.py::TestConfigAllows::test_allow_public_attrs PASSED [ 16%]
+[  174s] tests/test_attr_access.py::TestConfigAllows::test_allow_safe_attrs PASSED [ 18%]
+[  175s] tests/test_attr_access.py::TestConfigAllows::test_default_config PASSED  [ 20%]
+[  175s] tests/test_attr_access.py::TestDescriptorErrors::test_allow_all PASSED   [ 21%]
+[  175s] tests/test_attr_access.py::TestDescriptorErrors::test_default_config PASSED [ 23%]
+[  175s] tests/test_attributes.py::TestAttributes::test_properties PASSED         [ 24%]
+[  175s] tests/test_brine.py::BrineTest::test_brine_2 PASSED                      [ 26%]
+[  178s] tests/test_classic.py::ClassicMode::test_buffiter PASSED                 [ 27%]
+[  178s] tests/test_classic.py::ClassicMode::test_classic PASSED                  [ 29%]
+[  179s] tests/test_classic.py::ClassicMode::test_mock_connection PASSED          [ 30%]
+[  180s] tests/test_classic.py::ClassicMode::test_modules PASSED                  [ 32%]
+[  183s] tests/test_classic.py::ClassicMode::test_piped_server PASSED             [ 33%]
+[  183s] tests/test_context_managers.py::TestContextManagers::test_context PASSED [ 35%]
+[  183s] tests/test_context_managers.py::TestContextManagers::test_context_exception PASSED [ 36%]
+[  184s] tests/test_custom_service.py::TestCustomService::test_aliases PASSED     [ 38%]
+[  185s] tests/test_custom_service.py::TestCustomService::test_attributes PASSED  [ 40%]
+[  186s] tests/test_custom_service.py::TestCustomService::test_before_closed PASSED [ 41%]
+[  186s] tests/test_custom_service.py::TestCustomService::test_distance PASSED    [ 43%]
+[  187s] tests/test_custom_service.py::TestCustomService::test_instancecheck_list PASSED [ 44%]
+[  188s] tests/test_custom_service.py::TestCustomService::test_metaclasses PASSED [ 46%]
+[  189s] tests/test_custom_service.py::TestCustomService::test_safeattrs PASSED   [ 47%]
+[  189s] tests/test_dataclass.py::TestRemoteDataclass::test_remote_dataclass PASSED [ 49%]
+[  189s] tests/test_get_id_pack.py::Test_get_id_pack::test_chained_connect PASSED [ 50%]
+[  189s] tests/test_get_id_pack.py::Test_get_id_pack::test_class_instance_wo_name PASSED [ 52%]
+[  189s] tests/test_get_id_pack.py::Test_get_id_pack::test_class_wo_name PASSED   [ 53%]
+[  189s] tests/test_get_id_pack.py::Test_get_id_pack::test_netref PASSED          [ 55%]
+[  198s] tests/test_gevent_server.py::Test_GeventServer::test_multiple_connections PASSED [ 56%]
+[  208s] tests/test_gevent_server.py::Test_GeventServer::test_parallelism FAILED  [ 58%]
+[  208s] tests/test_ipv6.py::Test_IPv6::test_ipv6_conenction SKIPPED (require...) [ 60%]
+[  209s] tests/test_magic.py::TestContextManagers::test_hash_class PASSED         [ 61%]
+[  210s] tests/test_magic.py::TestContextManagers::test_hash_obj PASSED           [ 63%]
+[  210s] tests/test_netref_hierachy.py::Test_Netref_Hierarchy::test_StandardError PASSED [ 64%]
+[  210s] tests/test_netref_hierachy.py::Test_Netref_Hierarchy::test_classic PASSED [ 66%]
+[  211s] tests/test_netref_hierachy.py::Test_Netref_Hierarchy::test_instancecheck_across_connections PASSED [ 67%]
+[  211s] tests/test_netref_hierachy.py::Test_Netref_Hierarchy::test_instancecheck_list PASSED [ 69%]
+[  211s] tests/test_netref_hierachy.py::Test_Netref_Hierarchy::test_instancecheck_none PASSED [ 70%]
+[  212s] tests/test_netref_hierachy.py::Test_Netref_Hierarchy::test_modules PASSED [ 72%]
+[  213s] tests/test_refcount.py::TestRefcount::test_refcount PASSED               [ 73%]
+[  216s] tests/test_registry.py::TestTcpRegistry::test_api PASSED                 [ 75%]
+[  219s] tests/test_registry.py::TestTcpRegistry::test_listing PASSED             [ 76%]
+[  228s] tests/test_registry.py::TestTcpRegistry::test_pruning PASSED             [ 78%]
+[  228s] tests/test_remote_exception.py::TestRemoteException::test_remote_exception PASSED [ 80%]
+[  228s] tests/test_remote_exception.py::TestExclusionsRemoteException::test_remote_exception PASSED [ 81%]
+[  228s] tests/test_remoting.py::Test_Remoting::test_distribution SKIPPED (TO...) [ 83%]
+[  233s] tests/test_remoting.py::Test_Remoting::test_files PASSED                 [ 84%]
+[  233s] tests/test_remoting.py::Test_Remoting::test_interactive SKIPPED (Req...) [ 86%]
+[  233s] tests/test_remoting.py::Test_Remoting::test_migration PASSED             [ 87%]
+[  233s] tests/test_remoting.py::Test_Remoting::test_post_mortem SKIPPED (Req...) [ 89%]
+[  235s] tests/test_teleportation.py::TeleportationTest::test PASSED              [ 90%]
+[  237s] tests/test_teleportation.py::TeleportationTest::test_compat PASSED       [ 92%]
+[  239s] tests/test_teleportation.py::TeleportationTest::test_def PASSED          [ 93%]
+[  242s] tests/test_teleportation.py::TeleportationTest::test_defaults PASSED     [ 95%]
+[  244s] tests/test_teleportation.py::TeleportationTest::test_globals PASSED      [ 96%]
+[  246s] tests/test_teleportation.py::TeleportationTest::test_kwdefaults PASSED   [ 98%]
+[  253s] tests/test_threads.py::Test_Multithreaded::test_invoker PASSED           [100%]
+[  253s] 
+[  253s] =================================== FAILURES ===================================
+[  253s] ______________________ Test_GeventServer.test_parallelism ______________________
+[  253s] 
+[  253s] self = <test_gevent_server.Test_GeventServer testMethod=test_parallelism>
+[  253s] 
+[  253s]     def test_parallelism(self):
+[  253s]         conns = [rpyc.classic.connect("localhost", port=18878)
+[  253s]                  for _ in range(50)]
+[  253s]         try:
+[  253s]             start = time.time()
+[  253s]             gevent.joinall([
+[  253s]                 gevent.spawn(c.modules.time.sleep, 1)
+[  253s]                 for c in conns
+[  253s]             ])
+[  253s]             stop = time.time()
+[  253s]     
+[  253s] >           self.assertLessEqual(stop - start, 2)
+[  253s] E           AssertionError: 3.078550100326538 not less than or equal to 2
+[  253s] 
+[  253s] tests/test_gevent_server.py:60: AssertionError
+[  253s] =========================== short test summary info ============================
+[  253s] FAILED tests/test_gevent_server.py::Test_GeventServer::test_parallelism - Ass...
+[  253s] ====== 1 failed, 60 passed, 4 skipped, 23 deselected in 102.57s (0:01:42) ======
+[  254s] error: Bad exit status from /var/tmp/rpm-tmp.0R9JSI (%check)
+[  254s] 
+[  254s] RPM build errors:
+[  254s]     Bad exit status from /var/tmp/rpm-tmp.0R9JSI (%check)
+[  254s] ### VM INTERACTION START ###
+[  254s] [  246.380085][    T1] sysrq: Power Off
+[  254s] [  246.381166][   T18] reboot: Power down
+[  255s] ### VM INTERACTION END ###
+[  255s] 
+[  255s] build82 failed "build python-rpyc.spec" at Fri Mar 31 16:47:44 UTC 2023.
+[  255s] 

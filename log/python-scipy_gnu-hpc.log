@@ -1,0 +1,637 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_6/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_6/root
+[    0s] 
+[    0s] 
+[    0s] lamb02 started "build python-scipy.spec" at Mon Mar 20 13:17:07 UTC 2023.
+[    0s] 
+[    0s] Building python-scipy:gnu-hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '33482288e4c1d9785be2374833ac8ed6'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_6/.build-srcdir/python-scipy.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_6/.build-srcdir/python-scipy.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/6/build/configs --cachedir /var/cache/build --prepare --buildflavor gnu-hpc --clean --rpmlist /var/cache/obs/worker/root_6/.build.rpmlist /var/cache/obs/worker/root_6/.build-srcdir/python-scipy.spec build ...
+[    3s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [9836100f62e2be5fd334502a21b9610c]
+[    8s] 
+[    8s] copying packages...
+[    9s] reordering...done
+[   10s] Detected virtio-serial support
+[   12s] booting kvm...
+[   12s] ### VM INTERACTION START ###
+[   12s] Using virtio-serial support
+[   12s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_6/.mount/boot/kernel -initrd /var/cache/obs/worker/root_6/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_6/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_6/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_6/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   23s] ### VM INTERACTION END ###
+[   23s] 2nd stage started in virtual machine
+[   24s] machine type: riscv64
+[   24s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   24s] Increasing log level from now on...
+[   24s] [   10.939365][  T415] sysrq: Changing Loglevel
+[   24s] [   10.939607][  T415] sysrq: Loglevel set to 4
+[   24s] Enable sysrq operations
+[   25s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   25s] no label, UUID=432304a0-d747-45e0-9ec6-210e5b1032b8
+[   26s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   26s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   26s] swapon /dev/vdb
+[   26s] WARNING: udev not running, creating extra device nodes
+[   27s] logging output to //.build.log...
+[   27s] processing recipe /.build-srcdir/python-scipy.spec ...
+[   27s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor gnu-hpc /.build-srcdir/python-scipy.spec build ...
+[   28s] initializing rpm db...
+[   29s] querying package ids...
+[   82s] [1/261] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   82s] [2/261] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   82s] [3/261] preinstalled attr-2.5.1-1.1
+[   82s] [4/261] preinstalled bash-5.2.15-8.1
+[   82s] [5/261] preinstalled bash-sh-5.2.15-8.1
+[   82s] [6/261] preinstalled binutils-2.40-2.1
+[   82s] [7/261] cumulate boost-license1_81_0-1.81.0-2.1
+[   82s] [8/261] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   82s] [9/261] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   82s] [10/261] preinstalled build-mkbaselibs-20230314-1.1
+[   82s] [11/261] preinstalled bzip2-1.0.8-5.1
+[   82s] [12/261] preinstalled chkstat-1599_20230217-1.1
+[   82s] [13/261] preinstalled compat-usrmerge-build-84.87-5.1
+[   82s] [14/261] preinstalled compat-usrmerge-tools-84.87-5.1
+[   82s] [15/261] preinstalled coreutils-9.1-5.1
+[   82s] [16/261] preinstalled cpio-2.13-5.1
+[   82s] [17/261] preinstalled cpp-13-1.1
+[   82s] [18/261] preinstalled cpp13-13.0.1+git6669-7.1
+[   82s] [19/261] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   82s] [20/261] preinstalled debugedit-5.0-5.1
+[   82s] [21/261] preinstalled diffutils-3.9-1.1
+[   82s] [22/261] preinstalled dwz-0.15-2.1
+[   82s] [23/261] preinstalled elfutils-0.189-2.1
+[   82s] [24/261] cumulate fdupes-2.2.1-1.1
+[   82s] [25/261] preinstalled file-5.44-1.2
+[   82s] [26/261] preinstalled file-magic-5.44-1.2
+[   82s] [27/261] preinstalled filesystem-84.87-12.1
+[   82s] [28/261] preinstalled fillup-1.42-279.1
+[   82s] [29/261] preinstalled findutils-4.9.0-2.1
+[   82s] [30/261] preinstalled gawk-5.2.1-2.1
+[   82s] [31/261] preinstalled gcc-13-1.1
+[   82s] [32/261] preinstalled gcc-PIE-13-1.1
+[   82s] [33/261] preinstalled gcc13-13.0.1+git6669-7.1
+[   82s] [34/261] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   82s] [35/261] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   82s] [36/261] preinstalled gettext-tools-mini-0.21.1-1.1
+[   82s] [37/261] preinstalled glibc-2.37-1.1
+[   82s] [38/261] preinstalled glibc-devel-2.37-1.1
+[   82s] [39/261] preinstalled glibc-locale-base-2.37-1.1
+[   82s] [40/261] preinstalled grep-3.9-1.1
+[   82s] [41/261] preinstalled gzip-1.12-3.1
+[   82s] [42/261] preinstalled kernel-obs-build-6.2.6-1.2
+[   82s] [43/261] preinstalled libacl1-2.3.1-2.1
+[   82s] [44/261] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   82s] [45/261] preinstalled libasan8-13.0.1+git6669-7.1
+[   82s] [46/261] preinstalled libasm1-0.189-2.1
+[   82s] [47/261] preinstalled libatomic1-13.0.1+git6669-7.1
+[   83s] [48/261] preinstalled libattr1-2.5.1-1.1
+[   83s] [49/261] preinstalled libaudit1-3.0.9-1.1
+[   83s] [50/261] preinstalled libblkid1-2.38.1-10.1
+[   83s] [51/261] preinstalled libbz2-1-1.0.8-5.1
+[   83s] [52/261] preinstalled libcap-ng0-0.8.3-1.1
+[   83s] [53/261] preinstalled libcap2-2.67-1.1
+[   83s] [54/261] preinstalled libcrypt1-4.4.33-2.1
+[   83s] [55/261] preinstalled libctf-nobfd0-2.40-2.1
+[   83s] [56/261] preinstalled libctf0-2.40-2.1
+[   83s] [57/261] preinstalled libdb-4_8-4.8.30-40.1
+[   83s] [58/261] preinstalled libdw1-0.189-2.1
+[   83s] [59/261] preinstalled libeconf0-0.5.1-1.1
+[   83s] [60/261] preinstalled libelf1-0.189-2.1
+[   83s] [61/261] preinstalled libexpat1-2.5.0-2.1
+[   83s] [62/261] preinstalled libfdisk1-2.38.1-10.1
+[   83s] [63/261] preinstalled libffi8-3.4.4-1.1
+[   83s] [64/261] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   83s] [65/261] preinstalled libgcrypt20-1.10.1-2.1
+[   83s] [66/261] preinstalled libgdbm6-1.23-1.1
+[   83s] [67/261] preinstalled libgdbm_compat4-1.23-1.1
+[   83s] [68/261] cumulate libgfortran5-13.0.1+git6669-7.1
+[   83s] [69/261] preinstalled libgmp10-6.2.1-4.1
+[   83s] [70/261] preinstalled libgomp1-13.0.1+git6669-7.1
+[   83s] [71/261] preinstalled libgpg-error0-1.46-1.1
+[   83s] [72/261] preinstalled libisl23-0.25-1.1
+[   83s] [73/261] preinstalled libitm1-13.0.1+git6669-7.1
+[   83s] [74/261] preinstalled liblua5_4-5-5.4.4-8.1
+[   83s] [75/261] preinstalled liblzma5-5.4.1-2.1
+[   83s] [76/261] preinstalled libmagic1-5.44-1.2
+[   83s] [77/261] preinstalled libmount1-2.38.1-10.1
+[   83s] [78/261] preinstalled libmpc3-1.3.1-1.2
+[   83s] [79/261] preinstalled libmpdec3-2.5.1-2.1
+[   83s] [80/261] preinstalled libmpfr6-4.2.0-1.1
+[   83s] [81/261] preinstalled libncurses6-6.4.20230311-8.1
+[   83s] [82/261] preinstalled libopenssl3-3.0.8-2.1
+[   83s] [83/261] preinstalled libpcre2-8-0-10.42-3.2
+[   83s] [84/261] preinstalled libpkgconf3-1.8.0-2.1
+[   83s] [85/261] preinstalled libpopt0-1.19-1.1
+[   83s] [86/261] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   83s] [87/261] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   83s] [88/261] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   83s] [89/261] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   83s] [90/261] preinstalled libreadline8-8.2-2.1
+[   83s] [91/261] preinstalled librpmbuild9-4.18.0-3.2
+[   83s] [92/261] preinstalled libseccomp2-2.5.4-2.1
+[   83s] [93/261] preinstalled libselinux1-3.5-1.1
+[   83s] [94/261] preinstalled libsemanage-conf-3.5-1.1
+[   83s] [95/261] preinstalled libsemanage2-3.5-1.1
+[   83s] [96/261] preinstalled libsepol2-3.5-1.1
+[   83s] [97/261] preinstalled libsmartcols1-2.38.1-10.1
+[   83s] [98/261] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   83s] [99/261] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   83s] [100/261] preinstalled libsubid4-4.13-4.1
+[   83s] [101/261] preinstalled libubsan1-13.0.1+git6669-7.1
+[   83s] [102/261] preinstalled libutempter0-1.2.0-3.2
+[   83s] [103/261] preinstalled libuuid1-2.38.1-10.1
+[   83s] [104/261] preinstalled libxcrypt-devel-4.4.33-2.1
+[   83s] [105/261] preinstalled libz1-1.2.13-3.1
+[   83s] [106/261] preinstalled libzstd1-1.5.4-2.1
+[   83s] [107/261] preinstalled linux-glibc-devel-6.2-1.1
+[   83s] [108/261] preinstalled login_defs-4.13-4.1
+[   83s] [109/261] preinstalled lua54-5.4.4-8.1
+[   83s] [110/261] cumulate lua54-luafilesystem-1.8.0-6.1
+[   83s] [111/261] cumulate lua54-luaposix-35.1-2.1
+[   83s] [112/261] cumulate lua54-luaterm-0.07-8.1
+[   83s] [113/261] preinstalled make-4.4.1-1.1
+[   83s] [114/261] preinstalled ncurses-utils-6.4.20230311-8.1
+[   83s] [115/261] cumulate ninja-1.11.1-8.1
+[   83s] [116/261] cumulate openblas-common-devel-0.3.21-5.1
+[   83s] [117/261] preinstalled pam-1.5.2-13.1
+[   83s] [118/261] preinstalled patch-2.7.6-6.1
+[   83s] [119/261] preinstalled perl-5.36.0-4.1
+[   83s] [120/261] preinstalled perl-base-5.36.0-4.1
+[   83s] [121/261] preinstalled permissions-1599_20230217-1.1
+[   83s] [122/261] preinstalled permissions-config-1599_20230217-1.1
+[   83s] [123/261] preinstalled pkgconf-1.8.0-2.1
+[   83s] [124/261] preinstalled pkgconf-m4-1.8.0-2.1
+[   83s] [125/261] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   83s] [126/261] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   83s] [127/261] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   83s] [128/261] cumulate python-pybind11-common-devel-2.10.3-1.2
+[   83s] [129/261] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   83s] [130/261] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   83s] [131/261] preinstalled python310-base-3.10.10-2.1
+[   83s] [132/261] cumulate python310-devel-3.10.10-2.1
+[   83s] [133/261] cumulate python310-gast-0.5.3-1.3
+[   83s] [134/261] preinstalled python310-packaging-23.0-2.1
+[   83s] [135/261] cumulate python310-ply-3.11-3.11
+[   83s] [136/261] cumulate python310-pyproject-metadata-0.6.1-2.2
+[   83s] [137/261] preinstalled python310-setuptools-65.6.3-1.2
+[   83s] [138/261] cumulate python310-tomli-2.0.1-1.3
+[   83s] [139/261] preinstalled python311-base-3.11.2-1.2
+[   83s] [140/261] cumulate python311-devel-3.11.2-1.2
+[   83s] [141/261] cumulate python311-gast-0.5.3-1.3
+[   83s] [142/261] cumulate python311-packaging-23.0-2.1
+[   83s] [143/261] cumulate python311-ply-3.11-3.11
+[   83s] [144/261] preinstalled python311-setuptools-65.6.3-1.2
+[   83s] [145/261] preinstalled python38-base-3.8.16-5.1
+[   83s] [146/261] cumulate python38-devel-3.8.16-5.1
+[   83s] [147/261] cumulate python38-gast-0.5.3-1.3
+[   83s] [148/261] cumulate python38-packaging-23.0-2.1
+[   83s] [149/261] cumulate python38-ply-3.11-3.11
+[   83s] [150/261] preinstalled python38-setuptools-65.6.3-1.2
+[   83s] [151/261] cumulate python38-tomli-2.0.1-1.3
+[   83s] [152/261] cumulate python38-typing_extensions-4.5.0-1.1
+[   83s] [153/261] preinstalled python39-base-3.9.16-5.1
+[   83s] [154/261] cumulate python39-devel-3.9.16-5.1
+[   83s] [155/261] cumulate python39-gast-0.5.3-1.3
+[   83s] [156/261] cumulate python39-packaging-23.0-2.1
+[   83s] [157/261] cumulate python39-ply-3.11-3.11
+[   83s] [158/261] preinstalled python39-setuptools-65.6.3-1.2
+[   83s] [159/261] cumulate python39-tomli-2.0.1-1.3
+[   83s] [160/261] cumulate python39-typing_extensions-4.5.0-1.1
+[   83s] [161/261] preinstalled qemu-linux-user-7.1.0-54.1
+[   83s] [162/261] preinstalled rpm-4.18.0-3.2
+[   83s] [163/261] preinstalled rpm-build-4.18.0-3.2
+[   83s] [164/261] preinstalled rpm-build-perl-4.18.0-3.2
+[   83s] [165/261] preinstalled rpm-config-SUSE-20220926-1.1
+[   83s] [166/261] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.18
+[   83s] [167/261] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   83s] [168/261] preinstalled sed-4.9-2.1
+[   83s] [169/261] preinstalled shadow-4.13-4.1
+[   83s] [170/261] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   83s] [171/261] preinstalled system-group-hardware-20170617-24.1
+[   83s] [172/261] preinstalled system-user-root-20190513-2.1
+[   83s] [173/261] preinstalled systemd-rpm-macros-19-1.1
+[   83s] [174/261] preinstalled sysuser-shadow-3.1-5.1
+[   83s] [175/261] preinstalled tar-1.34-10.1
+[   83s] [176/261] cumulate tcl-8.6.13-4.1
+[   83s] [177/261] preinstalled terminfo-base-6.4.20230311-8.1
+[   83s] [178/261] preinstalled update-alternatives-1.21.8-1.1
+[   83s] [179/261] preinstalled util-linux-2.38.1-10.1
+[   83s] [180/261] preinstalled which-2.21-5.1
+[   83s] [181/261] preinstalled xz-5.4.1-2.1
+[   83s] [182/261] cumulate alts-1.2+3.b848aad-3.1
+[   83s] [183/261] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   83s] [184/261] cumulate gcc13-fortran-13.0.1+git6669-7.1
+[   83s] [185/261] cumulate libblas3-3.9.0-8.1
+[   83s] [186/261] cumulate libopenblas_openmp0-0.3.21-5.1
+[   83s] [187/261] cumulate libstdc++-devel-13-1.1
+[   83s] [188/261] cumulate meson-1.0.1-1.1
+[   83s] [189/261] cumulate python310-Cython-0.29.33-1.2
+[   83s] [190/261] cumulate python310-beniget-0.4.1-1.3
+[   83s] [191/261] cumulate python311-Cython-0.29.33-1.2
+[   83s] [192/261] cumulate python311-beniget-0.4.1-1.3
+[   83s] [193/261] cumulate python311-pyproject-metadata-0.6.1-2.2
+[   83s] [194/261] cumulate python38-Cython-0.29.33-1.2
+[   83s] [195/261] cumulate python38-beniget-0.4.1-1.3
+[   83s] [196/261] cumulate python38-pyproject-metadata-0.6.1-2.2
+[   83s] [197/261] cumulate python39-Cython-0.29.33-1.2
+[   83s] [198/261] cumulate python39-beniget-0.4.1-1.3
+[   83s] [199/261] cumulate python39-pyproject-metadata-0.6.1-2.2
+[   83s] [200/261] cumulate lua-lmod-8.7.17-2.1
+[   83s] [201/261] cumulate blas-devel-3.9.0-8.1
+[   83s] [202/261] cumulate gcc-c++-13-1.1
+[   83s] [203/261] cumulate gcc-fortran-13-1.1
+[   83s] [204/261] cumulate gnu-compilers-hpc-1.4-10.2
+[   83s] [205/261] cumulate libcblas3-3.9.0-8.1
+[   83s] [206/261] cumulate python310-pip-22.3.1-1.2
+[   83s] [207/261] cumulate python310-pybind11-2.10.3-1.2
+[   83s] [208/261] cumulate python310-wheel-0.38.4-1.2
+[   83s] [209/261] cumulate python311-pip-22.3.1-1.2
+[   83s] [210/261] cumulate python311-pybind11-2.10.3-1.2
+[   83s] [211/261] cumulate python311-wheel-0.38.4-1.2
+[   83s] [212/261] cumulate python38-pip-22.3.1-1.2
+[   83s] [213/261] cumulate python38-pybind11-2.10.3-1.2
+[   83s] [214/261] cumulate python38-wheel-0.38.4-1.2
+[   83s] [215/261] cumulate python39-pip-22.3.1-1.2
+[   83s] [216/261] cumulate python39-pybind11-2.10.3-1.2
+[   83s] [217/261] cumulate python39-wheel-0.38.4-1.2
+[   83s] [218/261] cumulate libboost_headers1_81_0-devel-1.81.0-2.1
+[   83s] [219/261] cumulate liblapack3-3.9.0-8.1
+[   83s] [220/261] cumulate libopenblas_openmp-devel-0.3.21-5.1
+[   83s] [221/261] cumulate python311-meson-python-0.12.0-1.2
+[   83s] [222/261] cumulate python310-meson-python-0.12.0-1.2
+[   83s] [223/261] cumulate python38-meson-python-0.12.0-1.2
+[   83s] [224/261] cumulate python39-meson-python-0.12.0-1.2
+[   83s] [225/261] cumulate boost-devel-1.81.0-1.1
+[   83s] [226/261] cumulate cblas-devel-3.9.0-8.1
+[   83s] [227/261] cumulate lapack-devel-3.9.0-8.1
+[   83s] [228/261] cumulate libopenblas_0_3_21-gnu-hpc-0.3.21-5.1
+[   83s] [229/261] cumulate python310-pybind11-devel-2.10.3-1.2
+[   83s] [230/261] cumulate python311-pybind11-devel-2.10.3-1.2
+[   83s] [231/261] cumulate python38-pybind11-devel-2.10.3-1.2
+[   83s] [232/261] cumulate python39-pybind11-devel-2.10.3-1.2
+[   83s] [233/261] cumulate python310-numpy-1.24.1-4.1
+[   83s] [234/261] cumulate python311-numpy-1.24.1-4.1
+[   83s] [235/261] cumulate python38-numpy-1.24.1-4.1
+[   83s] [236/261] cumulate python39-numpy-1.24.1-4.1
+[   83s] [237/261] cumulate gnu-compilers-hpc-devel-1.4-10.2
+[   83s] [238/261] cumulate gnu-compilers-hpc-macros-devel-1.4-10.2
+[   83s] [239/261] cumulate libopenblas-gnu-hpc-0.3.21-5.1
+[   83s] [240/261] cumulate libopenblas_0_3_21-gnu-hpc-devel-0.3.21-5.1
+[   83s] [241/261] cumulate python310-numpy-devel-1.24.1-4.1
+[   83s] [242/261] cumulate python311-numpy-devel-1.24.1-4.1
+[   83s] [243/261] cumulate python38-numpy-devel-1.24.1-4.1
+[   83s] [244/261] cumulate python39-numpy-devel-1.24.1-4.1
+[   83s] [245/261] cumulate libopenblas-gnu-hpc-devel-0.3.21-5.1
+[   83s] [246/261] cumulate python310-numpy_1_24_1-gnu-hpc-1.24.1-4.1
+[   83s] [247/261] cumulate python311-numpy_1_24_1-gnu-hpc-1.24.1-4.1
+[   83s] [248/261] cumulate python38-numpy_1_24_1-gnu-hpc-1.24.1-4.1
+[   83s] [249/261] cumulate python39-numpy_1_24_1-gnu-hpc-1.24.1-4.1
+[   83s] [250/261] cumulate python310-pythran-0.12.1-1.2
+[   83s] [251/261] cumulate python311-pythran-0.12.1-1.2
+[   83s] [252/261] cumulate python38-pythran-0.12.1-1.2
+[   83s] [253/261] cumulate python39-pythran-0.12.1-1.2
+[   83s] [254/261] cumulate python310-numpy_1_24_1-gnu-hpc-devel-1.24.1-4.1
+[   83s] [255/261] cumulate python311-numpy_1_24_1-gnu-hpc-devel-1.24.1-4.1
+[   83s] [256/261] cumulate python38-numpy_1_24_1-gnu-hpc-devel-1.24.1-4.1
+[   83s] [257/261] cumulate python39-numpy_1_24_1-gnu-hpc-devel-1.24.1-4.1
+[   83s] [258/261] cumulate python310-numpy-gnu-hpc-devel-1.24.1-4.1
+[   83s] [259/261] cumulate python311-numpy-gnu-hpc-devel-1.24.1-4.1
+[   83s] [260/261] cumulate python38-numpy-gnu-hpc-devel-1.24.1-4.1
+[   83s] [261/261] cumulate python39-numpy-gnu-hpc-devel-1.24.1-4.1
+[   83s] now installing cumulated packages
+[   87s] Preparing...                          ########################################
+[   87s] Updating / installing...
+[   88s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[   88s] libblas3-3.9.0-8.1                    ########################################
+[   88s] update-alternatives: using /usr/lib64/blas/libblas.so.3 to provide /usr/lib64/libblas.so.3 (libblas.so.3_riscv64) in auto mode
+[   88s] blas-devel-3.9.0-8.1                  ########################################
+[   89s] libcblas3-3.9.0-8.1                   ########################################
+[   89s] update-alternatives: using /usr/lib64/blas/libcblas.so.3 to provide /usr/lib64/libcblas.so.3 (libcblas.so.3_riscv64) in auto mode
+[   90s] liblapack3-3.9.0-8.1                  ########################################
+[   91s] update-alternatives: using /usr/lib64/lapack/liblapack.so.3 to provide /usr/lib64/liblapack.so.3 (liblapack.so.3_riscv64) in auto mode
+[   91s] python39-devel-3.9.16-5.1             ########################################
+[   92s] python38-devel-3.8.16-5.1             ########################################
+[   92s] python311-devel-3.11.2-1.2            ########################################
+[   92s] python310-devel-3.10.10-2.1           ########################################
+[   92s] lapack-devel-3.9.0-8.1                ########################################
+[   92s] cblas-devel-3.9.0-8.1                 ########################################
+[   93s] python-pybind11-common-devel-2.10.3-1.########################################
+[  106s] gcc13-fortran-13.0.1+git6669-7.1      ########################################
+[  107s] python39-gast-0.5.3-1.3               ########################################
+[  107s] python38-gast-0.5.3-1.3               ########################################
+[  107s] python311-gast-0.5.3-1.3              ########################################
+[  107s] python310-gast-0.5.3-1.3              ########################################
+[  131s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[  140s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[  140s] gcc-c++-13-1.1                        ########################################
+[  140s] libstdc++-devel-13-1.1                ########################################
+[  140s] python310-beniget-0.4.1-1.3           ########################################
+[  140s] python311-beniget-0.4.1-1.3           ########################################
+[  140s] python38-beniget-0.4.1-1.3            ########################################
+[  140s] python39-beniget-0.4.1-1.3            ########################################
+[  140s] gcc-fortran-13-1.1                    ########################################
+[  142s] libopenblas_openmp0-0.3.21-5.1        ########################################
+[  142s] update-alternatives: using /usr/lib64/openblas-openmp to provide /usr/lib64/openblas-default (openblas-default_riscv64) in auto mode
+[  143s] update-alternatives: using /usr/lib64/openblas-openmp/libopenblas.so.0 to provide /usr/lib64/liblapacke.so.3 (liblapacke.so.3_riscv64) in auto mode
+[  144s] openblas-common-devel-0.3.21-5.1      ########################################
+[  145s] libopenblas_openmp-devel-0.3.21-5.1   ########################################
+[  147s] tcl-8.6.13-4.1                        ########################################
+[  147s] python39-typing_extensions-4.5.0-1.1  ########################################
+[  147s] python39-tomli-2.0.1-1.3              ########################################
+[  147s] python39-ply-3.11-3.11                ########################################
+[  147s] python39-packaging-23.0-2.1           ########################################
+[  147s] python39-pyproject-metadata-0.6.1-2.2 ########################################
+[  148s] python38-typing_extensions-4.5.0-1.1  ########################################
+[  148s] python38-tomli-2.0.1-1.3              ########################################
+[  148s] python38-ply-3.11-3.11                ########################################
+[  148s] python38-packaging-23.0-2.1           ########################################
+[  148s] python38-pyproject-metadata-0.6.1-2.2 ########################################
+[  148s] python311-ply-3.11-3.11               ########################################
+[  148s] python311-packaging-23.0-2.1          ########################################
+[  148s] python311-pyproject-metadata-0.6.1-2.2########################################
+[  148s] python310-tomli-2.0.1-1.3             ########################################
+[  148s] python310-pyproject-metadata-0.6.1-2.2########################################
+[  148s] python310-ply-3.11-3.11               ########################################
+[  148s] ninja-1.11.1-8.1                      ########################################
+[  151s] meson-1.0.1-1.1                       ########################################
+[  151s] lua54-luaterm-0.07-8.1                ########################################
+[  151s] lua54-luaposix-35.1-2.1               ########################################
+[  151s] lua54-luafilesystem-1.8.0-6.1         ########################################
+[  151s] lua-lmod-8.7.17-2.1                   ########################################
+[  151s] gnu-compilers-hpc-1.4-10.2            ########################################
+[  154s] libopenblas_0_3_21-gnu-hpc-0.3.21-5.1 ########################################
+[  154s] libopenblas-gnu-hpc-0.3.21-5.1        ########################################
+[  154s] gnu-compilers-hpc-devel-1.4-10.2      ########################################
+[  154s] libopenblas_0_3_21-gnu-hpc-devel-0.3.2########################################
+[  154s] libopenblas-gnu-hpc-devel-0.3.21-5.1  ########################################
+[  158s] python310-numpy_1_24_1-gnu-hpc-1.24.1-########################################
+[  159s] python310-numpy_1_24_1-gnu-hpc-devel-1########################################
+[  163s] python311-numpy_1_24_1-gnu-hpc-1.24.1-########################################
+[  164s] python311-numpy_1_24_1-gnu-hpc-devel-1########################################
+[  168s] python38-numpy_1_24_1-gnu-hpc-1.24.1-4########################################
+[  168s] python38-numpy_1_24_1-gnu-hpc-devel-1.########################################
+[  172s] python39-numpy_1_24_1-gnu-hpc-1.24.1-4########################################
+[  173s] python39-numpy_1_24_1-gnu-hpc-devel-1.########################################
+[  173s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  173s] alts-1.2+3.b848aad-3.1                ########################################
+[  174s] python310-pybind11-2.10.3-1.2         ########################################
+[  174s] python311-pybind11-2.10.3-1.2         ########################################
+[  175s] python38-pybind11-2.10.3-1.2          ########################################
+[  176s] python39-pybind11-2.10.3-1.2          ########################################
+[  182s] python310-numpy-1.24.1-4.1            ########################################
+[  183s] python310-numpy-devel-1.24.1-4.1      ########################################
+[  190s] python311-numpy-1.24.1-4.1            ########################################
+[  191s] python311-numpy-devel-1.24.1-4.1      ########################################
+[  197s] python38-numpy-1.24.1-4.1             ########################################
+[  198s] python38-numpy-devel-1.24.1-4.1       ########################################
+[  205s] python39-numpy-1.24.1-4.1             ########################################
+[  206s] python39-numpy-devel-1.24.1-4.1       ########################################
+[  207s] boost-license1_81_0-1.81.0-2.1        ########################################
+[  240s] libboost_headers1_81_0-devel-1.81.0-2.########################################
+[  242s] boost-devel-1.81.0-1.1                ########################################
+[  244s] python310-pythran-0.12.1-1.2          ########################################
+[  247s] python311-pythran-0.12.1-1.2          ########################################
+[  250s] python38-pythran-0.12.1-1.2           ########################################
+[  252s] python39-pythran-0.12.1-1.2           ########################################
+[  253s] python39-pybind11-devel-2.10.3-1.2    ########################################
+[  253s] python38-pybind11-devel-2.10.3-1.2    ########################################
+[  253s] python311-pybind11-devel-2.10.3-1.2   ########################################
+[  253s] python310-pybind11-devel-2.10.3-1.2   ########################################
+[  256s] python310-pip-22.3.1-1.2              ########################################
+[  257s] python310-wheel-0.38.4-1.2            ########################################
+[  262s] python311-pip-22.3.1-1.2              ########################################
+[  263s] python311-wheel-0.38.4-1.2            ########################################
+[  267s] python38-pip-22.3.1-1.2               ########################################
+[  267s] python38-wheel-0.38.4-1.2             ########################################
+[  272s] python39-pip-22.3.1-1.2               ########################################
+[  273s] python39-wheel-0.38.4-1.2             ########################################
+[  273s] python39-numpy-gnu-hpc-devel-1.24.1-4.########################################
+[  273s] python38-numpy-gnu-hpc-devel-1.24.1-4.########################################
+[  273s] python311-numpy-gnu-hpc-devel-1.24.1-4########################################
+[  273s] python310-numpy-gnu-hpc-devel-1.24.1-4########################################
+[  273s] gnu-compilers-hpc-macros-devel-1.4-10.########################################
+[  273s] python311-meson-python-0.12.0-1.2     ########################################
+[  274s] python310-meson-python-0.12.0-1.2     ########################################
+[  274s] python38-meson-python-0.12.0-1.2      ########################################
+[  274s] python39-meson-python-0.12.0-1.2      ########################################
+[  276s] python310-Cython-0.29.33-1.2          ########################################
+[  280s] python311-Cython-0.29.33-1.2          ########################################
+[  283s] python38-Cython-0.29.33-1.2           ########################################
+[  286s] python39-Cython-0.29.33-1.2           ########################################
+[  286s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[  286s] fdupes-2.2.1-1.1                      ########################################
+[  298s] now finalizing build dir...
+[  298s] ... running 01-add_abuild_user_to_trusted_group
+[  299s] ... running 02-set_timezone_to_utc
+[  300s] ... running 03-set-permissions-secure
+[  300s] ... running 11-hack_uname_version_to_kernel_version
+[  306s] sh: line 1: /usr/bin/ps: No such file or directory
+[  317s] Warning: spec file parser line 230: can't expand %(...)
+[  317s] Warning: spec file parser line 231: can't expand %(...)
+[  317s] -----------------------------------------------------------------
+[  317s] I have the following modifications for python-scipy.spec:
+[  317s] 19c19
+[  317s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  317s] ---
+[  317s] > %global flavor gnu-hpc%{nil}
+[  317s] 96c96
+[  317s] < Release:        0
+[  317s] ---
+[  317s] > Release:        2.2
+[  317s] 114c114
+[  317s] < BuildRequires:  pkg-config
+[  317s] ---
+[  317s] > BuildRequires:  pkgconf-pkg-config
+[  330s] build target is riscv64-suse-linux
+[  330s] -----------------------------------------------------------------
+[  330s] ----- building python-scipy.spec (user abuild)
+[  330s] -----------------------------------------------------------------
+[  330s] -----------------------------------------------------------------
+[  337s] sh: line 1: /usr/bin/ps: No such file or directory
+[  338s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/33482288e4c1d9785be2374833ac8ed6-python-scipy:gnu-hpc' /home/abuild/rpmbuild/SOURCES/python-scipy.spec
+[  339s] Building target platforms: riscv64-suse-linux
+[  339s] Building for target riscv64-suse-linux
+[  339s]  Building for gnu 
+[  339s]  hpc_gnu_init 
+[  340s] warning: Macro expanded in comment on line 102: %{version}/scipy/datasets/_download_all.py scipy-datasets/scipy-data; tar czf scipy-datasets.tar.gz scipy-datasets`
+[  340s] 
+[  341s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  341s] pname python38-scipy
+[  341s] %{hpc_master_package -L -a -P python38}
+[  341s] 
+[  350s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  350s] pname python39-scipy
+[  350s] %{hpc_master_package -L -a -P python39}
+[  350s] 
+[  360s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  360s] pname python311-scipy
+[  360s] %{hpc_master_package -L -a -P python311}
+[  360s] 
+[  369s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  369s] pname python310-scipy
+[  369s] %{hpc_master_package -L -a -P python310}
+[  369s] 
+[  374s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 155: Macro %_name defined but not used within scope
+[  433s] setting SOURCE_DATE_EPOCH=1678406400
+[  435s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.QP5dnz
+[  435s] + umask 022
+[  435s] + cd /home/abuild/rpmbuild/BUILD
+[  435s] + cd /home/abuild/rpmbuild/BUILD
+[  435s] + rm -rf scipy-1.10.1
+[  435s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/scipy-1.10.1.tar.gz
+[  451s] + STATUS=0
+[  451s] + '[' 0 -ne 0 ']'
+[  451s] + cd scipy-1.10.1
+[  451s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/scipy-datasets.tar.gz
+[  452s] + STATUS=0
+[  452s] + '[' 0 -ne 0 ']'
+[  452s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  453s] + sed -i '1{/env python/d}' scipy/sparse/linalg/_isolve/tests/test_gcrotmk.py
+[  453s] + chmod a-x scipy/stats/tests/test_distributions.py
+[  453s] + sed -i 's/option('\''blas'\'', type: '\''string'\'', value: '\''openblas'\''/option('\''blas'\'', type: '\''string'\'', value: '\''blas'\''/' meson_options.txt
+[  453s] + sed -i 's/option('\''lapack'\'', type: '\''string'\'', value: '\''openblas'\''/option('\''lapack'\'', type: '\''string'\'', value: '\''lapack'\''/' meson_options.txt
+[  453s] + RPM_EC=0
+[  453s] ++ jobs -p
+[  453s] + exit 0
+[  453s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.mdhGqd
+[  454s] + umask 022
+[  454s] + cd /home/abuild/rpmbuild/BUILD
+[  454s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-scipy_1_10_1-gnu-hpc-1.10.1-2.2.riscv64
+[  454s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-scipy_1_10_1-gnu-hpc-1.10.1-2.2.riscv64
+[  454s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  454s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-scipy_1_10_1-gnu-hpc-1.10.1-2.2.riscv64
+[  454s] + cd scipy-1.10.1
+[  454s] + ref=/usr/lib/rpm
+[  454s] + mints=0
+[  454s] + case $(uname -m) in
+[  454s] ++ uname -m
+[  454s] + mints=20160911
+[  454s] + for s in guess sub
+[  454s] ++ find -maxdepth 8 -name config.guess
+[  455s] + for s in guess sub
+[  455s] ++ find -maxdepth 8 -name config.sub
+[  455s] + set +x
+[  455s] Using libalternatives variant 38 for f2py in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  456s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  456s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  456s] Using libalternatives variant 38 for pybind11-config in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  456s] Using libalternatives variant 38 for wheel in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  457s] Using alternative cygdb-3.8 for cygdb in ./build/flavorbin during Python 3.8 expansions.
+[  457s] Using alternative cython-3.8 for cython in ./build/flavorbin during Python 3.8 expansions.
+[  457s] Using alternative cythonize-3.8 for cythonize in ./build/flavorbin during Python 3.8 expansions.
+[  459s] Using alternative pythran-3.8 for pythran in ./build/flavorbin during Python 3.8 expansions.
+[  459s] Using alternative pythran-config-3.8 for pythran-config in ./build/flavorbin during Python 3.8 expansions.
+[  460s] Using libalternatives variant 39 for f2py in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  460s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  460s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  461s] Using libalternatives variant 39 for pybind11-config in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  461s] Using libalternatives variant 39 for wheel in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  461s] Using alternative cygdb-3.9 for cygdb in ./build/flavorbin during Python 3.9 expansions.
+[  461s] Using alternative cython-3.9 for cython in ./build/flavorbin during Python 3.9 expansions.
+[  462s] Using alternative cythonize-3.9 for cythonize in ./build/flavorbin during Python 3.9 expansions.
+[  463s] Using alternative pythran-3.9 for pythran in ./build/flavorbin during Python 3.9 expansions.
+[  463s] Using alternative pythran-config-3.9 for pythran-config in ./build/flavorbin during Python 3.9 expansions.
+[  464s] Using libalternatives variant 311 for f2py in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  464s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  464s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  464s] Using libalternatives variant 311 for pybind11-config in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  464s] Using libalternatives variant 311 for wheel in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  465s] Using alternative cygdb-3.11 for cygdb in ./build/flavorbin during Python 3.11 expansions.
+[  465s] Using alternative cython-3.11 for cython in ./build/flavorbin during Python 3.11 expansions.
+[  466s] Using alternative cythonize-3.11 for cythonize in ./build/flavorbin during Python 3.11 expansions.
+[  467s] Using alternative pythran-3.11 for pythran in ./build/flavorbin during Python 3.11 expansions.
+[  467s] Using alternative pythran-config-3.11 for pythran-config in ./build/flavorbin during Python 3.11 expansions.
+[  468s] Using alternative cygdb-3.10 for cygdb in ./build/flavorbin during Python 3.10 expansions.
+[  468s] Using alternative cython-3.10 for cython in ./build/flavorbin during Python 3.10 expansions.
+[  469s] Using alternative cythonize-3.10 for cythonize in ./build/flavorbin during Python 3.10 expansions.
+[  470s] Using alternative pythran-3.10 for pythran in ./build/flavorbin during Python 3.10 expansions.
+[  470s] Using alternative pythran-config-3.10 for pythran-config in ./build/flavorbin during Python 3.10 expansions.
+[  471s] + export PATH=/home/abuild/rpmbuild/BUILD/scipy-1.10.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  471s] + PATH=/home/abuild/rpmbuild/BUILD/scipy-1.10.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  471s] ++ '[' -f _current_flavor ']'
+[  471s] ++ cat _current_flavor
+[  471s] + last_flavor=python310
+[  471s] + '[' -z python310 ']'
+[  471s] + '[' python310 '!=' python38 ']'
+[  471s] + '[' -d build ']'
+[  471s] + mv build _build.python310
+[  471s] + '[' -d _build.python38 ']'
+[  471s] + mv _build.python38 build
+[  471s] + echo python38
+[  471s] + python_flavor=python38
+[  471s] + py_ver=3.8
+[  471s] + module purge
+[  471s] + '[' -z '' ']'
+[  471s] + case "$-" in
+[  471s] + __lmod_sh_dbg=x
+[  471s] + '[' -n x ']'
+[  471s] + set +x
+[  471s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  472s] sh: line 1: /usr/bin/ps: No such file or directory
+[  473s] Shell debugging restarted
+[  473s] + unset __lmod_sh_dbg
+[  473s] + return 0
+[  473s] + export CC=gcc
+[  473s] + CC=gcc
+[  473s] + export CXX=g++
+[  473s] + CXX=g++
+[  473s] + export FC=gfortran
+[  473s] + FC=gfortran
+[  473s] + export F77=gfortran
+[  473s] + F77=gfortran
+[  473s] + module load gnu/13
+[  473s] + '[' -z '' ']'
+[  473s] + case "$-" in
+[  473s] + __lmod_sh_dbg=x
+[  473s] + '[' -n x ']'
+[  473s] + set +x
+[  473s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  474s] sh: line 1: /usr/bin/ps: No such file or directory
+[  476s] Shell debugging restarted
+[  476s] + unset __lmod_sh_dbg
+[  476s] + return 0
+[  476s] + '[' -n openblas ']'
+[  476s] + module load openblas
+[  476s] + '[' -z '' ']'
+[  476s] + case "$-" in
+[  476s] + __lmod_sh_dbg=x
+[  476s] + '[' -n x ']'
+[  476s] + set +x
+[  476s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  477s] sh: line 1: /usr/bin/ps: No such file or directory
+[  484s] Lmod has detected the following error: The following module(s) are unknown:
+[  484s] "openblas"
+[  484s] 
+[  484s] Please check the spelling or version number. Also try "module spider ..."
+[  484s] It is also possible your cache file is out-of-date; it may help to try:
+[  484s]   $ module --ignore_cache load "openblas"
+[  484s] 
+[  484s] Also make sure that all modulefiles written in TCL start with the string
+[  484s] #%Module
+[  484s] 
+[  484s] 
+[  484s] 
+[  484s] Shell debugging restarted
+[  484s] + unset __lmod_sh_dbg
+[  484s] + return 1
+[  484s] error: Bad exit status from /var/tmp/rpm-tmp.mdhGqd (%build)
+[  484s] 
+[  484s] RPM build warnings:
+[  484s]     Macro expanded in comment on line 102: %{version}/scipy/datasets/_download_all.py scipy-datasets/scipy-data; tar czf scipy-datasets.tar.gz scipy-datasets`
+[  484s] 
+[  484s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  484s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  484s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  484s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 146: Macro %_name defined but not used within scope
+[  484s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 155: Macro %_name defined but not used within scope
+[  484s] 
+[  484s] RPM build errors:
+[  484s]     Bad exit status from /var/tmp/rpm-tmp.mdhGqd (%build)
+[  484s] ### VM INTERACTION START ###
+[  485s] [  471.757108][    T1] sysrq: Power Off
+[  485s] [  471.796181][    T7] reboot: Power down
+[  485s] ### VM INTERACTION END ###
+[  485s] 
+[  485s] lamb02 failed "build python-scipy.spec" at Mon Mar 20 13:25:12 UTC 2023.
+[  485s] 

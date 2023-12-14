@@ -1,0 +1,808 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] goat13 started "build papi.spec" at Sat Jan 21 01:14:53 UTC 2023.
+[    0s] 
+[    0s] Building papi:hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '594707d801ecea71da24440b1e17ee5f'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/papi.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/papi.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --buildflavor hpc --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/papi.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7b5783a3c2b233ca2b8761418aaf0a8d]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 25600 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 16
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.1.7-1-default #1 SMP PREEMPT_DYNAMIC Wed Jan 18 11:12:34 UTC 2023 (872045c)
+[   12s] Increasing log level from now on...
+[   12s] [    6.148324][  T500] sysrq: Changing Loglevel
+[   12s] [    6.148386][  T500] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   13s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[   13s] no label, UUID=00391e1b-db50-470e-8e23-66becb7edd35
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   14s] logging output to //.build.log...
+[   15s] processing recipe /.build-srcdir/papi.spec ...
+[   15s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor hpc /.build-srcdir/papi.spec build ...
+[   15s] initializing rpm db...
+[   16s] querying package ids...
+[   40s] [1/145] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   40s] [2/145] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   40s] [3/145] preinstalled attr-2.5.1-1.1
+[   40s] [4/145] preinstalled bash-5.2.15-8.1
+[   40s] [5/145] preinstalled bash-sh-5.2.15-8.1
+[   40s] [6/145] preinstalled binutils-2.39-1.1
+[   40s] [7/145] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   40s] [8/145] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   40s] [9/145] preinstalled build-mkbaselibs-20230105-1.1
+[   40s] [10/145] preinstalled bzip2-1.0.8-4.1
+[   40s] [11/145] preinstalled chkstat-1599_20221220-1.2
+[   40s] [12/145] cumulate chrpath-0.16-5.1
+[   40s] [13/145] preinstalled compat-usrmerge-build-84.87-5.1
+[   40s] [14/145] preinstalled compat-usrmerge-tools-84.87-5.1
+[   40s] [15/145] preinstalled coreutils-9.1-5.1
+[   40s] [16/145] preinstalled cpio-2.13-5.1
+[   40s] [17/145] preinstalled cpp-12-2.1
+[   40s] [18/145] preinstalled cpp12-12.2.1+git537-1.2
+[   40s] [19/145] preinstalled debugedit-5.0-5.1
+[   40s] [20/145] preinstalled diffutils-3.9-1.1
+[   40s] [21/145] preinstalled dwz-0.15-2.1
+[   40s] [22/145] preinstalled elfutils-0.188-3.2
+[   40s] [23/145] preinstalled file-5.44-1.1
+[   40s] [24/145] preinstalled file-magic-5.44-1.1
+[   40s] [25/145] preinstalled filesystem-84.87-11.1
+[   40s] [26/145] preinstalled fillup-1.42-279.1
+[   40s] [27/145] preinstalled findutils-4.9.0-2.1
+[   40s] [28/145] preinstalled gawk-5.2.1-2.1
+[   40s] [29/145] preinstalled gcc-12-2.1
+[   40s] [30/145] preinstalled gcc-PIE-12-2.1
+[   40s] [31/145] preinstalled gcc12-12.2.1+git537-1.2
+[   40s] [32/145] preinstalled gcc12-PIE-12.2.1+git537-1.2
+[   40s] [33/145] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   40s] [34/145] preinstalled gettext-tools-mini-0.21.1-1.1
+[   40s] [35/145] preinstalled glibc-2.36-9.1
+[   40s] [36/145] preinstalled glibc-devel-2.36-9.1
+[   40s] [37/145] preinstalled glibc-locale-base-2.36-9.1
+[   40s] [38/145] preinstalled grep-3.8-3.1
+[   40s] [39/145] preinstalled gzip-1.12-3.1
+[   40s] [40/145] preinstalled kernel-obs-build-6.1.7-1.1
+[   40s] [41/145] preinstalled libacl1-2.3.1-2.1
+[   40s] [42/145] preinstalled libasan8-13.0.0+git197351-5.1
+[   40s] [43/145] preinstalled libasm1-0.188-3.2
+[   40s] [44/145] preinstalled libatomic1-13.0.0+git197351-5.1
+[   40s] [45/145] preinstalled libattr1-2.5.1-1.1
+[   40s] [46/145] preinstalled libaudit1-3.0.6-4.1
+[   40s] [47/145] preinstalled libblkid1-2.38.1-4.1
+[   40s] [48/145] preinstalled libbz2-1-1.0.8-4.1
+[   40s] [49/145] preinstalled libcap-ng0-0.8.3-1.1
+[   40s] [50/145] preinstalled libcap2-2.66-1.1
+[   40s] [51/145] preinstalled libcrypt1-4.4.33-1.1
+[   40s] [52/145] preinstalled libctf-nobfd0-2.39-1.1
+[   40s] [53/145] preinstalled libctf0-2.39-1.1
+[   40s] [54/145] preinstalled libdb-4_8-4.8.30-39.1
+[   40s] [55/145] preinstalled libdw1-0.188-3.2
+[   40s] [56/145] preinstalled libeconf0-0.5.0-1.1
+[   40s] [57/145] preinstalled libelf1-0.188-3.2
+[   40s] [58/145] preinstalled libfdisk1-2.38.1-4.1
+[   40s] [59/145] preinstalled libgcc_s1-13.0.0+git197351-5.1
+[   40s] [60/145] preinstalled libgcrypt20-1.10.1-1.1
+[   40s] [61/145] preinstalled libgdbm6-1.23-1.1
+[   40s] [62/145] preinstalled libgdbm_compat4-1.23-1.1
+[   40s] [63/145] cumulate libgfortran5-13.0.0+git197351-5.1
+[   40s] [64/145] preinstalled libgmp10-6.2.1-4.1
+[   40s] [65/145] preinstalled libgomp1-13.0.0+git197351-5.1
+[   40s] [66/145] preinstalled libgpg-error0-1.46-1.1
+[   40s] [67/145] preinstalled libisl23-0.25-1.1
+[   40s] [68/145] preinstalled liblua5_4-5-5.4.4-7.2
+[   40s] [69/145] preinstalled liblzma5-5.4.0-1.1
+[   40s] [70/145] preinstalled libmagic1-5.44-1.1
+[   40s] [71/145] preinstalled libmount1-2.38.1-4.1
+[   40s] [72/145] preinstalled libmpc3-1.3.1-1.2
+[   40s] [73/145] preinstalled libmpfr6-4.1.1-3.1
+[   40s] [74/145] preinstalled libncurses6-6.4.20230114-2.1
+[   40s] [75/145] preinstalled libpcre2-8-0-10.42-3.2
+[   40s] [76/145] cumulate libpfm4-4.12.0-1.1
+[   40s] [77/145] preinstalled libpkgconf3-1.8.0-1.1
+[   40s] [78/145] preinstalled libpopt0-1.19-1.1
+[   40s] [79/145] preinstalled libreadline8-8.2-2.1
+[   40s] [80/145] preinstalled librpmbuild9-4.18.0-3.1
+[   40s] [81/145] preinstalled libseccomp2-2.5.4-2.1
+[   40s] [82/145] preinstalled libselinux1-3.4-2.1
+[   40s] [83/145] preinstalled libsemanage-conf-3.4-1.1
+[   40s] [84/145] preinstalled libsemanage2-3.4-1.1
+[   40s] [85/145] cumulate libsensors4-3.6.0-8.1
+[   40s] [86/145] preinstalled libsepol2-3.4-1.1
+[   40s] [87/145] preinstalled libsmartcols1-2.38.1-4.1
+[   40s] [88/145] preinstalled libstdc++6-13.0.0+git197351-5.1
+[   40s] [89/145] preinstalled libsubid4-4.13-3.1
+[   40s] [90/145] preinstalled libubsan1-13.0.0+git197351-5.1
+[   40s] [91/145] preinstalled libutempter0-1.2.0-3.2
+[   40s] [92/145] preinstalled libuuid1-2.38.1-4.1
+[   40s] [93/145] preinstalled libxcrypt-devel-4.4.33-1.1
+[   40s] [94/145] preinstalled libz1-1.2.12-3.2
+[   40s] [95/145] preinstalled libzstd1-1.5.2-2.1
+[   40s] [96/145] preinstalled linux-glibc-devel-6.1-1.1
+[   40s] [97/145] preinstalled login_defs-4.13-3.1
+[   40s] [98/145] preinstalled lua54-5.4.4-7.2
+[   40s] [99/145] cumulate lua54-luafilesystem-1.8.0-4.1
+[   40s] [100/145] cumulate lua54-luaposix-35.1-1.1
+[   40s] [101/145] cumulate lua54-luaterm-0.07-7.1
+[   40s] [102/145] cumulate m4-1.4.18-7.1
+[   40s] [103/145] preinstalled make-4.4-2.1
+[   40s] [104/145] cumulate ncurses-devel-6.4.20230114-2.1
+[   40s] [105/145] preinstalled ncurses-utils-6.4.20230114-2.1
+[   40s] [106/145] preinstalled pam-1.5.2-11.2
+[   40s] [107/145] preinstalled patch-2.7.6-6.1
+[   40s] [108/145] preinstalled perl-5.36.0-4.1
+[   40s] [109/145] preinstalled perl-base-5.36.0-4.1
+[   40s] [110/145] preinstalled permissions-1599_20221220-1.2
+[   40s] [111/145] preinstalled permissions-config-1599_20221220-1.2
+[   40s] [112/145] preinstalled pkgconf-1.8.0-1.1
+[   40s] [113/145] preinstalled pkgconf-m4-1.8.0-1.1
+[   40s] [114/145] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   40s] [115/145] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   40s] [116/145] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   40s] [117/145] preinstalled qemu-linux-user-7.1.0-47.1
+[   40s] [118/145] preinstalled rpm-4.18.0-3.1
+[   40s] [119/145] preinstalled rpm-build-4.18.0-3.1
+[   40s] [120/145] preinstalled rpm-build-perl-4.18.0-3.1
+[   40s] [121/145] preinstalled rpm-config-SUSE-20220926-1.1
+[   40s] [122/145] preinstalled rpmlint-mini-2.4.0+git20230112.139edaf-8.48
+[   40s] [123/145] preinstalled rpmlint-strict-2.4.0+git20230119.40d52b0-1.1
+[   40s] [124/145] preinstalled sed-4.9-2.1
+[   40s] [125/145] preinstalled shadow-4.13-3.1
+[   40s] [126/145] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   40s] [127/145] preinstalled system-group-hardware-20170617-24.1
+[   40s] [128/145] preinstalled system-user-root-20190513-2.1
+[   40s] [129/145] preinstalled systemd-rpm-macros-18-1.1
+[   40s] [130/145] preinstalled sysuser-shadow-3.1-5.1
+[   40s] [131/145] preinstalled tar-1.34-9.1
+[   40s] [132/145] cumulate tcl-8.6.13-2.2
+[   40s] [133/145] preinstalled terminfo-base-6.4.20230114-2.1
+[   40s] [134/145] preinstalled update-alternatives-1.21.8-1.1
+[   40s] [135/145] preinstalled util-linux-2.38.1-4.1
+[   40s] [136/145] preinstalled which-2.21-5.1
+[   40s] [137/145] preinstalled xz-5.4.0-1.1
+[   40s] [138/145] cumulate autoconf-2.71-2.1
+[   40s] [139/145] cumulate gcc12-fortran-12.2.1+git537-1.2
+[   40s] [140/145] cumulate libpfm-devel-4.12.0-1.1
+[   40s] [141/145] cumulate libsensors4-devel-3.6.0-8.1
+[   40s] [142/145] cumulate lua-lmod-8.7.17-1.1
+[   40s] [143/145] cumulate automake-1.16.5-3.1
+[   40s] [144/145] cumulate gcc-fortran-12-2.1
+[   40s] [145/145] cumulate libpfm-devel-static-4.12.0-1.1
+[   40s] now installing cumulated packages
+[   40s] Preparing...                          ########################################
+[   40s] Updating / installing...
+[   41s] tcl-8.6.13-2.2                        ########################################
+[   41s] m4-1.4.18-7.1                         ########################################
+[   42s] autoconf-2.71-2.1                     ########################################
+[   42s] lua54-luaterm-0.07-7.1                ########################################
+[   42s] lua54-luaposix-35.1-1.1               ########################################
+[   42s] lua54-luafilesystem-1.8.0-4.1         ########################################
+[   42s] libsensors4-3.6.0-8.1                 ########################################
+[   42s] libpfm4-4.12.0-1.1                    ########################################
+[   42s] libpfm-devel-4.12.0-1.1               ########################################
+[   42s] libgfortran5-13.0.0+git197351-5.1     ########################################
+[   49s] gcc12-fortran-12.2.1+git537-1.2       ########################################
+[   49s] gcc-fortran-12-2.1                    ########################################
+[   49s] libpfm-devel-static-4.12.0-1.1        ########################################
+[   49s] libsensors4-devel-3.6.0-8.1           ########################################
+[   49s] lua-lmod-8.7.17-1.1                   ########################################
+[   50s] automake-1.16.5-3.1                   ########################################
+[   50s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[   51s] ncurses-devel-6.4.20230114-2.1        ########################################
+[   51s] chrpath-0.16-5.1                      ########################################
+[   52s] now finalizing build dir...
+[   53s] ... running 01-add_abuild_user_to_trusted_group
+[   53s] ... running 02-set_timezone_to_utc
+[   53s] ... running 03-set-permissions-secure
+[   54s] ... running 11-hack_uname_version_to_kernel_version
+[   57s] sh: line 1: /usr/bin/ps: No such file or directory
+[   64s] -----------------------------------------------------------------
+[   64s] I have the following modifications for papi.spec:
+[   64s] 19c19
+[   64s] < %global flavor @BUILD_FLAVOR@%{nil}
+[   64s] ---
+[   64s] > %global flavor hpc%{nil}
+[   64s] 68c68
+[   64s] < Release:        0
+[   64s] ---
+[   64s] > Release:        1.1
+[   64s] 86c86
+[   64s] < BuildRequires:  pkg-config
+[   64s] ---
+[   64s] > BuildRequires:  pkgconf-pkg-config
+[   71s] build target is riscv64-suse-linux
+[   71s] -----------------------------------------------------------------
+[   71s] ----- building papi.spec (user abuild)
+[   71s] -----------------------------------------------------------------
+[   71s] -----------------------------------------------------------------
+[   75s] sh: line 1: /usr/bin/ps: No such file or directory
+[   76s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/594707d801ecea71da24440b1e17ee5f-papi:hpc' /home/abuild/rpmbuild/SOURCES/papi.spec
+[   84s] Building target platforms: riscv64-suse-linux
+[   84s] Building for target riscv64-suse-linux
+[   84s] setting SOURCE_DATE_EPOCH=1673913600
+[   84s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.6iY7XG
+[   84s] + umask 022
+[   84s] + cd /home/abuild/rpmbuild/BUILD
+[   84s] + cd /home/abuild/rpmbuild/BUILD
+[   84s] + rm -rf papi-7.0.0
+[   84s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/papi-7.0.0.tar.gz
+[   87s] + STATUS=0
+[   87s] + '[' 0 -ne 0 ']'
+[   87s] + cd papi-7.0.0
+[   87s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   87s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/python3.patch
+[   87s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   87s] + RPM_EC=0
+[   87s] ++ jobs -p
+[   87s] + exit 0
+[   87s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.dt6Tee
+[   87s] + umask 022
+[   87s] + cd /home/abuild/rpmbuild/BUILD
+[   87s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/papi_7_0_0-hpc-7.0.0-1.1.riscv64
+[   87s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/papi_7_0_0-hpc-7.0.0-1.1.riscv64
+[   87s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   87s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/papi_7_0_0-hpc-7.0.0-1.1.riscv64
+[   88s] + cd papi-7.0.0
+[   88s] + ref=/usr/lib/rpm
+[   88s] + mints=0
+[   88s] + case $(uname -m) in
+[   88s] ++ uname -m
+[   88s] + mints=20160911
+[   88s] + for s in guess sub
+[   88s] ++ find -maxdepth 8 -name config.guess
+[   88s] + for s in guess sub
+[   88s] ++ find -maxdepth 8 -name config.sub
+[   88s] + cd src
+[   88s] + mv configure.in configure.ac
+[   88s] + autoreconf -fi
+[  111s] configure.ac:11: warning: The macro `AC_CONFIG_HEADER' is obsolete.
+[  111s] configure.ac:11: You should run autoupdate.
+[  111s] ./lib/autoconf/status.m4:719: AC_CONFIG_HEADER is expanded from...
+[  111s] configure.ac:11: the top level
+[  112s] configure.ac:187: warning: The macro `AC_GNU_SOURCE' is obsolete.
+[  112s] configure.ac:187: You should run autoupdate.
+[  112s] ./lib/autoconf/specific.m4:312: AC_GNU_SOURCE is expanded from...
+[  112s] configure.ac:187: the top level
+[  112s] configure.ac:188: warning: The macro `AC_HEADER_STDC' is obsolete.
+[  112s] configure.ac:188: You should run autoupdate.
+[  112s] ./lib/autoconf/headers.m4:704: AC_HEADER_STDC is expanded from...
+[  112s] configure.ac:188: the top level
+[  112s] configure.ac:190: warning: The macro `AC_HEADER_TIME' is obsolete.
+[  112s] configure.ac:190: You should run autoupdate.
+[  112s] ./lib/autoconf/headers.m4:743: AC_HEADER_TIME is expanded from...
+[  112s] configure.ac:190: the top level
+[  112s] configure.ac:200: warning: The macro `AC_TRY_LINK' is obsolete.
+[  112s] configure.ac:200: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  112s] configure.ac:200: the top level
+[  112s] configure.ac:212: warning: The macro `AC_TRY_LINK' is obsolete.
+[  112s] configure.ac:212: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  112s] configure.ac:212: the top level
+[  112s] configure.ac:225: warning: The macro `AC_TRY_LINK' is obsolete.
+[  112s] configure.ac:225: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  112s] configure.ac:225: the top level
+[  112s] configure.ac:247: warning: The macro `AC_TRY_LINK' is obsolete.
+[  112s] configure.ac:247: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  112s] configure.ac:247: the top level
+[  112s] configure.ac:258: warning: The macro `AC_TRY_LINK' is obsolete.
+[  112s] configure.ac:258: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  112s] configure.ac:258: the top level
+[  112s] configure.ac:282: warning: The macro `AC_TRY_LINK' is obsolete.
+[  112s] configure.ac:282: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  112s] configure.ac:282: the top level
+[  112s] configure.ac:441: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:441: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/headers.m4:89: _AC_CHECK_HEADER_COMPILE is expanded from...
+[  112s] ./lib/autoconf/headers.m4:56: AC_CHECK_HEADER is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  112s] configure.ac:441: the top level
+[  112s] configure.ac:592: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:592: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  112s] configure.ac:592: the top level
+[  112s] configure.ac:592: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:592: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2962: _AC_RUN_IFELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2981: AC_RUN_IFELSE is expanded from...
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  112s] configure.ac:592: the top level
+[  112s] configure.ac:592: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:592: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2962: _AC_RUN_IFELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2981: AC_RUN_IFELSE is expanded from...
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2962: _AC_RUN_IFELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2981: AC_RUN_IFELSE is expanded from...
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  112s] configure.ac:592: the top level
+[  112s] configure.ac:691: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:691: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  112s] configure.ac:691: the top level
+[  112s] configure.ac:752: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:752: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  112s] configure.ac:752: the top level
+[  112s] configure.ac:752: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:752: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2962: _AC_RUN_IFELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:2981: AC_RUN_IFELSE is expanded from...
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
+[  112s] configure.ac:752: the top level
+[  112s] configure.ac:1122: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:1122: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/headers.m4:89: _AC_CHECK_HEADER_COMPILE is expanded from...
+[  112s] ./lib/autoconf/headers.m4:56: AC_CHECK_HEADER is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:651: AS_FOR is expanded from...
+[  112s] ./lib/autoconf/headers.m4:217: AC_CHECK_HEADERS is expanded from...
+[  112s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  112s] ./lib/autoconf/libs.m4:100: AC_CHECK_LIB is expanded from...
+[  112s] configure.ac:1122: the top level
+[  112s] configure.ac:1450: warning: The macro `AC_TRY_LINK' is obsolete.
+[  112s] configure.ac:1450: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  112s] configure.ac:1450: the top level
+[  112s] configure.ac:1457: warning: The macro `AC_TRY_RUN' is obsolete.
+[  112s] configure.ac:1457: You should run autoupdate.
+[  112s] ./lib/autoconf/general.m4:2997: AC_TRY_RUN is expanded from...
+[  112s] configure.ac:1457: the top level
+[  119s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter'
+[  119s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter'
+[  119s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter'
+[  119s] + export CFLAGS
+[  119s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g'
+[  119s] + export CXXFLAGS
+[  119s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g'
+[  119s] + export FFLAGS
+[  119s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --disable-dependency-tracking --prefix=/usr/lib/hpc/papi/7.0.0 --exec-prefix=/usr/lib/hpc/papi/7.0.0 --bindir=/usr/lib/hpc/papi/7.0.0/bin --sbindir=/usr/lib/hpc/papi/7.0.0/sbin --sysconfdir=/etc --datadir=/usr/lib/hpc/papi/7.0.0/share --includedir=/usr/lib/hpc/papi/7.0.0/include --libdir=/usr/lib/hpc/papi/7.0.0/lib64 --libexecdir=/usr/lib/hpc/papi/7.0.0/lib --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/lib/hpc/papi/7.0.0/share/man --infodir=/usr/lib/hpc/papi/7.0.0/share/info --with-perf-events --with-pthread-mutexes --with-shared-lib=yes --with-shlib --with-pfm-incdir=/usr/include --with-pfm-libdir=/usr/lib64
+[  123s] configure: WARNING: unrecognized options: --disable-dependency-tracking, --with-shlib
+[  127s] checking for architecture... riscv64
+[  127s] checking for OS... linux
+[  128s] checking for OS version... 6.1.7-1-default
+[  128s] checking for perf_event workaround level... autodetect
+[  128s] checking for if MIC should be used... no
+[  128s] checking for if NEC should be used... no
+[  128s] checking for riscv64-suse-linux-gnu-xlc... no
+[  128s] checking for riscv64-suse-linux-gnu-icc... no
+[  128s] checking for riscv64-suse-linux-gnu-gcc... no
+[  128s] checking for riscv64-suse-linux-gnu-cc... no
+[  128s] checking for xlc... no
+[  128s] checking for icc... no
+[  128s] checking for gcc... gcc
+[  131s] checking whether the C compiler works... yes
+[  131s] checking for C compiler default output file name... a.out
+[  133s] checking for suffix of executables... 
+[  135s] checking whether we are cross compiling... no
+[  136s] checking for suffix of object files... o
+[  138s] checking whether the compiler supports GNU C... yes
+[  139s] checking whether gcc accepts -g... yes
+[  142s] checking for gcc option to enable C11 features... none needed
+[  142s] checking for riscv64-suse-linux-gnu-xlf... no
+[  142s] checking for riscv64-suse-linux-gnu-ifort... no
+[  142s] checking for riscv64-suse-linux-gnu-gfortran... no
+[  142s] checking for riscv64-suse-linux-gnu-f95... no
+[  142s] checking for riscv64-suse-linux-gnu-f90... no
+[  142s] checking for riscv64-suse-linux-gnu-f77... no
+[  142s] checking for xlf... no
+[  142s] checking for ifort... no
+[  142s] checking for gfortran... gfortran
+[  144s] checking whether the compiler supports GNU Fortran 77... yes
+[  146s] checking whether gfortran accepts -g... yes
+[  146s] checking for mpicc... no
+[  146s] checking for gawk... gawk
+[  148s] checking how to run the C preprocessor... gcc -E
+[  149s] checking whether ln -s works... yes
+[  149s] checking whether make sets $(MAKE)... yes
+[  149s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  149s] checking for ranlib... ranlib
+[  150s] checking for stdio.h... yes
+[  151s] checking for stdlib.h... yes
+[  152s] checking for string.h... yes
+[  154s] checking for inttypes.h... yes
+[  155s] checking for stdint.h... yes
+[  156s] checking for strings.h... yes
+[  157s] checking for sys/stat.h... yes
+[  158s] checking for sys/types.h... yes
+[  160s] checking for unistd.h... yes
+[  161s] checking for wchar.h... yes
+[  162s] checking for minix/config.h... no
+[  164s] checking for sys/time.h... yes
+[  166s] checking whether it is safe to define __EXTENSIONS__... yes
+[  167s] checking whether _XOPEN_SOURCE should be defined... no
+[  167s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  167s] checking for egrep... /usr/bin/grep -E
+[  168s] checking for inline... inline
+[  168s] checking for sys/time.h... (cached) yes
+[  170s] checking for c_asm.h... no
+[  171s] checking for intrinsics.h... no
+[  173s] checking for mach/mach_time.h... no
+[  174s] checking for sched.h... yes
+[  176s] checking for gethrtime... no
+[  178s] checking for read_real_time... no
+[  181s] checking for time_base_to_time... no
+[  183s] checking for clock_gettime... yes
+[  185s] checking for mach_absolute_time... no
+[  187s] checking for sched_getcpu... yes
+[  189s] checking for timer_create and timer_*ettime symbols in base system... found
+[  191s] checking for dlopen and dlerror symbols in base system... found
+[  191s] checking for tests... ctests ftests 
+[  191s] checking for debug build... 
+[  193s] checking for -Wno-override-init... 1
+[  193s] checking for CPU type... riscv64
+[  195s] checking for ffsll... yes
+[  197s] checking for working gettid... yes
+[  201s] checking for working MMTIMER... no
+[  203s] checking for working CLOCK_REALTIME_HR POSIX 1b timer... no
+[  207s] checking for working CLOCK_REALTIME POSIX 1b timer... yes
+[  208s] checking for which real time clock to use... clock_realtime
+[  211s] checking for working __thread... yes
+[  212s] checking for high performance thread local storage... __thread
+[  219s] checking for working CLOCK_THREAD_CPUTIME_ID POSIX 1b timer... yes
+[  219s] checking for which virtual timer to use... clock_thread_cputime_id
+[  219s] checking for static user preset events... no
+[  219s] checking for static PAPI preset events... yes
+[  219s] checking for whether to build static library... yes
+[  219s] checking for whether to build shared library... yes
+[  219s] checking for static compile of tests and utilities... no
+[  219s] checking for linking with papi shared library of tests and utilities... no
+[  219s] checking for building libsde... shared and static
+[  219s] checking for /sys/class/perfctr... no
+[  219s] checking for /dev/perfctr... no
+[  219s] checking for /sys/kernel/perfmon/version... no
+[  219s] checking for /proc/perfmon... no
+[  219s] checking for /proc/sys/kernel/perf_event_paranoid... yes
+[  219s] checking for /usr/include/perfmon/perf_event.h... yes
+[  221s] checking for pfm_initialize in -lpfm... yes
+[  223s] checking for perfmon/pfmlib.h... yes
+[  226s] checking for pfm_get_event_description... no
+[  228s] checking for pfmlib_reg_t.reg_evt_idx... no
+[  232s] checking for pfmlib_output_param_t.pfp_pmd_count... no
+[  233s] checking for pfm_msg_t.type... no
+[  233s] checking platform... linux-pe
+[  235s] checking for components to build... perf_event perf_event_uncore sysdetect
+[  235s] checking for PAPI event CSV filename to use... papi_events.csv
+[  235s] configure: Compiling genpapifdef with gcc
+[  238s] configure: Generating fpapi.h
+[  238s] configure: Generating f77papi.h
+[  238s] configure: Generating f90papi.h
+[  238s] configure: Rules.pfm4_pe will be included in the generated Makefile
+[  239s] configure: creating ./config.status
+[  243s] config.status: creating Makefile
+[  244s] config.status: creating papi.pc
+[  245s] config.status: creating components/Makefile_comp_tests.target
+[  245s] config.status: creating testlib/Makefile.target
+[  246s] config.status: creating utils/Makefile.target
+[  247s] config.status: creating ctests/Makefile.target
+[  248s] config.status: creating ftests/Makefile.target
+[  249s] config.status: creating validation_tests/Makefile.target
+[  249s] config.status: creating config.h
+[  250s] configure: WARNING: unrecognized options: --disable-dependency-tracking, --with-shlib
+[  251s] + make DOCDIR=/usr/share/doc/packages/papi -j16
+[  252s] sh papi_events_table.sh papi_events.csv > papi_events_table.h
+[  252s] ar xv /usr/lib64/libpfm.a
+[  252s] Host architecture   : Linux with perf_event kernel support and libpfm4
+[  252s] ar xv /usr/lib64/libpfm.a
+[  252s] ar xv /usr/lib64/libpfm.a
+[  252s] x - pfmlib_common.o
+[  252s] x - pfmlib_perf_event_pmu.o
+[  252s] x - pfmlib_perf_event.o
+[  252s] x - pfmlib_perf_event_raw.o
+[  252s] Host CPU component  : perf_event
+[  252s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/perf_event/perf_event.c -o perf_event.o 
+[  252s] x - pfmlib_common.o
+[  252s] x - pfmlib_perf_event_pmu.o
+[  252s] x - pfmlib_perf_event.o
+[  252s] x - pfmlib_perf_event_raw.o
+[  252s] x - pfmlib_common.o
+[  252s] x - pfmlib_perf_event_pmu.o
+[  252s] x - pfmlib_perf_event.o
+[  252s] x - pfmlib_perf_event_raw.o
+[  252s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/perf_event/pe_libpfm4_events.c -o pe_libpfm4_events.o 
+[  252s] Installation DESTDIR: 
+[  252s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -Icomponents/perf_event/ -c components/perf_event_uncore/perf_event_uncore.c -o perf_event_uncore.o 
+[  252s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/sysdetect/sysdetect.c -o sysdetect.o
+[  252s] Installation PREFIX : /usr/lib/hpc/papi/7.0.0
+[  252s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/sysdetect/nvidia_gpu.c -o nvidia_gpu.o
+[  253s] gcc -I/include/hsa -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/sysdetect/amd_gpu.c -o amd_gpu.o
+[  253s] Installation EPREFIX: /usr/lib/hpc/papi/7.0.0
+[  253s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/sysdetect/cpu.c -o cpu.o
+[  253s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/sysdetect/cpu_utils.c -o cpu_utils.o
+[  253s] Installation INCDIR : /usr/lib/hpc/papi/7.0.0/include
+[  253s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/sysdetect/os_cpu_utils.c -o os_cpu_utils.o
+[  253s] gcc -DPAPI_NO_MEMORY_MANAGEMENT -DSTATIC_PAPI_EVENTS_TABLE  -DUSE_PERFEVENT_RDPMC=1 -DPEINCLUDE=\"/usr/include/perfmon/perf_event.h\" -D_REENTRANT -D_GNU_SOURCE -DUSE_COMPILER_TLS -fvisibility=hidden -I. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -I/hsa/include -I/hsa/include/hsa -I/rocm_smi/include -I/rocm_smi/include/rocm_smi -I/include -DOSLOCK=\"linux-lock.h\" -DOSCONTEXT=\"linux-context.h\" -O2 -c components/sysdetect/linux_cpu_utils.c -o linux_cpu_utils.o
+[  253s] Installation LIBDIR : /usr/lib/hpc/papi/7.0.0/lib64
+[  253s] make CC=gcc -C sde_lib dynamic
+[  253s] make -C testlib
+[  253s] Installation BINDIR : /usr/lib/hpc/papi/7.0.0/bin
+[  253s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/papi-7.0.0/src/sde_lib'
+[  253s] gcc -c -Bdynamic -fPIC -shared -fvisibility=hidden -Wextra -Wall -O2 -g -I. -I.. sde_lib.c -o sde_lib_d.o
+[  253s] gcc -c -Bdynamic -fPIC -shared -fvisibility=hidden -Wextra -Wall -O2 -g -I. -I.. sde_lib_datastructures.c -o sde_lib_datastructures_d.o
+[  253s] gcc -c -Bdynamic -fPIC -shared -fvisibility=hidden -Wextra -Wall -O2 -g -I. -I.. sde_lib_misc.c -o sde_lib_misc_d.o
+[  253s] gcc -c -Bdynamic -fPIC -shared -fvisibility=hidden -Wextra -Wall -O2 -g -I. -I.. sde_lib_ti.c -o sde_lib_ti_d.o
+[  253s] Installation MANDIR : /usr/lib/hpc/papi/7.0.0/share/man
+[  253s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/papi-7.0.0/src/testlib'
+[  253s] gcc -I. -I.. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -O1  -c test_utils.c
+[  253s] Installation DOCDIR : /usr/share/doc/packages/papi
+[  254s] Installation DATADIR: /usr/lib/hpc/papi/7.0.0/share/papi
+[  254s] 
+[  254s] gcc -E -I/usr/include -DFORTRANUNDERSCORE papi_fwrappers.c > papi_fwrappers_.c
+[  254s] In file included from ./papi_internal.h:119,
+[  254s]                  from components/perf_event/pe_libpfm4_events.c:19:
+[  254s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]       |  ^~~~~
+[  254s] In file included from ./linux-lock.h:4,
+[  254s]                  from ./papi_lock.h:20,
+[  254s]                  from ./papi_internal.h:437:
+[  254s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  254s]    67 | #error Need to define rmb for this architecture!
+[  254s]       |  ^~~~~
+[  254s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  254s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  254s]       |  ^~~~~
+[  254s] In file included from ./papi_internal.h:119,
+[  254s]                  from components/perf_event/perf_event.c:38:
+[  254s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]       |  ^~~~~
+[  254s] In file included from ./linux-lock.h:4,
+[  254s]                  from ./papi_lock.h:20,
+[  254s]                  from ./papi_internal.h:437:
+[  254s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  254s]    67 | #error Need to define rmb for this architecture!
+[  254s]       |  ^~~~~
+[  254s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  254s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  254s]       |  ^~~~~
+[  254s] In file included from ./papi_internal.h:119,
+[  254s]                  from components/sysdetect/sysdetect.h:6,
+[  254s]                  from components/sysdetect/nvidia_gpu.c:17:
+[  254s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]       |  ^~~~~
+[  254s] In file included from ./linux-lock.h:4,
+[  254s]                  from ./papi_lock.h:20,
+[  254s]                  from ./papi_internal.h:437:
+[  254s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  254s]    67 | #error Need to define rmb for this architecture!
+[  254s]       |  ^~~~~
+[  254s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  254s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  254s]       |  ^~~~~
+[  254s] In file included from ./papi_internal.h:119,
+[  254s]                  from components/sysdetect/sysdetect.h:6,
+[  254s]                  from components/sysdetect/sysdetect.c:19:
+[  254s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  254s]       |  ^~~~~
+[  255s] In file included from ./linux-lock.h:4,
+[  255s]                  from ./papi_lock.h:20,
+[  255s]                  from ./papi_internal.h:437:
+[  255s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  255s]    67 | #error Need to define rmb for this architecture!
+[  255s]       |  ^~~~~
+[  255s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  255s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  255s]       |  ^~~~~
+[  255s] In file included from ./papi_internal.h:119,
+[  255s]                  from components/sysdetect/sysdetect.h:6,
+[  255s]                  from components/sysdetect/amd_gpu.c:18:
+[  255s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]       |  ^~~~~
+[  255s] In file included from ./papi_internal.h:119,
+[  255s]                  from components/sysdetect/sysdetect.h:6,
+[  255s]                  from components/sysdetect/os_cpu_utils.c:1:
+[  255s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]       |  ^~~~~
+[  255s] In file included from ./linux-lock.h:4,
+[  255s]                  from ./papi_lock.h:20,
+[  255s]                  from ./papi_internal.h:437:
+[  255s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  255s]    67 | #error Need to define rmb for this architecture!
+[  255s]       |  ^~~~~
+[  255s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  255s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  255s]       |  ^~~~~
+[  255s] In file included from ./linux-lock.h:4,
+[  255s]                  from ./papi_lock.h:20,
+[  255s]                  from ./papi_internal.h:437:
+[  255s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  255s]    67 | #error Need to define rmb for this architecture!
+[  255s]       |  ^~~~~
+[  255s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  255s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  255s]       |  ^~~~~
+[  255s] In file included from ./papi_internal.h:119,
+[  255s]                  from components/sysdetect/sysdetect.h:6,
+[  255s]                  from components/sysdetect/cpu.c:16:
+[  255s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]       |  ^~~~~
+[  255s] In file included from ./linux-lock.h:4,
+[  255s]                  from ./papi_lock.h:20,
+[  255s]                  from ./papi_internal.h:437:
+[  255s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  255s]    67 | #error Need to define rmb for this architecture!
+[  255s]       |  ^~~~~
+[  255s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  255s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  255s]       |  ^~~~~
+[  255s] In file included from ./papi_internal.h:119,
+[  255s]                  from components/sysdetect/sysdetect.h:6,
+[  255s]                  from components/sysdetect/cpu_utils.c:15:
+[  255s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]       |  ^~~~~
+[  255s] In file included from components/perf_event/perf_event.c:56:
+[  255s] components/perf_event/perf_helpers.h: In function 'mmap_read_head':
+[  255s] components/perf_event/perf_helpers.h:190:9: warning: implicit declaration of function 'rmb' [-Wimplicit-function-declaration]
+[  255s]   190 |         rmb();
+[  255s]       |         ^~~
+[  255s] In file included from ./linux-lock.h:4,
+[  255s]                  from ./papi_lock.h:20,
+[  255s]                  from ./papi_internal.h:437:
+[  255s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  255s]    67 | #error Need to define rmb for this architecture!
+[  255s]       |  ^~~~~
+[  255s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  255s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  255s]       |  ^~~~~
+[  255s] In file included from ./papi_internal.h:119,
+[  255s]                  from components/perf_event_uncore/perf_event_uncore.c:29:
+[  255s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]       |  ^~~~~
+[  255s] In file included from ./linux-lock.h:4,
+[  255s]                  from ./papi_lock.h:20,
+[  255s]                  from ./papi_internal.h:437:
+[  255s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  255s]    67 | #error Need to define rmb for this architecture!
+[  255s]       |  ^~~~~
+[  255s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  255s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  255s]       |  ^~~~~
+[  255s] In file included from ./papi_internal.h:119,
+[  255s]                  from components/sysdetect/sysdetect.h:6,
+[  255s]                  from components/sysdetect/linux_cpu_utils.c:10:
+[  255s] ./linux-context.h:43:2: error: #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]    43 | #error "OVERFLOW_ADDRESS() undefined!"
+[  255s]       |  ^~~~~
+[  255s] In file included from ./linux-lock.h:4,
+[  255s]                  from ./papi_lock.h:20,
+[  255s]                  from ./papi_internal.h:437:
+[  255s] ./mb.h:67:2: error: #error Need to define rmb for this architecture!
+[  255s]    67 | #error Need to define rmb for this architecture!
+[  255s]       |  ^~~~~
+[  255s] ./mb.h:68:2: error: #error See the kernel source directory: tools/perf/perf.h file
+[  255s]    68 | #error See the kernel source directory: tools/perf/perf.h file
+[  255s]       |  ^~~~~
+[  255s] gcc -E -I/usr/include -DFORTRANDOUBLEUNDERSCORE papi_fwrappers.c > papi_fwrappers__.c
+[  255s] components/perf_event/perf_event.c: In function '_pe_dispatch_timer':
+[  255s] ./linux-context.h:46:44: warning: implicit declaration of function 'OVERFLOW_ADDRESS'; did you mean 'GET_OVERFLOW_ADDRESS'? [-Wimplicit-function-declaration]
+[  255s]    46 | #define GET_OVERFLOW_ADDRESS(ctx) (vptr_t)(OVERFLOW_ADDRESS(ctx))
+[  255s]       |                                            ^~~~~~~~~~~~~~~~
+[  255s] components/perf_event/perf_event.c:1969:27: note: in expansion of macro 'GET_OVERFLOW_ADDRESS'
+[  255s]  1969 |                 address = GET_OVERFLOW_ADDRESS( hw_context );
+[  255s]       |                           ^~~~~~~~~~~~~~~~~~~~
+[  255s] ./linux-context.h:46:35: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+[  255s]    46 | #define GET_OVERFLOW_ADDRESS(ctx) (vptr_t)(OVERFLOW_ADDRESS(ctx))
+[  255s]       |                                   ^
+[  255s] components/perf_event/perf_event.c:1969:27: note: in expansion of macro 'GET_OVERFLOW_ADDRESS'
+[  255s]  1969 |                 address = GET_OVERFLOW_ADDRESS( hw_context );
+[  255s]       |                           ^~~~~~~~~~~~~~~~~~~~
+[  255s] make: *** [components/sysdetect/Rules.sysdetect:28: nvidia_gpu.o] Error 1
+[  255s] make: *** Waiting for unfinished jobs....
+[  255s] gfortran -I. -I.. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Dlinux -ffixed-line-length-132  -c ftests_util.F
+[  255s] make: *** [components/sysdetect/Rules.sysdetect:31: amd_gpu.o] Error 1
+[  255s] gcc -I. -I.. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -O1 -O0 -c do_loops.c
+[  255s] make: *** [components/sysdetect/Rules.sysdetect:34: cpu.o] Error 1
+[  255s] gcc -I. -I.. -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type  -g -Wno-unused-parameter -g -Wextra -DUSE_PTHREAD_MUTEXES  -Wall -DPAPI_NUM_COMP=3 -O1  -c clockcore.c
+[  255s] make: *** [components/sysdetect/Rules.sysdetect:25: sysdetect.o] Error 1
+[  255s] make: *** [components/sysdetect/Rules.sysdetect:40: os_cpu_utils.o] Error 1
+[  255s] make: *** [components/perf_event/Rules.perf_event:9: pe_libpfm4_events.o] Error 1
+[  255s] make: *** [components/sysdetect/Rules.sysdetect:37: cpu_utils.o] Error 1
+[  255s] make: *** [components/perf_event/Rules.perf_event:6: perf_event.o] Error 1
+[  256s] make: *** [components/sysdetect/Rules.sysdetect:43: linux_cpu_utils.o] Error 1
+[  256s] make: *** [components/perf_event_uncore/Rules.perf_event_uncore:8: perf_event_uncore.o] Error 1
+[  256s] In file included from /usr/include/bits/libc-header-start.h:33,
+[  256s]                  from /usr/include/stdio.h:27,
+[  256s]                  from do_loops.c:3:
+[  256s] /usr/include/features.h:412:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+[  256s]   412 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+[  256s]       |    ^~~~~~~
+[  261s] ar  rv libtestlib.a test_utils.o ftests_util.o
+[  261s] ar: creating libtestlib.a
+[  261s] a - test_utils.o
+[  261s] a - ftests_util.o
+[  261s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/papi-7.0.0/src/testlib'
+[  264s] gcc -Bdynamic -fPIC -shared -Wl,-soname -Wl,libsde.so -fvisibility=hidden -Wextra -Wall -g -O2 sde_lib_d.o sde_lib_datastructures_d.o sde_lib_misc_d.o sde_lib_ti_d.o -lrt -ldl -pthread -o libsde.so.1.0
+[  265s] rm -f *_d.o
+[  265s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/papi-7.0.0/src/sde_lib'
+[  265s] ln -sf sde_lib/libsde.so.1.0 libsde.so
+[  265s] make CC=gcc -C sde_lib static
+[  265s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/papi-7.0.0/src/sde_lib'
+[  265s] gcc -c -Bstatic -static -Wextra -Wall -O2 -g -I. -I.. sde_lib.c -o sde_lib_s.o
+[  265s] gcc -c -Bstatic -static -Wextra -Wall -O2 -g -I. -I.. sde_lib_datastructures.c -o sde_lib_datastructures_s.o
+[  265s] gcc -c -Bstatic -static -Wextra -Wall -O2 -g -I. -I.. sde_lib_misc.c -o sde_lib_misc_s.o
+[  265s] gcc -c -Bstatic -static -Wextra -Wall -O2 -g -I. -I.. sde_lib_ti.c -o sde_lib_ti_s.o
+[  275s] ar rs libsde.a sde_lib_s.o sde_lib_datastructures_s.o sde_lib_misc_s.o sde_lib_ti_s.o
+[  275s] ar: creating libsde.a
+[  275s] rm -f *_s.o
+[  275s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/papi-7.0.0/src/sde_lib'
+[  275s] ln -sf sde_lib/libsde.a libsde.a
+[  275s] error: Bad exit status from /var/tmp/rpm-tmp.dt6Tee (%build)
+[  275s] 
+[  275s] RPM build errors:
+[  275s]     Bad exit status from /var/tmp/rpm-tmp.dt6Tee (%build)
+[  275s] ### VM INTERACTION START ###
+[  276s] [  269.458099][    T1] sysrq: Power Off
+[  276s] [  269.483061][    T7] reboot: Power down
+[  276s] ### VM INTERACTION END ###
+[  276s] 
+[  276s] goat13 failed "build papi.spec" at Sat Jan 21 01:19:29 UTC 2023.
+[  276s] 

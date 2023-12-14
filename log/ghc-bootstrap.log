@@ -1,0 +1,627 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_9/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_9/root
+[    0s] 
+[    0s] 
+[    0s] sheep81 started "build ghc-bootstrap.spec" at Tue Apr  4 22:47:14 UTC 2023.
+[    0s] 
+[    0s] Building ghc-bootstrap for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '3b16c038513e91bb6c63d473e382a2f3'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_9/.build-srcdir/ghc-bootstrap.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_9/.build-srcdir/ghc-bootstrap.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/9/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_9/.build.rpmlist /var/cache/obs/worker/root_9/.build-srcdir/ghc-bootstrap.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [b58ce9a0d6ff7943ebe1294e3f9c1d36]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...done
+[    6s] Detected virtio-serial support
+[   10s] booting kvm...
+[   10s] ### VM INTERACTION START ###
+[   10s] Using virtio-serial support
+[   10s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/hwrng,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_9/.mount/boot/kernel -initrd /var/cache/obs/worker/root_9/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 16384 -drive file=/var/cache/obs/worker/root_9/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_9/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_9/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   15s] machine type: riscv64
+[   15s] Linux version: 6.2.9-1-default #1 SMP PREEMPT_DYNAMIC Thu Mar 30 11:30:50 UTC 2023 (7a187a3)
+[   15s] Increasing log level from now on...
+[   15s] [    4.738311][  T414] sysrq: Changing Loglevel
+[   15s] [    4.738507][  T414] sysrq: Loglevel set to 4
+[   15s] Enable sysrq operations
+[   16s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   16s] no label, UUID=4fff9781-18d5-4c5d-9d12-d92bfdc94676
+[   16s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   16s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   16s] swapon /dev/vdb
+[   16s] WARNING: udev not running, creating extra device nodes
+[   17s] logging output to //.build.log...
+[   17s] processing recipe /.build-srcdir/ghc-bootstrap.spec ...
+[   17s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/ghc-bootstrap.spec build ...
+[   17s] initializing rpm db...
+[   18s] querying package ids...
+[   38s] [1/136] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   38s] [2/136] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   38s] [3/136] preinstalled attr-2.5.1-1.1
+[   38s] [4/136] preinstalled bash-5.2.15-8.1
+[   38s] [5/136] preinstalled bash-sh-5.2.15-8.1
+[   38s] [6/136] preinstalled binutils-2.40-3.1
+[   38s] [7/136] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   38s] [8/136] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   38s] [9/136] preinstalled build-mkbaselibs-20230314-1.1
+[   38s] [10/136] preinstalled bzip2-1.0.8-5.1
+[   38s] [11/136] preinstalled chkstat-1599_20230217-1.1
+[   38s] [12/136] cumulate chrpath-0.16-5.1
+[   38s] [13/136] preinstalled compat-usrmerge-build-84.87-5.1
+[   38s] [14/136] preinstalled compat-usrmerge-tools-84.87-5.1
+[   38s] [15/136] preinstalled coreutils-9.2-1.1
+[   38s] [16/136] preinstalled cpio-2.13-5.1
+[   38s] [17/136] preinstalled cpp-13-1.1
+[   38s] [18/136] preinstalled cpp13-13.0.1+git6669-7.1
+[   38s] [19/136] preinstalled debugedit-5.0-5.1
+[   38s] [20/136] preinstalled diffutils-3.9-1.1
+[   38s] [21/136] preinstalled dwz-0.15-2.1
+[   38s] [22/136] preinstalled elfutils-0.189-2.1
+[   38s] [23/136] cumulate fdupes-2.2.1-1.1
+[   38s] [24/136] preinstalled file-5.44-1.2
+[   38s] [25/136] preinstalled file-magic-5.44-1.2
+[   38s] [26/136] preinstalled filesystem-84.87-12.1
+[   38s] [27/136] preinstalled fillup-1.42-279.1
+[   38s] [28/136] preinstalled findutils-4.9.0-2.1
+[   38s] [29/136] preinstalled gawk-5.2.1-2.1
+[   38s] [30/136] preinstalled gcc-13-1.1
+[   38s] [31/136] preinstalled gcc-PIE-13-1.1
+[   38s] [32/136] preinstalled gcc13-13.0.1+git6669-7.1
+[   38s] [33/136] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   38s] [34/136] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   38s] [35/136] preinstalled gettext-tools-mini-0.21.1-1.1
+[   38s] [36/136] preinstalled glibc-2.37-2.1
+[   38s] [37/136] preinstalled glibc-devel-2.37-2.1
+[   38s] [38/136] preinstalled glibc-locale-base-2.37-2.1
+[   38s] [39/136] preinstalled grep-3.9-1.1
+[   38s] [40/136] preinstalled gzip-1.12-3.1
+[   38s] [41/136] preinstalled kernel-obs-build-6.2.9-1.1
+[   38s] [42/136] preinstalled libacl1-2.3.1-2.1
+[   38s] [43/136] preinstalled libasan8-13.0.1+git6669-7.1
+[   38s] [44/136] preinstalled libasm1-0.189-2.1
+[   38s] [45/136] preinstalled libatomic1-13.0.1+git6669-7.1
+[   38s] [46/136] preinstalled libattr1-2.5.1-1.1
+[   38s] [47/136] preinstalled libaudit1-3.0.9-1.1
+[   38s] [48/136] preinstalled libblkid1-2.38.1-11.1
+[   38s] [49/136] preinstalled libbz2-1-1.0.8-5.1
+[   38s] [50/136] preinstalled libcap-ng0-0.8.3-1.1
+[   38s] [51/136] preinstalled libcap2-2.68-1.1
+[   38s] [52/136] preinstalled libcrypt1-4.4.33-3.1
+[   38s] [53/136] preinstalled libctf-nobfd0-2.40-3.1
+[   38s] [54/136] preinstalled libctf0-2.40-3.1
+[   38s] [55/136] preinstalled libdb-4_8-4.8.30-40.1
+[   38s] [56/136] preinstalled libdw1-0.189-2.1
+[   38s] [57/136] preinstalled libeconf0-0.5.2-1.1
+[   38s] [58/136] preinstalled libelf1-0.189-2.1
+[   38s] [59/136] preinstalled libfdisk1-2.38.1-11.1
+[   38s] [60/136] cumulate libffi8-3.4.4-1.1
+[   38s] [61/136] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   38s] [62/136] preinstalled libgcrypt20-1.10.1-2.1
+[   38s] [63/136] preinstalled libgdbm6-1.23-1.1
+[   38s] [64/136] preinstalled libgdbm_compat4-1.23-1.1
+[   38s] [65/136] preinstalled libgmp10-6.2.1-4.1
+[   38s] [66/136] cumulate libgmpxx4-6.2.1-4.1
+[   38s] [67/136] preinstalled libgomp1-13.0.1+git6669-7.1
+[   38s] [68/136] preinstalled libgpg-error0-1.46-1.1
+[   38s] [69/136] preinstalled libisl23-0.25-1.1
+[   38s] [70/136] preinstalled libitm1-13.0.1+git6669-7.1
+[   38s] [71/136] preinstalled liblua5_4-5-5.4.4-9.1
+[   38s] [72/136] preinstalled liblzma5-5.4.2-1.1
+[   38s] [73/136] preinstalled libmagic1-5.44-1.2
+[   38s] [74/136] preinstalled libmount1-2.38.1-11.1
+[   38s] [75/136] preinstalled libmpc3-1.3.1-1.2
+[   38s] [76/136] preinstalled libmpfr6-4.2.0-1.1
+[   38s] [77/136] cumulate libncurses5-6.4.20230311-8.1
+[   38s] [78/136] preinstalled libncurses6-6.4.20230311-8.1
+[   38s] [79/136] cumulate libnuma1-2.0.15.0.g01a39cb-1.1
+[   38s] [80/136] preinstalled libpcre2-8-0-10.42-3.2
+[   38s] [81/136] preinstalled libpkgconf3-1.8.0-2.1
+[   38s] [82/136] preinstalled libpopt0-1.19-1.1
+[   38s] [83/136] preinstalled libreadline8-8.2-2.1
+[   38s] [84/136] preinstalled librpmbuild9-4.18.0-4.1
+[   38s] [85/136] preinstalled libseccomp2-2.5.4-2.1
+[   38s] [86/136] preinstalled libselinux1-3.5-1.1
+[   38s] [87/136] preinstalled libsemanage-conf-3.5-1.1
+[   38s] [88/136] preinstalled libsemanage2-3.5-1.1
+[   38s] [89/136] preinstalled libsepol2-3.5-1.1
+[   38s] [90/136] preinstalled libsmartcols1-2.38.1-11.1
+[   38s] [91/136] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   38s] [92/136] preinstalled libsubid4-4.13-4.1
+[   38s] [93/136] preinstalled libubsan1-13.0.1+git6669-7.1
+[   38s] [94/136] preinstalled libutempter0-1.2.0-3.2
+[   38s] [95/136] preinstalled libuuid1-2.38.1-11.1
+[   38s] [96/136] preinstalled libxcrypt-devel-4.4.33-3.1
+[   38s] [97/136] preinstalled libz1-1.2.13-3.1
+[   38s] [98/136] preinstalled libzstd1-1.5.4-2.1
+[   38s] [99/136] preinstalled linux-glibc-devel-6.2-1.1
+[   38s] [100/136] preinstalled login_defs-4.13-4.1
+[   38s] [101/136] preinstalled lua54-5.4.4-9.1
+[   38s] [102/136] preinstalled make-4.4.1-1.1
+[   38s] [103/136] preinstalled ncurses-utils-6.4.20230311-8.1
+[   38s] [104/136] preinstalled pam-1.5.2-14.1
+[   38s] [105/136] preinstalled patch-2.7.6-6.1
+[   38s] [106/136] preinstalled perl-5.36.0-4.1
+[   38s] [107/136] preinstalled perl-base-5.36.0-4.1
+[   38s] [108/136] preinstalled permissions-1599_20230217-1.1
+[   38s] [109/136] preinstalled permissions-config-1599_20230217-1.1
+[   38s] [110/136] preinstalled pkgconf-1.8.0-2.1
+[   38s] [111/136] preinstalled pkgconf-m4-1.8.0-2.1
+[   38s] [112/136] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   38s] [113/136] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   38s] [114/136] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   38s] [115/136] preinstalled qemu-linux-user-7.1.0-58.1
+[   38s] [116/136] preinstalled rpm-4.18.0-4.1
+[   38s] [117/136] preinstalled rpm-build-4.18.0-4.1
+[   38s] [118/136] preinstalled rpm-build-perl-4.18.0-4.1
+[   38s] [119/136] preinstalled rpm-config-SUSE-20220926-1.1
+[   38s] [120/136] preinstalled rpmlint-mini-2.4.0+git20230331.bc7b966-10.2
+[   38s] [121/136] preinstalled rpmlint-strict-2.4.0+git20230331.bc7b966-1.1
+[   38s] [122/136] preinstalled sed-4.9-2.1
+[   38s] [123/136] preinstalled shadow-4.13-4.1
+[   38s] [124/136] preinstalled system-group-hardware-20170617-24.1
+[   38s] [125/136] preinstalled system-user-root-20190513-2.1
+[   38s] [126/136] preinstalled systemd-rpm-macros-20-1.1
+[   38s] [127/136] preinstalled sysuser-shadow-3.1-5.1
+[   38s] [128/136] preinstalled tar-1.34-10.1
+[   38s] [129/136] preinstalled terminfo-base-6.4.20230311-8.1
+[   38s] [130/136] preinstalled update-alternatives-1.21.8-1.1
+[   38s] [131/136] preinstalled util-linux-2.38.1-11.1
+[   38s] [132/136] preinstalled which-2.21-5.1
+[   38s] [133/136] preinstalled xz-5.4.2-1.1
+[   38s] [134/136] cumulate gmp-devel-6.2.1-4.1
+[   38s] [135/136] cumulate libffi-devel-3.4.4-1.1
+[   38s] [136/136] cumulate libnuma-devel-2.0.15.0.g01a39cb-1.1
+[   38s] now installing cumulated packages
+[   39s] Preparing...                          ########################################
+[   39s] Updating / installing...
+[   39s] libnuma1-2.0.15.0.g01a39cb-1.1        ########################################
+[   39s] libgmpxx4-6.2.1-4.1                   ########################################
+[   39s] libffi8-3.4.4-1.1                     ########################################
+[   39s] libffi-devel-3.4.4-1.1                ########################################
+[   39s] gmp-devel-6.2.1-4.1                   ########################################
+[   39s] libnuma-devel-2.0.15.0.g01a39cb-1.1   ########################################
+[   39s] libncurses5-6.4.20230311-8.1          ########################################
+[   40s] fdupes-2.2.1-1.1                      ########################################
+[   40s] chrpath-0.16-5.1                      ########################################
+[   40s] now finalizing build dir...
+[   40s] ... running 01-add_abuild_user_to_trusted_group
+[   41s] ... running 02-set_timezone_to_utc
+[   41s] ... running 03-set-permissions-secure
+[   41s] ... running 11-hack_uname_version_to_kernel_version
+[   50s] -----------------------------------------------------------------
+[   50s] I have the following modifications for ghc-bootstrap.spec:
+[   50s] 85c85
+[   50s] < Release:        0
+[   50s] ---
+[   50s] > Release:        1.1
+[   50s] 88c88
+[   50s] < Release:        0
+[   50s] ---
+[   50s] > Release:        1.1
+[   55s] build target is riscv64-suse-linux
+[   55s] -----------------------------------------------------------------
+[   55s] ----- building ghc-bootstrap.spec (user abuild)
+[   55s] -----------------------------------------------------------------
+[   55s] -----------------------------------------------------------------
+[   58s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/3b16c038513e91bb6c63d473e382a2f3-ghc-bootstrap' /home/abuild/rpmbuild/SOURCES/ghc-bootstrap.spec
+[   59s] Building target platforms: riscv64-suse-linux
+[   59s] Building for target riscv64-suse-linux
+[   59s] setting SOURCE_DATE_EPOCH=1680480000
+[   59s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.lrDLfj
+[   59s] + umask 022
+[   59s] + cd /home/abuild/rpmbuild/BUILD
+[   59s] + cp /home/abuild/rpmbuild/SOURCES/README.openSUSE .
+[   59s] + cp /home/abuild/rpmbuild/SOURCES/LICENSE .
+[   59s] + cp /home/abuild/rpmbuild/SOURCES/ghc-9.2.3-powerpc64-unknown-linux.tar.xz .
+[   59s] + cp /home/abuild/rpmbuild/SOURCES/ghc-9.2.3-powerpc64le-unknown-linux.tar.xz .
+[   59s] + cp /home/abuild/rpmbuild/SOURCES/ghc-9.2.3-x86_64-unknown-linux.tar.xz .
+[   59s] + cp /home/abuild/rpmbuild/SOURCES/ghc-9.2.3-s390x-ibm-linux.tar.xz .
+[   59s] + cp /home/abuild/rpmbuild/SOURCES/ghc-9.2.3-aarch64-unknown-linux.tar.xz .
+[   60s] + cp /home/abuild/rpmbuild/SOURCES/ghc-8.10.4-riscv64-unknown-linux.tar.xz .
+[   60s] + RPM_EC=0
+[   60s] ++ jobs -p
+[   60s] + exit 0
+[   60s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.hOg3Uc
+[   60s] + umask 022
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64
+[   60s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64
+[   60s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   60s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64
+[   60s] + ref=/usr/lib/rpm
+[   60s] + mints=0
+[   60s] + case $(uname -m) in
+[   60s] ++ uname -m
+[   60s] + mints=20160911
+[   60s] + for s in guess sub
+[   60s] ++ find -maxdepth 8 -name config.guess
+[   60s] + for s in guess sub
+[   60s] ++ find -maxdepth 8 -name config.sub
+[   60s] + tar Jxf ghc-8.10.4-riscv64-unknown-linux.tar.xz
+[  176s] + cd ghc-8.10.4
+[  176s] + RPM_EC=0
+[  176s] ++ jobs -p
+[  176s] + exit 0
+[  177s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.qoiVES
+[  177s] + umask 022
+[  177s] + cd /home/abuild/rpmbuild/BUILD
+[  177s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64
+[  177s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  177s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64
+[  177s] + cd ghc-8.10.4
+[  177s] + ./configure --prefix=/opt
+[  185s] checking build system type... riscv64-unknown-linux-gnu
+[  185s] checking host system type... riscv64-unknown-linux-gnu
+[  185s] checking target system type... riscv64-unknown-linux-gnu
+[  185s] Build platform inferred as: riscv64-unknown-linux
+[  185s] Host platform inferred as: riscv64-unknown-linux
+[  186s] Target platform inferred as: riscv64-unknown-linux
+[  187s] GHC build  : riscv64-unknown-linux
+[  187s] GHC host   : riscv64-unknown-linux
+[  187s] GHC target : riscv64-unknown-linux
+[  187s] LLVM target: riscv64-unknown-linux
+[  187s] checking for path to top of build tree... /home/abuild/rpmbuild/BUILD/ghc-8.10.4
+[  187s] checking for a BSD-compatible install... /usr/bin/install -c
+[  187s] checking for gfind... no
+[  187s] checking for find... /usr/bin/find
+[  188s] checking whether ln -s works... yes
+[  188s] checking for gsed... sed
+[  188s] checking for python3... no
+[  188s] checking for gcc... gcc
+[  190s] checking whether the C compiler works... yes
+[  190s] checking for C compiler default output file name... a.out
+[  192s] checking for suffix of executables... 
+[  194s] checking whether we are cross compiling... no
+[  195s] checking for suffix of object files... o
+[  196s] checking whether the compiler supports GNU C... yes
+[  197s] checking whether gcc accepts -g... yes
+[  200s] checking for gcc option to enable C11 features... none needed
+[  201s] checking how to run the C preprocessor... gcc -E
+[  203s] checking for -ld.lld... no
+[  203s] checking for ld.lld... no
+[  203s] checking for -ld.gold... no
+[  203s] checking for ld.gold... no
+[  203s] checking for -ld... no
+[  203s] checking for ld... ld
+[  205s] checking whether C compiler supports -fuse-ld=bfd... yes
+[  205s] checking for ld.gold object merging bug (binutils 22266)... checking whether ld is GNU ld... YES
+[  206s] checking whether ld understands --build-id... yes
+[  207s] checking whether ld understands -no_compact_unwind... no
+[  209s] checking whether ld understands -filelist... no
+[  209s] checking for -strip... no
+[  209s] checking for strip... strip
+[  209s] checking for llc-9... no
+[  209s] checking for llc-9.0... no
+[  209s] checking for llc... no
+[  209s] checking for opt-9... no
+[  209s] checking for opt-9.0... no
+[  209s] checking for opt... no
+[  209s] checking version of gcc... checking version of gcc... 13.0.1
+[  209s] 13.0.1
+[  209s] checking whether GCC supports -no-pie... yes
+[  209s] checking for extra options to pass gcc when compiling via C... 
+[  209s] checking Setting up CFLAGS, LDFLAGS, IGNORE_LINKER_LD_FLAGS and CPPFLAGS... done
+[  210s] checking Setting up CONF_CC_OPTS_STAGE0, CONF_GCC_LINKER_OPTS_STAGE0, CONF_LD_LINKER_OPTS_STAGE0 and CONF_CPP_OPTS_STAGE0... done
+[  210s] checking Setting up CONF_CC_OPTS_STAGE1, CONF_GCC_LINKER_OPTS_STAGE1, CONF_LD_LINKER_OPTS_STAGE1 and CONF_CPP_OPTS_STAGE1... done
+[  210s] checking Setting up CONF_CC_OPTS_STAGE2, CONF_GCC_LINKER_OPTS_STAGE2, CONF_LD_LINKER_OPTS_STAGE2 and CONF_CPP_OPTS_STAGE2... done
+[  211s] checking for .subsections_via_symbols... no
+[  212s] checking whether your assembler supports .ident directive... yes
+[  214s] checking for GNU non-executable stack support... yes
+[  215s] checking for stdio.h... yes
+[  216s] checking for stdlib.h... yes
+[  217s] checking for string.h... yes
+[  218s] checking for inttypes.h... yes
+[  219s] checking for stdint.h... yes
+[  221s] checking for strings.h... yes
+[  222s] checking for sys/stat.h... yes
+[  223s] checking for sys/types.h... yes
+[  224s] checking for unistd.h... yes
+[  227s] checking size of void *... 8
+[  227s] checking for -ar... no
+[  227s] checking for ar... ar
+[  227s] checking whether ar is GNU ar... yes
+[  227s] checking for ar arguments... q
+[  227s] checking whether ar supports @file... yes
+[  227s] checking for ranlib... ranlib
+[  228s] configure: creating ./config.status
+[  231s] config.status: creating mk/config.mk
+[  232s] config.status: creating mk/install.mk
+[  233s] ****************************************************
+[  233s] Configuration done, ready to 'make install'
+[  233s] (see README and INSTALL files for more info.)
+[  233s] ****************************************************
+[  234s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/etc/ld.so.conf.d
+[  234s] + echo /opt/lib/ghc-8.10.4/lib/riscv64-linux-ghc-8.10.4
+[  234s] + make install DESTDIR=/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64
+[  234s] make --no-print-directory -f ghc.mk install BINDIST=YES NO_INCLUDE_DEPS=YES
+[  246s] "inplace/bin/mkdirhier" libraries/ghc-boot/dist-boot/build/GHC//.
+[  247s] "rm" -f libraries/ghc-boot/dist-boot/build/GHC/Version.hs  
+[  248s] done.
+[  248s] "inplace/bin/mkdirhier" libraries/ghc-boot/dist-boot/build/GHC/Platform//.
+[  249s] "rm" -f libraries/ghc-boot/dist-boot/build/GHC/Platform/Host.hs  
+[  250s] done.
+[  250s] "rm" -f libraries/ghc-boot/dist-install/build/GHC/Version.hs  
+[  252s] done.
+[  252s] "rm" -f libraries/ghc-boot/dist-install/build/GHC/Platform/Host.hs  
+[  253s] done.
+[  253s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin"
+[  253s] "rm" -f                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"  
+[  253s] create () { touch "$1" && chmod 755 "$1" ; } && create                                           "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  253s] echo '#!/bin/sh'                                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  253s] echo 'exedir="/opt/lib/ghc-8.10.4/bin"'                    >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] echo 'exeprog="hp2ps"'                          >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] echo 'executablename="$exedir/$exeprog"'           >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] echo 'datadir="/opt/share"'                             >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] echo 'bindir="/opt/bin"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] echo 'topdir="/opt/lib/ghc-8.10.4"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] cat utils/hp2ps/hp2ps.wrapper                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] chmod +x                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hp2ps"
+[  254s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include"
+[  254s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/." && /usr/bin/install -c -m 644  includes/./*.h "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/./" &&   /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/rts" && /usr/bin/install -c -m 644  includes/rts/*.h "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/rts/" &&   /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/rts/prof" && /usr/bin/install -c -m 644  includes/rts/prof/*.h "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/rts/prof/" &&   /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/rts/storage" && /usr/bin/install -c -m 644  includes/rts/storage/*.h "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/rts/storage/" &&   /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/stg" && /usr/bin/install -c -m 644  includes/stg/*.h "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/stg/" &&  true
+[  255s] /usr/bin/install -c -m 644  \
+[  255s] 	includes/dist-install/build/ghcautoconf.h includes/dist-install/build/ghcplatform.h includes/dist-install/build/ghcversion.h \
+[  255s] 	includes/dist-derivedconstants/header/DerivedConstants.h \
+[  255s] 	"/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/include/"
+[  255s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin"
+[  255s] "rm" -f                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"  
+[  255s] create () { touch "$1" && chmod 755 "$1" ; } && create                                           "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  255s] echo '#!/bin/sh'                                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  255s] echo 'exedir="/opt/lib/ghc-8.10.4/bin"'                    >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] echo 'exeprog="hsc2hs"'                          >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] echo 'executablename="$exedir/$exeprog"'           >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] echo 'datadir="/opt/share"'                             >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] echo 'bindir="/opt/bin"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] echo 'topdir="/opt/lib/ghc-8.10.4"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] echo 'HSC2HS_EXTRA=" --lflag=-fuse-ld=bfd"' >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] cat utils/hsc2hs/hsc2hs.wrapper                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] chmod +x                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hsc2hs"
+[  256s] /usr/bin/install -c -m 644  utils/hsc2hs/template-hsc.h "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4"
+[  256s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin"
+[  256s] "rm" -f                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"  
+[  257s] create () { touch "$1" && chmod 755 "$1" ; } && create                                           "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] echo '#!/bin/sh'                                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] echo 'exedir="/opt/lib/ghc-8.10.4/bin"'                    >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] echo 'exeprog="ghc-pkg"'                          >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] echo 'executablename="$exedir/$exeprog"'           >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] echo 'datadir="/opt/share"'                             >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] echo 'bindir="/opt/bin"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] echo 'topdir="/opt/lib/ghc-8.10.4"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] cat utils/ghc-pkg/ghc-pkg.wrapper                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] chmod +x                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg-8.10.4"
+[  257s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin"
+[  258s] "rm" -f "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg"  
+[  258s] ln -s ghc-pkg-8.10.4 "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-pkg"
+[  258s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin"
+[  258s] "rm" -f                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"  
+[  258s] create () { touch "$1" && chmod 755 "$1" ; } && create                                           "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  258s] echo '#!/bin/sh'                                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  258s] echo 'exedir="/opt/lib/ghc-8.10.4/bin"'                    >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  258s] echo 'exeprog="hpc"'                          >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  258s] echo 'executablename="$exedir/$exeprog"'           >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  258s] echo 'datadir="/opt/share"'                             >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  259s] echo 'bindir="/opt/bin"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  259s] echo 'topdir="/opt/lib/ghc-8.10.4"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  259s] cat utils/hpc/hpc.wrapper                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  259s] chmod +x                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/hpc"
+[  259s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin"
+[  259s] "rm" -f                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"  
+[  259s] create () { touch "$1" && chmod 755 "$1" ; } && create                                           "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  259s] echo '#!/bin/sh'                                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] echo 'exedir="/opt/lib/ghc-8.10.4/bin"'                    >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] echo 'exeprog="ghc-stage2"'                          >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] echo 'executablename="$exedir/$exeprog"'           >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] echo 'datadir="/opt/share"'                             >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] echo 'bindir="/opt/bin"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] echo 'topdir="/opt/lib/ghc-8.10.4"'                               >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] echo 'executablename="$exedir/ghc"' >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] cat ghc/ghc.wrapper                         >> "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] chmod +x                                         "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc-8.10.4"
+[  260s] "rm" -f "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc"  
+[  260s] ln -s ghc-8.10.4 "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin/ghc"
+[  260s] "inplace/bin/mkdirhier" includes/dist/build//.
+[  261s] "rm" -f includes/dist/build/settings  
+[  264s] 
+[  265s] #  driver/ghc-usage.txt driver/ghci-usage.txt includes/dist-derivedconstants/header/platformConstants includes/dist/build/settings llvm-targets llvm-passes = libraries to install
+[  265s] #  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" = directory to install to
+[  265s] #
+[  265s] # The .dll case calls STRIP_CMD explicitly, instead of `install -s`, because
+[  266s] # on Win64, "install -s" calls a strip that doesn't understand 64bit binaries.
+[  266s] # For some reason, this means the DLLs end up non-executable, which means
+[  266s] # executables that use them just segfault.
+[  266s] /usr/bin/install -c -m 755 -d  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4"
+[  266s] for i in  driver/ghc-usage.txt driver/ghci-usage.txt includes/dist-derivedconstants/header/platformConstants includes/dist/build/settings llvm-targets llvm-passes; do case $i in *.a) /usr/bin/install -c -m 644  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4"; true  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4"/`basename $i` ;; *.dll) /usr/bin/install -c -m 755  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" ; strip  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4"/`basename $i` ;; *.so) /usr/bin/install -c -m 755  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" ;; *.dylib) /usr/bin/install -c -m 755  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4";; *) /usr/bin/install -c -m 644  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4"; esac; done
+[  266s] gcc -E -undef -traditional -P -DINSTALLING -DLIB_DIR='"/opt/lib/ghc-8.10.4"' -DINCLUDE_DIR='"/opt/lib/ghc-8.10.4/include"' -DFFI_INCLUDE_DIR= -DFFI_LIB_DIR= '-DFFI_LIB=' -DLIBDW_INCLUDE_DIR= -DLIBDW_LIB_DIR= -Iincludes -Iincludes/dist -Iincludes/dist-derivedconstants/header -Iincludes/dist-ghcconstants/header -Iincludes/dist-install/build -x c rts/package.conf.in -o rts/dist/package.conf.install.raw
+[  267s] grep -v '^#pragma GCC' rts/dist/package.conf.install.raw | sed -e 's/""//g' -e 's/:[ 	]*,/: /g' >rts/dist/package.conf.install
+[  267s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin"
+[  267s] for i in utils/unlit/dist-install/build/tmp/unlit utils/hp2ps/dist-install/build/tmp/hp2ps utils/hp2ps/dist-install/build/tmp/hp2ps utils/hsc2hs/dist-install/build/tmp/hsc2hs utils/hsc2hs/dist-install/build/tmp/hsc2hs utils/ghc-pkg/dist-install/build/tmp/ghc-pkg utils/ghc-pkg/dist-install/build/tmp/ghc-pkg utils/hpc/dist-install/build/tmp/hpc utils/hpc/dist-install/build/tmp/hpc ghc/stage2/build/tmp/ghc-stage2 ghc/stage2/build/tmp/ghc-stage2 utils/iserv/stage2/build/tmp/ghc-iserv; do \
+[  267s] 	/usr/bin/install -c -m 755  $i "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin"; \
+[  267s] done
+[  268s] "mv" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-stage2" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc"
+[  268s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4"
+[  268s] "rm" -rf "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/package.conf.d"  
+[  268s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/package.conf.d"
+[  268s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts"
+[  268s] #  rts/dist/build/libHSrts.a rts/dist/build/libHSrts_l.a rts/dist/build/libHSrts_debug.a rts/dist/build/libHSrts_thr.a rts/dist/build/libHSrts_thr_debug.a rts/dist/build/libHSrts_thr_l.a = libraries to install
+[  269s] #  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts" = directory to install to
+[  269s] #
+[  269s] # The .dll case calls STRIP_CMD explicitly, instead of `install -s`, because
+[  269s] # on Win64, "install -s" calls a strip that doesn't understand 64bit binaries.
+[  269s] # For some reason, this means the DLLs end up non-executable, which means
+[  269s] # executables that use them just segfault.
+[  269s] /usr/bin/install -c -m 755 -d  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts"
+[  269s] for i in  rts/dist/build/libHSrts.a rts/dist/build/libHSrts_l.a rts/dist/build/libHSrts_debug.a rts/dist/build/libHSrts_thr.a rts/dist/build/libHSrts_thr_debug.a rts/dist/build/libHSrts_thr_l.a; do case $i in *.a) /usr/bin/install -c -m 644  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts"; true  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts"/`basename $i` ;; *.dll) /usr/bin/install -c -m 755  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts" ; strip  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts"/`basename $i` ;; *.so) /usr/bin/install -c -m 755  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts" ;; *.dylib) /usr/bin/install -c -m 755  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts";; *) /usr/bin/install -c -m 644  $i  "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/rts"; esac; done
+[  270s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/ghc-prim dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  297s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/ghc-prim-0.6.1
+[  298s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/integer-gmp dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  321s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/integer-gmp-1.0.3.0
+[  322s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/base dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  345s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/base-4.14.1.0
+[  346s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/filepath dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  368s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/filepath-1.4.2.1
+[  369s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/array dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  391s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/array-0.5.4.0
+[  392s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/deepseq dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  413s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/deepseq-1.4.4.0
+[  413s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/bytestring dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  432s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bytestring-0.10.12.0
+[  432s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/containers/containers dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  452s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/containers-0.6.2.1
+[  452s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/time dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  471s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/time-1.9.3
+[  472s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/unix dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  492s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/unix-2.7.2.2
+[  493s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/directory dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  515s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/directory-1.3.6.0
+[  516s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/process dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  535s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/process-1.6.9.0
+[  536s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/hpc dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  555s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/hpc-0.6.1.0
+[  555s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/pretty dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  572s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/pretty-1.1.3.6
+[  573s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/binary dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  592s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/binary-0.8.8.0
+[  592s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/transformers dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  614s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/transformers-0.5.6.2
+[  614s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/mtl dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  634s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/mtl-2.2.2
+[  634s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/ghc-boot-th dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  655s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/ghc-boot-th-8.10.4
+[  655s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/ghc-boot dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  676s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/ghc-boot-8.10.4
+[  677s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/template-haskell dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  698s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/template-haskell-2.16.0.0
+[  698s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/text dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  718s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/text-1.2.4.1
+[  718s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/parsec dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  739s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/parsec-3.1.14.0
+[  739s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/Cabal/Cabal dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  760s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/Cabal-3.2.1.0
+[  762s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/ghc-compact dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  783s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/ghc-compact-0.1.0.0
+[  784s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/ghc-heap dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  806s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/ghc-heap-8.10.4
+[  806s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/terminfo dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  827s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/terminfo-0.4.1.4
+[  828s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/stm dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  849s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/stm-2.5.0.0
+[  849s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/exceptions dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  871s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/exceptions-0.10.4
+[  872s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/haskeline dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  896s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/haskeline-0.8.0.1
+[  897s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/ghci dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  919s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/ghci-8.10.4
+[  920s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy libraries/libiserv dist-install "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'  
+[  943s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/libiserv-8.10.4
+[  944s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" copy compiler stage2 "strip" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' 'v'
+[  968s] Installing library in /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/ghc-8.10.4
+[  974s] "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" --force --global-package-db "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/package.conf.d" update rts/dist/package.conf.install
+[  996s] Reading package info from "rts/dist/package.conf.install" ... done.
+[  996s] rts-1.0: Warning: library-dirs: /opt/lib/ghc-8.10.4/rts doesn't exist or isn't a directory
+[  996s] rts-1.0: Warning: include-dirs: /opt/lib/ghc-8.10.4/include doesn't exist or isn't a directory
+[  996s] rts-1.0: cannot find any of ["libHSrts.a","libHSrts_p.a","libHSrts-ghc8.10.4.so","libHSrts-ghc8.10.4.dylib","HSrts-ghc8.10.4.dll"] on library path (ignoring)
+[  997s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/ghc-prim dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 1156s] Registering library for ghc-prim-0.6.1..
+[ 1191s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/integer-gmp dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 1344s] Registering library for integer-gmp-1.0.3.0..
+[ 1375s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/base dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 1531s] Registering library for base-4.14.1.0..
+[ 1563s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/filepath dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 1691s] Registering library for filepath-1.4.2.1..
+[ 1715s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/array dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 1847s] Registering library for array-0.5.4.0..
+[ 1876s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/deepseq dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2007s] Registering library for deepseq-1.4.4.0..
+[ 2026s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/bytestring dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2137s] Registering library for bytestring-0.10.12.0..
+[ 2161s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/containers/containers dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2266s] Registering library for containers-0.6.2.1..
+[ 2284s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/time dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2397s] Registering library for time-1.9.3..
+[ 2419s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/unix dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2542s] Registering library for unix-2.7.2.2..
+[ 2567s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/directory dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2702s] Registering library for directory-1.3.6.0..
+[ 2727s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/process dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2841s] Registering library for process-1.6.9.0..
+[ 2860s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/hpc dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 2963s] Registering library for hpc-0.6.1.0..
+[ 2984s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/pretty dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 3085s] Registering library for pretty-1.1.3.6..
+[ 3106s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/binary dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 3221s] Registering library for binary-0.8.8.0..
+[ 3250s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/transformers dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 3376s] Registering library for transformers-0.5.6.2..
+[ 3401s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/mtl dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 3515s] Registering library for mtl-2.2.2..
+[ 3543s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/ghc-boot-th dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 3661s] Registering library for ghc-boot-th-8.10.4..
+[ 3685s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/ghc-boot dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 3802s] Registering library for ghc-boot-8.10.4..
+[ 3825s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/template-haskell dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 3922s] Registering library for template-haskell-2.16.0.0..
+[ 3943s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/text dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4035s] Registering library for text-1.2.4.1..
+[ 4054s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/parsec dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4150s] Registering library for parsec-3.1.14.0..
+[ 4170s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/Cabal/Cabal dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4282s] Registering library for Cabal-3.2.1.0..
+[ 4306s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/ghc-compact dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4418s] Registering library for ghc-compact-0.1.0.0..
+[ 4442s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/ghc-heap dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4549s] Registering library for ghc-heap-8.10.4..
+[ 4567s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/terminfo dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4682s] Registering library for terminfo-0.4.1.4..
+[ 4702s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/stm dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4817s] Registering library for stm-2.5.0.0..
+[ 4842s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/exceptions dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 4960s] Registering library for exceptions-0.10.4..
+[ 4982s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/haskeline dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 5105s] Registering library for haskeline-0.8.0.1..
+[ 5131s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/ghci dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 5244s] Registering library for ghci-8.10.4..
+[ 5269s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register libraries/libiserv dist-install "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO  
+[ 5386s] Registering library for libiserv-8.10.4..
+[ 5412s] "utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist" register compiler stage2 "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4" '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64' '/opt' '/opt/lib/ghc-8.10.4' '/opt/share/doc/ghc-8.10.4/html/libraries' NO
+[ 5527s] Registering library for ghc-8.10.4..
+[ 5547s] for f in '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/package.conf.d'/*; do create () { touch "$1" && chmod 644 "$1" ; } && create "$f"; done
+[ 5549s] "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg" --global-package-db "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/package.conf.d" recache
+[ 5567s] /usr/bin/install -c -m 755 -d "/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/bin"
+[ 5568s] + /usr/lib/rpm/fdupes_wrapper -s /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64
+[ 5568s] Linking /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/share/doc/ghc-8.10.4/html/libraries/ghc-boot-8.10.4/LICENSE -> ../ghc-boot-th-8.10.4/LICENSE
+[ 5568s] Linking /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/share/doc/ghc-8.10.4/html/libraries/ghc-8.10.4/LICENSE -> ../ghc-boot-th-8.10.4/LICENSE
+[ 5568s] Linking /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/share/doc/ghc-8.10.4/html/libraries/stm-2.5.0.0/LICENSE -> ../unix-2.7.2.2/LICENSE
+[ 5568s] Linking /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/share/doc/ghc-8.10.4/html/libraries/mtl-2.2.2/LICENSE -> ../transformers-0.5.6.2/LICENSE
+[ 5568s] Linking /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/LICENSE -> ../transformers-0.5.6.2/LICENSE
+[ 5568s] Linking /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/share/doc/ghc-8.10.4/html/libraries/array-0.5.4.0/LICENSE -> ../base-4.14.1.0/LICENSE
+[ 5568s] Linking /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/LICENSE -> ../libiserv-8.10.4/LICENSE
+[ 5568s] ++ find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c 'file {} | grep -q '\''dynamically linked'\''' ';' -print
+[ 5570s] + for i in $(find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c "file {} | grep -q 'dynamically linked'" \; -print)
+[ 5570s] + chrpath -d /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/unlit
+[ 5570s] + for i in $(find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c "file {} | grep -q 'dynamically linked'" \; -print)
+[ 5570s] + chrpath -d /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/hp2ps
+[ 5570s] + for i in $(find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c "file {} | grep -q 'dynamically linked'" \; -print)
+[ 5570s] + chrpath -d /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/hsc2hs
+[ 5570s] + for i in $(find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c "file {} | grep -q 'dynamically linked'" \; -print)
+[ 5570s] + chrpath -d /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-pkg
+[ 5570s] + for i in $(find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c "file {} | grep -q 'dynamically linked'" \; -print)
+[ 5570s] + chrpath -d /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/hpc
+[ 5570s] + for i in $(find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c "file {} | grep -q 'dynamically linked'" \; -print)
+[ 5570s] + chrpath -d /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc-iserv
+[ 5570s] + for i in $(find /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64 -type f -executable -exec sh -c "file {} | grep -q 'dynamically linked'" \; -print)
+[ 5570s] + chrpath -d /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/bin/ghc
+[ 5570s] + rm /home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/lib/package.conf.d/.stamp
+[ 5570s] rm: cannot remove '/home/abuild/rpmbuild/BUILDROOT/ghc-bootstrap-8.10.4-1.1.riscv64/opt/lib/ghc-8.10.4/lib/package.conf.d/.stamp': No such file or directory
+[ 5570s] error: Bad exit status from /var/tmp/rpm-tmp.qoiVES (%install)
+[ 5570s] 
+[ 5570s] RPM build errors:
+[ 5570s]     Bad exit status from /var/tmp/rpm-tmp.qoiVES (%install)
+[ 5571s] ### VM INTERACTION START ###
+[ 5571s] [ 5560.563145][    T1] sysrq: Power Off
+[ 5571s] [ 5560.565360][  T109] reboot: Power down
+[ 5572s] ### VM INTERACTION END ###
+[ 5572s] 
+[ 5572s] sheep81 failed "build ghc-bootstrap.spec" at Wed Apr  5 00:20:06 UTC 2023.
+[ 5572s] 

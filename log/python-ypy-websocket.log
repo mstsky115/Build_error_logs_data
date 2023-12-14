@@ -1,0 +1,950 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    0s] 
+[    0s] cloud125 started "build python-ypy-websocket.spec" at Fri Mar 24 16:12:41 UTC 2023.
+[    0s] 
+[    0s] Building python-ypy-websocket for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'bdfe54ec150740f27d5fd3a4eefa45d6'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/python-ypy-websocket.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/python-ypy-websocket.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/python-ypy-websocket.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [0c4d693617af2ed543756e9b8e7a551d]
+[    6s] 
+[    6s] copying packages...
+[    7s] reordering...cycle: nodejs-default -> nodejs-common
+[    7s]   breaking dependency nodejs-default -> nodejs-common
+[    7s] cycle: nodejs-default -> nodejs19 -> nodejs-common
+[    7s]   breaking dependency nodejs-common -> nodejs-default
+[    7s] cycle: nodejs19 -> nodejs-common
+[    7s]   breaking dependency nodejs19 -> nodejs-common
+[    7s] done
+[    7s] Detected virtio-serial support
+[   22s] booting kvm...
+[   22s] ### VM INTERACTION START ###
+[   22s] Using virtio-serial support
+[   22s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   27s] ### VM INTERACTION END ###
+[   27s] 2nd stage started in virtual machine
+[   28s] machine type: riscv64
+[   28s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   28s] Increasing log level from now on...
+[   28s] [    5.565080][  T370] sysrq: Changing Loglevel
+[   28s] [    5.565212][  T370] sysrq: Loglevel set to 4
+[   28s] Enable sysrq operations
+[   29s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   29s] no label, UUID=445ef083-625f-49fd-9e3d-8a3e36cd2a20
+[   29s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   29s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   29s] swapon /dev/vdb
+[   29s] WARNING: udev not running, creating extra device nodes
+[   29s] logging output to //.build.log...
+[   30s] processing recipe /.build-srcdir/python-ypy-websocket.spec ...
+[   30s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-ypy-websocket.spec build ...
+[   30s] initializing rpm db...
+[   31s] querying package ids...
+[   70s] [1/239] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   70s] [2/239] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   70s] [3/239] preinstalled attr-2.5.1-1.1
+[   70s] [4/239] preinstalled bash-5.2.15-8.1
+[   70s] [5/239] preinstalled bash-sh-5.2.15-8.1
+[   70s] [6/239] preinstalled binutils-2.40-2.1
+[   70s] [7/239] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   70s] [8/239] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   70s] [9/239] preinstalled build-mkbaselibs-20230314-1.1
+[   70s] [10/239] preinstalled bzip2-1.0.8-5.1
+[   70s] [11/239] preinstalled chkstat-1599_20230217-1.1
+[   70s] [12/239] preinstalled compat-usrmerge-build-84.87-5.1
+[   70s] [13/239] preinstalled compat-usrmerge-tools-84.87-5.1
+[   70s] [14/239] preinstalled coreutils-9.1-5.1
+[   70s] [15/239] preinstalled cpio-2.13-5.1
+[   70s] [16/239] preinstalled cpp-13-1.1
+[   70s] [17/239] preinstalled cpp13-13.0.1+git6669-7.1
+[   70s] [18/239] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   70s] [19/239] preinstalled debugedit-5.0-5.1
+[   70s] [20/239] preinstalled diffutils-3.9-1.1
+[   70s] [21/239] preinstalled dwz-0.15-2.1
+[   70s] [22/239] preinstalled elfutils-0.189-2.1
+[   70s] [23/239] cumulate fdupes-2.2.1-1.1
+[   70s] [24/239] preinstalled file-5.44-1.2
+[   70s] [25/239] preinstalled file-magic-5.44-1.2
+[   70s] [26/239] preinstalled filesystem-84.87-12.1
+[   70s] [27/239] preinstalled fillup-1.42-279.1
+[   70s] [28/239] preinstalled findutils-4.9.0-2.1
+[   70s] [29/239] preinstalled gawk-5.2.1-2.1
+[   70s] [30/239] preinstalled gcc-13-1.1
+[   70s] [31/239] preinstalled gcc-PIE-13-1.1
+[   70s] [32/239] preinstalled gcc13-13.0.1+git6669-7.1
+[   70s] [33/239] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   70s] [34/239] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   70s] [35/239] preinstalled gettext-tools-mini-0.21.1-1.1
+[   70s] [36/239] preinstalled glibc-2.37-1.1
+[   70s] [37/239] preinstalled glibc-devel-2.37-1.1
+[   70s] [38/239] preinstalled glibc-locale-base-2.37-1.1
+[   70s] [39/239] preinstalled grep-3.9-1.1
+[   70s] [40/239] preinstalled gzip-1.12-3.1
+[   70s] [41/239] preinstalled kernel-obs-build-6.2.6-1.2
+[   70s] [42/239] preinstalled libacl1-2.3.1-2.1
+[   70s] [43/239] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   70s] [44/239] preinstalled libasan8-13.0.1+git6669-7.1
+[   70s] [45/239] preinstalled libasm1-0.189-2.1
+[   70s] [46/239] preinstalled libatomic1-13.0.1+git6669-7.1
+[   70s] [47/239] preinstalled libattr1-2.5.1-1.1
+[   70s] [48/239] preinstalled libaudit1-3.0.9-1.1
+[   70s] [49/239] preinstalled libblkid1-2.38.1-10.1
+[   70s] [50/239] cumulate libbrotlicommon1-1.0.9-3.1
+[   70s] [51/239] preinstalled libbz2-1-1.0.8-5.1
+[   70s] [52/239] preinstalled libcap-ng0-0.8.3-1.1
+[   70s] [53/239] preinstalled libcap2-2.67-1.1
+[   70s] [54/239] preinstalled libcrypt1-4.4.33-2.1
+[   70s] [55/239] preinstalled libctf-nobfd0-2.40-2.1
+[   70s] [56/239] preinstalled libctf0-2.40-2.1
+[   70s] [57/239] preinstalled libdb-4_8-4.8.30-40.1
+[   70s] [58/239] preinstalled libdw1-0.189-2.1
+[   70s] [59/239] preinstalled libeconf0-0.5.1-1.1
+[   70s] [60/239] preinstalled libelf1-0.189-2.1
+[   70s] [61/239] preinstalled libexpat1-2.5.0-2.1
+[   70s] [62/239] preinstalled libfdisk1-2.38.1-10.1
+[   70s] [63/239] preinstalled libffi8-3.4.4-1.1
+[   70s] [64/239] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   70s] [65/239] preinstalled libgcrypt20-1.10.1-2.1
+[   70s] [66/239] preinstalled libgdbm6-1.23-1.1
+[   70s] [67/239] preinstalled libgdbm_compat4-1.23-1.1
+[   70s] [68/239] preinstalled libgmp10-6.2.1-4.1
+[   70s] [69/239] preinstalled libgomp1-13.0.1+git6669-7.1
+[   70s] [70/239] preinstalled libgpg-error0-1.46-1.1
+[   70s] [71/239] cumulate libicu72-ledata-72.1-2.1
+[   70s] [72/239] preinstalled libisl23-0.25-1.1
+[   70s] [73/239] preinstalled libitm1-13.0.1+git6669-7.1
+[   70s] [74/239] preinstalled liblua5_4-5-5.4.4-9.1
+[   70s] [75/239] preinstalled liblzma5-5.4.2-1.1
+[   70s] [76/239] preinstalled libmagic1-5.44-1.2
+[   70s] [77/239] preinstalled libmount1-2.38.1-10.1
+[   70s] [78/239] preinstalled libmpc3-1.3.1-1.2
+[   70s] [79/239] preinstalled libmpdec3-2.5.1-2.1
+[   70s] [80/239] preinstalled libmpfr6-4.2.0-1.1
+[   70s] [81/239] preinstalled libncurses6-6.4.20230311-8.1
+[   70s] [82/239] cumulate libnghttp2-14-1.51.0-7.2
+[   70s] [83/239] cumulate libnss_usrfiles2-2.27-3.1
+[   70s] [84/239] preinstalled libopenssl3-3.0.8-2.1
+[   70s] [85/239] preinstalled libpcre2-8-0-10.42-3.2
+[   70s] [86/239] preinstalled libpkgconf3-1.8.0-2.1
+[   70s] [87/239] preinstalled libpopt0-1.19-1.1
+[   70s] [88/239] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   70s] [89/239] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   70s] [90/239] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   70s] [91/239] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   70s] [92/239] preinstalled libreadline8-8.2-2.1
+[   70s] [93/239] preinstalled librpmbuild9-4.18.0-4.1
+[   70s] [94/239] preinstalled libseccomp2-2.5.4-2.1
+[   70s] [95/239] preinstalled libselinux1-3.5-1.1
+[   70s] [96/239] preinstalled libsemanage-conf-3.5-1.1
+[   70s] [97/239] preinstalled libsemanage2-3.5-1.1
+[   70s] [98/239] preinstalled libsepol2-3.5-1.1
+[   70s] [99/239] preinstalled libsmartcols1-2.38.1-10.1
+[   70s] [100/239] cumulate libsqlite3-0-3.41.2-1.1
+[   70s] [101/239] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   70s] [102/239] preinstalled libsubid4-4.13-4.1
+[   70s] [103/239] preinstalled libubsan1-13.0.1+git6669-7.1
+[   70s] [104/239] preinstalled libutempter0-1.2.0-3.2
+[   70s] [105/239] preinstalled libuuid1-2.38.1-10.1
+[   70s] [106/239] preinstalled libxcrypt-devel-4.4.33-2.1
+[   70s] [107/239] preinstalled libz1-1.2.13-3.1
+[   70s] [108/239] preinstalled libzstd1-1.5.4-2.1
+[   70s] [109/239] preinstalled linux-glibc-devel-6.2-1.1
+[   70s] [110/239] preinstalled login_defs-4.13-4.1
+[   70s] [111/239] preinstalled lua54-5.4.4-9.1
+[   70s] [112/239] preinstalled make-4.4.1-1.1
+[   70s] [113/239] preinstalled ncurses-utils-6.4.20230311-8.1
+[   70s] [114/239] preinstalled pam-1.5.2-14.1
+[   70s] [115/239] preinstalled patch-2.7.6-6.1
+[   70s] [116/239] preinstalled perl-5.36.0-4.1
+[   70s] [117/239] preinstalled perl-base-5.36.0-4.1
+[   70s] [118/239] preinstalled permissions-1599_20230217-1.1
+[   70s] [119/239] preinstalled permissions-config-1599_20230217-1.1
+[   70s] [120/239] preinstalled pkgconf-1.8.0-2.1
+[   70s] [121/239] preinstalled pkgconf-m4-1.8.0-2.1
+[   70s] [122/239] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   70s] [123/239] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   70s] [124/239] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   70s] [125/239] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   70s] [126/239] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   70s] [127/239] cumulate python310-aiofiles-23.1.0-1.1
+[   70s] [128/239] cumulate python310-attrs-22.2.0-1.2
+[   70s] [129/239] preinstalled python310-base-3.10.10-2.1
+[   70s] [130/239] cumulate python310-editables-0.3-1.3
+[   70s] [131/239] cumulate python310-exceptiongroup-1.1.1-1.1
+[   70s] [132/239] cumulate python310-iniconfig-2.0.0-1.1
+[   70s] [133/239] preinstalled python310-packaging-23.0-2.1
+[   70s] [134/239] cumulate python310-pathspec-0.10.3-1.3
+[   70s] [135/239] cumulate python310-pluggy-1.0.0-1.5
+[   70s] [136/239] preinstalled python310-setuptools-65.6.3-1.2
+[   70s] [137/239] cumulate python310-tomli-2.0.1-1.3
+[   70s] [138/239] cumulate python310-websockets-10.4-1.2
+[   70s] [139/239] cumulate python310-y-py-0.5.5-1.1
+[   70s] [140/239] cumulate python310-zipp-3.8.1-1.2
+[   70s] [141/239] cumulate python311-aiofiles-23.1.0-1.1
+[   70s] [142/239] cumulate python311-attrs-22.2.0-1.2
+[   70s] [143/239] preinstalled python311-base-3.11.2-1.2
+[   70s] [144/239] cumulate python311-editables-0.3-1.3
+[   70s] [145/239] cumulate python311-exceptiongroup-1.1.1-1.1
+[   70s] [146/239] cumulate python311-iniconfig-2.0.0-1.1
+[   70s] [147/239] cumulate python311-packaging-23.0-2.1
+[   70s] [148/239] cumulate python311-pathspec-0.10.3-1.3
+[   70s] [149/239] cumulate python311-pluggy-1.0.0-1.5
+[   70s] [150/239] preinstalled python311-setuptools-65.6.3-1.2
+[   70s] [151/239] cumulate python311-tomli-2.0.1-1.3
+[   70s] [152/239] cumulate python311-websockets-10.4-1.2
+[   70s] [153/239] cumulate python311-y-py-0.5.5-1.1
+[   70s] [154/239] cumulate python311-zipp-3.8.1-1.2
+[   70s] [155/239] cumulate python38-aiofiles-23.1.0-1.1
+[   70s] [156/239] cumulate python38-attrs-22.2.0-1.2
+[   70s] [157/239] preinstalled python38-base-3.8.16-5.1
+[   70s] [158/239] cumulate python38-editables-0.3-1.3
+[   70s] [159/239] cumulate python38-exceptiongroup-1.1.1-1.1
+[   70s] [160/239] cumulate python38-iniconfig-2.0.0-1.1
+[   71s] [161/239] cumulate python38-packaging-23.0-2.1
+[   71s] [162/239] cumulate python38-pathspec-0.10.3-1.3
+[   71s] [163/239] cumulate python38-pluggy-1.0.0-1.5
+[   71s] [164/239] preinstalled python38-setuptools-65.6.3-1.2
+[   71s] [165/239] cumulate python38-tomli-2.0.1-1.3
+[   71s] [166/239] cumulate python38-websockets-10.4-1.2
+[   71s] [167/239] cumulate python38-y-py-0.5.5-1.1
+[   71s] [168/239] cumulate python38-zipp-3.8.1-1.2
+[   71s] [169/239] cumulate python39-aiofiles-23.1.0-1.1
+[   71s] [170/239] cumulate python39-attrs-22.2.0-1.2
+[   71s] [171/239] preinstalled python39-base-3.9.16-5.1
+[   71s] [172/239] cumulate python39-editables-0.3-1.3
+[   71s] [173/239] cumulate python39-exceptiongroup-1.1.1-1.1
+[   71s] [174/239] cumulate python39-iniconfig-2.0.0-1.1
+[   71s] [175/239] cumulate python39-packaging-23.0-2.1
+[   71s] [176/239] cumulate python39-pathspec-0.10.3-1.3
+[   71s] [177/239] cumulate python39-pluggy-1.0.0-1.5
+[   71s] [178/239] preinstalled python39-setuptools-65.6.3-1.2
+[   71s] [179/239] cumulate python39-tomli-2.0.1-1.3
+[   71s] [180/239] cumulate python39-websockets-10.4-1.2
+[   71s] [181/239] cumulate python39-y-py-0.5.5-1.1
+[   71s] [182/239] cumulate python39-zipp-3.8.1-1.2
+[   71s] [183/239] preinstalled qemu-linux-user-7.1.0-55.1
+[   71s] [184/239] preinstalled rpm-4.18.0-4.1
+[   71s] [185/239] preinstalled rpm-build-4.18.0-4.1
+[   71s] [186/239] preinstalled rpm-build-perl-4.18.0-4.1
+[   71s] [187/239] preinstalled rpm-config-SUSE-20220926-1.1
+[   71s] [188/239] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.20
+[   71s] [189/239] preinstalled rpmlint-strict-2.4.0+git20230322.717aa4d-1.1
+[   71s] [190/239] preinstalled sed-4.9-2.1
+[   71s] [191/239] preinstalled shadow-4.13-4.1
+[   71s] [192/239] preinstalled system-group-hardware-20170617-24.1
+[   71s] [193/239] preinstalled system-user-root-20190513-2.1
+[   71s] [194/239] preinstalled systemd-rpm-macros-19-1.1
+[   71s] [195/239] preinstalled sysuser-shadow-3.1-5.1
+[   71s] [196/239] preinstalled tar-1.34-10.1
+[   71s] [197/239] preinstalled terminfo-base-6.4.20230311-8.1
+[   71s] [198/239] cumulate timezone-2022g-3.1
+[   71s] [199/239] preinstalled update-alternatives-1.21.8-1.1
+[   71s] [200/239] preinstalled util-linux-2.38.1-10.1
+[   71s] [201/239] preinstalled which-2.21-5.1
+[   71s] [202/239] preinstalled xz-5.4.2-1.1
+[   71s] [203/239] cumulate alts-1.2+3.b848aad-3.1
+[   71s] [204/239] cumulate libbrotlidec1-1.0.9-3.1
+[   71s] [205/239] cumulate libbrotlienc1-1.0.9-3.1
+[   71s] [206/239] cumulate netcfg-11.6-10.1
+[   71s] [207/239] cumulate python310-3.10.10-2.1
+[   71s] [208/239] cumulate python310-importlib-metadata-6.1.0-1.1
+[   71s] [209/239] cumulate python311-3.11.2-1.1
+[   71s] [210/239] cumulate python311-importlib-metadata-6.1.0-1.1
+[   71s] [211/239] cumulate python38-3.8.16-5.1
+[   71s] [212/239] cumulate python38-importlib-metadata-6.1.0-1.1
+[   71s] [213/239] cumulate python39-3.9.16-5.1
+[   71s] [214/239] cumulate python39-importlib-metadata-6.1.0-1.1
+[   71s] [215/239] cumulate libicu72-72.1-2.1
+[   71s] [216/239] cumulate python310-hatchling-1.13.0-1.2
+[   71s] [217/239] cumulate python311-hatchling-1.13.0-1.2
+[   71s] [218/239] cumulate python38-hatchling-1.13.0-1.2
+[   71s] [219/239] cumulate python39-hatchling-1.13.0-1.2
+[   71s] [220/239] cumulate python310-aiosqlite-0.17.0-1.5
+[   71s] [221/239] cumulate python310-pip-22.3.1-1.2
+[   71s] [222/239] cumulate python311-aiosqlite-0.17.0-1.5
+[   71s] [223/239] cumulate python311-pip-22.3.1-1.2
+[   71s] [224/239] cumulate python38-aiosqlite-0.17.0-1.5
+[   71s] [225/239] cumulate python38-pip-22.3.1-1.2
+[   71s] [226/239] cumulate python39-aiosqlite-0.17.0-1.5
+[   71s] [227/239] cumulate python39-pip-22.3.1-1.2
+[   71s] [228/239] cumulate libcares2-1.19.0-2.1
+[   71s] [229/239] cumulate python310-pytest-7.2.0-3.1
+[   71s] [230/239] cumulate python311-pytest-7.2.0-3.1
+[   71s] [231/239] cumulate python38-pytest-7.2.0-3.1
+[   71s] [232/239] cumulate python39-pytest-7.2.0-3.1
+[   71s] [233/239] cumulate python310-pytest-asyncio-0.20.3-1.2
+[   71s] [234/239] cumulate python311-pytest-asyncio-0.20.3-1.2
+[   71s] [235/239] cumulate python38-pytest-asyncio-0.20.3-1.2
+[   71s] [236/239] cumulate python39-pytest-asyncio-0.20.3-1.2
+[   71s] [237/239] cumulate nodejs19-19.7.0-7.1
+[   71s] [238/239] cumulate nodejs-default-5.1-1.1
+[   71s] [239/239] cumulate nodejs-common-5.1-1.1
+[   71s] now installing cumulated packages
+[   72s] Preparing...                          ########################################
+[   72s] Updating / installing...
+[   73s] libsqlite3-0-3.41.2-1.1               ########################################
+[   73s] python39-tomli-2.0.1-1.3              ########################################
+[   73s] python39-pluggy-1.0.0-1.5             ########################################
+[   73s] python39-packaging-23.0-2.1           ########################################
+[   73s] python38-tomli-2.0.1-1.3              ########################################
+[   73s] python38-pluggy-1.0.0-1.5             ########################################
+[   73s] python38-packaging-23.0-2.1           ########################################
+[   73s] python311-pluggy-1.0.0-1.5            ########################################
+[   73s] python311-packaging-23.0-2.1          ########################################
+[   73s] python310-tomli-2.0.1-1.3             ########################################
+[   73s] python310-pluggy-1.0.0-1.5            ########################################
+[   73s] libnss_usrfiles2-2.27-3.1             ########################################
+[   73s] libbrotlicommon1-1.0.9-3.1            ########################################
+[   74s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   74s] alts-1.2+3.b848aad-3.1                ########################################
+[   77s] python310-pip-22.3.1-1.2              ########################################
+[   78s] python310-3.10.10-2.1                 ########################################
+[   82s] python311-pip-22.3.1-1.2              ########################################
+[   82s] python311-3.11.2-1.1                  ########################################
+[   85s] python38-pip-22.3.1-1.2               ########################################
+[   85s] python38-3.8.16-5.1                   ########################################
+[   88s] python39-pip-22.3.1-1.2               ########################################
+[   88s] python39-3.9.16-5.1                   ########################################
+[   88s] libbrotlidec1-1.0.9-3.1               ########################################
+[   88s] libbrotlienc1-1.0.9-3.1               ########################################
+[   89s] netcfg-11.6-10.1                      ########################################
+[   89s] warning: /etc/hosts created as /etc/hosts.rpmnew
+[   89s] libcares2-1.19.0-2.1                  ########################################
+[   89s] timezone-2022g-3.1                    ########################################
+[   89s] python39-zipp-3.8.1-1.2               ########################################
+[   90s] python39-importlib-metadata-6.1.0-1.1 ########################################
+[   90s] python39-pathspec-0.10.3-1.3          ########################################
+[   90s] python39-iniconfig-2.0.0-1.1          ########################################
+[   90s] python39-exceptiongroup-1.1.1-1.1     ########################################
+[   90s] python39-editables-0.3-1.3            ########################################
+[   90s] python39-attrs-22.2.0-1.2             ########################################
+[   91s] python39-pytest-7.2.0-3.1             ########################################
+[   91s] python38-zipp-3.8.1-1.2               ########################################
+[   91s] python38-importlib-metadata-6.1.0-1.1 ########################################
+[   91s] python38-pathspec-0.10.3-1.3          ########################################
+[   91s] python38-iniconfig-2.0.0-1.1          ########################################
+[   91s] python38-exceptiongroup-1.1.1-1.1     ########################################
+[   91s] python38-editables-0.3-1.3            ########################################
+[   91s] python38-attrs-22.2.0-1.2             ########################################
+[   92s] python38-pytest-7.2.0-3.1             ########################################
+[   92s] python311-zipp-3.8.1-1.2              ########################################
+[   92s] python311-importlib-metadata-6.1.0-1.1########################################
+[   92s] python311-tomli-2.0.1-1.3             ########################################
+[   92s] python311-pathspec-0.10.3-1.3         ########################################
+[   92s] python311-iniconfig-2.0.0-1.1         ########################################
+[   92s] python311-exceptiongroup-1.1.1-1.1    ########################################
+[   92s] python311-editables-0.3-1.3           ########################################
+[   92s] python311-attrs-22.2.0-1.2            ########################################
+[   93s] python311-pytest-7.2.0-3.1            ########################################
+[   93s] python310-zipp-3.8.1-1.2              ########################################
+[   93s] python310-importlib-metadata-6.1.0-1.1########################################
+[   93s] python310-pathspec-0.10.3-1.3         ########################################
+[   93s] python310-iniconfig-2.0.0-1.1         ########################################
+[   93s] python310-exceptiongroup-1.1.1-1.1    ########################################
+[   93s] python310-editables-0.3-1.3           ########################################
+[   93s] python310-attrs-22.2.0-1.2            ########################################
+[   94s] python310-pytest-7.2.0-3.1            ########################################
+[   94s] libnghttp2-14-1.51.0-7.2              ########################################
+[  100s] libicu72-ledata-72.1-2.1              ########################################
+[  101s] libicu72-72.1-2.1                     ########################################
+[  108s] nodejs19-19.7.0-7.1                   ########################################
+[  108s] nodejs-common-5.1-1.1                 ########################################
+[  108s] nodejs-default-5.1-1.1                ########################################
+[  109s] python310-pytest-asyncio-0.20.3-1.2   ########################################
+[  109s] python310-hatchling-1.13.0-1.2        ########################################
+[  109s] python311-pytest-asyncio-0.20.3-1.2   ########################################
+[  109s] python311-hatchling-1.13.0-1.2        ########################################
+[  109s] python38-pytest-asyncio-0.20.3-1.2    ########################################
+[  110s] python38-hatchling-1.13.0-1.2         ########################################
+[  110s] python39-pytest-asyncio-0.20.3-1.2    ########################################
+[  110s] python39-hatchling-1.13.0-1.2         ########################################
+[  110s] python39-aiosqlite-0.17.0-1.5         ########################################
+[  110s] python38-aiosqlite-0.17.0-1.5         ########################################
+[  110s] python311-aiosqlite-0.17.0-1.5        ########################################
+[  111s] python310-aiosqlite-0.17.0-1.5        ########################################
+[  111s] python39-y-py-0.5.5-1.1               ########################################
+[  111s] python39-websockets-10.4-1.2          ########################################
+[  111s] python39-aiofiles-23.1.0-1.1          ########################################
+[  111s] python38-y-py-0.5.5-1.1               ########################################
+[  112s] python38-websockets-10.4-1.2          ########################################
+[  112s] python38-aiofiles-23.1.0-1.1          ########################################
+[  112s] python311-y-py-0.5.5-1.1              ########################################
+[  112s] python311-websockets-10.4-1.2         ########################################
+[  112s] python311-aiofiles-23.1.0-1.1         ########################################
+[  113s] python310-y-py-0.5.5-1.1              ########################################
+[  113s] python310-websockets-10.4-1.2         ########################################
+[  113s] python310-aiofiles-23.1.0-1.1         ########################################
+[  113s] fdupes-2.2.1-1.1                      ########################################
+[  118s] now finalizing build dir...
+[  118s] ... running 01-add_abuild_user_to_trusted_group
+[  119s] ... running 02-set_timezone_to_utc
+[  119s] ... running 03-set-permissions-secure
+[  119s] ... running 11-hack_uname_version_to_kernel_version
+[  130s] -----------------------------------------------------------------
+[  130s] I have the following modifications for python-ypy-websocket.spec:
+[  130s] 22c22
+[  130s] < Release:        0
+[  130s] ---
+[  130s] > Release:        1.1
+[  140s] build target is riscv64-suse-linux
+[  140s] -----------------------------------------------------------------
+[  140s] ----- building python-ypy-websocket.spec (user abuild)
+[  140s] -----------------------------------------------------------------
+[  140s] -----------------------------------------------------------------
+[  145s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/bdfe54ec150740f27d5fd3a4eefa45d6-python-ypy-websocket' /home/abuild/rpmbuild/SOURCES/python-ypy-websocket.spec
+[  188s] Building target platforms: riscv64-suse-linux
+[  188s] Building for target riscv64-suse-linux
+[  188s] setting SOURCE_DATE_EPOCH=1675555200
+[  188s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.t0qj5G
+[  189s] + umask 022
+[  189s] + cd /home/abuild/rpmbuild/BUILD
+[  189s] + cd /home/abuild/rpmbuild/BUILD
+[  189s] + rm -rf ypy_websocket-0.8.2
+[  189s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/ypy_websocket-0.8.2.tar.gz
+[  189s] + STATUS=0
+[  189s] + '[' 0 -ne 0 ']'
+[  189s] + cd ypy_websocket-0.8.2
+[  189s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/node_modules.tar.xz
+[  190s] + STATUS=0
+[  190s] + '[' 0 -ne 0 ']'
+[  190s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  190s] + sed -i '/aiofiles/ s/,<23//' pyproject.toml
+[  190s] + RPM_EC=0
+[  190s] ++ jobs -p
+[  190s] + exit 0
+[  190s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.y4QSZH
+[  190s] + umask 022
+[  190s] + cd /home/abuild/rpmbuild/BUILD
+[  190s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64
+[  190s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64
+[  190s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  190s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64
+[  190s] + cd ypy_websocket-0.8.2
+[  190s] + ref=/usr/lib/rpm
+[  190s] + mints=0
+[  190s] + case $(uname -m) in
+[  190s] ++ uname -m
+[  191s] + mints=20160911
+[  191s] + for s in guess sub
+[  191s] ++ find -maxdepth 8 -name config.guess
+[  191s] + for s in guess sub
+[  191s] ++ find -maxdepth 8 -name config.sub
+[  191s] ++ '[' -f _current_flavor ']'
+[  191s] ++ true
+[  191s] + last_flavor=
+[  191s] + '[' -z '' ']'
+[  191s] + last_flavor=tmp
+[  191s] + '[' tmp '!=' python38 ']'
+[  191s] + '[' -d build ']'
+[  191s] + '[' -d _build.python38 ']'
+[  191s] + echo python38
+[  191s] + python_flavor=python38
+[  191s] + myargs=
+[  191s] + '[' -f './dist/*-none-any.whl' ']'
+[  191s] + /usr/bin/python3.8 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  201s] Processing /home/abuild/rpmbuild/BUILD/ypy_websocket-0.8.2
+[  201s]   Preparing metadata (pyproject.toml): started
+[  201s]   Running command Preparing metadata (pyproject.toml)
+[  205s]   Preparing metadata (pyproject.toml): finished with status 'done'
+[  206s] Building wheels for collected packages: ypy-websocket
+[  206s]   Building wheel for ypy-websocket (pyproject.toml): started
+[  206s]   Running command Building wheel for ypy-websocket (pyproject.toml)
+[  207s]   Building wheel for ypy-websocket (pyproject.toml): finished with status 'done'
+[  207s]   Created wheel for ypy-websocket: filename=ypy_websocket-0.8.2-py3-none-any.whl size=10385 sha256=d6fb671bf5ce559ed2893a5bdcd1c2cdca9cd5ad4d25bb3f6f342df435089c35
+[  207s]   Stored in directory: /home/abuild/.cache/pip/wheels/d2/b6/63/bf8845f499b7dd97ba8cba4cf4a4e66604d110c712e58cc8e8
+[  207s] Successfully built ypy-websocket
+[  207s] + '[' -f ./build/ypy_websocket-0.8.2-py3-none-any.whl ']'
+[  207s] + mkdir -p ./dist
+[  207s] + cp ./build/ypy_websocket-0.8.2-py3-none-any.whl ./dist/
+[  207s] ++ '[' -f _current_flavor ']'
+[  207s] ++ cat _current_flavor
+[  207s] + last_flavor=python38
+[  207s] + '[' -z python38 ']'
+[  207s] + '[' python38 '!=' python39 ']'
+[  207s] + '[' -d build ']'
+[  207s] + mv build _build.python38
+[  207s] + '[' -d _build.python39 ']'
+[  207s] + echo python39
+[  207s] + python_flavor=python39
+[  207s] + myargs=
+[  207s] + '[' -f ./dist/ypy_websocket-0.8.2-py3-none-any.whl ']'
+[  207s] + echo 'Already found a compatible wheel in ./dist'
+[  207s] Already found a compatible wheel in ./dist
+[  207s] + mkdir -p ./build
+[  207s] + cp ./dist/ypy_websocket-0.8.2-py3-none-any.whl ./build/
+[  207s] ++ '[' -f _current_flavor ']'
+[  208s] ++ cat _current_flavor
+[  208s] + last_flavor=python39
+[  208s] + '[' -z python39 ']'
+[  208s] + '[' python39 '!=' python311 ']'
+[  208s] + '[' -d build ']'
+[  208s] + mv build _build.python39
+[  208s] + '[' -d _build.python311 ']'
+[  208s] + echo python311
+[  208s] + python_flavor=python311
+[  208s] + myargs=
+[  208s] + '[' -f ./dist/ypy_websocket-0.8.2-py3-none-any.whl ']'
+[  208s] + echo 'Already found a compatible wheel in ./dist'
+[  208s] Already found a compatible wheel in ./dist
+[  208s] + mkdir -p ./build
+[  208s] + cp ./dist/ypy_websocket-0.8.2-py3-none-any.whl ./build/
+[  208s] ++ '[' -f _current_flavor ']'
+[  208s] ++ cat _current_flavor
+[  208s] + last_flavor=python311
+[  208s] + '[' -z python311 ']'
+[  208s] + '[' python311 '!=' python310 ']'
+[  208s] + '[' -d build ']'
+[  208s] + mv build _build.python311
+[  208s] + '[' -d _build.python310 ']'
+[  208s] + echo python310
+[  208s] + python_flavor=python310
+[  208s] + myargs=
+[  208s] + '[' -f ./dist/ypy_websocket-0.8.2-py3-none-any.whl ']'
+[  208s] + echo 'Already found a compatible wheel in ./dist'
+[  208s] Already found a compatible wheel in ./dist
+[  208s] + mkdir -p ./build
+[  208s] + cp ./dist/ypy_websocket-0.8.2-py3-none-any.whl ./build/
+[  208s] + RPM_EC=0
+[  208s] ++ jobs -p
+[  208s] + exit 0
+[  208s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.DTP0xI
+[  208s] + umask 022
+[  208s] + cd /home/abuild/rpmbuild/BUILD
+[  208s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64
+[  208s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  208s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64
+[  208s] + cd ypy_websocket-0.8.2
+[  208s] ++ '[' -f _current_flavor ']'
+[  208s] ++ cat _current_flavor
+[  209s] + last_flavor=python310
+[  209s] + '[' -z python310 ']'
+[  209s] + '[' python310 '!=' python38 ']'
+[  209s] + '[' -d build ']'
+[  209s] + mv build _build.python310
+[  209s] + '[' -d _build.python38 ']'
+[  209s] + mv _build.python38 build
+[  209s] + echo python38
+[  209s] + python_flavor=python38
+[  209s] + myargs=
+[  209s] + havereq=0
+[  209s] + '[' -n '' ']'
+[  209s] + '[' 0 -eq 0 ']'
+[  209s] + ls ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  209s] ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  209s] + for w in ./build/*.whl
+[  209s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  209s] +++ basename ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  209s] ++ echo ypy_websocket-0.8.2-py3-none-any.whl
+[  209s] + myargs=' ypy_websocket==0.8.2'
+[  209s] + /usr/bin/python3.8 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ypy_websocket==0.8.2
+[  217s] Using pip 22.3.1 from /usr/lib/python3.8/site-packages/pip (python 3.8)
+[  219s] Looking in links: ./build
+[  219s] Processing ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  219s] Installing collected packages: ypy_websocket
+[  219s] Successfully installed ypy_websocket-0.8.2
+[  219s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.8/site-packages
+[  219s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages ']'
+[  219s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages -iname '*.pyc' -delete
+[  220s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.8 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  220s] Generating cached byte-code for ypy_websocket/__init__.py
+[  221s] Generating cached byte-code for ypy_websocket/awareness.py
+[  222s] Generating cached byte-code for ypy_websocket/websocket_provider.py
+[  222s] Generating cached byte-code for ypy_websocket/websocket_server.py
+[  223s] Generating cached byte-code for ypy_websocket/ystore.py
+[  224s] Generating cached byte-code for ypy_websocket/yutils.py
+[  225s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.8/site-packages
+[  225s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.8/site-packages ']'
+[  225s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*
+[  225s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*' ']'
+[  225s] ++ '[' -f _current_flavor ']'
+[  225s] ++ cat _current_flavor
+[  225s] + last_flavor=python38
+[  225s] + '[' -z python38 ']'
+[  225s] + '[' python38 '!=' python39 ']'
+[  225s] + '[' -d build ']'
+[  225s] + mv build _build.python38
+[  226s] + '[' -d _build.python39 ']'
+[  226s] + mv _build.python39 build
+[  226s] + echo python39
+[  226s] + python_flavor=python39
+[  226s] + myargs=
+[  226s] + havereq=0
+[  226s] + '[' -n '' ']'
+[  226s] + '[' 0 -eq 0 ']'
+[  226s] + ls ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  226s] ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  226s] + for w in ./build/*.whl
+[  226s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  226s] +++ basename ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  226s] ++ echo ypy_websocket-0.8.2-py3-none-any.whl
+[  226s] + myargs=' ypy_websocket==0.8.2'
+[  226s] + /usr/bin/python3.9 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ypy_websocket==0.8.2
+[  234s] Using pip 22.3.1 from /usr/lib/python3.9/site-packages/pip (python 3.9)
+[  235s] Looking in links: ./build
+[  236s] Processing ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  236s] Installing collected packages: ypy_websocket
+[  236s] Successfully installed ypy_websocket-0.8.2
+[  236s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.9/site-packages
+[  236s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages ']'
+[  236s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages -iname '*.pyc' -delete
+[  236s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.9 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  236s] Generating cached byte-code for ypy_websocket/__init__.py
+[  237s] Generating cached byte-code for ypy_websocket/awareness.py
+[  238s] Generating cached byte-code for ypy_websocket/websocket_provider.py
+[  239s] Generating cached byte-code for ypy_websocket/websocket_server.py
+[  240s] Generating cached byte-code for ypy_websocket/ystore.py
+[  242s] Generating cached byte-code for ypy_websocket/yutils.py
+[  243s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.9/site-packages
+[  243s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.9/site-packages ']'
+[  243s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*
+[  243s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*' ']'
+[  243s] ++ '[' -f _current_flavor ']'
+[  243s] ++ cat _current_flavor
+[  243s] + last_flavor=python39
+[  243s] + '[' -z python39 ']'
+[  243s] + '[' python39 '!=' python311 ']'
+[  243s] + '[' -d build ']'
+[  243s] + mv build _build.python39
+[  243s] + '[' -d _build.python311 ']'
+[  243s] + mv _build.python311 build
+[  243s] + echo python311
+[  243s] + python_flavor=python311
+[  243s] + myargs=
+[  243s] + havereq=0
+[  243s] + '[' -n '' ']'
+[  243s] + '[' 0 -eq 0 ']'
+[  243s] + ls ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  243s] ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  243s] + for w in ./build/*.whl
+[  243s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  243s] +++ basename ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  243s] ++ echo ypy_websocket-0.8.2-py3-none-any.whl
+[  243s] + myargs=' ypy_websocket==0.8.2'
+[  243s] + /usr/bin/python3.11 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ypy_websocket==0.8.2
+[  251s] Using pip 22.3.1 from /usr/lib/python3.11/site-packages/pip (python 3.11)
+[  253s] Looking in links: ./build
+[  253s] Processing ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  253s] Installing collected packages: ypy_websocket
+[  253s] Successfully installed ypy_websocket-0.8.2
+[  254s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.11/site-packages
+[  254s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages ']'
+[  254s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages -iname '*.pyc' -delete
+[  254s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.11 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  254s] Generating cached byte-code for ypy_websocket/__init__.py
+[  255s] Generating cached byte-code for ypy_websocket/awareness.py
+[  256s] Generating cached byte-code for ypy_websocket/websocket_provider.py
+[  257s] Generating cached byte-code for ypy_websocket/websocket_server.py
+[  258s] Generating cached byte-code for ypy_websocket/ystore.py
+[  260s] Generating cached byte-code for ypy_websocket/yutils.py
+[  261s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.11/site-packages
+[  261s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.11/site-packages ']'
+[  261s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*
+[  261s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*' ']'
+[  261s] ++ '[' -f _current_flavor ']'
+[  261s] ++ cat _current_flavor
+[  261s] + last_flavor=python311
+[  261s] + '[' -z python311 ']'
+[  261s] + '[' python311 '!=' python310 ']'
+[  261s] + '[' -d build ']'
+[  261s] + mv build _build.python311
+[  261s] + '[' -d _build.python310 ']'
+[  261s] + mv _build.python310 build
+[  261s] + echo python310
+[  261s] + python_flavor=python310
+[  261s] + myargs=
+[  261s] + havereq=0
+[  261s] + '[' -n '' ']'
+[  261s] + '[' 0 -eq 0 ']'
+[  261s] + ls ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  261s] ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  261s] + for w in ./build/*.whl
+[  261s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  261s] +++ basename ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  261s] ++ echo ypy_websocket-0.8.2-py3-none-any.whl
+[  261s] + myargs=' ypy_websocket==0.8.2'
+[  261s] + /usr/bin/python3.10 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ypy_websocket==0.8.2
+[  270s] Using pip 22.3.1 from /usr/lib/python3.10/site-packages/pip (python 3.10)
+[  271s] Looking in links: ./build
+[  271s] Processing ./build/ypy_websocket-0.8.2-py3-none-any.whl
+[  271s] Installing collected packages: ypy_websocket
+[  272s] Successfully installed ypy_websocket-0.8.2
+[  272s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.10/site-packages
+[  272s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages ']'
+[  272s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages -iname '*.pyc' -delete
+[  272s] + find /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.10 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  272s] Generating cached byte-code for ypy_websocket/__init__.py
+[  273s] Generating cached byte-code for ypy_websocket/awareness.py
+[  274s] Generating cached byte-code for ypy_websocket/websocket_provider.py
+[  275s] Generating cached byte-code for ypy_websocket/websocket_server.py
+[  276s] Generating cached byte-code for ypy_websocket/ystore.py
+[  277s] Generating cached byte-code for ypy_websocket/yutils.py
+[  278s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.10/site-packages
+[  278s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib64/python3.10/site-packages ']'
+[  278s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*
+[  278s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/bin/*' ']'
+[  278s] ++ '[' -f _current_flavor ']'
+[  278s] ++ cat _current_flavor
+[  278s] + last_flavor=python310
+[  278s] + '[' -z python310 ']'
+[  278s] + '[' python310 '!=' python38 ']'
+[  278s] + '[' -d build ']'
+[  278s] + mv build _build.python310
+[  278s] + '[' -d _build.python38 ']'
+[  278s] + mv _build.python38 build
+[  278s] + echo python38
+[  278s] + python_flavor=python38
+[  278s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-38.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-38.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/awareness.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/awareness.cpython-38.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages/ypy_websocket/__pycache__/__init__.cpython-38.pyc
+[  279s] ++ '[' -f _current_flavor ']'
+[  279s] ++ cat _current_flavor
+[  279s] + last_flavor=python38
+[  279s] + '[' -z python38 ']'
+[  279s] + '[' python38 '!=' python39 ']'
+[  279s] + '[' -d build ']'
+[  279s] + mv build _build.python38
+[  279s] + '[' -d _build.python39 ']'
+[  279s] + mv _build.python39 build
+[  279s] + echo python39
+[  279s] + python_flavor=python39
+[  279s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-39.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-39.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/awareness.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/awareness.cpython-39.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.9/site-packages/ypy_websocket/__pycache__/__init__.cpython-39.pyc
+[  279s] ++ '[' -f _current_flavor ']'
+[  279s] ++ cat _current_flavor
+[  279s] + last_flavor=python39
+[  279s] + '[' -z python39 ']'
+[  279s] + '[' python39 '!=' python311 ']'
+[  279s] + '[' -d build ']'
+[  279s] + mv build _build.python39
+[  279s] + '[' -d _build.python311 ']'
+[  279s] + mv _build.python311 build
+[  279s] + echo python311
+[  279s] + python_flavor=python311
+[  279s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-311.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-311.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/awareness.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/awareness.cpython-311.pyc
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.11/site-packages/ypy_websocket/__pycache__/__init__.cpython-311.pyc
+[  279s] ++ '[' -f _current_flavor ']'
+[  279s] ++ cat _current_flavor
+[  279s] + last_flavor=python311
+[  279s] + '[' -z python311 ']'
+[  279s] + '[' python311 '!=' python310 ']'
+[  279s] + '[' -d build ']'
+[  279s] + mv build _build.python311
+[  279s] + '[' -d _build.python310 ']'
+[  279s] + mv _build.python310 build
+[  280s] + echo python310
+[  280s] + python_flavor=python310
+[  280s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages
+[  280s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/websocket_server.cpython-310.pyc
+[  280s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/websocket_provider.cpython-310.pyc
+[  280s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/awareness.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/awareness.cpython-310.pyc
+[  280s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.10/site-packages/ypy_websocket/__pycache__/__init__.cpython-310.pyc
+[  280s] + /usr/lib/rpm/find-debuginfo -j4 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/ypy_websocket-0.8.2
+[  280s] + /usr/lib/rpm/brp-compress
+[  281s] + /usr/lib/rpm/brp-suse
+[  281s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  281s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  281s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  281s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  281s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  282s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.pVn38j
+[  282s] + umask 022
+[  282s] + cd /home/abuild/rpmbuild/BUILD
+[  282s] + cd ypy_websocket-0.8.2
+[  282s] + set +x
+[  282s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  282s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  282s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  282s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  283s] Using alternative hatchling-3.8 for hatchling in ./build/flavorbin during Python 3.8 expansions.
+[  283s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  283s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  283s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  284s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  284s] Using alternative hatchling-3.9 for hatchling in ./build/flavorbin during Python 3.9 expansions.
+[  284s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  285s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  285s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  285s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  285s] Using alternative hatchling-3.11 for hatchling in ./build/flavorbin during Python 3.11 expansions.
+[  286s] Using alternative hatchling-3.10 for hatchling in ./build/flavorbin during Python 3.10 expansions.
+[  286s] + export PATH=/home/abuild/rpmbuild/BUILD/ypy_websocket-0.8.2/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  286s] + PATH=/home/abuild/rpmbuild/BUILD/ypy_websocket-0.8.2/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  286s] ++ '[' -f _current_flavor ']'
+[  286s] ++ cat _current_flavor
+[  286s] + last_flavor=python310
+[  286s] + '[' -z python310 ']'
+[  286s] + '[' python310 '!=' python38 ']'
+[  286s] + '[' -d build ']'
+[  286s] + mv build _build.python310
+[  286s] + '[' -d _build.python38 ']'
+[  286s] + mv _build.python38 build
+[  286s] + echo python38
+[  286s] + python_flavor=python38
+[  286s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-ypy-websocket-0.8.2-1.1.riscv64/usr/lib/python3.8/site-packages
+[  286s] + PYTHONDONTWRITEBYTECODE=1
+[  286s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v --asyncio-mode auto
+[  294s] ============================= test session starts ==============================
+[  294s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  294s] cachedir: .pytest_cache
+[  294s] rootdir: /home/abuild/rpmbuild/BUILD/ypy_websocket-0.8.2
+[  294s] plugins: asyncio-0.20.3
+[  294s] asyncio: mode=auto
+[  294s] collecting ... collected 7 items
+[  294s] 
+[  297s] tests/test_ypy_yjs.py::test_ypy_yjs_0[0] FAILED                          [ 14%]
+[  298s] tests/test_ypy_yjs.py::test_ypy_yjs_1[1] FAILED                          [ 28%]
+[  298s] tests/test_ystore.py::test_ystore[MyTempFileYStore] PASSED               [ 42%]
+[  298s] tests/test_ystore.py::test_ystore[MySQLiteYStore] PASSED                 [ 57%]
+[  299s] tests/test_ystore.py::test_document_ttl_sqlite_ystore PASSED             [ 71%]
+[  299s] tests/test_ystore.py::test_version[MyTempFileYStore] PASSED              [ 85%]
+[  299s] tests/test_ystore.py::test_version[MySQLiteYStore] PASSED                [100%]
+[  299s] 
+[  299s] =================================== FAILURES ===================================
+[  299s] ______________________________ test_ypy_yjs_0[0] _______________________________
+[  299s] 
+[  299s] yws_server = <ypy_websocket.websocket_server.WebsocketServer object at 0x4005068820>
+[  299s] yjs_client = <subprocess.Popen object at 0x4005068d00>
+[  299s] 
+[  299s]     @pytest.mark.asyncio
+[  299s]     @pytest.mark.parametrize("yjs_client", "0", indirect=True)
+[  299s]     async def test_ypy_yjs_0(yws_server, yjs_client):
+[  299s]         ydoc = Y.YDoc()
+[  299s]         ytest = YTest(ydoc)
+[  299s]         websocket = await connect("ws://127.0.0.1:1234/my-roomname")
+[  299s]         WebsocketProvider(ydoc, websocket)
+[  299s]         ymap = ydoc.get_map("map")
+[  299s]         # set a value in "in"
+[  299s]         for v_in in range(10):
+[  299s]             with ydoc.begin_transaction() as t:
+[  299s]                 ymap.set(t, "in", float(v_in))
+[  299s]             ytest.run_clock()
+[  299s] >           await ytest.clock_run()
+[  299s] 
+[  299s] tests/test_ypy_yjs.py:50: 
+[  299s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  299s] tests/test_ypy_yjs.py:33: in clock_run
+[  299s]     await asyncio.wait_for(change.wait(), timeout=self.timeout)
+[  299s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  299s] 
+[  299s] fut = <Task cancelled name='Task-16' coro=<Event.wait() done, defined at /usr/lib64/python3.8/asyncio/locks.py:296>>
+[  299s] timeout = 1.0
+[  299s] 
+[  299s]     async def wait_for(fut, timeout, *, loop=None):
+[  299s]         """Wait for the single Future or coroutine to complete, with timeout.
+[  299s]     
+[  299s]         Coroutine will be wrapped in Task.
+[  299s]     
+[  299s]         Returns result of the Future or coroutine.  When a timeout occurs,
+[  299s]         it cancels the task and raises TimeoutError.  To avoid the task
+[  299s]         cancellation, wrap it in shield().
+[  299s]     
+[  299s]         If the wait is cancelled, the task is also cancelled.
+[  299s]     
+[  299s]         This function is a coroutine.
+[  299s]         """
+[  299s]         if loop is None:
+[  299s]             loop = events.get_running_loop()
+[  299s]         else:
+[  299s]             warnings.warn("The loop argument is deprecated since Python 3.8, "
+[  299s]                           "and scheduled for removal in Python 3.10.",
+[  299s]                           DeprecationWarning, stacklevel=2)
+[  299s]     
+[  299s]         if timeout is None:
+[  299s]             return await fut
+[  299s]     
+[  299s]         if timeout <= 0:
+[  299s]             fut = ensure_future(fut, loop=loop)
+[  299s]     
+[  299s]             if fut.done():
+[  299s]                 return fut.result()
+[  299s]     
+[  299s]             await _cancel_and_wait(fut, loop=loop)
+[  299s]             try:
+[  299s]                 fut.result()
+[  299s]             except exceptions.CancelledError as exc:
+[  299s]                 raise exceptions.TimeoutError() from exc
+[  299s]             else:
+[  299s]                 raise exceptions.TimeoutError()
+[  299s]     
+[  299s]         waiter = loop.create_future()
+[  299s]         timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+[  299s]         cb = functools.partial(_release_waiter, waiter)
+[  299s]     
+[  299s]         fut = ensure_future(fut, loop=loop)
+[  299s]         fut.add_done_callback(cb)
+[  299s]     
+[  299s]         try:
+[  299s]             # wait until the future completes or the timeout
+[  299s]             try:
+[  299s]                 await waiter
+[  299s]             except exceptions.CancelledError:
+[  299s]                 if fut.done():
+[  299s]                     return fut.result()
+[  299s]                 else:
+[  299s]                     fut.remove_done_callback(cb)
+[  299s]                     # We must ensure that the task is not running
+[  299s]                     # after wait_for() returns.
+[  299s]                     # See https://bugs.python.org/issue32751
+[  299s]                     await _cancel_and_wait(fut, loop=loop)
+[  299s]                     raise
+[  299s]     
+[  299s]             if fut.done():
+[  299s]                 return fut.result()
+[  299s]             else:
+[  299s]                 fut.remove_done_callback(cb)
+[  299s]                 # We must ensure that the task is not running
+[  299s]                 # after wait_for() returns.
+[  299s]                 # See https://bugs.python.org/issue32751
+[  299s]                 await _cancel_and_wait(fut, loop=loop)
+[  299s] >               raise exceptions.TimeoutError()
+[  299s] E               asyncio.exceptions.TimeoutError
+[  299s] 
+[  299s] /usr/lib64/python3.8/asyncio/tasks.py:501: TimeoutError
+[  299s] ______________________________ test_ypy_yjs_1[1] _______________________________
+[  299s] 
+[  299s] yws_server = <ypy_websocket.websocket_server.WebsocketServer object at 0x40050af7f0>
+[  299s] yjs_client = <subprocess.Popen object at 0x40050afac0>
+[  299s] 
+[  299s]     @pytest.mark.asyncio
+[  299s]     @pytest.mark.parametrize("yjs_client", "1", indirect=True)
+[  299s]     async def test_ypy_yjs_1(yws_server, yjs_client):
+[  299s]         # wait for the JS client to connect
+[  299s]         tt, dt = 0, 0.1
+[  299s]         while True:
+[  299s]             await asyncio.sleep(dt)
+[  299s]             if "/my-roomname" in yws_server.rooms:
+[  299s]                 break
+[  299s]             tt += dt
+[  299s]             if tt >= 1:
+[  299s] >               raise RuntimeError("Timeout waiting for client to connect")
+[  299s] E               RuntimeError: Timeout waiting for client to connect
+[  299s] 
+[  299s] tests/test_ypy_yjs.py:66: RuntimeError
+[  299s] =========================== short test summary info ============================
+[  299s] FAILED tests/test_ypy_yjs.py::test_ypy_yjs_0[0] - asyncio.exceptions.TimeoutE...
+[  299s] FAILED tests/test_ypy_yjs.py::test_ypy_yjs_1[1] - RuntimeError: Timeout waiti...
+[  299s] ========================= 2 failed, 5 passed in 5.57s ==========================
+[  299s] error: Bad exit status from /var/tmp/rpm-tmp.pVn38j (%check)
+[  299s] 
+[  299s] RPM build errors:
+[  299s]     Bad exit status from /var/tmp/rpm-tmp.pVn38j (%check)
+[  300s] ### VM INTERACTION START ###
+[  300s] [  277.964659][    T1] sysrq: Power Off
+[  300s] [  277.994954][   T71] reboot: Power down
+[  302s] [  279.044500][   T71] Shutting down cpus with NMI
+[  302s] ### VM INTERACTION END ###
+[  302s] 
+[  302s] cloud125 failed "build python-ypy-websocket.spec" at Fri Mar 24 16:17:43 UTC 2023.
+[  302s] 

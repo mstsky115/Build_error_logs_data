@@ -1,0 +1,1115 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    1s] 
+[    1s] lamb52 started "build python-tqdm.spec" at Fri Sep 16 02:49:50 UTC 2022.
+[    1s] 
+[    1s] Building python-tqdm:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '7012a5c1a128eac7fa43963c54df46d3'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/python-tqdm.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/python-tqdm.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/python-tqdm.spec build ...
+[    3s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [d0d98ad6079c856e49099332b78ea5a2]
+[   10s] 
+[   10s] copying packages...
+[   10s] reordering...done
+[   13s] booting kvm...
+[   13s] ### VM INTERACTION START ###
+[   13s] Using UART console
+[   13s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   26s] ### VM INTERACTION END ###
+[   26s] 2nd stage started in virtual machine
+[   27s] machine type: riscv64
+[   28s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   28s] Increasing log level from now on...
+[   28s] [   14.049698][  T444] sysrq: Changing Loglevel
+[   28s] [   14.054453][  T444] sysrq: Loglevel set to 4
+[   28s] Enable sysrq operations
+[   29s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   29s] no label, UUID=cde42718-17e6-4a07-989e-04db967b27c5
+[   29s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   29s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   29s] swapon /dev/vdb
+[   29s] WARNING: udev not running, creating extra device nodes
+[   31s] logging output to //.build.log...
+[   32s] processing recipe /.build-srcdir/python-tqdm.spec ...
+[   32s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-tqdm.spec build ...
+[   33s] initializing rpm db...
+[   34s] querying package ids...
+[   93s] [1/195] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   93s] [2/195] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   93s] [3/195] preinstalled attr-2.5.1-1.1
+[   93s] [4/195] preinstalled bash-5.1.16-8.1
+[   93s] [5/195] preinstalled bash-sh-5.1.16-8.1
+[   93s] [6/195] preinstalled binutils-2.39-1.1
+[   93s] [7/195] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-1.1
+[   93s] [8/195] preinstalled build-compare-20220823T100012.86340a1-1.1
+[   93s] [9/195] preinstalled build-mkbaselibs-20220613-1.1
+[   93s] [10/195] preinstalled bzip2-1.0.8-4.1
+[   93s] [11/195] preinstalled chkstat-1599_20220713-34.1
+[   94s] [12/195] preinstalled compat-usrmerge-build-84.87-5.1
+[   94s] [13/195] preinstalled compat-usrmerge-tools-84.87-5.1
+[   94s] [14/195] preinstalled coreutils-9.1-4.1
+[   94s] [15/195] preinstalled cpio-2.13-4.1
+[   94s] [16/195] preinstalled cpp-12-2.1
+[   94s] [17/195] preinstalled cpp12-12.2.1+git416-4.1
+[   94s] [18/195] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   94s] [19/195] preinstalled debugedit-5.0-4.1
+[   94s] [20/195] preinstalled diffutils-3.8-2.1
+[   94s] [21/195] preinstalled dwz-0.14-5.1
+[   94s] [22/195] preinstalled elfutils-0.187-11.1
+[   94s] [23/195] cumulate fdupes-2.1.2-3.1
+[   94s] [24/195] preinstalled file-5.42-3.1
+[   94s] [25/195] preinstalled file-magic-5.42-3.1
+[   94s] [26/195] preinstalled filesystem-84.87-8.1
+[   94s] [27/195] preinstalled fillup-1.42-278.1
+[   94s] [28/195] preinstalled findutils-4.9.0-1.1
+[   94s] [29/195] preinstalled gawk-5.1.1-6.1
+[   94s] [30/195] preinstalled gcc-12-2.1
+[   94s] [31/195] preinstalled gcc-PIE-12-2.1
+[   94s] [32/195] preinstalled gcc12-12.2.1+git416-4.1
+[   94s] [33/195] preinstalled gcc12-PIE-12.2.1+git416-4.1
+[   94s] [34/195] preinstalled gettext-runtime-mini-0.21-4.1
+[   94s] [35/195] preinstalled gettext-tools-mini-0.21-4.1
+[   94s] [36/195] preinstalled glibc-2.36-4.1
+[   94s] [37/195] preinstalled glibc-devel-2.36-4.1
+[   94s] [38/195] preinstalled glibc-locale-base-2.36-4.1
+[   94s] [39/195] preinstalled grep-3.7-5.1
+[   94s] [40/195] preinstalled gzip-1.12-2.1
+[   94s] [41/195] preinstalled kernel-obs-build-5.14.2-1.3
+[   94s] [42/195] preinstalled libacl1-2.3.1-2.1
+[   94s] [43/195] cumulate libalternatives1-1.2+3.b848aad-2.1
+[   94s] [44/195] preinstalled libasan8-12.2.1+git416-4.1
+[   94s] [45/195] preinstalled libasm1-0.187-11.1
+[   94s] [46/195] preinstalled libatomic1-12.2.1+git416-4.1
+[   94s] [47/195] preinstalled libattr1-2.5.1-1.1
+[   94s] [48/195] preinstalled libaudit1-3.0.6-4.1
+[   94s] [49/195] preinstalled libblkid1-2.37.4-4.1
+[   94s] [50/195] preinstalled libbz2-1-1.0.8-4.1
+[   94s] [51/195] preinstalled libcap-ng0-0.8.3-1.1
+[   94s] [52/195] preinstalled libcap2-2.65-1.1
+[   94s] [53/195] preinstalled libcrypt1-4.4.27-1.1
+[   94s] [54/195] preinstalled libctf-nobfd0-2.39-1.1
+[   94s] [55/195] preinstalled libctf0-2.39-1.1
+[   94s] [56/195] preinstalled libdb-4_8-4.8.30-39.1
+[   94s] [57/195] preinstalled libdw1-0.187-11.1
+[   94s] [58/195] preinstalled libeconf0-0.4.6+git20220427.3016f4e-1.1
+[   94s] [59/195] preinstalled libelf1-0.187-11.1
+[   94s] [60/195] preinstalled libexpat1-2.4.8-1.1
+[   94s] [61/195] preinstalled libfdisk1-2.37.4-4.1
+[   94s] [62/195] preinstalled libffi8-3.4.2-6.1
+[   94s] [63/195] preinstalled libgcc_s1-12.2.1+git416-4.1
+[   94s] [64/195] preinstalled libgcrypt20-1.9.4-5.1
+[   94s] [65/195] preinstalled libgdbm6-1.23-1.1
+[   94s] [66/195] preinstalled libgdbm_compat4-1.23-1.1
+[   94s] [67/195] preinstalled libgmp10-6.2.1-4.1
+[   94s] [68/195] preinstalled libgomp1-12.2.1+git416-4.1
+[   94s] [69/195] preinstalled libgpg-error0-1.45-1.1
+[   94s] [70/195] preinstalled libisl23-0.25-1.1
+[   94s] [71/195] preinstalled liblua5_4-5-5.4.4-6.1
+[   94s] [72/195] preinstalled liblzma5-5.2.6-1.1
+[   94s] [73/195] preinstalled libmagic1-5.42-3.1
+[   94s] [74/195] preinstalled libmount1-2.37.4-4.1
+[   94s] [75/195] preinstalled libmpc3-1.2.1-1.2
+[   94s] [76/195] preinstalled libmpdec3-2.5.1-2.1
+[   94s] [77/195] preinstalled libmpfr6-4.1.0-2.1
+[   94s] [78/195] preinstalled libncurses6-6.3.20220820-27.1
+[   94s] [79/195] preinstalled libopenssl1_1-1.1.1q-1.1
+[   94s] [80/195] preinstalled libpcre1-8.45-2.1
+[   94s] [81/195] preinstalled libpcre2-8-0-10.40-3.1
+[   94s] [82/195] preinstalled libpkgconf3-1.8.0-1.1
+[   94s] [83/195] preinstalled libpopt0-1.18-3.1
+[   94s] [84/195] preinstalled libpython3_10-1_0-3.10.6-3.1
+[   94s] [85/195] preinstalled libpython3_8-1_0-3.8.13-4.1
+[   94s] [86/195] preinstalled libpython3_9-1_0-3.9.13-5.1
+[   94s] [87/195] preinstalled libreadline8-8.1-3.1
+[   94s] [88/195] preinstalled librpmbuild9-4.17.1-1.1
+[   94s] [89/195] preinstalled libseccomp2-2.5.4-2.1
+[   94s] [90/195] preinstalled libselinux1-3.4-2.1
+[   94s] [91/195] preinstalled libsemanage-conf-3.4-1.1
+[   94s] [92/195] preinstalled libsemanage2-3.4-1.1
+[   94s] [93/195] preinstalled libsepol2-3.4-1.1
+[   94s] [94/195] preinstalled libsmartcols1-2.37.4-4.1
+[   94s] [95/195] preinstalled libstdc++6-12.2.1+git416-4.1
+[   94s] [96/195] preinstalled libsubid4-4.12.3-1.1
+[   94s] [97/195] preinstalled libubsan1-12.2.1+git416-4.1
+[   94s] [98/195] preinstalled libutempter0-1.2.0-3.2
+[   94s] [99/195] preinstalled libuuid1-2.37.4-4.1
+[   94s] [100/195] preinstalled libxcrypt-devel-4.4.27-1.1
+[   94s] [101/195] preinstalled libz1-1.2.12-1.1
+[   94s] [102/195] preinstalled libzstd1-1.5.2-1.1
+[   94s] [103/195] preinstalled linux-glibc-devel-5.17-1.1
+[   94s] [104/195] preinstalled login_defs-4.12.3-1.1
+[   94s] [105/195] preinstalled lua54-5.4.4-6.1
+[   94s] [106/195] preinstalled make-4.3-4.1
+[   94s] [107/195] preinstalled ncurses-utils-6.3.20220820-27.1
+[   94s] [108/195] preinstalled pam-1.5.2-7.1
+[   94s] [109/195] preinstalled pam_unix-1.5.2-7.1
+[   94s] [110/195] preinstalled patch-2.7.6-6.1
+[   94s] [111/195] preinstalled perl-5.36.0-3.1
+[   94s] [112/195] preinstalled perl-base-5.36.0-3.1
+[   94s] [113/195] preinstalled permissions-1599_20220713-34.1
+[   94s] [114/195] preinstalled permissions-config-1599_20220713-34.1
+[   94s] [115/195] preinstalled pkgconf-1.8.0-1.1
+[   94s] [116/195] preinstalled pkgconf-m4-1.8.0-1.1
+[   94s] [117/195] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   94s] [118/195] preinstalled polkit-default-privs-1550+20220727.3ce2e2f-1.1
+[   94s] [119/195] preinstalled post-build-checks-84.87+git20220325.f46ef3c-1.1
+[   94s] [120/195] preinstalled python-rpm-macros-20220809.cf8a7b8-2.1
+[   94s] [121/195] preinstalled python-rpm-packaging-20210526+a18ca48-1.1
+[   94s] [122/195] cumulate python310-apipkg-2.1.0-1.4
+[   94s] [123/195] cumulate python310-attrs-22.1.0-1.1
+[   94s] [124/195] preinstalled python310-base-3.10.6-3.1
+[   94s] [125/195] cumulate python310-iniconfig-1.1.1-2.1
+[   94s] [126/195] preinstalled python310-packaging-21.3-4.1
+[   94s] [127/195] cumulate python310-pluggy-1.0.0-1.4
+[   94s] [128/195] preinstalled python310-pyparsing-3.0.9-1.1
+[   94s] [129/195] preinstalled python310-setuptools-63.2.0-1.1
+[   94s] [130/195] cumulate python310-toml-0.10.2-2.5
+[   94s] [131/195] cumulate python310-tomli-2.0.1-1.2
+[   94s] [132/195] cumulate python310-tqdm-4.64.1-1.1
+[   94s] [133/195] cumulate python310-zipp-3.8.1-1.1
+[   94s] [134/195] cumulate python38-apipkg-2.1.0-1.4
+[   94s] [135/195] cumulate python38-attrs-22.1.0-1.1
+[   94s] [136/195] preinstalled python38-base-3.8.13-4.1
+[   94s] [137/195] cumulate python38-iniconfig-1.1.1-2.1
+[   94s] [138/195] cumulate python38-pluggy-1.0.0-1.4
+[   94s] [139/195] cumulate python38-pyparsing-3.0.9-1.1
+[   94s] [140/195] preinstalled python38-setuptools-63.2.0-1.1
+[   94s] [141/195] cumulate python38-toml-0.10.2-2.5
+[   94s] [142/195] cumulate python38-tomli-2.0.1-1.2
+[   94s] [143/195] cumulate python38-tqdm-4.64.1-1.1
+[   94s] [144/195] cumulate python38-zipp-3.8.1-1.1
+[   94s] [145/195] cumulate python39-apipkg-2.1.0-1.4
+[   94s] [146/195] cumulate python39-attrs-22.1.0-1.1
+[   95s] [147/195] preinstalled python39-base-3.9.13-5.1
+[   95s] [148/195] cumulate python39-iniconfig-1.1.1-2.1
+[   95s] [149/195] cumulate python39-pluggy-1.0.0-1.4
+[   95s] [150/195] cumulate python39-pyparsing-3.0.9-1.1
+[   95s] [151/195] preinstalled python39-setuptools-63.2.0-1.1
+[   95s] [152/195] cumulate python39-toml-0.10.2-2.5
+[   95s] [153/195] cumulate python39-tomli-2.0.1-1.2
+[   95s] [154/195] cumulate python39-tqdm-4.64.1-1.1
+[   95s] [155/195] cumulate python39-zipp-3.8.1-1.1
+[   95s] [156/195] preinstalled qemu-linux-user-7.0.0-83.1
+[   95s] [157/195] preinstalled rpm-4.17.1-1.1
+[   95s] [158/195] preinstalled rpm-build-4.17.1-1.1
+[   95s] [159/195] preinstalled rpm-build-perl-4.17.1-1.1
+[   95s] [160/195] preinstalled rpm-config-SUSE-20220421-1.1
+[   95s] [161/195] preinstalled rpmlint-mini-2.3.0+git20220907.165f9c76-8.1
+[   95s] [162/195] preinstalled rpmlint-strict-2.3.0+git20220907.165f9c76-1.1
+[   95s] [163/195] preinstalled sed-4.8-3.2
+[   95s] [164/195] preinstalled shadow-4.12.3-1.1
+[   95s] [165/195] preinstalled system-group-hardware-20170617-24.1
+[   95s] [166/195] preinstalled system-user-root-20190513-2.1
+[   95s] [167/195] preinstalled systemd-rpm-macros-16-1.1
+[   95s] [168/195] preinstalled sysuser-shadow-3.1-4.1
+[   95s] [169/195] preinstalled tar-1.34-7.1
+[   95s] [170/195] preinstalled terminfo-base-6.3.20220820-27.1
+[   95s] [171/195] preinstalled update-alternatives-1.21.8-1.1
+[   95s] [172/195] preinstalled util-linux-2.37.4-4.1
+[   95s] [173/195] preinstalled which-2.21-5.1
+[   95s] [174/195] preinstalled xz-5.2.6-1.1
+[   95s] [175/195] cumulate alts-1.2+3.b848aad-2.1
+[   95s] [176/195] cumulate python310-importlib-metadata-4.12.0-1.1
+[   95s] [177/195] cumulate python310-setuptools_scm-6.4.2-1.2
+[   95s] [178/195] cumulate python38-importlib-metadata-4.12.0-1.1
+[   95s] [179/195] cumulate python38-packaging-21.3-4.1
+[   95s] [180/195] cumulate python39-importlib-metadata-4.12.0-1.1
+[   95s] [181/195] cumulate python39-packaging-21.3-4.1
+[   95s] [182/195] cumulate python310-py-1.11.0-2.2
+[   95s] [183/195] cumulate python38-py-1.11.0-2.2
+[   95s] [184/195] cumulate python39-py-1.11.0-2.2
+[   95s] [185/195] cumulate python38-setuptools_scm-6.4.2-1.2
+[   95s] [186/195] cumulate python39-setuptools_scm-6.4.2-1.2
+[   95s] [187/195] cumulate python310-pytest-7.1.2-1.1
+[   95s] [188/195] cumulate python38-pytest-7.1.2-1.1
+[   95s] [189/195] cumulate python39-pytest-7.1.2-1.1
+[   95s] [190/195] cumulate python310-pytest-asyncio-0.19.0-1.1
+[   95s] [191/195] cumulate python310-pytest-timeout-2.1.0-5.1
+[   95s] [192/195] cumulate python38-pytest-asyncio-0.19.0-1.1
+[   95s] [193/195] cumulate python38-pytest-timeout-2.1.0-5.1
+[   95s] [194/195] cumulate python39-pytest-asyncio-0.19.0-1.1
+[   95s] [195/195] cumulate python39-pytest-timeout-2.1.0-5.1
+[   95s] now installing cumulated packages
+[   96s] Preparing...                          ########################################
+[   96s] Updating / installing...
+[   96s] python39-tomli-2.0.1-1.2              ########################################
+[   96s] python39-iniconfig-1.1.1-2.1          ########################################
+[   96s] python38-tomli-2.0.1-1.2              ########################################
+[   96s] python38-iniconfig-1.1.1-2.1          ########################################
+[   96s] python310-tomli-2.0.1-1.2             ########################################
+[   96s] python310-iniconfig-1.1.1-2.1         ########################################
+[   96s] python39-zipp-3.8.1-1.1               ########################################
+[   97s] python39-importlib-metadata-4.12.0-1.1########################################
+[   97s] python39-pyparsing-3.0.9-1.1          ########################################
+[   97s] python39-packaging-21.3-4.1           ########################################
+[   97s] python39-pluggy-1.0.0-1.4             ########################################
+[   97s] python39-attrs-22.1.0-1.1             ########################################
+[   97s] python39-apipkg-2.1.0-1.4             ########################################
+[   97s] python39-py-1.11.0-2.2                ########################################
+[   98s] python38-zipp-3.8.1-1.1               ########################################
+[   98s] python38-importlib-metadata-4.12.0-1.1########################################
+[   98s] python38-pyparsing-3.0.9-1.1          ########################################
+[   98s] python38-packaging-21.3-4.1           ########################################
+[   98s] python38-pluggy-1.0.0-1.4             ########################################
+[   98s] python38-attrs-22.1.0-1.1             ########################################
+[   98s] python38-apipkg-2.1.0-1.4             ########################################
+[   99s] python38-py-1.11.0-2.2                ########################################
+[   99s] python310-zipp-3.8.1-1.1              ########################################
+[   99s] python310-importlib-metadata-4.12.0-1.########################################
+[   99s] python310-pluggy-1.0.0-1.4            ########################################
+[   99s] python310-attrs-22.1.0-1.1            ########################################
+[   99s] python310-apipkg-2.1.0-1.4            ########################################
+[   99s] python310-py-1.11.0-2.2               ########################################
+[   99s] libalternatives1-1.2+3.b848aad-2.1    ########################################
+[  100s] alts-1.2+3.b848aad-2.1                ########################################
+[  101s] python310-pytest-7.1.2-1.1            ########################################
+[  103s] python38-pytest-7.1.2-1.1             ########################################
+[  104s] python39-pytest-7.1.2-1.1             ########################################
+[  105s] python39-pytest-asyncio-0.19.0-1.1    ########################################
+[  105s] python39-pytest-timeout-2.1.0-5.1     ########################################
+[  105s] python38-pytest-asyncio-0.19.0-1.1    ########################################
+[  105s] python38-pytest-timeout-2.1.0-5.1     ########################################
+[  105s] python310-pytest-asyncio-0.19.0-1.1   ########################################
+[  105s] python310-pytest-timeout-2.1.0-5.1    ########################################
+[  105s] python38-setuptools_scm-6.4.2-1.2     ########################################
+[  105s] python39-setuptools_scm-6.4.2-1.2     ########################################
+[  105s] python310-setuptools_scm-6.4.2-1.2    ########################################
+[  106s] python39-tqdm-4.64.1-1.1              ########################################
+[  106s] python39-toml-0.10.2-2.5              ########################################
+[  106s] python38-tqdm-4.64.1-1.1              ########################################
+[  107s] python38-toml-0.10.2-2.5              ########################################
+[  107s] python310-tqdm-4.64.1-1.1             ########################################
+[  108s] python310-toml-0.10.2-2.5             ########################################
+[  108s] fdupes-2.1.2-3.1                      ########################################
+[  113s] now finalizing build dir...
+[  114s] ... running 01-add_abuild_user_to_trusted_group
+[  115s] ... running 02-set_timezone_to_utc
+[  115s] ... running 03-set-permissions-secure
+[  116s] ... running 11-hack_uname_version_to_kernel_version
+[  144s] build target is riscv64-suse-linux
+[  144s] -----------------------------------------------------------------
+[  144s] I have the following modifications for python-tqdm.spec:
+[  144s] 21c21
+[  144s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  144s] ---
+[  144s] > %global flavor test%{nil}
+[  144s] 32c32
+[  144s] < Release:        0
+[  144s] ---
+[  144s] > Release:        1.1
+[  145s] -----------------------------------------------------------------
+[  145s] ----- building python-tqdm.spec (user abuild)
+[  145s] -----------------------------------------------------------------
+[  145s] -----------------------------------------------------------------
+[  153s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/7012a5c1a128eac7fa43963c54df46d3-python-tqdm:test' /home/abuild/rpmbuild/SOURCES/python-tqdm.spec
+[  235s] Building target platforms: riscv64-suse-linux
+[  235s] Building for target riscv64-suse-linux
+[  235s] setting SOURCE_DATE_EPOCH=1662768000
+[  236s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.7bkYJr
+[  236s] + umask 022
+[  236s] + cd /home/abuild/rpmbuild/BUILD
+[  236s] + cd /home/abuild/rpmbuild/BUILD
+[  236s] + rm -rf tqdm-4.64.1
+[  236s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/tqdm-4.64.1.tar.gz
+[  236s] + /usr/bin/tar -xof -
+[  236s] + STATUS=0
+[  236s] + '[' 0 -ne 0 ']'
+[  236s] + cd tqdm-4.64.1
+[  236s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  236s] + sed -i s/-W=error// setup.cfg
+[  237s] + sed -i '1 s/^#!.*/# bash completion for tqdm       -*- shell-script -*-/' tqdm/completion.sh
+[  237s] + chmod a-x tqdm/completion.sh
+[  237s] + RPM_EC=0
+[  237s] ++ jobs -p
+[  237s] + exit 0
+[  237s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Y1jVoT
+[  238s] + umask 022
+[  238s] + cd /home/abuild/rpmbuild/BUILD
+[  238s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-tqdm-test-4.64.1-1.1.riscv64
+[  238s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-tqdm-test-4.64.1-1.1.riscv64
+[  238s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  238s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-tqdm-test-4.64.1-1.1.riscv64
+[  238s] + cd tqdm-4.64.1
+[  238s] + ref=/usr/lib/rpm
+[  238s] + mints=0
+[  238s] + case $(uname -m) in
+[  238s] ++ uname -m
+[  239s] + mints=20160911
+[  239s] + for s in guess sub
+[  239s] ++ find -maxdepth 8 -name config.guess
+[  239s] + for s in guess sub
+[  239s] ++ find -maxdepth 8 -name config.sub
+[  239s] ++ '[' -f _current_flavor ']'
+[  239s] ++ true
+[  239s] + last_flavor=
+[  239s] + '[' -z '' ']'
+[  239s] + last_flavor=tmp
+[  239s] + '[' tmp '!=' python38 ']'
+[  239s] + '[' -d build ']'
+[  239s] + '[' -d _build.python38 ']'
+[  239s] + echo python38
+[  239s] + python_flavor=python38
+[  239s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  256s] running build
+[  256s] running build_py
+[  256s] creating build
+[  256s] creating build/lib
+[  256s] creating build/lib/tqdm
+[  256s] copying tqdm/__init__.py -> build/lib/tqdm
+[  256s] copying tqdm/__main__.py -> build/lib/tqdm
+[  256s] copying tqdm/_dist_ver.py -> build/lib/tqdm
+[  256s] copying tqdm/_main.py -> build/lib/tqdm
+[  256s] copying tqdm/_monitor.py -> build/lib/tqdm
+[  256s] copying tqdm/_tqdm.py -> build/lib/tqdm
+[  256s] copying tqdm/_tqdm_gui.py -> build/lib/tqdm
+[  256s] copying tqdm/_tqdm_notebook.py -> build/lib/tqdm
+[  256s] copying tqdm/_tqdm_pandas.py -> build/lib/tqdm
+[  256s] copying tqdm/_utils.py -> build/lib/tqdm
+[  256s] copying tqdm/asyncio.py -> build/lib/tqdm
+[  256s] copying tqdm/auto.py -> build/lib/tqdm
+[  256s] copying tqdm/autonotebook.py -> build/lib/tqdm
+[  256s] copying tqdm/cli.py -> build/lib/tqdm
+[  256s] copying tqdm/dask.py -> build/lib/tqdm
+[  256s] copying tqdm/gui.py -> build/lib/tqdm
+[  256s] copying tqdm/keras.py -> build/lib/tqdm
+[  256s] copying tqdm/notebook.py -> build/lib/tqdm
+[  256s] copying tqdm/rich.py -> build/lib/tqdm
+[  256s] copying tqdm/std.py -> build/lib/tqdm
+[  256s] copying tqdm/tk.py -> build/lib/tqdm
+[  256s] copying tqdm/utils.py -> build/lib/tqdm
+[  256s] copying tqdm/version.py -> build/lib/tqdm
+[  256s] creating build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/__init__.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/bells.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/concurrent.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/discord.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/itertools.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/logging.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/slack.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/telegram.py -> build/lib/tqdm/contrib
+[  256s] copying tqdm/contrib/utils_worker.py -> build/lib/tqdm/contrib
+[  256s] running egg_info
+[  257s] writing tqdm.egg-info/PKG-INFO
+[  257s] writing dependency_links to tqdm.egg-info/dependency_links.txt
+[  257s] writing entry points to tqdm.egg-info/entry_points.txt
+[  257s] writing requirements to tqdm.egg-info/requires.txt
+[  257s] writing top-level names to tqdm.egg-info/top_level.txt
+[  257s] reading manifest file 'tqdm.egg-info/SOURCES.txt'
+[  257s] adding license file 'LICENCE'
+[  257s] writing manifest file 'tqdm.egg-info/SOURCES.txt'
+[  257s] copying tqdm/completion.sh -> build/lib/tqdm
+[  257s] copying tqdm/tqdm.1 -> build/lib/tqdm
+[  257s] /usr/lib/python3.8/site-packages/setuptools/config/setupcfg.py:463: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  257s]   warnings.warn(msg, warning_class)
+[  258s] ++ '[' -f _current_flavor ']'
+[  258s] ++ cat _current_flavor
+[  258s] + last_flavor=python38
+[  258s] + '[' -z python38 ']'
+[  258s] + '[' python38 '!=' python39 ']'
+[  258s] + '[' -d build ']'
+[  258s] + mv build _build.python38
+[  258s] + '[' -d _build.python39 ']'
+[  258s] + echo python39
+[  258s] + python_flavor=python39
+[  258s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  267s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:463: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  267s]   warnings.warn(msg, warning_class)
+[  270s] running build
+[  270s] running build_py
+[  270s] creating build
+[  270s] creating build/lib
+[  270s] creating build/lib/tqdm
+[  270s] copying tqdm/__init__.py -> build/lib/tqdm
+[  270s] copying tqdm/__main__.py -> build/lib/tqdm
+[  270s] copying tqdm/_dist_ver.py -> build/lib/tqdm
+[  270s] copying tqdm/_main.py -> build/lib/tqdm
+[  270s] copying tqdm/_monitor.py -> build/lib/tqdm
+[  270s] copying tqdm/_tqdm.py -> build/lib/tqdm
+[  270s] copying tqdm/_tqdm_gui.py -> build/lib/tqdm
+[  270s] copying tqdm/_tqdm_notebook.py -> build/lib/tqdm
+[  270s] copying tqdm/_tqdm_pandas.py -> build/lib/tqdm
+[  270s] copying tqdm/_utils.py -> build/lib/tqdm
+[  270s] copying tqdm/asyncio.py -> build/lib/tqdm
+[  270s] copying tqdm/auto.py -> build/lib/tqdm
+[  270s] copying tqdm/autonotebook.py -> build/lib/tqdm
+[  270s] copying tqdm/cli.py -> build/lib/tqdm
+[  270s] copying tqdm/dask.py -> build/lib/tqdm
+[  270s] copying tqdm/gui.py -> build/lib/tqdm
+[  270s] copying tqdm/keras.py -> build/lib/tqdm
+[  270s] copying tqdm/notebook.py -> build/lib/tqdm
+[  270s] copying tqdm/rich.py -> build/lib/tqdm
+[  270s] copying tqdm/std.py -> build/lib/tqdm
+[  270s] copying tqdm/tk.py -> build/lib/tqdm
+[  270s] copying tqdm/utils.py -> build/lib/tqdm
+[  270s] copying tqdm/version.py -> build/lib/tqdm
+[  270s] creating build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/__init__.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/bells.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/concurrent.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/discord.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/itertools.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/logging.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/slack.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/telegram.py -> build/lib/tqdm/contrib
+[  270s] copying tqdm/contrib/utils_worker.py -> build/lib/tqdm/contrib
+[  270s] running egg_info
+[  270s] writing tqdm.egg-info/PKG-INFO
+[  270s] writing dependency_links to tqdm.egg-info/dependency_links.txt
+[  270s] writing entry points to tqdm.egg-info/entry_points.txt
+[  270s] writing requirements to tqdm.egg-info/requires.txt
+[  270s] writing top-level names to tqdm.egg-info/top_level.txt
+[  271s] reading manifest file 'tqdm.egg-info/SOURCES.txt'
+[  271s] adding license file 'LICENCE'
+[  271s] writing manifest file 'tqdm.egg-info/SOURCES.txt'
+[  271s] copying tqdm/completion.sh -> build/lib/tqdm
+[  271s] copying tqdm/tqdm.1 -> build/lib/tqdm
+[  271s] ++ '[' -f _current_flavor ']'
+[  271s] ++ cat _current_flavor
+[  271s] + last_flavor=python39
+[  271s] + '[' -z python39 ']'
+[  271s] + '[' python39 '!=' python310 ']'
+[  271s] + '[' -d build ']'
+[  271s] + mv build _build.python39
+[  272s] + '[' -d _build.python310 ']'
+[  272s] + echo python310
+[  272s] + python_flavor=python310
+[  272s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  280s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:463: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  280s]   warnings.warn(msg, warning_class)
+[  284s] running build
+[  284s] running build_py
+[  284s] creating build
+[  284s] creating build/lib
+[  284s] creating build/lib/tqdm
+[  284s] copying tqdm/__init__.py -> build/lib/tqdm
+[  284s] copying tqdm/__main__.py -> build/lib/tqdm
+[  284s] copying tqdm/_dist_ver.py -> build/lib/tqdm
+[  284s] copying tqdm/_main.py -> build/lib/tqdm
+[  284s] copying tqdm/_monitor.py -> build/lib/tqdm
+[  284s] copying tqdm/_tqdm.py -> build/lib/tqdm
+[  284s] copying tqdm/_tqdm_gui.py -> build/lib/tqdm
+[  284s] copying tqdm/_tqdm_notebook.py -> build/lib/tqdm
+[  284s] copying tqdm/_tqdm_pandas.py -> build/lib/tqdm
+[  284s] copying tqdm/_utils.py -> build/lib/tqdm
+[  284s] copying tqdm/asyncio.py -> build/lib/tqdm
+[  284s] copying tqdm/auto.py -> build/lib/tqdm
+[  284s] copying tqdm/autonotebook.py -> build/lib/tqdm
+[  284s] copying tqdm/cli.py -> build/lib/tqdm
+[  284s] copying tqdm/dask.py -> build/lib/tqdm
+[  284s] copying tqdm/gui.py -> build/lib/tqdm
+[  284s] copying tqdm/keras.py -> build/lib/tqdm
+[  284s] copying tqdm/notebook.py -> build/lib/tqdm
+[  284s] copying tqdm/rich.py -> build/lib/tqdm
+[  284s] copying tqdm/std.py -> build/lib/tqdm
+[  284s] copying tqdm/tk.py -> build/lib/tqdm
+[  284s] copying tqdm/utils.py -> build/lib/tqdm
+[  284s] copying tqdm/version.py -> build/lib/tqdm
+[  284s] creating build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/__init__.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/bells.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/concurrent.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/discord.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/itertools.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/logging.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/slack.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/telegram.py -> build/lib/tqdm/contrib
+[  284s] copying tqdm/contrib/utils_worker.py -> build/lib/tqdm/contrib
+[  284s] running egg_info
+[  285s] writing tqdm.egg-info/PKG-INFO
+[  285s] writing dependency_links to tqdm.egg-info/dependency_links.txt
+[  285s] writing entry points to tqdm.egg-info/entry_points.txt
+[  285s] writing requirements to tqdm.egg-info/requires.txt
+[  285s] writing top-level names to tqdm.egg-info/top_level.txt
+[  285s] reading manifest file 'tqdm.egg-info/SOURCES.txt'
+[  285s] adding license file 'LICENCE'
+[  285s] writing manifest file 'tqdm.egg-info/SOURCES.txt'
+[  285s] copying tqdm/completion.sh -> build/lib/tqdm
+[  285s] copying tqdm/tqdm.1 -> build/lib/tqdm
+[  286s] + RPM_EC=0
+[  286s] ++ jobs -p
+[  286s] + exit 0
+[  286s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.KDZkLC
+[  286s] + umask 022
+[  286s] + cd /home/abuild/rpmbuild/BUILD
+[  286s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-tqdm-test-4.64.1-1.1.riscv64
+[  286s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  286s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-tqdm-test-4.64.1-1.1.riscv64
+[  287s] + cd tqdm-4.64.1
+[  287s] + /usr/lib/rpm/find-debuginfo -j8 --build-id-seed 4.64.1-1.1 --unique-debug-suffix -4.64.1-1.1.riscv64 --unique-debug-src-base python-tqdm-test-4.64.1-1.1.riscv64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/tqdm-4.64.1
+[  288s] + /usr/lib/rpm/brp-compress
+[  288s] + /usr/lib/rpm/brp-suse
+[  288s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  288s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  289s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  290s] calling /usr/lib/rpm/brp-suse.d/brp-40-rootfs
+[  290s] calling /usr/lib/rpm/brp-suse.d/brp-45-tcl
+[  291s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  291s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  292s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.AmNvpS
+[  292s] + umask 022
+[  292s] + cd /home/abuild/rpmbuild/BUILD
+[  292s] + cd tqdm-4.64.1
+[  292s] + set +x
+[  293s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  293s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  294s] Using alternative tqdm-3.8 for tqdm in ./build/flavorbin during Python 3.8 expansions.
+[  295s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  295s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  296s] Using alternative tqdm-3.9 for tqdm in ./build/flavorbin during Python 3.9 expansions.
+[  297s] Using alternative tqdm-3.10 for tqdm in ./build/flavorbin during Python 3.10 expansions.
+[  297s] + export PATH=/home/abuild/rpmbuild/BUILD/tqdm-4.64.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  297s] + PATH=/home/abuild/rpmbuild/BUILD/tqdm-4.64.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  297s] ++ '[' -f _current_flavor ']'
+[  297s] ++ cat _current_flavor
+[  297s] + last_flavor=python310
+[  297s] + '[' -z python310 ']'
+[  297s] + '[' python310 '!=' python38 ']'
+[  297s] + '[' -d build ']'
+[  297s] + mv build _build.python310
+[  297s] + '[' -d _build.python38 ']'
+[  297s] + mv _build.python38 build
+[  297s] + echo python38
+[  297s] + python_flavor=python38
+[  297s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-tqdm-test-4.64.1-1.1.riscv64/usr/lib/python3.8/site-packages
+[  297s] + PYTHONDONTWRITEBYTECODE=1
+[  297s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python310 -v -k 'not (tests_perf or tests_synchronisation)'
+[  309s] ============================= test session starts ==============================
+[  309s] platform linux -- Python 3.8.13, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3.8
+[  309s] cachedir: .pytest_cache
+[  309s] rootdir: /home/abuild/rpmbuild/BUILD/tqdm-4.64.1, configfile: setup.cfg, testpaths: tests
+[  309s] plugins: asyncio-0.19.0, timeout-2.1.0
+[  309s] asyncio: mode=strict
+[  309s] timeout: 30.0s
+[  309s] timeout method: signal
+[  309s] timeout func_only: False
+[  322s] collecting ... collected 139 items / 12 deselected / 1 skipped / 127 selected
+[  322s] 
+[  322s] tests/tests_asyncio.py::test_break <- tests/py37_asyncio.py PASSED       [  0%]
+[  322s] tests/tests_asyncio.py::test_generators <- tests/py37_asyncio.py PASSED  [  1%]
+[  322s] tests/tests_asyncio.py::test_range <- tests/py37_asyncio.py PASSED       [  2%]
+[  322s] tests/tests_asyncio.py::test_nested <- tests/py37_asyncio.py PASSED      [  3%]
+[  323s] tests/tests_asyncio.py::test_coroutines <- tests/py37_asyncio.py PASSED  [  3%]
+[  324s] tests/tests_asyncio.py::test_as_completed[0.1] <- tests/py37_asyncio.py PASSED [  4%]
+[  324s] tests/tests_asyncio.py::test_gather <- tests/py37_asyncio.py PASSED      [  5%]
+[  324s] tests/tests_concurrent.py::test_thread_map PASSED                        [  6%]
+[  324s] tests/tests_concurrent.py::test_process_map PASSED                       [  7%]
+[  325s] tests/tests_concurrent.py::test_chunksize_warning[iterables0-False] PASSED [  7%]
+[  325s] tests/tests_concurrent.py::test_chunksize_warning[iterables1-False] PASSED [  8%]
+[  325s] tests/tests_concurrent.py::test_chunksize_warning[iterables2-False] PASSED [  9%]
+[  325s] tests/tests_concurrent.py::test_chunksize_warning[iterables3-False] PASSED [ 10%]
+[  325s] tests/tests_concurrent.py::test_chunksize_warning[iterables4-True] PASSED [ 11%]
+[  325s] tests/tests_concurrent.py::test_chunksize_warning[iterables5-True] PASSED [ 11%]
+[  325s] tests/tests_contrib.py::test_enumerate[tqdm_kwargs0] PASSED              [ 12%]
+[  325s] tests/tests_contrib.py::test_enumerate[tqdm_kwargs1] PASSED              [ 13%]
+[  325s] tests/tests_contrib.py::test_enumerate_numpy SKIPPED (could not import 'numpy': No module named 'numpy') [ 14%]
+[  325s] tests/tests_contrib.py::test_zip[tqdm_kwargs0] PASSED                    [ 14%]
+[  325s] tests/tests_contrib.py::test_zip[tqdm_kwargs1] PASSED                    [ 15%]
+[  325s] tests/tests_contrib.py::test_map[tqdm_kwargs0] PASSED                    [ 16%]
+[  325s] tests/tests_contrib.py::test_map[tqdm_kwargs1] PASSED                    [ 17%]
+[  325s] tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_tqdm_write PASSED [ 18%]
+[  325s] tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_handle_error_if_exception_was_thrown PASSED [ 18%]
+[  325s] tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[KeyboardInterrupt] PASSED [ 19%]
+[  325s] tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[SystemExit] PASSED [ 20%]
+[  325s] tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_no_handlers PASSED [ 21%]
+[  325s] tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_without_stream_handler PASSED [ 22%]
+[  325s] tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_stream_handler_not_stdout_or_stderr PASSED [ 22%]
+[  325s] tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stdout PASSED [ 23%]
+[  325s] tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stderr PASSED [ 24%]
+[  325s] tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_add_and_remove_tqdm_handler PASSED [ 25%]
+[  325s] tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_remove_and_restore_console_handlers PASSED [ 25%]
+[  325s] tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_inherit_console_logger_formatter PASSED [ 26%]
+[  326s] tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_not_remove_stream_handlers_not_for_stdout_or_stderr PASSED [ 27%]
+[  326s] tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_root_logger_by_default PASSED [ 28%]
+[  326s] tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_custom_logger PASSED [ 29%]
+[  326s] tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_not_fail_with_logger_without_console_handler PASSED [ 29%]
+[  326s] tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_format_message PASSED [ 30%]
+[  326s] tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_use_root_logger_by_default_and_write_to_custom_tqdm PASSED [ 31%]
+[  326s] tests/tests_dask.py::test_dask SKIPPED (could not import 'tqdm.dask': No module named 'dask') [ 32%]
+[  326s] tests/tests_gui.py::test_gui_import PASSED                               [ 33%]
+[  326s] tests/tests_itertools.py::test_product PASSED                            [ 33%]
+[  326s] tests/tests_keras.py::test_keras SKIPPED (could not import 'tqdm.keras': No module named 'keras') [ 34%]
+[  328s] tests/tests_main.py::test_pipes PASSED                                   [ 35%]
+[  329s] tests/tests_main.py::test_main_import PASSED                             [ 36%]
+[  329s] tests/tests_main.py::test_main_bytes PASSED                              [ 37%]
+[  329s] tests/tests_main.py::test_main_log PASSED                                [ 37%]
+[  330s] tests/tests_main.py::test_main PASSED                                    [ 38%]
+[  330s] tests/tests_main.py::test_manpath PASSED                                 [ 39%]
+[  330s] tests/tests_main.py::test_comppath PASSED                                [ 40%]
+[  330s] tests/tests_main.py::test_exceptions PASSED                              [ 40%]
+[  330s] tests/tests_notebook.py::test_notebook_disabled_description PASSED       [ 41%]
+[  330s] tests/tests_rich.py::test_rich_import SKIPPED (could not import 'tqdm.rich': No module named 'rich') [ 42%]
+[  331s] tests/tests_tk.py::test_tk_import SKIPPED (could not import 'tqdm.tk': No module named 'Tkinter') [ 43%]
+[  331s] tests/tests_tqdm.py::test_format_interval PASSED                         [ 44%]
+[  331s] tests/tests_tqdm.py::test_format_num PASSED                              [ 44%]
+[  331s] tests/tests_tqdm.py::test_format_meter PASSED                            [ 45%]
+[  331s] tests/tests_tqdm.py::test_ansi_escape_codes PASSED                       [ 46%]
+[  331s] tests/tests_tqdm.py::test_si_format PASSED                               [ 47%]
+[  331s] tests/tests_tqdm.py::test_bar_formatspec PASSED                          [ 48%]
+[  331s] tests/tests_tqdm.py::test_all_defaults PASSED                            [ 48%]
+[  331s] tests/tests_tqdm.py::test_native_string_io_for_default_file PASSED       [ 49%]
+[  331s] tests/tests_tqdm.py::test_unicode_string_io_for_specified_file PASSED    [ 50%]
+[  331s] tests/tests_tqdm.py::test_write_bytes PASSED                             [ 51%]
+[  331s] tests/tests_tqdm.py::test_iterate_over_csv_rows PASSED                   [ 51%]
+[  331s] tests/tests_tqdm.py::test_file_output PASSED                             [ 52%]
+[  331s] tests/tests_tqdm.py::test_leave_option PASSED                            [ 53%]
+[  331s] tests/tests_tqdm.py::test_trange PASSED                                  [ 54%]
+[  331s] tests/tests_tqdm.py::test_min_interval PASSED                            [ 55%]
+[  331s] tests/tests_tqdm.py::test_max_interval PASSED                            [ 55%]
+[  331s] tests/tests_tqdm.py::test_delay PASSED                                   [ 56%]
+[  332s] tests/tests_tqdm.py::test_min_iters PASSED                               [ 57%]
+[  332s] tests/tests_tqdm.py::test_dynamic_min_iters PASSED                       [ 58%]
+[  332s] tests/tests_tqdm.py::test_big_min_interval PASSED                        [ 59%]
+[  332s] tests/tests_tqdm.py::test_smoothed_dynamic_min_iters PASSED              [ 59%]
+[  332s] tests/tests_tqdm.py::test_smoothed_dynamic_min_iters_with_min_interval PASSED [ 60%]
+[  338s] tests/tests_tqdm.py::test_rlock_creation PASSED                          [ 61%]
+[  338s] tests/tests_tqdm.py::test_disable PASSED                                 [ 62%]
+[  338s] tests/tests_tqdm.py::test_infinite_total PASSED                          [ 62%]
+[  338s] tests/tests_tqdm.py::test_nototal PASSED                                 [ 63%]
+[  338s] tests/tests_tqdm.py::test_unit PASSED                                    [ 64%]
+[  338s] tests/tests_tqdm.py::test_ascii PASSED                                   [ 65%]
+[  339s] tests/tests_tqdm.py::test_update PASSED                                  [ 66%]
+[  339s] tests/tests_tqdm.py::test_close PASSED                                   [ 66%]
+[  339s] tests/tests_tqdm.py::test_ema PASSED                                     [ 67%]
+[  339s] tests/tests_tqdm.py::test_smoothing PASSED                               [ 68%]
+[  339s] tests/tests_tqdm.py::test_deprecated_nested PASSED                       [ 69%]
+[  339s] tests/tests_tqdm.py::test_bar_format PASSED                              [ 70%]
+[  339s] tests/tests_tqdm.py::test_custom_format PASSED                           [ 70%]
+[  340s] tests/tests_tqdm.py::test_eta PASSED                                     [ 71%]
+[  340s] tests/tests_tqdm.py::test_unpause PASSED                                 [ 72%]
+[  340s] tests/tests_tqdm.py::test_disabled_unpause PASSED                        [ 73%]
+[  340s] tests/tests_tqdm.py::test_reset PASSED                                   [ 74%]
+[  340s] tests/tests_tqdm.py::test_disabled_reset PASSED                          [ 74%]
+[  341s] tests/tests_tqdm.py::test_position PASSED                                [ 75%]
+[  341s] tests/tests_tqdm.py::test_set_description PASSED                         [ 76%]
+[  341s] tests/tests_tqdm.py::test_deprecated_gui PASSED                          [ 77%]
+[  341s] tests/tests_tqdm.py::test_cmp PASSED                                     [ 77%]
+[  341s] tests/tests_tqdm.py::test_repr PASSED                                    [ 78%]
+[  341s] tests/tests_tqdm.py::test_clear PASSED                                   [ 79%]
+[  341s] tests/tests_tqdm.py::test_clear_disabled PASSED                          [ 80%]
+[  341s] tests/tests_tqdm.py::test_refresh PASSED                                 [ 81%]
+[  341s] tests/tests_tqdm.py::test_disabled_repr PASSED                           [ 81%]
+[  341s] tests/tests_tqdm.py::test_disabled_refresh PASSED                        [ 82%]
+[  341s] tests/tests_tqdm.py::test_write PASSED                                   [ 83%]
+[  341s] tests/tests_tqdm.py::test_len SKIPPED (could not import 'numpy': No module named 'numpy') [ 84%]
+[  341s] tests/tests_tqdm.py::test_autodisable_disable PASSED                     [ 85%]
+[  341s] tests/tests_tqdm.py::test_autodisable_enable PASSED                      [ 85%]
+[  341s] tests/tests_tqdm.py::test_deprecation_exception PASSED                   [ 86%]
+[  341s] tests/tests_tqdm.py::test_postfix PASSED                                 [ 87%]
+[  341s] tests/tests_tqdm.py::test_postfix_direct PASSED                          [ 88%]
+[  341s] tests/tests_tqdm.py::test_file_redirection PASSED                        [ 88%]
+[  341s] tests/tests_tqdm.py::test_external_write PASSED                          [ 89%]
+[  341s] tests/tests_tqdm.py::test_unit_scale PASSED                              [ 90%]
+[  341s] tests/tests_tqdm.py::test_threading PASSED                               [ 91%]
+[  342s] tests/tests_tqdm.py::test_bool PASSED                                    [ 92%]
+[  342s] tests/tests_tqdm.py::test_auto PASSED                                    [ 92%]
+[  342s] tests/tests_tqdm.py::test_wrapattr PASSED                                [ 93%]
+[  342s] tests/tests_tqdm.py::test_float_progress PASSED                          [ 94%]
+[  342s] tests/tests_tqdm.py::test_screen_shape PASSED                            [ 95%]
+[  342s] tests/tests_tqdm.py::test_initial PASSED                                 [ 96%]
+[  342s] tests/tests_tqdm.py::test_colour PASSED                                  [ 96%]
+[  342s] tests/tests_tqdm.py::test_closed PASSED                                  [ 97%]
+[  342s] tests/tests_tqdm.py::test_reversed PASSED                                [ 98%]
+[  342s] tests/tests_tqdm.py::test_contains PASSED                                [ 99%]
+[  342s] tests/tests_version.py::test_version PASSED                              [100%]
+[  342s] 
+[  342s] ============================== slowest durations ===============================
+[  342s] 6.53s call     tests/tests_tqdm.py::test_rlock_creation
+[  342s] 2.49s call     tests/tests_main.py::test_pipes
+[  342s] 1.51s call     tests/tests_tqdm.py::test_eta
+[  342s] 1.18s call     tests/tests_main.py::test_main
+[  342s] 0.96s call     tests/tests_asyncio.py::test_as_completed[0.1]
+[  342s] 0.55s call     tests/tests_concurrent.py::test_process_map
+[  342s] 0.24s call     tests/tests_concurrent.py::test_chunksize_warning[iterables0-False]
+[  342s] 0.22s call     tests/tests_tqdm.py::test_max_interval
+[  342s] 0.21s call     tests/tests_main.py::test_exceptions
+[  342s] 0.13s call     tests/tests_tqdm.py::test_position
+[  342s] 0.10s call     tests/tests_concurrent.py::test_thread_map
+[  342s] 0.08s call     tests/tests_tqdm.py::test_screen_shape
+[  342s] 0.08s call     tests/tests_asyncio.py::test_gather
+[  342s] 0.08s call     tests/tests_tqdm.py::test_format_meter
+[  342s] 0.07s call     tests/tests_asyncio.py::test_break
+[  342s] 0.07s call     tests/tests_main.py::test_main_log
+[  342s] 0.07s call     tests/tests_tqdm.py::test_dynamic_min_iters
+[  342s] 0.06s call     tests/tests_asyncio.py::test_range
+[  342s] 0.06s call     tests/tests_tk.py::test_tk_import
+[  342s] 0.05s call     tests/tests_tqdm.py::test_smoothing
+[  342s] 0.04s setup    tests/tests_main.py::test_comppath
+[  342s] 0.04s call     tests/tests_asyncio.py::test_nested
+[  342s] 0.04s call     tests/tests_tqdm.py::test_ascii
+[  342s] 0.04s call     tests/tests_asyncio.py::test_generators
+[  342s] 0.04s call     tests/tests_rich.py::test_rich_import
+[  342s] 0.04s call     tests/tests_contrib.py::test_enumerate[tqdm_kwargs1]
+[  342s] 0.04s call     tests/tests_contrib.py::test_enumerate[tqdm_kwargs0]
+[  342s] 0.04s call     tests/tests_tqdm.py::test_bool
+[  342s] 0.04s call     tests/tests_tqdm.py::test_si_format
+[  342s] 0.04s call     tests/tests_tqdm.py::test_write
+[  342s] 0.04s call     tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_not_fail_with_logger_without_console_handler
+[  342s] 0.03s call     tests/tests_main.py::test_main_import
+[  342s] 0.03s call     tests/tests_tqdm.py::test_postfix
+[  342s] 0.03s call     tests/tests_keras.py::test_keras
+[  342s] 0.03s call     tests/tests_main.py::test_main_bytes
+[  342s] 0.03s call     tests/tests_tqdm.py::test_cmp
+[  342s] 0.03s call     tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_root_logger_by_default
+[  342s] 0.03s call     tests/tests_dask.py::test_dask
+[  342s] 0.03s call     tests/tests_asyncio.py::test_coroutines
+[  342s] 0.03s call     tests/tests_tqdm.py::test_all_defaults
+[  342s] 0.03s call     tests/tests_main.py::test_manpath
+[  342s] 0.02s call     tests/tests_tqdm.py::test_write_bytes
+[  342s] 0.02s call     tests/tests_tqdm.py::test_auto
+[  342s] 0.02s call     tests/tests_main.py::test_comppath
+[  342s] 0.02s setup    tests/tests_main.py::test_manpath
+[  342s] 0.02s setup    tests/tests_asyncio.py::test_break
+[  342s] 0.02s call     tests/tests_tqdm.py::test_unpause
+[  342s] 0.02s call     tests/tests_tqdm.py::test_initial
+[  342s] 0.02s call     tests/tests_tqdm.py::test_autodisable_disable
+[  342s] 0.02s call     tests/tests_tqdm.py::test_unit_scale
+[  342s] 0.02s call     tests/tests_tqdm.py::test_close
+[  342s] 0.02s setup    tests/tests_tqdm.py::test_all_defaults
+[  342s] 0.02s setup    tests/tests_asyncio.py::test_as_completed[0.1]
+[  342s] 0.02s call     tests/tests_itertools.py::test_product
+[  342s] 0.02s call     tests/tests_concurrent.py::test_chunksize_warning[iterables5-True]
+[  342s] 0.02s teardown tests/tests_tqdm.py::test_unit_scale
+[  342s] 0.02s call     tests/tests_tqdm.py::test_closed
+[  342s] 0.02s call     tests/tests_concurrent.py::test_chunksize_warning[iterables4-True]
+[  342s] 0.02s call     tests/tests_tqdm.py::test_smoothed_dynamic_min_iters
+[  342s] 0.02s setup    tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_remove_and_restore_console_handlers
+[  342s] 0.02s call     tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_handle_error_if_exception_was_thrown
+[  342s] 0.02s call     tests/tests_tqdm.py::test_smoothed_dynamic_min_iters_with_min_interval
+[  342s] 0.02s setup    tests/tests_tqdm.py::test_reset
+[  342s] 0.02s call     tests/tests_tqdm.py::test_postfix_direct
+[  342s] 0.02s call     tests/tests_tqdm.py::test_deprecated_gui
+[  342s] 0.02s call     tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_custom_logger
+[  342s] 0.02s call     tests/tests_tqdm.py::test_big_min_interval
+[  342s] 0.02s call     tests/tests_concurrent.py::test_chunksize_warning[iterables2-False]
+[  342s] 0.02s call     tests/tests_tqdm.py::test_iterate_over_csv_rows
+[  342s] 0.02s call     tests/tests_concurrent.py::test_chunksize_warning[iterables3-False]
+[  342s] 0.02s setup    tests/tests_tqdm.py::test_disabled_unpause
+[  342s] 0.02s call     tests/tests_tqdm.py::test_colour
+[  342s] 0.02s setup    tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[SystemExit]
+[  342s] 0.02s call     tests/tests_tqdm.py::test_file_output
+[  342s] 0.02s call     tests/tests_tqdm.py::test_set_description
+[  342s] 0.01s setup    tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[KeyboardInterrupt]
+[  342s] 0.01s call     tests/tests_concurrent.py::test_chunksize_warning[iterables1-False]
+[  342s] 0.01s call     tests/tests_tqdm.py::test_min_iters
+[  342s] 0.01s setup    tests/tests_asyncio.py::test_gather
+[  342s] 0.01s setup    tests/tests_main.py::test_main_log
+[  342s] 0.01s call     tests/tests_tqdm.py::test_reset
+[  342s] 0.01s call     tests/tests_tqdm.py::test_native_string_io_for_default_file
+[  342s] 0.01s call     tests/tests_tqdm.py::test_wrapattr
+[  342s] 0.01s call     tests/tests_tqdm.py::test_custom_format
+[  342s] 0.01s setup    tests/tests_asyncio.py::test_generators
+[  342s] 0.01s call     tests/tests_tqdm.py::test_nototal
+[  342s] 0.01s setup    tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_stream_handler_not_stdout_or_stderr
+[  342s] 0.01s call     tests/tests_tqdm.py::test_contains
+[  342s] 0.01s setup    tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stdout
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_thread_map
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_delay
+[  343s] 0.01s teardown tests/tests_main.py::test_exceptions
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_unicode_string_io_for_specified_file
+[  343s] 0.01s setup    tests/tests_contrib.py::test_enumerate[tqdm_kwargs0]
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_write_bytes
+[  343s] 0.01s call     tests/tests_tqdm.py::test_update
+[  343s] 0.01s teardown tests/tests_asyncio.py::test_coroutines
+[  343s] 0.01s setup    tests/tests_asyncio.py::test_nested
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_contains
+[  343s] 0.01s call     tests/tests_tqdm.py::test_file_redirection
+[  343s] 0.01s call     tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_use_root_logger_by_default_and_write_to_custom_tqdm
+[  343s] 0.01s call     tests/tests_tqdm.py::test_refresh
+[  343s] 0.01s call     tests/tests_tqdm.py::test_external_write
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_colour
+[  343s] 0.01s call     tests/tests_tqdm.py::test_disabled_repr
+[  343s] 0.01s teardown tests/tests_asyncio.py::test_generators
+[  343s] 0.01s call     tests/tests_tqdm.py::test_min_interval
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_unit
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_postfix
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_deprecated_gui
+[  343s] 0.01s call     tests/tests_tqdm.py::test_bar_format
+[  343s] 0.01s teardown tests/tests_dask.py::test_dask
+[  343s] 0.01s call     tests/tests_tqdm.py::test_leave_option
+[  343s] 0.01s setup    tests/tests_contrib.py::test_enumerate[tqdm_kwargs1]
+[  343s] 0.01s setup    tests/tests_asyncio.py::test_coroutines
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_file_output
+[  343s] 0.01s call     tests/tests_tqdm.py::test_reversed
+[  343s] 0.01s call     tests/tests_tqdm.py::test_clear
+[  343s] 0.01s teardown tests/tests_asyncio.py::test_nested
+[  343s] 0.01s call     tests/tests_tqdm.py::test_disabled_unpause
+[  343s] 0.01s setup    tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_handle_error_if_exception_was_thrown
+[  343s] 0.01s setup    tests/tests_main.py::test_exceptions
+[  343s] 0.01s call     tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_format_message
+[  343s] 0.01s setup    tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_tqdm_write
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_file_output
+[  343s] 0.01s call     tests/tests_tqdm.py::test_ansi_escape_codes
+[  343s] 0.01s teardown tests/tests_version.py::test_version
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_trange
+[  343s] 0.01s call     tests/tests_contrib.py::test_enumerate_numpy
+[  343s] 0.01s setup    tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_no_handlers
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_deprecated_nested
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_closed
+[  343s] 0.01s call     tests/tests_tqdm.py::test_len
+[  343s] 0.01s call     tests/tests_tqdm.py::test_float_progress
+[  343s] 0.01s teardown tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_add_and_remove_tqdm_handler
+[  343s] 0.01s setup    tests/tests_keras.py::test_keras
+[  343s] 0.01s call     tests/tests_tqdm.py::test_trange
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_chunksize_warning[iterables0-False]
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_format_interval
+[  343s] 0.01s setup    tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stderr
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_deprecation_exception
+[  343s] 0.01s setup    tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_without_stream_handler
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_leave_option
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_autodisable_enable
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_len
+[  343s] 0.01s call     tests/tests_tqdm.py::test_unit
+[  343s] 0.01s call     tests/tests_contrib.py::test_map[tqdm_kwargs1]
+[  343s] 0.01s call     tests/tests_contrib.py::test_zip[tqdm_kwargs0]
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_ema
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_chunksize_warning[iterables5-True]
+[  343s] 0.01s teardown tests/tests_asyncio.py::test_gather
+[  343s] 0.01s call     tests/tests_tqdm.py::test_bar_formatspec
+[  343s] 0.01s setup    tests/tests_main.py::test_main_bytes
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_wrapattr
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_unit
+[  343s] 0.01s call     tests/tests_tqdm.py::test_autodisable_enable
+[  343s] 0.01s call     tests/tests_contrib.py::test_zip[tqdm_kwargs1]
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_disabled_refresh
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_reversed
+[  343s] 0.01s setup    tests/tests_main.py::test_main
+[  343s] 0.01s call     tests/tests_tqdm.py::test_repr
+[  343s] 0.01s call     tests/tests_contrib.py::test_map[tqdm_kwargs0]
+[  343s] 0.01s call     tests/tests_tqdm.py::test_unicode_string_io_for_specified_file
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_custom_format
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_chunksize_warning[iterables2-False]
+[  343s] 0.01s teardown tests/tests_asyncio.py::test_range
+[  343s] 0.01s setup    tests/tests_dask.py::test_dask
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_chunksize_warning[iterables3-False]
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_len
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_bar_formatspec
+[  343s] 0.01s setup    tests/tests_contrib.py::test_zip[tqdm_kwargs0]
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_autodisable_disable
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_eta
+[  343s] 0.01s teardown tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_root_logger_by_default
+[  343s] 0.01s setup    tests/tests_itertools.py::test_product
+[  343s] 0.01s setup    tests/tests_contrib.py::test_enumerate_numpy
+[  343s] 0.01s call     tests/tests_tqdm.py::test_delay
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_chunksize_warning[iterables4-True]
+[  343s] 0.01s setup    tests/tests_asyncio.py::test_range
+[  343s] 0.01s teardown tests/tests_asyncio.py::test_break
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_close
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_disabled_repr
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_leave_option
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_min_interval
+[  343s] 0.01s call     tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[KeyboardInterrupt]
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_chunksize_warning[iterables1-False]
+[  343s] 0.01s teardown tests/tests_tk.py::test_tk_import
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_disabled_reset
+[  343s] 0.01s teardown tests/tests_asyncio.py::test_as_completed[0.1]
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_trange
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_reversed
+[  343s] 0.01s setup    tests/tests_contrib.py::test_map[tqdm_kwargs1]
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_deprecation_exception
+[  343s] 0.01s call     tests/tests_tqdm.py::test_infinite_total
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_cmp
+[  343s] 0.01s teardown tests/tests_rich.py::test_rich_import
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_native_string_io_for_default_file
+[  343s] 0.01s call     tests/tests_gui.py::test_gui_import
+[  343s] 0.01s call     tests/tests_tqdm.py::test_disabled_reset
+[  343s] 0.01s call     tests/tests_version.py::test_version
+[  343s] 0.01s teardown tests/tests_gui.py::test_gui_import
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_close
+[  343s] 0.01s setup    tests/tests_contrib.py::test_zip[tqdm_kwargs1]
+[  343s] 0.01s setup    tests/tests_contrib.py::test_map[tqdm_kwargs0]
+[  343s] 0.01s call     tests/tests_tqdm.py::test_format_interval
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_disabled_refresh
+[  343s] 0.01s teardown tests/tests_keras.py::test_keras
+[  343s] 0.01s teardown tests/tests_tqdm.py::test_bool
+[  343s] 0.01s teardown tests/tests_main.py::test_main_log
+[  343s] 0.01s setup    tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_use_root_logger_by_default_and_write_to_custom_tqdm
+[  343s] 0.01s setup    tests/tests_tqdm.py::test_clear_disabled
+[  343s] 0.01s setup    tests/tests_concurrent.py::test_process_map
+[  343s] 0.01s call     tests/tests_tqdm.py::test_disable
+[  343s] 0.01s call     tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[SystemExit]
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_set_description
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_infinite_total
+[  343s] 0.00s call     tests/tests_notebook.py::test_notebook_disabled_description
+[  343s] 0.00s teardown tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_remove_and_restore_console_handlers
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_ascii
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_disabled_repr
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_ema
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_si_format
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_bool
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_repr
+[  343s] 0.00s teardown tests/tests_notebook.py::test_notebook_disabled_description
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_smoothing
+[  343s] 0.00s teardown tests/tests_main.py::test_main_bytes
+[  343s] 0.00s call     tests/tests_tqdm.py::test_format_num
+[  343s] 0.00s setup    tests/tests_rich.py::test_rich_import
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_max_interval
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_unit_scale
+[  343s] 0.00s setup    tests/tests_tk.py::test_tk_import
+[  343s] 0.00s teardown tests/tests_main.py::test_main
+[  343s] 0.00s setup    tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_not_remove_stream_handlers_not_for_stdout_or_stderr
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_ansi_escape_codes
+[  343s] 0.00s teardown tests/tests_concurrent.py::test_chunksize_warning[iterables5-True]
+[  343s] 0.00s teardown tests/tests_contrib.py::test_enumerate[tqdm_kwargs0]
+[  343s] 0.00s setup    tests/tests_notebook.py::test_notebook_disabled_description
+[  343s] 0.00s teardown tests/tests_contrib.py::test_enumerate[tqdm_kwargs1]
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_inherit_console_logger_formatter
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_format_num
+[  343s] 0.00s teardown tests/tests_main.py::test_comppath
+[  343s] 0.00s setup    tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_root_logger_by_default
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_postfix_direct
+[  343s] 0.00s setup    tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_format_message
+[  343s] 0.00s setup    tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_add_and_remove_tqdm_handler
+[  343s] 0.00s teardown tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stderr
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_auto
+[  343s] 0.00s setup    tests/tests_version.py::test_version
+[  343s] 0.00s setup    tests/tests_main.py::test_pipes
+[  343s] 0.00s call     tests/tests_tqdm.py::test_ema
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_deprecated_gui
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_remove_and_restore_console_handlers
+[  343s] 0.00s setup    tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_inherit_console_logger_formatter
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_contains
+[  343s] 0.00s setup    tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_custom_logger
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_eta
+[  343s] 0.00s setup    tests/tests_main.py::test_main_import
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_disabled_reset
+[  343s] 0.00s setup    tests/tests_gui.py::test_gui_import
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_unpause
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_screen_shape
+[  343s] 0.00s teardown tests/tests_contrib.py::test_map[tqdm_kwargs1]
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_disabled_unpause
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_threading
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_add_and_remove_tqdm_handler
+[  343s] 0.00s teardown tests/tests_concurrent.py::test_chunksize_warning[iterables0-False]
+[  343s] 0.00s teardown tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_without_stream_handler
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_tqdm_write
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_max_interval
+[  343s] 0.00s call     tests/tests_tqdm.py::test_disabled_refresh
+[  343s] 0.00s teardown tests/tests_main.py::test_manpath
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_iterate_over_csv_rows
+[  343s] 0.00s call     tests/tests_tqdm.py::test_deprecation_exception
+[  343s] 0.00s call     tests/tests_tqdm.py::test_clear_disabled
+[  343s] 0.00s teardown tests/tests_itertools.py::test_product
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_closed
+[  343s] 0.00s teardown tests/tests_concurrent.py::test_chunksize_warning[iterables4-True]
+[  343s] 0.00s setup    tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_not_fail_with_logger_without_console_handler
+[  343s] 0.00s teardown tests/tests_concurrent.py::test_chunksize_warning[iterables1-False]
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_float_progress
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_format_meter
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_without_stream_handler
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_update
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_format_interval
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_stream_handler_not_stdout_or_stderr
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_clear
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_bar_format
+[  343s] 0.00s teardown tests/tests_concurrent.py::test_chunksize_warning[iterables3-False]
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_file_redirection
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stderr
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_nototal
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_min_iters
+[  343s] 0.00s teardown tests/tests_tqdm.py::test_smoothing
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_write
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_no_handlers
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_disable
+[  343s] 0.00s teardown tests/tests_concurrent.py::test_chunksize_warning[iterables2-False]
+[  343s] 0.00s call     tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_not_remove_stream_handlers_not_for_stdout_or_stderr
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_external_write
+[  343s] 0.00s setup    tests/tests_tqdm.py::test_unicode_string_io_for_specified_file
+[  343s] 0.00s call     tests/tests_tqdm.py::test_threading
+[  343s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[KeyboardInterrupt]
+[  344s] 0.00s call     tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stdout
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_dynamic_min_iters
+[  344s] 0.00s call     tests/tests_tqdm.py::test_deprecated_nested
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_position
+[  344s] 0.00s teardown tests/tests_concurrent.py::test_process_map
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_tqdm_write
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_big_min_interval
+[  344s] 0.00s teardown tests/tests_concurrent.py::test_thread_map
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_refresh
+[  344s] 0.00s teardown tests/tests_contrib.py::test_zip[tqdm_kwargs0]
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_custom_format
+[  344s] 0.00s teardown tests/tests_contrib.py::test_enumerate_numpy
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_not_swallow_certain_exceptions[SystemExit]
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_smoothed_dynamic_min_iters_with_min_interval
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_not_fail_with_logger_without_console_handler
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_smoothed_dynamic_min_iters
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_initial
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_deprecated_nested
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_use_root_logger_by_default_and_write_to_custom_tqdm
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_rlock_creation
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_format_meter
+[  344s] 0.00s teardown tests/tests_contrib.py::test_zip[tqdm_kwargs1]
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_unpause
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_autodisable_disable
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_update
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_postfix
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_no_handlers
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_add_and_remove_handler_from_custom_logger
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_none_for_stream_handler_not_stdout_or_stderr
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmWithLoggingRedirect::test_should_format_message
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_rlock_creation
+[  344s] 0.00s teardown tests/tests_main.py::test_pipes
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_inherit_console_logger_formatter
+[  344s] 0.00s setup    tests/tests_tqdm.py::test_initial
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestTqdmLoggingHandler::test_should_call_handle_error_if_exception_was_thrown
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_format_num
+[  344s] 0.00s teardown tests/tests_contrib.py::test_map[tqdm_kwargs0]
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_nototal
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_repr
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_postfix_direct
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_auto
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_native_string_io_for_default_file
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_bar_formatspec
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_disable
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_ansi_escape_codes
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_refresh
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_position
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestGetFirstFoundConsoleLoggingHandler::test_should_return_stream_handler_if_stream_is_stdout
+[  344s] 0.00s teardown tests/tests_main.py::test_main_import
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_all_defaults
+[  344s] 0.00s teardown tests/tests_contrib_logging.py::TestRedirectLoggingToTqdm::test_should_not_remove_stream_handlers_not_for_stdout_or_stderr
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_file_redirection
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_colour
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_ascii
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_iterate_over_csv_rows
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_threading
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_smoothed_dynamic_min_iters_with_min_interval
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_autodisable_enable
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_set_description
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_min_interval
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_external_write
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_float_progress
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_write
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_reset
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_write_bytes
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_clear_disabled
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_cmp
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_si_format
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_min_iters
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_bar_format
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_wrapattr
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_dynamic_min_iters
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_big_min_interval
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_smoothed_dynamic_min_iters
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_screen_shape
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_infinite_total
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_delay
+[  344s] 0.00s teardown tests/tests_tqdm.py::test_clear
+[  344s] =========================== short test summary info ============================
+[  344s] SKIPPED [1] tests/tests_pandas.py:7: could not import 'numpy.random': No module named 'numpy'
+[  344s] SKIPPED [1] tests/tests_contrib.py:38: could not import 'numpy': No module named 'numpy'
+[  344s] SKIPPED [1] tests/tests_dask.py:12: could not import 'tqdm.dask': No module named 'dask'
+[  344s] SKIPPED [1] tests/tests_keras.py:11: could not import 'tqdm.keras': No module named 'keras'
+[  344s] SKIPPED [1] tests/tests_rich.py:10: could not import 'tqdm.rich': No module named 'rich'
+[  344s] SKIPPED [1] tests/tests_tk.py:7: could not import 'tqdm.tk': No module named 'Tkinter'
+[  344s] SKIPPED [1] tests/tests_tqdm.py:1571: could not import 'numpy': No module named 'numpy'
+[  344s] ================ 121 passed, 7 skipped, 12 deselected in 33.02s ================
+[90354s] qemu-kvm: terminating on signal 15 from pid 24356 (fuser)
+[90354s] ### VM INTERACTION END ###
+[90354s] No buildstatus set, either the base system is broken (kernel/initrd/udev/glibc/bash/perl)
+[90354s] or the build host has a kernel or hardware problem...
+
+
+Job seems to be stuck here, killed. (after 90000 seconds of inactivity)

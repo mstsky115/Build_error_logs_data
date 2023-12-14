@@ -1,0 +1,1021 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] cloud134 started "build reproc.spec" at Mon Mar  6 03:23:26 UTC 2023.
+[    0s] 
+[    0s] Building reproc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'ca8f83c5f6f132435dfd4c5d12ec9ef6'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/reproc.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/reproc.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/reproc.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [9b089d51f59a15bc04092d303dc0d995]
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    4s]   breaking dependency python310-base -> libpython3_10-1_0
+[    4s] done
+[    4s] Detected virtio-serial support
+[   18s] booting kvm...
+[   18s] ### VM INTERACTION START ###
+[   18s] Using virtio-serial support
+[   18s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 12000 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 12
+[   23s] ### VM INTERACTION END ###
+[   23s] 2nd stage started in virtual machine
+[   23s] machine type: riscv64
+[   24s] Linux version: 6.2.1-1-default #1 SMP PREEMPT_DYNAMIC Mon Feb 27 11:39:51 UTC 2023 (69e0e95)
+[   24s] Increasing log level from now on...
+[   24s] [    5.446644][  T457] sysrq: Changing Loglevel
+[   24s] [    5.446833][  T457] sysrq: Loglevel set to 4
+[   24s] Enable sysrq operations
+[   24s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   24s] no label, UUID=d49fec27-b498-40f7-82a2-43be19caacb1
+[   24s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   24s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   24s] swapon /dev/vdb
+[   24s] WARNING: udev not running, creating extra device nodes
+[   25s] logging output to //.build.log...
+[   25s] processing recipe /.build-srcdir/reproc.spec ...
+[   25s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/reproc.spec build ...
+[   26s] initializing rpm db...
+[   26s] querying package ids...
+[   50s] [1/143] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   50s] [2/143] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   50s] [3/143] preinstalled attr-2.5.1-1.1
+[   50s] [4/143] preinstalled bash-5.2.15-8.1
+[   50s] [5/143] preinstalled bash-sh-5.2.15-8.1
+[   50s] [6/143] preinstalled binutils-2.40-2.1
+[   50s] [7/143] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   50s] [8/143] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   50s] [9/143] preinstalled build-mkbaselibs-20230228-1.1
+[   50s] [10/143] preinstalled bzip2-1.0.8-4.1
+[   50s] [11/143] preinstalled chkstat-1599_20230217-1.1
+[   50s] [12/143] preinstalled compat-usrmerge-build-84.87-5.1
+[   50s] [13/143] preinstalled compat-usrmerge-tools-84.87-5.1
+[   50s] [14/143] preinstalled coreutils-9.1-5.1
+[   50s] [15/143] preinstalled cpio-2.13-5.1
+[   50s] [16/143] preinstalled cpp-12-2.1
+[   50s] [17/143] preinstalled cpp12-12.2.1+git749-4.1
+[   50s] [18/143] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   50s] [19/143] preinstalled debugedit-5.0-5.1
+[   50s] [20/143] preinstalled diffutils-3.9-1.1
+[   50s] [21/143] preinstalled dwz-0.15-2.1
+[   50s] [22/143] preinstalled elfutils-0.189-1.1
+[   50s] [23/143] preinstalled file-5.44-1.2
+[   50s] [24/143] preinstalled file-magic-5.44-1.2
+[   50s] [25/143] preinstalled filesystem-84.87-12.1
+[   50s] [26/143] preinstalled fillup-1.42-279.1
+[   50s] [27/143] preinstalled findutils-4.9.0-2.1
+[   50s] [28/143] preinstalled gawk-5.2.1-2.1
+[   50s] [29/143] preinstalled gcc-12-2.1
+[   50s] [30/143] preinstalled gcc-PIE-12-2.1
+[   50s] [31/143] preinstalled gcc12-12.2.1+git749-4.1
+[   50s] [32/143] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   50s] [33/143] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   50s] [34/143] preinstalled gettext-tools-mini-0.21.1-1.1
+[   50s] [35/143] preinstalled glibc-2.37-1.1
+[   50s] [36/143] preinstalled glibc-devel-2.37-1.1
+[   50s] [37/143] preinstalled glibc-locale-base-2.37-1.1
+[   50s] [38/143] preinstalled grep-3.8-3.1
+[   50s] [39/143] preinstalled gzip-1.12-3.1
+[   50s] [40/143] preinstalled kernel-obs-build-6.2.1-1.1
+[   50s] [41/143] preinstalled libacl1-2.3.1-2.1
+[   50s] [42/143] preinstalled libasan8-13.0.1+git5428-6.1
+[   50s] [43/143] preinstalled libasm1-0.189-1.1
+[   50s] [44/143] preinstalled libatomic1-13.0.1+git5428-6.1
+[   50s] [45/143] preinstalled libattr1-2.5.1-1.1
+[   50s] [46/143] preinstalled libaudit1-3.0.9-1.1
+[   50s] [47/143] preinstalled libblkid1-2.38.1-8.1
+[   50s] [48/143] preinstalled libbz2-1-1.0.8-4.1
+[   50s] [49/143] preinstalled libcap-ng0-0.8.3-1.1
+[   50s] [50/143] preinstalled libcap2-2.67-1.1
+[   50s] [51/143] preinstalled libcrypt1-4.4.33-1.1
+[   50s] [52/143] preinstalled libctf-nobfd0-2.40-2.1
+[   50s] [53/143] preinstalled libctf0-2.40-2.1
+[   50s] [54/143] preinstalled libdb-4_8-4.8.30-39.1
+[   50s] [55/143] preinstalled libdw1-0.189-1.1
+[   50s] [56/143] preinstalled libeconf0-0.5.1-1.1
+[   50s] [57/143] preinstalled libelf1-0.189-1.1
+[   50s] [58/143] cumulate libexpat1-2.5.0-2.1
+[   50s] [59/143] preinstalled libfdisk1-2.38.1-8.1
+[   50s] [60/143] cumulate libffi8-3.4.4-1.1
+[   50s] [61/143] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   50s] [62/143] preinstalled libgcrypt20-1.10.1-1.1
+[   50s] [63/143] preinstalled libgdbm6-1.23-1.1
+[   50s] [64/143] preinstalled libgdbm_compat4-1.23-1.1
+[   51s] [65/143] preinstalled libgmp10-6.2.1-4.1
+[   51s] [66/143] preinstalled libgomp1-13.0.1+git5428-6.1
+[   51s] [67/143] preinstalled libgpg-error0-1.46-1.1
+[   51s] [68/143] preinstalled libisl23-0.25-1.1
+[   51s] [69/143] preinstalled liblua5_4-5-5.4.4-8.1
+[   51s] [70/143] preinstalled liblzma5-5.4.1-1.1
+[   51s] [71/143] preinstalled libmagic1-5.44-1.2
+[   51s] [72/143] preinstalled libmount1-2.38.1-8.1
+[   51s] [73/143] preinstalled libmpc3-1.3.1-1.2
+[   51s] [74/143] cumulate libmpdec3-2.5.1-2.1
+[   51s] [75/143] preinstalled libmpfr6-4.2.0-1.1
+[   51s] [76/143] preinstalled libncurses6-6.4.20230218-6.1
+[   51s] [77/143] preinstalled libpcre2-8-0-10.42-3.2
+[   51s] [78/143] preinstalled libpkgconf3-1.8.0-2.1
+[   51s] [79/143] preinstalled libpopt0-1.19-1.1
+[   51s] [80/143] preinstalled libreadline8-8.2-2.1
+[   51s] [81/143] cumulate librhash0-1.4.3-1.1
+[   51s] [82/143] preinstalled librpmbuild9-4.18.0-3.2
+[   51s] [83/143] preinstalled libseccomp2-2.5.4-2.1
+[   51s] [84/143] preinstalled libselinux1-3.4-2.1
+[   51s] [85/143] preinstalled libsemanage-conf-3.4-1.1
+[   51s] [86/143] preinstalled libsemanage2-3.4-1.1
+[   51s] [87/143] preinstalled libsepol2-3.4-1.1
+[   51s] [88/143] preinstalled libsmartcols1-2.38.1-8.1
+[   51s] [89/143] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   51s] [90/143] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   51s] [91/143] preinstalled libsubid4-4.13-4.1
+[   51s] [92/143] preinstalled libubsan1-13.0.1+git5428-6.1
+[   51s] [93/143] preinstalled libutempter0-1.2.0-3.2
+[   51s] [94/143] preinstalled libuuid1-2.38.1-8.1
+[   51s] [95/143] cumulate libuv1-1.44.2-3.1
+[   51s] [96/143] preinstalled libxcrypt-devel-4.4.33-1.1
+[   51s] [97/143] preinstalled libz1-1.2.13-3.1
+[   51s] [98/143] preinstalled libzstd1-1.5.4-1.1
+[   51s] [99/143] preinstalled linux-glibc-devel-6.2-1.1
+[   51s] [100/143] preinstalled login_defs-4.13-4.1
+[   51s] [101/143] preinstalled lua54-5.4.4-8.1
+[   51s] [102/143] preinstalled make-4.4.1-1.1
+[   51s] [103/143] preinstalled ncurses-utils-6.4.20230218-6.1
+[   51s] [104/143] preinstalled pam-1.5.2-12.1
+[   51s] [105/143] preinstalled patch-2.7.6-6.1
+[   51s] [106/143] preinstalled perl-5.36.0-4.1
+[   51s] [107/143] preinstalled perl-base-5.36.0-4.1
+[   51s] [108/143] preinstalled permissions-1599_20230217-1.1
+[   51s] [109/143] preinstalled permissions-config-1599_20230217-1.1
+[   51s] [110/143] preinstalled pkgconf-1.8.0-2.1
+[   51s] [111/143] preinstalled pkgconf-m4-1.8.0-2.1
+[   51s] [112/143] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   51s] [113/143] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   51s] [114/143] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   51s] [115/143] cumulate python-rpm-macros-20230128.e704796-1.2
+[   51s] [116/143] preinstalled qemu-linux-user-7.1.0-52.1
+[   51s] [117/143] preinstalled rpm-4.18.0-3.2
+[   51s] [118/143] preinstalled rpm-build-4.18.0-3.2
+[   51s] [119/143] preinstalled rpm-build-perl-4.18.0-3.2
+[   51s] [120/143] preinstalled rpm-config-SUSE-20220926-1.1
+[   51s] [121/143] preinstalled rpmlint-mini-2.4.0+git20230227.db0110c-9.11
+[   51s] [122/143] preinstalled rpmlint-strict-2.4.0+git20230227.db0110c-1.1
+[   51s] [123/143] preinstalled sed-4.9-2.1
+[   51s] [124/143] preinstalled shadow-4.13-4.1
+[   51s] [125/143] preinstalled system-group-hardware-20170617-24.1
+[   51s] [126/143] preinstalled system-user-root-20190513-2.1
+[   51s] [127/143] preinstalled systemd-rpm-macros-19-1.1
+[   51s] [128/143] preinstalled sysuser-shadow-3.1-5.1
+[   51s] [129/143] preinstalled tar-1.34-10.1
+[   51s] [130/143] preinstalled terminfo-base-6.4.20230218-6.1
+[   51s] [131/143] preinstalled update-alternatives-1.21.8-1.1
+[   51s] [132/143] preinstalled util-linux-2.38.1-8.1
+[   51s] [133/143] preinstalled which-2.21-5.1
+[   51s] [134/143] preinstalled xz-5.4.1-1.1
+[   51s] [135/143] cumulate gcc12-c++-12.2.1+git749-4.1
+[   51s] [136/143] cumulate libopenssl3-3.0.8-1.1
+[   51s] [137/143] cumulate gcc-c++-12-2.1
+[   51s] [138/143] cumulate python310-base-3.10.10-1.2
+[   51s] [139/143] cumulate libpython3_10-1_0-3.10.10-1.2
+[   51s] [140/143] cumulate python310-packaging-23.0-1.1
+[   51s] [141/143] cumulate cmake-mini-3.25.2-1.2
+[   51s] [142/143] cumulate cmake-3.25.2-1.1
+[   51s] [143/143] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   51s] now installing cumulated packages
+[   51s] Preparing...                          ########################################
+[   51s] Updating / installing...
+[   51s] libexpat1-2.5.0-2.1                   ########################################
+[   51s] python-rpm-macros-20230128.e704796-1.2########################################
+[   52s] libuv1-1.44.2-3.1                     ########################################
+[   67s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   72s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[   72s] librhash0-1.4.3-1.1                   ########################################
+[   72s] libmpdec3-2.5.1-2.1                   ########################################
+[   72s] libffi8-3.4.4-1.1                     ########################################
+[   72s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   73s] libopenssl3-3.0.8-1.1                 ########################################
+[   74s] libpython3_10-1_0-3.10.10-1.2         ########################################
+[   80s] python310-base-3.10.10-1.2            ########################################
+[   80s] python310-packaging-23.0-1.1          ########################################
+[   89s] cmake-mini-3.25.2-1.2                 ########################################
+[   89s] cmake-3.25.2-1.1                      ########################################
+[   89s] python-rpm-packaging-20210526+a18ca48-########################################
+[   89s] gcc-c++-12-2.1                        ########################################
+[   90s] now finalizing build dir...
+[   91s] ... running 01-add_abuild_user_to_trusted_group
+[   91s] ... running 02-set_timezone_to_utc
+[   91s] ... running 03-set-permissions-secure
+[   91s] ... running 11-hack_uname_version_to_kernel_version
+[  101s] -----------------------------------------------------------------
+[  101s] I have the following modifications for reproc.spec:
+[  101s] 23c23
+[  101s] < Release:        0
+[  101s] ---
+[  101s] > Release:        1.1
+[  110s] build target is riscv64-suse-linux
+[  110s] -----------------------------------------------------------------
+[  110s] ----- building reproc.spec (user abuild)
+[  110s] -----------------------------------------------------------------
+[  110s] -----------------------------------------------------------------
+[  114s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/ca8f83c5f6f132435dfd4c5d12ec9ef6-reproc' /home/abuild/rpmbuild/SOURCES/reproc.spec
+[  115s] Building target platforms: riscv64-suse-linux
+[  115s] Building for target riscv64-suse-linux
+[  115s] setting SOURCE_DATE_EPOCH=1677196800
+[  115s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.CE9nGu
+[  115s] + umask 022
+[  115s] + cd /home/abuild/rpmbuild/BUILD
+[  115s] + cd /home/abuild/rpmbuild/BUILD
+[  115s] + rm -rf reproc-14.2.4
+[  115s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/reproc-14.2.4.tar.gz
+[  115s] + STATUS=0
+[  115s] + '[' 0 -ne 0 ']'
+[  115s] + cd reproc-14.2.4
+[  115s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  115s] + RPM_EC=0
+[  115s] ++ jobs -p
+[  115s] + exit 0
+[  115s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.BArTon
+[  116s] + umask 022
+[  116s] + cd /home/abuild/rpmbuild/BUILD
+[  116s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64
+[  116s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64
+[  116s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  116s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64
+[  116s] + cd reproc-14.2.4
+[  116s] + ref=/usr/lib/rpm
+[  116s] + mints=0
+[  116s] + case $(uname -m) in
+[  116s] ++ uname -m
+[  116s] + mints=20160911
+[  116s] + for s in guess sub
+[  116s] ++ find -maxdepth 8 -name config.guess
+[  116s] + for s in guess sub
+[  116s] ++ find -maxdepth 8 -name config.sub
+[  116s] + find . -type f -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
+[  116s] + mkdir -p build
+[  116s] + cd build
+[  116s] + /usr/bin/cmake /home/abuild/rpmbuild/BUILD/reproc-14.2.4/. '-GUnix Makefiles' -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_LIBEXECDIR=/usr/libexec -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_CXX_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_Fortran_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_EXE_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS=-flto=auto -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/reproc -DREPROC++:BOOL=ON -DREPROC_TEST=ON
+[  122s] -- The C compiler identification is GNU 12.2.1
+[  122s] -- Detecting C compiler ABI info
+[  127s] -- Detecting C compiler ABI info - done
+[  128s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  128s] -- Detecting C compile features
+[  128s] -- Detecting C compile features - done
+[  128s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[  133s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[  133s] -- Found Threads: TRUE  
+[  137s] -- The CXX compiler identification is GNU 12.2.1
+[  138s] -- Detecting CXX compiler ABI info
+[  143s] -- Detecting CXX compiler ABI info - done
+[  143s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  143s] -- Detecting CXX compile features
+[  143s] -- Detecting CXX compile features - done
+[  143s] -- Configuring done
+[  144s] -- Generating done
+[  144s] CMake Warning:
+[  144s]   Manually-specified variables were not used by the project:
+[  144s] 
+[  144s]     BUILD_STATIC_LIBS
+[  144s]     CMAKE_Fortran_FLAGS
+[  144s]     CMAKE_INSTALL_DO_STRIP
+[  144s]     CMAKE_MODULES_INSTALL_DIR
+[  144s]     INCLUDE_INSTALL_DIR
+[  144s]     LIB_INSTALL_DIR
+[  144s]     LIB_SUFFIX
+[  144s]     SHARE_INSTALL_PREFIX
+[  144s]     SYSCONF_INSTALL_DIR
+[  144s] 
+[  144s] 
+[  144s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build
+[  144s] + /usr/bin/make -O VERBOSE=1 -j12
+[  145s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/reproc-14.2.4 -B/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build --check-build-system CMakeFiles/Makefile.cmake 0
+[  145s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/CMakeFiles /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build//CMakeFiles/progress.marks
+[  145s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc.dir/build.make reproc/CMakeFiles/reproc.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-argv.dir/build.make reproc/CMakeFiles/reproc-resource-argv.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-deadline.dir/build.make reproc/CMakeFiles/reproc-resource-deadline.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-env.dir/build.make reproc/CMakeFiles/reproc-resource-env.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-io.dir/build.make reproc/CMakeFiles/reproc-resource-io.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-overflow.dir/build.make reproc/CMakeFiles/reproc-resource-overflow.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-path.dir/build.make reproc/CMakeFiles/reproc-resource-path.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-stop.dir/build.make reproc/CMakeFiles/reproc-resource-stop.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-working-directory.dir/build.make reproc/CMakeFiles/reproc-resource-working-directory.dir/depend
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-pid.dir/build.make reproc/CMakeFiles/reproc-resource-pid.dir/depend
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-pid.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-pid.dir/build.make reproc/CMakeFiles/reproc-resource-pid.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-stop.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-io.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-stop.dir/build.make reproc/CMakeFiles/reproc-resource-stop.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-env.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-env.dir/build.make reproc/CMakeFiles/reproc-resource-env.dir/build
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-io.dir/build.make reproc/CMakeFiles/reproc-resource-io.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-deadline.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-deadline.dir/build.make reproc/CMakeFiles/reproc-resource-deadline.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-overflow.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-overflow.dir/build.make reproc/CMakeFiles/reproc-resource-overflow.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-argv.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-argv.dir/build.make reproc/CMakeFiles/reproc-resource-argv.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc.dir/build.make reproc/CMakeFiles/reproc.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-working-directory.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-working-directory.dir/build.make reproc/CMakeFiles/reproc-resource-working-directory.dir/build
+[  145s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-path.dir/DependInfo.cmake
+[  145s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  145s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-path.dir/build.make reproc/CMakeFiles/reproc-resource-path.dir/build
+[  147s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  147s] [  7%] Building C object reproc/CMakeFiles/reproc-resource-deadline.dir/resources/deadline.c.o
+[  147s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-deadline.dir/resources/deadline.c.o -MF CMakeFiles/reproc-resource-deadline.dir/resources/deadline.c.o.d -o CMakeFiles/reproc-resource-deadline.dir/resources/deadline.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/deadline.c
+[  147s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [  9%] Building C object reproc/CMakeFiles/reproc.dir/src/clock.posix.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/clock.posix.c.o -MF CMakeFiles/reproc.dir/src/clock.posix.c.o.d -o CMakeFiles/reproc.dir/src/clock.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/clock.posix.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [  1%] Building C object reproc/CMakeFiles/reproc-resource-stop.dir/resources/stop.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-stop.dir/resources/stop.c.o -MF CMakeFiles/reproc-resource-stop.dir/resources/stop.c.o.d -o CMakeFiles/reproc-resource-stop.dir/resources/stop.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/stop.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [ 20%] Building C object reproc/CMakeFiles/reproc-resource-env.dir/resources/env.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-env.dir/resources/env.c.o -MF CMakeFiles/reproc-resource-env.dir/resources/env.c.o.d -o CMakeFiles/reproc-resource-env.dir/resources/env.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/env.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [  3%] Building C object reproc/CMakeFiles/reproc-resource-io.dir/resources/io.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-io.dir/resources/io.c.o -MF CMakeFiles/reproc-resource-io.dir/resources/io.c.o.d -o CMakeFiles/reproc-resource-io.dir/resources/io.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/io.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [  7%] Building C object reproc/CMakeFiles/reproc-resource-pid.dir/resources/pid.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-pid.dir/resources/pid.c.o -MF CMakeFiles/reproc-resource-pid.dir/resources/pid.c.o.d -o CMakeFiles/reproc-resource-pid.dir/resources/pid.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/pid.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [ 18%] Building C object reproc/CMakeFiles/reproc-resource-path.dir/resources/path.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-path.dir/resources/path.c.o -MF CMakeFiles/reproc-resource-path.dir/resources/path.c.o.d -o CMakeFiles/reproc-resource-path.dir/resources/path.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/path.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [ 16%] Building C object reproc/CMakeFiles/reproc-resource-argv.dir/resources/argv.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-argv.dir/resources/argv.c.o -MF CMakeFiles/reproc-resource-argv.dir/resources/argv.c.o.d -o CMakeFiles/reproc-resource-argv.dir/resources/argv.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/argv.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [ 21%] Building C object reproc/CMakeFiles/reproc-resource-working-directory.dir/resources/working-directory.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-working-directory.dir/resources/working-directory.c.o -MF CMakeFiles/reproc-resource-working-directory.dir/resources/working-directory.c.o.d -o CMakeFiles/reproc-resource-working-directory.dir/resources/working-directory.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/working-directory.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [ 14%] Building C object reproc/CMakeFiles/reproc.dir/src/error.posix.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/error.posix.c.o -MF CMakeFiles/reproc.dir/src/error.posix.c.o.d -o CMakeFiles/reproc.dir/src/error.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/error.posix.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  148s] [ 10%] Building C object reproc/CMakeFiles/reproc-resource-overflow.dir/resources/overflow.c.o
+[  148s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc   -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-resource-overflow.dir/resources/overflow.c.o -MF CMakeFiles/reproc-resource-overflow.dir/resources/overflow.c.o.d -o CMakeFiles/reproc-resource-overflow.dir/resources/overflow.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/resources/overflow.c
+[  148s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  149s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  149s] [ 14%] Building C object reproc/CMakeFiles/reproc.dir/src/drain.c.o
+[  149s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/drain.c.o -MF CMakeFiles/reproc.dir/src/drain.c.o.d -o CMakeFiles/reproc.dir/src/drain.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/drain.c
+[  149s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  150s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  150s] [ 25%] Building C object reproc/CMakeFiles/reproc.dir/src/handle.posix.c.o
+[  150s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/handle.posix.c.o -MF CMakeFiles/reproc.dir/src/handle.posix.c.o.d -o CMakeFiles/reproc.dir/src/handle.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/handle.posix.c
+[  150s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  151s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  151s] [ 41%] Building C object reproc/CMakeFiles/reproc.dir/src/init.posix.c.o
+[  151s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/init.posix.c.o -MF CMakeFiles/reproc.dir/src/init.posix.c.o.d -o CMakeFiles/reproc.dir/src/init.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/init.posix.c
+[  151s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  152s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  152s] [ 43%] Building C object reproc/CMakeFiles/reproc.dir/src/options.c.o
+[  152s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/options.c.o -MF CMakeFiles/reproc.dir/src/options.c.o.d -o CMakeFiles/reproc.dir/src/options.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/options.c
+[  152s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  152s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  152s] [ 23%] Linking C executable resources/deadline
+[  152s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-deadline.dir/link.txt --verbose=1
+[  152s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-deadline.dir/resources/deadline.c.o" -o resources/deadline 
+[  152s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] [ 49%] Built target reproc-resource-deadline
+[  153s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] [ 34%] Linking C executable resources/pid
+[  153s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-pid.dir/link.txt --verbose=1
+[  153s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-pid.dir/resources/pid.c.o" -o resources/pid 
+[  153s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] [ 30%] Linking C executable resources/stop
+[  153s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-stop.dir/link.txt --verbose=1
+[  153s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-stop.dir/resources/stop.c.o" -o resources/stop 
+[  153s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  153s] [ 29%] Linking C executable resources/env
+[  153s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-env.dir/link.txt --verbose=1
+[  153s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-env.dir/resources/env.c.o" -o resources/env 
+[  153s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 50%] Built target reproc-resource-stop
+[  154s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 50%] Built target reproc-resource-pid
+[  154s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 50%] Built target reproc-resource-env
+[  154s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 36%] Linking C executable resources/path
+[  154s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-path.dir/link.txt --verbose=1
+[  154s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-path.dir/resources/path.c.o" -o resources/path 
+[  154s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 29%] Linking C executable resources/io
+[  154s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-io.dir/link.txt --verbose=1
+[  154s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-io.dir/resources/io.c.o" -o resources/io 
+[  154s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 40%] Linking C executable resources/working-directory
+[  154s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-working-directory.dir/link.txt --verbose=1
+[  154s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-working-directory.dir/resources/working-directory.c.o" -o resources/working-directory 
+[  154s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 54%] Built target reproc-resource-io
+[  154s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 32%] Linking C executable resources/argv
+[  154s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-argv.dir/link.txt --verbose=1
+[  154s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-argv.dir/resources/argv.c.o" -o resources/argv 
+[  154s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 56%] Built target reproc-resource-path
+[  154s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 56%] Built target reproc-resource-working-directory
+[  154s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 38%] Linking C executable resources/overflow
+[  154s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-resource-overflow.dir/link.txt --verbose=1
+[  154s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-resource-overflow.dir/resources/overflow.c.o" -o resources/overflow 
+[  154s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  154s] [ 45%] Building C object reproc/CMakeFiles/reproc.dir/src/pipe.posix.c.o
+[  154s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/pipe.posix.c.o -MF CMakeFiles/reproc.dir/src/pipe.posix.c.o.d -o CMakeFiles/reproc.dir/src/pipe.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/pipe.posix.c
+[  154s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] [ 58%] Built target reproc-resource-argv
+[  155s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] [ 58%] Built target reproc-resource-overflow
+[  155s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] [ 47%] Building C object reproc/CMakeFiles/reproc.dir/src/process.posix.c.o
+[  155s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/process.posix.c.o -MF CMakeFiles/reproc.dir/src/process.posix.c.o.d -o CMakeFiles/reproc.dir/src/process.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/process.posix.c
+[  155s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] [ 49%] Building C object reproc/CMakeFiles/reproc.dir/src/redirect.posix.c.o
+[  155s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/redirect.posix.c.o -MF CMakeFiles/reproc.dir/src/redirect.posix.c.o.d -o CMakeFiles/reproc.dir/src/redirect.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/redirect.posix.c
+[  155s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  155s] [ 50%] Building C object reproc/CMakeFiles/reproc.dir/src/redirect.c.o
+[  155s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/redirect.c.o -MF CMakeFiles/reproc.dir/src/redirect.c.o.d -o CMakeFiles/reproc.dir/src/redirect.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/redirect.c
+[  155s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  156s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  156s] [ 58%] Building C object reproc/CMakeFiles/reproc.dir/src/utf.posix.c.o
+[  156s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/utf.posix.c.o -MF CMakeFiles/reproc.dir/src/utf.posix.c.o.d -o CMakeFiles/reproc.dir/src/utf.posix.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/utf.posix.c
+[  156s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  156s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  156s] [ 54%] Building C object reproc/CMakeFiles/reproc.dir/src/run.c.o
+[  156s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/run.c.o -MF CMakeFiles/reproc.dir/src/run.c.o.d -o CMakeFiles/reproc.dir/src/run.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/run.c
+[  156s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  156s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  156s] [ 56%] Building C object reproc/CMakeFiles/reproc.dir/src/strv.c.o
+[  156s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/strv.c.o -MF CMakeFiles/reproc.dir/src/strv.c.o.d -o CMakeFiles/reproc.dir/src/strv.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/strv.c
+[  156s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  157s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  157s] [ 52%] Building C object reproc/CMakeFiles/reproc.dir/src/reproc.c.o
+[  157s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DREPROC_BUILDING -DREPROC_MULTITHREADED -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -std=c99 -MD -MT reproc/CMakeFiles/reproc.dir/src/reproc.c.o -MF CMakeFiles/reproc.dir/src/reproc.c.o.d -o CMakeFiles/reproc.dir/src/reproc.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/src/reproc.c
+[  157s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  171s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  171s] [ 60%] Linking C shared library lib/libreproc.so
+[  171s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc.dir/link.txt --verbose=1
+[  171s] /usr/bin/cc -fPIC -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now -shared -Wl,-soname,libreproc.so.14 -o lib/libreproc.so.14.2.4 CMakeFiles/reproc.dir/src/clock.posix.c.o CMakeFiles/reproc.dir/src/drain.c.o CMakeFiles/reproc.dir/src/error.posix.c.o CMakeFiles/reproc.dir/src/handle.posix.c.o CMakeFiles/reproc.dir/src/init.posix.c.o CMakeFiles/reproc.dir/src/options.c.o CMakeFiles/reproc.dir/src/pipe.posix.c.o CMakeFiles/reproc.dir/src/process.posix.c.o CMakeFiles/reproc.dir/src/redirect.posix.c.o CMakeFiles/reproc.dir/src/redirect.c.o CMakeFiles/reproc.dir/src/reproc.c.o CMakeFiles/reproc.dir/src/run.c.o CMakeFiles/reproc.dir/src/strv.c.o CMakeFiles/reproc.dir/src/utf.posix.c.o  -Wl,-rpath,::::::: -lrt 
+[  171s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_symlink_library lib/libreproc.so.14.2.4 lib/libreproc.so.14 lib/libreproc.so
+[  171s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] [ 60%] Built target reproc
+[  172s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-argv.dir/build.make reproc/CMakeFiles/reproc-test-argv.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-deadline.dir/build.make reproc/CMakeFiles/reproc-test-deadline.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-env.dir/build.make reproc/CMakeFiles/reproc-test-env.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-io.dir/build.make reproc/CMakeFiles/reproc-test-io.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-overflow.dir/build.make reproc/CMakeFiles/reproc-test-overflow.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-path.dir/build.make reproc/CMakeFiles/reproc-test-path.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-stop.dir/build.make reproc/CMakeFiles/reproc-test-stop.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-working-directory.dir/build.make reproc/CMakeFiles/reproc-test-working-directory.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-pid.dir/build.make reproc/CMakeFiles/reproc-test-pid.dir/depend
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-fork.dir/build.make reproc/CMakeFiles/reproc-test-fork.dir/depend
+[  172s] /usr/bin/make  -f reproc++/CMakeFiles/reproc++.dir/build.make reproc++/CMakeFiles/reproc++.dir/depend
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-deadline.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-deadline.dir/build.make reproc/CMakeFiles/reproc-test-deadline.dir/build
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-argv.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-argv.dir/build.make reproc/CMakeFiles/reproc-test-argv.dir/build
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-overflow.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-fork.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc++ /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc++ /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc++/CMakeFiles/reproc++.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc++/CMakeFiles/reproc++.dir/build.make reproc++/CMakeFiles/reproc++.dir/build
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-overflow.dir/build.make reproc/CMakeFiles/reproc-test-overflow.dir/build
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-fork.dir/build.make reproc/CMakeFiles/reproc-test-fork.dir/build
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-stop.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-pid.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-working-directory.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-stop.dir/build.make reproc/CMakeFiles/reproc-test-stop.dir/build
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-working-directory.dir/build.make reproc/CMakeFiles/reproc-test-working-directory.dir/build
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-pid.dir/build.make reproc/CMakeFiles/reproc-test-pid.dir/build
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-io.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-io.dir/build.make reproc/CMakeFiles/reproc-test-io.dir/build
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-env.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-env.dir/build.make reproc/CMakeFiles/reproc-test-env.dir/build
+[  172s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-path.dir/DependInfo.cmake
+[  172s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  172s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-path.dir/build.make reproc/CMakeFiles/reproc-test-path.dir/build
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 69%] Building C object reproc/CMakeFiles/reproc-test-overflow.dir/test/overflow.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-overflow.dir/test/overflow.c.o -MF CMakeFiles/reproc-test-overflow.dir/test/overflow.c.o.d -o CMakeFiles/reproc-test-overflow.dir/test/overflow.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/overflow.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 63%] Building C object reproc/CMakeFiles/reproc-test-deadline.dir/test/deadline.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-deadline.dir/test/deadline.c.o -MF CMakeFiles/reproc-test-deadline.dir/test/deadline.c.o.d -o CMakeFiles/reproc-test-deadline.dir/test/deadline.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/deadline.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 72%] Building C object reproc/CMakeFiles/reproc-test-working-directory.dir/test/working-directory.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-working-directory.dir/test/working-directory.c.o -MF CMakeFiles/reproc-test-working-directory.dir/test/working-directory.c.o.d -o CMakeFiles/reproc-test-working-directory.dir/test/working-directory.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/working-directory.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 70%] Building C object reproc/CMakeFiles/reproc-test-stop.dir/test/stop.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-stop.dir/test/stop.c.o -MF CMakeFiles/reproc-test-stop.dir/test/stop.c.o.d -o CMakeFiles/reproc-test-stop.dir/test/stop.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/stop.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 74%] Building C object reproc/CMakeFiles/reproc-test-io.dir/test/io.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-io.dir/test/io.c.o -MF CMakeFiles/reproc-test-io.dir/test/io.c.o.d -o CMakeFiles/reproc-test-io.dir/test/io.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/io.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 65%] Building C object reproc/CMakeFiles/reproc-test-fork.dir/test/fork.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-fork.dir/test/fork.c.o -MF CMakeFiles/reproc-test-fork.dir/test/fork.c.o.d -o CMakeFiles/reproc-test-fork.dir/test/fork.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/fork.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 80%] Building C object reproc/CMakeFiles/reproc-test-path.dir/test/path.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-path.dir/test/path.c.o -MF CMakeFiles/reproc-test-path.dir/test/path.c.o.d -o CMakeFiles/reproc-test-path.dir/test/path.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/path.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 61%] Building C object reproc/CMakeFiles/reproc-test-argv.dir/test/argv.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-argv.dir/test/argv.c.o -MF CMakeFiles/reproc-test-argv.dir/test/argv.c.o.d -o CMakeFiles/reproc-test-argv.dir/test/argv.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/argv.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  175s] [ 76%] Building C object reproc/CMakeFiles/reproc-test-pid.dir/test/pid.c.o
+[  175s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-pid.dir/test/pid.c.o -MF CMakeFiles/reproc-test-pid.dir/test/pid.c.o.d -o CMakeFiles/reproc-test-pid.dir/test/pid.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/pid.c
+[  175s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  176s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  176s] [ 80%] Building C object reproc/CMakeFiles/reproc-test-env.dir/test/env.c.o
+[  176s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cc -DRESOURCE_DIRECTORY=\"/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/resources\" -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -std=c99 -MD -MT reproc/CMakeFiles/reproc-test-env.dir/test/env.c.o -MF CMakeFiles/reproc-test-env.dir/test/env.c.o.d -o CMakeFiles/reproc-test-env.dir/test/env.c.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/env.c
+[  176s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  180s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  180s] [ 83%] Linking C executable test/overflow
+[  180s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-overflow.dir/link.txt --verbose=1
+[  180s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-overflow.dir/test/overflow.c.o" -o test/overflow  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  180s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 98%] Built target reproc-test-overflow
+[  181s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 81%] Linking C executable test/deadline
+[  181s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-deadline.dir/link.txt --verbose=1
+[  181s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-deadline.dir/test/deadline.c.o" -o test/deadline  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  181s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 90%] Linking C executable test/stop
+[  181s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-stop.dir/link.txt --verbose=1
+[  181s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-stop.dir/test/stop.c.o" -o test/stop  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  181s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 98%] Built target reproc-test-deadline
+[  181s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 89%] Linking C executable test/fork
+[  181s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-fork.dir/link.txt --verbose=1
+[  181s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-fork.dir/test/fork.c.o" -o test/fork  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  181s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 85%] Linking C executable test/working-directory
+[  181s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-working-directory.dir/link.txt --verbose=1
+[  181s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-working-directory.dir/test/working-directory.c.o" -o test/working-directory  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  181s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 98%] Built target reproc-test-stop
+[  181s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 96%] Linking C executable test/pid
+[  181s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-pid.dir/link.txt --verbose=1
+[  181s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-pid.dir/test/pid.c.o" -o test/pid  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  181s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 98%] Built target reproc-test-fork
+[  181s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 98%] Built target reproc-test-working-directory
+[  181s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 92%] Linking C executable test/io
+[  181s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-io.dir/link.txt --verbose=1
+[  181s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-io.dir/test/io.c.o" -o test/io  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  181s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 98%] Built target reproc-test-pid
+[  181s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  181s] [ 87%] Linking C executable test/path
+[  181s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-path.dir/link.txt --verbose=1
+[  181s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-path.dir/test/path.c.o" -o test/path  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  181s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] [ 94%] Linking C executable test/argv
+[  182s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-argv.dir/link.txt --verbose=1
+[  182s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-argv.dir/test/argv.c.o" -o test/argv  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  182s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] [ 98%] Linking C executable test/env
+[  182s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc-test-env.dir/link.txt --verbose=1
+[  182s] /usr/bin/cc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now "CMakeFiles/reproc-test-env.dir/test/env.c.o" -o test/env  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib lib/libreproc.so.14.2.4 
+[  182s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] [ 98%] Built target reproc-test-io
+[  182s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] [ 98%] Built target reproc-test-path
+[  182s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] [ 98%] Built target reproc-test-argv
+[  182s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  182s] [ 98%] Built target reproc-test-env
+[  182s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  188s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  188s] [ 67%] Building CXX object reproc++/CMakeFiles/reproc++.dir/src/reproc.cpp.o
+[  188s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc++ && /usr/bin/c++ -DREPROCXX_BUILDING -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc++/include -I/home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/include -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -std=c++11 -MD -MT reproc++/CMakeFiles/reproc++.dir/src/reproc.cpp.o -MF CMakeFiles/reproc++.dir/src/reproc.cpp.o.d -o CMakeFiles/reproc++.dir/src/reproc.cpp.o -c /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc++/src/reproc.cpp
+[  188s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  196s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  196s] [100%] Linking CXX shared library lib/libreproc++.so
+[  196s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc++ && /usr/bin/cmake -E cmake_link_script CMakeFiles/reproc++.dir/link.txt --verbose=1
+[  196s] /usr/bin/c++ -fPIC -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now -shared -Wl,-soname,libreproc++.so.14 -o lib/libreproc++.so.14.2.4 CMakeFiles/reproc++.dir/src/reproc.cpp.o  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/lib: ../reproc/lib/libreproc.so.14.2.4 
+[  196s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc++ && /usr/bin/cmake -E cmake_symlink_library lib/libreproc++.so.14.2.4 lib/libreproc++.so.14 lib/libreproc++.so
+[  196s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  196s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  196s] [100%] Built target reproc++
+[  196s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  196s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/CMakeFiles 0
+[  196s] + RPM_EC=0
+[  196s] ++ jobs -p
+[  196s] + exit 0
+[  197s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.KCTp1J
+[  197s] + umask 022
+[  197s] + cd /home/abuild/rpmbuild/BUILD
+[  197s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64
+[  197s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  197s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64
+[  197s] + cd reproc-14.2.4
+[  197s] + DESTDIR=/home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64
+[  197s] + /usr/bin/make install -C build
+[  197s] make: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  197s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/reproc-14.2.4 -B/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build --check-build-system CMakeFiles/Makefile.cmake 0
+[  197s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/CMakeFiles /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build//CMakeFiles/progress.marks
+[  197s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  197s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  197s] /usr/bin/make  -f reproc/CMakeFiles/reproc.dir/build.make reproc/CMakeFiles/reproc.dir/depend
+[  197s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  197s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc.dir/DependInfo.cmake
+[  198s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  198s] /usr/bin/make  -f reproc/CMakeFiles/reproc.dir/build.make reproc/CMakeFiles/reproc.dir/build
+[  198s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  198s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc.dir/build'.
+[  198s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  198s] [ 27%] Built target reproc
+[  198s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-argv.dir/build.make reproc/CMakeFiles/reproc-resource-argv.dir/depend
+[  198s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  198s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-argv.dir/DependInfo.cmake
+[  199s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  199s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-argv.dir/build.make reproc/CMakeFiles/reproc-resource-argv.dir/build
+[  199s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  199s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-argv.dir/build'.
+[  199s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  199s] [ 30%] Built target reproc-resource-argv
+[  199s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-argv.dir/build.make reproc/CMakeFiles/reproc-test-argv.dir/depend
+[  199s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  199s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-argv.dir/DependInfo.cmake
+[  199s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  199s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-argv.dir/build.make reproc/CMakeFiles/reproc-test-argv.dir/build
+[  199s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  199s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-argv.dir/build'.
+[  199s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  200s] [ 34%] Built target reproc-test-argv
+[  200s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-deadline.dir/build.make reproc/CMakeFiles/reproc-resource-deadline.dir/depend
+[  200s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  200s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-deadline.dir/DependInfo.cmake
+[  200s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  200s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-deadline.dir/build.make reproc/CMakeFiles/reproc-resource-deadline.dir/build
+[  200s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  200s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-deadline.dir/build'.
+[  200s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  200s] [ 38%] Built target reproc-resource-deadline
+[  200s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-deadline.dir/build.make reproc/CMakeFiles/reproc-test-deadline.dir/depend
+[  200s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  200s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-deadline.dir/DependInfo.cmake
+[  201s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  201s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-deadline.dir/build.make reproc/CMakeFiles/reproc-test-deadline.dir/build
+[  201s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  201s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-deadline.dir/build'.
+[  201s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  201s] [ 41%] Built target reproc-test-deadline
+[  201s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-env.dir/build.make reproc/CMakeFiles/reproc-resource-env.dir/depend
+[  201s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  201s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-env.dir/DependInfo.cmake
+[  201s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  201s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-env.dir/build.make reproc/CMakeFiles/reproc-resource-env.dir/build
+[  202s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  202s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-env.dir/build'.
+[  202s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  202s] [ 45%] Built target reproc-resource-env
+[  202s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-env.dir/build.make reproc/CMakeFiles/reproc-test-env.dir/depend
+[  202s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  202s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-env.dir/DependInfo.cmake
+[  202s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  202s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-env.dir/build.make reproc/CMakeFiles/reproc-test-env.dir/build
+[  202s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  202s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-env.dir/build'.
+[  202s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  203s] [ 49%] Built target reproc-test-env
+[  203s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-io.dir/build.make reproc/CMakeFiles/reproc-resource-io.dir/depend
+[  203s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  203s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-io.dir/DependInfo.cmake
+[  203s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  203s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-io.dir/build.make reproc/CMakeFiles/reproc-resource-io.dir/build
+[  203s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  203s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-io.dir/build'.
+[  203s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  203s] [ 52%] Built target reproc-resource-io
+[  203s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-io.dir/build.make reproc/CMakeFiles/reproc-test-io.dir/depend
+[  203s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  203s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-io.dir/DependInfo.cmake
+[  204s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  204s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-io.dir/build.make reproc/CMakeFiles/reproc-test-io.dir/build
+[  204s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  204s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-io.dir/build'.
+[  204s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  204s] [ 56%] Built target reproc-test-io
+[  204s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-overflow.dir/build.make reproc/CMakeFiles/reproc-resource-overflow.dir/depend
+[  204s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  204s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-overflow.dir/DependInfo.cmake
+[  204s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  204s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-overflow.dir/build.make reproc/CMakeFiles/reproc-resource-overflow.dir/build
+[  204s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  204s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-overflow.dir/build'.
+[  204s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  205s] [ 60%] Built target reproc-resource-overflow
+[  205s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-overflow.dir/build.make reproc/CMakeFiles/reproc-test-overflow.dir/depend
+[  205s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  205s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-overflow.dir/DependInfo.cmake
+[  205s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  205s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-overflow.dir/build.make reproc/CMakeFiles/reproc-test-overflow.dir/build
+[  205s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  205s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-overflow.dir/build'.
+[  205s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  205s] [ 63%] Built target reproc-test-overflow
+[  205s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-path.dir/build.make reproc/CMakeFiles/reproc-resource-path.dir/depend
+[  205s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  205s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-path.dir/DependInfo.cmake
+[  206s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  206s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-path.dir/build.make reproc/CMakeFiles/reproc-resource-path.dir/build
+[  206s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  206s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-path.dir/build'.
+[  206s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  206s] [ 67%] Built target reproc-resource-path
+[  206s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-path.dir/build.make reproc/CMakeFiles/reproc-test-path.dir/depend
+[  206s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  206s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-path.dir/DependInfo.cmake
+[  207s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  207s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-path.dir/build.make reproc/CMakeFiles/reproc-test-path.dir/build
+[  207s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  207s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-path.dir/build'.
+[  207s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  207s] [ 70%] Built target reproc-test-path
+[  207s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-stop.dir/build.make reproc/CMakeFiles/reproc-resource-stop.dir/depend
+[  207s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  207s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-stop.dir/DependInfo.cmake
+[  207s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  207s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-stop.dir/build.make reproc/CMakeFiles/reproc-resource-stop.dir/build
+[  207s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  207s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-stop.dir/build'.
+[  207s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  208s] [ 74%] Built target reproc-resource-stop
+[  208s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-stop.dir/build.make reproc/CMakeFiles/reproc-test-stop.dir/depend
+[  208s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  208s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-stop.dir/DependInfo.cmake
+[  208s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  208s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-stop.dir/build.make reproc/CMakeFiles/reproc-test-stop.dir/build
+[  208s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  208s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-stop.dir/build'.
+[  208s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  208s] [ 78%] Built target reproc-test-stop
+[  208s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-working-directory.dir/build.make reproc/CMakeFiles/reproc-resource-working-directory.dir/depend
+[  208s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  208s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-working-directory.dir/DependInfo.cmake
+[  209s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  209s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-working-directory.dir/build.make reproc/CMakeFiles/reproc-resource-working-directory.dir/build
+[  209s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  209s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-working-directory.dir/build'.
+[  209s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  209s] [ 81%] Built target reproc-resource-working-directory
+[  209s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-working-directory.dir/build.make reproc/CMakeFiles/reproc-test-working-directory.dir/depend
+[  209s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  209s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-working-directory.dir/DependInfo.cmake
+[  209s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  209s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-working-directory.dir/build.make reproc/CMakeFiles/reproc-test-working-directory.dir/build
+[  210s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  210s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-working-directory.dir/build'.
+[  210s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  210s] [ 85%] Built target reproc-test-working-directory
+[  210s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-pid.dir/build.make reproc/CMakeFiles/reproc-resource-pid.dir/depend
+[  210s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  210s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-resource-pid.dir/DependInfo.cmake
+[  210s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  210s] /usr/bin/make  -f reproc/CMakeFiles/reproc-resource-pid.dir/build.make reproc/CMakeFiles/reproc-resource-pid.dir/build
+[  210s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  210s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-resource-pid.dir/build'.
+[  210s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  210s] [ 89%] Built target reproc-resource-pid
+[  210s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-pid.dir/build.make reproc/CMakeFiles/reproc-test-pid.dir/depend
+[  211s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  211s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-pid.dir/DependInfo.cmake
+[  211s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  211s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-pid.dir/build.make reproc/CMakeFiles/reproc-test-pid.dir/build
+[  211s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  211s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-pid.dir/build'.
+[  211s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  211s] [ 92%] Built target reproc-test-pid
+[  211s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-fork.dir/build.make reproc/CMakeFiles/reproc-test-fork.dir/depend
+[  211s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  211s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc/CMakeFiles/reproc-test-fork.dir/DependInfo.cmake
+[  212s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  212s] /usr/bin/make  -f reproc/CMakeFiles/reproc-test-fork.dir/build.make reproc/CMakeFiles/reproc-test-fork.dir/build
+[  212s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  212s] make[2]: Nothing to be done for 'reproc/CMakeFiles/reproc-test-fork.dir/build'.
+[  212s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  212s] [ 96%] Built target reproc-test-fork
+[  212s] /usr/bin/make  -f reproc++/CMakeFiles/reproc++.dir/build.make reproc++/CMakeFiles/reproc++.dir/depend
+[  212s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  212s] cd /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/reproc-14.2.4 /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc++ /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc++ /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/reproc++/CMakeFiles/reproc++.dir/DependInfo.cmake
+[  212s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  212s] /usr/bin/make  -f reproc++/CMakeFiles/reproc++.dir/build.make reproc++/CMakeFiles/reproc++.dir/build
+[  212s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  212s] make[2]: Nothing to be done for 'reproc++/CMakeFiles/reproc++.dir/build'.
+[  212s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  213s] [100%] Built target reproc++
+[  213s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  213s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build/CMakeFiles 0
+[  213s] /usr/bin/make  -f CMakeFiles/Makefile2 preinstall
+[  213s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  213s] make[1]: Nothing to be done for 'preinstall'.
+[  213s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  213s] Install the project...
+[  213s] /usr/bin/cmake -P cmake_install.cmake
+[  213s] -- Install configuration: "RelWithDebInfo"
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc/drain.h
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc/export.h
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc/reproc.h
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc/run.h
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc.so.14.2.4
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc.so.14
+[  213s] -- Set runtime path of "/home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc.so.14.2.4" to "$ORIGIN"
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc.so
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc/reproc-config.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc/reproc-config-version.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc/reproc-targets.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc/reproc-targets-relwithdebinfo.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/pkgconfig/reproc.pc
+[  213s] -- Up-to-date: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/arguments.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/detail
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/detail/array.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/detail/type_traits.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/drain.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/env.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/export.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/input.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/reproc.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/include/reproc++/run.hpp
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc++.so.14.2.4
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc++.so.14
+[  213s] -- Set runtime path of "/home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc++.so.14.2.4" to "$ORIGIN"
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc++.so
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc++/reproc++-config.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc++/reproc++-config-version.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc++/reproc++-targets.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/cmake/reproc++/reproc++-targets-relwithdebinfo.cmake
+[  213s] -- Installing: /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/pkgconfig/reproc++.pc
+[  213s] make: Leaving directory '/home/abuild/rpmbuild/BUILD/reproc-14.2.4/build'
+[  213s] + /usr/lib/rpm/find-debuginfo -j12 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/reproc-14.2.4
+[  215s] extracting debug info from /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc++.so.14.2.4
+[  215s] extracting debug info from /home/abuild/rpmbuild/BUILDROOT/reproc-14.2.4-1.1.riscv64/usr/lib64/libreproc.so.14.2.4
+[  216s] original debug info size: 220kB, size after compression: 212kB
+[  216s] /usr/lib/rpm/sepdebugcrcfix: Updated 2 CRC32s, 0 CRC32s did match.
+[  216s] 176 blocks
+[  217s] + /usr/lib/rpm/brp-compress
+[  217s] + /usr/lib/rpm/brp-suse
+[  217s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  217s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  217s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  218s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  218s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  218s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.q9ZvD3
+[  218s] + umask 022
+[  218s] + cd /home/abuild/rpmbuild/BUILD
+[  218s] + cd reproc-14.2.4
+[  218s] + cd build
+[  218s] + /usr/bin/ctest --output-on-failure --force-new-ctest-process -j12
+[  218s] Test project /home/abuild/rpmbuild/BUILD/reproc-14.2.4/build
+[  218s]       Start  1: reproc-test-argv
+[  218s]       Start  2: reproc-test-deadline
+[  218s]       Start  3: reproc-test-env
+[  218s]       Start  4: reproc-test-io
+[  218s]       Start  5: reproc-test-overflow
+[  218s]       Start  6: reproc-test-path
+[  218s]       Start  7: reproc-test-stop
+[  218s]       Start  8: reproc-test-working-directory
+[  219s]       Start  9: reproc-test-pid
+[  219s]       Start 10: reproc-test-fork
+[  219s]  1/10 Test  #1: reproc-test-argv .................   Passed    0.11 sec
+[  219s]  2/10 Test  #3: reproc-test-env ..................Subprocess aborted***Exception:   0.11 sec
+[  219s] /home/abuild/rpmbuild/BUILD/reproc-14.2.4/reproc/test/env.c:26: Assertion 'memcmp(current, envp[i], size) == 0' ("PORT=8080
+[  219s] IP" == "IP=127.0.0.1") failed
+[  219s] 
+[  219s]  3/10 Test  #5: reproc-test-overflow .............   Passed    0.11 sec
+[  219s]  4/10 Test  #6: reproc-test-path .................   Passed    0.10 sec
+[  219s]  5/10 Test  #8: reproc-test-working-directory ....   Passed    0.09 sec
+[  219s]  6/10 Test #10: reproc-test-fork .................   Passed    0.06 sec
+[  219s]  7/10 Test  #9: reproc-test-pid ..................   Passed    0.09 sec
+[  219s]  8/10 Test  #2: reproc-test-deadline .............   Passed    0.16 sec
+[  219s]  9/10 Test  #7: reproc-test-stop .................   Passed    0.16 sec
+[  219s] 10/10 Test  #4: reproc-test-io ...................   Passed    0.30 sec
+[  219s] 
+[  219s] 90% tests passed, 1 tests failed out of 10
+[  219s] 
+[  219s] Total Test time (real) =   0.41 sec
+[  219s] 
+[  219s] The following tests FAILED:
+[  219s] 	  3 - reproc-test-env (Subprocess aborted)
+[  219s] Errors while running CTest
+[  219s] error: Bad exit status from /var/tmp/rpm-tmp.q9ZvD3 (%check)
+[  219s] 
+[  219s] RPM build errors:
+[  219s]     Bad exit status from /var/tmp/rpm-tmp.q9ZvD3 (%check)
+[  219s] ### VM INTERACTION START ###
+[  220s] [  201.390984][    T1] sysrq: Power Off
+[  220s] [  201.394876][  T328] reboot: Power down
+[  220s] ### VM INTERACTION END ###
+[  220s] 
+[  220s] cloud134 failed "build reproc.spec" at Mon Mar  6 03:27:06 UTC 2023.
+[  220s] 

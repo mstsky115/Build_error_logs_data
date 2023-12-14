@@ -1,0 +1,495 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] lamb06 started "build gource.spec" at Tue Mar 14 18:11:50 UTC 2023.
+[    0s] 
+[    0s] Building gource for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f554e3365598bb7f5a6398020902cedc'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/gource.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/gource.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/gource.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [bcb87bc6dd0c27036dcad49b6fa3e609]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    4s]   breaking dependency python310-base -> libpython3_10-1_0
+[    4s] cycle: Mesa-dri -> Mesa
+[    4s]   breaking dependency Mesa -> Mesa-dri
+[    4s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[    4s]   breaking dependency Mesa -> Mesa-libEGL1
+[    4s] cycle: Mesa -> Mesa-libGL1
+[    4s]   breaking dependency Mesa-libGL1 -> Mesa
+[    4s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[    4s]   breaking dependency Mesa -> Mesa-libGL1
+[    4s] cycle: libglvnd -> Mesa-dri -> Mesa
+[    4s]   breaking dependency libglvnd -> Mesa-dri
+[    4s] done
+[    4s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   12s] Linux version: 6.2.4-1-default #1 SMP PREEMPT_DYNAMIC Sat Mar 11 10:13:47 UTC 2023 (0532a55)
+[   12s] Increasing log level from now on...
+[   12s] [    5.480539][  T409] sysrq: Changing Loglevel
+[   12s] [    5.480726][  T409] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   12s] no label, UUID=d454a549-e9cf-4c5a-a82a-662e80517554
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   12s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/gource.spec ...
+[   13s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/gource.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   47s] [1/258] cumulate Mesa-KHR-devel-23.0.0-353.1
+[   47s] [2/258] cumulate Mesa-libglapi0-23.0.0-353.1
+[   47s] [3/258] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   47s] [4/258] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   47s] [5/258] preinstalled attr-2.5.1-1.1
+[   47s] [6/258] preinstalled bash-5.2.15-8.1
+[   47s] [7/258] preinstalled bash-sh-5.2.15-8.1
+[   47s] [8/258] preinstalled binutils-2.40-2.1
+[   47s] [9/258] cumulate boost-license1_81_0-1.81.0-2.1
+[   47s] [10/258] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   47s] [11/258] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   47s] [12/258] preinstalled build-mkbaselibs-20230228-1.1
+[   47s] [13/258] preinstalled bzip2-1.0.8-5.1
+[   47s] [14/258] preinstalled chkstat-1599_20230217-1.1
+[   47s] [15/258] preinstalled compat-usrmerge-build-84.87-5.1
+[   47s] [16/258] preinstalled compat-usrmerge-tools-84.87-5.1
+[   47s] [17/258] preinstalled coreutils-9.1-5.1
+[   47s] [18/258] preinstalled cpio-2.13-5.1
+[   47s] [19/258] preinstalled cpp-12-2.1
+[   47s] [20/258] preinstalled cpp12-12.2.1+git749-4.1
+[   47s] [21/258] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   47s] [22/258] preinstalled debugedit-5.0-5.1
+[   47s] [23/258] preinstalled diffutils-3.9-1.1
+[   47s] [24/258] preinstalled dwz-0.15-2.1
+[   47s] [25/258] preinstalled elfutils-0.189-2.1
+[   47s] [26/258] preinstalled file-5.44-1.2
+[   47s] [27/258] preinstalled file-magic-5.44-1.2
+[   47s] [28/258] preinstalled filesystem-84.87-12.1
+[   47s] [29/258] preinstalled fillup-1.42-279.1
+[   47s] [30/258] preinstalled findutils-4.9.0-2.1
+[   47s] [31/258] preinstalled gawk-5.2.1-2.1
+[   47s] [32/258] preinstalled gcc-12-2.1
+[   47s] [33/258] preinstalled gcc-PIE-12-2.1
+[   47s] [34/258] preinstalled gcc12-12.2.1+git749-4.1
+[   47s] [35/258] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   47s] [36/258] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   47s] [37/258] preinstalled gettext-tools-mini-0.21.1-1.1
+[   47s] [38/258] preinstalled glibc-2.37-1.1
+[   47s] [39/258] preinstalled glibc-devel-2.37-1.1
+[   47s] [40/258] preinstalled glibc-locale-base-2.37-1.1
+[   47s] [41/258] preinstalled grep-3.9-1.1
+[   47s] [42/258] cumulate gtest-1.12.1-5.1
+[   47s] [43/258] preinstalled gzip-1.12-3.1
+[   47s] [44/258] preinstalled kernel-obs-build-6.2.4-1.1
+[   47s] [45/258] cumulate libX11-data-1.8.1-4.1
+[   47s] [46/258] cumulate libXau6-1.0.11-1.1
+[   47s] [47/258] preinstalled libacl1-2.3.1-2.1
+[   47s] [48/258] preinstalled libasan8-13.0.1+git5428-6.1
+[   47s] [49/258] preinstalled libasm1-0.189-2.1
+[   47s] [50/258] cumulate libasound2-1.2.8-1.1
+[   47s] [51/258] preinstalled libatomic1-13.0.1+git5428-6.1
+[   47s] [52/258] preinstalled libattr1-2.5.1-1.1
+[   47s] [53/258] preinstalled libaudit1-3.0.9-1.1
+[   47s] [54/258] preinstalled libblkid1-2.38.1-9.1
+[   47s] [55/258] cumulate libbrotlicommon1-1.0.9-3.1
+[   47s] [56/258] preinstalled libbz2-1-1.0.8-5.1
+[   47s] [57/258] cumulate libbz2-devel-1.0.8-5.1
+[   47s] [58/258] preinstalled libcap-ng0-0.8.3-1.1
+[   47s] [59/258] preinstalled libcap2-2.67-1.1
+[   47s] [60/258] preinstalled libcrypt1-4.4.33-1.1
+[   47s] [61/258] preinstalled libctf-nobfd0-2.40-2.1
+[   47s] [62/258] preinstalled libctf0-2.40-2.1
+[   47s] [63/258] preinstalled libdb-4_8-4.8.30-40.1
+[   47s] [64/258] cumulate libdrm2-2.4.115-2.1
+[   47s] [65/258] preinstalled libdw1-0.189-2.1
+[   47s] [66/258] preinstalled libeconf0-0.5.1-1.1
+[   47s] [67/258] cumulate libedit0-20210910.3.1-1.1
+[   47s] [68/258] preinstalled libelf1-0.189-2.1
+[   47s] [69/258] cumulate libexpat1-2.5.0-2.1
+[   47s] [70/258] preinstalled libfdisk1-2.38.1-9.1
+[   47s] [71/258] cumulate libffi8-3.4.4-1.1
+[   47s] [72/258] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   47s] [73/258] preinstalled libgcrypt20-1.10.1-2.1
+[   47s] [74/258] preinstalled libgdbm6-1.23-1.1
+[   47s] [75/258] preinstalled libgdbm_compat4-1.23-1.1
+[   47s] [76/258] preinstalled libgmp10-6.2.1-4.1
+[   47s] [77/258] preinstalled libgomp1-13.0.1+git5428-6.1
+[   47s] [78/258] preinstalled libgpg-error0-1.46-1.1
+[   47s] [79/258] cumulate libhwy1-1.0.3-1.1
+[   47s] [80/258] preinstalled libisl23-0.25-1.1
+[   47s] [81/258] cumulate libjbig2-2.1-4.1
+[   47s] [82/258] cumulate libjpeg8-8.2.2-74.1
+[   47s] [83/258] cumulate liblcms2-2-2.14-3.3
+[   47s] [84/258] preinstalled liblua5_4-5-5.4.4-8.1
+[   47s] [85/258] preinstalled liblzma5-5.4.1-1.1
+[   47s] [86/258] preinstalled libmagic1-5.44-1.2
+[   47s] [87/258] preinstalled libmount1-2.38.1-9.1
+[   47s] [88/258] preinstalled libmpc3-1.3.1-1.2
+[   47s] [89/258] cumulate libmpdec3-2.5.1-2.1
+[   47s] [90/258] preinstalled libmpfr6-4.2.0-1.1
+[   47s] [91/258] preinstalled libncurses6-6.4.20230225-7.1
+[   47s] [92/258] cumulate libpcre2-16-0-10.42-3.2
+[   47s] [93/258] cumulate libpcre2-32-0-10.42-3.2
+[   47s] [94/258] preinstalled libpcre2-8-0-10.42-3.2
+[   47s] [95/258] cumulate libpcre2-posix3-10.42-3.2
+[   47s] [96/258] preinstalled libpkgconf3-1.8.0-2.1
+[   47s] [97/258] cumulate libpng16-16-1.6.39-2.1
+[   47s] [98/258] preinstalled libpopt0-1.19-1.1
+[   47s] [99/258] preinstalled libreadline8-8.2-2.1
+[   47s] [100/258] cumulate librhash0-1.4.3-1.1
+[   47s] [101/258] preinstalled librpmbuild9-4.18.0-3.2
+[   47s] [102/258] preinstalled libseccomp2-2.5.4-2.1
+[   47s] [103/258] preinstalled libselinux1-3.5-1.1
+[   47s] [104/258] preinstalled libsemanage-conf-3.5-1.1
+[   47s] [105/258] preinstalled libsemanage2-3.5-1.1
+[   47s] [106/258] preinstalled libsepol2-3.5-1.1
+[   47s] [107/258] preinstalled libsmartcols1-2.38.1-9.1
+[   47s] [108/258] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   47s] [109/258] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   47s] [110/258] preinstalled libsubid4-4.13-4.1
+[   47s] [111/258] cumulate libtinyxml0-2.6.2-10.1
+[   47s] [112/258] cumulate libturbojpeg0-8.2.2-74.1
+[   47s] [113/258] preinstalled libubsan1-13.0.1+git5428-6.1
+[   47s] [114/258] preinstalled libutempter0-1.2.0-3.2
+[   47s] [115/258] preinstalled libuuid1-2.38.1-9.1
+[   47s] [116/258] cumulate libuv1-1.44.2-3.1
+[   47s] [117/258] cumulate libwebp7-1.2.4-1.2
+[   47s] [118/258] cumulate libwebpdecoder3-1.2.4-1.2
+[   47s] [119/258] preinstalled libxcrypt-devel-4.4.33-1.1
+[   47s] [120/258] cumulate libxshmfence1-1.3.2-1.1
+[   47s] [121/258] preinstalled libz1-1.2.13-3.1
+[   47s] [122/258] cumulate libzstd-devel-1.5.4-2.1
+[   47s] [123/258] preinstalled libzstd1-1.5.4-2.1
+[   47s] [124/258] preinstalled linux-glibc-devel-6.2-1.1
+[   47s] [125/258] preinstalled login_defs-4.13-4.1
+[   47s] [126/258] preinstalled lua54-5.4.4-8.1
+[   47s] [127/258] preinstalled make-4.4.1-1.1
+[   47s] [128/258] preinstalled ncurses-utils-6.4.20230225-7.1
+[   47s] [129/258] preinstalled pam-1.5.2-12.1
+[   47s] [130/258] preinstalled patch-2.7.6-6.1
+[   47s] [131/258] preinstalled perl-5.36.0-4.1
+[   47s] [132/258] preinstalled perl-base-5.36.0-4.1
+[   47s] [133/258] preinstalled permissions-1599_20230217-1.1
+[   47s] [134/258] preinstalled permissions-config-1599_20230217-1.1
+[   47s] [135/258] preinstalled pkgconf-1.8.0-2.1
+[   47s] [136/258] preinstalled pkgconf-m4-1.8.0-2.1
+[   47s] [137/258] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   47s] [138/258] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   47s] [139/258] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   47s] [140/258] cumulate python-rpm-macros-20230304.050c1a4-1.1
+[   47s] [141/258] preinstalled qemu-linux-user-7.1.0-53.1
+[   47s] [142/258] preinstalled rpm-4.18.0-3.2
+[   47s] [143/258] preinstalled rpm-build-4.18.0-3.2
+[   47s] [144/258] preinstalled rpm-build-perl-4.18.0-3.2
+[   47s] [145/258] preinstalled rpm-config-SUSE-20220926-1.1
+[   47s] [146/258] preinstalled rpmlint-mini-2.4.0+git20230307.1e9f1e0-9.15
+[   47s] [147/258] preinstalled rpmlint-strict-2.4.0+git20230307.1e9f1e0-1.1
+[   47s] [148/258] preinstalled sed-4.9-2.1
+[   47s] [149/258] preinstalled shadow-4.13-4.1
+[   47s] [150/258] preinstalled system-group-hardware-20170617-24.1
+[   47s] [151/258] preinstalled system-user-root-20190513-2.1
+[   47s] [152/258] preinstalled systemd-rpm-macros-19-1.1
+[   47s] [153/258] preinstalled sysuser-shadow-3.1-5.1
+[   47s] [154/258] preinstalled tar-1.34-10.1
+[   47s] [155/258] preinstalled terminfo-base-6.4.20230225-7.1
+[   47s] [156/258] preinstalled update-alternatives-1.21.8-1.1
+[   47s] [157/258] preinstalled util-linux-2.38.1-9.1
+[   47s] [158/258] preinstalled which-2.21-5.1
+[   47s] [159/258] cumulate xorgproto-devel-2022.2-2.1
+[   47s] [160/258] preinstalled xz-5.4.1-1.1
+[   47s] [161/258] cumulate xz-devel-5.4.1-1.1
+[   47s] [162/258] cumulate zlib-devel-1.2.13-3.1
+[   47s] [163/258] cumulate gcc12-c++-12.2.1+git749-4.1
+[   47s] [164/258] cumulate libLLVM15-15.0.7-2.1
+[   47s] [165/258] cumulate libSDL2-2_0-0-2.26.3-2.1
+[   47s] [166/258] cumulate libX11-xcb1-1.8.1-4.1
+[   47s] [167/258] cumulate libboost_atomic1_81_0-1.81.0-2.1
+[   47s] [168/258] cumulate libboost_filesystem1_81_0-1.81.0-2.1
+[   47s] [169/258] cumulate libboost_system1_81_0-1.81.0-2.1
+[   47s] [170/258] cumulate libbrotlidec1-1.0.9-3.1
+[   47s] [171/258] cumulate libbrotlienc1-1.0.9-3.1
+[   47s] [172/258] cumulate libdrm_amdgpu1-2.4.115-2.1
+[   47s] [173/258] cumulate libdrm_nouveau2-2.4.115-2.1
+[   47s] [174/258] cumulate libdrm_radeon1-2.4.115-2.1
+[   47s] [175/258] cumulate liblcms2-devel-2.14-3.3
+[   47s] [176/258] cumulate libopenssl3-3.0.8-2.1
+[   47s] [177/258] cumulate libstdc++-devel-12-2.1
+[   47s] [178/258] cumulate libwayland-client0-1.21.0-4.2
+[   47s] [179/258] cumulate libwayland-server0-1.21.0-4.2
+[   47s] [180/258] cumulate libwebpdemux2-1.2.4-1.2
+[   47s] [181/258] cumulate libwebpmux3-1.2.4-1.2
+[   47s] [182/258] cumulate libxcb1-1.15-2.1
+[   47s] [183/258] cumulate tinyxml-devel-2.6.2-10.1
+[   47s] [184/258] cumulate highway-devel-1.0.3-1.1
+[   47s] [185/258] cumulate libXau-devel-1.0.11-1.1
+[   47s] [186/258] cumulate libjpeg8-devel-8.2.2-74.1
+[   47s] [187/258] cumulate libpng16-devel-1.6.39-2.1
+[   47s] [188/258] cumulate libtiff6-4.5.0-3.1
+[   47s] [189/258] cumulate gcc-c++-12-2.1
+[   47s] [190/258] cumulate libxcb-composite0-1.15-2.1
+[   47s] [191/258] cumulate libxcb-damage0-1.15-2.1
+[   47s] [192/258] cumulate libxcb-dpms0-1.15-2.1
+[   47s] [193/258] cumulate libxcb-dri2-0-1.15-2.1
+[   47s] [194/258] cumulate libxcb-dri3-0-1.15-2.1
+[   47s] [195/258] cumulate libxcb-glx0-1.15-2.1
+[   47s] [196/258] cumulate libxcb-present0-1.15-2.1
+[   47s] [197/258] cumulate libxcb-randr0-1.15-2.1
+[   47s] [198/258] cumulate libxcb-record0-1.15-2.1
+[   47s] [199/258] cumulate libxcb-render0-1.15-2.1
+[   47s] [200/258] cumulate libxcb-res0-1.15-2.1
+[   47s] [201/258] cumulate libxcb-screensaver0-1.15-2.1
+[   47s] [202/258] cumulate libxcb-shape0-1.15-2.1
+[   47s] [203/258] cumulate libxcb-shm0-1.15-2.1
+[   47s] [204/258] cumulate libxcb-sync1-1.15-2.1
+[   47s] [205/258] cumulate libxcb-xf86dri0-1.15-2.1
+[   47s] [206/258] cumulate libxcb-xfixes0-1.15-2.1
+[   47s] [207/258] cumulate libxcb-xinerama0-1.15-2.1
+[   47s] [208/258] cumulate libxcb-xinput0-1.15-2.1
+[   47s] [209/258] cumulate libxcb-xkb1-1.15-2.1
+[   47s] [210/258] cumulate libxcb-xtest0-1.15-2.1
+[   47s] [211/258] cumulate libxcb-xv0-1.15-2.1
+[   47s] [212/258] cumulate libxcb-xvmc0-1.15-2.1
+[   47s] [213/258] cumulate libX11-6-1.8.1-4.1
+[   47s] [214/258] cumulate libboost_headers1_81_0-devel-1.81.0-2.1
+[   47s] [215/258] cumulate libfreetype6-2.13.0-1.1
+[   47s] [216/258] cumulate libgbm1-23.0.0-353.1
+[   47s] [217/258] cumulate libpng16-compat-devel-1.6.39-2.1
+[   47s] [218/258] cumulate libbrotli-devel-1.0.9-3.1
+[   47s] [219/258] cumulate libjxl0_7-0.7.0-3.2
+[   47s] [220/258] cumulate libwebp-devel-1.2.4-1.2
+[   47s] [221/258] cumulate pcre2-devel-10.42-3.2
+[   47s] [222/258] cumulate libtiff-devel-4.5.0-3.1
+[   47s] [223/258] cumulate libXext6-1.3.5-1.1
+[   47s] [224/258] cumulate libXfixes3-6.0.0-2.1
+[   47s] [225/258] cumulate libboost_system1_81_0-devel-1.81.0-2.1
+[   47s] [226/258] cumulate libboost_atomic1_81_0-devel-1.81.0-2.1
+[   47s] [227/258] cumulate freetype2-devel-2.13.0-1.1
+[   47s] [228/258] cumulate libjxl-devel-0.7.0-3.2
+[   47s] [229/258] cumulate libSDL2_image-2_0-0-2.6.3-1.1
+[   47s] [230/258] cumulate libxcb-devel-1.15-2.1
+[   47s] [231/258] cumulate libboost_system-devel-1.81.0-1.1
+[   47s] [232/258] cumulate libXxf86vm1-1.1.5-1.1
+[   47s] [233/258] cumulate libX11-devel-1.8.1-4.1
+[   47s] [234/258] cumulate libboost_filesystem1_81_0-devel-1.81.0-2.1
+[   47s] [235/258] cumulate libboost_filesystem-devel-1.81.0-1.1
+[   47s] [236/258] cumulate libglvnd-1.6.0-1.1
+[   47s] [237/258] cumulate python310-base-3.10.10-1.2
+[   47s] [238/258] cumulate libGLEW2_2-2.2.0-3.1
+[   47s] [239/258] cumulate libGLU1-9.0.2-2.1
+[   47s] [240/258] cumulate libglvnd-devel-1.6.0-1.1
+[   47s] [241/258] cumulate libpython3_10-1_0-3.10.10-1.2
+[   47s] [242/258] cumulate python310-packaging-23.0-2.1
+[   47s] [243/258] cumulate Mesa-23.0.0-353.1
+[   47s] [244/258] cumulate cmake-mini-3.25.2-1.2
+[   47s] [245/258] cumulate Mesa-libEGL1-23.0.0-353.1
+[   47s] [246/258] cumulate Mesa-libGL1-23.0.0-353.1
+[   47s] [247/258] cumulate cmake-3.25.2-1.1
+[   47s] [248/258] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   47s] [249/258] cumulate Mesa-libEGL-devel-23.0.0-353.1
+[   47s] [250/258] cumulate Mesa-libGL-devel-23.0.0-353.1
+[   47s] [251/258] cumulate Mesa-dri-23.0.0-353.1
+[   47s] [252/258] cumulate glm-devel-0.9.9.8-2.1
+[   47s] [253/258] cumulate glu-devel-9.0.2-2.1
+[   47s] [254/258] cumulate Mesa-libGLESv1_CM-devel-23.0.0-353.1
+[   47s] [255/258] cumulate Mesa-libGLESv2-devel-23.0.0-353.1
+[   47s] [256/258] cumulate glew-devel-2.2.0-3.1
+[   47s] [257/258] cumulate SDL2-devel-2.26.3-2.1
+[   47s] [258/258] cumulate SDL2_image-devel-2.6.3-1.1
+[   47s] now installing cumulated packages
+[   49s] Preparing...                          ########################################
+[   49s] Updating / installing...
+[   49s] libdrm2-2.4.115-2.1                   ########################################
+[   49s] zlib-devel-1.2.13-3.1                 ########################################
+[   49s] xorgproto-devel-2022.2-2.1            ########################################
+[   50s] libwebp7-1.2.4-1.2                    ########################################
+[   50s] boost-license1_81_0-1.81.0-2.1        ########################################
+[   50s] Mesa-KHR-devel-23.0.0-353.1           ########################################
+[   50s] libpng16-16-1.6.39-2.1                ########################################
+[   50s] libjpeg8-8.2.2-74.1                   ########################################
+[   50s] libffi8-3.4.4-1.1                     ########################################
+[   50s] libexpat1-2.5.0-2.1                   ########################################
+[   50s] libbrotlicommon1-1.0.9-3.1            ########################################
+[   50s] libbrotlidec1-1.0.9-3.1               ########################################
+[   50s] Mesa-libglapi0-23.0.0-353.1           ########################################
+[   50s] libbrotlienc1-1.0.9-3.1               ########################################
+[   51s] libbrotli-devel-1.0.9-3.1             ########################################
+[   51s] libwayland-server0-1.21.0-4.2         ########################################
+[   51s] libxshmfence1-1.3.2-1.1               ########################################
+[   66s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   66s] libstdc++-devel-12-2.1                ########################################
+[   87s] libboost_headers1_81_0-devel-1.81.0-2.########################################
+[   89s] liblcms2-2-2.14-3.3                   ########################################
+[   89s] libhwy1-1.0.3-1.1                     ########################################
+[   89s] libjxl0_7-0.7.0-3.2                   ########################################
+[   89s] libXau6-1.0.11-1.1                    ########################################
+[   89s] libxcb1-1.15-2.1                      ########################################
+[   89s] libxcb-dri2-0-1.15-2.1                ########################################
+[   89s] libxcb-dri3-0-1.15-2.1                ########################################
+[   89s] libxcb-present0-1.15-2.1              ########################################
+[   89s] libxcb-randr0-1.15-2.1                ########################################
+[   89s] libxcb-sync1-1.15-2.1                 ########################################
+[   90s] libxcb-xfixes0-1.15-2.1               ########################################
+[   90s] libxcb-glx0-1.15-2.1                  ########################################
+[   90s] libxcb-shm0-1.15-2.1                  ########################################
+[   90s] libX11-data-1.8.1-4.1                 ########################################
+[   90s] libX11-6-1.8.1-4.1                    ########################################
+[   90s] libX11-xcb1-1.8.1-4.1                 ########################################
+[   90s] libXext6-1.3.5-1.1                    ########################################
+[   90s] libXxf86vm1-1.1.5-1.1                 ########################################
+[   90s] libXfixes3-6.0.0-2.1                  ########################################
+[   91s] libxcb-composite0-1.15-2.1            ########################################
+[   91s] libxcb-damage0-1.15-2.1               ########################################
+[   91s] libxcb-dpms0-1.15-2.1                 ########################################
+[   91s] libxcb-record0-1.15-2.1               ########################################
+[   91s] libxcb-render0-1.15-2.1               ########################################
+[   91s] libxcb-res0-1.15-2.1                  ########################################
+[   91s] libxcb-screensaver0-1.15-2.1          ########################################
+[   91s] libxcb-shape0-1.15-2.1                ########################################
+[   91s] libxcb-xf86dri0-1.15-2.1              ########################################
+[   91s] libxcb-xinerama0-1.15-2.1             ########################################
+[   91s] libxcb-xinput0-1.15-2.1               ########################################
+[   91s] libxcb-xkb1-1.15-2.1                  ########################################
+[   92s] libxcb-xtest0-1.15-2.1                ########################################
+[   92s] libxcb-xv0-1.15-2.1                   ########################################
+[   92s] libxcb-xvmc0-1.15-2.1                 ########################################
+[   92s] libXau-devel-1.0.11-1.1               ########################################
+[   92s] libxcb-devel-1.15-2.1                 ########################################
+[   93s] libX11-devel-1.8.1-4.1                ########################################
+[   93s] liblcms2-devel-2.14-3.3               ########################################
+[   97s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[   97s] libgbm1-23.0.0-353.1                  ########################################
+[   97s] libfreetype6-2.13.0-1.1               ########################################
+[   97s] libwayland-client0-1.21.0-4.2         ########################################
+[   97s] libpng16-compat-devel-1.6.39-2.1      ########################################
+[   97s] libpng16-devel-1.6.39-2.1             ########################################
+[   97s] libboost_atomic1_81_0-1.81.0-2.1      ########################################
+[   97s] libboost_atomic1_81_0-devel-1.81.0-2.1########################################
+[   97s] libboost_filesystem1_81_0-1.81.0-2.1  ########################################
+[   97s] libboost_filesystem1_81_0-devel-1.81.0########################################
+[   97s] libboost_system1_81_0-1.81.0-2.1      ########################################
+[   97s] libboost_system1_81_0-devel-1.81.0-2.1########################################
+[   97s] libwebpdemux2-1.2.4-1.2               ########################################
+[   98s] libwebpmux3-1.2.4-1.2                 ########################################
+[   98s] libdrm_amdgpu1-2.4.115-2.1            ########################################
+[   98s] libdrm_nouveau2-2.4.115-2.1           ########################################
+[   98s] libdrm_radeon1-2.4.115-2.1            ########################################
+[   98s] xz-devel-5.4.1-1.1                    ########################################
+[   98s] python-rpm-macros-20230304.050c1a4-1.1########################################
+[   98s] libzstd-devel-1.5.4-2.1               ########################################
+[   98s] libwebpdecoder3-1.2.4-1.2             ########################################
+[   98s] libwebp-devel-1.2.4-1.2               ########################################
+[   98s] libuv1-1.44.2-3.1                     ########################################
+[   98s] libturbojpeg0-8.2.2-74.1              ########################################
+[   98s] libjpeg8-devel-8.2.2-74.1             ########################################
+[   98s] libtinyxml0-2.6.2-10.1                ########################################
+[   99s] librhash0-1.4.3-1.1                   ########################################
+[   99s] libpcre2-posix3-10.42-3.2             ########################################
+[   99s] libpcre2-32-0-10.42-3.2               ########################################
+[   99s] libpcre2-16-0-10.42-3.2               ########################################
+[   99s] libmpdec3-2.5.1-2.1                   ########################################
+[   99s] libjbig2-2.1-4.1                      ########################################
+[   99s] libtiff6-4.5.0-3.1                    ########################################
+[   99s] libtiff-devel-4.5.0-3.1               ########################################
+[  100s] libedit0-20210910.3.1-1.1             ########################################
+[  113s] libLLVM15-15.0.7-2.1                  ########################################
+[  114s] Mesa-libEGL1-23.0.0-353.1             ########################################
+[  114s] libglvnd-1.6.0-1.1                    ########################################
+[  114s] Mesa-libGL1-23.0.0-353.1              ########################################
+[  114s] Mesa-23.0.0-353.1                     ########################################
+[  117s] Mesa-dri-23.0.0-353.1                 ########################################
+[  117s] libglvnd-devel-1.6.0-1.1              ########################################
+[  117s] Mesa-libEGL-devel-23.0.0-353.1        ########################################
+[  117s] Mesa-libGL-devel-23.0.0-353.1         ########################################
+[  117s] Mesa-libGLESv1_CM-devel-23.0.0-353.1  ########################################
+[  118s] Mesa-libGLESv2-devel-23.0.0-353.1     ########################################
+[  118s] libGLEW2_2-2.2.0-3.1                  ########################################
+[  118s] libGLU1-9.0.2-2.1                     ########################################
+[  118s] glu-devel-9.0.2-2.1                   ########################################
+[  118s] libbz2-devel-1.0.8-5.1                ########################################
+[  118s] libasound2-1.2.8-1.1                  ########################################
+[  119s] libSDL2-2_0-0-2.26.3-2.1              ########################################
+[  119s] libSDL2_image-2_0-0-2.6.3-1.1         ########################################
+[  119s] SDL2-devel-2.26.3-2.1                 ########################################
+[  119s] gtest-1.12.1-5.1                      ########################################
+[  120s] highway-devel-1.0.3-1.1               ########################################
+[  120s] libjxl-devel-0.7.0-3.2                ########################################
+[  120s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[  121s] libopenssl3-3.0.8-2.1                 ########################################
+[  121s] libpython3_10-1_0-3.10.10-1.2         ########################################
+[  126s] python310-base-3.10.10-1.2            ########################################
+[  126s] python310-packaging-23.0-2.1          ########################################
+[  133s] cmake-mini-3.25.2-1.2                 ########################################
+[  133s] cmake-3.25.2-1.1                      ########################################
+[  133s] glm-devel-0.9.9.8-2.1                 ########################################
+[  133s] python-rpm-packaging-20210526+a18ca48-########################################
+[  133s] SDL2_image-devel-2.6.3-1.1            ########################################
+[  134s] freetype2-devel-2.13.0-1.1            ########################################
+[  134s] glew-devel-2.2.0-3.1                  ########################################
+[  134s] pcre2-devel-10.42-3.2                 ########################################
+[  134s] tinyxml-devel-2.6.2-10.1              ########################################
+[  134s] libboost_system-devel-1.81.0-1.1      ########################################
+[  134s] libboost_filesystem-devel-1.81.0-1.1  ########################################
+[  134s] gcc-c++-12-2.1                        ########################################
+[  141s] now finalizing build dir...
+[  141s] ... running 01-add_abuild_user_to_trusted_group
+[  141s] ... running 02-set_timezone_to_utc
+[  141s] ... running 03-set-permissions-secure
+[  142s] ... running 11-hack_uname_version_to_kernel_version
+[  149s] -----------------------------------------------------------------
+[  149s] I have the following modifications for gource.spec:
+[  150s] 21c21
+[  150s] < Release:        0
+[  150s] ---
+[  150s] > Release:        7.1
+[  156s] build target is riscv64-suse-linux
+[  156s] -----------------------------------------------------------------
+[  156s] ----- building gource.spec (user abuild)
+[  156s] -----------------------------------------------------------------
+[  156s] -----------------------------------------------------------------
+[  160s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f554e3365598bb7f5a6398020902cedc-gource' /home/abuild/rpmbuild/SOURCES/gource.spec
+[  160s] Building target platforms: riscv64-suse-linux
+[  160s] Building for target riscv64-suse-linux
+[  160s] setting SOURCE_DATE_EPOCH=1678665600
+[  161s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.r6fWUF
+[  161s] + umask 022
+[  161s] + cd /home/abuild/rpmbuild/BUILD
+[  161s] + cd /home/abuild/rpmbuild/BUILD
+[  161s] + rm -rf gource-0.54
+[  161s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/gource-0.54.tar.gz
+[  161s] + STATUS=0
+[  161s] + '[' 0 -ne 0 ']'
+[  161s] + cd gource-0.54
+[  161s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  161s] + echo 'Patch #24300 (riscv.patch):'
+[  161s] Patch #24300 (riscv.patch):
+[  161s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  161s] patching file configure
+[  161s] Hunk #1 FAILED at 6973.
+[  161s] 1 out of 1 hunk FAILED -- saving rejects to file configure.rej
+[  161s] patching file m4/ax_boost_base.m4
+[  161s] Hunk #1 FAILED at 113.
+[  161s] 1 out of 1 hunk FAILED -- saving rejects to file m4/ax_boost_base.m4.rej
+[  161s] error: Bad exit status from /var/tmp/rpm-tmp.r6fWUF (%prep)
+[  161s] 
+[  161s] RPM build errors:
+[  161s]     Bad exit status from /var/tmp/rpm-tmp.r6fWUF (%prep)
+[  162s] ### VM INTERACTION START ###
+[  162s] [  156.058983][    T1] sysrq: Power Off
+[  162s] [  156.060720][  T296] reboot: Power down
+[  162s] ### VM INTERACTION END ###
+[  162s] 
+[  162s] lamb06 failed "build gource.spec" at Tue Mar 14 18:14:32 UTC 2023.
+[  162s] 

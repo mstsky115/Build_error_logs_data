@@ -1,0 +1,705 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_7/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_7/root
+[    0s] 
+[    0s] 
+[    0s] lamb13 started "build python-pymediainfo.spec" at Mon Apr 10 13:40:23 UTC 2023.
+[    0s] 
+[    0s] Building python-pymediainfo for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'e2892234193e4356e2ea446f58990d86'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_7/.build-srcdir/python-pymediainfo.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_7/.build-srcdir/python-pymediainfo.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/7/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_7/.build.rpmlist /var/cache/obs/worker/root_7/.build-srcdir/python-pymediainfo.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [3b4ba906c9060cdca62d6460d411b5d2]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_7/.mount/boot/kernel -initrd /var/cache/obs/worker/root_7/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_7/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_7/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_7/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   10s] ### VM INTERACTION END ###
+[   10s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   11s] Linux version: 6.2.9-1-default #1 SMP PREEMPT_DYNAMIC Thu Mar 30 11:30:50 UTC 2023 (7a187a3)
+[   11s] Increasing log level from now on...
+[   11s] [    5.168311][  T417] sysrq: Changing Loglevel
+[   11s] [    5.168421][  T417] sysrq: Loglevel set to 4
+[   11s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=1028706c-8387-4293-878f-3440042205a8
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/python-pymediainfo.spec ...
+[   13s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-pymediainfo.spec build ...
+[   13s] initializing rpm db...
+[   14s] querying package ids...
+[   39s] [1/196] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   39s] [2/196] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   39s] [3/196] preinstalled attr-2.5.1-1.1
+[   39s] [4/196] preinstalled bash-5.2.15-8.1
+[   39s] [5/196] preinstalled bash-sh-5.2.15-8.1
+[   39s] [6/196] preinstalled binutils-2.40-3.1
+[   39s] [7/196] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   39s] [8/196] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   39s] [9/196] preinstalled build-mkbaselibs-20230314-1.1
+[   39s] [10/196] preinstalled bzip2-1.0.8-5.1
+[   39s] [11/196] preinstalled chkstat-1599_20230217-1.1
+[   39s] [12/196] preinstalled compat-usrmerge-build-84.87-5.1
+[   39s] [13/196] preinstalled compat-usrmerge-tools-84.87-5.1
+[   39s] [14/196] preinstalled coreutils-9.2-2.1
+[   39s] [15/196] preinstalled cpio-2.13-5.1
+[   39s] [16/196] preinstalled cpp-13-1.1
+[   39s] [17/196] preinstalled cpp13-13.0.1+git6995-8.1
+[   39s] [18/196] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   39s] [19/196] preinstalled debugedit-5.0-5.1
+[   39s] [20/196] preinstalled diffutils-3.9-1.1
+[   39s] [21/196] preinstalled dwz-0.15-2.1
+[   39s] [22/196] preinstalled elfutils-0.189-2.1
+[   39s] [23/196] cumulate fdupes-2.2.1-1.1
+[   39s] [24/196] preinstalled file-5.44-1.3
+[   39s] [25/196] preinstalled file-magic-5.44-1.3
+[   39s] [26/196] preinstalled filesystem-84.87-12.1
+[   39s] [27/196] preinstalled fillup-1.42-279.1
+[   39s] [28/196] preinstalled findutils-4.9.0-2.1
+[   39s] [29/196] preinstalled gawk-5.2.1-2.1
+[   39s] [30/196] preinstalled gcc-13-1.1
+[   39s] [31/196] preinstalled gcc-PIE-13-1.1
+[   39s] [32/196] preinstalled gcc13-13.0.1+git6995-8.1
+[   39s] [33/196] preinstalled gcc13-PIE-13.0.1+git6995-8.1
+[   39s] [34/196] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   39s] [35/196] preinstalled gettext-tools-mini-0.21.1-1.1
+[   39s] [36/196] preinstalled glibc-2.37-3.1
+[   39s] [37/196] preinstalled glibc-devel-2.37-3.1
+[   39s] [38/196] preinstalled glibc-locale-base-2.37-3.1
+[   39s] [39/196] preinstalled grep-3.9-1.1
+[   39s] [40/196] preinstalled gzip-1.12-3.1
+[   39s] [41/196] preinstalled kernel-obs-build-6.2.9-1.1
+[   39s] [42/196] preinstalled libacl1-2.3.1-2.1
+[   39s] [43/196] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   39s] [44/196] preinstalled libasan8-13.0.1+git6995-8.1
+[   39s] [45/196] preinstalled libasm1-0.189-2.1
+[   39s] [46/196] preinstalled libatomic1-13.0.1+git6995-8.1
+[   39s] [47/196] preinstalled libattr1-2.5.1-1.1
+[   39s] [48/196] preinstalled libaudit1-3.0.9-1.1
+[   39s] [49/196] preinstalled libblkid1-2.38.1-12.1
+[   39s] [50/196] cumulate libbrotlicommon1-1.0.9-3.1
+[   39s] [51/196] preinstalled libbz2-1-1.0.8-5.1
+[   39s] [52/196] preinstalled libcap-ng0-0.8.3-1.1
+[   39s] [53/196] preinstalled libcap2-2.68-1.1
+[   39s] [54/196] cumulate libcom_err2-1.46.5-4.1
+[   39s] [55/196] preinstalled libcrypt1-4.4.33-3.1
+[   39s] [56/196] preinstalled libctf-nobfd0-2.40-3.1
+[   39s] [57/196] preinstalled libctf0-2.40-3.1
+[   39s] [58/196] preinstalled libdb-4_8-4.8.30-40.1
+[   39s] [59/196] preinstalled libdw1-0.189-2.1
+[   39s] [60/196] preinstalled libeconf0-0.5.2-1.1
+[   39s] [61/196] preinstalled libelf1-0.189-2.1
+[   39s] [62/196] preinstalled libexpat1-2.5.0-2.1
+[   39s] [63/196] preinstalled libfdisk1-2.38.1-12.1
+[   39s] [64/196] preinstalled libffi8-3.4.4-1.1
+[   39s] [65/196] preinstalled libgcc_s1-13.0.1+git6995-8.1
+[   39s] [66/196] preinstalled libgcrypt20-1.10.1-2.1
+[   39s] [67/196] preinstalled libgdbm6-1.23-1.1
+[   39s] [68/196] preinstalled libgdbm_compat4-1.23-1.1
+[   39s] [69/196] preinstalled libgmp10-6.2.1-4.1
+[   39s] [70/196] preinstalled libgomp1-13.0.1+git6995-8.1
+[   39s] [71/196] preinstalled libgpg-error0-1.46-1.1
+[   39s] [72/196] preinstalled libisl23-0.25-1.1
+[   39s] [73/196] preinstalled libitm1-13.0.1+git6995-8.1
+[   39s] [74/196] preinstalled liblua5_4-5-5.4.4-10.1
+[   39s] [75/196] preinstalled liblzma5-5.4.2-2.1
+[   39s] [76/196] preinstalled libmagic1-5.44-1.3
+[   39s] [77/196] cumulate libmms0-0.6.4-5.3
+[   39s] [78/196] preinstalled libmount1-2.38.1-12.1
+[   39s] [79/196] preinstalled libmpc3-1.3.1-1.2
+[   39s] [80/196] preinstalled libmpdec3-2.5.1-2.1
+[   39s] [81/196] preinstalled libmpfr6-4.2.0-1.1
+[   39s] [82/196] preinstalled libncurses6-6.4.20230311-8.1
+[   39s] [83/196] cumulate libnghttp2-14-1.51.0-7.2
+[   39s] [84/196] preinstalled libopenssl3-3.0.8-2.1
+[   39s] [85/196] preinstalled libpcre2-8-0-10.42-3.2
+[   39s] [86/196] preinstalled libpkgconf3-1.8.0-2.1
+[   39s] [87/196] preinstalled libpopt0-1.19-1.1
+[   39s] [88/196] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   39s] [89/196] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   39s] [90/196] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   39s] [91/196] preinstalled libreadline8-8.2-2.1
+[   39s] [92/196] preinstalled librpmbuild9-4.18.0-4.2
+[   39s] [93/196] cumulate libsasl2-3-2.1.28-4.2
+[   39s] [94/196] preinstalled libseccomp2-2.5.4-2.1
+[   39s] [95/196] preinstalled libselinux1-3.5-1.1
+[   39s] [96/196] preinstalled libsemanage-conf-3.5-1.2
+[   39s] [97/196] preinstalled libsemanage2-3.5-1.2
+[   39s] [98/196] preinstalled libsepol2-3.5-1.1
+[   39s] [99/196] preinstalled libsmartcols1-2.38.1-12.1
+[   39s] [100/196] cumulate libssh-config-0.10.4-1.2
+[   39s] [101/196] preinstalled libstdc++6-13.0.1+git6995-8.1
+[   39s] [102/196] preinstalled libsubid4-4.13-4.1
+[   39s] [103/196] preinstalled libubsan1-13.0.1+git6995-8.1
+[   39s] [104/196] cumulate libunistring5-1.1-1.1
+[   39s] [105/196] preinstalled libutempter0-1.2.0-3.2
+[   39s] [106/196] preinstalled libuuid1-2.38.1-12.1
+[   39s] [107/196] cumulate libverto1-0.3.2-1.1
+[   39s] [108/196] preinstalled libxcrypt-devel-4.4.33-3.1
+[   39s] [109/196] preinstalled libz1-1.2.13-3.1
+[   39s] [110/196] cumulate libzen0-0.4.40-1.2
+[   39s] [111/196] preinstalled libzstd1-1.5.4-2.1
+[   39s] [112/196] preinstalled linux-glibc-devel-6.2-1.1
+[   39s] [113/196] preinstalled login_defs-4.13-4.1
+[   39s] [114/196] preinstalled lua54-5.4.4-10.1
+[   39s] [115/196] preinstalled make-4.4.1-2.1
+[   39s] [116/196] preinstalled ncurses-utils-6.4.20230311-8.1
+[   39s] [117/196] preinstalled pam-1.5.2-14.1
+[   39s] [118/196] preinstalled patch-2.7.6-6.1
+[   39s] [119/196] preinstalled perl-5.36.0-4.1
+[   39s] [120/196] preinstalled perl-base-5.36.0-4.1
+[   39s] [121/196] preinstalled permissions-1599_20230217-1.1
+[   39s] [122/196] preinstalled permissions-config-1599_20230217-1.1
+[   39s] [123/196] preinstalled pkgconf-1.8.0-2.1
+[   39s] [124/196] preinstalled pkgconf-m4-1.8.0-2.1
+[   39s] [125/196] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   39s] [126/196] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   39s] [127/196] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   39s] [128/196] preinstalled python-rpm-macros-20230403.29b58f8-1.1
+[   39s] [129/196] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   39s] [130/196] cumulate python310-attrs-22.2.0-1.3
+[   39s] [131/196] preinstalled python310-base-3.10.10-2.1
+[   39s] [132/196] cumulate python310-exceptiongroup-1.1.1-1.2
+[   39s] [133/196] cumulate python310-iniconfig-2.0.0-1.2
+[   39s] [134/196] preinstalled python310-packaging-23.0-2.1
+[   39s] [135/196] cumulate python310-pluggy-1.0.0-1.6
+[   39s] [136/196] preinstalled python310-setuptools-67.6.0-1.2
+[   39s] [137/196] cumulate python310-tomli-2.0.1-1.4
+[   39s] [138/196] cumulate python310-typing_extensions-4.5.0-1.2
+[   39s] [139/196] cumulate python310-zipp-3.8.1-1.3
+[   39s] [140/196] cumulate python311-attrs-22.2.0-1.3
+[   39s] [141/196] preinstalled python311-base-3.11.2-1.2
+[   39s] [142/196] cumulate python311-exceptiongroup-1.1.1-1.2
+[   39s] [143/196] cumulate python311-iniconfig-2.0.0-1.2
+[   39s] [144/196] cumulate python311-packaging-23.0-2.2
+[   39s] [145/196] cumulate python311-pluggy-1.0.0-1.6
+[   39s] [146/196] preinstalled python311-setuptools-67.6.0-1.2
+[   39s] [147/196] cumulate python311-tomli-2.0.1-1.4
+[   39s] [148/196] cumulate python311-typing_extensions-4.5.0-1.2
+[   39s] [149/196] cumulate python311-zipp-3.8.1-1.3
+[   39s] [150/196] cumulate python39-attrs-22.2.0-1.3
+[   39s] [151/196] preinstalled python39-base-3.9.16-5.1
+[   39s] [152/196] cumulate python39-exceptiongroup-1.1.1-1.2
+[   39s] [153/196] cumulate python39-iniconfig-2.0.0-1.2
+[   39s] [154/196] cumulate python39-packaging-23.0-2.2
+[   39s] [155/196] cumulate python39-pluggy-1.0.0-1.6
+[   39s] [156/196] preinstalled python39-setuptools-67.6.0-1.2
+[   39s] [157/196] cumulate python39-tomli-2.0.1-1.4
+[   39s] [158/196] cumulate python39-typing_extensions-4.5.0-1.2
+[   39s] [159/196] cumulate python39-zipp-3.8.1-1.3
+[   39s] [160/196] preinstalled qemu-linux-user-7.1.0-58.1
+[   39s] [161/196] preinstalled rpm-4.18.0-4.2
+[   39s] [162/196] preinstalled rpm-build-4.18.0-4.2
+[   39s] [163/196] preinstalled rpm-build-perl-4.18.0-4.2
+[   39s] [164/196] preinstalled rpm-config-SUSE-20220926-1.1
+[   39s] [165/196] preinstalled rpmlint-mini-2.4.0+git20230403.7ce263c-10.4
+[   39s] [166/196] preinstalled rpmlint-strict-2.4.0+git20230403.7ce263c-1.1
+[   39s] [167/196] preinstalled sed-4.9-2.1
+[   39s] [168/196] preinstalled shadow-4.13-4.1
+[   39s] [169/196] preinstalled system-group-hardware-20170617-24.1
+[   39s] [170/196] preinstalled system-user-root-20190513-2.1
+[   39s] [171/196] preinstalled systemd-rpm-macros-20-1.1
+[   39s] [172/196] preinstalled sysuser-shadow-3.1-5.1
+[   39s] [173/196] preinstalled tar-1.34-10.1
+[   39s] [174/196] preinstalled terminfo-base-6.4.20230311-8.1
+[   39s] [175/196] preinstalled update-alternatives-1.21.8-1.1
+[   39s] [176/196] preinstalled util-linux-2.38.1-12.1
+[   39s] [177/196] preinstalled which-2.21-5.1
+[   39s] [178/196] preinstalled xz-5.4.2-2.1
+[   39s] [179/196] cumulate alts-1.2+3.b848aad-3.1
+[   39s] [180/196] cumulate libbrotlidec1-1.0.9-3.1
+[   39s] [181/196] cumulate libidn2-0-2.3.4-1.1
+[   39s] [182/196] cumulate libldap2-2.6.3-3.2
+[   39s] [183/196] cumulate python310-importlib-metadata-6.1.0-2.1
+[   39s] [184/196] cumulate python311-importlib-metadata-6.1.0-2.1
+[   39s] [185/196] cumulate python39-importlib-metadata-6.1.0-2.1
+[   39s] [186/196] cumulate krb5-mini-1.20.1-5.1
+[   39s] [187/196] cumulate python310-setuptools_scm-7.0.5-1.3
+[   39s] [188/196] cumulate python311-setuptools_scm-7.0.5-1.3
+[   39s] [189/196] cumulate python39-setuptools_scm-7.0.5-1.3
+[   39s] [190/196] cumulate libpsl5-0.21.2-1.1
+[   39s] [191/196] cumulate libssh4-0.10.4-1.2
+[   39s] [192/196] cumulate python310-pytest-7.2.0-3.2
+[   39s] [193/196] cumulate python311-pytest-7.2.0-3.2
+[   39s] [194/196] cumulate python39-pytest-7.2.0-3.2
+[   39s] [195/196] cumulate libcurl4-8.0.1-1.1
+[   39s] [196/196] cumulate libmediainfo0-23.03-1.1
+[   39s] now installing cumulated packages
+[   39s] Preparing...                          ########################################
+[   39s] Updating / installing...
+[   39s] python39-tomli-2.0.1-1.4              ########################################
+[   39s] python39-packaging-23.0-2.2           ########################################
+[   40s] python311-tomli-2.0.1-1.4             ########################################
+[   40s] python311-packaging-23.0-2.2          ########################################
+[   40s] python310-tomli-2.0.1-1.4             ########################################
+[   40s] libunistring5-1.1-1.1                 ########################################
+[   40s] libidn2-0-2.3.4-1.1                   ########################################
+[   40s] libpsl5-0.21.2-1.1                    ########################################
+[   40s] python39-zipp-3.8.1-1.3               ########################################
+[   40s] python39-importlib-metadata-6.1.0-2.1 ########################################
+[   40s] python39-typing_extensions-4.5.0-1.2  ########################################
+[   40s] python39-pluggy-1.0.0-1.6             ########################################
+[   40s] python39-iniconfig-2.0.0-1.2          ########################################
+[   40s] python39-exceptiongroup-1.1.1-1.2     ########################################
+[   40s] python39-attrs-22.2.0-1.3             ########################################
+[   40s] python311-zipp-3.8.1-1.3              ########################################
+[   40s] python311-importlib-metadata-6.1.0-2.1########################################
+[   40s] python311-typing_extensions-4.5.0-1.2 ########################################
+[   40s] python311-pluggy-1.0.0-1.6            ########################################
+[   40s] python311-iniconfig-2.0.0-1.2         ########################################
+[   40s] python311-exceptiongroup-1.1.1-1.2    ########################################
+[   40s] python311-attrs-22.2.0-1.3            ########################################
+[   40s] python310-zipp-3.8.1-1.3              ########################################
+[   41s] python310-importlib-metadata-6.1.0-2.1########################################
+[   41s] python310-typing_extensions-4.5.0-1.2 ########################################
+[   41s] python310-pluggy-1.0.0-1.6            ########################################
+[   41s] python310-iniconfig-2.0.0-1.2         ########################################
+[   41s] python310-exceptiongroup-1.1.1-1.2    ########################################
+[   41s] python310-attrs-22.2.0-1.3            ########################################
+[   41s] libzen0-0.4.40-1.2                    ########################################
+[   41s] libverto1-0.3.2-1.1                   ########################################
+[   41s] libssh-config-0.10.4-1.2              ########################################
+[   41s] libsasl2-3-2.1.28-4.2                 ########################################
+[   41s] libldap2-2.6.3-3.2                    ########################################
+[   41s] libnghttp2-14-1.51.0-7.2              ########################################
+[   41s] libmms0-0.6.4-5.3                     ########################################
+[   41s] libcom_err2-1.46.5-4.1                ########################################
+[   42s] krb5-mini-1.20.1-5.1                  ########################################
+[   42s] Updating /etc/sysconfig/kadmind ...
+[   42s] Updating /etc/sysconfig/krb5kdc ...
+[   42s] libssh4-0.10.4-1.2                    ########################################
+[   42s] libbrotlicommon1-1.0.9-3.1            ########################################
+[   43s] libbrotlidec1-1.0.9-3.1               ########################################
+[   43s] libcurl4-8.0.1-1.1                    ########################################
+[   43s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   43s] alts-1.2+3.b848aad-3.1                ########################################
+[   43s] python310-pytest-7.2.0-3.2            ########################################
+[   44s] python311-pytest-7.2.0-3.2            ########################################
+[   45s] python39-pytest-7.2.0-3.2             ########################################
+[   46s] libmediainfo0-23.03-1.1               ########################################
+[   46s] python310-setuptools_scm-7.0.5-1.3    ########################################
+[   46s] python311-setuptools_scm-7.0.5-1.3    ########################################
+[   46s] python39-setuptools_scm-7.0.5-1.3     ########################################
+[   46s] fdupes-2.2.1-1.1                      ########################################
+[   49s] now finalizing build dir...
+[   49s] ... running 01-add_abuild_user_to_trusted_group
+[   49s] ... running 02-set_timezone_to_utc
+[   49s] ... running 03-set-permissions-secure
+[   50s] ... running 11-hack_uname_version_to_kernel_version
+[   58s] -----------------------------------------------------------------
+[   58s] I have the following modifications for python-pymediainfo.spec:
+[   58s] 22c22
+[   58s] < Release:        0
+[   58s] ---
+[   58s] > Release:        2.2
+[   64s] build target is riscv64-suse-linux
+[   64s] -----------------------------------------------------------------
+[   64s] ----- building python-pymediainfo.spec (user abuild)
+[   64s] -----------------------------------------------------------------
+[   64s] -----------------------------------------------------------------
+[   68s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/e2892234193e4356e2ea446f58990d86-python-pymediainfo' /home/abuild/rpmbuild/SOURCES/python-pymediainfo.spec
+[   95s] Building target platforms: riscv64-suse-linux
+[   95s] Building for target riscv64-suse-linux
+[   95s] setting SOURCE_DATE_EPOCH=1678060800
+[   95s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.5uTqI5
+[   95s] + umask 022
+[   95s] + cd /home/abuild/rpmbuild/BUILD
+[   95s] + cd /home/abuild/rpmbuild/BUILD
+[   95s] + rm -rf pymediainfo-6.0.1
+[   96s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pymediainfo-6.0.1.tar.gz
+[   96s] + STATUS=0
+[   96s] + '[' 0 -ne 0 ']'
+[   96s] + cd pymediainfo-6.0.1
+[   96s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   96s] + rm -rf pymediainfo.egg-info
+[   96s] + RPM_EC=0
+[   96s] ++ jobs -p
+[   96s] + exit 0
+[   96s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.NRWI2a
+[   96s] + umask 022
+[   96s] + cd /home/abuild/rpmbuild/BUILD
+[   96s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64
+[   96s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64
+[   96s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   97s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64
+[   97s] + cd pymediainfo-6.0.1
+[   97s] + ref=/usr/lib/rpm
+[   97s] + mints=0
+[   97s] + case $(uname -m) in
+[   97s] ++ uname -m
+[   97s] + mints=20160911
+[   97s] + for s in guess sub
+[   97s] ++ find -maxdepth 8 -name config.guess
+[   97s] + for s in guess sub
+[   97s] ++ find -maxdepth 8 -name config.sub
+[   97s] ++ '[' -f _current_flavor ']'
+[   97s] ++ true
+[   97s] + last_flavor=
+[   97s] + '[' -z '' ']'
+[   97s] + last_flavor=tmp
+[   97s] + '[' tmp '!=' python39 ']'
+[   97s] + '[' -d build ']'
+[   97s] + '[' -d _build.python39 ']'
+[   97s] + echo python39
+[   97s] + python_flavor=python39
+[   97s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  100s] /usr/lib/python3.9/site-packages/setuptools/__init__.py:85: _DeprecatedInstaller: setuptools.installer and fetch_build_eggs are deprecated. Requirements should be satisfied by a PEP 517 installer. If you are using pip, you can try `pip install --use-pep517`.
+[  100s]   dist.fetch_build_eggs(dist.setup_requires)
+[  100s] WARNING: The wheel package is not available.
+[  100s] running build
+[  100s] running build_py
+[  100s] creating build
+[  100s] creating build/lib
+[  100s] creating build/lib/pymediainfo
+[  100s] copying pymediainfo/__init__.py -> build/lib/pymediainfo
+[  100s] running egg_info
+[  100s] creating pymediainfo.egg-info
+[  101s] writing pymediainfo.egg-info/PKG-INFO
+[  101s] writing dependency_links to pymediainfo.egg-info/dependency_links.txt
+[  101s] writing namespace_packages to pymediainfo.egg-info/namespace_packages.txt
+[  101s] writing requirements to pymediainfo.egg-info/requires.txt
+[  101s] writing top-level names to pymediainfo.egg-info/top_level.txt
+[  101s] writing manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  101s] reading manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  101s] adding license file 'LICENSE'
+[  101s] adding license file 'AUTHORS'
+[  101s] writing manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  101s] ++ '[' -f _current_flavor ']'
+[  101s] ++ cat _current_flavor
+[  101s] + last_flavor=python39
+[  101s] + '[' -z python39 ']'
+[  101s] + '[' python39 '!=' python311 ']'
+[  101s] + '[' -d build ']'
+[  101s] + mv build _build.python39
+[  101s] + '[' -d _build.python311 ']'
+[  101s] + echo python311
+[  101s] + python_flavor=python311
+[  101s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  104s] /usr/lib/python3.11/site-packages/setuptools/__init__.py:85: _DeprecatedInstaller: setuptools.installer and fetch_build_eggs are deprecated. Requirements should be satisfied by a PEP 517 installer. If you are using pip, you can try `pip install --use-pep517`.
+[  104s]   dist.fetch_build_eggs(dist.setup_requires)
+[  104s] WARNING: The wheel package is not available.
+[  104s] running build
+[  104s] running build_py
+[  104s] creating build
+[  104s] creating build/lib
+[  104s] creating build/lib/pymediainfo
+[  104s] copying pymediainfo/__init__.py -> build/lib/pymediainfo
+[  104s] running egg_info
+[  104s] writing pymediainfo.egg-info/PKG-INFO
+[  104s] writing dependency_links to pymediainfo.egg-info/dependency_links.txt
+[  104s] writing namespace_packages to pymediainfo.egg-info/namespace_packages.txt
+[  104s] writing requirements to pymediainfo.egg-info/requires.txt
+[  104s] writing top-level names to pymediainfo.egg-info/top_level.txt
+[  104s] reading manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  104s] adding license file 'LICENSE'
+[  104s] adding license file 'AUTHORS'
+[  104s] writing manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  105s] ++ '[' -f _current_flavor ']'
+[  105s] ++ cat _current_flavor
+[  105s] + last_flavor=python311
+[  105s] + '[' -z python311 ']'
+[  105s] + '[' python311 '!=' python310 ']'
+[  105s] + '[' -d build ']'
+[  105s] + mv build _build.python311
+[  105s] + '[' -d _build.python310 ']'
+[  105s] + echo python310
+[  105s] + python_flavor=python310
+[  105s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  108s] /usr/lib/python3.10/site-packages/setuptools/__init__.py:85: _DeprecatedInstaller: setuptools.installer and fetch_build_eggs are deprecated. Requirements should be satisfied by a PEP 517 installer. If you are using pip, you can try `pip install --use-pep517`.
+[  108s]   dist.fetch_build_eggs(dist.setup_requires)
+[  108s] WARNING: The wheel package is not available.
+[  108s] running build
+[  108s] running build_py
+[  108s] creating build
+[  108s] creating build/lib
+[  108s] creating build/lib/pymediainfo
+[  108s] copying pymediainfo/__init__.py -> build/lib/pymediainfo
+[  108s] running egg_info
+[  108s] writing pymediainfo.egg-info/PKG-INFO
+[  108s] writing dependency_links to pymediainfo.egg-info/dependency_links.txt
+[  108s] writing namespace_packages to pymediainfo.egg-info/namespace_packages.txt
+[  108s] writing requirements to pymediainfo.egg-info/requires.txt
+[  108s] writing top-level names to pymediainfo.egg-info/top_level.txt
+[  108s] reading manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  108s] adding license file 'LICENSE'
+[  108s] adding license file 'AUTHORS'
+[  108s] writing manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  108s] + RPM_EC=0
+[  108s] ++ jobs -p
+[  108s] + exit 0
+[  109s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.s9FON9
+[  109s] + umask 022
+[  109s] + cd /home/abuild/rpmbuild/BUILD
+[  109s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64
+[  109s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  109s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64
+[  109s] + cd pymediainfo-6.0.1
+[  109s] ++ '[' -f _current_flavor ']'
+[  109s] ++ cat _current_flavor
+[  109s] + last_flavor=python310
+[  109s] + '[' -z python310 ']'
+[  109s] + '[' python310 '!=' python39 ']'
+[  109s] + '[' -d build ']'
+[  109s] + mv build _build.python310
+[  109s] + '[' -d _build.python39 ']'
+[  109s] + mv _build.python39 build
+[  109s] + echo python39
+[  109s] + python_flavor=python39
+[  109s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64 --prefix /usr
+[  112s] /usr/lib/python3.9/site-packages/setuptools/__init__.py:85: _DeprecatedInstaller: setuptools.installer and fetch_build_eggs are deprecated. Requirements should be satisfied by a PEP 517 installer. If you are using pip, you can try `pip install --use-pep517`.
+[  112s]   dist.fetch_build_eggs(dist.setup_requires)
+[  112s] WARNING: The wheel package is not available.
+[  112s] running install
+[  112s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  112s]   warnings.warn(
+[  112s] running install_lib
+[  112s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr
+[  112s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib
+[  112s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9
+[  112s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages
+[  112s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo
+[  112s] copying build/lib/pymediainfo/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo
+[  112s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo/__init__.py to __init__.cpython-39.pyc
+[  113s] writing byte-compilation script '/tmp/tmpdx7vxgsa.py'
+[  113s] /usr/bin/python3.9 /tmp/tmpdx7vxgsa.py
+[  115s] removing /tmp/tmpdx7vxgsa.py
+[  115s] running install_egg_info
+[  115s] running egg_info
+[  115s] writing pymediainfo.egg-info/PKG-INFO
+[  115s] writing dependency_links to pymediainfo.egg-info/dependency_links.txt
+[  115s] writing namespace_packages to pymediainfo.egg-info/namespace_packages.txt
+[  115s] writing requirements to pymediainfo.egg-info/requires.txt
+[  115s] writing top-level names to pymediainfo.egg-info/top_level.txt
+[  115s] reading manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  115s] adding license file 'LICENSE'
+[  115s] adding license file 'AUTHORS'
+[  115s] writing manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  115s] Copying pymediainfo.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo-6.0.1-py3.9.egg-info
+[  115s] running install_scripts
+[  115s] ++ '[' -f _current_flavor ']'
+[  115s] ++ cat _current_flavor
+[  115s] + last_flavor=python39
+[  115s] + '[' -z python39 ']'
+[  115s] + '[' python39 '!=' python311 ']'
+[  115s] + '[' -d build ']'
+[  115s] + mv build _build.python39
+[  115s] + '[' -d _build.python311 ']'
+[  115s] + mv _build.python311 build
+[  115s] + echo python311
+[  115s] + python_flavor=python311
+[  115s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64 --prefix /usr
+[  118s] /usr/lib/python3.11/site-packages/setuptools/__init__.py:85: _DeprecatedInstaller: setuptools.installer and fetch_build_eggs are deprecated. Requirements should be satisfied by a PEP 517 installer. If you are using pip, you can try `pip install --use-pep517`.
+[  118s]   dist.fetch_build_eggs(dist.setup_requires)
+[  118s] WARNING: The wheel package is not available.
+[  118s] running install
+[  118s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  118s]   warnings.warn(
+[  119s] running install_lib
+[  119s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11
+[  119s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages
+[  119s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo
+[  119s] copying build/lib/pymediainfo/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo
+[  119s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo/__init__.py to __init__.cpython-311.pyc
+[  119s] writing byte-compilation script '/tmp/tmpcmkw_7k7.py'
+[  119s] /usr/bin/python3.11 /tmp/tmpcmkw_7k7.py
+[  121s] removing /tmp/tmpcmkw_7k7.py
+[  121s] running install_egg_info
+[  121s] running egg_info
+[  121s] writing pymediainfo.egg-info/PKG-INFO
+[  121s] writing dependency_links to pymediainfo.egg-info/dependency_links.txt
+[  121s] writing namespace_packages to pymediainfo.egg-info/namespace_packages.txt
+[  121s] writing requirements to pymediainfo.egg-info/requires.txt
+[  121s] writing top-level names to pymediainfo.egg-info/top_level.txt
+[  121s] reading manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  121s] adding license file 'LICENSE'
+[  121s] adding license file 'AUTHORS'
+[  121s] writing manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  121s] Copying pymediainfo.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo-6.0.1-py3.11.egg-info
+[  121s] running install_scripts
+[  121s] ++ '[' -f _current_flavor ']'
+[  121s] ++ cat _current_flavor
+[  121s] + last_flavor=python311
+[  121s] + '[' -z python311 ']'
+[  121s] + '[' python311 '!=' python310 ']'
+[  121s] + '[' -d build ']'
+[  121s] + mv build _build.python311
+[  122s] + '[' -d _build.python310 ']'
+[  122s] + mv _build.python310 build
+[  122s] + echo python310
+[  122s] + python_flavor=python310
+[  122s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64 --prefix /usr
+[  124s] /usr/lib/python3.10/site-packages/setuptools/__init__.py:85: _DeprecatedInstaller: setuptools.installer and fetch_build_eggs are deprecated. Requirements should be satisfied by a PEP 517 installer. If you are using pip, you can try `pip install --use-pep517`.
+[  124s]   dist.fetch_build_eggs(dist.setup_requires)
+[  124s] WARNING: The wheel package is not available.
+[  125s] running install
+[  125s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  125s]   warnings.warn(
+[  125s] running install_lib
+[  125s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10
+[  125s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages
+[  125s] creating /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo
+[  125s] copying build/lib/pymediainfo/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo
+[  125s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo/__init__.py to __init__.cpython-310.pyc
+[  125s] writing byte-compilation script '/tmp/tmp45khr_7n.py'
+[  125s] /usr/bin/python3.10 /tmp/tmp45khr_7n.py
+[  127s] removing /tmp/tmp45khr_7n.py
+[  127s] running install_egg_info
+[  127s] running egg_info
+[  127s] writing pymediainfo.egg-info/PKG-INFO
+[  127s] writing dependency_links to pymediainfo.egg-info/dependency_links.txt
+[  127s] writing namespace_packages to pymediainfo.egg-info/namespace_packages.txt
+[  127s] writing requirements to pymediainfo.egg-info/requires.txt
+[  127s] writing top-level names to pymediainfo.egg-info/top_level.txt
+[  127s] reading manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  127s] adding license file 'LICENSE'
+[  127s] adding license file 'AUTHORS'
+[  127s] writing manifest file 'pymediainfo.egg-info/SOURCES.txt'
+[  127s] Copying pymediainfo.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo-6.0.1-py3.10.egg-info
+[  127s] running install_scripts
+[  128s] ++ '[' -f _current_flavor ']'
+[  128s] ++ cat _current_flavor
+[  128s] + last_flavor=python310
+[  128s] + '[' -z python310 ']'
+[  128s] + '[' python310 '!=' python39 ']'
+[  128s] + '[' -d build ']'
+[  128s] + mv build _build.python310
+[  128s] + '[' -d _build.python39 ']'
+[  128s] + mv _build.python39 build
+[  128s] + echo python39
+[  128s] + python_flavor=python39
+[  128s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages
+[  128s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo-6.0.1-py3.9.egg-info/namespace_packages.txt -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo-6.0.1-py3.9.egg-info/not-zip-safe
+[  128s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo-6.0.1-py3.9.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo-6.0.1-py3.9.egg-info/not-zip-safe
+[  128s] ++ '[' -f _current_flavor ']'
+[  128s] ++ cat _current_flavor
+[  128s] + last_flavor=python39
+[  128s] + '[' -z python39 ']'
+[  128s] + '[' python39 '!=' python311 ']'
+[  128s] + '[' -d build ']'
+[  128s] + mv build _build.python39
+[  128s] + '[' -d _build.python311 ']'
+[  128s] + mv _build.python311 build
+[  128s] + echo python311
+[  128s] + python_flavor=python311
+[  128s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages
+[  129s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo-6.0.1-py3.11.egg-info/namespace_packages.txt -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo-6.0.1-py3.11.egg-info/not-zip-safe
+[  129s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo-6.0.1-py3.11.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo-6.0.1-py3.11.egg-info/not-zip-safe
+[  129s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.11/site-packages/pymediainfo/__pycache__/__init__.cpython-311.pyc
+[  129s] ++ '[' -f _current_flavor ']'
+[  129s] ++ cat _current_flavor
+[  129s] + last_flavor=python311
+[  129s] + '[' -z python311 ']'
+[  129s] + '[' python311 '!=' python310 ']'
+[  129s] + '[' -d build ']'
+[  129s] + mv build _build.python311
+[  129s] + '[' -d _build.python310 ']'
+[  129s] + mv _build.python310 build
+[  129s] + echo python310
+[  129s] + python_flavor=python310
+[  129s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages
+[  129s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo-6.0.1-py3.10.egg-info/namespace_packages.txt -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo-6.0.1-py3.10.egg-info/not-zip-safe
+[  129s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo-6.0.1-py3.10.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.10/site-packages/pymediainfo-6.0.1-py3.10.egg-info/not-zip-safe
+[  129s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/pymediainfo-6.0.1
+[  130s] + /usr/lib/rpm/brp-compress
+[  130s] + /usr/lib/rpm/brp-suse
+[  130s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  130s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  130s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  130s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  130s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  131s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.rtkNTe
+[  131s] + umask 022
+[  131s] + cd /home/abuild/rpmbuild/BUILD
+[  131s] + cd pymediainfo-6.0.1
+[  131s] + set +x
+[  131s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  131s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  132s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  132s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  133s] + export PATH=/home/abuild/rpmbuild/BUILD/pymediainfo-6.0.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  133s] + PATH=/home/abuild/rpmbuild/BUILD/pymediainfo-6.0.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  133s] ++ '[' -f _current_flavor ']'
+[  133s] ++ cat _current_flavor
+[  133s] + last_flavor=python310
+[  133s] + '[' -z python310 ']'
+[  133s] + '[' python310 '!=' python39 ']'
+[  133s] + '[' -d build ']'
+[  133s] + mv build _build.python310
+[  133s] + '[' -d _build.python39 ']'
+[  133s] + mv _build.python39 build
+[  133s] + echo python39
+[  133s] + python_flavor=python39
+[  133s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages
+[  133s] + PYTHONDONTWRITEBYTECODE=1
+[  133s] + pytest-3.9 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  136s] ============================= test session starts ==============================
+[  136s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  136s] cachedir: .pytest_cache
+[  136s] rootdir: /home/abuild/rpmbuild/BUILD/pymediainfo-6.0.1, configfile: setup.cfg
+[  137s] collecting ... collected 59 items
+[  137s] 
+[  137s] tests/test_pymediainfo.py::MediaInfoTest::test_getting_attribute_that_doesnot_exist PASSED [  1%]
+[  137s] tests/test_pymediainfo.py::MediaInfoTest::test_load_mediainfo_from_string PASSED [  3%]
+[  137s] tests/test_pymediainfo.py::MediaInfoTest::test_populate_tracks PASSED    [  5%]
+[  137s] tests/test_pymediainfo.py::MediaInfoTest::test_track_existing_other_attributes PASSED [  6%]
+[  137s] tests/test_pymediainfo.py::MediaInfoTest::test_track_integer_attributes PASSED [  8%]
+[  137s] tests/test_pymediainfo.py::MediaInfoTest::test_track_other_attributes PASSED [ 10%]
+[  137s] tests/test_pymediainfo.py::MediaInfoTest::test_valid_video_track PASSED  [ 11%]
+[  137s] tests/test_pymediainfo.py::MediaInfoInvalidXMLTest::test_parse_invalid_xml PASSED [ 13%]
+[  137s] tests/test_pymediainfo.py::MediaInfoLibraryTest::test_can_parse_true Fatal Python error: Segmentation fault
+[  137s] 
+[  137s] Current thread 0x0000004002ce0020 (most recent call first):
+[  137s]   File "/home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages/pymediainfo/__init__.py", line 489 in parse
+[  137s]   File "/home/abuild/rpmbuild/BUILD/pymediainfo-6.0.1/tests/test_pymediainfo.py", line 97 in setUp
+[  137s]   File "/usr/lib64/python3.9/unittest/case.py", line 547 in _callSetUp
+[  137s]   File "/usr/lib64/python3.9/unittest/case.py", line 588 in run
+[  137s]   File "/usr/lib64/python3.9/unittest/case.py", line 651 in __call__
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/unittest.py", line 330 in runtest
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/runner.py", line 167 in pytest_runtest_call
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_callers.py", line 39 in _multicall
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_manager.py", line 80 in _hookexec
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_hooks.py", line 265 in __call__
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/runner.py", line 260 in <lambda>
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/runner.py", line 339 in from_call
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/runner.py", line 259 in call_runtest_hook
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/runner.py", line 220 in call_and_report
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/runner.py", line 131 in runtestprotocol
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/runner.py", line 112 in pytest_runtest_protocol
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_callers.py", line 39 in _multicall
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_manager.py", line 80 in _hookexec
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_hooks.py", line 265 in __call__
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/main.py", line 349 in pytest_runtestloop
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_callers.py", line 39 in _multicall
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_manager.py", line 80 in _hookexec
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_hooks.py", line 265 in __call__
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/main.py", line 324 in _main
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/main.py", line 270 in wrap_session
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/main.py", line 317 in pytest_cmdline_main
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_callers.py", line 39 in _multicall
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_manager.py", line 80 in _hookexec
+[  137s]   File "/usr/lib/python3.9/site-packages/pluggy/_hooks.py", line 265 in __call__
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/config/__init__.py", line 167 in main
+[  137s]   File "/usr/lib/python3.9/site-packages/_pytest/config/__init__.py", line 190 in console_main
+[  137s]   File "/usr/bin/pytest-3.9", line 33 in <module>
+[  137s] /var/tmp/rpm-tmp.rtkNTe: line 151:  3260 Segmentation fault      PYTHONPATH=${PYTHONPATH:+$PYTHONPATH:}/home/abuild/rpmbuild/BUILDROOT/python-pymediainfo-6.0.1-2.2.riscv64/usr/lib/python3.9/site-packages PYTHONDONTWRITEBYTECODE=1 pytest-3.9 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  137s] error: Bad exit status from /var/tmp/rpm-tmp.rtkNTe (%check)
+[  137s] 
+[  137s] RPM build errors:
+[  137s]     Bad exit status from /var/tmp/rpm-tmp.rtkNTe (%check)
+[  138s] ### VM INTERACTION START ###
+[  138s] [  132.403211][    T1] sysrq: Power Off
+[  138s] [  132.406721][    T7] reboot: Power down
+[  138s] ### VM INTERACTION END ###
+[  138s] 
+[  138s] lamb13 failed "build python-pymediainfo.spec" at Mon Apr 10 13:42:41 UTC 2023.
+[  138s] 

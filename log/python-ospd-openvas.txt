@@ -1,0 +1,2076 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_14/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_14/root
+[    0s] 
+[    1s] 
+[    1s] sheep86 started "build python-ospd-openvas.spec" at Thu Mar  9 21:39:28 UTC 2023.
+[    1s] 
+[    1s] Building python-ospd-openvas for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '5a99d3825a9b9c59b7458dce526f89a3'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_14/.build-srcdir/python-ospd-openvas.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_14/.build-srcdir/python-ospd-openvas.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/14/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_14/.build.rpmlist /var/cache/obs/worker/root_14/.build-srcdir/python-ospd-openvas.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [3085157376d6645e93cf6a1e2eb989a8]
+[    4s] 
+[    4s] copying packages...
+[    5s] reordering...cycle: python310-poetry-plugin-export -> python310-poetry
+[    5s]   breaking dependency python310-poetry-plugin-export -> python310-poetry
+[    5s] cycle: python311-poetry-plugin-export -> python311-poetry
+[    5s]   breaking dependency python311-poetry-plugin-export -> python311-poetry
+[    5s] cycle: python38-poetry-plugin-export -> python38-poetry
+[    5s]   breaking dependency python38-poetry-plugin-export -> python38-poetry
+[    5s] cycle: python39-poetry-plugin-export -> python39-poetry
+[    5s]   breaking dependency python39-poetry-plugin-export -> python39-poetry
+[    5s] done
+[    5s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/hwrng,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_14/.mount/boot/kernel -initrd /var/cache/obs/worker/root_14/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_14/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_14/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_14/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 6
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.2.1-1-default #1 SMP PREEMPT_DYNAMIC Mon Feb 27 11:39:51 UTC 2023 (69e0e95)
+[   10s] Increasing log level from now on...
+[   10s] [    3.829468][  T392] sysrq: Changing Loglevel
+[   10s] [    3.829628][  T392] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   10s] no label, UUID=ff98f0fe-b55a-4bf7-98f1-438f56f7f5f4
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/python-ospd-openvas.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-ospd-openvas.spec build ...
+[   11s] initializing rpm db...
+[   12s] querying package ids...
+[   39s] [1/451] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   39s] [2/451] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   39s] [3/451] preinstalled attr-2.5.1-1.1
+[   39s] [4/451] preinstalled bash-5.2.15-8.1
+[   39s] [5/451] preinstalled bash-sh-5.2.15-8.1
+[   39s] [6/451] preinstalled binutils-2.40-2.1
+[   39s] [7/451] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   39s] [8/451] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   39s] [9/451] preinstalled build-mkbaselibs-20230228-1.1
+[   39s] [10/451] preinstalled bzip2-1.0.8-4.1
+[   39s] [11/451] preinstalled chkstat-1599_20230217-1.1
+[   39s] [12/451] preinstalled compat-usrmerge-build-84.87-5.1
+[   39s] [13/451] preinstalled compat-usrmerge-tools-84.87-5.1
+[   39s] [14/451] preinstalled coreutils-9.1-5.1
+[   39s] [15/451] preinstalled cpio-2.13-5.1
+[   39s] [16/451] preinstalled cpp-12-2.1
+[   39s] [17/451] preinstalled cpp12-12.2.1+git749-4.1
+[   39s] [18/451] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   39s] [19/451] preinstalled debugedit-5.0-5.1
+[   39s] [20/451] preinstalled diffutils-3.9-1.1
+[   39s] [21/451] preinstalled dwz-0.15-2.1
+[   39s] [22/451] preinstalled elfutils-0.189-2.1
+[   39s] [23/451] cumulate fdupes-2.2.1-1.1
+[   39s] [24/451] preinstalled file-5.44-1.2
+[   39s] [25/451] preinstalled file-magic-5.44-1.2
+[   39s] [26/451] preinstalled filesystem-84.87-12.1
+[   39s] [27/451] preinstalled fillup-1.42-279.1
+[   39s] [28/451] preinstalled findutils-4.9.0-2.1
+[   39s] [29/451] preinstalled gawk-5.2.1-2.1
+[   39s] [30/451] preinstalled gcc-12-2.1
+[   39s] [31/451] preinstalled gcc-PIE-12-2.1
+[   39s] [32/451] preinstalled gcc12-12.2.1+git749-4.1
+[   39s] [33/451] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   39s] [34/451] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   39s] [35/451] preinstalled gettext-tools-mini-0.21.1-1.1
+[   39s] [36/451] preinstalled glibc-2.37-1.1
+[   39s] [37/451] preinstalled glibc-devel-2.37-1.1
+[   39s] [38/451] preinstalled glibc-locale-base-2.37-1.1
+[   39s] [39/451] preinstalled grep-3.9-1.1
+[   39s] [40/451] preinstalled gzip-1.12-3.1
+[   39s] [41/451] preinstalled kernel-obs-build-6.2.1-1.1
+[   39s] [42/451] preinstalled libacl1-2.3.1-2.1
+[   39s] [43/451] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   39s] [44/451] preinstalled libasan8-13.0.1+git5428-6.1
+[   39s] [45/451] preinstalled libasm1-0.189-2.1
+[   39s] [46/451] cumulate libassuan0-2.5.5-1.1
+[   39s] [47/451] preinstalled libatomic1-13.0.1+git5428-6.1
+[   39s] [48/451] preinstalled libattr1-2.5.1-1.1
+[   39s] [49/451] preinstalled libaudit1-3.0.9-1.1
+[   39s] [50/451] preinstalled libblkid1-2.38.1-9.1
+[   39s] [51/451] preinstalled libbz2-1-1.0.8-4.1
+[   39s] [52/451] preinstalled libcap-ng0-0.8.3-1.1
+[   39s] [53/451] preinstalled libcap2-2.67-1.1
+[   39s] [54/451] preinstalled libcrypt1-4.4.33-1.1
+[   39s] [55/451] preinstalled libctf-nobfd0-2.40-2.1
+[   39s] [56/451] preinstalled libctf0-2.40-2.1
+[   39s] [57/451] preinstalled libdb-4_8-4.8.30-39.1
+[   39s] [58/451] preinstalled libdw1-0.189-2.1
+[   39s] [59/451] preinstalled libeconf0-0.5.1-1.1
+[   39s] [60/451] preinstalled libelf1-0.189-2.1
+[   39s] [61/451] preinstalled libexpat1-2.5.0-2.1
+[   39s] [62/451] preinstalled libfdisk1-2.38.1-9.1
+[   39s] [63/451] preinstalled libffi8-3.4.4-1.1
+[   39s] [64/451] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   39s] [65/451] preinstalled libgcrypt20-1.10.1-1.1
+[   39s] [66/451] preinstalled libgdbm6-1.23-1.1
+[   39s] [67/451] preinstalled libgdbm_compat4-1.23-1.1
+[   39s] [68/451] preinstalled libgmp10-6.2.1-4.1
+[   39s] [69/451] preinstalled libgomp1-13.0.1+git5428-6.1
+[   39s] [70/451] preinstalled libgpg-error0-1.46-1.1
+[   39s] [71/451] preinstalled libisl23-0.25-1.1
+[   39s] [72/451] cumulate libksba8-1.6.3-1.1
+[   39s] [73/451] preinstalled liblua5_4-5-5.4.4-8.1
+[   39s] [74/451] preinstalled liblzma5-5.4.1-1.1
+[   39s] [75/451] preinstalled libmagic1-5.44-1.2
+[   39s] [76/451] preinstalled libmount1-2.38.1-9.1
+[   39s] [77/451] preinstalled libmpc3-1.3.1-1.2
+[   39s] [78/451] preinstalled libmpdec3-2.5.1-2.1
+[   39s] [79/451] preinstalled libmpfr6-4.2.0-1.1
+[   39s] [80/451] preinstalled libncurses6-6.4.20230218-6.1
+[   39s] [81/451] cumulate libnpth0-1.6-2.1
+[   39s] [82/451] preinstalled libopenssl3-3.0.8-1.1
+[   39s] [83/451] cumulate libp11-kit0-0.24.1-2.1
+[   39s] [84/451] preinstalled libpcre2-8-0-10.42-3.2
+[   39s] [85/451] preinstalled libpkgconf3-1.8.0-2.1
+[   39s] [86/451] preinstalled libpopt0-1.19-1.1
+[   39s] [87/451] preinstalled libpython3_10-1_0-3.10.10-1.2
+[   39s] [88/451] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   39s] [89/451] preinstalled libpython3_8-1_0-3.8.16-5.1
+[   39s] [90/451] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   39s] [91/451] preinstalled libreadline8-8.2-2.1
+[   39s] [92/451] preinstalled librpmbuild9-4.18.0-3.2
+[   39s] [93/451] preinstalled libseccomp2-2.5.4-2.1
+[   39s] [94/451] preinstalled libselinux1-3.5-1.1
+[   39s] [95/451] preinstalled libsemanage-conf-3.5-1.1
+[   39s] [96/451] preinstalled libsemanage2-3.5-1.1
+[   39s] [97/451] preinstalled libsepol2-3.5-1.1
+[   39s] [98/451] preinstalled libsmartcols1-2.38.1-9.1
+[   39s] [99/451] cumulate libsqlite3-0-3.41.0-1.1
+[   39s] [100/451] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   39s] [101/451] preinstalled libsubid4-4.13-4.1
+[   39s] [102/451] cumulate libsystemd0-mini-252.7-1.1
+[   39s] [103/451] cumulate libtasn1-6-4.19.0-1.1
+[   39s] [104/451] preinstalled libubsan1-13.0.1+git5428-6.1
+[   39s] [105/451] cumulate libudev-mini1-252.7-1.1
+[   39s] [106/451] preinstalled libutempter0-1.2.0-3.2
+[   39s] [107/451] preinstalled libuuid1-2.38.1-9.1
+[   39s] [108/451] preinstalled libxcrypt-devel-4.4.33-1.1
+[   39s] [109/451] cumulate libxml2-2-2.10.3-3.1
+[   39s] [110/451] preinstalled libz1-1.2.13-3.1
+[   39s] [111/451] preinstalled libzstd1-1.5.4-1.1
+[   39s] [112/451] preinstalled linux-glibc-devel-6.2-1.1
+[   39s] [113/451] preinstalled login_defs-4.13-4.1
+[   39s] [114/451] preinstalled lua54-5.4.4-8.1
+[   39s] [115/451] preinstalled make-4.4.1-1.1
+[   39s] [116/451] preinstalled ncurses-utils-6.4.20230218-6.1
+[   39s] [117/451] preinstalled pam-1.5.2-12.1
+[   39s] [118/451] preinstalled patch-2.7.6-6.1
+[   39s] [119/451] preinstalled perl-5.36.0-4.1
+[   39s] [120/451] preinstalled perl-base-5.36.0-4.1
+[   39s] [121/451] preinstalled permissions-1599_20230217-1.1
+[   39s] [122/451] preinstalled permissions-config-1599_20230217-1.1
+[   39s] [123/451] preinstalled pkgconf-1.8.0-2.1
+[   39s] [124/451] preinstalled pkgconf-m4-1.8.0-2.1
+[   39s] [125/451] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   39s] [126/451] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   39s] [127/451] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   39s] [128/451] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   39s] [129/451] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   39s] [130/451] cumulate python310-apipkg-3.0.1-2.1
+[   39s] [131/451] cumulate python310-attrs-22.2.0-1.2
+[   39s] [132/451] cumulate python310-backports.entry_points_selectable-1.1.1-1.3
+[   39s] [133/451] preinstalled python310-base-3.10.10-1.2
+[   39s] [134/451] cumulate python310-cachy-0.3.0-4.3
+[   39s] [135/451] cumulate python310-charset-normalizer-3.0.1-1.2
+[   39s] [136/451] cumulate python310-crashtest-0.4.1-1.2
+[   39s] [137/451] cumulate python310-cssselect-1.2.0-1.2
+[   39s] [138/451] cumulate python310-defusedxml-0.7.1-2.5
+[   39s] [139/451] cumulate python310-distlib-0.3.6-1.2
+[   39s] [140/451] cumulate python310-exceptiongroup-1.1.0-1.2
+[   39s] [141/451] cumulate python310-filelock-3.9.0-1.3
+[   39s] [142/451] cumulate python310-idna-3.4-1.2
+[   39s] [143/451] cumulate python310-iniconfig-2.0.0-1.1
+[   39s] [144/451] cumulate python310-jeepney-0.8.0-1.2
+[   39s] [145/451] cumulate python310-lark-1.1.5-1.3
+[   39s] [146/451] cumulate python310-lockfile-0.12.2-2.7
+[   39s] [147/451] cumulate python310-more-itertools-9.1.0-1.1
+[   39s] [148/451] cumulate python310-msgpack-1.0.4-1.2
+[   39s] [149/451] preinstalled python310-packaging-23.0-1.1
+[   39s] [150/451] cumulate python310-paho-mqtt-1.6.1-2.5
+[   39s] [151/451] cumulate python310-pkginfo-1.9.6-1.2
+[   39s] [152/451] cumulate python310-platformdirs-2.5.2-1.2
+[   39s] [153/451] cumulate python310-pluggy-1.0.0-1.5
+[   39s] [154/451] cumulate python310-ptyprocess-0.7.0-1.6
+[   39s] [155/451] cumulate python310-pycparser-2.21-1.5
+[   39s] [156/451] cumulate python310-pylev-1.4.0-1.2
+[   39s] [157/451] cumulate python310-pyparsing-3.0.9-3.1
+[   39s] [158/451] cumulate python310-pyrsistent-0.19.3-1.2
+[   39s] [159/451] cumulate python310-rapidfuzz-2.13.7-1.1
+[   39s] [160/451] preinstalled python310-setuptools-65.6.3-1.2
+[   39s] [161/451] cumulate python310-shellingham-1.5.0-1.2
+[   39s] [162/451] cumulate python310-six-1.16.0-2.5
+[   39s] [163/451] cumulate python310-tomli-2.0.1-1.3
+[   39s] [164/451] cumulate python310-tomlkit-0.11.6-1.2
+[   39s] [165/451] cumulate python310-trove-classifiers-2022.12.1-1.2
+[   39s] [166/451] cumulate python310-typing_extensions-4.5.0-1.1
+[   39s] [167/451] cumulate python310-webencodings-0.5.1-4.9
+[   39s] [168/451] cumulate python310-wrapt-1.14.1-1.2
+[   39s] [169/451] cumulate python310-zipp-3.8.1-1.2
+[   39s] [170/451] cumulate python311-apipkg-3.0.1-2.1
+[   39s] [171/451] cumulate python311-attrs-22.2.0-1.2
+[   39s] [172/451] cumulate python311-backports.entry_points_selectable-1.1.1-1.3
+[   39s] [173/451] preinstalled python311-base-3.11.2-1.2
+[   39s] [174/451] cumulate python311-cachy-0.3.0-4.3
+[   39s] [175/451] cumulate python311-charset-normalizer-3.0.1-1.2
+[   39s] [176/451] cumulate python311-crashtest-0.4.1-1.2
+[   39s] [177/451] cumulate python311-cssselect-1.2.0-1.2
+[   39s] [178/451] cumulate python311-defusedxml-0.7.1-2.5
+[   39s] [179/451] cumulate python311-distlib-0.3.6-1.2
+[   39s] [180/451] cumulate python311-exceptiongroup-1.1.0-1.2
+[   39s] [181/451] cumulate python311-filelock-3.9.0-1.3
+[   39s] [182/451] cumulate python311-idna-3.4-1.2
+[   39s] [183/451] cumulate python311-iniconfig-2.0.0-1.1
+[   39s] [184/451] cumulate python311-jeepney-0.8.0-1.2
+[   39s] [185/451] cumulate python311-lark-1.1.5-1.3
+[   39s] [186/451] cumulate python311-lockfile-0.12.2-2.7
+[   39s] [187/451] cumulate python311-more-itertools-9.1.0-1.1
+[   39s] [188/451] cumulate python311-msgpack-1.0.4-1.2
+[   39s] [189/451] cumulate python311-packaging-23.0-1.2
+[   39s] [190/451] cumulate python311-paho-mqtt-1.6.1-2.5
+[   39s] [191/451] cumulate python311-pkginfo-1.9.6-1.2
+[   39s] [192/451] cumulate python311-platformdirs-2.5.2-1.2
+[   39s] [193/451] cumulate python311-pluggy-1.0.0-1.5
+[   39s] [194/451] cumulate python311-ptyprocess-0.7.0-1.6
+[   39s] [195/451] cumulate python311-pycparser-2.21-1.5
+[   39s] [196/451] cumulate python311-pylev-1.4.0-1.2
+[   39s] [197/451] cumulate python311-pyparsing-3.0.9-3.1
+[   39s] [198/451] cumulate python311-pyrsistent-0.19.3-1.2
+[   39s] [199/451] cumulate python311-rapidfuzz-2.13.7-1.1
+[   39s] [200/451] preinstalled python311-setuptools-65.6.3-1.2
+[   39s] [201/451] cumulate python311-shellingham-1.5.0-1.2
+[   39s] [202/451] cumulate python311-six-1.16.0-2.5
+[   39s] [203/451] cumulate python311-tomli-2.0.1-1.3
+[   39s] [204/451] cumulate python311-tomlkit-0.11.6-1.2
+[   39s] [205/451] cumulate python311-trove-classifiers-2022.12.1-1.2
+[   39s] [206/451] cumulate python311-typing_extensions-4.5.0-1.1
+[   39s] [207/451] cumulate python311-webencodings-0.5.1-4.9
+[   39s] [208/451] cumulate python311-wrapt-1.14.1-1.2
+[   39s] [209/451] cumulate python311-zipp-3.8.1-1.2
+[   39s] [210/451] cumulate python38-apipkg-3.0.1-2.1
+[   39s] [211/451] cumulate python38-attrs-22.2.0-1.2
+[   39s] [212/451] cumulate python38-backports.entry_points_selectable-1.1.1-1.3
+[   39s] [213/451] preinstalled python38-base-3.8.16-5.1
+[   39s] [214/451] cumulate python38-cachy-0.3.0-4.3
+[   39s] [215/451] cumulate python38-charset-normalizer-3.0.1-1.2
+[   39s] [216/451] cumulate python38-crashtest-0.4.1-1.2
+[   39s] [217/451] cumulate python38-cssselect-1.2.0-1.2
+[   39s] [218/451] cumulate python38-defusedxml-0.7.1-2.5
+[   39s] [219/451] cumulate python38-distlib-0.3.6-1.2
+[   39s] [220/451] cumulate python38-exceptiongroup-1.1.0-1.2
+[   39s] [221/451] cumulate python38-filelock-3.9.0-1.3
+[   39s] [222/451] cumulate python38-idna-3.4-1.2
+[   39s] [223/451] cumulate python38-iniconfig-2.0.0-1.1
+[   39s] [224/451] cumulate python38-jeepney-0.8.0-1.2
+[   39s] [225/451] cumulate python38-lark-1.1.5-1.3
+[   39s] [226/451] cumulate python38-lockfile-0.12.2-2.7
+[   39s] [227/451] cumulate python38-more-itertools-9.1.0-1.1
+[   39s] [228/451] cumulate python38-msgpack-1.0.4-1.2
+[   39s] [229/451] cumulate python38-packaging-23.0-1.2
+[   39s] [230/451] cumulate python38-paho-mqtt-1.6.1-2.5
+[   39s] [231/451] cumulate python38-pkginfo-1.9.6-1.2
+[   39s] [232/451] cumulate python38-pkgutil-resolve-name-1.3.10-1.2
+[   39s] [233/451] cumulate python38-platformdirs-2.5.2-1.2
+[   39s] [234/451] cumulate python38-pluggy-1.0.0-1.5
+[   39s] [235/451] cumulate python38-ptyprocess-0.7.0-1.6
+[   39s] [236/451] cumulate python38-pycparser-2.21-1.5
+[   39s] [237/451] cumulate python38-pylev-1.4.0-1.2
+[   39s] [238/451] cumulate python38-pyparsing-3.0.9-3.1
+[   39s] [239/451] cumulate python38-pyrsistent-0.19.3-1.2
+[   39s] [240/451] cumulate python38-rapidfuzz-2.13.7-1.1
+[   39s] [241/451] preinstalled python38-setuptools-65.6.3-1.2
+[   39s] [242/451] cumulate python38-shellingham-1.5.0-1.2
+[   39s] [243/451] cumulate python38-six-1.16.0-2.5
+[   39s] [244/451] cumulate python38-tomli-2.0.1-1.3
+[   39s] [245/451] cumulate python38-tomlkit-0.11.6-1.2
+[   39s] [246/451] cumulate python38-trove-classifiers-2022.12.1-1.2
+[   39s] [247/451] cumulate python38-typing_extensions-4.5.0-1.1
+[   39s] [248/451] cumulate python38-webencodings-0.5.1-4.9
+[   39s] [249/451] cumulate python38-wrapt-1.14.1-1.2
+[   39s] [250/451] cumulate python38-zipp-3.8.1-1.2
+[   39s] [251/451] cumulate python39-apipkg-3.0.1-2.1
+[   39s] [252/451] cumulate python39-attrs-22.2.0-1.2
+[   39s] [253/451] cumulate python39-backports.entry_points_selectable-1.1.1-1.3
+[   39s] [254/451] preinstalled python39-base-3.9.16-5.1
+[   39s] [255/451] cumulate python39-cachy-0.3.0-4.3
+[   39s] [256/451] cumulate python39-charset-normalizer-3.0.1-1.2
+[   39s] [257/451] cumulate python39-crashtest-0.4.1-1.2
+[   39s] [258/451] cumulate python39-cssselect-1.2.0-1.2
+[   39s] [259/451] cumulate python39-defusedxml-0.7.1-2.5
+[   39s] [260/451] cumulate python39-distlib-0.3.6-1.2
+[   39s] [261/451] cumulate python39-exceptiongroup-1.1.0-1.2
+[   39s] [262/451] cumulate python39-filelock-3.9.0-1.3
+[   39s] [263/451] cumulate python39-idna-3.4-1.2
+[   39s] [264/451] cumulate python39-iniconfig-2.0.0-1.1
+[   39s] [265/451] cumulate python39-jeepney-0.8.0-1.2
+[   39s] [266/451] cumulate python39-lark-1.1.5-1.3
+[   39s] [267/451] cumulate python39-lockfile-0.12.2-2.7
+[   39s] [268/451] cumulate python39-more-itertools-9.1.0-1.1
+[   39s] [269/451] cumulate python39-msgpack-1.0.4-1.2
+[   39s] [270/451] cumulate python39-packaging-23.0-1.2
+[   39s] [271/451] cumulate python39-paho-mqtt-1.6.1-2.5
+[   39s] [272/451] cumulate python39-pkginfo-1.9.6-1.2
+[   39s] [273/451] cumulate python39-platformdirs-2.5.2-1.2
+[   39s] [274/451] cumulate python39-pluggy-1.0.0-1.5
+[   39s] [275/451] cumulate python39-ptyprocess-0.7.0-1.6
+[   39s] [276/451] cumulate python39-pycparser-2.21-1.5
+[   39s] [277/451] cumulate python39-pylev-1.4.0-1.2
+[   39s] [278/451] cumulate python39-pyparsing-3.0.9-3.1
+[   39s] [279/451] cumulate python39-pyrsistent-0.19.3-1.2
+[   39s] [280/451] cumulate python39-rapidfuzz-2.13.7-1.1
+[   39s] [281/451] preinstalled python39-setuptools-65.6.3-1.2
+[   39s] [282/451] cumulate python39-shellingham-1.5.0-1.2
+[   39s] [283/451] cumulate python39-six-1.16.0-2.5
+[   39s] [284/451] cumulate python39-tomli-2.0.1-1.3
+[   39s] [285/451] cumulate python39-tomlkit-0.11.6-1.2
+[   39s] [286/451] cumulate python39-trove-classifiers-2022.12.1-1.2
+[   39s] [287/451] cumulate python39-typing_extensions-4.5.0-1.1
+[   39s] [288/451] cumulate python39-webencodings-0.5.1-4.9
+[   39s] [289/451] cumulate python39-wrapt-1.14.1-1.2
+[   39s] [290/451] cumulate python39-zipp-3.8.1-1.2
+[   39s] [291/451] preinstalled qemu-linux-user-7.1.0-52.1
+[   39s] [292/451] preinstalled rpm-4.18.0-3.2
+[   39s] [293/451] preinstalled rpm-build-4.18.0-3.2
+[   39s] [294/451] preinstalled rpm-build-perl-4.18.0-3.2
+[   39s] [295/451] preinstalled rpm-config-SUSE-20220926-1.1
+[   39s] [296/451] preinstalled rpmlint-mini-2.4.0+git20230307.1e9f1e0-9.13
+[   39s] [297/451] preinstalled rpmlint-strict-2.4.0+git20230307.1e9f1e0-1.1
+[   39s] [298/451] preinstalled sed-4.9-2.1
+[   40s] [299/451] preinstalled shadow-4.13-4.1
+[   40s] [300/451] preinstalled system-group-hardware-20170617-24.1
+[   40s] [301/451] preinstalled system-user-root-20190513-2.1
+[   40s] [302/451] preinstalled systemd-rpm-macros-19-1.1
+[   40s] [303/451] preinstalled sysuser-shadow-3.1-5.1
+[   40s] [304/451] preinstalled tar-1.34-10.1
+[   40s] [305/451] preinstalled terminfo-base-6.4.20230218-6.1
+[   40s] [306/451] preinstalled update-alternatives-1.21.8-1.1
+[   40s] [307/451] preinstalled util-linux-2.38.1-9.1
+[   40s] [308/451] preinstalled which-2.21-5.1
+[   40s] [309/451] preinstalled xz-5.4.1-1.1
+[   40s] [310/451] cumulate alts-1.2+3.b848aad-3.1
+[   40s] [311/451] cumulate libprocps8-3.3.17-12.1
+[   40s] [312/451] cumulate libusb-1_0-0-1.0.26-1.1
+[   40s] [313/451] cumulate libxslt1-1.1.37-1.1
+[   40s] [314/451] cumulate python310-3.10.10-1.2
+[   40s] [315/451] cumulate python310-Deprecated-1.2.13-2.2
+[   40s] [316/451] cumulate python310-async_timeout-4.0.2-1.3
+[   40s] [317/451] cumulate python310-cffi-1.15.1-3.2
+[   40s] [318/451] cumulate python310-importlib-metadata-6.0.0-1.2
+[   40s] [319/451] cumulate python310-jaraco.classes-3.2.3-1.2
+[   40s] [320/451] cumulate python310-pexpect-4.8.0-23.1
+[   40s] [321/451] cumulate python311-3.11.2-1.1
+[   40s] [322/451] cumulate python311-Deprecated-1.2.13-2.2
+[   40s] [323/451] cumulate python311-async_timeout-4.0.2-1.3
+[   40s] [324/451] cumulate python311-cffi-1.15.1-3.2
+[   40s] [325/451] cumulate python311-importlib-metadata-6.0.0-1.2
+[   40s] [326/451] cumulate python311-jaraco.classes-3.2.3-1.2
+[   40s] [327/451] cumulate python311-pexpect-4.8.0-23.1
+[   40s] [328/451] cumulate python38-3.8.16-5.1
+[   40s] [329/451] cumulate python38-Deprecated-1.2.13-2.2
+[   40s] [330/451] cumulate python38-async_timeout-4.0.2-1.3
+[   40s] [331/451] cumulate python38-cffi-1.15.1-3.2
+[   40s] [332/451] cumulate python38-importlib-metadata-6.0.0-1.2
+[   40s] [333/451] cumulate python38-importlib-resources-5.10.2-2.2
+[   40s] [334/451] cumulate python38-jaraco.classes-3.2.3-1.2
+[   40s] [335/451] cumulate python38-pexpect-4.8.0-23.1
+[   40s] [336/451] cumulate python39-3.9.16-5.1
+[   40s] [337/451] cumulate python39-Deprecated-1.2.13-2.2
+[   40s] [338/451] cumulate python39-async_timeout-4.0.2-1.3
+[   40s] [339/451] cumulate python39-cffi-1.15.1-3.2
+[   40s] [340/451] cumulate python39-importlib-metadata-6.0.0-1.2
+[   40s] [341/451] cumulate python39-importlib-resources-5.10.2-2.2
+[   40s] [342/451] cumulate python39-jaraco.classes-3.2.3-1.2
+[   40s] [343/451] cumulate python39-pexpect-4.8.0-23.1
+[   40s] [344/451] cumulate redis-7.0.8-2.1
+[   40s] [345/451] cumulate p11-kit-0.24.1-2.1
+[   40s] [346/451] cumulate p11-kit-tools-0.24.1-2.1
+[   40s] [347/451] cumulate python310-html5lib-1.1-3.2
+[   40s] [348/451] cumulate python310-py-1.11.0-3.2
+[   40s] [349/451] cumulate python311-html5lib-1.1-3.2
+[   40s] [350/451] cumulate python311-py-1.11.0-3.2
+[   40s] [351/451] cumulate python38-html5lib-1.1-3.2
+[   40s] [352/451] cumulate python38-py-1.11.0-3.2
+[   40s] [353/451] cumulate python39-html5lib-1.1-3.2
+[   40s] [354/451] cumulate python39-py-1.11.0-3.2
+[   40s] [355/451] cumulate python310-cleo-2.0.1-1.3
+[   40s] [356/451] cumulate python311-cleo-2.0.1-1.3
+[   40s] [357/451] cumulate python38-cleo-2.0.1-1.3
+[   40s] [358/451] cumulate python39-cleo-2.0.1-1.3
+[   40s] [359/451] cumulate python310-virtualenv-20.16.7-2.2
+[   40s] [360/451] cumulate python311-virtualenv-20.16.7-2.2
+[   40s] [361/451] cumulate python38-virtualenv-20.16.7-2.2
+[   40s] [362/451] cumulate python39-virtualenv-20.16.7-2.2
+[   40s] [363/451] cumulate procps-3.3.17-12.1
+[   40s] [364/451] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   40s] [365/451] cumulate python310-wheel-0.38.4-1.2
+[   40s] [366/451] cumulate python311-pyOpenSSL-23.0.0-1.2
+[   40s] [367/451] cumulate python311-wheel-0.38.4-1.2
+[   40s] [368/451] cumulate python38-pyOpenSSL-23.0.0-1.2
+[   40s] [369/451] cumulate python38-wheel-0.38.4-1.2
+[   40s] [370/451] cumulate python39-pyOpenSSL-23.0.0-1.2
+[   40s] [371/451] cumulate python39-wheel-0.38.4-1.2
+[   40s] [372/451] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   40s] [373/451] cumulate libexslt0-1.1.37-1.1
+[   40s] [374/451] cumulate python310-cryptography-39.0.1-1.2
+[   40s] [375/451] cumulate python311-cryptography-39.0.1-1.2
+[   40s] [376/451] cumulate python38-cryptography-39.0.1-1.2
+[   40s] [377/451] cumulate python39-cryptography-39.0.1-1.2
+[   40s] [378/451] cumulate python310-jsonschema-4.17.3-2.2
+[   40s] [379/451] cumulate python310-redis-4.3.3-1.2
+[   40s] [380/451] cumulate python311-jsonschema-4.17.3-2.2
+[   40s] [381/451] cumulate python39-jsonschema-4.17.3-2.2
+[   40s] [382/451] cumulate python311-redis-4.3.3-1.2
+[   40s] [383/451] cumulate python38-redis-4.3.3-1.2
+[   40s] [384/451] cumulate python39-redis-4.3.3-1.2
+[   40s] [385/451] cumulate gpg2-2.3.8-1.1
+[   40s] [386/451] cumulate python38-jsonschema-4.17.3-2.2
+[   40s] [387/451] cumulate python310-pytest-7.2.0-2.2
+[   40s] [388/451] cumulate python311-pytest-7.2.0-2.2
+[   40s] [389/451] cumulate python38-pytest-7.2.0-2.2
+[   40s] [390/451] cumulate python39-pytest-7.2.0-2.2
+[   40s] [391/451] cumulate ca-certificates-mozilla-2.60-1.2
+[   40s] [392/451] cumulate python310-psutil-5.9.4-2.2
+[   40s] [393/451] cumulate python310-python-gnupg-0.5.0-1.2
+[   40s] [394/451] cumulate python311-psutil-5.9.4-2.2
+[   40s] [395/451] cumulate python311-python-gnupg-0.5.0-1.2
+[   40s] [396/451] cumulate python38-psutil-5.9.4-2.2
+[   40s] [397/451] cumulate python38-python-gnupg-0.5.0-1.2
+[   40s] [398/451] cumulate python39-psutil-5.9.4-2.2
+[   40s] [399/451] cumulate python39-python-gnupg-0.5.0-1.2
+[   40s] [400/451] cumulate python310-SecretStorage-3.3.3-3.2
+[   40s] [401/451] cumulate python310-pip-22.3.1-1.2
+[   40s] [402/451] cumulate python311-SecretStorage-3.3.3-3.2
+[   40s] [403/451] cumulate python311-pip-22.3.1-1.2
+[   40s] [404/451] cumulate python38-SecretStorage-3.3.3-3.2
+[   40s] [405/451] cumulate python38-pip-22.3.1-1.2
+[   40s] [406/451] cumulate python39-SecretStorage-3.3.3-3.2
+[   40s] [407/451] cumulate python39-pip-22.3.1-1.2
+[   40s] [408/451] cumulate python310-lxml-4.9.2-3.1
+[   40s] [409/451] cumulate python311-lxml-4.9.2-3.1
+[   40s] [410/451] cumulate python38-lxml-4.9.2-3.1
+[   40s] [411/451] cumulate python39-lxml-4.9.2-3.1
+[   40s] [412/451] cumulate python310-poetry-core-1.4.0-3.3
+[   40s] [413/451] cumulate python311-poetry-core-1.4.0-3.3
+[   40s] [414/451] cumulate python38-poetry-core-1.4.0-3.3
+[   40s] [415/451] cumulate python39-poetry-core-1.4.0-3.3
+[   40s] [416/451] cumulate python310-certifi-2022.9.24-1.2
+[   40s] [417/451] cumulate python311-certifi-2022.9.24-1.2
+[   40s] [418/451] cumulate python38-certifi-2022.9.24-1.2
+[   40s] [419/451] cumulate python39-certifi-2022.9.24-1.2
+[   40s] [420/451] cumulate python310-keyring-23.13.1-1.2
+[   40s] [421/451] cumulate python311-keyring-23.13.1-1.2
+[   40s] [422/451] cumulate python38-keyring-23.13.1-1.2
+[   40s] [423/451] cumulate python39-keyring-23.13.1-1.2
+[   40s] [424/451] cumulate python310-urllib3-1.26.14-1.2
+[   40s] [425/451] cumulate python311-urllib3-1.26.14-1.2
+[   40s] [426/451] cumulate python38-urllib3-1.26.14-1.2
+[   40s] [427/451] cumulate python39-urllib3-1.26.14-1.2
+[   40s] [428/451] cumulate python310-dulwich-0.21.3-1.1
+[   40s] [429/451] cumulate python311-dulwich-0.21.3-1.1
+[   40s] [430/451] cumulate python38-dulwich-0.21.3-1.1
+[   40s] [431/451] cumulate python39-dulwich-0.21.3-1.1
+[   40s] [432/451] cumulate python310-requests-2.28.2-2.1
+[   40s] [433/451] cumulate python311-requests-2.28.2-2.1
+[   40s] [434/451] cumulate python38-requests-2.28.2-2.1
+[   40s] [435/451] cumulate python39-requests-2.28.2-2.1
+[   40s] [436/451] cumulate python310-requests-toolbelt-0.9.1-7.2
+[   40s] [437/451] cumulate python311-requests-toolbelt-0.9.1-7.2
+[   40s] [438/451] cumulate python38-requests-toolbelt-0.9.1-7.2
+[   40s] [439/451] cumulate python39-requests-toolbelt-0.9.1-7.2
+[   40s] [440/451] cumulate python310-CacheControl-0.12.11-1.2
+[   40s] [441/451] cumulate python311-CacheControl-0.12.11-1.2
+[   40s] [442/451] cumulate python38-CacheControl-0.12.11-1.2
+[   40s] [443/451] cumulate python39-CacheControl-0.12.11-1.2
+[   40s] [444/451] cumulate python310-poetry-plugin-export-1.2.0-1.3
+[   40s] [445/451] cumulate python311-poetry-plugin-export-1.2.0-1.3
+[   40s] [446/451] cumulate python38-poetry-plugin-export-1.2.0-1.3
+[   40s] [447/451] cumulate python39-poetry-plugin-export-1.2.0-1.3
+[   40s] [448/451] cumulate python310-poetry-1.3.2-2.1
+[   40s] [449/451] cumulate python311-poetry-1.3.2-2.1
+[   40s] [450/451] cumulate python38-poetry-1.3.2-2.1
+[   40s] [451/451] cumulate python39-poetry-1.3.2-2.1
+[   40s] now installing cumulated packages
+[   41s] Preparing...                          ########################################
+[   41s] Updating / installing...
+[   41s] libxml2-2-2.10.3-3.1                  ########################################
+[   41s] libxslt1-1.1.37-1.1                   ########################################
+[   41s] libsqlite3-0-3.41.0-1.1               ########################################
+[   42s] libexslt0-1.1.37-1.1                  ########################################
+[   42s] python39-packaging-23.0-1.2           ########################################
+[   42s] python38-packaging-23.0-1.2           ########################################
+[   42s] python311-packaging-23.0-1.2          ########################################
+[   42s] python39-six-1.16.0-2.5               ########################################
+[   42s] python39-attrs-22.2.0-1.2             ########################################
+[   42s] python38-six-1.16.0-2.5               ########################################
+[   42s] python38-attrs-22.2.0-1.2             ########################################
+[   42s] python311-six-1.16.0-2.5              ########################################
+[   42s] python311-attrs-22.2.0-1.2            ########################################
+[   42s] python310-six-1.16.0-2.5              ########################################
+[   42s] python310-attrs-22.2.0-1.2            ########################################
+[   42s] python39-zipp-3.8.1-1.2               ########################################
+[   42s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   42s] python39-typing_extensions-4.5.0-1.1  ########################################
+[   42s] python39-tomlkit-0.11.6-1.2           ########################################
+[   42s] python39-tomli-2.0.1-1.3              ########################################
+[   42s] python39-pyrsistent-0.19.3-1.2        ########################################
+[   42s] python39-platformdirs-2.5.2-1.2       ########################################
+[   43s] python39-msgpack-1.0.4-1.2            ########################################
+[   43s] python39-lockfile-0.12.2-2.7          ########################################
+[   43s] python39-jeepney-0.8.0-1.2            ########################################
+[   43s] python39-iniconfig-2.0.0-1.1          ########################################
+[   43s] python39-idna-3.4-1.2                 ########################################
+[   43s] python39-filelock-3.9.0-1.3           ########################################
+[   43s] python39-crashtest-0.4.1-1.2          ########################################
+[   43s] python38-zipp-3.8.1-1.2               ########################################
+[   43s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   43s] python38-importlib-resources-5.10.2-2.########################################
+[   43s] python38-typing_extensions-4.5.0-1.1  ########################################
+[   43s] python38-tomlkit-0.11.6-1.2           ########################################
+[   43s] python38-tomli-2.0.1-1.3              ########################################
+[   43s] python38-pyrsistent-0.19.3-1.2        ########################################
+[   43s] python38-platformdirs-2.5.2-1.2       ########################################
+[   43s] python38-msgpack-1.0.4-1.2            ########################################
+[   43s] python38-lockfile-0.12.2-2.7          ########################################
+[   43s] python38-jeepney-0.8.0-1.2            ########################################
+[   43s] python38-iniconfig-2.0.0-1.1          ########################################
+[   43s] python38-idna-3.4-1.2                 ########################################
+[   43s] python38-filelock-3.9.0-1.3           ########################################
+[   43s] python38-crashtest-0.4.1-1.2          ########################################
+[   43s] python311-typing_extensions-4.5.0-1.1 ########################################
+[   43s] python311-tomlkit-0.11.6-1.2          ########################################
+[   43s] python311-pyrsistent-0.19.3-1.2       ########################################
+[   43s] python311-platformdirs-2.5.2-1.2      ########################################
+[   43s] python311-msgpack-1.0.4-1.2           ########################################
+[   43s] python311-lockfile-0.12.2-2.7         ########################################
+[   43s] python311-jeepney-0.8.0-1.2           ########################################
+[   43s] python311-iniconfig-2.0.0-1.1         ########################################
+[   43s] python311-idna-3.4-1.2                ########################################
+[   43s] python311-filelock-3.9.0-1.3          ########################################
+[   44s] python311-crashtest-0.4.1-1.2         ########################################
+[   44s] python310-typing_extensions-4.5.0-1.1 ########################################
+[   44s] python310-tomlkit-0.11.6-1.2          ########################################
+[   44s] python310-tomli-2.0.1-1.3             ########################################
+[   44s] python310-pyrsistent-0.19.3-1.2       ########################################
+[   44s] python310-platformdirs-2.5.2-1.2      ########################################
+[   44s] python310-msgpack-1.0.4-1.2           ########################################
+[   44s] python310-lockfile-0.12.2-2.7         ########################################
+[   44s] python310-jeepney-0.8.0-1.2           ########################################
+[   44s] python310-iniconfig-2.0.0-1.1         ########################################
+[   44s] python310-idna-3.4-1.2                ########################################
+[   44s] python310-filelock-3.9.0-1.3          ########################################
+[   44s] python310-crashtest-0.4.1-1.2         ########################################
+[   44s] libtasn1-6-4.19.0-1.1                 ########################################
+[   44s] libsystemd0-mini-252.7-1.1            ########################################
+[   44s] /usr/sbin/useradd -r -c User for redis key-value store -d /var/lib/redis -U redis -s /usr/sbin/nologin
+[   45s] redis-7.0.8-2.1                       ########################################
+[   45s] See /usr/share/doc/packages/redis/README.SUSE to continue
+[   45s] libp11-kit0-0.24.1-2.1                ########################################
+[   45s] p11-kit-0.24.1-2.1                    ########################################
+[   45s] p11-kit-tools-0.24.1-2.1              ########################################
+[   46s] ca-certificates-2+git20211004.3efbea9-########################################
+[   47s] ca-certificates-mozilla-2.60-1.2      ########################################
+[   51s] python310-certifi-2022.9.24-1.2       ########################################
+[   51s] python311-certifi-2022.9.24-1.2       ########################################
+[   51s] python38-certifi-2022.9.24-1.2        ########################################
+[   51s] python39-certifi-2022.9.24-1.2        ########################################
+[   51s] libprocps8-3.3.17-12.1                ########################################
+[   51s] procps-3.3.17-12.1                    ########################################
+[   51s] python310-async_timeout-4.0.2-1.3     ########################################
+[   51s] python311-async_timeout-4.0.2-1.3     ########################################
+[   51s] python38-async_timeout-4.0.2-1.3      ########################################
+[   51s] python39-async_timeout-4.0.2-1.3      ########################################
+[   51s] python39-importlib-resources-5.10.2-2.########################################
+[   51s] python39-wrapt-1.14.1-1.2             ########################################
+[   51s] python39-Deprecated-1.2.13-2.2        ########################################
+[   52s] python39-redis-4.3.3-1.2              ########################################
+[   52s] python39-cachy-0.3.0-4.3              ########################################
+[   52s] python39-webencodings-0.5.1-4.9       ########################################
+[   52s] python39-trove-classifiers-2022.12.1-1########################################
+[   52s] python39-shellingham-1.5.0-1.2        ########################################
+[   52s] python39-rapidfuzz-2.13.7-1.1         ########################################
+[   52s] python39-pyparsing-3.0.9-3.1          ########################################
+[   52s] python39-pylev-1.4.0-1.2              ########################################
+[   52s] python39-cleo-2.0.1-1.3               ########################################
+[   52s] python39-pycparser-2.21-1.5           ########################################
+[   53s] python39-cffi-1.15.1-3.2              ########################################
+[   53s] python39-ptyprocess-0.7.0-1.6         ########################################
+[   53s] python39-pexpect-4.8.0-23.1           ########################################
+[   53s] python39-pluggy-1.0.0-1.5             ########################################
+[   53s] python39-pkginfo-1.9.6-1.2            ########################################
+[   53s] python39-more-itertools-9.1.0-1.1     ########################################
+[   53s] python39-jaraco.classes-3.2.3-1.2     ########################################
+[   53s] python39-lark-1.1.5-1.3               ########################################
+[   53s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   53s] python39-distlib-0.3.6-1.2            ########################################
+[   53s] python39-cssselect-1.2.0-1.2          ########################################
+[   54s] python39-lxml-4.9.2-3.1               ########################################
+[   54s] python39-html5lib-1.1-3.2             ########################################
+[   54s] python39-charset-normalizer-3.0.1-1.2 ########################################
+[   54s] python39-backports.entry_points_select########################################
+[   55s] python39-virtualenv-20.16.7-2.2       ########################################
+[   55s] python39-apipkg-3.0.1-2.1             ########################################
+[   55s] python39-py-1.11.0-3.2                ########################################
+[   55s] python38-wrapt-1.14.1-1.2             ########################################
+[   55s] python38-Deprecated-1.2.13-2.2        ########################################
+[   55s] python38-redis-4.3.3-1.2              ########################################
+[   55s] python38-cachy-0.3.0-4.3              ########################################
+[   55s] python38-webencodings-0.5.1-4.9       ########################################
+[   55s] python38-trove-classifiers-2022.12.1-1########################################
+[   56s] python38-shellingham-1.5.0-1.2        ########################################
+[   56s] python38-rapidfuzz-2.13.7-1.1         ########################################
+[   56s] python38-pyparsing-3.0.9-3.1          ########################################
+[   56s] python38-pylev-1.4.0-1.2              ########################################
+[   56s] python38-cleo-2.0.1-1.3               ########################################
+[   56s] python38-pycparser-2.21-1.5           ########################################
+[   56s] python38-cffi-1.15.1-3.2              ########################################
+[   56s] python38-ptyprocess-0.7.0-1.6         ########################################
+[   57s] python38-pexpect-4.8.0-23.1           ########################################
+[   57s] python38-pluggy-1.0.0-1.5             ########################################
+[   57s] python38-pkgutil-resolve-name-1.3.10-1########################################
+[   57s] python38-pkginfo-1.9.6-1.2            ########################################
+[   57s] python38-more-itertools-9.1.0-1.1     ########################################
+[   57s] python38-jaraco.classes-3.2.3-1.2     ########################################
+[   57s] python38-lark-1.1.5-1.3               ########################################
+[   57s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   57s] python38-distlib-0.3.6-1.2            ########################################
+[   57s] python38-cssselect-1.2.0-1.2          ########################################
+[   58s] python38-lxml-4.9.2-3.1               ########################################
+[   58s] python38-html5lib-1.1-3.2             ########################################
+[   58s] python38-charset-normalizer-3.0.1-1.2 ########################################
+[   58s] python38-backports.entry_points_select########################################
+[   59s] python38-virtualenv-20.16.7-2.2       ########################################
+[   59s] python38-apipkg-3.0.1-2.1             ########################################
+[   59s] python38-py-1.11.0-3.2                ########################################
+[   59s] python311-zipp-3.8.1-1.2              ########################################
+[   59s] python311-importlib-metadata-6.0.0-1.2########################################
+[   59s] python311-wrapt-1.14.1-1.2            ########################################
+[   59s] python311-Deprecated-1.2.13-2.2       ########################################
+[   59s] python311-redis-4.3.3-1.2             ########################################
+[   59s] python311-cachy-0.3.0-4.3             ########################################
+[   59s] python311-webencodings-0.5.1-4.9      ########################################
+[   59s] python311-trove-classifiers-2022.12.1-########################################
+[   59s] python311-tomli-2.0.1-1.3             ########################################
+[   59s] python311-shellingham-1.5.0-1.2       ########################################
+[   60s] python311-rapidfuzz-2.13.7-1.1        ########################################
+[   60s] python311-pyparsing-3.0.9-3.1         ########################################
+[   60s] python311-pylev-1.4.0-1.2             ########################################
+[   60s] python311-cleo-2.0.1-1.3              ########################################
+[   60s] python311-pycparser-2.21-1.5          ########################################
+[   60s] python311-cffi-1.15.1-3.2             ########################################
+[   60s] python311-ptyprocess-0.7.0-1.6        ########################################
+[   60s] python311-pexpect-4.8.0-23.1          ########################################
+[   60s] python311-pluggy-1.0.0-1.5            ########################################
+[   61s] python311-pkginfo-1.9.6-1.2           ########################################
+[   61s] python311-more-itertools-9.1.0-1.1    ########################################
+[   61s] python311-jaraco.classes-3.2.3-1.2    ########################################
+[   61s] python311-lark-1.1.5-1.3              ########################################
+[   61s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   61s] python311-distlib-0.3.6-1.2           ########################################
+[   61s] python311-cssselect-1.2.0-1.2         ########################################
+[   62s] python311-lxml-4.9.2-3.1              ########################################
+[   62s] python311-html5lib-1.1-3.2            ########################################
+[   62s] python311-charset-normalizer-3.0.1-1.2########################################
+[   62s] python311-backports.entry_points_selec########################################
+[   63s] python311-virtualenv-20.16.7-2.2      ########################################
+[   63s] python311-apipkg-3.0.1-2.1            ########################################
+[   63s] python311-py-1.11.0-3.2               ########################################
+[   63s] python310-zipp-3.8.1-1.2              ########################################
+[   63s] python310-importlib-metadata-6.0.0-1.2########################################
+[   63s] python310-wrapt-1.14.1-1.2            ########################################
+[   63s] python310-Deprecated-1.2.13-2.2       ########################################
+[   63s] python310-redis-4.3.3-1.2             ########################################
+[   63s] python310-cachy-0.3.0-4.3             ########################################
+[   63s] python310-webencodings-0.5.1-4.9      ########################################
+[   63s] python310-trove-classifiers-2022.12.1-########################################
+[   63s] python310-shellingham-1.5.0-1.2       ########################################
+[   64s] python310-rapidfuzz-2.13.7-1.1        ########################################
+[   64s] python310-pyparsing-3.0.9-3.1         ########################################
+[   64s] python310-pylev-1.4.0-1.2             ########################################
+[   64s] python310-cleo-2.0.1-1.3              ########################################
+[   64s] python310-pycparser-2.21-1.5          ########################################
+[   64s] python310-cffi-1.15.1-3.2             ########################################
+[   64s] python310-ptyprocess-0.7.0-1.6        ########################################
+[   64s] python310-pexpect-4.8.0-23.1          ########################################
+[   64s] python310-pluggy-1.0.0-1.5            ########################################
+[   64s] python310-pkginfo-1.9.6-1.2           ########################################
+[   64s] python310-more-itertools-9.1.0-1.1    ########################################
+[   64s] python310-jaraco.classes-3.2.3-1.2    ########################################
+[   65s] python310-lark-1.1.5-1.3              ########################################
+[   65s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   65s] python310-distlib-0.3.6-1.2           ########################################
+[   65s] python310-cssselect-1.2.0-1.2         ########################################
+[   65s] python310-lxml-4.9.2-3.1              ########################################
+[   65s] python310-html5lib-1.1-3.2            ########################################
+[   66s] python310-charset-normalizer-3.0.1-1.2########################################
+[   66s] python310-backports.entry_points_selec########################################
+[   66s] python310-virtualenv-20.16.7-2.2      ########################################
+[   66s] python310-apipkg-3.0.1-2.1            ########################################
+[   67s] python310-py-1.11.0-3.2               ########################################
+[   67s] libudev-mini1-252.7-1.1               ########################################
+[   67s] libusb-1_0-0-1.0.26-1.1               ########################################
+[   67s] libnpth0-1.6-2.1                      ########################################
+[   67s] libksba8-1.6.3-1.1                    ########################################
+[   67s] libassuan0-2.5.5-1.1                  ########################################
+[   68s] gpg2-2.3.8-1.1                        ########################################
+[   68s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   68s] alts-1.2+3.b848aad-3.1                ########################################
+[   68s] python310-jsonschema-4.17.3-2.2       ########################################
+[   68s] python310-poetry-core-1.4.0-3.3       ########################################
+[   68s] python311-jsonschema-4.17.3-2.2       ########################################
+[   69s] python311-poetry-core-1.4.0-3.3       ########################################
+[   69s] python39-jsonschema-4.17.3-2.2        ########################################
+[   69s] python39-poetry-core-1.4.0-3.3        ########################################
+[   69s] python38-jsonschema-4.17.3-2.2        ########################################
+[   69s] python38-poetry-core-1.4.0-3.3        ########################################
+[   71s] python310-pip-22.3.1-1.2              ########################################
+[   71s] python310-3.10.10-1.2                 ########################################
+[   72s] python310-cryptography-39.0.1-1.2     ########################################
+[   72s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[   72s] python310-urllib3-1.26.14-1.2         ########################################
+[   72s] python310-requests-2.28.2-2.1         ########################################
+[   72s] python310-requests-toolbelt-0.9.1-7.2 ########################################
+[   72s] python310-CacheControl-0.12.11-1.2    ########################################
+[   73s] python310-dulwich-0.21.3-1.1          ########################################
+[   73s] python310-SecretStorage-3.3.3-3.2     ########################################
+[   73s] python310-keyring-23.13.1-1.2         ########################################
+[   73s] python310-poetry-plugin-export-1.2.0-1########################################
+[   73s] python310-poetry-1.3.2-2.1            ########################################
+[   75s] python311-pip-22.3.1-1.2              ########################################
+[   75s] python311-3.11.2-1.1                  ########################################
+[   76s] python311-cryptography-39.0.1-1.2     ########################################
+[   76s] python311-pyOpenSSL-23.0.0-1.2        ########################################
+[   76s] python311-urllib3-1.26.14-1.2         ########################################
+[   76s] python311-requests-2.28.2-2.1         ########################################
+[   76s] python311-requests-toolbelt-0.9.1-7.2 ########################################
+[   76s] python311-CacheControl-0.12.11-1.2    ########################################
+[   77s] python311-dulwich-0.21.3-1.1          ########################################
+[   77s] python311-SecretStorage-3.3.3-3.2     ########################################
+[   77s] python311-keyring-23.13.1-1.2         ########################################
+[   77s] python311-poetry-plugin-export-1.2.0-1########################################
+[   78s] python311-poetry-1.3.2-2.1            ########################################
+[   80s] python38-pip-22.3.1-1.2               ########################################
+[   80s] python38-3.8.16-5.1                   ########################################
+[   80s] python38-cryptography-39.0.1-1.2      ########################################
+[   80s] python38-pyOpenSSL-23.0.0-1.2         ########################################
+[   80s] python38-urllib3-1.26.14-1.2          ########################################
+[   80s] python38-requests-2.28.2-2.1          ########################################
+[   81s] python38-requests-toolbelt-0.9.1-7.2  ########################################
+[   81s] python38-CacheControl-0.12.11-1.2     ########################################
+[   81s] python38-dulwich-0.21.3-1.1           ########################################
+[   81s] python38-SecretStorage-3.3.3-3.2      ########################################
+[   81s] python38-keyring-23.13.1-1.2          ########################################
+[   81s] python38-poetry-plugin-export-1.2.0-1.########################################
+[   82s] python38-poetry-1.3.2-2.1             ########################################
+[   83s] python39-pip-22.3.1-1.2               ########################################
+[   84s] python39-3.9.16-5.1                   ########################################
+[   84s] python39-cryptography-39.0.1-1.2      ########################################
+[   84s] python39-pyOpenSSL-23.0.0-1.2         ########################################
+[   84s] python39-urllib3-1.26.14-1.2          ########################################
+[   84s] python39-requests-2.28.2-2.1          ########################################
+[   84s] python39-requests-toolbelt-0.9.1-7.2  ########################################
+[   84s] python39-CacheControl-0.12.11-1.2     ########################################
+[   85s] python39-dulwich-0.21.3-1.1           ########################################
+[   85s] python39-SecretStorage-3.3.3-3.2      ########################################
+[   85s] python39-keyring-23.13.1-1.2          ########################################
+[   85s] python39-poetry-plugin-export-1.2.0-1.########################################
+[   86s] python39-poetry-1.3.2-2.1             ########################################
+[   86s] python310-wheel-0.38.4-1.2            ########################################
+[   86s] python311-wheel-0.38.4-1.2            ########################################
+[   87s] python38-wheel-0.38.4-1.2             ########################################
+[   87s] python39-wheel-0.38.4-1.2             ########################################
+[   87s] python310-pytest-7.2.0-2.2            ########################################
+[   88s] python311-pytest-7.2.0-2.2            ########################################
+[   88s] python38-pytest-7.2.0-2.2             ########################################
+[   89s] python39-pytest-7.2.0-2.2             ########################################
+[   89s] python310-python-gnupg-0.5.0-1.2      ########################################
+[   89s] python311-python-gnupg-0.5.0-1.2      ########################################
+[   89s] python38-python-gnupg-0.5.0-1.2       ########################################
+[   89s] python39-python-gnupg-0.5.0-1.2       ########################################
+[   89s] python310-psutil-5.9.4-2.2            ########################################
+[   90s] python311-psutil-5.9.4-2.2            ########################################
+[   90s] python38-psutil-5.9.4-2.2             ########################################
+[   90s] python39-psutil-5.9.4-2.2             ########################################
+[   90s] python39-paho-mqtt-1.6.1-2.5          ########################################
+[   90s] python39-defusedxml-0.7.1-2.5         ########################################
+[   90s] python38-paho-mqtt-1.6.1-2.5          ########################################
+[   90s] python38-defusedxml-0.7.1-2.5         ########################################
+[   90s] python311-paho-mqtt-1.6.1-2.5         ########################################
+[   90s] python311-defusedxml-0.7.1-2.5        ########################################
+[   90s] python310-paho-mqtt-1.6.1-2.5         ########################################
+[   90s] python310-defusedxml-0.7.1-2.5        ########################################
+[   90s] fdupes-2.2.1-1.1                      ########################################
+[  105s] now finalizing build dir...
+[  105s] ... running 01-add_abuild_user_to_trusted_group
+[  105s] ... running 02-set_timezone_to_utc
+[  105s] ... running 03-set-permissions-secure
+[  106s] ... running 11-hack_uname_version_to_kernel_version
+[  111s] -----------------------------------------------------------------
+[  111s] I have the following modifications for python-ospd-openvas.spec:
+[  112s] 23c23
+[  112s] < Release:        0
+[  112s] ---
+[  112s] > Release:        1.1
+[  116s] build target is riscv64-suse-linux
+[  116s] -----------------------------------------------------------------
+[  116s] ----- building python-ospd-openvas.spec (user abuild)
+[  116s] -----------------------------------------------------------------
+[  116s] -----------------------------------------------------------------
+[  119s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/5a99d3825a9b9c59b7458dce526f89a3-python-ospd-openvas' /home/abuild/rpmbuild/SOURCES/python-ospd-openvas.spec
+[  156s] Building target platforms: riscv64-suse-linux
+[  156s] Building for target riscv64-suse-linux
+[  156s] setting SOURCE_DATE_EPOCH=1675123200
+[  156s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.W6Ak8D
+[  156s] + umask 022
+[  156s] + cd /home/abuild/rpmbuild/BUILD
+[  156s] + cd /home/abuild/rpmbuild/BUILD
+[  156s] + rm -rf ospd-openvas-22.4.5
+[  156s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/ospd-openvas-22.4.5.tar.gz
+[  157s] + STATUS=0
+[  157s] + '[' 0 -ne 0 ']'
+[  157s] + cd ospd-openvas-22.4.5
+[  157s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  157s] + RPM_EC=0
+[  157s] ++ jobs -p
+[  157s] + exit 0
+[  157s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.5gKtjD
+[  157s] + umask 022
+[  157s] + cd /home/abuild/rpmbuild/BUILD
+[  157s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64
+[  157s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64
+[  157s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  157s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64
+[  157s] + cd ospd-openvas-22.4.5
+[  157s] + ref=/usr/lib/rpm
+[  157s] + mints=0
+[  157s] + case $(uname -m) in
+[  157s] ++ uname -m
+[  157s] + mints=20160911
+[  157s] + for s in guess sub
+[  157s] ++ find -maxdepth 8 -name config.guess
+[  157s] + for s in guess sub
+[  157s] ++ find -maxdepth 8 -name config.sub
+[  157s] ++ '[' -f _current_flavor ']'
+[  157s] ++ true
+[  157s] + last_flavor=
+[  157s] + '[' -z '' ']'
+[  157s] + last_flavor=tmp
+[  157s] + '[' tmp '!=' python38 ']'
+[  157s] + '[' -d build ']'
+[  157s] + '[' -d _build.python38 ']'
+[  157s] + echo python38
+[  157s] + python_flavor=python38
+[  157s] + myargs=
+[  157s] + '[' -f './dist/*-none-any.whl' ']'
+[  157s] + /usr/bin/python3.8 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  161s] Processing /home/abuild/rpmbuild/BUILD/ospd-openvas-22.4.5
+[  161s]   Preparing metadata (pyproject.toml): started
+[  161s]   Running command Preparing metadata (pyproject.toml)
+[  165s]   Preparing metadata (pyproject.toml): finished with status 'done'
+[  165s] Building wheels for collected packages: ospd-openvas
+[  165s]   Building wheel for ospd-openvas (pyproject.toml): started
+[  165s]   Running command Building wheel for ospd-openvas (pyproject.toml)
+[  169s]   Building wheel for ospd-openvas (pyproject.toml): finished with status 'done'
+[  169s]   Created wheel for ospd-openvas: filename=ospd_openvas-22.4.5-py3-none-any.whl size=126478 sha256=e185eef016b15bcfdea0b30922d765ade069f1675b3300397035f920a651b8f6
+[  169s]   Stored in directory: /home/abuild/.cache/pip/wheels/43/61/df/6d99f9a508ae712cfb6dc4e4badbdc89f7ea0c03011fae94c4
+[  169s] Successfully built ospd-openvas
+[  169s] + '[' -f ./build/ospd_openvas-22.4.5-py3-none-any.whl ']'
+[  169s] + mkdir -p ./dist
+[  169s] + cp ./build/ospd_openvas-22.4.5-py3-none-any.whl ./dist/
+[  169s] ++ '[' -f _current_flavor ']'
+[  169s] ++ cat _current_flavor
+[  169s] + last_flavor=python38
+[  169s] + '[' -z python38 ']'
+[  169s] + '[' python38 '!=' python39 ']'
+[  169s] + '[' -d build ']'
+[  169s] + mv build _build.python38
+[  169s] + '[' -d _build.python39 ']'
+[  169s] + echo python39
+[  169s] + python_flavor=python39
+[  169s] + myargs=
+[  169s] + '[' -f ./dist/ospd_openvas-22.4.5-py3-none-any.whl ']'
+[  169s] + echo 'Already found a compatible wheel in ./dist'
+[  169s] Already found a compatible wheel in ./dist
+[  169s] + mkdir -p ./build
+[  169s] + cp ./dist/ospd_openvas-22.4.5-py3-none-any.whl ./build/
+[  169s] ++ '[' -f _current_flavor ']'
+[  169s] ++ cat _current_flavor
+[  169s] + last_flavor=python39
+[  169s] + '[' -z python39 ']'
+[  169s] + '[' python39 '!=' python311 ']'
+[  169s] + '[' -d build ']'
+[  169s] + mv build _build.python39
+[  169s] + '[' -d _build.python311 ']'
+[  169s] + echo python311
+[  169s] + python_flavor=python311
+[  169s] + myargs=
+[  169s] + '[' -f ./dist/ospd_openvas-22.4.5-py3-none-any.whl ']'
+[  169s] + echo 'Already found a compatible wheel in ./dist'
+[  169s] Already found a compatible wheel in ./dist
+[  169s] + mkdir -p ./build
+[  169s] + cp ./dist/ospd_openvas-22.4.5-py3-none-any.whl ./build/
+[  169s] ++ '[' -f _current_flavor ']'
+[  169s] ++ cat _current_flavor
+[  170s] + last_flavor=python311
+[  170s] + '[' -z python311 ']'
+[  170s] + '[' python311 '!=' python310 ']'
+[  170s] + '[' -d build ']'
+[  170s] + mv build _build.python311
+[  170s] + '[' -d _build.python310 ']'
+[  170s] + echo python310
+[  170s] + python_flavor=python310
+[  170s] + myargs=
+[  170s] + '[' -f ./dist/ospd_openvas-22.4.5-py3-none-any.whl ']'
+[  170s] + echo 'Already found a compatible wheel in ./dist'
+[  170s] Already found a compatible wheel in ./dist
+[  170s] + mkdir -p ./build
+[  170s] + cp ./dist/ospd_openvas-22.4.5-py3-none-any.whl ./build/
+[  170s] + RPM_EC=0
+[  170s] ++ jobs -p
+[  170s] + exit 0
+[  170s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.SA5UEM
+[  170s] + umask 022
+[  170s] + cd /home/abuild/rpmbuild/BUILD
+[  170s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64
+[  170s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  170s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64
+[  170s] + cd ospd-openvas-22.4.5
+[  170s] ++ '[' -f _current_flavor ']'
+[  170s] ++ cat _current_flavor
+[  170s] + last_flavor=python310
+[  170s] + '[' -z python310 ']'
+[  170s] + '[' python310 '!=' python38 ']'
+[  170s] + '[' -d build ']'
+[  170s] + mv build _build.python310
+[  170s] + '[' -d _build.python38 ']'
+[  170s] + mv _build.python38 build
+[  170s] + echo python38
+[  170s] + python_flavor=python38
+[  170s] + myargs=
+[  170s] + havereq=0
+[  170s] + '[' -n '' ']'
+[  170s] + '[' 0 -eq 0 ']'
+[  170s] + ls ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  170s] ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  170s] + for w in ./build/*.whl
+[  170s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  170s] +++ basename ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  170s] ++ echo ospd_openvas-22.4.5-py3-none-any.whl
+[  170s] + myargs=' ospd_openvas==22.4.5'
+[  170s] + /usr/bin/python3.8 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ospd_openvas==22.4.5
+[  174s] Using pip 22.3.1 from /usr/lib/python3.8/site-packages/pip (python 3.8)
+[  175s] Looking in links: ./build
+[  175s] Processing ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  175s] Installing collected packages: ospd_openvas
+[  175s]   Creating /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin
+[  175s]   changing mode of /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas to 755
+[  175s]   WARNING: The script ospd-openvas is installed in '/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin' which is not on PATH.
+[  175s]   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+[  175s] Successfully installed ospd_openvas-22.4.5
+[  175s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.8/site-packages
+[  175s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages ']'
+[  175s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages -iname '*.pyc' -delete
+[  175s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.8 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  175s] Generating cached byte-code for ospd/__init__.py
+[  176s] Generating cached byte-code for ospd/command/__init__.py
+[  176s] Generating cached byte-code for ospd/command/command.py
+[  177s] Generating cached byte-code for ospd/command/initsubclass.py
+[  177s] Generating cached byte-code for ospd/command/registry.py
+[  178s] Generating cached byte-code for ospd/config.py
+[  178s] Generating cached byte-code for ospd/cvss.py
+[  178s] Generating cached byte-code for ospd/datapickler.py
+[  179s] Generating cached byte-code for ospd/errors.py
+[  180s] Generating cached byte-code for ospd/logger.py
+[  180s] Generating cached byte-code for ospd/main.py
+[  180s] Generating cached byte-code for ospd/misc.py
+[  181s] Generating cached byte-code for ospd/network.py
+[  181s] Generating cached byte-code for ospd/ospd.py
+[  182s] Generating cached byte-code for ospd/parser.py
+[  183s] Generating cached byte-code for ospd/protocol.py
+[  183s] Generating cached byte-code for ospd/resultlist.py
+[  184s] Generating cached byte-code for ospd/scan.py
+[  184s] Generating cached byte-code for ospd/server.py
+[  185s] Generating cached byte-code for ospd/timer.py
+[  185s] Generating cached byte-code for ospd/vtfilter.py
+[  186s] Generating cached byte-code for ospd/vts.py
+[  186s] Generating cached byte-code for ospd/xml.py
+[  187s] Generating cached byte-code for ospd/xmlvt.py
+[  187s] Generating cached byte-code for ospd_openvas/__init__.py
+[  188s] Generating cached byte-code for ospd_openvas/__version__.py
+[  188s] Generating cached byte-code for ospd_openvas/daemon.py
+[  189s] Generating cached byte-code for ospd_openvas/db.py
+[  189s] Generating cached byte-code for ospd_openvas/dryrun.py
+[  190s] Generating cached byte-code for ospd_openvas/errors.py
+[  190s] Generating cached byte-code for ospd_openvas/feed.py
+[  191s] Generating cached byte-code for ospd_openvas/gpg_sha_verifier.py
+[  191s] Generating cached byte-code for ospd_openvas/lock.py
+[  192s] Generating cached byte-code for ospd_openvas/messages/__init__.py
+[  192s] Generating cached byte-code for ospd_openvas/messages/message.py
+[  193s] Generating cached byte-code for ospd_openvas/messages/result.py
+[  193s] Generating cached byte-code for ospd_openvas/messaging/__init__.py
+[  194s] Generating cached byte-code for ospd_openvas/messaging/mqtt.py
+[  194s] Generating cached byte-code for ospd_openvas/messaging/publisher.py
+[  195s] Generating cached byte-code for ospd_openvas/messaging/subscriber.py
+[  195s] Generating cached byte-code for ospd_openvas/notus.py
+[  196s] Generating cached byte-code for ospd_openvas/nvticache.py
+[  196s] Generating cached byte-code for ospd_openvas/openvas.py
+[  196s] Generating cached byte-code for ospd_openvas/preferencehandler.py
+[  197s] Generating cached byte-code for ospd_openvas/vthelper.py
+[  198s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.8/site-packages
+[  198s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.8/site-packages ']'
+[  198s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/*
+[  198s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas ']'
+[  198s] ++ realpath /usr/bin/python3.8
+[  198s] + sed -i '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas
+[  198s] ++ '[' -f _current_flavor ']'
+[  198s] ++ cat _current_flavor
+[  198s] + last_flavor=python38
+[  198s] + '[' -z python38 ']'
+[  198s] + '[' python38 '!=' python39 ']'
+[  198s] + '[' -d build ']'
+[  198s] + mv build _build.python38
+[  198s] + '[' -d _build.python39 ']'
+[  198s] + mv _build.python39 build
+[  198s] + echo python39
+[  198s] + python_flavor=python39
+[  198s] + myargs=
+[  198s] + havereq=0
+[  198s] + '[' -n '' ']'
+[  198s] + '[' 0 -eq 0 ']'
+[  198s] + ls ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  198s] ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  198s] + for w in ./build/*.whl
+[  198s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  198s] +++ basename ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  198s] ++ echo ospd_openvas-22.4.5-py3-none-any.whl
+[  198s] + myargs=' ospd_openvas==22.4.5'
+[  198s] + /usr/bin/python3.9 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ospd_openvas==22.4.5
+[  201s] Using pip 22.3.1 from /usr/lib/python3.9/site-packages/pip (python 3.9)
+[  202s] Looking in links: ./build
+[  202s] Processing ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  202s] Installing collected packages: ospd_openvas
+[  202s]   changing mode of /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas to 755
+[  202s]   WARNING: The script ospd-openvas is installed in '/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin' which is not on PATH.
+[  202s]   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+[  202s] Successfully installed ospd_openvas-22.4.5
+[  202s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.9/site-packages
+[  202s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages ']'
+[  202s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages -iname '*.pyc' -delete
+[  202s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.9 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  202s] Generating cached byte-code for ospd/__init__.py
+[  203s] Generating cached byte-code for ospd/command/__init__.py
+[  203s] Generating cached byte-code for ospd/command/command.py
+[  204s] Generating cached byte-code for ospd/command/initsubclass.py
+[  204s] Generating cached byte-code for ospd/command/registry.py
+[  205s] Generating cached byte-code for ospd/config.py
+[  205s] Generating cached byte-code for ospd/cvss.py
+[  206s] Generating cached byte-code for ospd/datapickler.py
+[  206s] Generating cached byte-code for ospd/errors.py
+[  207s] Generating cached byte-code for ospd/logger.py
+[  207s] Generating cached byte-code for ospd/main.py
+[  208s] Generating cached byte-code for ospd/misc.py
+[  209s] Generating cached byte-code for ospd/network.py
+[  209s] Generating cached byte-code for ospd/ospd.py
+[  210s] Generating cached byte-code for ospd/parser.py
+[  210s] Generating cached byte-code for ospd/protocol.py
+[  211s] Generating cached byte-code for ospd/resultlist.py
+[  212s] Generating cached byte-code for ospd/scan.py
+[  212s] Generating cached byte-code for ospd/server.py
+[  213s] Generating cached byte-code for ospd/timer.py
+[  213s] Generating cached byte-code for ospd/vtfilter.py
+[  214s] Generating cached byte-code for ospd/vts.py
+[  214s] Generating cached byte-code for ospd/xml.py
+[  215s] Generating cached byte-code for ospd/xmlvt.py
+[  215s] Generating cached byte-code for ospd_openvas/__init__.py
+[  216s] Generating cached byte-code for ospd_openvas/__version__.py
+[  216s] Generating cached byte-code for ospd_openvas/daemon.py
+[  217s] Generating cached byte-code for ospd_openvas/db.py
+[  218s] Generating cached byte-code for ospd_openvas/dryrun.py
+[  218s] Generating cached byte-code for ospd_openvas/errors.py
+[  219s] Generating cached byte-code for ospd_openvas/feed.py
+[  219s] Generating cached byte-code for ospd_openvas/gpg_sha_verifier.py
+[  220s] Generating cached byte-code for ospd_openvas/lock.py
+[  220s] Generating cached byte-code for ospd_openvas/messages/__init__.py
+[  221s] Generating cached byte-code for ospd_openvas/messages/message.py
+[  221s] Generating cached byte-code for ospd_openvas/messages/result.py
+[  222s] Generating cached byte-code for ospd_openvas/messaging/__init__.py
+[  222s] Generating cached byte-code for ospd_openvas/messaging/mqtt.py
+[  223s] Generating cached byte-code for ospd_openvas/messaging/publisher.py
+[  224s] Generating cached byte-code for ospd_openvas/messaging/subscriber.py
+[  224s] Generating cached byte-code for ospd_openvas/notus.py
+[  225s] Generating cached byte-code for ospd_openvas/nvticache.py
+[  225s] Generating cached byte-code for ospd_openvas/openvas.py
+[  226s] Generating cached byte-code for ospd_openvas/preferencehandler.py
+[  226s] Generating cached byte-code for ospd_openvas/vthelper.py
+[  227s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.9/site-packages
+[  227s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.9/site-packages ']'
+[  227s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/*
+[  227s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas ']'
+[  227s] ++ realpath /usr/bin/python3.9
+[  227s] + sed -i '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas
+[  227s] ++ '[' -f _current_flavor ']'
+[  227s] ++ cat _current_flavor
+[  227s] + last_flavor=python39
+[  227s] + '[' -z python39 ']'
+[  227s] + '[' python39 '!=' python311 ']'
+[  227s] + '[' -d build ']'
+[  227s] + mv build _build.python39
+[  227s] + '[' -d _build.python311 ']'
+[  227s] + mv _build.python311 build
+[  227s] + echo python311
+[  227s] + python_flavor=python311
+[  227s] + myargs=
+[  227s] + havereq=0
+[  227s] + '[' -n '' ']'
+[  227s] + '[' 0 -eq 0 ']'
+[  227s] + ls ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  227s] ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  227s] + for w in ./build/*.whl
+[  227s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  227s] +++ basename ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  227s] ++ echo ospd_openvas-22.4.5-py3-none-any.whl
+[  227s] + myargs=' ospd_openvas==22.4.5'
+[  227s] + /usr/bin/python3.11 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ospd_openvas==22.4.5
+[  230s] Using pip 22.3.1 from /usr/lib/python3.11/site-packages/pip (python 3.11)
+[  231s] Looking in links: ./build
+[  231s] Processing ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  231s] Installing collected packages: ospd_openvas
+[  231s]   changing mode of /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas to 755
+[  231s]   WARNING: The script ospd-openvas is installed in '/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin' which is not on PATH.
+[  231s]   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+[  231s] Successfully installed ospd_openvas-22.4.5
+[  232s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.11/site-packages
+[  232s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages ']'
+[  232s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages -iname '*.pyc' -delete
+[  232s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.11 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  232s] Generating cached byte-code for ospd/__init__.py
+[  232s] Generating cached byte-code for ospd/command/__init__.py
+[  233s] Generating cached byte-code for ospd/command/command.py
+[  233s] Generating cached byte-code for ospd/command/initsubclass.py
+[  234s] Generating cached byte-code for ospd/command/registry.py
+[  235s] Generating cached byte-code for ospd/config.py
+[  235s] Generating cached byte-code for ospd/cvss.py
+[  236s] Generating cached byte-code for ospd/datapickler.py
+[  236s] Generating cached byte-code for ospd/errors.py
+[  237s] Generating cached byte-code for ospd/logger.py
+[  237s] Generating cached byte-code for ospd/main.py
+[  238s] Generating cached byte-code for ospd/misc.py
+[  238s] Generating cached byte-code for ospd/network.py
+[  239s] Generating cached byte-code for ospd/ospd.py
+[  240s] Generating cached byte-code for ospd/parser.py
+[  240s] Generating cached byte-code for ospd/protocol.py
+[  241s] Generating cached byte-code for ospd/resultlist.py
+[  241s] Generating cached byte-code for ospd/scan.py
+[  242s] Generating cached byte-code for ospd/server.py
+[  243s] Generating cached byte-code for ospd/timer.py
+[  243s] Generating cached byte-code for ospd/vtfilter.py
+[  244s] Generating cached byte-code for ospd/vts.py
+[  245s] Generating cached byte-code for ospd/xml.py
+[  245s] Generating cached byte-code for ospd/xmlvt.py
+[  246s] Generating cached byte-code for ospd_openvas/__init__.py
+[  246s] Generating cached byte-code for ospd_openvas/__version__.py
+[  247s] Generating cached byte-code for ospd_openvas/daemon.py
+[  247s] Generating cached byte-code for ospd_openvas/db.py
+[  248s] Generating cached byte-code for ospd_openvas/dryrun.py
+[  248s] Generating cached byte-code for ospd_openvas/errors.py
+[  249s] Generating cached byte-code for ospd_openvas/feed.py
+[  250s] Generating cached byte-code for ospd_openvas/gpg_sha_verifier.py
+[  250s] Generating cached byte-code for ospd_openvas/lock.py
+[  251s] Generating cached byte-code for ospd_openvas/messages/__init__.py
+[  251s] Generating cached byte-code for ospd_openvas/messages/message.py
+[  252s] Generating cached byte-code for ospd_openvas/messages/result.py
+[  252s] Generating cached byte-code for ospd_openvas/messaging/__init__.py
+[  253s] Generating cached byte-code for ospd_openvas/messaging/mqtt.py
+[  254s] Generating cached byte-code for ospd_openvas/messaging/publisher.py
+[  254s] Generating cached byte-code for ospd_openvas/messaging/subscriber.py
+[  255s] Generating cached byte-code for ospd_openvas/notus.py
+[  255s] Generating cached byte-code for ospd_openvas/nvticache.py
+[  256s] Generating cached byte-code for ospd_openvas/openvas.py
+[  256s] Generating cached byte-code for ospd_openvas/preferencehandler.py
+[  257s] Generating cached byte-code for ospd_openvas/vthelper.py
+[  258s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.11/site-packages
+[  258s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.11/site-packages ']'
+[  258s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/*
+[  258s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas ']'
+[  258s] ++ realpath /usr/bin/python3.11
+[  258s] + sed -i '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas
+[  258s] ++ '[' -f _current_flavor ']'
+[  258s] ++ cat _current_flavor
+[  258s] + last_flavor=python311
+[  258s] + '[' -z python311 ']'
+[  258s] + '[' python311 '!=' python310 ']'
+[  258s] + '[' -d build ']'
+[  258s] + mv build _build.python311
+[  258s] + '[' -d _build.python310 ']'
+[  258s] + mv _build.python310 build
+[  258s] + echo python310
+[  258s] + python_flavor=python310
+[  258s] + myargs=
+[  258s] + havereq=0
+[  258s] + '[' -n '' ']'
+[  258s] + '[' 0 -eq 0 ']'
+[  258s] + ls ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  258s] ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  258s] + for w in ./build/*.whl
+[  258s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  258s] +++ basename ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  258s] ++ echo ospd_openvas-22.4.5-py3-none-any.whl
+[  258s] + myargs=' ospd_openvas==22.4.5'
+[  258s] + /usr/bin/python3.10 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build ospd_openvas==22.4.5
+[  261s] Using pip 22.3.1 from /usr/lib/python3.10/site-packages/pip (python 3.10)
+[  262s] Looking in links: ./build
+[  262s] Processing ./build/ospd_openvas-22.4.5-py3-none-any.whl
+[  262s] Installing collected packages: ospd_openvas
+[  262s]   changing mode of /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas to 755
+[  262s]   WARNING: The script ospd-openvas is installed in '/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin' which is not on PATH.
+[  262s]   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+[  262s] Successfully installed ospd_openvas-22.4.5
+[  263s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.10/site-packages
+[  263s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages ']'
+[  263s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages -iname '*.pyc' -delete
+[  263s] + find /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.10 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  263s] Generating cached byte-code for ospd/__init__.py
+[  263s] Generating cached byte-code for ospd/command/__init__.py
+[  264s] Generating cached byte-code for ospd/command/command.py
+[  264s] Generating cached byte-code for ospd/command/initsubclass.py
+[  265s] Generating cached byte-code for ospd/command/registry.py
+[  265s] Generating cached byte-code for ospd/config.py
+[  266s] Generating cached byte-code for ospd/cvss.py
+[  267s] Generating cached byte-code for ospd/datapickler.py
+[  267s] Generating cached byte-code for ospd/errors.py
+[  268s] Generating cached byte-code for ospd/logger.py
+[  269s] Generating cached byte-code for ospd/main.py
+[  269s] Generating cached byte-code for ospd/misc.py
+[  270s] Generating cached byte-code for ospd/network.py
+[  270s] Generating cached byte-code for ospd/ospd.py
+[  271s] Generating cached byte-code for ospd/parser.py
+[  272s] Generating cached byte-code for ospd/protocol.py
+[  272s] Generating cached byte-code for ospd/resultlist.py
+[  273s] Generating cached byte-code for ospd/scan.py
+[  273s] Generating cached byte-code for ospd/server.py
+[  274s] Generating cached byte-code for ospd/timer.py
+[  274s] Generating cached byte-code for ospd/vtfilter.py
+[  275s] Generating cached byte-code for ospd/vts.py
+[  275s] Generating cached byte-code for ospd/xml.py
+[  276s] Generating cached byte-code for ospd/xmlvt.py
+[  277s] Generating cached byte-code for ospd_openvas/__init__.py
+[  277s] Generating cached byte-code for ospd_openvas/__version__.py
+[  277s] Generating cached byte-code for ospd_openvas/daemon.py
+[  278s] Generating cached byte-code for ospd_openvas/db.py
+[  279s] Generating cached byte-code for ospd_openvas/dryrun.py
+[  279s] Generating cached byte-code for ospd_openvas/errors.py
+[  280s] Generating cached byte-code for ospd_openvas/feed.py
+[  280s] Generating cached byte-code for ospd_openvas/gpg_sha_verifier.py
+[  281s] Generating cached byte-code for ospd_openvas/lock.py
+[  281s] Generating cached byte-code for ospd_openvas/messages/__init__.py
+[  282s] Generating cached byte-code for ospd_openvas/messages/message.py
+[  282s] Generating cached byte-code for ospd_openvas/messages/result.py
+[  283s] Generating cached byte-code for ospd_openvas/messaging/__init__.py
+[  283s] Generating cached byte-code for ospd_openvas/messaging/mqtt.py
+[  284s] Generating cached byte-code for ospd_openvas/messaging/publisher.py
+[  284s] Generating cached byte-code for ospd_openvas/messaging/subscriber.py
+[  285s] Generating cached byte-code for ospd_openvas/notus.py
+[  285s] Generating cached byte-code for ospd_openvas/nvticache.py
+[  286s] Generating cached byte-code for ospd_openvas/openvas.py
+[  286s] Generating cached byte-code for ospd_openvas/preferencehandler.py
+[  287s] Generating cached byte-code for ospd_openvas/vthelper.py
+[  288s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.10/site-packages
+[  288s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib64/python3.10/site-packages ']'
+[  288s] + for f in /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/*
+[  288s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas ']'
+[  288s] ++ realpath /usr/bin/python3.10
+[  288s] + sed -i '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas
+[  288s] + cp /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.8
+[  288s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.8
+[  288s] + cp /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.9
+[  288s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.9
+[  288s] + cp /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.11
+[  288s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.11
+[  288s] + cp /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.10
+[  288s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas-3.10
+[  288s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas
+[  288s] + alternative_target=/usr/bin/ospd-openvas
+[  288s] + [[ /usr/bin/ospd-openvas == /usr/share/man* ]]
+[  288s] + '[' 0 -eq 1 ']'
+[  288s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/etc/alternatives
+[  288s] + touch /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/etc/alternatives/ospd-openvas
+[  288s] + ln -sf /etc/alternatives/ospd-openvas /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/bin/ospd-openvas
+[  288s] ++ '[' -f _current_flavor ']'
+[  288s] ++ cat _current_flavor
+[  289s] + last_flavor=python310
+[  289s] + '[' -z python310 ']'
+[  289s] + '[' python310 '!=' python38 ']'
+[  289s] + '[' -d build ']'
+[  289s] + mv build _build.python310
+[  289s] + '[' -d _build.python38 ']'
+[  289s] + mv _build.python38 build
+[  289s] + echo python38
+[  289s] + python_flavor=python38
+[  289s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/vthelper.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/vthelper.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/openvas.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/openvas.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/nvticache.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/nvticache.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/notus.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/notus.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/lock.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/lock.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/feed.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/feed.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/errors.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/errors.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/dryrun.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/dryrun.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/db.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/db.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/daemon.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/daemon.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/__version__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/__version__.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/__pycache__/__init__.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messages/__pycache__/result.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messages/__pycache__/result.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messages/__pycache__/message.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messages/__pycache__/message.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messages/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd_openvas/messaging/__init__.py
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/xmlvt.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/xmlvt.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/vts.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/vts.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/vtfilter.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/vtfilter.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/timer.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/timer.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/server.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/server.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/resultlist.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/resultlist.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/protocol.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/protocol.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/parser.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/parser.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/main.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/main.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/logger.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/logger.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/errors.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/errors.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/datapickler.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/datapickler.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/cvss.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/cvss.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/config.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/config.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/__pycache__/__init__.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/registry.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/registry.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/initsubclass.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/initsubclass.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/command.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/command.cpython-38.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages/ospd/command/__pycache__/__init__.cpython-38.pyc
+[  289s] ++ '[' -f _current_flavor ']'
+[  289s] ++ cat _current_flavor
+[  289s] + last_flavor=python38
+[  289s] + '[' -z python38 ']'
+[  289s] + '[' python38 '!=' python39 ']'
+[  289s] + '[' -d build ']'
+[  289s] + mv build _build.python38
+[  289s] + '[' -d _build.python39 ']'
+[  289s] + mv _build.python39 build
+[  289s] + echo python39
+[  289s] + python_flavor=python39
+[  289s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/vthelper.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/vthelper.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/openvas.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/openvas.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/nvticache.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/nvticache.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/notus.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/notus.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/lock.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/lock.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/feed.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/feed.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/errors.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/errors.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/dryrun.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/dryrun.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/db.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/db.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/daemon.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/daemon.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/__version__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/__version__.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/__pycache__/__init__.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messages/__pycache__/result.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messages/__pycache__/result.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messages/__pycache__/message.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messages/__pycache__/message.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messages/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd_openvas/messaging/__init__.py
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/xmlvt.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/xmlvt.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/vts.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/vts.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/vtfilter.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/vtfilter.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/timer.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/timer.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/server.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/server.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/resultlist.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/resultlist.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/protocol.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/protocol.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/parser.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/parser.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/main.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/main.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/logger.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/logger.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/errors.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/errors.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/datapickler.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/datapickler.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/cvss.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/cvss.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/config.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/config.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/__pycache__/__init__.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/registry.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/registry.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/initsubclass.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/initsubclass.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/command.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/command.cpython-39.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.9/site-packages/ospd/command/__pycache__/__init__.cpython-39.pyc
+[  289s] ++ '[' -f _current_flavor ']'
+[  289s] ++ cat _current_flavor
+[  289s] + last_flavor=python39
+[  289s] + '[' -z python39 ']'
+[  289s] + '[' python39 '!=' python311 ']'
+[  289s] + '[' -d build ']'
+[  289s] + mv build _build.python39
+[  289s] + '[' -d _build.python311 ']'
+[  289s] + mv _build.python311 build
+[  289s] + echo python311
+[  289s] + python_flavor=python311
+[  289s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/vthelper.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/vthelper.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/openvas.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/openvas.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/nvticache.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/nvticache.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/notus.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/notus.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/lock.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/lock.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/feed.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/feed.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/errors.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/errors.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/dryrun.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/dryrun.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/db.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/db.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/daemon.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/daemon.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/__version__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/__version__.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/__pycache__/__init__.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messages/__pycache__/result.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messages/__pycache__/result.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messages/__pycache__/message.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messages/__pycache__/message.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messages/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd_openvas/messaging/__init__.py
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/xmlvt.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/xmlvt.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/vts.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/vts.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/vtfilter.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/vtfilter.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/timer.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/timer.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/server.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/server.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/resultlist.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/resultlist.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/protocol.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/protocol.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/parser.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/parser.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/main.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/main.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/logger.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/logger.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/errors.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/errors.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/datapickler.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/datapickler.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/cvss.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/cvss.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/config.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/config.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/__pycache__/__init__.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/registry.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/registry.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/initsubclass.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/initsubclass.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/command.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/command.cpython-311.pyc
+[  289s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.11/site-packages/ospd/command/__pycache__/__init__.cpython-311.pyc
+[  289s] ++ '[' -f _current_flavor ']'
+[  289s] ++ cat _current_flavor
+[  289s] + last_flavor=python311
+[  289s] + '[' -z python311 ']'
+[  289s] + '[' python311 '!=' python310 ']'
+[  289s] + '[' -d build ']'
+[  289s] + mv build _build.python311
+[  290s] + '[' -d _build.python310 ']'
+[  290s] + mv _build.python310 build
+[  290s] + echo python310
+[  290s] + python_flavor=python310
+[  290s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/vthelper.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/vthelper.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/preferencehandler.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/openvas.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/openvas.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/nvticache.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/nvticache.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/notus.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/notus.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/lock.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/lock.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/gpg_sha_verifier.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/feed.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/feed.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/errors.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/errors.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/dryrun.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/dryrun.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/db.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/db.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/daemon.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/daemon.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/__version__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/__version__.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/__pycache__/__init__.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/subscriber.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/publisher.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/mqtt.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__pycache__/__init__.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messages/__pycache__/result.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messages/__pycache__/result.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messages/__pycache__/message.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messages/__pycache__/message.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messages/__pycache__/__init__.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messages/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd_openvas/messaging/__init__.py
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/xmlvt.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/xmlvt.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/vts.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/vts.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/vtfilter.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/vtfilter.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/timer.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/timer.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/server.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/server.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/resultlist.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/resultlist.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/protocol.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/protocol.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/parser.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/parser.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/main.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/main.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/logger.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/logger.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/errors.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/errors.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/datapickler.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/datapickler.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/cvss.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/cvss.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/config.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/config.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/__pycache__/__init__.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/registry.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/registry.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/initsubclass.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/initsubclass.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/command.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/command.cpython-310.pyc
+[  290s] Linking /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.10/site-packages/ospd/command/__pycache__/__init__.cpython-310.pyc
+[  290s] + /usr/lib/rpm/find-debuginfo -j6 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/ospd-openvas-22.4.5
+[  291s] + /usr/lib/rpm/brp-compress
+[  291s] + /usr/lib/rpm/brp-suse
+[  291s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  291s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  291s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  291s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  292s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  292s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.wlKwNa
+[  292s] + umask 022
+[  292s] + cd /home/abuild/rpmbuild/BUILD
+[  292s] + cd ospd-openvas-22.4.5
+[  292s] + set +x
+[  292s] Using libalternatives variant 38 for jsonschema in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  292s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  292s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  292s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  293s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  293s] Using libalternatives variant 38 for wheel in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  293s] Using alternative doesitcache-3.8 for doesitcache in ./build/flavorbin during Python 3.8 expansions.
+[  293s] Using alternative dul-receive-pack-3.8 for dul-receive-pack in ./build/flavorbin during Python 3.8 expansions.
+[  293s] Using alternative dul-upload-pack-3.8 for dul-upload-pack in ./build/flavorbin during Python 3.8 expansions.
+[  293s] Using alternative dulwich-3.8 for dulwich in ./build/flavorbin during Python 3.8 expansions.
+[  293s] Using alternative keyring-3.8 for keyring in ./build/flavorbin during Python 3.8 expansions.
+[  294s] Using alternative normalizer-3.8 for normalizer in ./build/flavorbin during Python 3.8 expansions.
+[  294s] Using alternative pkginfo-3.8 for pkginfo in ./build/flavorbin during Python 3.8 expansions.
+[  294s] Using alternative poetry-3.8 for poetry in ./build/flavorbin during Python 3.8 expansions.
+[  294s] Using alternative virtualenv-3.8 for virtualenv in ./build/flavorbin during Python 3.8 expansions.
+[  294s] Using alternative ospd-openvas-3.8 for ospd-openvas in ./build/flavorbin during Python 3.8 expansions.
+[  295s] Using libalternatives variant 39 for jsonschema in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  295s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  295s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  295s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  295s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  295s] Using libalternatives variant 39 for wheel in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  295s] Using alternative doesitcache-3.9 for doesitcache in ./build/flavorbin during Python 3.9 expansions.
+[  295s] Using alternative dul-receive-pack-3.9 for dul-receive-pack in ./build/flavorbin during Python 3.9 expansions.
+[  295s] Using alternative dul-upload-pack-3.9 for dul-upload-pack in ./build/flavorbin during Python 3.9 expansions.
+[  296s] Using alternative dulwich-3.9 for dulwich in ./build/flavorbin during Python 3.9 expansions.
+[  296s] Using alternative keyring-3.9 for keyring in ./build/flavorbin during Python 3.9 expansions.
+[  296s] Using alternative normalizer-3.9 for normalizer in ./build/flavorbin during Python 3.9 expansions.
+[  296s] Using alternative pkginfo-3.9 for pkginfo in ./build/flavorbin during Python 3.9 expansions.
+[  296s] Using alternative poetry-3.9 for poetry in ./build/flavorbin during Python 3.9 expansions.
+[  297s] Using alternative virtualenv-3.9 for virtualenv in ./build/flavorbin during Python 3.9 expansions.
+[  297s] Using alternative ospd-openvas-3.9 for ospd-openvas in ./build/flavorbin during Python 3.9 expansions.
+[  297s] Using libalternatives variant 311 for jsonschema in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  297s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  297s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  297s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  297s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  297s] Using libalternatives variant 311 for wheel in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  297s] Using alternative doesitcache-3.11 for doesitcache in ./build/flavorbin during Python 3.11 expansions.
+[  298s] Using alternative dul-receive-pack-3.11 for dul-receive-pack in ./build/flavorbin during Python 3.11 expansions.
+[  298s] Using alternative dul-upload-pack-3.11 for dul-upload-pack in ./build/flavorbin during Python 3.11 expansions.
+[  298s] Using alternative dulwich-3.11 for dulwich in ./build/flavorbin during Python 3.11 expansions.
+[  298s] Using alternative keyring-3.11 for keyring in ./build/flavorbin during Python 3.11 expansions.
+[  298s] Using alternative normalizer-3.11 for normalizer in ./build/flavorbin during Python 3.11 expansions.
+[  299s] Using alternative pkginfo-3.11 for pkginfo in ./build/flavorbin during Python 3.11 expansions.
+[  299s] Using alternative poetry-3.11 for poetry in ./build/flavorbin during Python 3.11 expansions.
+[  299s] Using alternative virtualenv-3.11 for virtualenv in ./build/flavorbin during Python 3.11 expansions.
+[  299s] Using alternative ospd-openvas-3.11 for ospd-openvas in ./build/flavorbin during Python 3.11 expansions.
+[  299s] Using alternative doesitcache-3.10 for doesitcache in ./build/flavorbin during Python 3.10 expansions.
+[  300s] Using alternative dul-receive-pack-3.10 for dul-receive-pack in ./build/flavorbin during Python 3.10 expansions.
+[  300s] Using alternative dul-upload-pack-3.10 for dul-upload-pack in ./build/flavorbin during Python 3.10 expansions.
+[  300s] Using alternative dulwich-3.10 for dulwich in ./build/flavorbin during Python 3.10 expansions.
+[  300s] Using alternative keyring-3.10 for keyring in ./build/flavorbin during Python 3.10 expansions.
+[  300s] Using alternative normalizer-3.10 for normalizer in ./build/flavorbin during Python 3.10 expansions.
+[  300s] Using alternative pkginfo-3.10 for pkginfo in ./build/flavorbin during Python 3.10 expansions.
+[  301s] Using alternative poetry-3.10 for poetry in ./build/flavorbin during Python 3.10 expansions.
+[  301s] Using alternative virtualenv-3.10 for virtualenv in ./build/flavorbin during Python 3.10 expansions.
+[  301s] Using alternative ospd-openvas-3.10 for ospd-openvas in ./build/flavorbin during Python 3.10 expansions.
+[  301s] + export PATH=/home/abuild/rpmbuild/BUILD/ospd-openvas-22.4.5/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  301s] + PATH=/home/abuild/rpmbuild/BUILD/ospd-openvas-22.4.5/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  301s] ++ '[' -f _current_flavor ']'
+[  301s] ++ cat _current_flavor
+[  301s] + last_flavor=python310
+[  301s] + '[' -z python310 ']'
+[  301s] + '[' python310 '!=' python38 ']'
+[  301s] + '[' -d build ']'
+[  301s] + mv build _build.python310
+[  301s] + '[' -d _build.python38 ']'
+[  301s] + mv _build.python38 build
+[  301s] + echo python38
+[  301s] + python_flavor=python38
+[  301s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-ospd-openvas-22.4.5-1.1.riscv64/usr/lib/python3.8/site-packages
+[  301s] + PYTHONDONTWRITEBYTECODE=1
+[  301s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  304s] ============================= test session starts ==============================
+[  304s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  304s] cachedir: .pytest_cache
+[  304s] rootdir: /home/abuild/rpmbuild/BUILD/ospd-openvas-22.4.5
+[  309s] collecting ... collected 413 items
+[  309s] 
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_address_param PASSED [  0%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_correct_log_level PASSED [  0%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_correct_lower_case_log_level PASSED [  0%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_correct_upper_case_log_level PASSED [  0%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_defaults PASSED [  1%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_disable_notus_hashsum_verification PASSED [  1%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_existing_key PASSED [  1%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_non_existing_key PASSED [  1%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_port_as_string PASSED [  2%]
+[  309s] tests/test_argument_parser.py::ArgumentParserTestCase::test_port_interval PASSED [  2%]
+[  309s] tests/test_argument_parser.py::ArgumentParserConfigTestCase::test_not_existing_config PASSED [  2%]
+[  309s] tests/test_argument_parser.py::ArgumentParserConfigTestCase::test_using_config PASSED [  2%]
+[  309s] tests/test_cvss.py::CvssTestCase::test_cvssv2 PASSED                     [  3%]
+[  309s] tests/test_cvss.py::CvssTestCase::test_cvssv2_optional_metrics PASSED    [  3%]
+[  309s] tests/test_cvss.py::CvssTestCase::test_cvssv3 PASSED                     [  3%]
+[  309s] tests/test_cvss.py::CvssTestCase::test_cvssv3_optional_metrics PASSED    [  3%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_check_feed_cache_unavailable PASSED [  4%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_feed_is_outdated_false PASSED [  4%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_feed_is_outdated_true PASSED [  4%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_get_feed_info PASSED         [  4%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_get_feed_info_none PASSED    [  5%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_get_openvas_result PASSED    [  5%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_get_openvas_result_dead_hosts PASSED [  5%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_get_openvas_result_host_deny PASSED [  5%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_get_openvas_result_host_start PASSED [  6%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_get_openvas_result_hosts_count PASSED [  6%]
+[  309s] tests/test_daemon.py::TestOspdOpenvas::test_openvas_is_alive_already_stopped PASSED [  6%]
+[  310s] tests/test_daemon.py::TestOspdOpenvas::test_openvas_is_alive_still PASSED [  6%]
+[  310s] tests/test_daemon.py::TestOspdOpenvas::test_report_openvas_scan_status PASSED [  7%]
+[  310s] tests/test_daemon.py::TestOspdOpenvas::test_result_without_vt_oid PASSED [  7%]
+[  310s] tests/test_daemon.py::TestOspdOpenvas::test_return_disabled_verifier PASSED [  7%]
+[  310s] tests/test_daemon.py::TestOspdOpenvas::test_set_params_from_openvas_settings PASSED [  7%]
+[  310s] tests/test_daemon.py::TestOspdOpenvas::test_sudo_available PASSED        [  7%]
+[  310s] tests/test_daemon.py::TestOspdOpenvas::test_update_vts PASSED            [  8%]
+[  310s] tests/test_daemon.py::TestFilters::test_format_vt_modification_time PASSED [  8%]
+[  310s] tests/test_daemon.py::TestFilters::test_get_filtered_vts_false PASSED    [  8%]
+[  310s] tests/test_daemon.py::TestFilters::test_get_filtered_vts_true PASSED     [  8%]
+[  310s] tests/test_datapickler.py::DataPecklerTestCase::test_load_data PASSED    [  9%]
+[  310s] tests/test_datapickler.py::DataPecklerTestCase::test_load_data_corrupted PASSED [  9%]
+[  310s] tests/test_datapickler.py::DataPecklerTestCase::test_load_data_no_file PASSED [  9%]
+[  310s] tests/test_datapickler.py::DataPecklerTestCase::test_remove_file_failed PASSED [  9%]
+[  310s] tests/test_datapickler.py::DataPecklerTestCase::test_store_data PASSED   [ 10%]
+[  310s] tests/test_datapickler.py::DataPecklerTestCase::test_store_data_check_permission PASSED [ 10%]
+[  310s] tests/test_datapickler.py::DataPecklerTestCase::test_store_data_failed PASSED [ 10%]
+[  310s] tests/test_db.py::TestOpenvasDB::test_add_single_item PASSED             [ 10%]
+[  310s] tests/test_db.py::TestOpenvasDB::test_add_single_item_error PASSED       [ 11%]
+[  310s] tests/test_db.py::TestOpenvasDB::test_add_single_list PASSED             [ 11%]
+[  310s] tests/test_db.py::TestOpenvasDB::test_create_context_fail PASSED         [ 11%]
+[  310s] tests/test_db.py::TestOpenvasDB::test_create_context_success PASSED      [ 11%]
+[  310s] tests/test_db.py::TestOpenvasDB::test_find_database_by_pattern PASSED    [ 12%]
+[  311s] tests/test_db.py::TestOpenvasDB::test_find_database_by_pattern_none PASSED [ 12%]
+[  311s] tests/test_db.py::TestOpenvasDB::test_get_db_connection PASSED           [ 12%]
+[  311s] tests/test_db.py::TestOpenvasDB::test_get_filenames_and_oids PASSED      [ 12%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_filenames_and_oids_error PASSED [ 13%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_key_count PASSED               [ 13%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_key_count_error PASSED         [ 13%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_key_count_with_default_pattern PASSED [ 13%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_keys_by_pattern PASSED         [ 14%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_keys_by_pattern_error PASSED   [ 14%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_last_list_item PASSED          [ 14%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_last_list_item_error PASSED    [ 14%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_list_item PASSED               [ 15%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_list_item_error PASSED         [ 15%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_pattern PASSED                 [ 15%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_pattern_error PASSED           [ 15%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_single_item PASSED             [ 15%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_get_single_item_error PASSED       [ 16%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_pop_list_items_no_results PASSED   [ 16%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_pop_list_items_with_results PASSED [ 16%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_remove_list_item PASSED            [ 16%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_remove_list_item_error PASSED      [ 17%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_select_database PASSED             [ 17%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_select_database_error PASSED       [ 17%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_set_single_item PASSED             [ 17%]
+[  312s] tests/test_db.py::TestOpenvasDB::test_set_single_item_error PASSED       [ 18%]
+[  312s] tests/test_db.py::ScanDBTestCase::test_flush PASSED                      [ 18%]
+[  312s] tests/test_db.py::ScanDBTestCase::test_get_result PASSED                 [ 18%]
+[  312s] tests/test_db.py::ScanDBTestCase::test_get_status PASSED                 [ 18%]
+[  312s] tests/test_db.py::ScanDBTestCase::test_select PASSED                     [ 19%]
+[  312s] tests/test_db.py::KbDBTestCase::test_add_credentials_to_scan_preferences PASSED [ 19%]
+[  312s] tests/test_db.py::KbDBTestCase::test_add_scan_id PASSED                  [ 19%]
+[  312s] tests/test_db.py::KbDBTestCase::test_add_scan_preferences PASSED         [ 19%]
+[  312s] tests/test_db.py::KbDBTestCase::test_add_scan_process_id PASSED          [ 20%]
+[  312s] tests/test_db.py::KbDBTestCase::test_flush PASSED                        [ 20%]
+[  312s] tests/test_db.py::KbDBTestCase::test_get_result PASSED                   [ 20%]
+[  312s] tests/test_db.py::KbDBTestCase::test_get_scan_databases PASSED           [ 20%]
+[  312s] tests/test_db.py::KbDBTestCase::test_get_scan_process_id PASSED          [ 21%]
+[  312s] tests/test_db.py::KbDBTestCase::test_get_scan_status PASSED              [ 21%]
+[  312s] tests/test_db.py::KbDBTestCase::test_get_status PASSED                   [ 21%]
+[  312s] tests/test_db.py::KbDBTestCase::test_remove_scan_database PASSED         [ 21%]
+[  313s] tests/test_db.py::KbDBTestCase::test_scan_is_stopped_false PASSED        [ 22%]
+[  313s] tests/test_db.py::KbDBTestCase::test_scan_is_stopped_true PASSED         [ 22%]
+[  313s] tests/test_db.py::KbDBTestCase::test_stop_scan PASSED                    [ 22%]
+[  313s] tests/test_db.py::KbDBTestCase::test_target_is_finished_false PASSED     [ 22%]
+[  313s] tests/test_db.py::KbDBTestCase::test_target_is_finished_true PASSED      [ 23%]
+[  313s] tests/test_db.py::MainDBTestCase::test_find_kb_database_by_scan_id PASSED [ 23%]
+[  313s] tests/test_db.py::MainDBTestCase::test_find_kb_database_by_scan_id_none PASSED [ 23%]
+[  313s] tests/test_db.py::MainDBTestCase::test_get_new_kb_database PASSED        [ 23%]
+[  313s] tests/test_db.py::MainDBTestCase::test_get_new_kb_database_none PASSED   [ 23%]
+[  313s] tests/test_db.py::MainDBTestCase::test_max_database_index PASSED         [ 24%]
+[  313s] tests/test_db.py::MainDBTestCase::test_max_database_index_fail PASSED    [ 24%]
+[  313s] tests/test_db.py::MainDBTestCase::test_release PASSED                    [ 24%]
+[  313s] tests/test_db.py::MainDBTestCase::test_release_database PASSED           [ 24%]
+[  313s] tests/test_db.py::MainDBTestCase::test_release_database_by_index PASSED  [ 25%]
+[  313s] tests/test_db.py::MainDBTestCase::test_try_database_false PASSED         [ 25%]
+[  313s] tests/test_db.py::MainDBTestCase::test_try_database_success PASSED       [ 25%]
+[  313s] tests/test_db.py::MainDBTestCase::test_try_db_index_error PASSED         [ 25%]
+[  313s] tests/test_errors.py::OspdCommandErrorTestCase::test_as_xml PASSED       [ 26%]
+[  313s] tests/test_errors.py::OspdCommandErrorTestCase::test_constructor PASSED  [ 26%]
+[  313s] tests/test_errors.py::OspdCommandErrorTestCase::test_default_params PASSED [ 26%]
+[  313s] tests/test_errors.py::OspdCommandErrorTestCase::test_is_ospd_error PASSED [ 26%]
+[  313s] tests/test_errors.py::OspdCommandErrorTestCase::test_string_conversion PASSED [ 27%]
+[  313s] tests/test_errors.py::RequiredArgumentTestCase::test_is_ospd_error PASSED [ 27%]
+[  313s] tests/test_errors.py::RequiredArgumentTestCase::test_raise_exception PASSED [ 27%]
+[  313s] tests/test_errors.py::RequiredArgumentTestCase::test_string_conversion PASSED [ 27%]
+[  313s] tests/test_feed.py::FeedCommandTestCase::test_start_scan PASSED          [ 28%]
+[  313s] tests/test_feed.py::FeedCommandTestCase::test_start_scan_with_error PASSED [ 28%]
+[  313s] tests/test_gpg.py::GpgTest::test_reload PASSED                           [ 28%]
+[  313s] tests/test_gpg.py::GpgTest::test_verify_closure PASSED                   [ 28%]
+[  313s] tests/test_gpg.py::GpgTest::test_verifying PASSED                        [ 29%]
+[  313s] tests/test_lock.py::LockFileTestCase::test_acquire_lock PASSED           [ 29%]
+[  313s] tests/test_lock.py::LockFileTestCase::test_already_locked PASSED         [ 29%]
+[  313s] tests/test_lock.py::LockFileTestCase::test_context_manager PASSED        [ 29%]
+[  313s] tests/test_lock.py::LockFileTestCase::test_create_paren_dirs_fail PASSED [ 30%]
+[  313s] tests/test_lock.py::LockFileTestCase::test_create_parent_dirs PASSED     [ 30%]
+[  313s] tests/test_notus.py::NotusTestCase::test_notus_cvss_v2_v3_none PASSED    [ 30%]
+[  313s] tests/test_notus.py::NotusTestCase::test_notus_fail_cases PASSED         [ 30%]
+[  313s] tests/test_notus.py::NotusTestCase::test_notus_init PASSED               [ 30%]
+[  313s] tests/test_notus.py::NotusTestCase::test_notus_qod_type PASSED           [ 31%]
+[  314s] tests/test_notus.py::NotusTestCase::test_notus_reload PASSED             [ 31%]
+[  314s] tests/test_notus.py::NotusTestCase::test_notus_retrieve PASSED           [ 31%]
+[  314s] tests/test_notus.py::NotusTestCase::test_notus_success_case PASSED       [ 31%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_add_vt PASSED              [ 32%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_flush PASSED               [ 32%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_feed_version PASSED    [ 32%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_feed_version_not_available PASSED [ 32%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_file_checksum PASSED   [ 33%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_count PASSED       [ 33%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_files_count PASSED [ 33%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_metadata PASSED    [ 33%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_metadata_fail PASSED [ 34%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_params PASSED      [ 34%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_prefs PASSED       [ 34%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_refs PASSED        [ 34%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_refs_fail PASSED   [ 35%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_nvt_tags PASSED        [ 35%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_get_oids PASSED            [ 35%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_parse_metadata_tag PASSED  [ 35%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_parse_metadata_tag_missing_value PASSED [ 36%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_parse_metadata_tags PASSED [ 36%]
+[  314s] tests/test_nvti_cache.py::TestNVTICache::test_set_index PASSED           [ 36%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_check PASSED         [ 36%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_check_sudo PASSED    [ 37%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_check_sudo_with_error PASSED [ 37%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_check_with_error PASSED [ 37%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_get_settings PASSED  [ 37%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_get_settings_with_error PASSED [ 38%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_get_version PASSED   [ 38%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_get_version_not_found PASSED [ 38%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_get_version_with_error PASSED [ 38%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_load_vts_into_redis PASSED [ 38%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_load_vts_into_redis_with_error PASSED [ 39%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_start_scan PASSED    [ 39%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_start_scan_error PASSED [ 39%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_start_scan_with_niceness PASSED [ 39%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_start_scan_with_niceness_and_sudo PASSED [ 40%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_start_scan_with_sudo PASSED [ 40%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_stop_scan PASSED     [ 40%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_stop_scan_with_error PASSED [ 40%]
+[  314s] tests/test_openvas.py::OpenvasCommandTestCase::test_stop_scan_with_sudo PASSED [ 41%]
+[  314s] tests/test_port_convert.py::ValidatePortList::test_valid_port_allow_white_spaces PASSED [ 41%]
+[  315s] tests/test_port_convert.py::ValidatePortList::test_valid_port_illegal_ranges PASSED [ 41%]
+[  315s] tests/test_port_convert.py::ValidatePortList::test_valid_port_legal_ports PASSED [ 41%]
+[  315s] tests/test_port_convert.py::ValidatePortList::test_valid_port_list_0_end PASSED [ 42%]
+[  315s] tests/test_port_convert.py::ValidatePortList::test_valid_port_list_newline_between_range PASSED [ 42%]
+[  315s] tests/test_port_convert.py::ValidatePortList::test_valid_port_list_no_range PASSED [ 42%]
+[  315s] tests/test_port_convert.py::ValidatePortList::test_valid_port_new_lines_as_commas PASSED [ 42%]
+[  315s] tests/test_port_convert.py::ValidatePortList::test_valid_port_out_of_range PASSED [ 43%]
+[  316s] tests/test_port_convert.py::ValidatePortList::test_valid_port_some_standard_port_lists PASSED [ 43%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_both_ports PASSED  [ 43%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_both_ports_udp_first PASSED [ 43%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_compress_list PASSED [ 44%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_empty_port PASSED  [ 44%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_get_spec_type_ports PASSED [ 44%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_invalid_char_port PASSED [ 44%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_malformed_port_string PASSED [ 45%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_not_spec_type_ports PASSED [ 45%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_tcp_ports PASSED   [ 45%]
+[  316s] tests/test_port_convert.py::ConvertPortTestCase::test_udp_ports PASSED   [ 45%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_alive_test_methods_to_bit_field PASSED [ 46%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_bad_type_for_ssh_credentials PASSED [ 46%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_build_alive_test_opt PASSED [ 46%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_build_alive_test_opt_empty PASSED [ 46%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_build_alive_test_opt_fail_1 PASSED [ 46%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_build_credentials PASSED [ 47%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_build_credentials_ssh_up PASSED [ 47%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_missing_ssh_port_credentials PASSED [ 47%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_missing_type_for_ssh_credentials PASSED [ 47%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_not_append_notus_oids PASSED [ 48%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_prepare_alive_test_no_enum_no_alive_test PASSED [ 48%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_prepare_alive_test_not_supplied_as_enum PASSED [ 48%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_prepare_nvt_prefs PASSED [ 48%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_prepare_nvt_prefs_no_prefs PASSED [ 49%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_process_vts PASSED [ 49%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_process_vts_bad_param_id PASSED [ 49%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_process_vts_not_found PASSED [ 49%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_alive_no_invalid_alive_test PASSED [ 50%]
+[  316s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_alive_no_invalid_alive_test_no_enum PASSED [ 50%]
+[  317s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_alive_no_setting PASSED [ 50%]
+[  317s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_alive_pinghost PASSED [ 50%]
+[  317s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_bad_service_credentials PASSED [ 51%]
+[  317s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_bad_ssh_port_credentials PASSED [ 51%]
+[  317s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_boreas_alive_test_enum_has_precedence PASSED [ 51%]
+[  317s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_boreas_alive_test_not_as_enum PASSED [ 51%]
+[  317s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_boreas_alive_test_with_settings PASSED [ 52%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_boreas_alive_test_without_settings PASSED [ 52%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_credentials PASSED [ 52%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_credentials_empty PASSED [ 52%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_host_options PASSED [ 53%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_host_options_none PASSED [ 53%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_main_kbindex PASSED [ 53%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_plugins_false PASSED [ 53%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_plugins_true PASSED [ 53%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_ports PASSED [ 54%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_ports_invalid PASSED [ 54%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_reverse_lookup_opt PASSED [ 54%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_scan_params PASSED [ 54%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_set_target PASSED [ 55%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_snmp_missing_auth_alg_credentials PASSED [ 55%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_snmp_no_priv_alg_but_pw_credentials PASSED [ 55%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_snmp_unknown_auth_alg_credentials PASSED [ 55%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_snmp_unknown_priv_alg_credentials PASSED [ 56%]
+[  318s] tests/test_preferencehandler.py::PreferenceHandlerTestCase::test_ssh_port_out_of_range_credentials PASSED [ 56%]
+[  318s] tests/test_protocol.py::RequestParserTestCase::test_parse PASSED         [ 56%]
+[  318s] tests/test_scan_and_result.py::ScanTestCase::test_batch_result PASSED    [ 56%]
+[  318s] tests/test_scan_and_result.py::ScanTestCase::test_billon_laughs PASSED   [ 57%]
+[  318s] tests/test_scan_and_result.py::ScanTestCase::test_calculate_progress_without_current_hosts PASSED [ 57%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_clean_forgotten_scans PASSED [ 57%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_count_queued_scans PASSED [ 57%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_count_running_scans PASSED [ 58%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_free_memory_false PASSED [ 58%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_free_memory_true PASSED [ 58%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_get_default_help PASSED [ 58%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_get_default_scanner_params PASSED [ 59%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_get_default_scanner_version PASSED [ 59%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_get_help_still_not_init PASSED [ 59%]
+[  319s] tests/test_scan_and_result.py::ScanTestCase::test_get_scan_host_progress PASSED [ 59%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_scan_pop PASSED    [ 60%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_scan_pop_max_res PASSED [ 60%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_scan_progress_xml PASSED [ 60%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_scan_results_clean PASSED [ 60%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_scan_results_restore PASSED [ 61%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_scan_without_scanid PASSED [ 61%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_vt_xml_no_dict PASSED [ 61%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_bad_filter PASSED [ 61%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_filter_negative PASSED [ 61%]
+[  320s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_filter_positive PASSED [ 62%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_multiple_vts_with_custom PASSED [ 62%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_no_vt PASSED   [ 62%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_single_vt PASSED [ 62%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_still_not_init PASSED [ 63%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_version PASSED [ 63%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_version_only PASSED [ 63%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_affected PASSED [ 63%]
+[  321s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_ctime PASSED [ 64%]
+[  322s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_dependencies PASSED [ 64%]
+[  322s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_detection_qodt PASSED [ 64%]
+[  322s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_detection_qodv PASSED [ 64%]
+[  322s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_impact PASSED [ 65%]
+[  322s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_insight PASSED [ 65%]
+[  322s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_mtime PASSED [ 65%]
+[  322s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_params PASSED [ 65%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_refs PASSED [ 66%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_severities PASSED [ 66%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_solution PASSED [ 66%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_get_vts_vts_with_summary PASSED [ 66%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_get_vtss_multiple_vts PASSED [ 67%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_ids_iterator_dict_modified PASSED [ 67%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_interrupted_scan PASSED [ 67%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_is_new_scan_allowed_false PASSED [ 67%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_is_new_scan_allowed_true PASSED [ 68%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_progress PASSED        [ 68%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_progress_all_host_dead PASSED [ 68%]
+[  323s] tests/test_scan_and_result.py::ScanTestCase::test_result_order PASSED    [ 68%]
+[  324s] tests/test_scan_and_result.py::ScanTestCase::test_scan_exists PASSED     [ 69%]
+[  324s] tests/test_scan_and_result.py::ScanTestCase::test_scan_get_target PASSED [ 69%]
+[  325s] tests/test_scan_and_result.py::ScanTestCase::test_scan_get_target_options PASSED [ 69%]
+[  326s] tests/test_scan_and_result.py::ScanTestCase::test_scan_get_target_options_alive_test_methods PASSED [ 69%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_scan_get_target_options_alive_test_methods_dont_add_empty_or_missing PASSED [ 69%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_scan_invalid_excluded_hosts PASSED [ 70%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_scan_with_error PASSED [ 70%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_set_get_vts_version PASSED [ 70%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_set_get_vts_version_error PASSED [ 70%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_set_scan_total_hosts PASSED [ 71%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_set_scan_total_hosts_invalid_target PASSED [ 71%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_set_scan_total_hosts_zero PASSED [ 71%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_set_status_interrupted PASSED [ 71%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_set_status_stopped PASSED [ 72%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_sort_host_finished PASSED [ 72%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_start_queue_scan_daemon_not_init PASSED [ 72%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_target_with_credential_empty_community PASSED [ 72%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_target_with_credentials PASSED [ 73%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_wait_between_scan_allow PASSED [ 73%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_wait_between_scan_no_scans PASSED [ 73%]
+[  327s] tests/test_scan_and_result.py::ScanTestCase::test_wait_between_scan_run_scans_not_allow PASSED [ 73%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_24_net PASSED [ 74%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_bad_ipv4_cidr PASSED [ 74%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_get_hostname_by_address PASSED [ 74%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_good_ipv4_cidr PASSED [ 74%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_is_valid_address PASSED [ 75%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_range PASSED [ 75%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_target_str_with_trailing_comma PASSED [ 75%]
+[  327s] tests/test_target_convert.py::ConvertTargetListsTestCase::test_target_to_ipv4 PASSED [ 75%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_calculate_vts_collection_hash_no_params PASSED [ 76%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_severity_score_v2 PASSED [ 76%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_severity_score_v3 PASSED [ 76%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_single_vt PASSED      [ 76%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_single_vt_severity_cvssv2 PASSED [ 76%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_single_vt_severity_cvssv3 PASSED [ 77%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_vt_iterator PASSED    [ 77%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_vt_iterator_with_filter PASSED [ 77%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_get_vt_iterator_with_filter_no_vt PASSED [ 77%]
+[  328s] tests/test_vthelper.py::VtHelperTestCase::test_handle_null_severities PASSED [ 78%]
+[  328s] tests/test_vts.py::VtsTestCase::test_add_duplicate_vt PASSED             [ 78%]
+[  328s] tests/test_vts.py::VtsTestCase::test_add_vt PASSED                       [ 78%]
+[  328s] tests/test_vts.py::VtsTestCase::test_add_vt_with_empty_id PASSED         [ 78%]
+[  328s] tests/test_vts.py::VtsTestCase::test_add_vt_with_invalid_id PASSED       [ 79%]
+[  328s] tests/test_vts.py::VtsTestCase::test_calculate_vts_collection_hash PASSED [ 79%]
+[  328s] tests/test_vts.py::VtsTestCase::test_calculate_vts_collection_hash_empty PASSED [ 79%]
+[  328s] tests/test_vts.py::VtsTestCase::test_calculate_vts_collection_hash_no_params PASSED [ 79%]
+[  328s] tests/test_vts.py::VtsTestCase::test_contains PASSED                     [ 80%]
+[  329s] tests/test_vts.py::VtsTestCase::test_copy PASSED                         [ 80%]
+[  329s] tests/test_vts.py::VtsTestCase::test_get PASSED                          [ 80%]
+[  329s] tests/test_vts.py::VtsTestCase::test_getitem PASSED                      [ 80%]
+[  329s] tests/test_vts.py::VtsTestCase::test_iterator PASSED                     [ 81%]
+[  329s] tests/test_vts.py::VtsTestCase::test_keys PASSED                         [ 81%]
+[  329s] tests/test_xml.py::ElementsAsText::test_elements PASSED                  [ 81%]
+[  329s] tests/test_xml.py::ElementsAsText::test_simple_element PASSED            [ 81%]
+[  329s] tests/test_xml.py::ElementsAsText::test_simple_elements PASSED           [ 82%]
+[  329s] tests/test_xml.py::EscapeText::test_escape_xml_invalid_char PASSED       [ 82%]
+[  329s] tests/test_xml.py::EscapeText::test_escape_xml_printable_char PASSED     [ 82%]
+[  329s] tests/test_xml.py::EscapeText::test_escape_xml_valid_text PASSED         [ 82%]
+[  329s] tests/test_xml.py::VTsText::test_get_affected_xml PASSED                 [ 83%]
+[  329s] tests/test_xml.py::VTsText::test_get_affected_xml_failed PASSED          [ 83%]
+[  329s] tests/test_xml.py::VTsText::test_get_ctime_xml PASSED                    [ 83%]
+[  329s] tests/test_xml.py::VTsText::test_get_ctime_xml_failed PASSED             [ 83%]
+[  329s] tests/test_xml.py::VTsText::test_get_custom_xml PASSED                   [ 84%]
+[  329s] tests/test_xml.py::VTsText::test_get_custom_xml_failed PASSED            [ 84%]
+[  329s] tests/test_xml.py::VTsText::test_get_dependencies_xml PASSED             [ 84%]
+[  329s] tests/test_xml.py::VTsText::test_get_dependencies_xml_failed PASSED      [ 84%]
+[  329s] tests/test_xml.py::VTsText::test_get_dependencies_xml_missing_dep PASSED [ 84%]
+[  329s] tests/test_xml.py::VTsText::test_get_detection_xml PASSED                [ 85%]
+[  329s] tests/test_xml.py::VTsText::test_get_detection_xml_failed PASSED         [ 85%]
+[  329s] tests/test_xml.py::VTsText::test_get_impact_xml PASSED                   [ 85%]
+[  329s] tests/test_xml.py::VTsText::test_get_impact_xml_failed PASSED            [ 85%]
+[  329s] tests/test_xml.py::VTsText::test_get_insight_xml PASSED                  [ 86%]
+[  329s] tests/test_xml.py::VTsText::test_get_insight_xml_failed PASSED           [ 86%]
+[  329s] tests/test_xml.py::VTsText::test_get_mtime_xml PASSED                    [ 86%]
+[  329s] tests/test_xml.py::VTsText::test_get_mtime_xml_failed PASSED             [ 86%]
+[  330s] tests/test_xml.py::VTsText::test_get_params_xml PASSED                   [ 87%]
+[  330s] tests/test_xml.py::VTsText::test_get_params_xml_failed PASSED            [ 87%]
+[  330s] tests/test_xml.py::VTsText::test_get_refs_xml PASSED                     [ 87%]
+[  330s] tests/test_xml.py::VTsText::test_get_severities_xml PASSED               [ 87%]
+[  330s] tests/test_xml.py::VTsText::test_get_severities_xml_failed PASSED        [ 88%]
+[  330s] tests/test_xml.py::VTsText::test_get_solution_xml PASSED                 [ 88%]
+[  330s] tests/test_xml.py::VTsText::test_get_solution_xml_failed PASSED          [ 88%]
+[  330s] tests/test_xml.py::VTsText::test_get_summary_xml PASSED                  [ 88%]
+[  330s] tests/test_xml.py::VTsText::test_get_summary_xml_failed PASSED           [ 89%]
+[  330s] tests/command/test_command.py::BaseCommandTestCase::test_as_dict PASSED  [ 89%]
+[  330s] tests/command/test_command.py::BaseCommandTestCase::test_auto_register PASSED [ 89%]
+[  330s] tests/command/test_command.py::BaseCommandTestCase::test_basic_properties PASSED [ 89%]
+[  330s] tests/command/test_commands.py::CheckFeedTestCase::test_check_feed PASSED [ 90%]
+[  330s] tests/command/test_commands.py::CheckFeedTestCase::test_check_feed_fail PASSED [ 90%]
+[  330s] tests/command/test_commands.py::GetPerformanceTestCase::test_get_performance PASSED [ 90%]
+[  330s] tests/command/test_commands.py::GetPerformanceTestCase::test_get_performance_fail_cmd PASSED [ 90%]
+[  330s] tests/command/test_commands.py::GetPerformanceTestCase::test_get_performance_fail_int PASSED [ 91%]
+[  330s] tests/command/test_commands.py::GetPerformanceTestCase::test_get_performance_fail_regex PASSED [ 91%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_max_queued_scans_reached PASSED [ 91%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_ignore_multi_target PASSED [ 91%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_pop_ports PASSED [ 92%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_pop_vts PASSED [ 92%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_use_legacy_target_and_port PASSED [ 92%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_with_vts PASSED [ 92%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_with_vts_and_param PASSED [ 92%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_with_vts_and_param_missing_vt_group_filter PASSED [ 93%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_with_vts_and_param_missing_vt_param_id PASSED [ 93%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_with_vts_and_param_with_vt_group_filter PASSED [ 93%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_with_vts_empty_vt_list PASSED [ 93%]
+[  330s] tests/command/test_commands.py::StartScanTestCase::test_scan_without_vts PASSED [ 94%]
+[  330s] tests/command/test_commands.py::StopCommandTestCase::test_missing_scan_id PASSED [ 94%]
+[  330s] tests/command/test_commands.py::StopCommandTestCase::test_stop_scan PASSED [ 94%]
+[  330s] tests/command/test_commands.py::StopCommandTestCase::test_unknown_scan_id PASSED [ 94%]
+[  330s] tests/command/test_commands.py::GetMemoryUsageTestCase::test_with_main_process_only PASSED [ 95%]
+[  330s] tests/command/test_commands.py::GetMemoryUsageTestCase::test_with_subprocess PASSED [ 95%]
+[  330s] tests/command/test_commands.py::GetMemoryUsageTestCase::test_with_subsubprocess PASSED [ 95%]
+[  330s] tests/command/test_registry.py::RegistryTestCase::test_available_commands PASSED [ 95%]
+[  330s] tests/command/test_registry.py::RegistryTestCase::test_register_command PASSED [ 96%]
+[  330s] tests/messages/test_message.py::MessageTestCase::test_default_constructor PASSED [ 96%]
+[  330s] tests/messages/test_message.py::MessageTestCase::test_deserialize PASSED [ 96%]
+[  330s] tests/messages/test_message.py::MessageTestCase::test_deserialize_no_message_type PASSED [ 96%]
+[  330s] tests/messages/test_message.py::MessageTestCase::test_deserialize_unknown_message_type PASSED [ 97%]
+[  330s] tests/messages/test_message.py::MessageTestCase::test_load PASSED        [ 97%]
+[  330s] tests/messages/test_message.py::MessageTestCase::test_serialize PASSED   [ 97%]
+[  330s] tests/messages/test_message.py::MessageTestCase::test_to_str PASSED      [ 97%]
+[  330s] tests/messages/test_result.py::ResultMessageTestCase::test_constructor PASSED [ 98%]
+[  330s] tests/messages/test_result.py::ResultMessageTestCase::test_deserialize PASSED [ 98%]
+[  330s] tests/messages/test_result.py::ResultMessageTestCase::test_deserialize_invalid_message_type PASSED [ 98%]
+[  330s] tests/messages/test_result.py::ResultMessageTestCase::test_deserialize_invalid_result_type PASSED [ 98%]
+[  330s] tests/messages/test_result.py::ResultMessageTestCase::test_serialize PASSED [ 99%]
+[  330s] tests/messaging/test_mqtt.py::MQTTPublisherTestCase::test_publish PASSED [ 99%]
+[  330s] tests/messaging/test_mqtt.py::MQTTSubscriberTestCase::test_subscribe PASSED [ 99%]
+[  330s] tests/messaging/test_mqtt.py::MQTTDaemonTestCase::test_connect PASSED    [ 99%]
+[  331s] tests/messaging/test_mqtt.py::MQTTDaemonTestCase::test_run FAILED        [100%]
+[  331s] 
+[  331s] =================================== FAILURES ===================================
+[  331s] _________________________ MQTTDaemonTestCase.test_run __________________________
+[  331s] 
+[  331s] self = <tests.messaging.test_mqtt.MQTTDaemonTestCase testMethod=test_run>
+[  331s] 
+[  331s]     def test_run(self):
+[  331s]         client = mock.MagicMock()
+[  331s]     
+[  331s]         daemon = MQTTDaemon(client)
+[  331s]     
+[  331s]         daemon.run()
+[  331s]     
+[  331s]         client.connect.assert_called_with()
+[  331s]     
+[  331s] >       client.loop_start.assert_called_with()
+[  331s] 
+[  331s] tests/messaging/test_mqtt.py:110: 
+[  331s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  331s] 
+[  331s] self = <MagicMock name='mock.loop_start' id='274981433456'>, args = ()
+[  331s] kwargs = {}, expected = 'loop_start()', actual = 'not called.'
+[  331s] error_message = 'expected call not found.\nExpected: loop_start()\nActual: not called.'
+[  331s] 
+[  331s]     def assert_called_with(self, /, *args, **kwargs):
+[  331s]         """assert that the last call was made with the specified arguments.
+[  331s]     
+[  331s]         Raises an AssertionError if the args and keyword args passed in are
+[  331s]         different to the last call to the mock."""
+[  331s]         if self.call_args is None:
+[  331s]             expected = self._format_mock_call_signature(args, kwargs)
+[  331s]             actual = 'not called.'
+[  331s]             error_message = ('expected call not found.\nExpected: %s\nActual: %s'
+[  331s]                     % (expected, actual))
+[  331s] >           raise AssertionError(error_message)
+[  331s] E           AssertionError: expected call not found.
+[  331s] E           Expected: loop_start()
+[  331s] E           Actual: not called.
+[  331s] 
+[  331s] /usr/lib64/python3.8/unittest/mock.py:904: AssertionError
+[  331s] =========================== short test summary info ============================
+[  331s] FAILED tests/messaging/test_mqtt.py::MQTTDaemonTestCase::test_run - Assertion...
+[  331s] ======================== 1 failed, 412 passed in 26.90s ========================
+[  332s] error: Bad exit status from /var/tmp/rpm-tmp.wlKwNa (%check)
+[  332s] 
+[  332s] RPM build errors:
+[  332s]     Bad exit status from /var/tmp/rpm-tmp.wlKwNa (%check)
+[  332s] ### VM INTERACTION START ###
+[  332s] [  325.946520][    T1] sysrq: Power Off
+[  332s] [  325.948768][   T18] reboot: Power down
+[  332s] ### VM INTERACTION END ###
+[  332s] 
+[  332s] sheep86 failed "build python-ospd-openvas.spec" at Thu Mar  9 21:44:59 UTC 2023.
+[  332s] 

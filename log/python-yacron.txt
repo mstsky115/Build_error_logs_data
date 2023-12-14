@@ -1,0 +1,1725 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_8/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_8/root
+[    0s] 
+[    0s] 
+[    0s] sheep86 started "build python-yacron.spec" at Thu Feb 23 19:22:09 UTC 2023.
+[    0s] 
+[    0s] Building python-yacron for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '7dc54f1fe138291c43ae370b4dab12c2'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_8/.build-srcdir/python-yacron.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_8/.build-srcdir/python-yacron.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/8/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_8/.build.rpmlist /var/cache/obs/worker/root_8/.build-srcdir/python-yacron.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [964206ac31520f573cadb3d0156bd06d]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/hwrng,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_8/.mount/boot/kernel -initrd /var/cache/obs/worker/root_8/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_8/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_8/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_8/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 6
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[    9s] Increasing log level from now on...
+[    9s] [    3.737223][  T393] sysrq: Changing Loglevel
+[    9s] [    3.737342][  T393] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   10s] no label, UUID=c1d500c2-8db4-4471-86a3-96a7566715df
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   10s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/python-yacron.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-yacron.spec build ...
+[   11s] initializing rpm db...
+[   12s] querying package ids...
+[   42s] [1/512] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   42s] [2/512] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   42s] [3/512] preinstalled attr-2.5.1-1.1
+[   42s] [4/512] preinstalled bash-5.2.15-8.1
+[   42s] [5/512] preinstalled bash-sh-5.2.15-8.1
+[   42s] [6/512] preinstalled binutils-2.40-1.1
+[   42s] [7/512] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   42s] [8/512] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   42s] [9/512] preinstalled build-mkbaselibs-20230215-1.1
+[   42s] [10/512] preinstalled bzip2-1.0.8-4.1
+[   42s] [11/512] preinstalled chkstat-1599_20230217-1.1
+[   42s] [12/512] preinstalled compat-usrmerge-build-84.87-5.1
+[   42s] [13/512] preinstalled compat-usrmerge-tools-84.87-5.1
+[   42s] [14/512] preinstalled coreutils-9.1-5.1
+[   42s] [15/512] preinstalled cpio-2.13-5.1
+[   42s] [16/512] preinstalled cpp-12-2.1
+[   42s] [17/512] preinstalled cpp12-12.2.1+git749-4.1
+[   42s] [18/512] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   42s] [19/512] preinstalled debugedit-5.0-5.1
+[   42s] [20/512] preinstalled diffutils-3.9-1.1
+[   42s] [21/512] preinstalled dwz-0.15-2.1
+[   42s] [22/512] preinstalled elfutils-0.188-4.1
+[   42s] [23/512] cumulate fdupes-2.2.1-1.1
+[   42s] [24/512] preinstalled file-5.44-1.2
+[   42s] [25/512] preinstalled file-magic-5.44-1.2
+[   42s] [26/512] preinstalled filesystem-84.87-12.1
+[   42s] [27/512] preinstalled fillup-1.42-279.1
+[   42s] [28/512] preinstalled findutils-4.9.0-2.1
+[   42s] [29/512] preinstalled gawk-5.2.1-2.1
+[   42s] [30/512] preinstalled gcc-12-2.1
+[   42s] [31/512] preinstalled gcc-PIE-12-2.1
+[   42s] [32/512] preinstalled gcc12-12.2.1+git749-4.1
+[   42s] [33/512] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   42s] [34/512] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   42s] [35/512] preinstalled gettext-tools-mini-0.21.1-1.1
+[   42s] [36/512] preinstalled glibc-2.37-1.1
+[   42s] [37/512] preinstalled glibc-devel-2.37-1.1
+[   42s] [38/512] preinstalled glibc-locale-base-2.37-1.1
+[   42s] [39/512] preinstalled grep-3.8-3.1
+[   42s] [40/512] preinstalled gzip-1.12-3.1
+[   42s] [41/512] preinstalled kernel-obs-build-6.1.12-1.1
+[   42s] [42/512] cumulate libXau6-1.0.11-1.1
+[   42s] [43/512] preinstalled libacl1-2.3.1-2.1
+[   42s] [44/512] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   42s] [45/512] cumulate libargon2-1-20190702-2.1
+[   42s] [46/512] preinstalled libasan8-13.0.1+git5428-6.1
+[   42s] [47/512] preinstalled libasm1-0.188-4.1
+[   42s] [48/512] preinstalled libatomic1-13.0.1+git5428-6.1
+[   42s] [49/512] preinstalled libattr1-2.5.1-1.1
+[   42s] [50/512] preinstalled libaudit1-3.0.9-1.1
+[   42s] [51/512] preinstalled libblkid1-2.38.1-7.1
+[   42s] [52/512] cumulate libbrotlicommon1-1.0.9-1.1
+[   42s] [53/512] preinstalled libbz2-1-1.0.8-4.1
+[   42s] [54/512] preinstalled libcap-ng0-0.8.3-1.1
+[   42s] [55/512] preinstalled libcap2-2.67-1.1
+[   42s] [56/512] preinstalled libcrypt1-4.4.33-1.1
+[   42s] [57/512] preinstalled libctf-nobfd0-2.40-1.1
+[   42s] [58/512] preinstalled libctf0-2.40-1.1
+[   42s] [59/512] preinstalled libdb-4_8-4.8.30-39.1
+[   42s] [60/512] preinstalled libdw1-0.188-4.1
+[   42s] [61/512] preinstalled libeconf0-0.5.1-1.1
+[   42s] [62/512] preinstalled libelf1-0.188-4.1
+[   42s] [63/512] preinstalled libexpat1-2.5.0-2.1
+[   42s] [64/512] preinstalled libfdisk1-2.38.1-7.1
+[   42s] [65/512] preinstalled libffi8-3.4.4-1.1
+[   42s] [66/512] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   42s] [67/512] preinstalled libgcrypt20-1.10.1-1.1
+[   42s] [68/512] preinstalled libgdbm6-1.23-1.1
+[   42s] [69/512] preinstalled libgdbm_compat4-1.23-1.1
+[   42s] [70/512] preinstalled libgmp10-6.2.1-4.1
+[   42s] [71/512] preinstalled libgomp1-13.0.1+git5428-6.1
+[   42s] [72/512] preinstalled libgpg-error0-1.46-1.1
+[   42s] [73/512] cumulate libimagequant0-2.18.0-1.1
+[   42s] [74/512] preinstalled libisl23-0.25-1.1
+[   42s] [75/512] cumulate libjbig2-2.1-4.1
+[   42s] [76/512] cumulate libjpeg8-8.2.2-72.1
+[   42s] [77/512] cumulate liblcms2-2-2.14-3.3
+[   42s] [78/512] preinstalled liblua5_4-5-5.4.4-8.1
+[   42s] [79/512] preinstalled liblzma5-5.4.1-1.1
+[   42s] [80/512] preinstalled libmagic1-5.44-1.2
+[   43s] [81/512] preinstalled libmount1-2.38.1-7.1
+[   43s] [82/512] preinstalled libmpc3-1.3.1-1.2
+[   43s] [83/512] preinstalled libmpdec3-2.5.1-2.1
+[   43s] [84/512] preinstalled libmpfr6-4.2.0-1.1
+[   43s] [85/512] preinstalled libncurses6-6.4.20230218-6.1
+[   43s] [86/512] cumulate libopenjp2-7-2.5.0-2.2
+[   43s] [87/512] preinstalled libopenssl3-3.0.8-1.1
+[   43s] [88/512] cumulate libp11-kit0-0.24.1-2.1
+[   43s] [89/512] preinstalled libpcre2-8-0-10.42-3.2
+[   43s] [90/512] preinstalled libpkgconf3-1.8.0-2.1
+[   43s] [91/512] cumulate libpng16-16-1.6.39-2.1
+[   43s] [92/512] preinstalled libpopt0-1.19-1.1
+[   43s] [93/512] preinstalled libpython3_10-1_0-3.10.9-3.1
+[   43s] [94/512] preinstalled libpython3_11-1_0-3.11.1-5.1
+[   43s] [95/512] preinstalled libpython3_8-1_0-3.8.16-4.1
+[   43s] [96/512] preinstalled libpython3_9-1_0-3.9.16-4.1
+[   43s] [97/512] preinstalled libreadline8-8.2-2.1
+[   43s] [98/512] preinstalled librpmbuild9-4.18.0-3.2
+[   43s] [99/512] preinstalled libseccomp2-2.5.4-2.1
+[   43s] [100/512] preinstalled libselinux1-3.4-2.1
+[   43s] [101/512] preinstalled libsemanage-conf-3.4-1.1
+[   43s] [102/512] preinstalled libsemanage2-3.4-1.1
+[   43s] [103/512] preinstalled libsepol2-3.4-1.1
+[   43s] [104/512] preinstalled libsmartcols1-2.38.1-7.1
+[   43s] [105/512] cumulate libsqlite3-0-3.41.0-1.1
+[   43s] [106/512] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   43s] [107/512] preinstalled libsubid4-4.13-4.1
+[   43s] [108/512] cumulate libsystemd0-mini-252.5-1.1
+[   43s] [109/512] cumulate libtasn1-6-4.19.0-1.1
+[   43s] [110/512] preinstalled libubsan1-13.0.1+git5428-6.1
+[   43s] [111/512] preinstalled libutempter0-1.2.0-3.2
+[   43s] [112/512] preinstalled libuuid1-2.38.1-7.1
+[   43s] [113/512] cumulate libwebp7-1.2.4-1.2
+[   43s] [114/512] preinstalled libxcrypt-devel-4.4.33-1.1
+[   43s] [115/512] preinstalled libz1-1.2.13-2.1
+[   43s] [116/512] preinstalled libzstd1-1.5.2-2.1
+[   43s] [117/512] preinstalled linux-glibc-devel-6.1-1.1
+[   43s] [118/512] preinstalled login_defs-4.13-4.1
+[   43s] [119/512] preinstalled lua54-5.4.4-8.1
+[   43s] [120/512] preinstalled make-4.4-2.1
+[   43s] [121/512] preinstalled ncurses-utils-6.4.20230218-6.1
+[   43s] [122/512] preinstalled pam-1.5.2-12.1
+[   43s] [123/512] preinstalled patch-2.7.6-6.1
+[   43s] [124/512] preinstalled perl-5.36.0-4.1
+[   43s] [125/512] preinstalled perl-base-5.36.0-4.1
+[   43s] [126/512] preinstalled permissions-1599_20230217-1.1
+[   43s] [127/512] preinstalled permissions-config-1599_20230217-1.1
+[   43s] [128/512] preinstalled pkgconf-1.8.0-2.1
+[   43s] [129/512] preinstalled pkgconf-m4-1.8.0-2.1
+[   43s] [130/512] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   43s] [131/512] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   43s] [132/512] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   43s] [133/512] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   43s] [134/512] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   43s] [135/512] cumulate python310-MarkupSafe-2.1.2-1.2
+[   43s] [136/512] cumulate python310-aiosmtplib-2.0.1-1.2
+[   43s] [137/512] cumulate python310-asgiref-3.6.0-1.2
+[   43s] [138/512] cumulate python310-attrs-22.2.0-1.2
+[   43s] [139/512] preinstalled python310-base-3.10.9-3.1
+[   43s] [140/512] cumulate python310-bcrypt-4.0.1-1.2
+[   43s] [141/512] cumulate python310-billiard-4.1.0-1.2
+[   43s] [142/512] cumulate python310-blinker-1.5-1.2
+[   43s] [143/512] cumulate python310-bottle-0.12.24-1.1
+[   43s] [144/512] cumulate python310-cached-property-1.5.2-3.2
+[   43s] [145/512] cumulate python310-charset-normalizer-3.0.1-1.2
+[   43s] [146/512] cumulate python310-click-8.1.3-1.3
+[   43s] [147/512] cumulate python310-exceptiongroup-1.1.0-1.2
+[   43s] [148/512] cumulate python310-executing-1.2.0-4.2
+[   43s] [149/512] cumulate python310-falcon-3.1.1-4.2
+[   43s] [150/512] cumulate python310-frozenlist-1.3.3-1.2
+[   43s] [151/512] cumulate python310-greenlet-1.1.3-2.2
+[   43s] [152/512] cumulate python310-h11-0.14.0-1.2
+[   43s] [153/512] cumulate python310-idna-3.4-1.2
+[   43s] [154/512] cumulate python310-iniconfig-1.1.1-3.2
+[   43s] [155/512] cumulate python310-itsdangerous-2.1.2-1.3
+[   43s] [156/512] cumulate python310-multidict-6.0.4-1.2
+[   43s] [157/512] cumulate python310-olefile-0.46-3.5
+[   43s] [158/512] preinstalled python310-packaging-23.0-1.1
+[   43s] [159/512] cumulate python310-pluggy-1.0.0-1.5
+[   43s] [160/512] cumulate python310-pycparser-2.21-1.5
+[   43s] [161/512] cumulate python310-pymongo-4.3.3-1.2
+[   43s] [162/512] cumulate python310-pyrsistent-0.19.3-1.2
+[   43s] [163/512] cumulate python310-rfc3986-2.0.0-1.2
+[   43s] [164/512] cumulate python310-ruamel.yaml.clib-0.2.7-1.2
+[   43s] [165/512] preinstalled python310-setuptools-65.6.3-1.2
+[   43s] [166/512] cumulate python310-six-1.16.0-2.5
+[   43s] [167/512] cumulate python310-sniffio-1.3.0-1.2
+[   43s] [168/512] cumulate python310-sqlparse-0.4.3-1.2
+[   43s] [169/512] cumulate python310-tomli-2.0.1-1.3
+[   43s] [170/512] cumulate python310-typing_extensions-4.4.0-2.2
+[   43s] [171/512] cumulate python310-vine-5.0.0-2.2
+[   43s] [172/512] cumulate python310-wcwidth-0.2.6-1.2
+[   43s] [173/512] cumulate python310-wrapt-1.14.1-1.2
+[   43s] [174/512] cumulate python310-zipp-3.8.1-1.2
+[   43s] [175/512] cumulate python311-MarkupSafe-2.1.2-1.2
+[   43s] [176/512] cumulate python311-aiosmtplib-2.0.1-1.2
+[   43s] [177/512] cumulate python311-asgiref-3.6.0-1.2
+[   43s] [178/512] cumulate python311-attrs-22.2.0-1.2
+[   43s] [179/512] preinstalled python311-base-3.11.1-5.1
+[   43s] [180/512] cumulate python311-bcrypt-4.0.1-1.2
+[   43s] [181/512] cumulate python311-billiard-4.1.0-1.2
+[   43s] [182/512] cumulate python311-blinker-1.5-1.2
+[   43s] [183/512] cumulate python311-bottle-0.12.24-1.1
+[   43s] [184/512] cumulate python311-cached-property-1.5.2-3.2
+[   43s] [185/512] cumulate python311-charset-normalizer-3.0.1-1.2
+[   43s] [186/512] cumulate python311-click-8.1.3-1.3
+[   43s] [187/512] cumulate python311-exceptiongroup-1.1.0-1.2
+[   43s] [188/512] cumulate python311-executing-1.2.0-4.2
+[   43s] [189/512] cumulate python311-falcon-3.1.1-4.2
+[   43s] [190/512] cumulate python311-frozenlist-1.3.3-1.2
+[   43s] [191/512] cumulate python311-greenlet-1.1.3-2.2
+[   43s] [192/512] cumulate python311-h11-0.14.0-1.2
+[   43s] [193/512] cumulate python311-idna-3.4-1.2
+[   43s] [194/512] cumulate python311-iniconfig-1.1.1-3.2
+[   43s] [195/512] cumulate python311-itsdangerous-2.1.2-1.3
+[   43s] [196/512] cumulate python311-multidict-6.0.4-1.2
+[   43s] [197/512] cumulate python311-olefile-0.46-3.5
+[   43s] [198/512] cumulate python311-packaging-23.0-1.2
+[   43s] [199/512] cumulate python311-pluggy-1.0.0-1.5
+[   43s] [200/512] cumulate python311-pycparser-2.21-1.5
+[   43s] [201/512] cumulate python311-pymongo-4.3.3-1.2
+[   43s] [202/512] cumulate python311-pyrsistent-0.19.3-1.2
+[   43s] [203/512] cumulate python311-rfc3986-2.0.0-1.2
+[   43s] [204/512] cumulate python311-ruamel.yaml.clib-0.2.7-1.2
+[   43s] [205/512] preinstalled python311-setuptools-65.6.3-1.2
+[   43s] [206/512] cumulate python311-six-1.16.0-2.5
+[   43s] [207/512] cumulate python311-sniffio-1.3.0-1.2
+[   43s] [208/512] cumulate python311-sqlparse-0.4.3-1.2
+[   43s] [209/512] cumulate python311-tomli-2.0.1-1.3
+[   43s] [210/512] cumulate python311-typing_extensions-4.4.0-2.2
+[   43s] [211/512] cumulate python311-vine-5.0.0-2.2
+[   43s] [212/512] cumulate python311-wcwidth-0.2.6-1.2
+[   43s] [213/512] cumulate python311-wrapt-1.14.1-1.2
+[   43s] [214/512] cumulate python311-zipp-3.8.1-1.2
+[   43s] [215/512] cumulate python38-MarkupSafe-2.1.2-1.2
+[   43s] [216/512] cumulate python38-aiosmtplib-2.0.1-1.2
+[   43s] [217/512] cumulate python38-asgiref-3.6.0-1.2
+[   43s] [218/512] cumulate python38-attrs-22.2.0-1.2
+[   43s] [219/512] cumulate python38-backports.zoneinfo-0.2.1-5.1
+[   43s] [220/512] preinstalled python38-base-3.8.16-4.1
+[   43s] [221/512] cumulate python38-bcrypt-4.0.1-1.2
+[   43s] [222/512] cumulate python38-billiard-4.1.0-1.2
+[   43s] [223/512] cumulate python38-blinker-1.5-1.2
+[   43s] [224/512] cumulate python38-bottle-0.12.24-1.1
+[   43s] [225/512] cumulate python38-cached-property-1.5.2-3.2
+[   43s] [226/512] cumulate python38-charset-normalizer-3.0.1-1.2
+[   43s] [227/512] cumulate python38-click-8.1.3-1.3
+[   43s] [228/512] cumulate python38-exceptiongroup-1.1.0-1.2
+[   43s] [229/512] cumulate python38-executing-1.2.0-4.2
+[   43s] [230/512] cumulate python38-falcon-3.1.1-4.2
+[   43s] [231/512] cumulate python38-frozenlist-1.3.3-1.2
+[   43s] [232/512] cumulate python38-greenlet-1.1.3-2.2
+[   43s] [233/512] cumulate python38-h11-0.14.0-1.2
+[   43s] [234/512] cumulate python38-idna-3.4-1.2
+[   43s] [235/512] cumulate python38-iniconfig-1.1.1-3.2
+[   43s] [236/512] cumulate python38-itsdangerous-2.1.2-1.3
+[   43s] [237/512] cumulate python38-multidict-6.0.4-1.2
+[   43s] [238/512] cumulate python38-olefile-0.46-3.5
+[   43s] [239/512] cumulate python38-packaging-23.0-1.2
+[   43s] [240/512] cumulate python38-pkgutil-resolve-name-1.3.10-1.2
+[   43s] [241/512] cumulate python38-pluggy-1.0.0-1.5
+[   43s] [242/512] cumulate python38-pycparser-2.21-1.5
+[   43s] [243/512] cumulate python38-pymongo-4.3.3-1.2
+[   43s] [244/512] cumulate python38-pyrsistent-0.19.3-1.2
+[   43s] [245/512] cumulate python38-rfc3986-2.0.0-1.2
+[   43s] [246/512] cumulate python38-ruamel.yaml.clib-0.2.7-1.2
+[   43s] [247/512] preinstalled python38-setuptools-65.6.3-1.2
+[   43s] [248/512] cumulate python38-six-1.16.0-2.5
+[   43s] [249/512] cumulate python38-sniffio-1.3.0-1.2
+[   43s] [250/512] cumulate python38-sqlparse-0.4.3-1.2
+[   43s] [251/512] cumulate python38-tomli-2.0.1-1.3
+[   43s] [252/512] cumulate python38-typing_extensions-4.4.0-2.2
+[   43s] [253/512] cumulate python38-vine-5.0.0-2.2
+[   43s] [254/512] cumulate python38-wcwidth-0.2.6-1.2
+[   43s] [255/512] cumulate python38-wrapt-1.14.1-1.2
+[   43s] [256/512] cumulate python38-zipp-3.8.1-1.2
+[   43s] [257/512] cumulate python39-MarkupSafe-2.1.2-1.2
+[   43s] [258/512] cumulate python39-aiosmtplib-2.0.1-1.2
+[   43s] [259/512] cumulate python39-asgiref-3.6.0-1.2
+[   43s] [260/512] cumulate python39-attrs-22.2.0-1.2
+[   43s] [261/512] preinstalled python39-base-3.9.16-4.1
+[   43s] [262/512] cumulate python39-bcrypt-4.0.1-1.2
+[   43s] [263/512] cumulate python39-billiard-4.1.0-1.2
+[   43s] [264/512] cumulate python39-blinker-1.5-1.2
+[   43s] [265/512] cumulate python39-bottle-0.12.24-1.1
+[   43s] [266/512] cumulate python39-cached-property-1.5.2-3.2
+[   43s] [267/512] cumulate python39-charset-normalizer-3.0.1-1.2
+[   43s] [268/512] cumulate python39-click-8.1.3-1.3
+[   43s] [269/512] cumulate python39-exceptiongroup-1.1.0-1.2
+[   43s] [270/512] cumulate python39-executing-1.2.0-4.2
+[   43s] [271/512] cumulate python39-falcon-3.1.1-4.2
+[   43s] [272/512] cumulate python39-frozenlist-1.3.3-1.2
+[   43s] [273/512] cumulate python39-greenlet-1.1.3-2.2
+[   43s] [274/512] cumulate python39-h11-0.14.0-1.2
+[   43s] [275/512] cumulate python39-idna-3.4-1.2
+[   43s] [276/512] cumulate python39-iniconfig-1.1.1-3.2
+[   43s] [277/512] cumulate python39-itsdangerous-2.1.2-1.3
+[   43s] [278/512] cumulate python39-multidict-6.0.4-1.2
+[   43s] [279/512] cumulate python39-olefile-0.46-3.5
+[   43s] [280/512] cumulate python39-packaging-23.0-1.2
+[   43s] [281/512] cumulate python39-pluggy-1.0.0-1.5
+[   43s] [282/512] cumulate python39-pycparser-2.21-1.5
+[   43s] [283/512] cumulate python39-pymongo-4.3.3-1.2
+[   43s] [284/512] cumulate python39-pyrsistent-0.19.3-1.2
+[   43s] [285/512] cumulate python39-rfc3986-2.0.0-1.2
+[   43s] [286/512] cumulate python39-ruamel.yaml.clib-0.2.7-1.2
+[   43s] [287/512] preinstalled python39-setuptools-65.6.3-1.2
+[   43s] [288/512] cumulate python39-six-1.16.0-2.5
+[   43s] [289/512] cumulate python39-sniffio-1.3.0-1.2
+[   43s] [290/512] cumulate python39-sqlparse-0.4.3-1.2
+[   43s] [291/512] cumulate python39-tomli-2.0.1-1.3
+[   43s] [292/512] cumulate python39-typing_extensions-4.4.0-2.2
+[   43s] [293/512] cumulate python39-vine-5.0.0-2.2
+[   43s] [294/512] cumulate python39-wcwidth-0.2.6-1.2
+[   43s] [295/512] cumulate python39-wrapt-1.14.1-1.2
+[   43s] [296/512] cumulate python39-zipp-3.8.1-1.2
+[   43s] [297/512] preinstalled qemu-linux-user-7.1.0-50.1
+[   43s] [298/512] preinstalled rpm-4.18.0-3.2
+[   43s] [299/512] preinstalled rpm-build-4.18.0-3.2
+[   43s] [300/512] preinstalled rpm-build-perl-4.18.0-3.2
+[   43s] [301/512] preinstalled rpm-config-SUSE-20220926-1.1
+[   43s] [302/512] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.7
+[   43s] [303/512] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   43s] [304/512] preinstalled sed-4.9-2.1
+[   43s] [305/512] preinstalled shadow-4.13-4.1
+[   43s] [306/512] preinstalled system-group-hardware-20170617-24.1
+[   43s] [307/512] preinstalled system-user-root-20190513-2.1
+[   43s] [308/512] preinstalled systemd-rpm-macros-19-1.1
+[   43s] [309/512] preinstalled sysuser-shadow-3.1-5.1
+[   43s] [310/512] preinstalled tar-1.34-9.1
+[   43s] [311/512] preinstalled terminfo-base-6.4.20230218-6.1
+[   43s] [312/512] cumulate timezone-2022g-2.1
+[   43s] [313/512] preinstalled update-alternatives-1.21.8-1.1
+[   43s] [314/512] preinstalled util-linux-2.38.1-7.1
+[   43s] [315/512] preinstalled which-2.21-5.1
+[   43s] [316/512] preinstalled xz-5.4.1-1.1
+[   43s] [317/512] cumulate alts-1.2+3.b848aad-3.1
+[   43s] [318/512] cumulate libbrotlidec1-1.0.9-1.1
+[   43s] [319/512] cumulate libwebpdemux2-1.2.4-1.2
+[   43s] [320/512] cumulate libwebpmux3-1.2.4-1.2
+[   43s] [321/512] cumulate libxcb1-1.15-2.1
+[   43s] [322/512] cumulate python310-3.10.9-3.1
+[   43s] [323/512] cumulate python310-Deprecated-1.2.13-2.2
+[   43s] [324/512] cumulate python310-Jinja2-3.1.2-2.2
+[   43s] [325/512] cumulate python310-Werkzeug-2.2.2-1.2
+[   43s] [326/512] cumulate python310-aiosignal-1.2.0-1.5
+[   43s] [327/512] cumulate python310-amqp-5.1.1-1.3
+[   43s] [328/512] cumulate python310-asttokens-2.2.1-1.2
+[   43s] [329/512] cumulate python310-async_timeout-4.0.2-1.3
+[   43s] [330/512] cumulate python310-cffi-1.15.1-3.2
+[   43s] [331/512] cumulate python310-click-didyoumean-0.0.3-4.8
+[   43s] [332/512] cumulate python310-click-plugins-1.1.1-4.5
+[   43s] [333/512] cumulate python310-importlib-metadata-6.0.0-1.2
+[   43s] [334/512] cumulate python310-prompt_toolkit-3.0.36-1.3
+[   43s] [335/512] cumulate python310-python-dateutil-2.8.2-1.5
+[   43s] [336/512] cumulate python310-pytz-2022.7-1.2
+[   43s] [337/512] cumulate python310-ruamel.yaml-0.17.21-1.2
+[   43s] [338/512] cumulate python311-3.11.1-5.1
+[   43s] [339/512] cumulate python311-Deprecated-1.2.13-2.2
+[   43s] [340/512] cumulate python311-Jinja2-3.1.2-2.2
+[   43s] [341/512] cumulate python311-Werkzeug-2.2.2-1.2
+[   43s] [342/512] cumulate python311-aiosignal-1.2.0-1.5
+[   43s] [343/512] cumulate python311-amqp-5.1.1-1.3
+[   43s] [344/512] cumulate python311-asttokens-2.2.1-1.2
+[   43s] [345/512] cumulate python311-async_timeout-4.0.2-1.3
+[   43s] [346/512] cumulate python311-cffi-1.15.1-3.2
+[   43s] [347/512] cumulate python311-click-didyoumean-0.0.3-4.8
+[   43s] [348/512] cumulate python311-click-plugins-1.1.1-4.5
+[   43s] [349/512] cumulate python311-importlib-metadata-6.0.0-1.2
+[   43s] [350/512] cumulate python311-prompt_toolkit-3.0.36-1.3
+[   43s] [351/512] cumulate python311-python-dateutil-2.8.2-1.5
+[   43s] [352/512] cumulate python311-pytz-2022.7-1.2
+[   43s] [353/512] cumulate python311-ruamel.yaml-0.17.21-1.2
+[   43s] [354/512] cumulate python38-3.8.16-4.1
+[   43s] [355/512] cumulate python38-Deprecated-1.2.13-2.2
+[   43s] [356/512] cumulate python38-Jinja2-3.1.2-2.2
+[   43s] [357/512] cumulate python38-Werkzeug-2.2.2-1.2
+[   43s] [358/512] cumulate python38-aiosignal-1.2.0-1.5
+[   43s] [359/512] cumulate python38-amqp-5.1.1-1.3
+[   43s] [360/512] cumulate python38-asttokens-2.2.1-1.2
+[   43s] [361/512] cumulate python38-async_timeout-4.0.2-1.3
+[   43s] [362/512] cumulate python38-cffi-1.15.1-3.2
+[   43s] [363/512] cumulate python38-click-didyoumean-0.0.3-4.8
+[   43s] [364/512] cumulate python38-click-plugins-1.1.1-4.5
+[   43s] [365/512] cumulate python38-importlib-metadata-6.0.0-1.2
+[   43s] [366/512] cumulate python38-importlib-resources-5.10.2-2.2
+[   43s] [367/512] cumulate python38-prompt_toolkit-3.0.36-1.3
+[   43s] [368/512] cumulate python38-python-dateutil-2.8.2-1.5
+[   43s] [369/512] cumulate python38-pytz-2022.7-1.2
+[   43s] [370/512] cumulate python38-ruamel.yaml-0.17.21-1.2
+[   43s] [371/512] cumulate python39-3.9.16-4.1
+[   43s] [372/512] cumulate python39-Deprecated-1.2.13-2.2
+[   43s] [373/512] cumulate python39-Jinja2-3.1.2-2.2
+[   43s] [374/512] cumulate python39-Werkzeug-2.2.2-1.2
+[   43s] [375/512] cumulate python39-aiosignal-1.2.0-1.5
+[   43s] [376/512] cumulate python39-amqp-5.1.1-1.3
+[   43s] [377/512] cumulate python39-asttokens-2.2.1-1.2
+[   43s] [378/512] cumulate python39-async_timeout-4.0.2-1.3
+[   43s] [379/512] cumulate python39-cffi-1.15.1-3.2
+[   43s] [380/512] cumulate python39-click-didyoumean-0.0.3-4.8
+[   43s] [381/512] cumulate python39-click-plugins-1.1.1-4.5
+[   43s] [382/512] cumulate python39-importlib-metadata-6.0.0-1.2
+[   43s] [383/512] cumulate python39-prompt_toolkit-3.0.36-1.3
+[   43s] [384/512] cumulate python39-python-dateutil-2.8.2-1.5
+[   43s] [385/512] cumulate python39-pytz-2022.7-1.2
+[   43s] [386/512] cumulate python39-ruamel.yaml-0.17.21-1.2
+[   43s] [387/512] cumulate redis-7.0.8-1.2
+[   43s] [388/512] cumulate libtiff6-4.5.0-3.1
+[   43s] [389/512] cumulate p11-kit-0.24.1-2.1
+[   43s] [390/512] cumulate p11-kit-tools-0.24.1-2.1
+[   43s] [391/512] cumulate python310-anyio-3.6.2-2.3
+[   43s] [392/512] cumulate python310-setuptools_scm-7.0.5-1.2
+[   43s] [393/512] cumulate python310-yarl-1.8.2-2.2
+[   43s] [394/512] cumulate python311-anyio-3.6.2-2.3
+[   43s] [395/512] cumulate python311-yarl-1.8.2-2.2
+[   43s] [396/512] cumulate python38-anyio-3.6.2-2.3
+[   43s] [397/512] cumulate python38-yarl-1.8.2-2.2
+[   43s] [398/512] cumulate python39-anyio-3.6.2-2.3
+[   43s] [399/512] cumulate python39-yarl-1.8.2-2.2
+[   43s] [400/512] cumulate python311-setuptools_scm-7.0.5-1.2
+[   43s] [401/512] cumulate python38-setuptools_scm-7.0.5-1.2
+[   43s] [402/512] cumulate python39-setuptools_scm-7.0.5-1.2
+[   43s] [403/512] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   43s] [404/512] cumulate python310-starlette-0.24.0-1.2
+[   43s] [405/512] cumulate python310-strictyaml-1.6.2-1.2
+[   43s] [406/512] cumulate python310-tornado6-6.2-5.2
+[   43s] [407/512] cumulate python311-pyOpenSSL-23.0.0-1.2
+[   43s] [408/512] cumulate python311-starlette-0.24.0-1.2
+[   43s] [409/512] cumulate python311-strictyaml-1.6.2-1.2
+[   43s] [410/512] cumulate python311-tornado6-6.2-5.2
+[   43s] [411/512] cumulate python38-pyOpenSSL-23.0.0-1.2
+[   43s] [412/512] cumulate python38-starlette-0.24.0-1.2
+[   43s] [413/512] cumulate python38-strictyaml-1.6.2-1.2
+[   43s] [414/512] cumulate python38-tornado6-6.2-5.2
+[   43s] [415/512] cumulate python39-pyOpenSSL-23.0.0-1.2
+[   43s] [416/512] cumulate python39-starlette-0.24.0-1.2
+[   43s] [417/512] cumulate python39-strictyaml-1.6.2-1.2
+[   43s] [418/512] cumulate python39-tornado6-6.2-5.2
+[   43s] [419/512] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   43s] [420/512] cumulate libfreetype6-2.12.1-4.1
+[   43s] [421/512] cumulate python310-SQLAlchemy-1.4.46-1.2
+[   43s] [422/512] cumulate python310-argon2-cffi-bindings-21.2.0-2.2
+[   43s] [423/512] cumulate python310-crontab-0.23.0-1.5
+[   43s] [424/512] cumulate python310-cryptography-39.0.1-1.2
+[   43s] [425/512] cumulate python311-SQLAlchemy-1.4.46-1.2
+[   43s] [426/512] cumulate python311-argon2-cffi-bindings-21.2.0-2.2
+[   43s] [427/512] cumulate python311-crontab-0.23.0-1.5
+[   43s] [428/512] cumulate python311-cryptography-39.0.1-1.2
+[   43s] [429/512] cumulate python38-SQLAlchemy-1.4.46-1.2
+[   43s] [430/512] cumulate python38-argon2-cffi-bindings-21.2.0-2.2
+[   43s] [431/512] cumulate python38-crontab-0.23.0-1.5
+[   43s] [432/512] cumulate python38-cryptography-39.0.1-1.2
+[   43s] [433/512] cumulate python39-SQLAlchemy-1.4.46-1.2
+[   43s] [434/512] cumulate python39-argon2-cffi-bindings-21.2.0-2.2
+[   43s] [435/512] cumulate python39-crontab-0.23.0-1.5
+[   43s] [436/512] cumulate python39-cryptography-39.0.1-1.2
+[   43s] [437/512] cumulate python310-aiohttp-3.8.3-4.2
+[   43s] [438/512] cumulate python310-click-repl-0.2.0-2.2
+[   43s] [439/512] cumulate python310-jsonschema-4.17.3-2.2
+[   43s] [440/512] cumulate python310-redis-4.3.3-1.2
+[   43s] [441/512] cumulate python311-aiohttp-3.8.3-4.2
+[   43s] [442/512] cumulate python311-click-repl-0.2.0-2.2
+[   43s] [443/512] cumulate python311-jsonschema-4.17.3-2.2
+[   43s] [444/512] cumulate python38-aiohttp-3.8.3-4.2
+[   43s] [445/512] cumulate python38-click-repl-0.2.0-2.2
+[   43s] [446/512] cumulate python39-aiohttp-3.8.3-4.2
+[   43s] [447/512] cumulate python39-click-repl-0.2.0-2.2
+[   43s] [448/512] cumulate python39-jsonschema-4.17.3-2.2
+[   43s] [449/512] cumulate python310-kombu-5.2.4-2.1
+[   43s] [450/512] cumulate python311-kombu-5.2.4-2.1
+[   43s] [451/512] cumulate python311-redis-4.3.3-1.2
+[   43s] [452/512] cumulate python38-kombu-5.2.4-2.1
+[   43s] [453/512] cumulate python38-redis-4.3.3-1.2
+[   43s] [454/512] cumulate python39-kombu-5.2.4-2.1
+[   43s] [455/512] cumulate python39-redis-4.3.3-1.2
+[   43s] [456/512] cumulate python310-Flask-2.2.2-1.2
+[   43s] [457/512] cumulate python311-Flask-2.2.2-1.2
+[   43s] [458/512] cumulate python38-jsonschema-4.17.3-2.2
+[   43s] [459/512] cumulate python38-Flask-2.2.2-1.2
+[   43s] [460/512] cumulate python39-Flask-2.2.2-1.2
+[   43s] [461/512] cumulate python310-pytest-7.2.0-2.2
+[   43s] [462/512] cumulate python311-pytest-7.2.0-2.2
+[   43s] [463/512] cumulate python38-pytest-7.2.0-2.2
+[   43s] [464/512] cumulate python39-pytest-7.2.0-2.2
+[   43s] [465/512] cumulate ca-certificates-mozilla-2.60-1.2
+[   43s] [466/512] cumulate python310-pytest-asyncio-0.20.3-1.2
+[   43s] [467/512] cumulate python310-tornado-6.2-15.5
+[   43s] [468/512] cumulate python311-pytest-asyncio-0.20.3-1.2
+[   43s] [469/512] cumulate python38-pytest-asyncio-0.20.3-1.2
+[   43s] [470/512] cumulate python38-tornado-6.2-15.5
+[   43s] [471/512] cumulate python39-pytest-asyncio-0.20.3-1.2
+[   43s] [472/512] cumulate python39-tornado-6.2-15.5
+[   43s] [473/512] cumulate python310-argon2-cffi-21.3.0-1.3
+[   43s] [474/512] cumulate python310-rq-1.11.1-2.3
+[   43s] [475/512] cumulate python311-argon2-cffi-21.3.0-1.3
+[   43s] [476/512] cumulate python311-rq-1.11.1-2.3
+[   43s] [477/512] cumulate python38-argon2-cffi-21.3.0-1.3
+[   43s] [478/512] cumulate python38-rq-1.11.1-2.3
+[   43s] [479/512] cumulate python39-argon2-cffi-21.3.0-1.3
+[   43s] [480/512] cumulate python39-rq-1.11.1-2.3
+[   43s] [481/512] cumulate python310-celery-5.2.7-1.2
+[   43s] [482/512] cumulate python311-celery-5.2.7-1.2
+[   43s] [483/512] cumulate python38-celery-5.2.7-1.2
+[   43s] [484/512] cumulate python39-celery-5.2.7-1.2
+[   43s] [485/512] cumulate python310-Pillow-9.4.0-1.3
+[   43s] [486/512] cumulate python311-Pillow-9.4.0-1.3
+[   43s] [487/512] cumulate python38-Pillow-9.4.0-1.3
+[   43s] [488/512] cumulate python39-Pillow-9.4.0-1.3
+[   43s] [489/512] cumulate python310-certifi-2022.9.24-1.2
+[   43s] [490/512] cumulate python311-certifi-2022.9.24-1.2
+[   43s] [491/512] cumulate python38-certifi-2022.9.24-1.2
+[   43s] [492/512] cumulate python39-certifi-2022.9.24-1.2
+[   43s] [493/512] cumulate python310-Django-4.1.7-1.2
+[   43s] [494/512] cumulate python311-Django-4.1.7-1.2
+[   43s] [495/512] cumulate python39-Django-4.1.7-1.2
+[   43s] [496/512] cumulate python38-Django-4.1.7-1.2
+[   43s] [497/512] cumulate python310-httpcore-0.16.3-1.3
+[   43s] [498/512] cumulate python311-httpcore-0.16.3-1.3
+[   43s] [499/512] cumulate python38-httpcore-0.16.3-1.3
+[   43s] [500/512] cumulate python39-httpcore-0.16.3-1.3
+[   43s] [501/512] cumulate python310-urllib3-1.26.14-1.2
+[   43s] [502/512] cumulate python311-urllib3-1.26.14-1.2
+[   43s] [503/512] cumulate python38-urllib3-1.26.14-1.2
+[   43s] [504/512] cumulate python39-urllib3-1.26.14-1.2
+[   43s] [505/512] cumulate python310-httpx-0.23.3-1.2
+[   43s] [506/512] cumulate python311-httpx-0.23.3-1.2
+[   43s] [507/512] cumulate python38-httpx-0.23.3-1.2
+[   43s] [508/512] cumulate python39-httpx-0.23.3-1.2
+[   43s] [509/512] cumulate python311-sentry-sdk-1.15.0-4.2
+[   43s] [510/512] cumulate python310-sentry-sdk-1.15.0-4.2
+[   43s] [511/512] cumulate python38-sentry-sdk-1.15.0-4.2
+[   43s] [512/512] cumulate python39-sentry-sdk-1.15.0-4.2
+[   43s] now installing cumulated packages
+[   45s] Preparing...                          ########################################
+[   46s] Updating / installing...
+[   46s] python39-click-8.1.3-1.3              ########################################
+[   46s] python38-click-8.1.3-1.3              ########################################
+[   46s] python311-click-8.1.3-1.3             ########################################
+[   46s] python310-click-8.1.3-1.3             ########################################
+[   46s] libwebp7-1.2.4-1.2                    ########################################
+[   46s] python39-six-1.16.0-2.5               ########################################
+[   47s] python38-six-1.16.0-2.5               ########################################
+[   47s] python311-six-1.16.0-2.5              ########################################
+[   47s] python310-six-1.16.0-2.5              ########################################
+[   47s] libjpeg8-8.2.2-72.1                   ########################################
+[   47s] libwebpdemux2-1.2.4-1.2               ########################################
+[   47s] libwebpmux3-1.2.4-1.2                 ########################################
+[   47s] timezone-2022g-2.1                    ########################################
+[   47s] python39-typing_extensions-4.4.0-2.2  ########################################
+[   47s] python39-idna-3.4-1.2                 ########################################
+[   47s] python38-typing_extensions-4.4.0-2.2  ########################################
+[   48s] python38-idna-3.4-1.2                 ########################################
+[   48s] python311-typing_extensions-4.4.0-2.2 ########################################
+[   48s] python311-idna-3.4-1.2                ########################################
+[   48s] python310-typing_extensions-4.4.0-2.2 ########################################
+[   48s] python310-idna-3.4-1.2                ########################################
+[   48s] libsqlite3-0-3.41.0-1.1               ########################################
+[   48s] python310-3.10.9-3.1                  ########################################
+[   48s] python311-3.11.1-5.1                  ########################################
+[   48s] python38-3.8.16-4.1                   ########################################
+[   48s] python39-3.9.16-4.1                   ########################################
+[   48s] libopenjp2-7-2.5.0-2.2                ########################################
+[   48s] liblcms2-2-2.14-3.3                   ########################################
+[   48s] libimagequant0-2.18.0-1.1             ########################################
+[   48s] libargon2-1-20190702-2.1              ########################################
+[   48s] python310-pytz-2022.7-1.2             ########################################
+[   49s] python311-pytz-2022.7-1.2             ########################################
+[   49s] python38-pytz-2022.7-1.2              ########################################
+[   49s] python39-pytz-2022.7-1.2              ########################################
+[   49s] python39-vine-5.0.0-2.2               ########################################
+[   49s] python39-sniffio-1.3.0-1.2            ########################################
+[   49s] python39-packaging-23.0-1.2           ########################################
+[   49s] python39-attrs-22.2.0-1.2             ########################################
+[   49s] python38-vine-5.0.0-2.2               ########################################
+[   49s] python38-sniffio-1.3.0-1.2            ########################################
+[   49s] python38-packaging-23.0-1.2           ########################################
+[   49s] python38-attrs-22.2.0-1.2             ########################################
+[   49s] python311-vine-5.0.0-2.2              ########################################
+[   49s] python311-sniffio-1.3.0-1.2           ########################################
+[   49s] python311-packaging-23.0-1.2          ########################################
+[   49s] python311-attrs-22.2.0-1.2            ########################################
+[   49s] python310-vine-5.0.0-2.2              ########################################
+[   49s] python310-sniffio-1.3.0-1.2           ########################################
+[   49s] python310-attrs-22.2.0-1.2            ########################################
+[   49s] python310-anyio-3.6.2-2.3             ########################################
+[   50s] python311-anyio-3.6.2-2.3             ########################################
+[   50s] python38-anyio-3.6.2-2.3              ########################################
+[   50s] python39-anyio-3.6.2-2.3              ########################################
+[   50s] python39-tornado6-6.2-5.2             ########################################
+[   51s] python38-tornado6-6.2-5.2             ########################################
+[   51s] python310-tornado6-6.2-5.2            ########################################
+[   51s] python310-async_timeout-4.0.2-1.3     ########################################
+[   51s] python311-async_timeout-4.0.2-1.3     ########################################
+[   51s] python38-async_timeout-4.0.2-1.3      ########################################
+[   51s] python39-async_timeout-4.0.2-1.3      ########################################
+[   51s] python310-python-dateutil-2.8.2-1.5   ########################################
+[   51s] python311-python-dateutil-2.8.2-1.5   ########################################
+[   51s] python38-python-dateutil-2.8.2-1.5    ########################################
+[   51s] python39-python-dateutil-2.8.2-1.5    ########################################
+[   51s] python39-tomli-2.0.1-1.3              ########################################
+[   52s] python39-pymongo-4.3.3-1.2            ########################################
+[   52s] python39-multidict-6.0.4-1.2          ########################################
+[   52s] python39-frozenlist-1.3.3-1.2         ########################################
+[   52s] python39-MarkupSafe-2.1.2-1.2         ########################################
+[   52s] python39-Jinja2-3.1.2-2.2             ########################################
+[   52s] python38-zipp-3.8.1-1.2               ########################################
+[   52s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   52s] python38-tomli-2.0.1-1.3              ########################################
+[   52s] python38-pymongo-4.3.3-1.2            ########################################
+[   52s] python38-multidict-6.0.4-1.2          ########################################
+[   52s] python38-frozenlist-1.3.3-1.2         ########################################
+[   52s] python38-MarkupSafe-2.1.2-1.2         ########################################
+[   52s] python38-Jinja2-3.1.2-2.2             ########################################
+[   52s] python311-tomli-2.0.1-1.3             ########################################
+[   53s] python311-pymongo-4.3.3-1.2           ########################################
+[   53s] python311-multidict-6.0.4-1.2         ########################################
+[   53s] python311-frozenlist-1.3.3-1.2        ########################################
+[   53s] python311-MarkupSafe-2.1.2-1.2        ########################################
+[   53s] python311-Jinja2-3.1.2-2.2            ########################################
+[   53s] python310-tomli-2.0.1-1.3             ########################################
+[   53s] python310-pymongo-4.3.3-1.2           ########################################
+[   53s] python310-multidict-6.0.4-1.2         ########################################
+[   53s] python310-frozenlist-1.3.3-1.2        ########################################
+[   53s] python310-MarkupSafe-2.1.2-1.2        ########################################
+[   53s] python310-Jinja2-3.1.2-2.2            ########################################
+[   53s] libtasn1-6-4.19.0-1.1                 ########################################
+[   54s] libp11-kit0-0.24.1-2.1                ########################################
+[   54s] p11-kit-0.24.1-2.1                    ########################################
+[   54s] p11-kit-tools-0.24.1-2.1              ########################################
+[   54s] ca-certificates-2+git20211004.3efbea9-########################################
+[   55s] ca-certificates-mozilla-2.60-1.2      ########################################
+[   59s] python310-certifi-2022.9.24-1.2       ########################################
+[   59s] python311-certifi-2022.9.24-1.2       ########################################
+[   59s] python38-certifi-2022.9.24-1.2        ########################################
+[   59s] python39-certifi-2022.9.24-1.2        ########################################
+[   59s] python310-Werkzeug-2.2.2-1.2          ########################################
+[   59s] python310-aiosignal-1.2.0-1.5         ########################################
+[   59s] python310-yarl-1.8.2-2.2              ########################################
+[   60s] python311-Werkzeug-2.2.2-1.2          ########################################
+[   60s] python311-aiosignal-1.2.0-1.5         ########################################
+[   60s] python311-yarl-1.8.2-2.2              ########################################
+[   60s] python38-Werkzeug-2.2.2-1.2           ########################################
+[   60s] python38-aiosignal-1.2.0-1.5          ########################################
+[   60s] python38-yarl-1.8.2-2.2               ########################################
+[   60s] python38-importlib-resources-5.10.2-2.########################################
+[   60s] python39-Werkzeug-2.2.2-1.2           ########################################
+[   60s] python39-aiosignal-1.2.0-1.5          ########################################
+[   60s] python39-yarl-1.8.2-2.2               ########################################
+[   60s] python39-starlette-0.24.0-1.2         ########################################
+[   60s] python38-starlette-0.24.0-1.2         ########################################
+[   60s] python311-starlette-0.24.0-1.2        ########################################
+[   61s] python310-starlette-0.24.0-1.2        ########################################
+[   61s] python310-amqp-5.1.1-1.3              ########################################
+[   61s] python311-amqp-5.1.1-1.3              ########################################
+[   61s] python38-amqp-5.1.1-1.3               ########################################
+[   61s] python39-amqp-5.1.1-1.3               ########################################
+[   61s] python311-tornado6-6.2-5.2            ########################################
+[   61s] python310-asttokens-2.2.1-1.2         ########################################
+[   61s] python311-asttokens-2.2.1-1.2         ########################################
+[   61s] python38-asttokens-2.2.1-1.2          ########################################
+[   61s] python39-asttokens-2.2.1-1.2          ########################################
+[   61s] python310-click-didyoumean-0.0.3-4.8  ########################################
+[   61s] python310-click-plugins-1.1.1-4.5     ########################################
+[   61s] python311-click-didyoumean-0.0.3-4.8  ########################################
+[   61s] python311-click-plugins-1.1.1-4.5     ########################################
+[   61s] python38-click-didyoumean-0.0.3-4.8   ########################################
+[   61s] python38-click-plugins-1.1.1-4.5      ########################################
+[   61s] python39-click-didyoumean-0.0.3-4.8   ########################################
+[   61s] python39-click-plugins-1.1.1-4.5      ########################################
+[   61s] python39-zipp-3.8.1-1.2               ########################################
+[   61s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   61s] python39-wrapt-1.14.1-1.2             ########################################
+[   61s] python39-Deprecated-1.2.13-2.2        ########################################
+[   61s] python39-wcwidth-0.2.6-1.2            ########################################
+[   62s] python39-prompt_toolkit-3.0.36-1.3    ########################################
+[   62s] python39-click-repl-0.2.0-2.2         ########################################
+[   62s] python39-sqlparse-0.4.3-1.2           ########################################
+[   62s] python39-ruamel.yaml.clib-0.2.7-1.2   ########################################
+[   62s] python39-rfc3986-2.0.0-1.2            ########################################
+[   62s] python39-pyrsistent-0.19.3-1.2        ########################################
+[   62s] python39-pycparser-2.21-1.5           ########################################
+[   62s] python39-cffi-1.15.1-3.2              ########################################
+[   63s] python39-cryptography-39.0.1-1.2      ########################################
+[   63s] python39-pyOpenSSL-23.0.0-1.2         ########################################
+[   63s] python39-urllib3-1.26.14-1.2          ########################################
+[   63s] python39-argon2-cffi-bindings-21.2.0-2########################################
+[   63s] python39-argon2-cffi-21.3.0-1.3       ########################################
+[   63s] python39-pluggy-1.0.0-1.5             ########################################
+[   63s] python39-olefile-0.46-3.5             ########################################
+[   63s] python39-itsdangerous-2.1.2-1.3       ########################################
+[   63s] python39-iniconfig-1.1.1-3.2          ########################################
+[   63s] python39-h11-0.14.0-1.2               ########################################
+[   63s] python39-httpcore-0.16.3-1.3          ########################################
+[   63s] python39-httpx-0.23.3-1.2             ########################################
+[   64s] python39-greenlet-1.1.3-2.2           ########################################
+[   65s] python39-SQLAlchemy-1.4.46-1.2        ########################################
+[   65s] python39-falcon-3.1.1-4.2             ########################################
+[   65s] python39-executing-1.2.0-4.2          ########################################
+[   65s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   66s] python39-charset-normalizer-3.0.1-1.2 ########################################
+[   66s] python39-aiohttp-3.8.3-4.2            ########################################
+[   66s] python39-cached-property-1.5.2-3.2    ########################################
+[   66s] python39-kombu-5.2.4-2.1              ########################################
+[   66s] python39-bottle-0.12.24-1.1           ########################################
+[   66s] python39-blinker-1.5-1.2              ########################################
+[   66s] python39-billiard-4.1.0-1.2           ########################################
+[   67s] python39-celery-5.2.7-1.2             ########################################
+[   67s] python39-bcrypt-4.0.1-1.2             ########################################
+[   67s] python39-asgiref-3.6.0-1.2            ########################################
+[   67s] python38-wrapt-1.14.1-1.2             ########################################
+[   67s] python38-Deprecated-1.2.13-2.2        ########################################
+[   67s] python38-wcwidth-0.2.6-1.2            ########################################
+[   67s] python38-prompt_toolkit-3.0.36-1.3    ########################################
+[   67s] python38-click-repl-0.2.0-2.2         ########################################
+[   67s] python38-sqlparse-0.4.3-1.2           ########################################
+[   68s] python38-ruamel.yaml.clib-0.2.7-1.2   ########################################
+[   68s] python38-rfc3986-2.0.0-1.2            ########################################
+[   68s] python38-pyrsistent-0.19.3-1.2        ########################################
+[   68s] python38-pycparser-2.21-1.5           ########################################
+[   68s] python38-cffi-1.15.1-3.2              ########################################
+[   69s] python38-cryptography-39.0.1-1.2      ########################################
+[   69s] python38-pyOpenSSL-23.0.0-1.2         ########################################
+[   69s] python38-urllib3-1.26.14-1.2          ########################################
+[   69s] python38-argon2-cffi-bindings-21.2.0-2########################################
+[   69s] python38-argon2-cffi-21.3.0-1.3       ########################################
+[   69s] python38-pluggy-1.0.0-1.5             ########################################
+[   69s] python38-pkgutil-resolve-name-1.3.10-1########################################
+[   69s] python38-olefile-0.46-3.5             ########################################
+[   69s] python38-itsdangerous-2.1.2-1.3       ########################################
+[   69s] python38-iniconfig-1.1.1-3.2          ########################################
+[   69s] python38-h11-0.14.0-1.2               ########################################
+[   69s] python38-httpcore-0.16.3-1.3          ########################################
+[   69s] python38-httpx-0.23.3-1.2             ########################################
+[   69s] python38-greenlet-1.1.3-2.2           ########################################
+[   71s] python38-SQLAlchemy-1.4.46-1.2        ########################################
+[   71s] python38-falcon-3.1.1-4.2             ########################################
+[   71s] python38-executing-1.2.0-4.2          ########################################
+[   71s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   71s] python38-charset-normalizer-3.0.1-1.2 ########################################
+[   72s] python38-aiohttp-3.8.3-4.2            ########################################
+[   72s] python38-cached-property-1.5.2-3.2    ########################################
+[   72s] python38-kombu-5.2.4-2.1              ########################################
+[   72s] python38-bottle-0.12.24-1.1           ########################################
+[   72s] python38-blinker-1.5-1.2              ########################################
+[   72s] python38-billiard-4.1.0-1.2           ########################################
+[   73s] python38-celery-5.2.7-1.2             ########################################
+[   73s] python38-bcrypt-4.0.1-1.2             ########################################
+[   73s] python38-backports.zoneinfo-0.2.1-5.1 ########################################
+[   73s] python38-asgiref-3.6.0-1.2            ########################################
+[   73s] python311-zipp-3.8.1-1.2              ########################################
+[   73s] python311-importlib-metadata-6.0.0-1.2########################################
+[   73s] python311-wrapt-1.14.1-1.2            ########################################
+[   73s] python311-Deprecated-1.2.13-2.2       ########################################
+[   73s] python311-wcwidth-0.2.6-1.2           ########################################
+[   73s] python311-prompt_toolkit-3.0.36-1.3   ########################################
+[   73s] python311-click-repl-0.2.0-2.2        ########################################
+[   73s] python311-sqlparse-0.4.3-1.2          ########################################
+[   74s] python311-ruamel.yaml.clib-0.2.7-1.2  ########################################
+[   74s] python311-rfc3986-2.0.0-1.2           ########################################
+[   74s] python311-pyrsistent-0.19.3-1.2       ########################################
+[   74s] python311-pycparser-2.21-1.5          ########################################
+[   74s] python311-cffi-1.15.1-3.2             ########################################
+[   75s] python311-cryptography-39.0.1-1.2     ########################################
+[   75s] python311-pyOpenSSL-23.0.0-1.2        ########################################
+[   75s] python311-urllib3-1.26.14-1.2         ########################################
+[   75s] python311-argon2-cffi-bindings-21.2.0-########################################
+[   75s] python311-argon2-cffi-21.3.0-1.3      ########################################
+[   75s] python311-pluggy-1.0.0-1.5            ########################################
+[   75s] python311-olefile-0.46-3.5            ########################################
+[   75s] python311-itsdangerous-2.1.2-1.3      ########################################
+[   75s] python311-iniconfig-1.1.1-3.2         ########################################
+[   75s] python311-h11-0.14.0-1.2              ########################################
+[   75s] python311-httpcore-0.16.3-1.3         ########################################
+[   75s] python311-httpx-0.23.3-1.2            ########################################
+[   75s] python311-greenlet-1.1.3-2.2          ########################################
+[   77s] python311-SQLAlchemy-1.4.46-1.2       ########################################
+[   77s] python311-falcon-3.1.1-4.2            ########################################
+[   77s] python311-executing-1.2.0-4.2         ########################################
+[   77s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   77s] python311-charset-normalizer-3.0.1-1.2########################################
+[   78s] python311-aiohttp-3.8.3-4.2           ########################################
+[   78s] python311-cached-property-1.5.2-3.2   ########################################
+[   78s] python311-kombu-5.2.4-2.1             ########################################
+[   78s] python311-bottle-0.12.24-1.1          ########################################
+[   78s] python311-blinker-1.5-1.2             ########################################
+[   78s] python311-billiard-4.1.0-1.2          ########################################
+[   79s] python311-celery-5.2.7-1.2            ########################################
+[   79s] python311-bcrypt-4.0.1-1.2            ########################################
+[   79s] python311-asgiref-3.6.0-1.2           ########################################
+[   79s] python310-zipp-3.8.1-1.2              ########################################
+[   79s] python310-importlib-metadata-6.0.0-1.2########################################
+[   79s] python310-wrapt-1.14.1-1.2            ########################################
+[   79s] python310-Deprecated-1.2.13-2.2       ########################################
+[   79s] python310-wcwidth-0.2.6-1.2           ########################################
+[   80s] python310-prompt_toolkit-3.0.36-1.3   ########################################
+[   80s] python310-click-repl-0.2.0-2.2        ########################################
+[   80s] python310-sqlparse-0.4.3-1.2          ########################################
+[   80s] python310-ruamel.yaml.clib-0.2.7-1.2  ########################################
+[   80s] python310-rfc3986-2.0.0-1.2           ########################################
+[   80s] python310-pyrsistent-0.19.3-1.2       ########################################
+[   80s] python310-pycparser-2.21-1.5          ########################################
+[   80s] python310-cffi-1.15.1-3.2             ########################################
+[   81s] python310-cryptography-39.0.1-1.2     ########################################
+[   81s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[   81s] python310-urllib3-1.26.14-1.2         ########################################
+[   81s] python310-argon2-cffi-bindings-21.2.0-########################################
+[   81s] python310-argon2-cffi-21.3.0-1.3      ########################################
+[   81s] python310-pluggy-1.0.0-1.5            ########################################
+[   81s] python310-olefile-0.46-3.5            ########################################
+[   81s] python310-itsdangerous-2.1.2-1.3      ########################################
+[   81s] python310-iniconfig-1.1.1-3.2         ########################################
+[   81s] python310-h11-0.14.0-1.2              ########################################
+[   81s] python310-httpcore-0.16.3-1.3         ########################################
+[   81s] python310-httpx-0.23.3-1.2            ########################################
+[   82s] python310-greenlet-1.1.3-2.2          ########################################
+[   83s] python310-SQLAlchemy-1.4.46-1.2       ########################################
+[   83s] python310-falcon-3.1.1-4.2            ########################################
+[   83s] python310-executing-1.2.0-4.2         ########################################
+[   83s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   83s] python310-charset-normalizer-3.0.1-1.2########################################
+[   84s] python310-aiohttp-3.8.3-4.2           ########################################
+[   84s] python310-cached-property-1.5.2-3.2   ########################################
+[   84s] python310-kombu-5.2.4-2.1             ########################################
+[   84s] python310-bottle-0.12.24-1.1          ########################################
+[   84s] python310-blinker-1.5-1.2             ########################################
+[   84s] python310-billiard-4.1.0-1.2          ########################################
+[   85s] python310-celery-5.2.7-1.2            ########################################
+[   85s] python310-bcrypt-4.0.1-1.2            ########################################
+[   85s] python310-asgiref-3.6.0-1.2           ########################################
+[   85s] libsystemd0-mini-252.5-1.1            ########################################
+[   86s] /usr/sbin/useradd -r -c User for redis key-value store -d /var/lib/redis -U redis -s /usr/sbin/nologin
+[   86s] redis-7.0.8-1.2                       ########################################
+[   86s] See /usr/share/doc/packages/redis/README.SUSE to continue
+[   87s] python310-redis-4.3.3-1.2             ########################################
+[   87s] python310-rq-1.11.1-2.3               ########################################
+[   87s] python311-redis-4.3.3-1.2             ########################################
+[   87s] python311-rq-1.11.1-2.3               ########################################
+[   88s] python38-redis-4.3.3-1.2              ########################################
+[   88s] python38-rq-1.11.1-2.3                ########################################
+[   88s] python39-redis-4.3.3-1.2              ########################################
+[   88s] python39-rq-1.11.1-2.3                ########################################
+[   89s] libpng16-16-1.6.39-2.1                ########################################
+[   89s] libjbig2-2.1-4.1                      ########################################
+[   89s] libtiff6-4.5.0-3.1                    ########################################
+[   89s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   89s] libbrotlidec1-1.0.9-1.1               ########################################
+[   89s] libfreetype6-2.12.1-4.1               ########################################
+[   89s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   89s] alts-1.2+3.b848aad-3.1                ########################################
+[   90s] python310-jsonschema-4.17.3-2.2       ########################################
+[   90s] python311-jsonschema-4.17.3-2.2       ########################################
+[   90s] python39-jsonschema-4.17.3-2.2        ########################################
+[   90s] python310-Flask-2.2.2-1.2             ########################################
+[   91s] python311-Flask-2.2.2-1.2             ########################################
+[   91s] python38-jsonschema-4.17.3-2.2        ########################################
+[   91s] python38-Flask-2.2.2-1.2              ########################################
+[   92s] python39-Flask-2.2.2-1.2              ########################################
+[   92s] python310-pytest-7.2.0-2.2            ########################################
+[   93s] python311-pytest-7.2.0-2.2            ########################################
+[   93s] python38-pytest-7.2.0-2.2             ########################################
+[   94s] python39-pytest-7.2.0-2.2             ########################################
+[   94s] libXau6-1.0.11-1.1                    ########################################
+[   94s] libxcb1-1.15-2.1                      ########################################
+[   95s] python310-Pillow-9.4.0-1.3            ########################################
+[   98s] python310-Django-4.1.7-1.2            ########################################
+[   99s] python311-Pillow-9.4.0-1.3            ########################################
+[  103s] python311-Django-4.1.7-1.2            ########################################
+[  104s] python38-Pillow-9.4.0-1.3             ########################################
+[  108s] python38-Django-4.1.7-1.2             ########################################
+[  109s] python39-Pillow-9.4.0-1.3             ########################################
+[  113s] python39-Django-4.1.7-1.2             ########################################
+[  114s] python39-sentry-sdk-1.15.0-4.2        ########################################
+[  114s] python38-sentry-sdk-1.15.0-4.2        ########################################
+[  114s] python311-sentry-sdk-1.15.0-4.2       ########################################
+[  114s] python310-sentry-sdk-1.15.0-4.2       ########################################
+[  114s] python39-pytest-asyncio-0.20.3-1.2    ########################################
+[  114s] python38-pytest-asyncio-0.20.3-1.2    ########################################
+[  114s] python311-pytest-asyncio-0.20.3-1.2   ########################################
+[  114s] python310-pytest-asyncio-0.20.3-1.2   ########################################
+[  114s] python310-ruamel.yaml-0.17.21-1.2     ########################################
+[  115s] python311-ruamel.yaml-0.17.21-1.2     ########################################
+[  115s] python38-ruamel.yaml-0.17.21-1.2      ########################################
+[  115s] python39-ruamel.yaml-0.17.21-1.2      ########################################
+[  115s] python310-setuptools_scm-7.0.5-1.2    ########################################
+[  115s] python311-setuptools_scm-7.0.5-1.2    ########################################
+[  115s] python38-setuptools_scm-7.0.5-1.2     ########################################
+[  115s] python39-setuptools_scm-7.0.5-1.2     ########################################
+[  115s] python39-strictyaml-1.6.2-1.2         ########################################
+[  115s] python39-crontab-0.23.0-1.5           ########################################
+[  115s] python38-strictyaml-1.6.2-1.2         ########################################
+[  115s] python38-crontab-0.23.0-1.5           ########################################
+[  116s] python311-strictyaml-1.6.2-1.2        ########################################
+[  116s] python311-crontab-0.23.0-1.5          ########################################
+[  116s] python310-strictyaml-1.6.2-1.2        ########################################
+[  116s] python310-crontab-0.23.0-1.5          ########################################
+[  116s] python310-tornado-6.2-15.5            ########################################
+[  116s] python38-tornado-6.2-15.5             ########################################
+[  116s] python39-tornado-6.2-15.5             ########################################
+[  116s] python39-aiosmtplib-2.0.1-1.2         ########################################
+[  116s] python38-aiosmtplib-2.0.1-1.2         ########################################
+[  116s] python311-aiosmtplib-2.0.1-1.2        ########################################
+[  116s] python310-aiosmtplib-2.0.1-1.2        ########################################
+[  116s] fdupes-2.2.1-1.1                      ########################################
+[  133s] now finalizing build dir...
+[  134s] ... running 01-add_abuild_user_to_trusted_group
+[  134s] ... running 02-set_timezone_to_utc
+[  134s] ... running 03-set-permissions-secure
+[  134s] ... running 11-hack_uname_version_to_kernel_version
+[  140s] -----------------------------------------------------------------
+[  140s] I have the following modifications for python-yacron.spec:
+[  140s] 24c24
+[  140s] < Release:        0
+[  140s] ---
+[  140s] > Release:        1.1
+[  145s] build target is riscv64-suse-linux
+[  145s] -----------------------------------------------------------------
+[  145s] ----- building python-yacron.spec (user abuild)
+[  145s] -----------------------------------------------------------------
+[  145s] -----------------------------------------------------------------
+[  148s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/7dc54f1fe138291c43ae370b4dab12c2-python-yacron' /home/abuild/rpmbuild/SOURCES/python-yacron.spec
+[  189s] Building target platforms: riscv64-suse-linux
+[  189s] Building for target riscv64-suse-linux
+[  189s] setting SOURCE_DATE_EPOCH=1661817600
+[  189s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.c3xCmf
+[  189s] + umask 022
+[  189s] + cd /home/abuild/rpmbuild/BUILD
+[  189s] + cd /home/abuild/rpmbuild/BUILD
+[  189s] + rm -rf yacron-0.17.0
+[  189s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/yacron-0.17.0.tar.gz
+[  189s] + STATUS=0
+[  189s] + '[' 0 -ne 0 ']'
+[  189s] + cd yacron-0.17.0
+[  189s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  189s] + sed -i 's/pytest-runner//;/pytest-cov/d' setup.py
+[  189s] + RPM_EC=0
+[  189s] ++ jobs -p
+[  189s] + exit 0
+[  190s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.xComfy
+[  190s] + umask 022
+[  190s] + cd /home/abuild/rpmbuild/BUILD
+[  190s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64
+[  190s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64
+[  190s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  190s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64
+[  190s] + cd yacron-0.17.0
+[  190s] + ref=/usr/lib/rpm
+[  190s] + mints=0
+[  190s] + case $(uname -m) in
+[  190s] ++ uname -m
+[  190s] + mints=20160911
+[  190s] + for s in guess sub
+[  190s] ++ find -maxdepth 8 -name config.guess
+[  190s] + for s in guess sub
+[  190s] ++ find -maxdepth 8 -name config.sub
+[  190s] + export LANG=en_US.UTF-8
+[  190s] + LANG=en_US.UTF-8
+[  190s] ++ '[' -f _current_flavor ']'
+[  190s] ++ true
+[  190s] + last_flavor=
+[  190s] + '[' -z '' ']'
+[  190s] + last_flavor=tmp
+[  190s] + '[' tmp '!=' python38 ']'
+[  190s] + '[' -d build ']'
+[  190s] + '[' -d _build.python38 ']'
+[  190s] + echo python38
+[  190s] + python_flavor=python38
+[  190s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  194s] running build
+[  194s] running build_py
+[  194s] creating build
+[  194s] creating build/lib
+[  194s] creating build/lib/yacron
+[  194s] copying yacron/__init__.py -> build/lib/yacron
+[  194s] copying yacron/__main__.py -> build/lib/yacron
+[  194s] copying yacron/config.py -> build/lib/yacron
+[  194s] copying yacron/cron.py -> build/lib/yacron
+[  194s] copying yacron/job.py -> build/lib/yacron
+[  194s] copying yacron/statsd.py -> build/lib/yacron
+[  194s] copying yacron/version.py -> build/lib/yacron
+[  194s] running egg_info
+[  194s] writing yacron.egg-info/PKG-INFO
+[  194s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  194s] writing entry points to yacron.egg-info/entry_points.txt
+[  194s] writing requirements to yacron.egg-info/requires.txt
+[  194s] writing top-level names to yacron.egg-info/top_level.txt
+[  194s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  194s] reading manifest template 'MANIFEST.in'
+[  194s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  194s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  194s] warning: no previously-included files matching '*' found under directory 'env'
+[  194s] adding license file 'LICENSE'
+[  194s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  195s] ++ '[' -f _current_flavor ']'
+[  195s] ++ cat _current_flavor
+[  195s] + last_flavor=python38
+[  195s] + '[' -z python38 ']'
+[  195s] + '[' python38 '!=' python39 ']'
+[  195s] + '[' -d build ']'
+[  195s] + mv build _build.python38
+[  195s] + '[' -d _build.python39 ']'
+[  195s] + echo python39
+[  195s] + python_flavor=python39
+[  195s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  198s] running build
+[  198s] running build_py
+[  198s] creating build
+[  198s] creating build/lib
+[  198s] creating build/lib/yacron
+[  198s] copying yacron/__init__.py -> build/lib/yacron
+[  198s] copying yacron/__main__.py -> build/lib/yacron
+[  198s] copying yacron/config.py -> build/lib/yacron
+[  198s] copying yacron/cron.py -> build/lib/yacron
+[  198s] copying yacron/job.py -> build/lib/yacron
+[  198s] copying yacron/statsd.py -> build/lib/yacron
+[  198s] copying yacron/version.py -> build/lib/yacron
+[  198s] running egg_info
+[  198s] writing yacron.egg-info/PKG-INFO
+[  198s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  198s] writing entry points to yacron.egg-info/entry_points.txt
+[  198s] writing requirements to yacron.egg-info/requires.txt
+[  198s] writing top-level names to yacron.egg-info/top_level.txt
+[  198s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  198s] reading manifest template 'MANIFEST.in'
+[  198s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  198s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  198s] warning: no previously-included files matching '*' found under directory 'env'
+[  198s] adding license file 'LICENSE'
+[  198s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  199s] ++ '[' -f _current_flavor ']'
+[  199s] ++ cat _current_flavor
+[  199s] + last_flavor=python39
+[  199s] + '[' -z python39 ']'
+[  199s] + '[' python39 '!=' python311 ']'
+[  199s] + '[' -d build ']'
+[  199s] + mv build _build.python39
+[  199s] + '[' -d _build.python311 ']'
+[  199s] + echo python311
+[  199s] + python_flavor=python311
+[  199s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  202s] running build
+[  202s] running build_py
+[  202s] creating build
+[  202s] creating build/lib
+[  202s] creating build/lib/yacron
+[  202s] copying yacron/__init__.py -> build/lib/yacron
+[  202s] copying yacron/__main__.py -> build/lib/yacron
+[  202s] copying yacron/config.py -> build/lib/yacron
+[  202s] copying yacron/cron.py -> build/lib/yacron
+[  202s] copying yacron/job.py -> build/lib/yacron
+[  202s] copying yacron/statsd.py -> build/lib/yacron
+[  202s] copying yacron/version.py -> build/lib/yacron
+[  202s] running egg_info
+[  202s] writing yacron.egg-info/PKG-INFO
+[  202s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  202s] writing entry points to yacron.egg-info/entry_points.txt
+[  202s] writing requirements to yacron.egg-info/requires.txt
+[  202s] writing top-level names to yacron.egg-info/top_level.txt
+[  202s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  202s] reading manifest template 'MANIFEST.in'
+[  202s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  202s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  202s] warning: no previously-included files matching '*' found under directory 'env'
+[  202s] adding license file 'LICENSE'
+[  202s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  203s] ++ '[' -f _current_flavor ']'
+[  203s] ++ cat _current_flavor
+[  203s] + last_flavor=python311
+[  203s] + '[' -z python311 ']'
+[  203s] + '[' python311 '!=' python310 ']'
+[  203s] + '[' -d build ']'
+[  203s] + mv build _build.python311
+[  203s] + '[' -d _build.python310 ']'
+[  203s] + echo python310
+[  203s] + python_flavor=python310
+[  203s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  206s] running build
+[  206s] running build_py
+[  206s] creating build
+[  206s] creating build/lib
+[  206s] creating build/lib/yacron
+[  206s] copying yacron/__init__.py -> build/lib/yacron
+[  206s] copying yacron/__main__.py -> build/lib/yacron
+[  206s] copying yacron/config.py -> build/lib/yacron
+[  206s] copying yacron/cron.py -> build/lib/yacron
+[  206s] copying yacron/job.py -> build/lib/yacron
+[  206s] copying yacron/statsd.py -> build/lib/yacron
+[  206s] copying yacron/version.py -> build/lib/yacron
+[  206s] running egg_info
+[  207s] writing yacron.egg-info/PKG-INFO
+[  207s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  207s] writing entry points to yacron.egg-info/entry_points.txt
+[  207s] writing requirements to yacron.egg-info/requires.txt
+[  207s] writing top-level names to yacron.egg-info/top_level.txt
+[  207s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  207s] reading manifest template 'MANIFEST.in'
+[  207s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  207s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  207s] warning: no previously-included files matching '*' found under directory 'env'
+[  207s] adding license file 'LICENSE'
+[  207s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  207s] + RPM_EC=0
+[  207s] ++ jobs -p
+[  207s] + exit 0
+[  207s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.qn1vPJ
+[  207s] + umask 022
+[  207s] + cd /home/abuild/rpmbuild/BUILD
+[  207s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64
+[  207s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  207s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64
+[  207s] + cd yacron-0.17.0
+[  207s] + export LANG=en_US.UTF-8
+[  207s] + LANG=en_US.UTF-8
+[  207s] ++ '[' -f _current_flavor ']'
+[  207s] ++ cat _current_flavor
+[  207s] + last_flavor=python310
+[  207s] + '[' -z python310 ']'
+[  207s] + '[' python310 '!=' python38 ']'
+[  207s] + '[' -d build ']'
+[  207s] + mv build _build.python310
+[  207s] + '[' -d _build.python38 ']'
+[  207s] + mv _build.python38 build
+[  208s] + echo python38
+[  208s] + python_flavor=python38
+[  208s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64 --prefix /usr
+[  211s] running install
+[  212s] running install_lib
+[  212s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr
+[  212s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib
+[  212s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8
+[  212s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages
+[  212s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] copying build/lib/yacron/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] copying build/lib/yacron/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] copying build/lib/yacron/config.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] copying build/lib/yacron/cron.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] copying build/lib/yacron/job.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] copying build/lib/yacron/statsd.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] copying build/lib/yacron/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron
+[  212s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__init__.py to __init__.cpython-38.pyc
+[  212s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__main__.py to __main__.cpython-38.pyc
+[  212s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/config.py to config.cpython-38.pyc
+[  212s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/cron.py to cron.cpython-38.pyc
+[  212s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/job.py to job.cpython-38.pyc
+[  212s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/statsd.py to statsd.cpython-38.pyc
+[  212s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/version.py to version.cpython-38.pyc
+[  212s] writing byte-compilation script '/tmp/tmp3u8i8pgo.py'
+[  212s] /usr/bin/python3.8 /tmp/tmp3u8i8pgo.py
+[  215s] removing /tmp/tmp3u8i8pgo.py
+[  215s] running install_egg_info
+[  215s] running egg_info
+[  215s] writing yacron.egg-info/PKG-INFO
+[  215s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  215s] writing entry points to yacron.egg-info/entry_points.txt
+[  215s] writing requirements to yacron.egg-info/requires.txt
+[  215s] writing top-level names to yacron.egg-info/top_level.txt
+[  215s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  215s] reading manifest template 'MANIFEST.in'
+[  215s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  215s]   warnings.warn(
+[  215s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  215s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  215s] warning: no previously-included files matching '*' found under directory 'env'
+[  215s] adding license file 'LICENSE'
+[  215s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  215s] Copying yacron.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron-0.17.0-py3.8.egg-info
+[  215s] running install_scripts
+[  216s] Installing yacron script to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin
+[  216s] ++ '[' -f _current_flavor ']'
+[  216s] ++ cat _current_flavor
+[  216s] + last_flavor=python38
+[  216s] + '[' -z python38 ']'
+[  216s] + '[' python38 '!=' python39 ']'
+[  216s] + '[' -d build ']'
+[  216s] + mv build _build.python38
+[  216s] + '[' -d _build.python39 ']'
+[  216s] + mv _build.python39 build
+[  216s] + echo python39
+[  216s] + python_flavor=python39
+[  216s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64 --prefix /usr
+[  220s] running install
+[  220s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  220s]   warnings.warn(
+[  220s] running install_lib
+[  220s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9
+[  220s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages
+[  220s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] copying build/lib/yacron/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] copying build/lib/yacron/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] copying build/lib/yacron/config.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] copying build/lib/yacron/cron.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] copying build/lib/yacron/job.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] copying build/lib/yacron/statsd.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] copying build/lib/yacron/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron
+[  220s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__init__.py to __init__.cpython-39.pyc
+[  220s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__main__.py to __main__.cpython-39.pyc
+[  220s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/config.py to config.cpython-39.pyc
+[  220s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/cron.py to cron.cpython-39.pyc
+[  220s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/job.py to job.cpython-39.pyc
+[  220s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/statsd.py to statsd.cpython-39.pyc
+[  220s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/version.py to version.cpython-39.pyc
+[  220s] writing byte-compilation script '/tmp/tmpb9q0aum1.py'
+[  220s] /usr/bin/python3.9 /tmp/tmpb9q0aum1.py
+[  223s] removing /tmp/tmpb9q0aum1.py
+[  223s] running install_egg_info
+[  223s] running egg_info
+[  223s] writing yacron.egg-info/PKG-INFO
+[  223s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  223s] writing entry points to yacron.egg-info/entry_points.txt
+[  223s] writing requirements to yacron.egg-info/requires.txt
+[  223s] writing top-level names to yacron.egg-info/top_level.txt
+[  223s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  223s] reading manifest template 'MANIFEST.in'
+[  223s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  223s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  223s] warning: no previously-included files matching '*' found under directory 'env'
+[  223s] adding license file 'LICENSE'
+[  223s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  223s] Copying yacron.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron-0.17.0-py3.9.egg-info
+[  223s] running install_scripts
+[  224s] Installing yacron script to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin
+[  224s] ++ '[' -f _current_flavor ']'
+[  224s] ++ cat _current_flavor
+[  224s] + last_flavor=python39
+[  224s] + '[' -z python39 ']'
+[  224s] + '[' python39 '!=' python311 ']'
+[  224s] + '[' -d build ']'
+[  224s] + mv build _build.python39
+[  224s] + '[' -d _build.python311 ']'
+[  224s] + mv _build.python311 build
+[  224s] + echo python311
+[  224s] + python_flavor=python311
+[  224s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64 --prefix /usr
+[  227s] running install
+[  227s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  227s]   warnings.warn(
+[  227s] running install_lib
+[  228s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11
+[  228s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages
+[  228s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] copying build/lib/yacron/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] copying build/lib/yacron/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] copying build/lib/yacron/config.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] copying build/lib/yacron/cron.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] copying build/lib/yacron/job.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] copying build/lib/yacron/statsd.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] copying build/lib/yacron/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron
+[  228s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__init__.py to __init__.cpython-311.pyc
+[  228s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__main__.py to __main__.cpython-311.pyc
+[  228s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/config.py to config.cpython-311.pyc
+[  228s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/cron.py to cron.cpython-311.pyc
+[  228s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/job.py to job.cpython-311.pyc
+[  228s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/statsd.py to statsd.cpython-311.pyc
+[  228s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/version.py to version.cpython-311.pyc
+[  228s] writing byte-compilation script '/tmp/tmpanf222mr.py'
+[  228s] /usr/bin/python3.11 /tmp/tmpanf222mr.py
+[  230s] removing /tmp/tmpanf222mr.py
+[  230s] running install_egg_info
+[  230s] running egg_info
+[  231s] writing yacron.egg-info/PKG-INFO
+[  231s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  231s] writing entry points to yacron.egg-info/entry_points.txt
+[  231s] writing requirements to yacron.egg-info/requires.txt
+[  231s] writing top-level names to yacron.egg-info/top_level.txt
+[  231s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  231s] reading manifest template 'MANIFEST.in'
+[  231s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  231s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  231s] warning: no previously-included files matching '*' found under directory 'env'
+[  231s] adding license file 'LICENSE'
+[  231s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  231s] Copying yacron.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron-0.17.0-py3.11.egg-info
+[  231s] running install_scripts
+[  231s] Installing yacron script to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin
+[  231s] ++ '[' -f _current_flavor ']'
+[  231s] ++ cat _current_flavor
+[  231s] + last_flavor=python311
+[  231s] + '[' -z python311 ']'
+[  231s] + '[' python311 '!=' python310 ']'
+[  231s] + '[' -d build ']'
+[  231s] + mv build _build.python311
+[  231s] + '[' -d _build.python310 ']'
+[  231s] + mv _build.python310 build
+[  231s] + echo python310
+[  231s] + python_flavor=python310
+[  231s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64 --prefix /usr
+[  235s] running install
+[  235s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  235s]   warnings.warn(
+[  235s] running install_lib
+[  235s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10
+[  235s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages
+[  235s] creating /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  235s] copying build/lib/yacron/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  236s] copying build/lib/yacron/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  236s] copying build/lib/yacron/config.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  236s] copying build/lib/yacron/cron.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  236s] copying build/lib/yacron/job.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  236s] copying build/lib/yacron/statsd.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  236s] copying build/lib/yacron/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron
+[  236s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__init__.py to __init__.cpython-310.pyc
+[  236s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__main__.py to __main__.cpython-310.pyc
+[  236s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/config.py to config.cpython-310.pyc
+[  236s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/cron.py to cron.cpython-310.pyc
+[  236s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/job.py to job.cpython-310.pyc
+[  236s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/statsd.py to statsd.cpython-310.pyc
+[  236s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/version.py to version.cpython-310.pyc
+[  236s] writing byte-compilation script '/tmp/tmpg3nwvfxq.py'
+[  236s] /usr/bin/python3.10 /tmp/tmpg3nwvfxq.py
+[  238s] removing /tmp/tmpg3nwvfxq.py
+[  238s] running install_egg_info
+[  239s] running egg_info
+[  239s] writing yacron.egg-info/PKG-INFO
+[  239s] writing dependency_links to yacron.egg-info/dependency_links.txt
+[  239s] writing entry points to yacron.egg-info/entry_points.txt
+[  239s] writing requirements to yacron.egg-info/requires.txt
+[  239s] writing top-level names to yacron.egg-info/top_level.txt
+[  239s] reading manifest file 'yacron.egg-info/SOURCES.txt'
+[  239s] reading manifest template 'MANIFEST.in'
+[  239s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  239s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  239s] warning: no previously-included files matching '*' found under directory 'env'
+[  239s] adding license file 'LICENSE'
+[  239s] writing manifest file 'yacron.egg-info/SOURCES.txt'
+[  239s] Copying yacron.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron-0.17.0-py3.10.egg-info
+[  239s] running install_scripts
+[  239s] Installing yacron script to /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin
+[  240s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.8
+[  240s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.8
+[  240s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.9
+[  240s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.9
+[  240s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.11
+[  240s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.11
+[  240s] + cp /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.10
+[  240s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron-3.10
+[  240s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron
+[  240s] + alternative_target=/usr/bin/yacron
+[  240s] + [[ /usr/bin/yacron == /usr/share/man* ]]
+[  240s] + '[' 0 -eq 1 ']'
+[  240s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/etc/alternatives
+[  240s] + touch /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/etc/alternatives/yacron
+[  240s] + ln -sf /etc/alternatives/yacron /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/bin/yacron
+[  240s] ++ '[' -f _current_flavor ']'
+[  240s] ++ cat _current_flavor
+[  240s] + last_flavor=python310
+[  240s] + '[' -z python310 ']'
+[  240s] + '[' python310 '!=' python38 ']'
+[  240s] + '[' -d build ']'
+[  240s] + mv build _build.python310
+[  240s] + '[' -d _build.python38 ']'
+[  240s] + mv _build.python38 build
+[  240s] + echo python38
+[  240s] + python_flavor=python38
+[  240s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron-0.17.0-py3.8.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron-0.17.0-py3.8.egg-info/zip-safe
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/statsd.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/statsd.cpython-38.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/cron.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/cron.cpython-38.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/__main__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/__main__.cpython-38.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages/yacron/__pycache__/__init__.cpython-38.pyc
+[  241s] ++ '[' -f _current_flavor ']'
+[  241s] ++ cat _current_flavor
+[  241s] + last_flavor=python38
+[  241s] + '[' -z python38 ']'
+[  241s] + '[' python38 '!=' python39 ']'
+[  241s] + '[' -d build ']'
+[  241s] + mv build _build.python38
+[  241s] + '[' -d _build.python39 ']'
+[  241s] + mv _build.python39 build
+[  241s] + echo python39
+[  241s] + python_flavor=python39
+[  241s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron-0.17.0-py3.9.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron-0.17.0-py3.9.egg-info/zip-safe
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/statsd.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/statsd.cpython-39.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/cron.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/cron.cpython-39.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/__main__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/__main__.cpython-39.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.9/site-packages/yacron/__pycache__/__init__.cpython-39.pyc
+[  241s] ++ '[' -f _current_flavor ']'
+[  241s] ++ cat _current_flavor
+[  241s] + last_flavor=python39
+[  241s] + '[' -z python39 ']'
+[  241s] + '[' python39 '!=' python311 ']'
+[  241s] + '[' -d build ']'
+[  241s] + mv build _build.python39
+[  241s] + '[' -d _build.python311 ']'
+[  241s] + mv _build.python311 build
+[  241s] + echo python311
+[  241s] + python_flavor=python311
+[  241s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron-0.17.0-py3.11.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron-0.17.0-py3.11.egg-info/zip-safe
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/version.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/version.cpython-311.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/statsd.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/statsd.cpython-311.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/job.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/job.cpython-311.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/cron.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/cron.cpython-311.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/config.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/config.cpython-311.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/__main__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/__main__.cpython-311.pyc
+[  241s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.11/site-packages/yacron/__pycache__/__init__.cpython-311.pyc
+[  241s] ++ '[' -f _current_flavor ']'
+[  241s] ++ cat _current_flavor
+[  241s] + last_flavor=python311
+[  241s] + '[' -z python311 ']'
+[  241s] + '[' python311 '!=' python310 ']'
+[  241s] + '[' -d build ']'
+[  241s] + mv build _build.python311
+[  241s] + '[' -d _build.python310 ']'
+[  241s] + mv _build.python310 build
+[  241s] + echo python310
+[  241s] + python_flavor=python310
+[  241s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages
+[  242s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron-0.17.0-py3.10.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron-0.17.0-py3.10.egg-info/zip-safe
+[  242s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/statsd.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/statsd.cpython-310.pyc
+[  242s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/cron.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/cron.cpython-310.pyc
+[  242s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/__main__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/__main__.cpython-310.pyc
+[  242s] Linking /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.10/site-packages/yacron/__pycache__/__init__.cpython-310.pyc
+[  242s] + /usr/lib/rpm/find-debuginfo -j6 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/yacron-0.17.0
+[  243s] + /usr/lib/rpm/brp-compress
+[  243s] + /usr/lib/rpm/brp-suse
+[  243s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  243s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  243s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  243s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  244s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  244s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.udqdns
+[  244s] + umask 022
+[  244s] + cd /home/abuild/rpmbuild/BUILD
+[  244s] + cd yacron-0.17.0
+[  244s] + export LANG=en_US.UTF-8
+[  244s] + LANG=en_US.UTF-8
+[  244s] + set +x
+[  244s] Using libalternatives variant 38 for flask in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  244s] Using libalternatives variant 38 for jsonschema in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  244s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  244s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  245s] Using alternative bottle.py-3.8 for bottle.py in ./build/flavorbin during Python 3.8 expansions.
+[  245s] Using alternative celery-3.8 for celery in ./build/flavorbin during Python 3.8 expansions.
+[  245s] Using alternative django-admin-3.8 for django-admin in ./build/flavorbin during Python 3.8 expansions.
+[  245s] Using alternative falcon-bench-3.8 for falcon-bench in ./build/flavorbin during Python 3.8 expansions.
+[  245s] Using alternative falcon-inspect-app-3.8 for falcon-inspect-app in ./build/flavorbin during Python 3.8 expansions.
+[  246s] Using alternative falcon-print-routes-3.8 for falcon-print-routes in ./build/flavorbin during Python 3.8 expansions.
+[  246s] Using alternative httpx-3.8 for httpx in ./build/flavorbin during Python 3.8 expansions.
+[  246s] Using alternative normalizer-3.8 for normalizer in ./build/flavorbin during Python 3.8 expansions.
+[  246s] Using alternative rq-3.8 for rq in ./build/flavorbin during Python 3.8 expansions.
+[  247s] Using alternative rqinfo-3.8 for rqinfo in ./build/flavorbin during Python 3.8 expansions.
+[  247s] Using alternative rqworker-3.8 for rqworker in ./build/flavorbin during Python 3.8 expansions.
+[  247s] Using alternative sqlformat-3.8 for sqlformat in ./build/flavorbin during Python 3.8 expansions.
+[  247s] Using alternative yacron-3.8 for yacron in ./build/flavorbin during Python 3.8 expansions.
+[  247s] Using libalternatives variant 39 for flask in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  248s] Using libalternatives variant 39 for jsonschema in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  248s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  248s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  248s] Using alternative bottle.py-3.9 for bottle.py in ./build/flavorbin during Python 3.9 expansions.
+[  248s] Using alternative celery-3.9 for celery in ./build/flavorbin during Python 3.9 expansions.
+[  248s] Using alternative django-admin-3.9 for django-admin in ./build/flavorbin during Python 3.9 expansions.
+[  248s] Using alternative falcon-bench-3.9 for falcon-bench in ./build/flavorbin during Python 3.9 expansions.
+[  249s] Using alternative falcon-inspect-app-3.9 for falcon-inspect-app in ./build/flavorbin during Python 3.9 expansions.
+[  249s] Using alternative falcon-print-routes-3.9 for falcon-print-routes in ./build/flavorbin during Python 3.9 expansions.
+[  249s] Using alternative httpx-3.9 for httpx in ./build/flavorbin during Python 3.9 expansions.
+[  249s] Using alternative normalizer-3.9 for normalizer in ./build/flavorbin during Python 3.9 expansions.
+[  250s] Using alternative rq-3.9 for rq in ./build/flavorbin during Python 3.9 expansions.
+[  250s] Using alternative rqinfo-3.9 for rqinfo in ./build/flavorbin during Python 3.9 expansions.
+[  250s] Using alternative rqworker-3.9 for rqworker in ./build/flavorbin during Python 3.9 expansions.
+[  250s] Using alternative sqlformat-3.9 for sqlformat in ./build/flavorbin during Python 3.9 expansions.
+[  250s] Using alternative yacron-3.9 for yacron in ./build/flavorbin during Python 3.9 expansions.
+[  251s] Using libalternatives variant 311 for flask in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  251s] Using libalternatives variant 311 for jsonschema in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  251s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  251s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  251s] Using alternative bottle.py-3.11 for bottle.py in ./build/flavorbin during Python 3.11 expansions.
+[  251s] Using alternative celery-3.11 for celery in ./build/flavorbin during Python 3.11 expansions.
+[  251s] Using alternative django-admin-3.11 for django-admin in ./build/flavorbin during Python 3.11 expansions.
+[  252s] Using alternative falcon-bench-3.11 for falcon-bench in ./build/flavorbin during Python 3.11 expansions.
+[  252s] Using alternative falcon-inspect-app-3.11 for falcon-inspect-app in ./build/flavorbin during Python 3.11 expansions.
+[  252s] Using alternative falcon-print-routes-3.11 for falcon-print-routes in ./build/flavorbin during Python 3.11 expansions.
+[  252s] Using alternative httpx-3.11 for httpx in ./build/flavorbin during Python 3.11 expansions.
+[  253s] Using alternative normalizer-3.11 for normalizer in ./build/flavorbin during Python 3.11 expansions.
+[  253s] Using alternative rq-3.11 for rq in ./build/flavorbin during Python 3.11 expansions.
+[  253s] Using alternative rqinfo-3.11 for rqinfo in ./build/flavorbin during Python 3.11 expansions.
+[  253s] Using alternative rqworker-3.11 for rqworker in ./build/flavorbin during Python 3.11 expansions.
+[  254s] Using alternative sqlformat-3.11 for sqlformat in ./build/flavorbin during Python 3.11 expansions.
+[  254s] Using alternative yacron-3.11 for yacron in ./build/flavorbin during Python 3.11 expansions.
+[  254s] Using alternative bottle.py-3.10 for bottle.py in ./build/flavorbin during Python 3.10 expansions.
+[  254s] Using alternative celery-3.10 for celery in ./build/flavorbin during Python 3.10 expansions.
+[  255s] Using alternative django-admin-3.10 for django-admin in ./build/flavorbin during Python 3.10 expansions.
+[  255s] Using alternative falcon-bench-3.10 for falcon-bench in ./build/flavorbin during Python 3.10 expansions.
+[  255s] Using alternative falcon-inspect-app-3.10 for falcon-inspect-app in ./build/flavorbin during Python 3.10 expansions.
+[  255s] Using alternative falcon-print-routes-3.10 for falcon-print-routes in ./build/flavorbin during Python 3.10 expansions.
+[  255s] Using alternative httpx-3.10 for httpx in ./build/flavorbin during Python 3.10 expansions.
+[  256s] Using alternative normalizer-3.10 for normalizer in ./build/flavorbin during Python 3.10 expansions.
+[  256s] Using alternative rq-3.10 for rq in ./build/flavorbin during Python 3.10 expansions.
+[  256s] Using alternative rqinfo-3.10 for rqinfo in ./build/flavorbin during Python 3.10 expansions.
+[  256s] Using alternative rqworker-3.10 for rqworker in ./build/flavorbin during Python 3.10 expansions.
+[  257s] Using alternative sqlformat-3.10 for sqlformat in ./build/flavorbin during Python 3.10 expansions.
+[  257s] Using alternative yacron-3.10 for yacron in ./build/flavorbin during Python 3.10 expansions.
+[  257s] + export PATH=/home/abuild/rpmbuild/BUILD/yacron-0.17.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  257s] + PATH=/home/abuild/rpmbuild/BUILD/yacron-0.17.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  257s] ++ '[' -f _current_flavor ']'
+[  257s] ++ cat _current_flavor
+[  257s] + last_flavor=python310
+[  257s] + '[' -z python310 ']'
+[  257s] + '[' python310 '!=' python38 ']'
+[  257s] + '[' -d build ']'
+[  257s] + mv build _build.python310
+[  257s] + '[' -d _build.python38 ']'
+[  257s] + mv _build.python38 build
+[  257s] + echo python38
+[  257s] + python_flavor=python38
+[  257s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-yacron-0.17.0-1.1.riscv64/usr/lib/python3.8/site-packages
+[  257s] + PYTHONDONTWRITEBYTECODE=1
+[  257s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  260s] ============================= test session starts ==============================
+[  260s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  260s] cachedir: .pytest_cache
+[  260s] rootdir: /home/abuild/rpmbuild/BUILD/yacron-0.17.0, configfile: pyproject.toml
+[  260s] plugins: anyio-3.6.2, asyncio-0.20.3
+[  260s] asyncio: mode=auto
+[  264s] collecting ... collected 63 items
+[  264s] 
+[  264s] tests/test_config.py::test_mergedicts PASSED                             [  1%]
+[  264s] tests/test_config.py::test_mergedicts_nested PASSED                      [  3%]
+[  264s] tests/test_config.py::test_mergedicts_right_none PASSED                  [  4%]
+[  264s] tests/test_config.py::test_mergedicts_lists PASSED                       [  6%]
+[  264s] tests/test_config.py::test_simple_config1 PASSED                         [  7%]
+[  264s] tests/test_config.py::test_config_default_report PASSED                  [  9%]
+[  264s] tests/test_config.py::test_config_default_report_override PASSED         [ 11%]
+[  264s] tests/test_config.py::test_empty_config1 PASSED                          [ 12%]
+[  264s] tests/test_config.py::test_environ_file PASSED                           [ 14%]
+[  264s] tests/test_config.py::test_invalid_environ_file PASSED                   [ 15%]
+[  264s] tests/test_config.py::test_config_include PASSED                         [ 17%]
+[  265s] tests/test_cron.py::test_simple[\njobs:\n  - name: test\n    command: |\n      echo "foobar"\n    schedule: "* * * * *"\n-expected_events0] PASSED [ 19%]
+[  265s] tests/test_cron.py::test_simple[\njobs:\n  - name: test\n    command: |\n      echo "foobar"\n      exit 2\n    schedule: "* * * * *"\n-expected_events1] PASSED [ 20%]
+[  265s] tests/test_cron.py::test_fail_retry PASSED                               [ 22%]
+[  276s] tests/test_cron.py::test_execution_timeout PASSED                        [ 23%]
+[  277s] tests/test_cron.py::test_concurrency_policy[Allow-2-2] XFAIL             [ 25%]
+[  278s] tests/test_cron.py::test_concurrency_policy[Forbid-1-1] XPASS            [ 26%]
+[  278s] tests/test_cron.py::test_concurrency_policy[Replace-2-1] XFAIL           [ 28%]
+[  279s] tests/test_cron.py::test_simple_config_file PASSED                       [ 30%]
+[  280s] tests/test_cron.py::test_concurrency_and_backoff FAILED                  [ 31%]
+[  280s] tests/test_cron.py::test_naturaltime[10-in 10 seconds] PASSED            [ 33%]
+[  280s] tests/test_cron.py::test_naturaltime[305.0-in 5 minutes] PASSED          [ 34%]
+[  280s] tests/test_cron.py::test_naturaltime[5000.0-in 83 minutes] PASSED        [ 36%]
+[  280s] tests/test_cron.py::test_naturaltime[50000.0-in 13 hours] PASSED         [ 38%]
+[  280s] tests/test_cron.py::test_naturaltime[500000.0-in 5 days] PASSED          [ 39%]
+[  280s] tests/test_cron.py::test_job_should_run[* * * * *---now0-False-True] PASSED [ 41%]
+[  280s] tests/test_cron.py::test_job_should_run[59 14 * * *---now1-False-True] PASSED [ 42%]
+[  280s] tests/test_cron.py::test_job_should_run[49 14 * * *---now2-False-False] PASSED [ 44%]
+[  280s] tests/test_cron.py::test_job_should_run[59 14 * * *--utc: true-now3-False-True] PASSED [ 46%]
+[  280s] tests/test_cron.py::test_job_should_run[59 14 * * *--utc: true-now4-False-True] PASSED [ 47%]
+[  280s] tests/test_cron.py::test_job_should_run[59 14 * * *--utc: false-now5-False-False] PASSED [ 49%]
+[  280s] tests/test_cron.py::test_job_should_run[1 8 * * *-timezone: America/Los_Angeles--now6-False-True] PASSED [ 50%]
+[  281s] tests/test_cron.py::test_job_should_run[1 8 * * *-timezone: Europe/London--now7-False-False] PASSED [ 52%]
+[  281s] tests/test_cron.py::test_job_should_run[@reboot---now8-False-False] PASSED [ 53%]
+[  281s] tests/test_cron.py::test_job_should_run[@reboot---now9-True-True] PASSED [ 55%]
+[  281s] tests/test_job.py::test_stream_reader[10-line1\nline2\nline3\nline4\n-line1\nline2\nline3\nline4\n-True] PASSED [ 57%]
+[  281s] tests/test_job.py::test_stream_reader[1-line1\nline2\nline3\nline4\n-   [.... 3 lines discarded ...]\nline4\n-True] PASSED [ 58%]
+[  281s] tests/test_job.py::test_stream_reader[2-line1\nline2\nline3\nline4\n-line1\n   [.... 2 lines discarded ...]\nline4\n-True] PASSED [ 60%]
+[  281s] tests/test_job.py::test_stream_reader[0-line1\nline2\nline3\nline4\n--True] PASSED [ 61%]
+[  281s] tests/test_job.py::test_stream_reader[0---False] PASSED                  [ 63%]
+[  281s] tests/test_job.py::test_stream_reader_long_line PASSED                   [ 65%]
+[  281s] tests/test_job.py::test_report_mail[True-out-err-Cron job 'test' completed-STDOUT:\n---\nout\n---\nSTDERR:\nerr\n] PASSED [ 66%]
+[  282s] tests/test_job.py::test_report_mail[False-out-err-Cron job 'test' failed-STDOUT:\n---\nout\n---\nSTDERR:\nerr\n] PASSED [ 68%]
+[  282s] tests/test_job.py::test_report_mail[False-None-None-Cron job 'test' failed-(no output was captured)\n] PASSED [ 69%]
+[  282s] tests/test_job.py::test_report_mail[False-None-err-Cron job 'test' failed-err\n] PASSED [ 71%]
+[  282s] tests/test_job.py::test_report_mail[False-out-None-Cron job 'test' failed-out\n] PASSED [ 73%]
+[  289s] tests/test_job.py::test_report_sentry[True-value-Cron job 'test' completed\n\n(job failed because reasons)\n\nSTDOUT:\n---\nout\n---\nSTDERR:\nerr\n-extra0-http://xxx:yyy@sentry/1-fingerprint0-warning-warning] PASSED [ 74%]
+[  289s] tests/test_job.py::test_report_sentry[False-file-Cron job 'test' failed\n\n(job failed because reasons)\n\nSTDOUT:\n---\nout\n---\nSTDERR:\nerr\n-extra1-http://xxx:yyy@sentry/2-fingerprint1-None-error] PASSED [ 76%]
+[  289s] tests/test_job.py::test_report_sentry[False-envvar-Cron job 'test' failed\n\n(job failed because reasons)\n\nSTDOUT:\n---\nout\n---\nSTDERR:\nerr\n-extra2-http://xxx:yyy@sentry/3-fingerprint2-None-error] PASSED [ 77%]
+[  289s] tests/test_job.py::test_report_shell[echo "foobar" && exit 123-test - echo "foobar" && exit 123 - * * * * * - Error code 123] PASSED [ 79%]
+[  289s] tests/test_job.py::test_report_shell[\n      - bad-cmd\n      - arg-test - bad-cmd arg - * * * * * - Error code 123] PASSED [ 80%]
+[  290s] tests/test_job.py::test_job_run[-Civ 6-shell-expected_args0] PASSED      [ 82%]
+[  290s] tests/test_job.py::test_job_run[-command1-exec-expected_args1] PASSED    [ 84%]
+[  290s] tests/test_job.py::test_job_run[bash-echo "hello"-exec-expected_args2] PASSED [ 85%]
+[  291s] tests/test_job.py::test_execution_timeout PASSED                         [ 87%]
+[  291s] tests/test_job.py::test_error1 PASSED                                    [ 88%]
+[  291s] tests/test_job.py::test_error2 PASSED                                    [ 90%]
+[  291s] tests/test_job.py::test_error3 PASSED                                    [ 92%]
+[  291s] tests/test_job.py::test_statsd[echo "hello"] PASSED                      [ 93%]
+[  292s] tests/test_job.py::test_statsd[exit 1] PASSED                            [ 95%]
+[  292s] tests/test_main.py::test_good_config PASSED                              [ 96%]
+[  292s] tests/test_main.py::test_broken_config PASSED                            [ 98%]
+[  292s] tests/test_main.py::test_missing_config PASSED                           [100%]
+[  292s] 
+[  292s] =================================== FAILURES ===================================
+[  292s] _________________________ test_concurrency_and_backoff _________________________
+[  292s] 
+[  292s] monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x40072046a0>
+[  292s] tracing_running_job = <class 'tests.test_cron.TracingRunningJob'>
+[  292s] 
+[  292s]     async def test_concurrency_and_backoff(monkeypatch, tracing_running_job):
+[  292s]         START_TIME = datetime.datetime(
+[  292s]             year=1999,
+[  292s]             month=12,
+[  292s]             day=31,
+[  292s]             hour=12,
+[  292s]             minute=0,
+[  292s]             second=59,
+[  292s]             microsecond=750000,
+[  292s]         )
+[  292s]         STOP_TIME = datetime.datetime(
+[  292s]             year=1999,
+[  292s]             month=12,
+[  292s]             day=31,
+[  292s]             hour=12,
+[  292s]             minute=1,
+[  292s]             second=00,
+[  292s]             microsecond=250000,
+[  292s]         )
+[  292s]     
+[  292s]         t0 = time.perf_counter()
+[  292s]     
+[  292s]         def get_now(timezone):
+[  292s]             now = START_TIME + datetime.timedelta(
+[  292s]                 seconds=(time.perf_counter() - t0)
+[  292s]             )
+[  292s]             if timezone is not None:
+[  292s]                 if now.tzinfo is None:
+[  292s]                     now = now.replace(tzinfo=timezone)
+[  292s]                 else:
+[  292s]                     now = now.astimezone(timezone)
+[  292s]             return now
+[  292s]     
+[  292s]         def get_reltime(ts):
+[  292s]             return START_TIME + datetime.timedelta(seconds=(ts - t0))
+[  292s]     
+[  292s]         monkeypatch.setattr("yacron.cron.get_now", get_now)
+[  292s]     
+[  292s]         cron = yacron.cron.Cron(None, config_yaml=RETRYING_JOB_THAT_FAILS2)
+[  292s]     
+[  292s]         events = []
+[  292s]         numjobs = 0
+[  292s]     
+[  292s]         async def wait_and_quit():
+[  292s]             nonlocal numjobs
+[  292s]             known_jobs = {}
+[  292s]             pending_jobs = set()
+[  292s]             running_jobs = set()
+[  292s]             while get_now(None) < STOP_TIME:
+[  292s]                 try:
+[  292s]                     ts, event, job = await asyncio.wait_for(
+[  292s]                         tracing_running_job._TRACE.get(), 0.1
+[  292s]                     )
+[  292s]                 except asyncio.TimeoutError:
+[  292s]                     continue
+[  292s]                 try:
+[  292s]                     jobnum = known_jobs[job]
+[  292s]                 except KeyError:
+[  292s]                     if known_jobs:
+[  292s]                         jobnum = max(known_jobs.values()) + 1
+[  292s]                     else:
+[  292s]                         jobnum = 1
+[  292s]                     known_jobs[job] = jobnum
+[  292s]                     pending_jobs.add(jobnum)
+[  292s]                     running_jobs.add(jobnum)
+[  292s]                     numjobs += 1
+[  292s]                 print(get_reltime(ts), event, jobnum)
+[  292s]                 events.append((jobnum, event))
+[  292s]                 if event in {"report_success", "report_permanent_failure"}:
+[  292s]                     pending_jobs.discard(jobnum)
+[  292s]                 if event in {
+[  292s]                     "report_success",
+[  292s]                     "report_permanent_failure",
+[  292s]                     "cancelled",
+[  292s]                 }:
+[  292s]                     running_jobs.discard(jobnum)
+[  292s]             cron.signal_shutdown()
+[  292s]     
+[  292s]         await asyncio.gather(wait_and_quit(), cron.run())
+[  292s]         import pprint
+[  292s]     
+[  292s]         pprint.pprint(events)
+[  292s] >       assert numjobs == 2
+[  292s] E       assert 1 == 2
+[  292s] 
+[  292s] tests/test_cron.py:462: AssertionError
+[  292s] ----------------------------- Captured stdout call -----------------------------
+[  292s] 1999-12-31 12:00:59.845371 create 1
+[  292s] 1999-12-31 12:00:59.845416 start 1
+[  292s] 1999-12-31 12:00:59.861385 started 1
+[  292s] 1999-12-31 12:00:59.864627 wait 1
+[  292s] foobar
+[  292s] 1999-12-31 12:00:59.945257 waited 1
+[  292s] 1999-12-31 12:00:59.946035 report_failure 1
+[  292s] [(1, 'create'),
+[  292s]  (1, 'start'),
+[  292s]  (1, 'started'),
+[  292s]  (1, 'wait'),
+[  292s]  (1, 'waited'),
+[  292s]  (1, 'report_failure')]
+[  292s] =============================== warnings summary ===============================
+[  292s] tests/test_job.py::test_report_sentry[True-value-Cron job 'test' completed\n\n(job failed because reasons)\n\nSTDOUT:\n---\nout\n---\nSTDERR:\nerr\n-extra0-http://xxx:yyy@sentry/1-fingerprint0-warning-warning]
+[  292s]   /usr/lib/python3.8/site-packages/falcon/api_helpers.py:6: DeprecatedWarning: The api_helpers module was renamed to app_helpers.
+[  292s]     warnings.warn('The api_helpers module was renamed to app_helpers.', DeprecatedWarning)
+[  292s] 
+[  292s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  292s] =========================== short test summary info ============================
+[  292s] FAILED tests/test_cron.py::test_concurrency_and_backoff - assert 1 == 2
+[  292s] ======== 1 failed, 59 passed, 2 xfailed, 1 xpassed, 1 warning in 31.63s ========
+[  292s] error: Bad exit status from /var/tmp/rpm-tmp.udqdns (%check)
+[  292s] 
+[  292s] RPM build errors:
+[  292s]     Bad exit status from /var/tmp/rpm-tmp.udqdns (%check)
+[  293s] ### VM INTERACTION START ###
+[  293s] [  287.304278][    T1] sysrq: Power Off
+[  293s] [  287.306356][   T87] reboot: Power down
+[  293s] ### VM INTERACTION END ###
+[  293s] 
+[  293s] sheep86 failed "build python-yacron.spec" at Thu Feb 23 19:27:02 UTC 2023.
+[  293s] 

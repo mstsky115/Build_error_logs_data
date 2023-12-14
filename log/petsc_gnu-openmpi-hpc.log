@@ -1,0 +1,1407 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] lamb19 started "build petsc.spec" at Wed Mar 22 09:32:15 UTC 2023.
+[    0s] 
+[    0s] Building petsc:gnu-openmpi-hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '40c2b090617d81f179a8817b08fdada6'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/petsc.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/petsc.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --buildflavor gnu-openmpi-hpc --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/petsc.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [6c787d53e9e0a0301c3756e0304cf3cc]
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...cycle: libibverbs1 -> libibverbs -> libefa1
+[    4s]   breaking dependency libibverbs -> libefa1
+[    4s] cycle: libibverbs1 -> libibverbs
+[    4s]   breaking dependency libibverbs -> libibverbs1
+[    4s] cycle: libibverbs1 -> libibverbs -> libmlx4-1
+[    4s]   breaking dependency libibverbs -> libmlx4-1
+[    4s] cycle: libibverbs1 -> libibverbs -> libmlx5-1
+[    4s]   breaking dependency libmlx5-1 -> libibverbs1
+[    4s] cycle: libopenmpi_1_10_7-gnu-hpc -> openmpi_1_10_7-gnu-hpc
+[    4s]   breaking dependency libopenmpi_1_10_7-gnu-hpc -> openmpi_1_10_7-gnu-hpc
+[    4s] cycle: libpython3_10-1_0 -> python310-base
+[    4s]   breaking dependency python310-base -> libpython3_10-1_0
+[    4s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   10s] ### VM INTERACTION END ###
+[   10s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   10s] Increasing log level from now on...
+[   10s] [    4.678814][  T410] sysrq: Changing Loglevel
+[   10s] [    4.679034][  T410] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=f1c2f565-08e7-40fa-9fb9-b9a10664cb6d
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/petsc.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor gnu-openmpi-hpc /.build-srcdir/petsc.spec build ...
+[   12s] initializing rpm db...
+[   13s] querying package ids...
+[   36s] [1/209] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   36s] [2/209] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   36s] [3/209] preinstalled attr-2.5.1-1.1
+[   36s] [4/209] preinstalled bash-5.2.15-8.1
+[   36s] [5/209] preinstalled bash-sh-5.2.15-8.1
+[   36s] [6/209] preinstalled binutils-2.40-2.1
+[   36s] [7/209] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   36s] [8/209] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   36s] [9/209] preinstalled build-mkbaselibs-20230314-1.1
+[   36s] [10/209] preinstalled bzip2-1.0.8-5.1
+[   36s] [11/209] preinstalled chkstat-1599_20230217-1.1
+[   36s] [12/209] preinstalled compat-usrmerge-build-84.87-5.1
+[   36s] [13/209] preinstalled compat-usrmerge-tools-84.87-5.1
+[   36s] [14/209] preinstalled coreutils-9.1-5.1
+[   36s] [15/209] preinstalled cpio-2.13-5.1
+[   36s] [16/209] preinstalled cpp-13-1.1
+[   36s] [17/209] preinstalled cpp13-13.0.1+git6669-7.1
+[   36s] [18/209] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   36s] [19/209] preinstalled debugedit-5.0-5.1
+[   36s] [20/209] preinstalled diffutils-3.9-1.1
+[   36s] [21/209] preinstalled dwz-0.15-2.1
+[   36s] [22/209] preinstalled elfutils-0.189-2.1
+[   36s] [23/209] cumulate fdupes-2.2.1-1.1
+[   36s] [24/209] preinstalled file-5.44-1.2
+[   36s] [25/209] preinstalled file-magic-5.44-1.2
+[   36s] [26/209] preinstalled filesystem-84.87-12.1
+[   36s] [27/209] preinstalled fillup-1.42-279.1
+[   36s] [28/209] preinstalled findutils-4.9.0-2.1
+[   36s] [29/209] preinstalled gawk-5.2.1-2.1
+[   36s] [30/209] preinstalled gcc-13-1.1
+[   36s] [31/209] preinstalled gcc-PIE-13-1.1
+[   36s] [32/209] preinstalled gcc13-13.0.1+git6669-7.1
+[   36s] [33/209] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   36s] [34/209] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   36s] [35/209] preinstalled gettext-tools-mini-0.21.1-1.1
+[   36s] [36/209] preinstalled glibc-2.37-1.1
+[   36s] [37/209] preinstalled glibc-devel-2.37-1.1
+[   36s] [38/209] preinstalled glibc-locale-base-2.37-1.1
+[   36s] [39/209] preinstalled grep-3.9-1.1
+[   36s] [40/209] preinstalled gzip-1.12-3.1
+[   36s] [41/209] cumulate hwloc-data-2.9.0-2.1
+[   36s] [42/209] preinstalled kernel-obs-build-6.2.6-1.2
+[   36s] [43/209] preinstalled libacl1-2.3.1-2.1
+[   36s] [44/209] preinstalled libasan8-13.0.1+git6669-7.1
+[   36s] [45/209] preinstalled libasm1-0.189-2.1
+[   36s] [46/209] preinstalled libatomic1-13.0.1+git6669-7.1
+[   36s] [47/209] preinstalled libattr1-2.5.1-1.1
+[   36s] [48/209] preinstalled libaudit1-3.0.9-1.1
+[   36s] [49/209] preinstalled libblkid1-2.38.1-10.1
+[   36s] [50/209] preinstalled libbz2-1-1.0.8-5.1
+[   36s] [51/209] preinstalled libcap-ng0-0.8.3-1.1
+[   36s] [52/209] preinstalled libcap2-2.67-1.1
+[   36s] [53/209] preinstalled libcrypt1-4.4.33-2.1
+[   36s] [54/209] preinstalled libctf-nobfd0-2.40-2.1
+[   36s] [55/209] preinstalled libctf0-2.40-2.1
+[   36s] [56/209] preinstalled libdb-4_8-4.8.30-40.1
+[   36s] [57/209] preinstalled libdw1-0.189-2.1
+[   36s] [58/209] preinstalled libeconf0-0.5.1-1.1
+[   36s] [59/209] preinstalled libelf1-0.189-2.1
+[   36s] [60/209] cumulate libexpat1-2.5.0-2.1
+[   36s] [61/209] preinstalled libfdisk1-2.38.1-10.1
+[   36s] [62/209] cumulate libffi8-3.4.4-1.1
+[   36s] [63/209] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   36s] [64/209] preinstalled libgcrypt20-1.10.1-2.1
+[   36s] [65/209] preinstalled libgdbm6-1.23-1.1
+[   36s] [66/209] preinstalled libgdbm_compat4-1.23-1.1
+[   36s] [67/209] cumulate libgfortran5-13.0.1+git6669-7.1
+[   36s] [68/209] preinstalled libgmp10-6.2.1-4.1
+[   36s] [69/209] preinstalled libgomp1-13.0.1+git6669-7.1
+[   36s] [70/209] preinstalled libgpg-error0-1.46-1.1
+[   36s] [71/209] cumulate libibumad3-42.0-2.1
+[   36s] [72/209] preinstalled libisl23-0.25-1.1
+[   36s] [73/209] preinstalled libitm1-13.0.1+git6669-7.1
+[   36s] [74/209] preinstalled liblua5_4-5-5.4.4-8.1
+[   36s] [75/209] preinstalled liblzma5-5.4.1-2.1
+[   36s] [76/209] preinstalled libmagic1-5.44-1.2
+[   36s] [77/209] preinstalled libmount1-2.38.1-10.1
+[   36s] [78/209] preinstalled libmpc3-1.3.1-1.2
+[   36s] [79/209] cumulate libmpdec3-2.5.1-2.1
+[   36s] [80/209] preinstalled libmpfr6-4.2.0-1.1
+[   36s] [81/209] preinstalled libncurses6-6.4.20230311-8.1
+[   36s] [82/209] cumulate libnl-config-3.7.0-1.1
+[   36s] [83/209] cumulate libpciaccess0-0.17-1.1
+[   36s] [84/209] preinstalled libpcre2-8-0-10.42-3.2
+[   36s] [85/209] preinstalled libpkgconf3-1.8.0-2.1
+[   36s] [86/209] preinstalled libpopt0-1.19-1.1
+[   36s] [87/209] preinstalled libreadline8-8.2-2.1
+[   36s] [88/209] preinstalled librpmbuild9-4.18.0-4.1
+[   36s] [89/209] preinstalled libseccomp2-2.5.4-2.1
+[   36s] [90/209] preinstalled libselinux1-3.5-1.1
+[   36s] [91/209] preinstalled libsemanage-conf-3.5-1.1
+[   36s] [92/209] preinstalled libsemanage2-3.5-1.1
+[   36s] [93/209] preinstalled libsepol2-3.5-1.1
+[   36s] [94/209] preinstalled libsmartcols1-2.38.1-10.1
+[   36s] [95/209] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   36s] [96/209] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   36s] [97/209] preinstalled libsubid4-4.13-4.1
+[   36s] [98/209] preinstalled libubsan1-13.0.1+git6669-7.1
+[   36s] [99/209] preinstalled libutempter0-1.2.0-3.2
+[   36s] [100/209] preinstalled libuuid1-2.38.1-10.1
+[   36s] [101/209] preinstalled libxcrypt-devel-4.4.33-2.1
+[   36s] [102/209] cumulate libxml2-2-2.10.3-3.1
+[   36s] [103/209] preinstalled libz1-1.2.13-3.1
+[   36s] [104/209] preinstalled libzstd1-1.5.4-2.1
+[   36s] [105/209] preinstalled linux-glibc-devel-6.2-1.1
+[   36s] [106/209] preinstalled login_defs-4.13-4.1
+[   36s] [107/209] preinstalled lua54-5.4.4-8.1
+[   36s] [108/209] cumulate lua54-luafilesystem-1.8.0-6.1
+[   36s] [109/209] cumulate lua54-luaposix-35.1-2.1
+[   36s] [110/209] cumulate lua54-luaterm-0.07-8.1
+[   36s] [111/209] preinstalled make-4.4.1-1.1
+[   36s] [112/209] preinstalled ncurses-utils-6.4.20230311-8.1
+[   36s] [113/209] cumulate openmpi4-config-4.1.4-2.1
+[   36s] [114/209] preinstalled pam-1.5.2-13.1
+[   36s] [115/209] preinstalled patch-2.7.6-6.1
+[   36s] [116/209] preinstalled perl-5.36.0-4.1
+[   36s] [117/209] preinstalled perl-base-5.36.0-4.1
+[   36s] [118/209] preinstalled permissions-1599_20230217-1.1
+[   36s] [119/209] preinstalled permissions-config-1599_20230217-1.1
+[   36s] [120/209] preinstalled pkgconf-1.8.0-2.1
+[   36s] [121/209] preinstalled pkgconf-m4-1.8.0-2.1
+[   36s] [122/209] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   36s] [123/209] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   36s] [124/209] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   36s] [125/209] cumulate python-rpm-macros-20230304.050c1a4-1.1
+[   36s] [126/209] preinstalled qemu-linux-user-7.1.0-54.1
+[   36s] [127/209] preinstalled rpm-4.18.0-4.1
+[   36s] [128/209] preinstalled rpm-build-4.18.0-4.1
+[   36s] [129/209] preinstalled rpm-build-perl-4.18.0-4.1
+[   36s] [130/209] preinstalled rpm-config-SUSE-20220926-1.1
+[   36s] [131/209] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.19
+[   36s] [132/209] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   36s] [133/209] cumulate scalapack_2_1_0-gnu-openmpi1-hpc-module-2.1.0-9.5
+[   36s] [134/209] preinstalled sed-4.9-2.1
+[   36s] [135/209] preinstalled shadow-4.13-4.1
+[   36s] [136/209] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   36s] [137/209] cumulate suse-module-tools-16.0.30-1.1
+[   36s] [138/209] preinstalled system-group-hardware-20170617-24.1
+[   36s] [139/209] cumulate system-group-kvm-20170617-24.1
+[   36s] [140/209] preinstalled system-user-root-20190513-2.1
+[   36s] [141/209] cumulate systemd-mini-253.1-2.1
+[   36s] [142/209] preinstalled systemd-rpm-macros-19-1.1
+[   36s] [143/209] preinstalled sysuser-shadow-3.1-5.1
+[   36s] [144/209] preinstalled tar-1.34-10.1
+[   36s] [145/209] cumulate tcl-8.6.13-4.1
+[   36s] [146/209] preinstalled terminfo-base-6.4.20230311-8.1
+[   36s] [147/209] preinstalled update-alternatives-1.21.8-1.1
+[   36s] [148/209] preinstalled util-linux-2.38.1-10.1
+[   36s] [149/209] preinstalled which-2.21-5.1
+[   36s] [150/209] preinstalled xz-5.4.1-2.1
+[   36s] [151/209] cumulate xz-devel-5.4.1-2.1
+[   36s] [152/209] cumulate zlib-devel-1.2.13-3.1
+[   36s] [153/209] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   36s] [154/209] cumulate gcc13-fortran-13.0.1+git6669-7.1
+[   36s] [155/209] cumulate libibmad5-42.0-2.1
+[   36s] [156/209] cumulate libnl3-200-3.7.0-1.1
+[   36s] [157/209] cumulate libopenssl3-3.0.8-2.1
+[   36s] [158/209] cumulate libpciaccess-devel-0.17-1.1
+[   36s] [159/209] cumulate libxml2-tools-2.10.3-3.1
+[   36s] [160/209] cumulate libhwloc15-2.9.0-2.1
+[   36s] [161/209] cumulate lua-lmod-8.7.17-2.1
+[   36s] [162/209] cumulate gcc-c++-13-1.1
+[   36s] [163/209] cumulate gcc-fortran-13-1.1
+[   36s] [164/209] cumulate gnu-compilers-hpc-1.4-10.2
+[   36s] [165/209] cumulate hdf5_1_12_2-gnu-openmpi1-hpc-module-1.12.2-5.1
+[   36s] [166/209] cumulate kmod-30-2.2
+[   36s] [167/209] cumulate libibnetdisc5-42.0-2.1
+[   36s] [168/209] cumulate libxml2-devel-2.10.3-3.1
+[   36s] [169/209] cumulate libhdf5_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   36s] [170/209] cumulate libhdf5_cpp_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   36s] [171/209] cumulate libhdf5_hl_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   36s] [172/209] cumulate libhdf5_hl_cpp_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   36s] [173/209] cumulate libhdf5_fortran_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   36s] [174/209] cumulate libhdf5hl_fortran_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   36s] [175/209] cumulate hwloc-devel-2.9.0-2.1
+[   36s] [176/209] cumulate infiniband-diags-42.0-2.1
+[   36s] [177/209] cumulate libopenblas_0_3_21-gnu-hpc-0.3.21-5.2
+[   36s] [178/209] cumulate udev-mini-253.1-2.1
+[   36s] [179/209] cumulate gnu-compilers-hpc-devel-1.4-10.2
+[   36s] [180/209] cumulate gnu-compilers-hpc-macros-devel-1.4-10.2
+[   36s] [181/209] cumulate libopenblas-gnu-hpc-0.3.21-5.2
+[   36s] [182/209] cumulate libopenblas_0_3_21-gnu-hpc-devel-0.3.21-5.2
+[   36s] [183/209] cumulate rdma-core-42.0-2.1
+[   36s] [184/209] cumulate libopenblas-gnu-hpc-devel-0.3.21-5.2
+[   36s] [185/209] cumulate libmlx5-1-42.0-2.1
+[   36s] [186/209] cumulate python310-base-3.10.10-2.1
+[   36s] [187/209] cumulate libpython3_10-1_0-3.10.10-2.1
+[   36s] [188/209] cumulate python310-packaging-23.0-2.1
+[   36s] [189/209] cumulate libibverbs-42.0-2.1
+[   36s] [190/209] cumulate libibverbs1-42.0-2.1
+[   36s] [191/209] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   36s] [192/209] cumulate libefa1-42.0-2.1
+[   36s] [193/209] cumulate libmlx4-1-42.0-2.1
+[   36s] [194/209] cumulate librdmacm1-42.0-2.1
+[   36s] [195/209] cumulate rsocket-42.0-2.1
+[   36s] [196/209] cumulate libopenmpi_1_10_7-gnu-hpc-1.10.7-7.2
+[   36s] [197/209] cumulate libopenmpi1-gnu-hpc-1.10.7-7.2
+[   36s] [198/209] cumulate openmpi_1_10_7-gnu-hpc-1.10.7-7.2
+[   36s] [199/209] cumulate rdma-core-devel-42.0-2.1
+[   36s] [200/209] cumulate openmpi_1_10_7-gnu-hpc-devel-1.10.7-7.2
+[   36s] [201/209] cumulate libscalapack2_2_1_0-gnu-openmpi1-hpc-2.1.0-9.5
+[   36s] [202/209] cumulate hdf5_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   36s] [203/209] cumulate openmpi1-gnu-hpc-devel-1.10.7-7.2
+[   36s] [204/209] cumulate openmpi_1_10_7-gnu-hpc-macros-devel-1.10.7-7.2
+[   36s] [205/209] cumulate openmpi1-gnu-hpc-macros-devel-1.10.7-7.2
+[   36s] [206/209] cumulate libscalapack2_2_1_0-gnu-openmpi1-hpc-devel-2.1.0-9.5
+[   36s] [207/209] cumulate hdf5_1_12_2-gnu-openmpi1-hpc-devel-1.12.2-5.1
+[   36s] [208/209] cumulate hdf5-gnu-openmpi1-hpc-devel-1.12.2-5.1
+[   36s] [209/209] cumulate libscalapack2-gnu-openmpi1-hpc-devel-2.1.0-9.5
+[   36s] now installing cumulated packages
+[   36s] Preparing...                          ########################################
+[   37s] Updating / installing...
+[   37s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[   37s] libibumad3-42.0-2.1                   ########################################
+[   37s] libxml2-2-2.10.3-3.1                  ########################################
+[   37s] libibmad5-42.0-2.1                    ########################################
+[   45s] gcc13-fortran-13.0.1+git6669-7.1      ########################################
+[   45s] zlib-devel-1.2.13-3.1                 ########################################
+[   45s] systemd-mini-253.1-2.1                warning: group systemd-journal does not exist - using root
+[   46s] ########################################
+[   46s] Creating group 'systemd-journal' with GID 486.
+[   47s] Creating group 'systemd-timesync' with GID 485.
+[   47s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   47s] Running in chroot, ignoring command 'daemon-reexec'
+[   47s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   47s] All rules containing unresolvable specifiers will be skipped.
+[   48s] libpciaccess0-0.17-1.1                ########################################
+[   48s] libpciaccess-devel-0.17-1.1           ########################################
+[   48s] gcc-fortran-13-1.1                    ########################################
+[   48s] libibnetdisc5-42.0-2.1                ########################################
+[   48s] infiniband-diags-42.0-2.1             ########################################
+[   48s] libxml2-tools-2.10.3-3.1              ########################################
+[   48s] xz-devel-5.4.1-2.1                    ########################################
+[   48s] libxml2-devel-2.10.3-3.1              ########################################
+[   49s] tcl-8.6.13-4.1                        ########################################
+[   49s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-group-kvm.conf -
+[   49s] Creating group 'kvm' with GID 36.
+[   50s] system-group-kvm-20170617-24.1        ########################################
+[   50s] scalapack_2_1_0-gnu-openmpi1-hpc-modul########################################
+[   50s] python-rpm-macros-20230304.050c1a4-1.1########################################
+[   50s] openmpi4-config-4.1.4-2.1             ########################################
+[   50s] lua54-luaterm-0.07-8.1                ########################################
+[   50s] lua54-luaposix-35.1-2.1               ########################################
+[   50s] lua54-luafilesystem-1.8.0-6.1         ########################################
+[   50s] lua-lmod-8.7.17-2.1                   ########################################
+[   50s] gnu-compilers-hpc-1.4-10.2            ########################################
+[   50s] hdf5_1_12_2-gnu-openmpi1-hpc-module-1.########################################
+[   50s] libhdf5_1_12_2-gnu-openmpi1-hpc-1.12.2########################################
+[   50s] libhdf5_hl_1_12_2-gnu-openmpi1-hpc-1.1########################################
+[   51s] libhdf5_fortran_1_12_2-gnu-openmpi1-hp########################################
+[   51s] libhdf5hl_fortran_1_12_2-gnu-openmpi1-########################################
+[   52s] libopenblas_0_3_21-gnu-hpc-0.3.21-5.2 ########################################
+[   52s] libopenblas-gnu-hpc-0.3.21-5.2        ########################################
+[   52s] libhdf5_cpp_1_12_2-gnu-openmpi1-hpc-1.########################################
+[   52s] libhdf5_hl_cpp_1_12_2-gnu-openmpi1-hpc########################################
+[   64s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[   68s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[   68s] gcc-c++-13-1.1                        ########################################
+[   68s] gnu-compilers-hpc-devel-1.4-10.2      ########################################
+[   68s] libopenblas_0_3_21-gnu-hpc-devel-0.3.2########################################
+[   68s] libopenblas-gnu-hpc-devel-0.3.21-5.2  ########################################
+[   68s] libnl-config-3.7.0-1.1                ########################################
+[   68s] libnl3-200-3.7.0-1.1                  ########################################
+[   68s] libmpdec3-2.5.1-2.1                   ########################################
+[   68s] libffi8-3.4.4-1.1                     ########################################
+[   68s] libexpat1-2.5.0-2.1                   ########################################
+[   68s] hwloc-data-2.9.0-2.1                  ########################################
+[   68s] libhwloc15-2.9.0-2.1                  ########################################
+[   69s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   69s] libopenssl3-3.0.8-2.1                 ########################################
+[   70s] suse-module-tools-16.0.30-1.1         ########################################
+[   70s] kmod-30-2.2                           ########################################
+[   71s] libpython3_10-1_0-3.10.10-2.1         ########################################
+[   75s] python310-base-3.10.10-2.1            ########################################
+[   75s] python310-packaging-23.0-2.1          ########################################
+[   77s] udev-mini-253.1-2.1                   ########################################
+[   84s] Failed to preset unit, unit remote-cryptsetup.target does not exist.
+[   85s] rdma-core-42.0-2.1                    ########################################
+[   85s] libmlx5-1-42.0-2.1                    ########################################
+[   85s] libefa1-42.0-2.1                      ########################################
+[   85s] libmlx4-1-42.0-2.1                    ########################################
+[   85s] libibverbs1-42.0-2.1                  ########################################
+[   86s] libibverbs-42.0-2.1                   ########################################
+[   86s] librdmacm1-42.0-2.1                   ########################################
+[   86s] openmpi_1_10_7-gnu-hpc-1.10.7-7.2     ########################################
+[   87s] libopenmpi_1_10_7-gnu-hpc-1.10.7-7.2  ########################################
+[   87s] libopenmpi1-gnu-hpc-1.10.7-7.2        ########################################
+[   88s] libscalapack2_2_1_0-gnu-openmpi1-hpc-2########################################
+[   88s] hdf5_1_12_2-gnu-openmpi1-hpc-1.12.2-5.########################################
+[   88s] rsocket-42.0-2.1                      ########################################
+[   88s] rdma-core-devel-42.0-2.1              ########################################
+[   89s] openmpi_1_10_7-gnu-hpc-devel-1.10.7-7.########################################
+[   89s] openmpi1-gnu-hpc-devel-1.10.7-7.2     ########################################
+[   89s] libscalapack2_2_1_0-gnu-openmpi1-hpc-d########################################
+[   89s] hdf5_1_12_2-gnu-openmpi1-hpc-devel-1.1########################################
+[   89s] openmpi_1_10_7-gnu-hpc-macros-devel-1.########################################
+[   89s] openmpi1-gnu-hpc-macros-devel-1.10.7-7########################################
+[   89s] hdf5-gnu-openmpi1-hpc-devel-1.12.2-5.1########################################
+[   89s] libscalapack2-gnu-openmpi1-hpc-devel-2########################################
+[   89s] python-rpm-packaging-20210526+a18ca48-########################################
+[   90s] hwloc-devel-2.9.0-2.1                 ########################################
+[   90s] gnu-compilers-hpc-macros-devel-1.4-10.########################################
+[   90s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[   90s] fdupes-2.2.1-1.1                      ########################################
+[   91s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[   91s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[   95s] now finalizing build dir...
+[   96s] ... running 01-add_abuild_user_to_trusted_group
+[   96s] ... running 02-set_timezone_to_utc
+[   96s] ... running 03-set-permissions-secure
+[   96s] ... running 11-hack_uname_version_to_kernel_version
+[   99s] sh: line 1: /usr/bin/ps: No such file or directory
+[  104s] -----------------------------------------------------------------
+[  104s] I have the following modifications for petsc.spec:
+[  105s] 19c19
+[  105s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  105s] ---
+[  105s] > %global flavor gnu-openmpi-hpc%{nil}
+[  105s] 370c370
+[  105s] < Release:        0
+[  105s] ---
+[  105s] > Release:        1.2
+[  105s] 378c378
+[  105s] < BuildRequires:  pkg-config
+[  105s] ---
+[  105s] > BuildRequires:  pkgconf-pkg-config
+[  105s] 418d417
+[  105s] < BuildRequires:  valgrind-devel
+[  110s] build target is riscv64-suse-linux
+[  110s] -----------------------------------------------------------------
+[  110s] ----- building petsc.spec (user abuild)
+[  110s] -----------------------------------------------------------------
+[  110s] -----------------------------------------------------------------
+[  114s] sh: line 1: /usr/bin/ps: No such file or directory
+[  115s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/40c2b090617d81f179a8817b08fdada6-petsc:gnu-openmpi-hpc' /home/abuild/rpmbuild/SOURCES/petsc.spec
+[  115s] Building target platforms: riscv64-suse-linux
+[  115s] Building for target riscv64-suse-linux
+[  115s]  Building for gnu 
+[  115s]  hpc_gnu_init 
+[  117s] warning: /home/abuild/rpmbuild/SOURCES/petsc.spec: line 443: Macro %_pname defined but not used within scope
+[  124s] setting SOURCE_DATE_EPOCH=1676419200
+[  125s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.NHCSwc
+[  125s] + umask 022
+[  125s] + cd /home/abuild/rpmbuild/BUILD
+[  125s] + cd /home/abuild/rpmbuild/BUILD
+[  125s] + rm -rf petsc-3.18.4
+[  125s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/petsc-3.18.4.tar.gz
+[  128s] + STATUS=0
+[  128s] + '[' 0 -ne 0 ']'
+[  128s] + cd petsc-3.18.4
+[  128s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  128s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/petsc-3.3-p2-no-rpath.patch
+[  128s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  128s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/petsc-3.7-fix-pastix-detection.patch
+[  128s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  129s] + find src lib config share -type f -iname '*.py' -exec sed -i -e '1 s@#!.*env python3@#!/usr/bin/python3@' -e '1 s@#!.*env python@#!/usr/bin/python3@' '{}' ';'
+[  155s] + find lib/petsc/bin -type f -exec sed -i -e '1 s@#!.*env sh@#!/usr/bin/sh@' -e '1 s@#!.*env python3@#!/usr/bin/python3@' -e '1 s@#!.*env python@#!/usr/bin/python3@' '{}' ';'
+[  157s] + RPM_EC=0
+[  157s] ++ jobs -p
+[  157s] + exit 0
+[  157s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.7DXJdN
+[  157s] + umask 022
+[  157s] + cd /home/abuild/rpmbuild/BUILD
+[  157s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/petsc_3_18_4-gnu-openmpi1-hpc-3.18.4-1.2.riscv64
+[  157s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/petsc_3_18_4-gnu-openmpi1-hpc-3.18.4-1.2.riscv64
+[  157s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  157s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/petsc_3_18_4-gnu-openmpi1-hpc-3.18.4-1.2.riscv64
+[  157s] + cd petsc-3.18.4
+[  157s] + ref=/usr/lib/rpm
+[  157s] + mints=0
+[  157s] + case $(uname -m) in
+[  157s] ++ uname -m
+[  158s] + mints=20160911
+[  158s] + for s in guess sub
+[  158s] ++ find -maxdepth 8 -name config.guess
+[  158s] + for s in guess sub
+[  158s] ++ find -maxdepth 8 -name config.sub
+[  158s] + module purge
+[  158s] + '[' -z '' ']'
+[  158s] + case "$-" in
+[  158s] + __lmod_sh_dbg=x
+[  158s] + '[' -n x ']'
+[  158s] + set +x
+[  158s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  159s] sh: line 1: /usr/bin/ps: No such file or directory
+[  159s] Shell debugging restarted
+[  159s] + unset __lmod_sh_dbg
+[  159s] + return 0
+[  159s] + export CC=gcc
+[  159s] + CC=gcc
+[  159s] + export CXX=g++
+[  159s] + CXX=g++
+[  159s] + export FC=gfortran
+[  159s] + FC=gfortran
+[  159s] + export F77=gfortran
+[  159s] + F77=gfortran
+[  159s] + module load gnu/13
+[  159s] + '[' -z '' ']'
+[  159s] + case "$-" in
+[  159s] + __lmod_sh_dbg=x
+[  159s] + '[' -n x ']'
+[  159s] + set +x
+[  159s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  160s] sh: line 1: /usr/bin/ps: No such file or directory
+[  161s] Shell debugging restarted
+[  161s] + unset __lmod_sh_dbg
+[  161s] + return 0
+[  161s] + module load openmpi
+[  161s] + '[' -z '' ']'
+[  161s] + case "$-" in
+[  161s] + __lmod_sh_dbg=x
+[  161s] + '[' -n x ']'
+[  161s] + set +x
+[  161s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  161s] sh: line 1: /usr/bin/ps: No such file or directory
+[  163s] Shell debugging restarted
+[  163s] + unset __lmod_sh_dbg
+[  163s] + return 0
+[  163s] + module load phdf5 scalapack openblas
+[  163s] + '[' -z '' ']'
+[  163s] + case "$-" in
+[  163s] + __lmod_sh_dbg=x
+[  163s] + '[' -n x ']'
+[  163s] + set +x
+[  163s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  163s] sh: line 1: /usr/bin/ps: No such file or directory
+[  166s] Shell debugging restarted
+[  166s] + unset __lmod_sh_dbg
+[  166s] + return 0
+[  166s] + python3 ./config/configure.py '--CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g ' '--FFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g ' '--CXXFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g ' --prefix=/usr/lib/hpc/gnu13/openmpi1/petsc/3.18.4 --with-clanguage=C++ --with-c-support --with-fortran-interfaces=1 --with-debugging=no --with-python-exec=python3 --with-shared-libraries --with-batch=0 --with-blas-lapack-lib=/usr/lib/hpc/gnu13/openblas/0.3.21/lib64/libopenblas.so --with-scalapack-dir=/usr/lib/hpc/gnu13/openmpi1/scalapack/2.1.0 --with-hdf5=1 --with-hdf5-lib=/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/lib64/libhdf5.so --with-hdf5-include=/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/include
+[  173s] =============================================================================================
+[  173s]                          Configuring PETSc to compile on your system
+[  174s] =============================================================================================
+[  174s] TESTING: configureExternalPackagesDir from config.framework(config/BuildSystem/config/framework.py:1045)
+[  174s] TESTING: configureDebuggers from config.utilities.debuggers(config/BuildSystem/config/utilities/debuggers.py:20)
+[  174s] TESTING: configureDirectories from PETSc.options.petscdir(config/PETSc/options/petscdir.py:22)
+[  174s] TESTING: getDatafilespath from PETSc.options.dataFilesPath(config/PETSc/options/dataFilesPath.py:29)
+[  174s] TESTING: configureGit from config.sourceControl(config/BuildSystem/config/sourceControl.py:24)
+[  174s] TESTING: configureMercurial from config.sourceControl(config/BuildSystem/config/sourceControl.py:35)
+[  174s] TESTING: configureInstallationMethod from PETSc.options.petscclone(config/PETSc/options/petscclone.py:20)
+[  174s] TESTING: setNativeArchitecture from PETSc.options.arch(config/PETSc/options/arch.py:29)
+[  175s] TESTING: configureArchitecture from PETSc.options.arch(config/PETSc/options/arch.py:42)
+[  175s] TESTING: setInstallDir from PETSc.options.installDir(config/PETSc/options/installDir.py:31)
+[  175s] TESTING: saveReconfigure from PETSc.options.installDir(config/PETSc/options/installDir.py:76)
+[  175s] TESTING: cleanConfDir from PETSc.options.installDir(config/PETSc/options/installDir.py:68)
+[  175s] TESTING: configureInstallDir from PETSc.options.installDir(config/PETSc/options/installDir.py:52)
+[  175s] TESTING: restoreReconfigure from PETSc.options.installDir(config/PETSc/options/installDir.py:90)
+[  175s] TESTING: setExternalPackagesDir from PETSc.options.externalpackagesdir(config/PETSc/options/externalpackagesdir.py:15)
+[  175s] TESTING: cleanExternalpackagesDir from PETSc.options.externalpackagesdir(config/PETSc/options/externalpackagesdir.py:23)
+[  175s] TESTING: configureCLanguage from PETSc.options.languages(config/PETSc/options/languages.py:28)
+[  175s] =============================================================================================
+[  175s]   WARNING -with-clanguage=C++ is a developer feature and is *not* required for regular
+[  175s]   usage of PETSc either from C or C++
+[  175s] =============================================================================================
+[  175s] TESTING: resetEnvCompilers from config.setCompilers(config/BuildSystem/config/setCompilers.py:2653)
+[  175s] =============================================================================================
+[  175s]                                      ***** WARNING *****
+[  175s]   Found environment variable: CC=gcc. Ignoring it! Use "./configure CC=$CC" if you really
+[  175s]   want to use this value
+[  175s] =============================================================================================
+[  175s] =============================================================================================
+[  175s]                                      ***** WARNING *****
+[  175s]   Found environment variable: CXX=g++. Ignoring it! Use "./configure CXX=$CXX" if you
+[  175s]   really want to use this value
+[  175s] =============================================================================================
+[  175s] =============================================================================================
+[  175s]                                      ***** WARNING *****
+[  175s]   Found environment variable: FC=gfortran. Ignoring it! Use "./configure FC=$FC" if you
+[  175s]   really want to use this value
+[  175s] =============================================================================================
+[  175s] =============================================================================================
+[  175s]                                      ***** WARNING *****
+[  175s]   Found environment variable: F77=gfortran. Ignoring it! Use "./configure F77=$F77" if you
+[  175s]   really want to use this value
+[  175s] =============================================================================================
+[  175s] =============================================================================================
+[  175s]                                      ***** WARNING *****
+[  175s]   Found environment variable: MPI_DIR=/usr/lib/hpc/gnu13/mpi/openmpi/1.10.7. Ignoring it!
+[  175s]   Use "./configure MPI_DIR=$MPI_DIR" if you really want to use this value
+[  175s] =============================================================================================
+[  175s] TESTING: checkEnvCompilers from config.setCompilers(config/BuildSystem/config/setCompilers.py:2670)
+[  175s] TESTING: checkMPICompilerOverride from config.setCompilers(config/BuildSystem/config/setCompilers.py:2623)
+[  175s] TESTING: requireMpiLdPath from config.setCompilers(config/BuildSystem/config/setCompilers.py:2644)
+[  175s] TESTING: checkInitialFlags from config.setCompilers(config/BuildSystem/config/setCompilers.py:723)
+[  187s] TESTING: checkCCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:1341)
+[  187s] TESTING: checkCPreprocessor from config.setCompilers(config/BuildSystem/config/setCompilers.py:1384)
+[  199s] TESTING: checkCxxCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:1690)
+[  200s] TESTING: checkDeviceHostCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:747)
+[  216s] TESTING: checkCxxDialect from config.setCompilers(config/BuildSystem/config/setCompilers.py:769)
+[  217s] TESTING: checkCxxPreprocessor from config.setCompilers(config/BuildSystem/config/setCompilers.py:1726)
+[  217s] TESTING: checkCUDACompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:1420)
+[  217s] TESTING: checkDeviceHostCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:747)
+[  217s] TESTING: checkHIPCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:1490)
+[  217s] TESTING: checkDeviceHostCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:747)
+[  217s] TESTING: checkSYCLCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:1560)
+[  217s] TESTING: checkDeviceHostCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:747)
+[  230s] TESTING: checkFortranCompiler from config.setCompilers(config/BuildSystem/config/setCompilers.py:1828)
+[  231s] TESTING: checkFortranPreprocessor from config.setCompilers(config/BuildSystem/config/setCompilers.py:1864)
+[  232s] TESTING: checkFortranComments from config.setCompilers(config/BuildSystem/config/setCompilers.py:1883)
+[  232s] TESTING: checkLargeFileIO from config.setCompilers(config/BuildSystem/config/setCompilers.py:2054)
+[  240s] TESTING: checkArchiver from config.setCompilers(config/BuildSystem/config/setCompilers.py:2153)
+[  240s] TESTING: checkArchiverRecipeArgfile from config.setCompilers(config/BuildSystem/config/setCompilers.py:2222)
+[  269s] TESTING: checkSharedLinker from config.setCompilers(config/BuildSystem/config/setCompilers.py:2304)
+[  288s] TESTING: checkPIC from config.setCompilers(config/BuildSystem/config/setCompilers.py:2004)
+[  289s] TESTING: checkSharedLinkerPaths from config.setCompilers(config/BuildSystem/config/setCompilers.py:2418)
+[  294s] TESTING: checkLibC from config.setCompilers(config/BuildSystem/config/setCompilers.py:2457)
+[  319s] TESTING: checkDynamicLinker from config.setCompilers(config/BuildSystem/config/setCompilers.py:2503)
+[  324s] TESTING: checkPragma from config.setCompilers(config/BuildSystem/config/setCompilers.py:1963)
+[  329s] TESTING: checkAtFileOption from config.setCompilers(config/BuildSystem/config/setCompilers.py:2695)
+[  329s] TESTING: output from config.setCompilers(config/BuildSystem/config/setCompilers.py:2552)
+[  329s] TESTING: configureIndexSize from PETSc.options.indexTypes(config/PETSc/options/indexTypes.py:38)
+[  330s] TESTING: configureCompilerFlags from config.compilerFlags(config/BuildSystem/config/compilerFlags.py:82)
+[  330s] TESTING: checkIntelHardwareSupport from config.compilerFlags(config/BuildSystem/config/compilerFlags.py:173)
+[  332s] TESTING: checkCompilerMacros from config.compilerFlags(config/BuildSystem/config/compilerFlags.py:164)
+[  334s] TESTING: checkC99Flag from config.compilers(config/BuildSystem/config/compilers.py:1384)
+[  334s] TESTING: checkCFormatting from config.compilers(config/BuildSystem/config/compilers.py:359)
+[  339s] TESTING: checkDynamicLoadFlag from config.compilers(config/BuildSystem/config/compilers.py:370)
+[  352s] TESTING: checkCLibraries from config.compilers(config/BuildSystem/config/compilers.py:162)
+[  355s] TESTING: checkDependencyGenerationFlag from config.compilers(config/BuildSystem/config/compilers.py:1335)
+[  356s] TESTING: checkCxxRestrict from config.compilers(config/BuildSystem/config/compilers.py:121)
+[  357s] TESTING: checkCxxOptionalExtensions from config.compilers(config/BuildSystem/config/compilers.py:389)
+[  369s] TESTING: checkCxxComplexFix from config.compilers(config/BuildSystem/config/compilers.py:416)
+[  396s] TESTING: checkCxxLibraries from config.compilers(config/BuildSystem/config/compilers.py:445)
+[  402s] TESTING: checkFortranNameMangling from config.compilers(config/BuildSystem/config/compilers.py:787)
+[  408s] TESTING: checkFortranNameManglingDouble from config.compilers(config/BuildSystem/config/compilers.py:825)
+[  460s] TESTING: checkFortranLibraries from config.compilers(config/BuildSystem/config/compilers.py:835)
+[  467s] TESTING: checkFortranLinkingCxx from config.compilers(config/BuildSystem/config/compilers.py:1300)
+[  467s] TESTING: setupFrameworkCompilers from config.compilers(config/BuildSystem/config/compilers.py:1452)
+[  468s] TESTING: checkFortranTypeSizes from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:56)
+[  469s] TESTING: checkFortranPreprocessor from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:73)
+[  471s] TESTING: checkFortranDefineCompilerOption from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:96)
+[  475s] TESTING: checkFortran90 from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:147)
+[  476s] TESTING: checkFortran90FreeForm from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:174)
+[  481s] TESTING: checkFortran2003 from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:188)
+[  489s] TESTING: checkFortran90Array from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:223)
+[  489s] TESTING: checkFortran90AssumedType from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:310)
+[  495s] TESTING: checkFortranModuleInclude from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:316)
+[  498s] TESTING: checkFortranModuleOutput from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:382)
+[  499s] TESTING: checkFortranTypeStar from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:136)
+[  499s] TESTING: checkFortranTypeInitialize from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:126)
+[  504s] TESTING: configureFortranFlush from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:116)
+[  505s] TESTING: checkDependencyGenerationFlag from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:427)
+[  506s] TESTING: checkFortran90LineLength from config.compilersFortran(config/BuildSystem/config/compilersFortran.py:163)
+[  515s] TESTING: checkStdC from config.headers(config/BuildSystem/config/headers.py:107)
+[  516s] TESTING: checkStat from config.headers(config/BuildSystem/config/headers.py:141)
+[  517s] TESTING: checkSysWait from config.headers(config/BuildSystem/config/headers.py:176)
+[  519s] TESTING: checkTime from config.headers(config/BuildSystem/config/headers.py:198)
+[  521s] TESTING: checkMath from config.headers(config/BuildSystem/config/headers.py:204)
+[  522s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  523s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  524s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  525s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  525s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  526s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  527s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  528s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  528s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  529s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  530s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  531s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  532s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  533s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  533s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  534s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  535s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  536s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  536s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  537s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  538s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  539s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  539s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  540s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  541s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  542s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  542s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  543s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  544s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  544s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  545s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  546s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  547s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  547s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  548s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  549s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  549s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  550s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  551s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  552s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  553s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  553s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  554s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  555s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  556s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  557s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  557s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  558s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  559s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  560s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  560s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  561s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  562s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  563s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  563s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  564s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  565s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  566s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  567s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  568s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  568s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  569s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  570s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  571s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  572s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  572s] TESTING: check from config.headers(config/BuildSystem/config/headers.py:77)
+[  574s] TESTING: checkRecursiveMacros from config.headers(config/BuildSystem/config/headers.py:219)
+[  582s] TESTING: configureL1CacheLineSize from config.utilities.cacheDetails(config/BuildSystem/config/utilities/cacheDetails.py:127)
+[  583s] TESTING: check_struct_sigaction from config.types(config/BuildSystem/config/types.py:42)
+[  585s] TESTING: check__int64 from config.types(config/BuildSystem/config/types.py:48)
+[  586s] TESTING: checkSizeTypes from config.types(config/BuildSystem/config/types.py:54)
+[  589s] TESTING: checkFileTypes from config.types(config/BuildSystem/config/types.py:64)
+[  591s] TESTING: checkIntegerTypes from config.types(config/BuildSystem/config/types.py:59)
+[  592s] TESTING: checkPID from config.types(config/BuildSystem/config/types.py:70)
+[  593s] TESTING: checkUID from config.types(config/BuildSystem/config/types.py:74)
+[  601s] TESTING: checkC99Complex from config.types(config/BuildSystem/config/types.py:81)
+[  617s] TESTING: checkCxxComplex from config.types(config/BuildSystem/config/types.py:95)
+[  619s] TESTING: checkSizeof from config.types(config/BuildSystem/config/types.py:106)
+[  620s] TESTING: checkSizeof from config.types(config/BuildSystem/config/types.py:106)
+[  621s] TESTING: checkSizeof from config.types(config/BuildSystem/config/types.py:106)
+[  623s] TESTING: checkSizeof from config.types(config/BuildSystem/config/types.py:106)
+[  624s] TESTING: checkSizeof from config.types(config/BuildSystem/config/types.py:106)
+[  626s] TESTING: checkSizeof from config.types(config/BuildSystem/config/types.py:106)
+[  627s] TESTING: checkSizeof from config.types(config/BuildSystem/config/types.py:106)
+[  630s] TESTING: checkVisibility from config.types(config/BuildSystem/config/types.py:140)
+[  632s] TESTING: checkMaxPathLen from config.types(config/BuildSystem/config/types.py:162)
+[  632s] TESTING: configureMemAlign from PETSc.options.memAlign(config/PETSc/options/memAlign.py:28)
+[  634s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[  636s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[  638s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[  639s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[  657s] TESTING: checkMath from config.libraries(config/BuildSystem/config/libraries.py:297)
+[  669s] TESTING: checkMathErf from config.libraries(config/BuildSystem/config/libraries.py:318)
+[  684s] TESTING: checkMathTgamma from config.libraries(config/BuildSystem/config/libraries.py:327)
+[  699s] TESTING: checkMathLgamma from config.libraries(config/BuildSystem/config/libraries.py:336)
+[  711s] TESTING: checkMathFenv from config.libraries(config/BuildSystem/config/libraries.py:349)
+[  724s] TESTING: checkMathLog2 from config.libraries(config/BuildSystem/config/libraries.py:357)
+[  738s] TESTING: checkRealtime from config.libraries(config/BuildSystem/config/libraries.py:366)
+[  755s] TESTING: checkDynamic from config.libraries(config/BuildSystem/config/libraries.py:382)
+[  778s] TESTING: checkExecutableExportFlag from config.libraries(config/BuildSystem/config/libraries.py:608)
+[  791s] TESTING: configureLibraryOptions from PETSc.options.libraryOptions(config/PETSc/options/libraryOptions.py:38)
+[  791s] TESTING: configureISColorValueType from PETSc.options.libraryOptions(config/PETSc/options/libraryOptions.py:98)
+[  797s] TESTING: checkSysinfo from config.functions(config/BuildSystem/config/functions.py:106)
+[  803s] TESTING: checkVPrintf from config.functions(config/BuildSystem/config/functions.py:125)
+[  810s] TESTING: checkVFPrintf from config.functions(config/BuildSystem/config/functions.py:131)
+[  816s] TESTING: checkVSNPrintf from config.functions(config/BuildSystem/config/functions.py:137)
+[  822s] TESTING: checkNanosleep from config.functions(config/BuildSystem/config/functions.py:167)
+[  828s] TESTING: checkMemmove from config.functions(config/BuildSystem/config/functions.py:173)
+[  834s] TESTING: checkSignalHandlerType from config.functions(config/BuildSystem/config/functions.py:143)
+[  835s] TESTING: checkFreeReturnType from config.functions(config/BuildSystem/config/functions.py:153)
+[  840s] TESTING: checkVariableArgumentLists from config.functions(config/BuildSystem/config/functions.py:159)
+[  955s] TESTING: checkClassify from config.functions(config/BuildSystem/config/functions.py:85)
+[  960s] TESTING: checkMmap from config.functions(config/BuildSystem/config/functions.py:179)
+[  960s] TESTING: configureMemorySize from config.utilities.getResidentSetSize(config/BuildSystem/config/utilities/getResidentSetSize.py:31)
+[  966s] TESTING: configureFortranCommandLine from config.utilities.fortranCommandLine(config/BuildSystem/config/utilities/fortranCommandLine.py:26)
+[  969s] TESTING: configureFPTrap from config.utilities.FPTrap(config/BuildSystem/config/utilities/FPTrap.py:26)
+[  976s] TESTING: configureFeatureTestMacros from config.utilities.featureTestMacros(config/BuildSystem/config/utilities/featureTestMacros.py:13)
+[  978s] TESTING: configureMissingUtypeTypedefs from config.utilities.missing(config/BuildSystem/config/utilities/missing.py:54)
+[  984s] TESTING: configureMissingFunctions from config.utilities.missing(config/BuildSystem/config/utilities/missing.py:60)
+[ 1012s] TESTING: configureMissingSignals from config.utilities.missing(config/BuildSystem/config/utilities/missing.py:80)
+[ 1020s] TESTING: configureMissingGetdomainnamePrototype from config.utilities.missing(config/BuildSystem/config/utilities/missing.py:97)
+[ 1028s] TESTING: configureMissingSrandPrototype from config.utilities.missing(config/BuildSystem/config/utilities/missing.py:123)
+[ 1028s] TESTING: checkSharedDynamicPicOptions from PETSc.options.sharedLibraries(config/PETSc/options/sharedLibraries.py:33)
+[ 1028s] TESTING: configureSharedLibraries from PETSc.options.sharedLibraries(config/PETSc/options/sharedLibraries.py:48)
+[ 1028s] TESTING: configureDynamicLibraries from PETSc.options.sharedLibraries(config/PETSc/options/sharedLibraries.py:92)
+[ 1028s] TESTING: configureSerializedFunctions from PETSc.options.sharedLibraries(config/PETSc/options/sharedLibraries.py:98)
+[ 1031s] TESTING: checkSymbolResolution from PETSc.options.sharedLibraries(config/PETSc/options/sharedLibraries.py:107)
+[ 1058s] TESTING: configureScalarType from PETSc.options.scalarTypes(config/PETSc/options/scalarTypes.py:42)
+[ 1060s] TESTING: configurePrecision from PETSc.options.scalarTypes(config/PETSc/options/scalarTypes.py:83)
+[ 1060s] TESTING: configureMkdir from config.programs(config/BuildSystem/config/programs.py:21)
+[ 1060s] TESTING: configureAutoreconf from config.programs(config/BuildSystem/config/programs.py:43)
+[ 1060s] TESTING: configurePrograms from config.programs(config/BuildSystem/config/programs.py:73)
+[ 1060s] TESTING: consistencyChecks from config.packages.make(config/BuildSystem/config/package.py:1005)
+[ 1060s] TESTING: alternateConfigureLibrary from config.packages.make(config/BuildSystem/config/package.py:1001)
+[ 1060s] TESTING: configureMake from config.packages.make(config/BuildSystem/config/packages/make.py:96)
+[ 1060s] TESTING: setupGNUMake from config.packages.make(config/BuildSystem/config/packages/make.py:150)
+[ 1060s] TESTING: configureMakeNP from config.packages.make(config/BuildSystem/config/packages/make.py:197)
+[ 1060s] TESTING: locateBison from config.packages.bison(config/BuildSystem/config/packages/bison.py:30)
+[ 1060s] TESTING: consistencyChecks from config.packages.sycl(config/BuildSystem/config/package.py:1005)
+[ 1060s] TESTING: alternateConfigureLibrary from config.packages.sycl(config/BuildSystem/config/package.py:1001)
+[ 1060s] TESTING: consistencyChecks from config.packages.hip(config/BuildSystem/config/package.py:1005)
+[ 1060s] TESTING: alternateConfigureLibrary from config.packages.hip(config/BuildSystem/config/package.py:1001)
+[ 1060s] TESTING: consistencyChecks from config.packages.X(config/BuildSystem/config/package.py:1005)
+[ 1060s] TESTING: checkDependencies from config.packages.X(config/BuildSystem/config/package.py:904)
+[ 1060s] TESTING: configureLibrary from config.packages.X(config/BuildSystem/config/package.py:930)
+[ 1065s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1067s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1067s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1067s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1068s] TESTING: checkVersion from config.packages.X(config/BuildSystem/config/package.py:1072)
+[ 1068s] TESTING: checkSharedLibrary from config.packages.X(config/BuildSystem/config/package.py:997)
+[ 1068s] TESTING: consistencyChecks from config.packages.hwloc(config/BuildSystem/config/package.py:1005)
+[ 1068s] TESTING: alternateConfigureLibrary from config.packages.hwloc(config/BuildSystem/config/package.py:1001)
+[ 1068s] TESTING: consistencyChecks from config.packages.thrust(config/BuildSystem/config/package.py:1005)
+[ 1068s] TESTING: alternateConfigureLibrary from config.packages.thrust(config/BuildSystem/config/package.py:1001)
+[ 1068s] TESTING: consistencyChecks from config.packages.cuda(config/BuildSystem/config/package.py:1005)
+[ 1068s] TESTING: alternateConfigureLibrary from config.packages.cuda(config/BuildSystem/config/package.py:1001)
+[ 1068s] TESTING: consistencyChecks from config.packages.OpenMPI(config/BuildSystem/config/package.py:1005)
+[ 1068s] TESTING: alternateConfigureLibrary from config.packages.OpenMPI(config/BuildSystem/config/package.py:1001)
+[ 1068s] TESTING: consistencyChecks from config.packages.MPICH(config/BuildSystem/config/package.py:1005)
+[ 1068s] TESTING: alternateConfigureLibrary from config.packages.MPICH(config/BuildSystem/config/package.py:1001)
+[ 1068s] TESTING: consistencyChecks from config.packages.MPI(config/BuildSystem/config/package.py:1005)
+[ 1068s] TESTING: checkDependencies from config.packages.MPI(config/BuildSystem/config/package.py:904)
+[ 1068s] TESTING: configureLibrary from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:859)
+[ 1073s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1073s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1074s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1082s] TESTING: checkMPIDistro from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:660)
+[ 1136s] TESTING: configureMPI2 from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:379)
+[ 1170s] TESTING: configureMPI3 from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:447)
+[ 1176s] TESTING: configureMPI4 from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:516)
+[ 1182s] TESTING: configureMPIEXEC from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:188)
+[ 1186s] TESTING: configureMPITypes from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:544)
+[ 1191s] TESTING: SGIMPICheck from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:588)
+[ 1220s] TESTING: CxxMPICheck from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:598)
+[ 1237s] TESTING: FortranMPICheck from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:614)
+[ 1243s] TESTING: configureIO from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:636)
+[ 1243s] TESTING: findMPIIncludeAndLib from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:749)
+[ 1249s] TESTING: PetscArchMPICheck from config.packages.MPI(config/BuildSystem/config/packages/MPI.py:833)
+[ 1251s] TESTING: checkVersion from config.packages.MPI(config/BuildSystem/config/package.py:1072)
+[ 1251s] TESTING: checkSharedLibrary from config.packages.MPI(config/BuildSystem/config/package.py:997)
+[ 1251s] TESTING: consistencyChecks from config.packages.zstd(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.zstd(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.yaml(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.yaml(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.ssl(config/BuildSystem/config/packages/ssl.py:30)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.ssl(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.sprng(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.sprng(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.revolve(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.revolve(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.radau5(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.radau5(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.pami(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.pami(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.opengles(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.opengles(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.opencl(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.opencl(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.mpe(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.mpe(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.memkind(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.memkind(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.libmesh(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.libmesh(config/BuildSystem/config/packages/libmesh.py:69)
+[ 1251s] TESTING: consistencyChecks from config.packages.moose(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.moose(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.libjpeg(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.libjpeg(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.gsl(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.gsl(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.gmp(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.gmp(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.mpfr(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.mpfr(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.giflib(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.giflib(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.cub(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.cub(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.ctetgen(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.ctetgen(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.concurrencykit(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.concurrencykit(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.cams(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.cams(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: locateC2html from config.packages.c2html(config/BuildSystem/config/packages/c2html.py:29)
+[ 1251s] TESTING: consistencyChecks from config.packages.boost(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.boost(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.silo(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.silo(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.Random123(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.Random123(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.PARTY(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.PARTY(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.NVSHMEM(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.NVSHMEM(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.MatlabEngine(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.MatlabEngine(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.Matlab(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.Matlab(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.Mathematica(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: alternateConfigureLibrary from config.packages.Mathematica(config/BuildSystem/config/package.py:1001)
+[ 1251s] TESTING: consistencyChecks from config.packages.regex(config/BuildSystem/config/package.py:1005)
+[ 1251s] TESTING: checkDependencies from config.packages.regex(config/BuildSystem/config/package.py:904)
+[ 1251s] TESTING: configureLibrary from config.packages.regex(config/BuildSystem/config/package.py:930)
+[ 1258s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1258s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1259s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1259s] TESTING: checkVersion from config.packages.regex(config/BuildSystem/config/package.py:1072)
+[ 1259s] TESTING: checkSharedLibrary from config.packages.regex(config/BuildSystem/config/package.py:997)
+[ 1259s] TESTING: consistencyChecks from config.packages.libceed(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.libceed(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.petsc4py(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.petsc4py(config/BuildSystem/config/packages/petsc4py.py:137)
+[ 1261s] TESTING: consistencyChecks from config.packages.mpi4py(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.mpi4py(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.opengl(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.opengl(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.glut(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.glut(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.GLVis(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.GLVis(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.CoDiPack(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.CoDiPack(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.adblaslapack(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.adblaslapack(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: locateCMake from config.packages.cmake(config/BuildSystem/config/packages/cmake.py:53)
+[ 1261s] TESTING: consistencyChecks from config.packages.unittestcpp(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.unittestcpp(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.googletest(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.googletest(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.opencascade(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.opencascade(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.amgx(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.amgx(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.eigen(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.eigen(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.szlib(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.szlib(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.zlib(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.zlib(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.tetgen(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.tetgen(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.tchem(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.tchem(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.saws(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.saws(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.muparser(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.muparser(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.libpng(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.libpng(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.hcephes(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.hcephes(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.combblas(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.combblas(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.Triangle(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.Triangle(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.metis(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.metis(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.pragmatic(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.pragmatic(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.parmetis(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.parmetis(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.KS(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.KS(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.Chaco(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: alternateConfigureLibrary from config.packages.Chaco(config/BuildSystem/config/package.py:1001)
+[ 1261s] TESTING: consistencyChecks from config.packages.hdf5(config/BuildSystem/config/package.py:1005)
+[ 1261s] TESTING: checkDependencies from config.packages.hdf5(config/BuildSystem/config/package.py:904)
+[ 1261s] TESTING: configureLibrary from config.packages.hdf5(config/BuildSystem/config/packages/hdf5.py:87)
+[ 1268s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1268s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1272s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1275s] TESTING: checkVersion from config.packages.hdf5(config/BuildSystem/config/package.py:1072)
+[ 1275s] TESTING: checkSharedLibrary from config.packages.hdf5(config/BuildSystem/config/package.py:997)
+[ 1275s] TESTING: consistencyChecks from config.packages.med(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.med(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.cgns(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.cgns(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.ascem-io(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.ascem-io(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.pflotran(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.pflotran(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.alquimia(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.alquimia(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.SAMRAI(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.SAMRAI(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.pnetcdf(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.pnetcdf(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.netcdf(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.netcdf(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.exodusii(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.exodusii(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.fblaslapack(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: alternateConfigureLibrary from config.packages.fblaslapack(config/BuildSystem/config/package.py:1001)
+[ 1275s] TESTING: consistencyChecks from config.packages.pthread(config/BuildSystem/config/package.py:1005)
+[ 1275s] TESTING: checkDependencies from config.packages.pthread(config/BuildSystem/config/package.py:904)
+[ 1275s] TESTING: configureLibrary from config.packages.pthread(config/BuildSystem/config/packages/pthread.py:19)
+[ 1281s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1281s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1288s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1288s] TESTING: checkVersion from config.packages.pthread(config/BuildSystem/config/package.py:1072)
+[ 1288s] TESTING: checkSharedLibrary from config.packages.pthread(config/BuildSystem/config/package.py:997)
+[ 1288s] TESTING: consistencyChecks from config.packages.egads(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.egads(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.PTScotch(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.PTScotch(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.mmg(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.mmg(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.parmmg(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.parmmg(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.Zoltan(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.Zoltan(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.ADIOS(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.ADIOS(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.openmp(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.openmp(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.viennacl(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.viennacl(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.ColPack(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.ColPack(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.ADOLC(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.ADOLC(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.openblas(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.openblas(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.blis(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.blis(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.f2cblaslapack(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: alternateConfigureLibrary from config.packages.f2cblaslapack(config/BuildSystem/config/package.py:1001)
+[ 1289s] TESTING: consistencyChecks from config.packages.BlasLapack(config/BuildSystem/config/package.py:1005)
+[ 1289s] TESTING: checkDependencies from config.packages.BlasLapack(config/BuildSystem/config/package.py:904)
+[ 1289s] TESTING: configureLibrary from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:494)
+[ 1314s] TESTING: checkLib from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:109)
+[ 1321s] TESTING: checkMKL from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:580)
+[ 1328s] TESTING: checkESSL from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:630)
+[ 1334s] TESTING: checkPESSL from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:650)
+[ 1342s] TESTING: checkMissing from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:675)
+[ 1356s] TESTING: checklsame from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:691)
+[ 1379s] TESTING: checkRuntimeIssues from config.packages.BlasLapack(config/BuildSystem/config/packages/BlasLapack.py:750)
+[ 1379s] TESTING: checkVersion from config.packages.BlasLapack(config/BuildSystem/config/package.py:1072)
+[ 1379s] TESTING: checkSharedLibrary from config.packages.BlasLapack(config/BuildSystem/config/package.py:997)
+[ 1379s] TESTING: consistencyChecks from config.packages.sundials2(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.sundials2(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.spai(config/BuildSystem/config/packages/spai.py:53)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.spai(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.raja(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.raja(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.pARMS(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.pARMS(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.p4est(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.p4est(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.mkl_sparse_optimize(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: checkDependencies from config.packages.mkl_sparse_optimize(config/BuildSystem/config/package.py:904)
+[ 1379s] TESTING: configureLibrary from config.packages.mkl_sparse_optimize(config/BuildSystem/config/packages/mkl_sparse_optimize.py:48)
+[ 1379s] TESTING: checkVersion from config.packages.mkl_sparse_optimize(config/BuildSystem/config/package.py:1072)
+[ 1379s] TESTING: checkSharedLibrary from config.packages.mkl_sparse_optimize(config/BuildSystem/config/package.py:997)
+[ 1379s] TESTING: consistencyChecks from config.packages.mkl_sparse(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: checkDependencies from config.packages.mkl_sparse(config/BuildSystem/config/package.py:904)
+[ 1379s] TESTING: configureLibrary from config.packages.mkl_sparse(config/BuildSystem/config/packages/mkl_sparse.py:21)
+[ 1379s] TESTING: checkVersion from config.packages.mkl_sparse(config/BuildSystem/config/package.py:1072)
+[ 1379s] TESTING: checkSharedLibrary from config.packages.mkl_sparse(config/BuildSystem/config/package.py:997)
+[ 1379s] TESTING: consistencyChecks from config.packages.mkl_cpardiso(config/BuildSystem/config/packages/mkl_cpardiso.py:20)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.mkl_cpardiso(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.kokkos(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.kokkos(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.kokkos-kernels(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.kokkos-kernels(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.htool(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.htool(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.magma(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.magma(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.kblas(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.kblas(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.h2opus(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.h2opus(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.fftw(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.fftw(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.elemental(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.elemental(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.ml(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.ml(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.mkl_pardiso(config/BuildSystem/config/packages/mkl_pardiso.py:21)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.mkl_pardiso(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.SuperLU_DIST(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.SuperLU_DIST(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.SuperLU(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.SuperLU(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.PaStiX(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: alternateConfigureLibrary from config.packages.PaStiX(config/BuildSystem/config/package.py:1001)
+[ 1379s] TESTING: consistencyChecks from config.packages.scalapack(config/BuildSystem/config/package.py:1005)
+[ 1379s] TESTING: checkDependencies from config.packages.scalapack(config/BuildSystem/config/package.py:904)
+[ 1379s] TESTING: configureLibrary from config.packages.scalapack(config/BuildSystem/config/package.py:930)
+[ 1385s] TESTING: check from config.libraries(config/BuildSystem/config/libraries.py:168)
+[ 1385s] TESTING: checkInclude from config.headers(config/BuildSystem/config/headers.py:86)
+[ 1385s] TESTING: checkVersion from config.packages.scalapack(config/BuildSystem/config/package.py:1072)
+[ 1385s] TESTING: checkSharedLibrary from config.packages.scalapack(config/BuildSystem/config/package.py:997)
+[ 1385s] TESTING: consistencyChecks from config.packages.strumpack(config/BuildSystem/config/packages/strumpack.py:66)
+[ 1385s] TESTING: alternateConfigureLibrary from config.packages.strumpack(config/BuildSystem/config/package.py:1001)
+[ 1385s] TESTING: consistencyChecks from config.packages.MUMPS(config/BuildSystem/config/packages/MUMPS.py:67)
+[ 1385s] TESTING: alternateConfigureLibrary from config.packages.MUMPS(config/BuildSystem/config/package.py:1001)
+[ 1385s] TESTING: consistencyChecks from config.packages.MOAB(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.MOAB(config/BuildSystem/config/package.py:1001)
+[ 1386s] TESTING: consistencyChecks from config.packages.SuiteSparse(config/BuildSystem/config/packages/SuiteSparse.py:176)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.SuiteSparse(config/BuildSystem/config/package.py:1001)
+[ 1386s] TESTING: consistencyChecks from config.packages.Chombo(config/BuildSystem/config/packages/Chombo.py:126)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.Chombo(config/BuildSystem/config/package.py:1001)
+[ 1386s] TESTING: consistencyChecks from config.packages.hypre(config/BuildSystem/config/packages/hypre.py:182)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.hypre(config/BuildSystem/config/package.py:1001)
+[ 1386s] TESTING: consistencyChecks from config.packages.Trilinos(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.Trilinos(config/BuildSystem/config/package.py:1001)
+[ 1386s] TESTING: consistencyChecks from config.packages.xSDKTrilinos(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.xSDKTrilinos(config/BuildSystem/config/package.py:1001)
+[ 1386s] TESTING: consistencyChecks from config.packages.mstk(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.mstk(config/BuildSystem/config/package.py:1001)
+[ 1386s] TESTING: consistencyChecks from config.packages.slepc(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.slepc(config/BuildSystem/config/packages/slepc.py:97)
+[ 1386s] TESTING: consistencyChecks from config.packages.hpddm(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.hpddm(config/BuildSystem/config/packages/hpddm.py:106)
+[ 1386s] TESTING: consistencyChecks from config.packages.bamg(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.bamg(config/BuildSystem/config/packages/bamg.py:85)
+[ 1386s] TESTING: consistencyChecks from config.packages.MFEM(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.MFEM(config/BuildSystem/config/packages/MFEM.py:217)
+[ 1386s] TESTING: consistencyChecks from config.packages.AMReX(config/BuildSystem/config/package.py:1005)
+[ 1386s] TESTING: alternateConfigureLibrary from config.packages.AMReX(config/BuildSystem/config/packages/AMReX.py:151)
+[ 1387s] TESTING: configureRTLDDefault from PETSc.Configure(config/PETSc/Configure.py:732)
+[ 1394s] TESTING: configurePrefetch from PETSc.Configure(config/PETSc/Configure.py:534)
+[ 1399s] TESTING: configureUnused from PETSc.Configure(config/PETSc/Configure.py:602)
+[ 1405s] TESTING: configureDeprecated from PETSc.Configure(config/PETSc/Configure.py:620)
+[ 1405s] TESTING: configureIsatty from PETSc.Configure(config/PETSc/Configure.py:614)
+[ 1410s] TESTING: configureExpect from PETSc.Configure(config/PETSc/Configure.py:685)
+[ 1411s] TESTING: configureAlign from PETSc.Configure(config/PETSc/Configure.py:669)
+[ 1424s] TESTING: configureFunctionName from PETSc.Configure(config/PETSc/Configure.py:692)
+[ 1425s] TESTING: configureIntptrt from PETSc.Configure(config/PETSc/Configure.py:710)
+[ 1425s] TESTING: configureSolaris from PETSc.Configure(config/PETSc/Configure.py:738)
+[ 1425s] TESTING: configureLinux from PETSc.Configure(config/PETSc/Configure.py:760)
+[ 1425s] TESTING: configureDarwin from PETSc.Configure(config/PETSc/Configure.py:751)
+[ 1447s] TESTING: configureWin32 from PETSc.Configure(config/PETSc/Configure.py:766)
+[ 1447s] TESTING: configureCygwinBrokenPipe from PETSc.Configure(config/PETSc/Configure.py:844)
+[ 1447s] TESTING: configureDefaultArch from PETSc.Configure(config/PETSc/Configure.py:860)
+[ 1447s] TESTING: configureScript from PETSc.Configure(config/PETSc/Configure.py:877)
+[ 1447s] TESTING: configureInstall from PETSc.Configure(config/PETSc/Configure.py:916)
+[ 1447s] TESTING: configureGCOV from PETSc.Configure(config/PETSc/Configure.py:932)
+[ 1454s] TESTING: configureAtoll from PETSc.Configure(config/PETSc/Configure.py:597)
+[ 1454s] Compilers:
+[ 1454s]   C Compiler:         mpicc -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  
+[ 1454s]     Version: gcc (SUSE Linux) 13.0.1 20230314 (experimental) [revision 42630fadbe248717859d61c0244c821c32b4e52c]
+[ 1454s]   C++ Compiler:         mpicxx -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -std=gnu++17 -fPIC 
+[ 1454s]     Version: g++ (SUSE Linux) 13.0.1 20230314 (experimental) [revision 42630fadbe248717859d61c0244c821c32b4e52c]
+[ 1454s]   Fortran Compiler:         mpif90 -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  
+[ 1454s]     Version: GNU Fortran (SUSE Linux) 13.0.1 20230314 (experimental) [revision 42630fadbe248717859d61c0244c821c32b4e52c]
+[ 1454s] Linkers:
+[ 1454s]   Shared linker:   mpicxx  -shared
+[ 1454s]   Dynamic linker:   mpicxx  -shared
+[ 1454s]   Libraries linked against:   -ldl 
+[ 1454s] BlasLapack:
+[ 1454s]   Libraries:  -L/usr/lib/hpc/gnu13/openblas/0.3.21/lib64 -lopenblas
+[ 1454s]   Unknown if this uses OpenMP (try export OMP_NUM_THREADS=<1-4> yourprogram -log_view) 
+[ 1454s]   uses 4 byte integers
+[ 1454s] MPI:
+[ 1454s]   Version:    3
+[ 1454s]   mpiexec: /usr/lib/hpc/gnu13/mpi/openmpi/1.10.7/bin/mpiexec
+[ 1454s]   Implementation: openmpi
+[ 1454s]   OMPI_VERSION: 1.10.7
+[ 1454s] pthread:
+[ 1454s] hdf5:
+[ 1454s]   Version:    1.12.2
+[ 1454s]   Includes:   -I/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/include
+[ 1454s]   Libraries:  -L/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/lib64 -lhdf5
+[ 1454s] python:
+[ 1454s]   Executable: /usr/bin/python3
+[ 1454s] regex:
+[ 1454s] scalapack:
+[ 1454s]   Libraries:  -L/usr/lib/hpc/gnu13/openmpi1/scalapack/2.1.0/lib64 -lscalapack
+[ 1454s] PETSc:
+[ 1454s]   Language used to compile PETSc: Cxx
+[ 1454s]   PETSC_ARCH: arch-linux-cxx-opt
+[ 1454s]   PETSC_DIR: /home/abuild/rpmbuild/BUILD/petsc-3.18.4
+[ 1454s]   Prefix: /usr/lib/hpc/gnu13/openmpi1/petsc/3.18.4
+[ 1454s]   Scalar type: real
+[ 1454s]   Precision: double
+[ 1454s]   Integer size: 4 bytes
+[ 1454s]   Single library: yes
+[ 1454s]   Shared libraries: yes
+[ 1454s]   Memory alignment from malloc(): 16 bytes
+[ 1454s]   Using GNU make: /usr/bin/gmake
+[ 1454s] xxx=========================================================================xxx
+[ 1454s]  Configure stage complete. Now build PETSc libraries with:
+[ 1454s]    make PETSC_DIR=/home/abuild/rpmbuild/BUILD/petsc-3.18.4 PETSC_ARCH=arch-linux-cxx-opt all
+[ 1454s] xxx=========================================================================xxx
+[ 1455s] + make
+[ 1459s] gmake[2]: Entering directory '/home/abuild/rpmbuild/BUILD/petsc-3.18.4'
+[ 1459s] ==========================================
+[ 1459s]  
+[ 1460s] See documentation/faq.html and documentation/bugreporting.html
+[ 1460s] for help with installation problems.  Please send EVERYTHING
+[ 1460s] printed out below when reporting problems.  Please check the
+[ 1460s] mailing list archives and consider subscribing.
+[ 1460s]  
+[ 1460s]   https://petsc.org/release/community/mailing/
+[ 1460s]  
+[ 1461s] ==========================================
+[ 1461s] /usr/bin/bash: line 1: hostname: command not found
+[ 1461s] Starting make run on at Wed, 22 Mar 2023 09:56:36 +0000
+[ 1461s] Machine characteristics: Linux lamb19 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6) riscv64 riscv64 riscv64 GNU/Linux
+[ 1462s] -----------------------------------------
+[ 1462s] Using PETSc directory: /home/abuild/rpmbuild/BUILD/petsc-3.18.4
+[ 1462s] Using PETSc arch: arch-linux-cxx-opt
+[ 1462s] -----------------------------------------
+[ 1462s] PETSC_VERSION_RELEASE    1
+[ 1462s] PETSC_VERSION_MAJOR      3
+[ 1462s] PETSC_VERSION_MINOR      18
+[ 1462s] PETSC_VERSION_SUBMINOR   4
+[ 1462s] PETSC_VERSION_DATE       "Jan 30, 2023"
+[ 1462s] PETSC_VERSION_GIT        "v3.18.4"
+[ 1462s] PETSC_VERSION_DATE_GIT   "2023-01-30 23:18:46 -0600"
+[ 1462s] PETSC_VERSION_EQ(MAJOR,MINOR,SUBMINOR) \
+[ 1462s] PETSC_VERSION_ PETSC_VERSION_EQ
+[ 1462s] PETSC_VERSION_LT(MAJOR,MINOR,SUBMINOR)          \
+[ 1462s] PETSC_VERSION_LE(MAJOR,MINOR,SUBMINOR) \
+[ 1462s] PETSC_VERSION_GT(MAJOR,MINOR,SUBMINOR) \
+[ 1462s] PETSC_VERSION_GE(MAJOR,MINOR,SUBMINOR) \
+[ 1462s] -----------------------------------------
+[ 1463s] Using configure Options: --CFLAGS="-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g " --FFLAGS="-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g " --CXXFLAGS="-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g " --prefix=/usr/lib/hpc/gnu13/openmpi1/petsc/3.18.4 --with-clanguage=C++ --with-c-support --with-fortran-interfaces=1 --with-debugging=no --with-python-exec=python3 --with-shared-libraries --with-batch=0 --with-blaslapack-lib=/usr/lib/hpc/gnu13/openblas/0.3.21/lib64/libopenblas.so --with-scalapack-dir=/usr/lib/hpc/gnu13/openmpi1/scalapack/2.1.0 --with-hdf5=1 --with-hdf5-lib=/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/lib64/libhdf5.so --with-hdf5-include=/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/include
+[ 1463s] Using configuration flags:
+[ 1463s] grep: warning: stray \ before #
+[ 1463s] #define INCLUDED_PETSCCONF_H
+[ 1463s] #define PETSC_ARCH ""
+[ 1463s] #define PETSC_ATTRIBUTEALIGNED(size) __attribute((aligned(size)))
+[ 1463s] #define PETSC_BLASLAPACK_UNDERSCORE 1
+[ 1463s] #define PETSC_CLANGUAGE_CXX 1
+[ 1463s] #define PETSC_CXX_RESTRICT __restrict
+[ 1463s] #define PETSC_DEPRECATED_ENUM(why) __attribute__((deprecated(why)))
+[ 1463s] #define PETSC_DEPRECATED_FUNCTION(why) __attribute__((deprecated(why)))
+[ 1463s] #define PETSC_DEPRECATED_MACRO(why) _Pragma(why)
+[ 1463s] #define PETSC_DEPRECATED_TYPEDEF(why) __attribute__((deprecated(why)))
+[ 1463s] #define PETSC_DIR "/usr/lib/hpc/gnu13/openmpi1/petsc/3.18.4"
+[ 1463s] #define PETSC_DIR_SEPARATOR '/'
+[ 1463s] #define PETSC_FORTRAN_CHARLEN_T size_t
+[ 1463s] #define PETSC_FORTRAN_TYPE_INITIALIZE  = -2
+[ 1463s] #define PETSC_FUNCTION_NAME_C __func__
+[ 1463s] #define PETSC_FUNCTION_NAME_CXX __func__
+[ 1463s] #define PETSC_HAVE_ACCESS 1
+[ 1463s] #define PETSC_HAVE_ATOLL 1
+[ 1463s] #define PETSC_HAVE_ATTRIBUTEALIGNED 1
+[ 1463s] #define PETSC_HAVE_BUILTIN_EXPECT 1
+[ 1463s] #define PETSC_HAVE_BZERO 1
+[ 1463s] #define PETSC_HAVE_C99_COMPLEX 1
+[ 1463s] #define PETSC_HAVE_CLOCK 1
+[ 1463s] #define PETSC_HAVE_CXX 1
+[ 1463s] #define PETSC_HAVE_CXX_COMPLEX 1
+[ 1463s] #define PETSC_HAVE_CXX_COMPLEX_FIX 1
+[ 1463s] #define PETSC_HAVE_CXX_DIALECT_CXX11 1
+[ 1463s] #define PETSC_HAVE_CXX_DIALECT_CXX14 1
+[ 1463s] #define PETSC_HAVE_CXX_DIALECT_CXX17 1
+[ 1463s] #define PETSC_HAVE_DLADDR 1
+[ 1463s] #define PETSC_HAVE_DLCLOSE 1
+[ 1463s] #define PETSC_HAVE_DLERROR 1
+[ 1463s] #define PETSC_HAVE_DLFCN_H 1
+[ 1463s] #define PETSC_HAVE_DLOPEN 1
+[ 1463s] #define PETSC_HAVE_DLSYM 1
+[ 1463s] #define PETSC_HAVE_DOUBLE_ALIGN_MALLOC 1
+[ 1463s] #define PETSC_HAVE_DRAND48 1
+[ 1463s] #define PETSC_HAVE_DYNAMIC_LIBRARIES 1
+[ 1463s] #define PETSC_HAVE_ERF 1
+[ 1463s] #define PETSC_HAVE_EXECUTABLE_EXPORT 1
+[ 1463s] #define PETSC_HAVE_FCNTL_H 1
+[ 1463s] #define PETSC_HAVE_FENV_H 1
+[ 1463s] #define PETSC_HAVE_FLOAT_H 1
+[ 1463s] #define PETSC_HAVE_FORK 1
+[ 1463s] #define PETSC_HAVE_FORTRAN 1
+[ 1463s] #define PETSC_HAVE_FORTRAN_FLUSH 1
+[ 1463s] #define PETSC_HAVE_FORTRAN_GET_COMMAND_ARGUMENT 1
+[ 1463s] #define PETSC_HAVE_FORTRAN_TYPE_STAR 1
+[ 1463s] #define PETSC_HAVE_FORTRAN_UNDERSCORE 1
+[ 1463s] #define PETSC_HAVE_FSTATAT 1
+[ 1463s] #define PETSC_HAVE_GETCWD 1
+[ 1463s] #define PETSC_HAVE_GETDOMAINNAME 1
+[ 1463s] #define PETSC_HAVE_GETHOSTBYNAME 1
+[ 1463s] #define PETSC_HAVE_GETHOSTNAME 1
+[ 1463s] #define PETSC_HAVE_GETPAGESIZE 1
+[ 1463s] #define PETSC_HAVE_GETRUSAGE 1
+[ 1463s] #define PETSC_HAVE_HDF5 1
+[ 1463s] #define PETSC_HAVE_INTTYPES_H 1
+[ 1463s] #define PETSC_HAVE_ISINF 1
+[ 1463s] #define PETSC_HAVE_ISNAN 1
+[ 1463s] #define PETSC_HAVE_ISNORMAL 1
+[ 1463s] #define PETSC_HAVE_LGAMMA 1
+[ 1463s] #define PETSC_HAVE_LOG2 1
+[ 1463s] #define PETSC_HAVE_LSEEK 1
+[ 1463s] #define PETSC_HAVE_MALLOC_H 1
+[ 1463s] #define PETSC_HAVE_MEMMOVE 1
+[ 1463s] #define PETSC_HAVE_MMAP 1
+[ 1463s] #define PETSC_HAVE_MPIEXEC_ENVIRONMENTAL_VARIABLE OMP
+[ 1463s] #define PETSC_HAVE_MPIIO 1
+[ 1463s] #define PETSC_HAVE_MPI_COMBINER_CONTIGUOUS 1
+[ 1463s] #define PETSC_HAVE_MPI_COMBINER_DUP 1
+[ 1463s] #define PETSC_HAVE_MPI_COMBINER_NAMED 1
+[ 1463s] #define PETSC_HAVE_MPI_F90MODULE 1
+[ 1463s] #define PETSC_HAVE_MPI_F90MODULE_VISIBILITY 1
+[ 1463s] #define PETSC_HAVE_MPI_FEATURE_DYNAMIC_WINDOW 1
+[ 1463s] #define PETSC_HAVE_MPI_GET_ACCUMULATE 1
+[ 1463s] #define PETSC_HAVE_MPI_GET_LIBRARY_VERSION 1
+[ 1463s] #define PETSC_HAVE_MPI_INIT_THREAD 1
+[ 1463s] #define PETSC_HAVE_MPI_INT64_T 1
+[ 1463s] #define PETSC_HAVE_MPI_LONG_DOUBLE 1
+[ 1463s] #define PETSC_HAVE_MPI_NEIGHBORHOOD_COLLECTIVES 1
+[ 1463s] #define PETSC_HAVE_MPI_NONBLOCKING_COLLECTIVES 1
+[ 1463s] #define PETSC_HAVE_MPI_ONE_SIDED 1
+[ 1463s] #define PETSC_HAVE_MPI_PROCESS_SHARED_MEMORY 1
+[ 1463s] #define PETSC_HAVE_MPI_REDUCE_LOCAL 1
+[ 1463s] #define PETSC_HAVE_MPI_REDUCE_SCATTER_BLOCK 1
+[ 1463s] #define PETSC_HAVE_MPI_RGET 1
+[ 1463s] #define PETSC_HAVE_MPI_WIN_CREATE 1
+[ 1463s] #define PETSC_HAVE_NANOSLEEP 1
+[ 1463s] #define PETSC_HAVE_NETDB_H 1
+[ 1463s] #define PETSC_HAVE_NETINET_IN_H 1
+[ 1463s] #define PETSC_HAVE_OMPI_MAJOR_VERSION 1
+[ 1463s] #define PETSC_HAVE_OMPI_MINOR_VERSION 10
+[ 1463s] #define PETSC_HAVE_OMPI_RELEASE_VERSION 7
+[ 1463s] #define PETSC_HAVE_PACKAGES ":blaslapack:hdf5:mathlib:mpi:pthread:regex:scalapack:"
+[ 1463s] #define PETSC_HAVE_POPEN 1
+[ 1463s] #define PETSC_HAVE_POSIX_MEMALIGN 1
+[ 1463s] #define PETSC_HAVE_PTHREAD 1
+[ 1463s] #define PETSC_HAVE_PTHREAD_BARRIER_T 1
+[ 1463s] #define PETSC_HAVE_PTHREAD_H 1
+[ 1463s] #define PETSC_HAVE_PWD_H 1
+[ 1463s] #define PETSC_HAVE_RAND 1
+[ 1463s] #define PETSC_HAVE_READLINK 1
+[ 1463s] #define PETSC_HAVE_REALPATH 1
+[ 1463s] #define PETSC_HAVE_REGEX 1
+[ 1463s] #define PETSC_HAVE_RTLD_DEFAULT 1
+[ 1463s] #define PETSC_HAVE_RTLD_GLOBAL 1
+[ 1463s] #define PETSC_HAVE_RTLD_LAZY 1
+[ 1463s] #define PETSC_HAVE_RTLD_LOCAL 1
+[ 1463s] #define PETSC_HAVE_RTLD_NOW 1
+[ 1463s] #define PETSC_HAVE_SCALAPACK 1
+[ 1463s] #define PETSC_HAVE_SCHED_CPU_SET_T 1
+[ 1463s] #define PETSC_HAVE_SETJMP_H 1
+[ 1463s] #define PETSC_HAVE_SLEEP 1
+[ 1463s] #define PETSC_HAVE_SNPRINTF 1
+[ 1463s] #define PETSC_HAVE_SOCKET 1
+[ 1463s] #define PETSC_HAVE_SO_REUSEADDR 1
+[ 1463s] #define PETSC_HAVE_STDINT_H 1
+[ 1463s] #define PETSC_HAVE_STRCASECMP 1
+[ 1463s] #define PETSC_HAVE_STRINGS_H 1
+[ 1463s] #define PETSC_HAVE_STRUCT_SIGACTION 1
+[ 1463s] #define PETSC_HAVE_SYSINFO 1
+[ 1463s] #define PETSC_HAVE_SYS_PARAM_H 1
+[ 1463s] #define PETSC_HAVE_SYS_PROCFS_H 1
+[ 1463s] #define PETSC_HAVE_SYS_RESOURCE_H 1
+[ 1463s] #define PETSC_HAVE_SYS_SOCKET_H 1
+[ 1463s] #define PETSC_HAVE_SYS_SYSINFO_H 1
+[ 1463s] #define PETSC_HAVE_SYS_TIMES_H 1
+[ 1463s] #define PETSC_HAVE_SYS_TIME_H 1
+[ 1463s] #define PETSC_HAVE_SYS_TYPES_H 1
+[ 1463s] #define PETSC_HAVE_SYS_UTSNAME_H 1
+[ 1463s] #define PETSC_HAVE_SYS_WAIT_H 1
+[ 1463s] #define PETSC_HAVE_TGAMMA 1
+[ 1463s] #define PETSC_HAVE_TIME 1
+[ 1463s] #define PETSC_HAVE_TIME_H 1
+[ 1463s] #define PETSC_HAVE_UNAME 1
+[ 1463s] #define PETSC_HAVE_UNISTD_H 1
+[ 1463s] #define PETSC_HAVE_USLEEP 1
+[ 1463s] #define PETSC_HAVE_VA_COPY 1
+[ 1463s] #define PETSC_HAVE_VSNPRINTF 1
+[ 1463s] #define PETSC_HDF5_HAVE_PARALLEL 1
+[ 1463s] #define PETSC_HDF5_HAVE_ZLIB 1
+[ 1463s] #define PETSC_IS_COLORING_MAX USHRT_MAX
+[ 1463s] #define PETSC_IS_COLORING_VALUE_TYPE short
+[ 1463s] #define PETSC_IS_COLORING_VALUE_TYPE_F integer2
+[ 1463s] #define PETSC_LEVEL1_DCACHE_LINESIZE 32
+[ 1463s] #define PETSC_LIB_DIR "/usr/lib/hpc/gnu13/openmpi1/petsc/3.18.4/lib"
+[ 1463s] #define PETSC_MAX_PATH_LEN 4096
+[ 1463s] #define PETSC_MEMALIGN 16
+[ 1463s] #define PETSC_MPICC_SHOW "gcc -I/usr/lib/hpc/gnu13/mpi/openmpi/1.10.7/include -L/usr/lib/hpc/gnu13/mpi/openmpi/1.10.7/lib64 -lmpi"
+[ 1463s] #define PETSC_MPIU_IS_COLORING_VALUE_TYPE MPI_UNSIGNED_SHORT
+[ 1463s] #define PETSC_PREFETCH_HINT_NTA 0
+[ 1463s] #define PETSC_PREFETCH_HINT_T0 3
+[ 1463s] #define PETSC_PREFETCH_HINT_T1 2
+[ 1463s] #define PETSC_PREFETCH_HINT_T2 1
+[ 1463s] #define PETSC_PYTHON_EXE "/usr/bin/python3"
+[ 1463s] #define PETSC_Prefetch(a,b,c) __builtin_prefetch((a),(b),(c))
+[ 1463s] #define PETSC_REPLACE_DIR_SEPARATOR '\\'
+[ 1463s] #define PETSC_SIGNAL_CAST  
+[ 1463s] #define PETSC_SIZEOF_ENUM 4
+[ 1463s] #define PETSC_SIZEOF_INT 4
+[ 1463s] #define PETSC_SIZEOF_LONG 8
+[ 1463s] #define PETSC_SIZEOF_LONG_LONG 8
+[ 1463s] #define PETSC_SIZEOF_SHORT 2
+[ 1463s] #define PETSC_SIZEOF_SIZE_T 8
+[ 1463s] #define PETSC_SIZEOF_VOID_P 8
+[ 1463s] #define PETSC_SLSUFFIX "so"
+[ 1463s] #define PETSC_UINTPTR_T uintptr_t
+[ 1463s] #define PETSC_UNUSED __attribute((unused))
+[ 1463s] #define PETSC_USE_AVX512_KERNELS 1
+[ 1463s] #define PETSC_USE_BACKWARD_LOOP 1
+[ 1463s] #define PETSC_USE_CTABLE 1
+[ 1463s] #define PETSC_USE_DMLANDAU_2D 1
+[ 1463s] #define PETSC_USE_INFO 1
+[ 1463s] #define PETSC_USE_ISATTY 1
+[ 1463s] #define PETSC_USE_LOG 1
+[ 1463s] #define PETSC_USE_MALLOC_COALESCED 1
+[ 1463s] #define PETSC_USE_PROC_FOR_SIZE 1
+[ 1463s] #define PETSC_USE_REAL_DOUBLE 1
+[ 1463s] #define PETSC_USE_SHARED_LIBRARIES 1
+[ 1463s] #define PETSC_USE_SINGLE_LIBRARY 1
+[ 1463s] #define PETSC_USE_SOCKET_VIEWER 1
+[ 1463s] #define PETSC_USE_VISIBILITY_C 1
+[ 1463s] #define PETSC_USE_VISIBILITY_CXX 1
+[ 1463s] #define PETSC_USING_64BIT_PTR 1
+[ 1463s] #define PETSC_USING_F2003 1
+[ 1463s] #define PETSC__BSD_SOURCE 1
+[ 1463s] #define PETSC__DEFAULT_SOURCE 1
+[ 1463s] #define PETSC__GNU_SOURCE 1
+[ 1463s] -----------------------------------------
+[ 1463s] Using C compile: mpicc -o .o -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  
+[ 1463s] C compiler version: gcc (SUSE Linux) 13.0.1 20230314 (experimental) [revision 42630fadbe248717859d61c0244c821c32b4e52c]
+[ 1463s] Using C++ compile: mpicxx -o .o -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -std=gnu++17 -fPIC  -I/home/abuild/rpmbuild/BUILD/petsc-3.18.4/include -I/home/abuild/rpmbuild/BUILD/petsc-3.18.4/arch-linux-cxx-opt/include -I/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/include   
+[ 1463s] C++ compiler version: g++ (SUSE Linux) 13.0.1 20230314 (experimental) [revision 42630fadbe248717859d61c0244c821c32b4e52c]
+[ 1464s] Using Fortran compile: mpif90 -o .o -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC    -I/home/abuild/rpmbuild/BUILD/petsc-3.18.4/include -I/home/abuild/rpmbuild/BUILD/petsc-3.18.4/arch-linux-cxx-opt/include -I/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/include   
+[ 1464s] Fortran compiler version: GNU Fortran (SUSE Linux) 13.0.1 20230314 (experimental) [revision 42630fadbe248717859d61c0244c821c32b4e52c]
+[ 1464s] Using C++ compiler to compile PETSc
+[ 1464s] -----------------------------------------
+[ 1464s] Using C/C++ linker: mpicxx
+[ 1464s] Using C/C++ flags: -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g
+[ 1465s] Using Fortran linker: mpif90
+[ 1465s] Using Fortran flags: -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC 
+[ 1465s] -----------------------------------------
+[ 1465s] Using system modules: gnu/13:openmpi/1.10.7:phdf5/1.12.2:scalapack/2.1.0:openblas/0.3.21
+[ 1466s] Using mpi.h: # 1 "/usr/lib/hpc/gnu13/mpi/openmpi/1.10.7/include/mpi.h" 1
+[ 1466s] -----------------------------------------
+[ 1466s] Using libraries: -L/home/abuild/rpmbuild/BUILD/petsc-3.18.4/arch-linux-cxx-opt/lib -L/home/abuild/rpmbuild/BUILD/petsc-3.18.4/arch-linux-cxx-opt/lib -L/usr/lib/hpc/gnu13/openmpi1/scalapack/2.1.0/lib64 -L/usr/lib/hpc/gnu13/openblas/0.3.21/lib64 -L/usr/lib/hpc/gnu13/openmpi1/hdf5/1.12.2/lib64 -L/usr/lib/hpc/gnu13/mpi/openmpi/1.10.7/lib64 -L/usr/lib64/gcc/riscv64-suse-linux/13 -L/usr/riscv64-suse-linux/lib -L/lib64/lp64d -L/usr/lib64/lp64d -lpetsc -lscalapack -lopenblas -lhdf5 -lm -ldl -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -lgfortran -lm -lgfortran -lm -lgcc_s -ldl
+[ 1466s] ------------------------------------------
+[ 1467s] Using mpiexec: /usr/lib/hpc/gnu13/mpi/openmpi/1.10.7/bin/mpiexec
+[ 1467s] ------------------------------------------
+[ 1467s] Using MAKE: /usr/bin/gmake
+[ 1467s] Using MAKEFLAGS: -j7 -l12.0 w -- PETSC_DIR=/home/abuild/rpmbuild/BUILD/petsc-3.18.4 PETSC_ARCH=arch-linux-cxx-opt
+[ 1467s] ==========================================
+[ 1468s] gmake[3]: Entering directory '/home/abuild/rpmbuild/BUILD/petsc-3.18.4'
+[ 1474s] /usr/bin/python3 ./config/gmakegen.py --petsc-arch=arch-linux-cxx-opt
+[ 1551s] /usr/bin/python3 /home/abuild/rpmbuild/BUILD/petsc-3.18.4/config/gmakegentest.py --petsc-dir=/home/abuild/rpmbuild/BUILD/petsc-3.18.4 --petsc-arch=arch-linux-cxx-opt --testdir=./arch-linux-cxx-opt/tests
+[ 1555s] gmake[3]: *** No rule to make target 'w'.  Stop.
+[ 1555s] gmake[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/petsc-3.18.4'
+[ 1555s] gmake[2]: *** [/home/abuild/rpmbuild/BUILD/petsc-3.18.4/lib/petsc/conf/rules:56: libs] Error 2
+[ 1555s] gmake[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/petsc-3.18.4'
+[ 1555s] [1;31m**************************ERROR*************************************
+[ 1555s]   Error during compile, check arch-linux-cxx-opt/lib/petsc/conf/make.log
+[ 1555s]   Send it and arch-linux-cxx-opt/lib/petsc/conf/configure.log to petsc-maint@mcs.anl.gov
+[ 1555s] ********************************************************************[0;39m[0;49m
+[ 1556s] gmake[1]: *** [makefile:34: all] Error 1
+[ 1556s] make: *** [GNUmakefile:9: all] Error 2
+[ 1556s] error: Bad exit status from /var/tmp/rpm-tmp.7DXJdN (%build)
+[ 1556s] 
+[ 1556s] RPM build warnings:
+[ 1556s]     /home/abuild/rpmbuild/SOURCES/petsc.spec: line 443: Macro %_pname defined but not used within scope
+[ 1556s] 
+[ 1556s] RPM build errors:
+[ 1556s]     Bad exit status from /var/tmp/rpm-tmp.7DXJdN (%build)
+[ 1556s] ### VM INTERACTION START ###
+[ 1556s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[ 1556s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[ 1556s] Powering off.
+[ 1557s] [ 1550.986318][T20708] reboot: Power down
+[ 1557s] ### VM INTERACTION END ###
+[ 1557s] 
+[ 1557s] lamb19 failed "build petsc.spec" at Wed Mar 22 09:58:12 UTC 2023.
+[ 1557s] 

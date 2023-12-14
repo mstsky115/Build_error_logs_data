@@ -1,0 +1,1393 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    1s] 
+[    1s] cloud122 started "build sigil.spec" at Thu Mar 16 22:03:31 UTC 2023.
+[    1s] 
+[    1s] Building sigil for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '3fd8b569c96bd36c6c063a089f786981'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/sigil.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/sigil.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/sigil.spec build ...
+[    2s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-libqt5 [596e91331783b9a2aeafb0ec628bdf63]
+[    7s] 
+[    7s] copying packages...
+[    8s] reordering...cycle: gio-branding-upstream -> libgio-2_0-0
+[    8s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    8s] cycle: libgio-2_0-0 -> glib2-tools
+[    8s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    8s] cycle: girepository-1_0 -> libgirepository-1_0-1
+[    8s]   breaking dependency libgirepository-1_0-1 -> girepository-1_0
+[    8s] cycle: libgstreamer-1_0-0 -> gstreamer
+[    8s]   breaking dependency libgstreamer-1_0-0 -> gstreamer
+[    8s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base
+[    8s]   breaking dependency gstreamer-plugins-base -> libgstallocators-1_0-0
+[    8s] cycle: gstreamer-plugins-base -> libgstapp-1_0-0
+[    8s]   breaking dependency gstreamer-plugins-base -> libgstapp-1_0-0
+[    8s] cycle: gstreamer-plugins-base -> libgstaudio-1_0-0
+[    8s]   breaking dependency gstreamer-plugins-base -> libgstaudio-1_0-0
+[    8s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base -> libgstgl-1_0-0
+[    8s]   breaking dependency gstreamer-plugins-base -> libgstgl-1_0-0
+[    8s] cycle: gstreamer-plugins-base -> libgstpbutils-1_0-0
+[    8s]   breaking dependency gstreamer-plugins-base -> libgstpbutils-1_0-0
+[    8s] cycle: gstreamer-plugins-base -> libgstriff-1_0-0
+[    8s]   breaking dependency gstreamer-plugins-base -> libgstriff-1_0-0
+[    8s] cycle: gstreamer-plugins-base -> libgsttag-1_0-0
+[    8s]   breaking dependency gstreamer-plugins-base -> libgsttag-1_0-0
+[    8s] cycle: gstreamer-plugins-base -> libgstvideo-1_0-0
+[    8s]   breaking dependency gstreamer-plugins-base -> libgstvideo-1_0-0
+[    8s] cycle: mozilla-nss -> libsoftokn3
+[    8s]   breaking dependency mozilla-nss -> libsoftokn3
+[    8s] done
+[    8s] Detected virtio-serial support
+[   35s] booting kvm...
+[   35s] ### VM INTERACTION START ###
+[   35s] Using virtio-serial support
+[   35s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   39s] ### VM INTERACTION END ###
+[   39s] 2nd stage started in virtual machine
+[   40s] machine type: riscv64
+[   40s] Linux version: 6.2.4-1-default #1 SMP PREEMPT_DYNAMIC Sat Mar 11 10:13:47 UTC 2023 (0532a55)
+[   40s] Increasing log level from now on...
+[   40s] [    5.151944][  T367] sysrq: Changing Loglevel
+[   40s] [    5.152152][  T367] sysrq: Loglevel set to 4
+[   40s] Enable sysrq operations
+[   41s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   41s] no label, UUID=50eb67a6-478c-41e4-9529-5638467b5c77
+[   41s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   41s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   41s] swapon /dev/vdb
+[   41s] WARNING: udev not running, creating extra device nodes
+[   42s] logging output to //.build.log...
+[   42s] processing recipe /.build-srcdir/sigil.spec ...
+[   42s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/sigil.spec build ...
+[   42s] initializing rpm db...
+[   43s] querying package ids...
+[   89s] [1/501] preinstalled Mesa-23.0.0-354.1
+[   89s] [2/501] preinstalled Mesa-KHR-devel-23.0.0-354.1
+[   89s] [3/501] preinstalled Mesa-dri-23.0.0-354.1
+[   89s] [4/501] preinstalled Mesa-libEGL-devel-23.0.0-354.1
+[   89s] [5/501] preinstalled Mesa-libEGL1-23.0.0-354.1
+[   89s] [6/501] preinstalled Mesa-libGL-devel-23.0.0-354.1
+[   89s] [7/501] preinstalled Mesa-libGL1-23.0.0-354.1
+[   89s] [8/501] preinstalled Mesa-libglapi0-23.0.0-354.1
+[   89s] [9/501] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   89s] [10/501] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   89s] [11/501] preinstalled attr-2.5.1-1.1
+[   89s] [12/501] preinstalled bash-5.2.15-8.1
+[   89s] [13/501] preinstalled bash-sh-5.2.15-8.1
+[   89s] [14/501] preinstalled binutils-2.40-2.1
+[   89s] [15/501] cumulate boost-license1_81_0-1.81.0-2.1
+[   89s] [16/501] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   89s] [17/501] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   89s] [18/501] preinstalled build-mkbaselibs-20230228-1.1
+[   89s] [19/501] preinstalled bzip2-1.0.8-5.1
+[   89s] [20/501] preinstalled chkstat-1599_20230217-1.1
+[   89s] [21/501] preinstalled cmake-3.25.2-1.1
+[   89s] [22/501] preinstalled cmake-mini-3.25.2-1.2
+[   89s] [23/501] preinstalled compat-usrmerge-build-84.87-5.1
+[   89s] [24/501] preinstalled compat-usrmerge-tools-84.87-5.1
+[   89s] [25/501] preinstalled coreutils-9.1-5.1
+[   89s] [26/501] preinstalled cpio-2.13-5.1
+[   89s] [27/501] preinstalled cpp-12-2.1
+[   89s] [28/501] preinstalled cpp12-12.2.1+git749-4.1
+[   89s] [29/501] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   89s] [30/501] preinstalled cups-config-2.4.2-4.2
+[   89s] [31/501] preinstalled dbus-1-common-1.14.6-2.1
+[   89s] [32/501] cumulate dbus-1-daemon-1.14.6-2.1
+[   89s] [33/501] cumulate dbus-1-tools-1.14.6-2.1
+[   89s] [34/501] preinstalled debugedit-5.0-5.1
+[   89s] [35/501] cumulate desktop-file-utils-0.26-5.1
+[   89s] [36/501] preinstalled diffutils-3.9-1.1
+[   89s] [37/501] cumulate dos2unix-7.4.4-1.1
+[   89s] [38/501] preinstalled dwz-0.15-2.1
+[   89s] [39/501] preinstalled elfutils-0.189-2.1
+[   89s] [40/501] cumulate fdupes-2.2.1-1.1
+[   89s] [41/501] cumulate ffmpeg-5-mini-libs-5.1.2-11.1
+[   89s] [42/501] preinstalled file-5.44-1.2
+[   89s] [43/501] preinstalled file-magic-5.44-1.2
+[   89s] [44/501] preinstalled filesystem-84.87-12.1
+[   89s] [45/501] preinstalled fillup-1.42-279.1
+[   89s] [46/501] preinstalled findutils-4.9.0-2.1
+[   89s] [47/501] preinstalled fontconfig-2.14.2-1.1
+[   89s] [48/501] preinstalled gawk-5.2.1-2.1
+[   89s] [49/501] preinstalled gcc-12-2.1
+[   89s] [50/501] preinstalled gcc-PIE-12-2.1
+[   89s] [51/501] preinstalled gcc-c++-12-2.1
+[   89s] [52/501] preinstalled gcc12-12.2.1+git749-4.1
+[   89s] [53/501] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   89s] [54/501] preinstalled gcc12-c++-12.2.1+git749-4.1
+[   89s] [55/501] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   89s] [56/501] preinstalled gettext-tools-mini-0.21.1-1.1
+[   89s] [57/501] preinstalled glibc-2.37-1.1
+[   89s] [58/501] preinstalled glibc-devel-2.37-1.1
+[   89s] [59/501] preinstalled glibc-locale-base-2.37-1.1
+[   89s] [60/501] preinstalled grep-3.9-1.1
+[   89s] [61/501] preinstalled gzip-1.12-3.1
+[   89s] [62/501] preinstalled kernel-obs-build-6.2.4-1.1
+[   89s] [63/501] preinstalled krb5-mini-1.20.1-4.1
+[   89s] [64/501] preinstalled libICE6-1.1.1-1.1
+[   89s] [65/501] preinstalled libLLVM15-15.0.7-2.1
+[   89s] [66/501] cumulate libQt5Bluetooth5-5.15.8+kde5-1.1
+[   89s] [67/501] preinstalled libQt5Concurrent-devel-5.15.8+kde160-2.1
+[   89s] [68/501] preinstalled libQt5Concurrent5-5.15.8+kde160-2.1
+[   89s] [69/501] preinstalled libQt5Core-devel-5.15.8+kde160-2.1
+[   89s] [70/501] preinstalled libQt5Core5-5.15.8+kde160-2.1
+[   89s] [71/501] preinstalled libQt5DBus-devel-5.15.8+kde160-2.1
+[   89s] [72/501] preinstalled libQt5DBus5-5.15.8+kde160-2.1
+[   89s] [73/501] cumulate libQt5Designer5-5.15.8+kde1-1.1
+[   89s] [74/501] preinstalled libQt5Gui-devel-5.15.8+kde160-2.1
+[   89s] [75/501] preinstalled libQt5Gui5-5.15.8+kde160-2.1
+[   89s] [76/501] cumulate libQt5Help5-5.15.8+kde1-1.1
+[   89s] [77/501] preinstalled libQt5Network-devel-5.15.8+kde160-2.1
+[   89s] [78/501] preinstalled libQt5Network5-5.15.8+kde160-2.1
+[   89s] [79/501] cumulate libQt5Nfc5-5.15.8+kde5-1.1
+[   89s] [80/501] preinstalled libQt5OpenGL-devel-5.15.8+kde160-2.1
+[   89s] [81/501] preinstalled libQt5OpenGL5-5.15.8+kde160-2.1
+[   89s] [82/501] preinstalled libQt5PlatformHeaders-devel-5.15.8+kde160-2.1
+[   89s] [83/501] cumulate libQt5Positioning5-5.15.8+kde3-2.1
+[   89s] [84/501] preinstalled libQt5PrintSupport-devel-5.15.8+kde160-2.1
+[   89s] [85/501] preinstalled libQt5PrintSupport5-5.15.8+kde160-2.1
+[   89s] [86/501] cumulate libQt5SerialPort5-5.15.8+kde0-1.1
+[   89s] [87/501] preinstalled libQt5Sql-devel-5.15.8+kde160-2.1
+[   89s] [88/501] preinstalled libQt5Sql5-5.15.8+kde160-2.1
+[   89s] [89/501] cumulate libQt5Svg5-5.15.8+kde8-1.1
+[   89s] [90/501] preinstalled libQt5Test-devel-5.15.8+kde160-2.1
+[   89s] [91/501] preinstalled libQt5Test5-5.15.8+kde160-2.1
+[   89s] [92/501] cumulate libQt5TextToSpeech5-5.15.8+kde1-1.2
+[   89s] [93/501] cumulate libQt5WebSockets5-5.15.8+kde3-1.1
+[   89s] [94/501] preinstalled libQt5Widgets-devel-5.15.8+kde160-2.1
+[   89s] [95/501] preinstalled libQt5Widgets5-5.15.8+kde160-2.1
+[   89s] [96/501] cumulate libQt5X11Extras5-5.15.8+kde0-1.1
+[   89s] [97/501] preinstalled libQt5Xml-devel-5.15.8+kde160-2.1
+[   89s] [98/501] preinstalled libQt5Xml5-5.15.8+kde160-2.1
+[   89s] [99/501] cumulate libQt5XmlPatterns5-5.15.8+kde0-1.1
+[   89s] [100/501] preinstalled libSM6-1.2.4-2.1
+[   89s] [101/501] preinstalled libX11-6-1.8.1-4.1
+[   89s] [102/501] preinstalled libX11-data-1.8.1-4.1
+[   89s] [103/501] preinstalled libX11-devel-1.8.1-4.1
+[   89s] [104/501] preinstalled libX11-xcb1-1.8.1-4.1
+[   89s] [105/501] preinstalled libXau-devel-1.0.11-1.1
+[   89s] [106/501] preinstalled libXau6-1.0.11-1.1
+[   89s] [107/501] cumulate libXcomposite1-0.4.6-1.1
+[   89s] [108/501] cumulate libXdamage1-1.1.6-1.2
+[   89s] [109/501] preinstalled libXext-devel-1.3.5-1.1
+[   89s] [110/501] preinstalled libXext6-1.3.5-1.1
+[   89s] [111/501] preinstalled libXfixes3-6.0.0-2.1
+[   89s] [112/501] cumulate libXft2-2.3.7-1.1
+[   89s] [113/501] cumulate libXi6-1.8-1.1
+[   89s] [114/501] cumulate libXmuu1-1.1.4-1.1
+[   89s] [115/501] preinstalled libXrandr-devel-1.5.3-1.1
+[   89s] [116/501] preinstalled libXrandr2-1.5.3-1.1
+[   89s] [117/501] preinstalled libXrender-devel-0.9.11-1.1
+[   89s] [118/501] preinstalled libXrender1-0.9.11-1.1
+[   89s] [119/501] cumulate libXss1-1.2.4-1.1
+[   89s] [120/501] cumulate libXtst6-1.2.4-1.1
+[   89s] [121/501] cumulate libXv1-1.0.12-1.1
+[   89s] [122/501] preinstalled libXxf86vm1-1.1.5-1.1
+[   89s] [123/501] preinstalled libacl1-2.3.1-2.1
+[   89s] [124/501] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   89s] [125/501] preinstalled libasan8-13.0.1+git5428-6.1
+[   89s] [126/501] preinstalled libasm1-0.189-2.1
+[   89s] [127/501] cumulate libasound2-1.2.8-1.1
+[   89s] [128/501] preinstalled libatomic1-13.0.1+git5428-6.1
+[   89s] [129/501] preinstalled libattr1-2.5.1-1.1
+[   89s] [130/501] preinstalled libaudit1-3.0.9-1.1
+[   89s] [131/501] preinstalled libavahi-client3-0.8-22.3
+[   89s] [132/501] preinstalled libavahi-common3-0.8-22.3
+[   89s] [133/501] cumulate libblkid-devel-2.38.1-9.1
+[   89s] [134/501] preinstalled libblkid1-2.38.1-9.1
+[   89s] [135/501] preinstalled libbrotlicommon1-1.0.9-3.1
+[   89s] [136/501] preinstalled libbrotlidec1-1.0.9-3.1
+[   89s] [137/501] preinstalled libbz2-1-1.0.8-5.1
+[   89s] [138/501] preinstalled libcap-ng0-0.8.3-1.1
+[   89s] [139/501] preinstalled libcap2-2.67-1.1
+[   89s] [140/501] cumulate libcdda_interface0-3.10.2-28.2
+[   89s] [141/501] preinstalled libcom_err2-1.46.5-4.1
+[   89s] [142/501] preinstalled libcrypt1-4.4.33-1.1
+[   89s] [143/501] preinstalled libctf-nobfd0-2.40-2.1
+[   89s] [144/501] preinstalled libctf0-2.40-2.1
+[   89s] [145/501] preinstalled libcups2-2.4.2-4.2
+[   89s] [146/501] cumulate libdatrie1-0.2.13-1.1
+[   89s] [147/501] preinstalled libdb-4_8-4.8.30-40.1
+[   89s] [148/501] preinstalled libdbus-1-3-1.14.6-2.1
+[   89s] [149/501] preinstalled libdouble-conversion3-3.2.1-1.1
+[   89s] [150/501] preinstalled libdrm-devel-2.4.115-2.1
+[   89s] [151/501] preinstalled libdrm2-2.4.115-2.1
+[   89s] [152/501] preinstalled libdrm_amdgpu1-2.4.115-2.1
+[   89s] [153/501] preinstalled libdrm_intel1-2.4.115-2.1
+[   89s] [154/501] preinstalled libdrm_nouveau2-2.4.115-2.1
+[   89s] [155/501] preinstalled libdrm_radeon1-2.4.115-2.1
+[   89s] [156/501] preinstalled libdw1-0.189-2.1
+[   89s] [157/501] preinstalled libeconf0-0.5.1-1.1
+[   89s] [158/501] preinstalled libedit0-20210910.3.1-1.1
+[   89s] [159/501] preinstalled libelf1-0.189-2.1
+[   89s] [160/501] preinstalled libevdev2-1.13.0-1.1
+[   89s] [161/501] cumulate libevent-2_1-7-2.1.12-3.2
+[   89s] [162/501] preinstalled libexpat1-2.5.0-2.1
+[   89s] [163/501] preinstalled libfdisk1-2.38.1-9.1
+[   89s] [164/501] preinstalled libffi-devel-3.4.4-1.1
+[   89s] [165/501] preinstalled libffi8-3.4.4-1.1
+[   89s] [166/501] preinstalled libfontconfig1-2.14.2-1.1
+[   89s] [167/501] cumulate libfreebl3-3.88.1-1.1
+[   89s] [168/501] preinstalled libfreetype6-2.13.0-1.1
+[   89s] [169/501] cumulate libfribidi0-1.0.12-1.1
+[   89s] [170/501] preinstalled libgbm1-23.0.0-354.1
+[   89s] [171/501] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   89s] [172/501] preinstalled libgcrypt20-1.10.1-2.1
+[   89s] [173/501] preinstalled libgdbm6-1.23-1.1
+[   89s] [174/501] preinstalled libgdbm_compat4-1.23-1.1
+[   89s] [175/501] preinstalled libglib-2_0-0-2.74.6-1.1
+[   89s] [176/501] preinstalled libglvnd-1.6.0-1.1
+[   89s] [177/501] preinstalled libglvnd-devel-1.6.0-1.1
+[   89s] [178/501] cumulate libgmodule-2_0-0-2.74.6-1.1
+[   89s] [179/501] preinstalled libgmp10-6.2.1-4.1
+[   89s] [180/501] preinstalled libgnutls30-3.7.9-1.1
+[   89s] [181/501] preinstalled libgobject-2_0-0-2.74.6-1.1
+[   89s] [182/501] preinstalled libgomp1-13.0.1+git5428-6.1
+[   89s] [183/501] preinstalled libgpg-error0-1.46-1.1
+[   89s] [184/501] cumulate libgraphene-1_0-0-1.10.8-1.1
+[   89s] [185/501] preinstalled libgraphite2-3-1.3.14-3.1
+[   89s] [186/501] cumulate libgthread-2_0-0-2.74.6-1.1
+[   89s] [187/501] preinstalled libgudev-1_0-0-237-2.1
+[   89s] [188/501] cumulate libharfbuzz-subset0-7.1.0-1.1
+[   89s] [189/501] preinstalled libharfbuzz0-7.1.0-1.1
+[   89s] [190/501] preinstalled libhogweed6-3.8.1-2.1
+[   89s] [191/501] cumulate libhunspell-1_7-0-1.7.2-1.1
+[   89s] [192/501] preinstalled libicu72-72.1-2.1
+[   89s] [193/501] preinstalled libicu72-ledata-72.1-2.1
+[   89s] [194/501] preinstalled libidn2-0-2.3.4-1.1
+[   89s] [195/501] cumulate libimagequant0-2.18.0-1.1
+[   89s] [196/501] preinstalled libinput10-1.22.1-1.1
+[   89s] [197/501] preinstalled libisl23-0.25-1.1
+[   89s] [198/501] cumulate libjack0-1.9.21-1.3
+[   89s] [199/501] cumulate libjbig2-2.1-4.1
+[   89s] [200/501] preinstalled libjitterentropy3-3.4.1-1.1
+[   89s] [201/501] preinstalled libjpeg8-8.2.2-74.1
+[   89s] [202/501] preinstalled libkeyutils1-1.6.3-5.1
+[   89s] [203/501] cumulate liblcms2-2-2.14-3.3
+[   89s] [204/501] preinstalled liblua5_4-5-5.4.4-8.1
+[   89s] [205/501] preinstalled liblzma5-5.4.1-2.1
+[   89s] [206/501] preinstalled libmagic1-5.44-1.2
+[   89s] [207/501] cumulate libminizip1-1.2.13-3.1
+[   89s] [208/501] preinstalled libmount1-2.38.1-9.1
+[   89s] [209/501] preinstalled libmpc3-1.3.1-1.2
+[   89s] [210/501] preinstalled libmpdec3-2.5.1-2.1
+[   89s] [211/501] preinstalled libmpfr6-4.2.0-1.1
+[   89s] [212/501] preinstalled libmtdev1-1.1.6-1.1
+[   89s] [213/501] preinstalled libncurses6-6.4.20230311-8.1
+[   89s] [214/501] preinstalled libnettle8-3.8.1-2.1
+[   89s] [215/501] cumulate libnghttp2-14-1.51.0-7.2
+[   89s] [216/501] cumulate libogg0-1.3.5-1.1
+[   89s] [217/501] cumulate libonig5-6.9.8-1.1
+[   89s] [218/501] cumulate libopenjp2-7-2.5.0-3.1
+[   89s] [219/501] preinstalled libopenssl3-3.0.8-2.1
+[   89s] [220/501] cumulate libopus0-1.3.1-3.2
+[   89s] [221/501] cumulate liborc-0_4-0-0.4.33-1.1
+[   89s] [222/501] preinstalled libp11-kit0-0.24.1-2.1
+[   89s] [223/501] preinstalled libpciaccess-devel-0.17-1.1
+[   89s] [224/501] preinstalled libpciaccess0-0.17-1.1
+[   89s] [225/501] cumulate libpcre1-8.45-2.1
+[   89s] [226/501] cumulate libpcre16-0-8.45-2.1
+[   89s] [227/501] preinstalled libpcre2-16-0-10.42-3.2
+[   89s] [228/501] cumulate libpcre2-32-0-10.42-3.2
+[   89s] [229/501] preinstalled libpcre2-8-0-10.42-3.2
+[   89s] [230/501] cumulate libpcre2-posix3-10.42-3.2
+[   89s] [231/501] cumulate libpixman-1-0-0.42.2-1.1
+[   89s] [232/501] preinstalled libpkgconf3-1.8.0-2.1
+[   89s] [233/501] preinstalled libpng16-16-1.6.39-2.1
+[   89s] [234/501] preinstalled libpopt0-1.19-1.1
+[   90s] [235/501] preinstalled libproxy1-0.4.18-1.1
+[   90s] [236/501] cumulate libpsl5-0.21.2-1.1
+[   90s] [237/501] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   90s] [238/501] cumulate libqt5-linguist-5.15.8+kde1-1.1
+[   90s] [239/501] preinstalled libqt5-qtbase-common-devel-5.15.8+kde160-2.1
+[   90s] [240/501] preinstalled libqt5-qtbase-devel-5.15.8+kde160-2.1
+[   90s] [241/501] cumulate libre2-10-20230301-53.1
+[   90s] [242/501] preinstalled libreadline8-8.2-2.1
+[   90s] [243/501] preinstalled librhash0-1.4.3-1.1
+[   90s] [244/501] preinstalled librpmbuild9-4.18.0-3.2
+[   90s] [245/501] cumulate libsasl2-3-2.1.28-4.2
+[   90s] [246/501] preinstalled libseccomp2-2.5.4-2.1
+[   90s] [247/501] preinstalled libselinux1-3.5-1.1
+[   90s] [248/501] preinstalled libsemanage-conf-3.5-1.1
+[   90s] [249/501] preinstalled libsemanage2-3.5-1.1
+[   90s] [250/501] cumulate libsepol-devel-3.5-1.1
+[   90s] [251/501] preinstalled libsepol2-3.5-1.1
+[   90s] [252/501] preinstalled libsmartcols1-2.38.1-9.1
+[   90s] [253/501] cumulate libsnappy1-1.1.9-2.1
+[   90s] [254/501] cumulate libspeex1-1.2.1-1.1
+[   90s] [255/501] cumulate libsqlite3-0-3.41.0-2.1
+[   90s] [256/501] cumulate libssh-config-0.10.4-1.2
+[   90s] [257/501] cumulate libstdc++-devel-12-2.1
+[   90s] [258/501] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   90s] [259/501] preinstalled libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   90s] [260/501] preinstalled libsubid4-4.13-4.1
+[   90s] [261/501] preinstalled libsystemd0-mini-252.7-2.1
+[   90s] [262/501] preinstalled libtasn1-6-4.19.0-1.1
+[   90s] [263/501] cumulate libthai-data-0.1.29-1.1
+[   90s] [264/501] cumulate libtheoradec1-1.1.1-30.1
+[   90s] [265/501] preinstalled libts0-1.22-1.1
+[   90s] [266/501] preinstalled libubsan1-13.0.1+git5428-6.1
+[   90s] [267/501] preinstalled libudev-mini1-252.7-2.1
+[   90s] [268/501] preinstalled libunistring5-1.1-1.1
+[   90s] [269/501] cumulate libunwind8-1.6.2-4.1
+[   90s] [270/501] cumulate libusb-1_0-0-1.0.26-1.1
+[   90s] [271/501] preinstalled libutempter0-1.2.0-3.2
+[   90s] [272/501] preinstalled libuuid1-2.38.1-9.1
+[   90s] [273/501] preinstalled libuv1-1.44.2-3.1
+[   90s] [274/501] preinstalled libverto1-0.3.2-1.1
+[   90s] [275/501] cumulate libvisual-0_4-0-0.4.0-204.1
+[   90s] [276/501] cumulate libvpx8-1.13.0-1.1
+[   90s] [277/501] preinstalled libvulkan1-1.3.239.0-1.1
+[   90s] [278/501] preinstalled libwacom-data-2.5.0-1.1
+[   90s] [279/501] preinstalled libwacom9-2.5.0-1.1
+[   90s] [280/501] preinstalled libwayland-client0-1.21.0-4.2
+[   90s] [281/501] preinstalled libwayland-cursor0-1.21.0-4.2
+[   90s] [282/501] preinstalled libwayland-egl1-1.21.0-4.2
+[   90s] [283/501] preinstalled libwayland-server0-1.21.0-4.2
+[   90s] [284/501] cumulate libwebp7-1.2.4-1.2
+[   90s] [285/501] preinstalled libxcb-composite0-1.15-2.1
+[   90s] [286/501] preinstalled libxcb-damage0-1.15-2.1
+[   90s] [287/501] preinstalled libxcb-devel-1.15-2.1
+[   90s] [288/501] preinstalled libxcb-dpms0-1.15-2.1
+[   90s] [289/501] preinstalled libxcb-dri2-0-1.15-2.1
+[   90s] [290/501] preinstalled libxcb-dri3-0-1.15-2.1
+[   90s] [291/501] preinstalled libxcb-glx0-1.15-2.1
+[   90s] [292/501] preinstalled libxcb-icccm4-0.4.2-1.1
+[   90s] [293/501] preinstalled libxcb-image0-0.4.1-1.1
+[   90s] [294/501] preinstalled libxcb-keysyms1-0.4.1-1.1
+[   90s] [295/501] preinstalled libxcb-present0-1.15-2.1
+[   90s] [296/501] preinstalled libxcb-randr0-1.15-2.1
+[   90s] [297/501] preinstalled libxcb-record0-1.15-2.1
+[   90s] [298/501] preinstalled libxcb-render-util0-0.3.10-1.1
+[   90s] [299/501] preinstalled libxcb-render0-1.15-2.1
+[   90s] [300/501] preinstalled libxcb-res0-1.15-2.1
+[   90s] [301/501] preinstalled libxcb-screensaver0-1.15-2.1
+[   90s] [302/501] preinstalled libxcb-shape0-1.15-2.1
+[   90s] [303/501] preinstalled libxcb-shm0-1.15-2.1
+[   90s] [304/501] preinstalled libxcb-sync1-1.15-2.1
+[   90s] [305/501] preinstalled libxcb-util1-0.4.1-1.1
+[   90s] [306/501] preinstalled libxcb-xf86dri0-1.15-2.1
+[   90s] [307/501] preinstalled libxcb-xfixes0-1.15-2.1
+[   90s] [308/501] preinstalled libxcb-xinerama0-1.15-2.1
+[   90s] [309/501] preinstalled libxcb-xinput0-1.15-2.1
+[   90s] [310/501] preinstalled libxcb-xkb1-1.15-2.1
+[   90s] [311/501] preinstalled libxcb-xtest0-1.15-2.1
+[   90s] [312/501] preinstalled libxcb-xv0-1.15-2.1
+[   90s] [313/501] preinstalled libxcb-xvmc0-1.15-2.1
+[   90s] [314/501] preinstalled libxcb1-1.15-2.1
+[   90s] [315/501] preinstalled libxcrypt-devel-4.4.33-1.1
+[   90s] [316/501] preinstalled libxkbcommon-x11-0-1.5.0-1.1
+[   90s] [317/501] preinstalled libxkbcommon0-1.5.0-1.1
+[   90s] [318/501] preinstalled libxml2-2-2.10.3-3.1
+[   90s] [319/501] cumulate libxml2-tools-2.10.3-3.1
+[   90s] [320/501] preinstalled libxshmfence1-1.3.2-1.1
+[   90s] [321/501] cumulate libxslt1-1.1.37-1.1
+[   90s] [322/501] preinstalled libz1-1.2.13-3.1
+[   90s] [323/501] cumulate libzio1-1.08-2.1
+[   90s] [324/501] preinstalled libzstd1-1.5.4-2.1
+[   90s] [325/501] preinstalled linux-glibc-devel-6.2-1.1
+[   90s] [326/501] preinstalled login_defs-4.13-4.1
+[   90s] [327/501] preinstalled lua54-5.4.4-8.1
+[   90s] [328/501] preinstalled make-4.4.1-1.1
+[   90s] [329/501] cumulate mozilla-nspr-4.35-1.1
+[   90s] [330/501] preinstalled ncurses-utils-6.4.20230311-8.1
+[   90s] [331/501] cumulate p11-kit-0.24.1-2.1
+[   90s] [332/501] cumulate p11-kit-tools-0.24.1-2.1
+[   90s] [333/501] preinstalled pam-1.5.2-12.1
+[   90s] [334/501] preinstalled patch-2.7.6-6.1
+[   90s] [335/501] preinstalled perl-5.36.0-4.1
+[   90s] [336/501] preinstalled perl-base-5.36.0-4.1
+[   90s] [337/501] preinstalled permissions-1599_20230217-1.1
+[   90s] [338/501] preinstalled permissions-config-1599_20230217-1.1
+[   90s] [339/501] preinstalled pkgconf-1.8.0-2.1
+[   90s] [340/501] preinstalled pkgconf-m4-1.8.0-2.1
+[   90s] [341/501] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   90s] [342/501] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   90s] [343/501] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   90s] [344/501] preinstalled python-rpm-macros-20230304.050c1a4-1.1
+[   90s] [345/501] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   90s] [346/501] preinstalled python310-base-3.10.10-2.1
+[   90s] [347/501] cumulate python310-cssselect-1.2.0-1.2
+[   90s] [348/501] cumulate python310-cssutils-2.6.0-1.2
+[   90s] [349/501] cumulate python310-devel-3.10.10-2.1
+[   90s] [350/501] cumulate python310-idna-3.4-1.2
+[   90s] [351/501] cumulate python310-olefile-0.46-3.5
+[   90s] [352/501] preinstalled python310-packaging-23.0-2.1
+[   90s] [353/501] cumulate python310-pycparser-2.21-1.5
+[   90s] [354/501] cumulate python310-qt5-sip-12.11.1-1.2
+[   90s] [355/501] cumulate python310-regex-2022.10.31-1.2
+[   90s] [356/501] cumulate python310-six-1.16.0-2.5
+[   90s] [357/501] cumulate python310-webencodings-0.5.1-4.9
+[   90s] [358/501] preinstalled qemu-linux-user-7.1.0-53.1
+[   90s] [359/501] preinstalled rpm-4.18.0-3.2
+[   90s] [360/501] preinstalled rpm-build-4.18.0-3.2
+[   90s] [361/501] preinstalled rpm-build-perl-4.18.0-3.2
+[   90s] [362/501] preinstalled rpm-config-SUSE-20220926-1.1
+[   90s] [363/501] preinstalled rpmlint-mini-2.4.0+git20230307.1e9f1e0-9.16
+[   90s] [364/501] preinstalled rpmlint-strict-2.4.0+git20230307.1e9f1e0-1.1
+[   90s] [365/501] preinstalled sed-4.9-2.1
+[   90s] [366/501] preinstalled shadow-4.13-4.1
+[   90s] [367/501] cumulate shared-mime-info-2.2-1.1
+[   90s] [368/501] preinstalled system-group-hardware-20170617-24.1
+[   90s] [369/501] preinstalled system-user-lp-20170617-24.1
+[   90s] [370/501] preinstalled system-user-root-20190513-2.1
+[   90s] [371/501] preinstalled systemd-rpm-macros-19-1.1
+[   90s] [372/501] preinstalled sysuser-shadow-3.1-5.1
+[   90s] [373/501] preinstalled tar-1.34-10.1
+[   90s] [374/501] cumulate tcl-8.6.13-4.1
+[   90s] [375/501] preinstalled terminfo-base-6.4.20230311-8.1
+[   90s] [376/501] preinstalled timezone-2022g-3.1
+[   90s] [377/501] cumulate unzip-6.00-41.1
+[   90s] [378/501] preinstalled update-alternatives-1.21.8-1.1
+[   90s] [379/501] preinstalled util-linux-2.38.1-9.1
+[   90s] [380/501] preinstalled vulkan-devel-1.3.239.0-1.1
+[   90s] [381/501] preinstalled vulkan-headers-1.3.239.0-1.1
+[   90s] [382/501] preinstalled wayland-devel-1.21.0-4.2
+[   90s] [383/501] preinstalled which-2.21-5.1
+[   90s] [384/501] preinstalled xkeyboard-config-2.38-1.1
+[   90s] [385/501] preinstalled xorgproto-devel-2022.2-2.1
+[   90s] [386/501] preinstalled xz-5.4.1-2.1
+[   90s] [387/501] cumulate xz-devel-5.4.1-2.1
+[   90s] [388/501] cumulate zlib-devel-1.2.13-3.1
+[   90s] [389/501] cumulate alts-1.2+3.b848aad-3.1
+[   90s] [390/501] cumulate info-7.0.2-1.1
+[   90s] [391/501] cumulate libFLAC12-1.4.2-2.1
+[   90s] [392/501] cumulate libQt5DesignerComponents5-5.15.8+kde1-1.1
+[   90s] [393/501] cumulate libQt5Sql5-sqlite-5.15.8+kde160-2.1
+[   90s] [394/501] cumulate libcairo2-1.17.6-1.1
+[   90s] [395/501] cumulate libcdda_paranoia0-3.10.2-28.2
+[   90s] [396/501] cumulate libexslt0-1.1.37-1.1
+[   90s] [397/501] cumulate libjq1-1.6-3.1
+[   90s] [398/501] cumulate libldap2-2.6.3-3.2
+[   90s] [399/501] cumulate libpcrecpp0-8.45-2.1
+[   90s] [400/501] cumulate libpcreposix0-8.45-2.1
+[   90s] [401/501] cumulate libqt5-linguist-devel-5.15.8+kde1-1.1
+[   90s] [402/501] cumulate libqt5-qtsvg-devel-5.15.8+kde8-1.1
+[   90s] [403/501] cumulate libqt5-qtxmlpatterns-devel-5.15.8+kde0-1.1
+[   90s] [404/501] cumulate libssh4-0.10.4-1.2
+[   90s] [405/501] cumulate libtheoraenc1-1.1.1-30.1
+[   90s] [406/501] cumulate libtiff6-4.5.0-3.1
+[   90s] [407/501] cumulate libusb-1_0-devel-1.0.26-1.1
+[   90s] [408/501] cumulate libvorbis0-1.3.7-3.1
+[   90s] [409/501] cumulate libwebpdemux2-1.2.4-1.2
+[   90s] [410/501] cumulate libwebpmux3-1.2.4-1.2
+[   90s] [411/501] cumulate mozilla-nss-certs-3.88.1-1.1
+[   90s] [412/501] cumulate python310-3.10.10-2.1
+[   90s] [413/501] cumulate python310-cffi-1.15.1-3.2
+[   90s] [414/501] cumulate update-desktop-files-84.87-6.1
+[   90s] [415/501] cumulate xhost-1.0.9-1.1
+[   90s] [416/501] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   90s] [417/501] cumulate hunspell-devel-1.7.2-1.1
+[   90s] [418/501] cumulate libboost_headers1_81_0-devel-1.81.0-2.1
+[   90s] [419/501] cumulate libportaudio2-190700_20210406-1.1
+[   90s] [420/501] cumulate libthai0-0.1.29-1.1
+[   90s] [421/501] cumulate minizip-devel-1.2.13-3.1
+[   90s] [422/501] cumulate python310-html5lib-1.1-3.2
+[   90s] [423/501] cumulate libxml2-devel-2.10.3-3.1
+[   90s] [424/501] cumulate pcre2-devel-10.42-3.2
+[   90s] [425/501] cumulate boost-devel-1.81.0-1.1
+[   90s] [426/501] cumulate ca-certificates-mozilla-2.60-1.2
+[   90s] [427/501] cumulate jq-1.6-3.1
+[   90s] [428/501] cumulate libQtQuick5-5.15.8+kde22-2.1
+[   90s] [429/501] cumulate libgpg-error-devel-1.46-1.1
+[   90s] [430/501] cumulate libvorbisenc2-1.3.7-3.1
+[   90s] [431/501] cumulate python310-chardet-5.1.0-2.2
+[   90s] [432/501] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   90s] [433/501] cumulate libqt5-qttools-qhelpgenerator-5.15.8+kde1-1.1
+[   90s] [434/501] cumulate libselinux-devel-3.5-1.1
+[   90s] [435/501] cumulate libxslt-tools-1.1.37-1.1
+[   90s] [436/501] cumulate python310-cryptography-39.0.2-1.1
+[   90s] [437/501] cumulate dbus-1-1.14.6-2.1
+[   90s] [438/501] cumulate python310-lxml-4.9.2-3.1
+[   90s] [439/501] cumulate libcurl4-7.88.1-1.1
+[   90s] [440/501] cumulate tk-8.6.13-1.1
+[   90s] [441/501] cumulate pcre-devel-8.45-2.1
+[   90s] [442/501] cumulate python310-Pillow-9.4.0-1.3
+[   90s] [443/501] cumulate libQt5QuickTemplates2-5-5.15.8+kde7-1.1
+[   90s] [444/501] cumulate libQt5WebChannel5-5.15.8+kde3-1.1
+[   90s] [445/501] cumulate libgcrypt-devel-1.10.1-2.1
+[   90s] [446/501] cumulate libqt5-qtdeclarative-tools-5.15.8+kde22-2.1
+[   90s] [447/501] cumulate libxerces-c-3_2-3.2.4-1.2
+[   90s] [448/501] cumulate python310-css-parser-1.0.8-1.2
+[   90s] [449/501] cumulate qml-autoreqprov-1.1-2.1
+[   90s] [450/501] cumulate qmlpluginexports-qt5-1.0-1.5
+[   90s] [451/501] cumulate qtdeclarative-imports-provides-qt5-1.0-1.10
+[   90s] [452/501] cumulate libQt5PositioningQuick5-5.15.8+kde3-2.1
+[   90s] [453/501] cumulate libmount-devel-2.38.1-9.1
+[   90s] [454/501] cumulate python310-certifi-2022.9.24-1.2
+[   90s] [455/501] cumulate python310-tk-3.10.10-2.1
+[   90s] [456/501] cumulate libsndfile1-1.2.0-1.1
+[   90s] [457/501] cumulate libpulse0-16.1-2.1
+[   90s] [458/501] cumulate libxerces-c-devel-3.2.4-1.2
+[   90s] [459/501] cumulate libQt5QuickControls2-5-5.15.8+kde7-1.1
+[   90s] [460/501] cumulate libqt5-qtdeclarative-devel-5.15.8+kde22-2.1
+[   90s] [461/501] cumulate libqt5-qtgraphicaleffects-5.15.8+kde0-1.1
+[   90s] [462/501] cumulate libQt5Location5-5.15.8+kde3-2.1
+[   90s] [463/501] cumulate libxslt-devel-1.1.37-1.1
+[   90s] [464/501] cumulate python310-urllib3-1.26.14-1.2
+[   90s] [465/501] cumulate libpulse-mainloop-glib0-16.1-2.1
+[   90s] [466/501] cumulate python310-dulwich-0.21.3-1.1
+[   90s] [467/501] cumulate libqt5-qtwebchannel-devel-5.15.8+kde3-1.1
+[   90s] [468/501] cumulate libopenal1-1.22.2-1.1
+[   90s] [469/501] cumulate libqt5-qtquickcontrols-5.15.8+kde0-1.1
+[   90s] [470/501] cumulate libqt5-qtlocation-devel-5.15.8+kde3-2.1
+[   90s] [471/501] cumulate libqt5-qtquickcontrols2-5.15.8+kde7-1.1
+[   90s] [472/501] cumulate libqt5-qttools-devel-5.15.8+kde1-1.1
+[   90s] [473/501] cumulate mozilla-nss-3.88.1-1.1
+[   90s] [474/501] cumulate libgio-2_0-0-2.74.6-1.1
+[   90s] [475/501] cumulate gio-branding-upstream-2.74.6-1.1
+[   90s] [476/501] cumulate glib2-tools-2.74.6-1.1
+[   90s] [477/501] cumulate libgirepository-1_0-1-1.74.0-2.1
+[   90s] [478/501] cumulate libgstreamer-1_0-0-1.22.1-1.1
+[   90s] [479/501] cumulate libsoftokn3-3.88.1-1.1
+[   90s] [480/501] cumulate libpango-1_0-0-1.50.14-1.1
+[   90s] [481/501] cumulate libqt5-qtwebengine-5.15.13-96.1
+[   90s] [482/501] cumulate girepository-1_0-1.74.0-2.1
+[   90s] [483/501] cumulate libgstphotography-1_0-0-1.22.1-1.1
+[   90s] [484/501] cumulate gstreamer-1.22.1-1.1
+[   90s] [485/501] cumulate libqt5-qtwebengine-devel-5.15.13-96.1
+[   90s] [486/501] cumulate glib2-devel-2.74.6-1.1
+[   90s] [487/501] cumulate python310-gobject-3.42.2-1.2
+[   90s] [488/501] cumulate libpulse-devel-16.1-2.1
+[   90s] [489/501] cumulate gstreamer-plugins-base-1.22.1-1.1
+[   90s] [490/501] cumulate libgstallocators-1_0-0-1.22.1-1.1
+[   90s] [491/501] cumulate libgstapp-1_0-0-1.22.1-1.1
+[   90s] [492/501] cumulate libgsttag-1_0-0-1.22.1-1.1
+[   90s] [493/501] cumulate python310-dbus-python-1.3.2-1.2
+[   90s] [494/501] cumulate libgstvideo-1_0-0-1.22.1-1.1
+[   90s] [495/501] cumulate libgstaudio-1_0-0-1.22.1-1.1
+[   90s] [496/501] cumulate libgstgl-1_0-0-1.22.1-1.1
+[   90s] [497/501] cumulate libgstriff-1_0-0-1.22.1-1.1
+[   90s] [498/501] cumulate libgstpbutils-1_0-0-1.22.1-1.1
+[   90s] [499/501] cumulate libQt5Multimedia5-5.15.8+kde1-1.1
+[   90s] [500/501] cumulate libqt5-qtmultimedia-devel-5.15.8+kde1-1.1
+[   90s] [501/501] cumulate python310-qt5-5.15.9-1.2
+[   90s] now installing cumulated packages
+[   92s] Preparing...                          ########################################
+[   92s] Updating / installing...
+[   92s] libgmodule-2_0-0-2.74.6-1.1           ########################################
+[   92s] libxslt1-1.1.37-1.1                   ########################################
+[   92s] libogg0-1.3.5-1.1                     ########################################
+[   93s] libasound2-1.2.8-1.1                  ########################################
+[   93s] libQt5Positioning5-5.15.8+kde3-2.1    ########################################
+[   93s] mozilla-nspr-4.35-1.1                 ########################################
+[   93s] libwebp7-1.2.4-1.2                    ########################################
+[   93s] libstdc++-devel-12-2.1                ########################################
+[   93s] libvorbis0-1.3.7-3.1                  ########################################
+[   93s] libexslt0-1.1.37-1.1                  ########################################
+[   93s] zlib-devel-1.2.13-3.1                 ########################################
+[   94s] libsqlite3-0-3.41.0-2.1               ########################################
+[   94s] libpcre1-8.45-2.1                     ########################################
+[   94s] liborc-0_4-0-0.4.33-1.1               ########################################
+[   94s] libopus0-1.3.1-3.2                    ########################################
+[   94s] libQt5Help5-5.15.8+kde1-1.1           ########################################
+[   95s] libQt5Designer5-5.15.8+kde1-1.1       ########################################
+[   95s] libQt5Sql5-sqlite-5.15.8+kde160-2.1   ########################################
+[   95s] libvorbisenc2-1.3.7-3.1               ########################################
+[   96s] libwebpdemux2-1.2.4-1.2               ########################################
+[   96s] libwebpmux3-1.2.4-1.2                 ########################################
+[   97s] tcl-8.6.13-4.1                        ########################################
+[   97s] python310-six-1.16.0-2.5              ########################################
+[   97s] libminizip1-1.2.13-3.1                ########################################
+[   97s] liblcms2-2-2.14-3.3                   ########################################
+[   98s] libfreebl3-3.88.1-1.1                 ########################################
+[   98s] libcdda_interface0-3.10.2-28.2        ########################################
+[   98s] libXft2-2.3.7-1.1                     ########################################
+[   98s] libQt5XmlPatterns5-5.15.8+kde0-1.1    ########################################
+[   99s] libQt5Svg5-5.15.8+kde8-1.1            ########################################
+[   99s] libcdda_paranoia0-3.10.2-28.2         ########################################
+[   99s] libqt5-qttools-qhelpgenerator-5.15.8+k########################################
+[   99s] libQt5DesignerComponents5-5.15.8+kde1-########################################
+[   99s] libpcrecpp0-8.45-2.1                  ########################################
+[   99s] libpcreposix0-8.45-2.1                ########################################
+[  100s] libxslt-tools-1.1.37-1.1              ########################################
+[  100s] mozilla-nss-certs-3.88.1-1.1          ########################################
+[  100s] mozilla-nss-3.88.1-1.1                ########################################
+[  100s] libsoftokn3-3.88.1-1.1                ########################################
+[  100s] libFLAC12-1.4.2-2.1                   ########################################
+[  100s] libtheoraenc1-1.1.1-30.1              ########################################
+[  101s] xz-devel-5.4.1-2.1                    ########################################
+[  101s] shared-mime-info-2.2-1.1              ########################################
+[  112s] python310-webencodings-0.5.1-4.9      ########################################
+[  112s] python310-qt5-sip-12.11.1-1.2         ########################################
+[  112s] python310-pycparser-2.21-1.5          ########################################
+[  113s] python310-cffi-1.15.1-3.2             ########################################
+[  113s] python310-olefile-0.46-3.5            ########################################
+[  113s] python310-idna-3.4-1.2                ########################################
+[  113s] python310-cssselect-1.2.0-1.2         ########################################
+[  114s] python310-lxml-4.9.2-3.1              ########################################
+[  114s] p11-kit-tools-0.24.1-2.1              ########################################
+[  114s] p11-kit-0.24.1-2.1                    ########################################
+[  114s] ca-certificates-2+git20211004.3efbea9-########################################
+[  116s] ca-certificates-mozilla-2.60-1.2      ########################################
+[  122s] python310-certifi-2022.9.24-1.2       ########################################
+[  122s] libzio1-1.08-2.1                      ########################################
+[  122s] info-7.0.2-1.1                        ########################################
+[  124s] libgpg-error-devel-1.46-1.1           ########################################
+[  124s] libgcrypt-devel-1.10.1-2.1            ########################################
+[  124s] libxml2-tools-2.10.3-3.1              ########################################
+[  124s] libxml2-devel-2.10.3-3.1              ########################################
+[  124s] libxslt-devel-1.1.37-1.1              ########################################
+[  125s] libvpx8-1.13.0-1.1                    ########################################
+[  125s] libvisual-0_4-0-0.4.0-204.1           ########################################
+[  125s] libusb-1_0-0-1.0.26-1.1               ########################################
+[  125s] libunwind8-1.6.2-4.1                  ########################################
+[  125s] libtheoradec1-1.1.1-30.1              ########################################
+[  125s] libthai-data-0.1.29-1.1               ########################################
+[  125s] libssh-config-0.10.4-1.2              ########################################
+[  125s] libssh4-0.10.4-1.2                    ########################################
+[  125s] libspeex1-1.2.1-1.1                   ########################################
+[  126s] libsndfile1-1.2.0-1.1                 ########################################
+[  126s] libpulse0-16.1-2.1                    ########################################
+[  126s] libpulse-mainloop-glib0-16.1-2.1      ########################################
+[  126s] libsnappy1-1.1.9-2.1                  ########################################
+[  126s] libsepol-devel-3.5-1.1                ########################################
+[  126s] libsasl2-3-2.1.28-4.2                 ########################################
+[  126s] libldap2-2.6.3-3.2                    ########################################
+[  127s] libre2-10-20230301-53.1               ########################################
+[  127s] libqt5-linguist-5.15.8+kde1-1.1       ########################################
+[  127s] libqt5-linguist-devel-5.15.8+kde1-1.1 ########################################
+[  127s] libpsl5-0.21.2-1.1                    ########################################
+[  127s] libpixman-1-0-0.42.2-1.1              ########################################
+[  128s] libcairo2-1.17.6-1.1                  ########################################
+[  128s] libpcre2-posix3-10.42-3.2             ########################################
+[  128s] libpcre2-32-0-10.42-3.2               ########################################
+[  128s] pcre2-devel-10.42-3.2                 ########################################
+[  128s] libselinux-devel-3.5-1.1              ########################################
+[  128s] libpcre16-0-8.45-2.1                  ########################################
+[  128s] libopenjp2-7-2.5.0-3.1                ########################################
+[  129s] libonig5-6.9.8-1.1                    ########################################
+[  129s] libjq1-1.6-3.1                        ########################################
+[  129s] jq-1.6-3.1                            ########################################
+[  129s] libqt5-qtdeclarative-tools-5.15.8+kde2########################################
+[  130s] qmlpluginexports-qt5-1.0-1.5          ########################################
+[  130s] qml-autoreqprov-1.1-2.1               ########################################
+[  132s] libQtQuick5-5.15.8+kde22-2.1          ########################################
+[  132s] qtdeclarative-imports-provides-qt5-1.0########################################
+[  142s] libqt5-qtdeclarative-devel-5.15.8+kde2########################################
+[  142s] libQt5WebChannel5-5.15.8+kde3-1.1     ########################################
+[  143s] libqt5-qtgraphicaleffects-5.15.8+kde0-########################################
+[  143s] libQt5QuickTemplates2-5-5.15.8+kde7-1.########################################
+[  143s] libQt5PositioningQuick5-5.15.8+kde3-2.########################################
+[  145s] libQt5Location5-5.15.8+kde3-2.1       ########################################
+[  145s] libqt5-qtlocation-devel-5.15.8+kde3-2.########################################
+[  145s] libQt5QuickControls2-5-5.15.8+kde7-1.1########################################
+[  146s] libqt5-qtquickcontrols2-5.15.8+kde7-1.########################################
+[  147s] libqt5-qtquickcontrols-5.15.8+kde0-1.1########################################
+[  147s] libqt5-qtwebchannel-devel-5.15.8+kde3-########################################
+[  147s] libnghttp2-14-1.51.0-7.2              ########################################
+[  147s] libcurl4-7.88.1-1.1                   ########################################
+[  148s] libxerces-c-3_2-3.2.4-1.2             ########################################
+[  148s] libjbig2-2.1-4.1                      ########################################
+[  148s] libtiff6-4.5.0-3.1                    ########################################
+[  148s] libjack0-1.9.21-1.3                   ########################################
+[  149s] libportaudio2-190700_20210406-1.1     ########################################
+[  149s] libopenal1-1.22.2-1.1                 ########################################
+[  149s] libimagequant0-2.18.0-1.1             ########################################
+[  149s] libhunspell-1_7-0-1.7.2-1.1           ########################################
+[  149s] libharfbuzz-subset0-7.1.0-1.1         ########################################
+[  150s] libgthread-2_0-0-2.74.6-1.1           ########################################
+[  150s] libgraphene-1_0-0-1.10.8-1.1          ########################################
+[  150s] libfribidi0-1.0.12-1.1                ########################################
+[  150s] libevent-2_1-7-2.1.12-3.2             ########################################
+[  150s] libdatrie1-0.2.13-1.1                 ########################################
+[  150s] libthai0-0.1.29-1.1                   ########################################
+[  150s] libblkid-devel-2.38.1-9.1             ########################################
+[  150s] libmount-devel-2.38.1-9.1             ########################################
+[  150s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  151s] alts-1.2+3.b848aad-3.1                ########################################
+[  151s] python310-chardet-5.1.0-2.2           ########################################
+[  151s] libXv1-1.0.12-1.1                     ########################################
+[  151s] libXtst6-1.2.4-1.1                    ########################################
+[  151s] libXss1-1.2.4-1.1                     ########################################
+[  151s] libXmuu1-1.1.4-1.1                    ########################################
+[  152s] xhost-1.0.9-1.1                       ########################################
+[  152s] tk-8.6.13-1.1                         ########################################
+[  153s] libXi6-1.8-1.1                        ########################################
+[  153s] libXdamage1-1.1.6-1.2                 ########################################
+[  153s] libXcomposite1-0.4.6-1.1              ########################################
+[  153s] libQt5X11Extras5-5.15.8+kde0-1.1      ########################################
+[  153s] libQt5WebSockets5-5.15.8+kde3-1.1     ########################################
+[  153s] libQt5TextToSpeech5-5.15.8+kde1-1.2   ########################################
+[  153s] libQt5SerialPort5-5.15.8+kde0-1.1     ########################################
+[  154s] libQt5Nfc5-5.15.8+kde5-1.1            ########################################
+[  154s] libQt5Bluetooth5-5.15.8+kde5-1.1      ########################################
+[  155s] ffmpeg-5-mini-libs-5.1.2-11.1         ########################################
+[  155s] desktop-file-utils-0.26-5.1           ########################################
+[  162s] dbus-1-tools-1.14.6-2.1               ########################################
+[  162s] dbus-1-daemon-1.14.6-2.1              ########################################
+[  163s] dbus-1-1.14.6-2.1                     ########################################
+[  163s] gio-branding-upstream-2.74.6-1.1      ########################################
+[  163s] libgio-2_0-0-2.74.6-1.1               ########################################
+[  167s] glib2-tools-2.74.6-1.1                ########################################
+[  168s] girepository-1_0-1.74.0-2.1           ########################################
+[  168s] python310-gobject-3.42.2-1.2          ########################################
+[  168s] libgirepository-1_0-1-1.74.0-2.1      ########################################
+[  168s] python310-3.10.10-2.1                 ########################################
+[  169s] python310-cryptography-39.0.2-1.1     ########################################
+[  169s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[  170s] python310-urllib3-1.26.14-1.2         ########################################
+[  170s] python310-dbus-python-1.3.2-1.2       ########################################
+[  170s] glib2-devel-2.74.6-1.1                ########################################
+[  171s] libpulse-devel-16.1-2.1               ########################################
+[  171s] libpango-1_0-0-1.50.14-1.1            ########################################
+[  172s] libgstreamer-1_0-0-1.22.1-1.1         ########################################
+[  172s] gstreamer-1.22.1-1.1                  ########################################
+[  172s] /usr/libexec/gstreamer-1.0/gst-ptp-helper: setting to root:root 0755 "cap_net_bind_service=ep". (missing capabilities)
+[  172s] libgstallocators-1_0-0-1.22.1-1.1     ########################################
+[  172s] libgstapp-1_0-0-1.22.1-1.1            ########################################
+[  172s] libgsttag-1_0-0-1.22.1-1.1            ########################################
+[  173s] libgstgl-1_0-0-1.22.1-1.1             ########################################
+[  173s] libgstvideo-1_0-0-1.22.1-1.1          ########################################
+[  173s] libgstaudio-1_0-0-1.22.1-1.1          ########################################
+[  173s] libgstriff-1_0-0-1.22.1-1.1           ########################################
+[  173s] libgstpbutils-1_0-0-1.22.1-1.1        ########################################
+[  174s] gstreamer-plugins-base-1.22.1-1.1     ########################################
+[  174s] libgstphotography-1_0-0-1.22.1-1.1    ########################################
+[  175s] libQt5Multimedia5-5.15.8+kde1-1.1     ########################################
+[  202s] libqt5-qtwebengine-5.15.13-96.1       ########################################
+[  203s] boost-license1_81_0-1.81.0-2.1        ########################################
+[  225s] libboost_headers1_81_0-devel-1.81.0-2.########################################
+[  227s] boost-devel-1.81.0-1.1                ########################################
+[  227s] libqt5-qtwebengine-devel-5.15.13-96.1 ########################################
+[  227s] libqt5-qtmultimedia-devel-5.15.8+kde1-########################################
+[  231s] python310-qt5-5.15.9-1.2              ########################################
+[  232s] python310-dulwich-0.21.3-1.1          ########################################
+[  232s] python310-tk-3.10.10-2.1              ########################################
+[  232s] update-desktop-files-84.87-6.1        ########################################
+[  233s] python310-css-parser-1.0.8-1.2        ########################################
+[  233s] hunspell-devel-1.7.2-1.1              ########################################
+[  233s] python310-Pillow-9.4.0-1.3            ########################################
+[  234s] libxerces-c-devel-3.2.4-1.2           ########################################
+[  234s] pcre-devel-8.45-2.1                   ########################################
+[  239s] libqt5-qttools-devel-5.15.8+kde1-1.1  ########################################
+[  239s] libusb-1_0-devel-1.0.26-1.1           ########################################
+[  240s] python310-html5lib-1.1-3.2            ########################################
+[  240s] libqt5-qtsvg-devel-5.15.8+kde8-1.1    ########################################
+[  240s] libqt5-qtxmlpatterns-devel-5.15.8+kde0########################################
+[  240s] minizip-devel-1.2.13-3.1              ########################################
+[  240s] unzip-6.00-41.1                       ########################################
+[  240s] update-alternatives: using /usr/bin/unzip-plain to provide /usr/bin/unzip (unzip) in auto mode
+[  240s] update-alternatives: using /usr/bin/funzip-plain to provide /usr/bin/funzip (funzip) in auto mode
+[  240s] update-alternatives: using /usr/bin/unzipsfx-plain to provide /usr/bin/unzipsfx (unzipsfx) in auto mode
+[  240s] update-alternatives: using /usr/bin/zipgrep-plain to provide /usr/bin/zipgrep (zipgrep) in auto mode
+[  241s] python310-regex-2022.10.31-1.2        ########################################
+[  241s] python310-devel-3.10.10-2.1           ########################################
+[  241s] python310-cssutils-2.6.0-1.2          ########################################
+[  242s] fdupes-2.2.1-1.1                      ########################################
+[  242s] dos2unix-7.4.4-1.1                    ########################################
+[  258s] now finalizing build dir...
+[  258s] ... running 01-add_abuild_user_to_trusted_group
+[  259s] ... running 02-set_timezone_to_utc
+[  259s] ... running 03-set-permissions-secure
+[  259s] ... running 11-hack_uname_version_to_kernel_version
+[  269s] -----------------------------------------------------------------
+[  269s] I have the following modifications for sigil.spec:
+[  269s] 22c22
+[  269s] < Release:        0
+[  269s] ---
+[  269s] > Release:        1.1
+[  278s] build target is riscv64-suse-linux
+[  278s] -----------------------------------------------------------------
+[  278s] ----- building sigil.spec (user abuild)
+[  278s] -----------------------------------------------------------------
+[  278s] -----------------------------------------------------------------
+[  283s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/3fd8b569c96bd36c6c063a089f786981-sigil' /home/abuild/rpmbuild/SOURCES/sigil.spec
+[  284s] Building target platforms: riscv64-suse-linux
+[  284s] Building for target riscv64-suse-linux
+[  284s] setting SOURCE_DATE_EPOCH=1678924800
+[  284s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.ZBlQzr
+[  284s] + umask 022
+[  284s] + cd /home/abuild/rpmbuild/BUILD
+[  284s] + cd /home/abuild/rpmbuild/BUILD
+[  284s] + rm -rf Sigil-1.9.30
+[  284s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/sigil-1.9.30.tar.gz
+[  288s] + STATUS=0
+[  288s] + '[' 0 -ne 0 ']'
+[  288s] + cd Sigil-1.9.30
+[  288s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  288s] + echo 'Patch #0 (sigil-gt-0.9.0-Dialogs-About.cpp.patch):'
+[  288s] Patch #0 (sigil-gt-0.9.0-Dialogs-About.cpp.patch):
+[  288s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  288s] patching file src/Dialogs/About.cpp
+[  288s] + cp -v /home/abuild/rpmbuild/SOURCES/Sigil_User_Guide_2022.05.17.epub .
+[  288s] '/home/abuild/rpmbuild/SOURCES/Sigil_User_Guide_2022.05.17.epub' -> './Sigil_User_Guide_2022.05.17.epub'
+[  288s] + cp -v /home/abuild/rpmbuild/SOURCES/sigil.desktop .
+[  288s] '/home/abuild/rpmbuild/SOURCES/sigil.desktop' -> './sigil.desktop'
+[  288s] ++ date -u -r ChangeLog.txt -I
+[  288s] + _date=2023-03-14
+[  288s] ++ date -u -r ChangeLog.txt +%T
+[  288s] + _time=17:27:58
+[  288s] + find . -type f -name About.cpp -exec sed -i 's/@DATE@/2023-03-14/;s/@TIME@/17:27:58/g' '{}' +
+[  288s] + sed -i 's/\r//' ChangeLog.txt README.md COPYING.txt
+[  288s] + dos2unix src/Resource_Files/python3lib/metadata_utils.py src/Resource_Files/python3lib/metaproc2.py src/Resource_Files/python3lib/metaproc3.py
+[  288s] dos2unix: converting file src/Resource_Files/python3lib/metadata_utils.py to Unix format...
+[  288s] dos2unix: converting file src/Resource_Files/python3lib/metaproc2.py to Unix format...
+[  288s] dos2unix: converting file src/Resource_Files/python3lib/metaproc3.py to Unix format...
+[  288s] + dos2unix src/Resource_Files/python3lib/opf_newparser.py
+[  288s] dos2unix: converting file src/Resource_Files/python3lib/opf_newparser.py to Unix format...
+[  288s] + find . -type f -exec sed -i -e 's|#!\/usr\/bin\/env python3|#!\/usr\/bin\/python3|g' '{}' +
+[  297s] + find . -type f -exec sed -i -e 's|#!\/usr\/bin\/env python|#!\/usr\/bin\/python3|g' '{}' +
+[  305s] + RPM_EC=0
+[  305s] ++ jobs -p
+[  305s] + exit 0
+[  305s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.ogHCtw
+[  305s] + umask 022
+[  305s] + cd /home/abuild/rpmbuild/BUILD
+[  305s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/sigil-1.9.30-1.1.riscv64
+[  305s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/sigil-1.9.30-1.1.riscv64
+[  305s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  305s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/sigil-1.9.30-1.1.riscv64
+[  305s] + cd Sigil-1.9.30
+[  305s] + ref=/usr/lib/rpm
+[  305s] + mints=0
+[  305s] + case $(uname -m) in
+[  305s] ++ uname -m
+[  305s] + mints=20160911
+[  305s] + for s in guess sub
+[  305s] ++ find -maxdepth 8 -name config.guess
+[  305s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  305s] + grep -q config-patches@ ./3rdparty/hunspell/config.guess
+[  305s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./3rdparty/hunspell/config.guess
+[  306s] + timestamp=20180224
+[  306s] + test -n 20180224
+[  306s] + test 20180224 -ge 20160911
+[  306s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  306s] + grep -q config-patches@ ./3rdparty/pcre2/config.guess
+[  306s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./3rdparty/pcre2/config.guess
+[  306s] + timestamp=20210603
+[  306s] + test -n 20210603
+[  306s] + test 20210603 -ge 20160911
+[  306s] + for s in guess sub
+[  306s] ++ find -maxdepth 8 -name config.sub
+[  306s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  306s] + grep -q config-patches@ ./3rdparty/hunspell/config.sub
+[  306s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./3rdparty/hunspell/config.sub
+[  306s] + timestamp=20180222
+[  306s] + test -n 20180222
+[  306s] + test 20180222 -ge 20160911
+[  306s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  306s] + grep -q config-patches@ ./3rdparty/pcre2/config.sub
+[  306s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./3rdparty/pcre2/config.sub
+[  306s] + timestamp=20210814
+[  306s] + test -n 20210814
+[  306s] + test 20210814 -ge 20160911
+[  306s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  306s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  306s] + export 'CXXFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  306s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  306s] + cmake -G 'Unix Makefiles' -DCMAKE_INSTALL_PREFIX=/usr -DUSE_SYSTEM_LIBS=0 -DCMAKE_BUILD_TYPE=Release .
+[  312s] -- The C compiler identification is GNU 12.2.1
+[  316s] -- The CXX compiler identification is GNU 12.2.1
+[  317s] -- Detecting C compiler ABI info
+[  322s] -- Detecting C compiler ABI info - done
+[  322s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  322s] -- Detecting C compile features
+[  322s] -- Detecting C compile features - done
+[  322s] -- Detecting CXX compiler ABI info
+[  327s] -- Detecting CXX compiler ABI info - done
+[  328s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  328s] -- Detecting CXX compile features
+[  328s] -- Detecting CXX compile features - done
+[  328s] -- CMake version in use: 3.25.2
+[  328s] -- Using older findpython cmake module
+[  329s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.10", minimum required is "3.4") 
+[  329s] -- Found PythonLibs: /usr/lib64/libpython3.10.so (found suitable version "3.10.10", minimum required is "3.4") 
+[  329s] -- Using Bundled ZLIB
+[  329s] -- Looking for sys/types.h
+[  333s] -- Looking for sys/types.h - found
+[  333s] -- Looking for stdint.h
+[  338s] -- Looking for stdint.h - found
+[  338s] -- Looking for stddef.h
+[  342s] -- Looking for stddef.h - found
+[  342s] -- Check size of off64_t
+[  343s] -- Check size of off64_t - failed
+[  343s] -- Looking for fseeko
+[  348s] -- Looking for fseeko - found
+[  348s] -- Looking for unistd.h
+[  353s] -- Looking for unistd.h - found
+[  353s] -- Using Bundled MiniZip
+[  353s] -- Using Bundled Hunspell
+[  353s] -- Using Bundled PCRE2
+[  353s] -- Looking for dirent.h
+[  357s] -- Looking for dirent.h - found
+[  357s] -- Looking for inttypes.h
+[  361s] -- Looking for inttypes.h - found
+[  361s] -- Looking for sys/stat.h
+[  366s] -- Looking for sys/stat.h - found
+[  366s] -- Looking for unistd.h
+[  370s] -- Looking for unistd.h - found
+[  370s] -- Looking for windows.h
+[  371s] -- Looking for windows.h - not found
+[  371s] -- Looking for C++ include type_traits.h
+[  372s] -- Looking for C++ include type_traits.h - not found
+[  372s] -- Looking for C++ include bits/type_traits.h
+[  374s] -- Looking for C++ include bits/type_traits.h - not found
+[  374s] -- Looking for bcopy
+[  378s] -- Looking for bcopy - found
+[  378s] -- Looking for memmove
+[  383s] -- Looking for memmove - found
+[  383s] -- Looking for strerror
+[  388s] -- Looking for strerror - found
+[  388s] -- Looking for strtoll
+[  393s] -- Looking for strtoll - found
+[  393s] -- Looking for strtoq
+[  397s] -- Looking for strtoq - found
+[  397s] -- Looking for _strtoi64
+[  402s] -- Looking for _strtoi64 - not found
+[  402s] -- Check size of long long
+[  407s] -- Check size of long long - done
+[  407s] -- Check size of unsigned long long
+[  412s] -- Check size of unsigned long long - done
+[  412s] -- Performing Test COMPILER_SUPPORTS_CXX11
+[  416s] -- Performing Test COMPILER_SUPPORTS_CXX11 - Success
+[  416s] -- Performing Test COMPILER_SUPPORTS_CXX0X
+[  421s] -- Performing Test COMPILER_SUPPORTS_CXX0X - Success
+[  422s] -- Using older PYTHON_LIBRARIES CMAKE variable to link to Python
+[  423s] -- Configuring done
+[  426s] -- Generating done
+[  426s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/Sigil-1.9.30
+[  426s] + /usr/bin/make -O -j4 V=1 VERBOSE=1
+[  426s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/Sigil-1.9.30 -B/home/abuild/rpmbuild/BUILD/Sigil-1.9.30 --check-build-system CMakeFiles/Makefile.cmake 0
+[  426s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/CMakeFiles /home/abuild/rpmbuild/BUILD/Sigil-1.9.30//CMakeFiles/progress.marks
+[  426s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  426s] /usr/bin/make  -f internal/gumbo/CMakeFiles/sigilgumbo.dir/build.make internal/gumbo/CMakeFiles/sigilgumbo.dir/depend
+[  426s] /usr/bin/make  -f 3rdparty/CMakeFiles/zlib.dir/build.make 3rdparty/CMakeFiles/zlib.dir/depend
+[  426s] /usr/bin/make  -f 3rdparty/CMakeFiles/hunspell.dir/build.make 3rdparty/CMakeFiles/hunspell.dir/depend
+[  426s] /usr/bin/make  -f 3rdparty/CMakeFiles/pcre2-16.dir/build.make 3rdparty/CMakeFiles/pcre2-16.dir/depend
+[  427s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/CMakeFiles/sigilgumbo.dir/DependInfo.cmake --color=
+[  427s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/CMakeFiles/zlib.dir/DependInfo.cmake --color=
+[  427s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/CMakeFiles/hunspell.dir/DependInfo.cmake --color=
+[  427s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] /usr/bin/make  -f internal/gumbo/CMakeFiles/sigilgumbo.dir/build.make internal/gumbo/CMakeFiles/sigilgumbo.dir/build
+[  427s] /usr/bin/make  -f 3rdparty/CMakeFiles/zlib.dir/build.make 3rdparty/CMakeFiles/zlib.dir/build
+[  427s] /usr/bin/make  -f 3rdparty/CMakeFiles/hunspell.dir/build.make 3rdparty/CMakeFiles/hunspell.dir/build
+[  427s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/CMakeFiles/pcre2-16.dir/DependInfo.cmake --color=
+[  427s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  427s] /usr/bin/make  -f 3rdparty/CMakeFiles/pcre2-16.dir/build.make 3rdparty/CMakeFiles/pcre2-16.dir/build
+[  430s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  430s] [  1%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/attribute.c.o
+[  430s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/attribute.c.o -MF CMakeFiles/sigilgumbo.dir/attribute.c.o.d -o CMakeFiles/sigilgumbo.dir/attribute.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/attribute.c
+[  430s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  432s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  432s] [  2%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/adler32.c.o
+[  432s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/adler32.c.o -MF CMakeFiles/zlib.dir/zlib/adler32.c.o.d -o CMakeFiles/zlib.dir/zlib/adler32.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/adler32.c
+[  432s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  435s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  435s] [  3%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/compress.c.o
+[  435s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/compress.c.o -MF CMakeFiles/zlib.dir/zlib/compress.c.o.d -o CMakeFiles/zlib.dir/zlib/compress.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/compress.c
+[  435s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  437s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  437s] [  3%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_auto_possess.c.o
+[  437s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_auto_possess.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_auto_possess.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_auto_possess.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_auto_possess.c
+[  437s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  440s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  440s] [  3%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/pcre2_chartables.c.o
+[  440s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/pcre2_chartables.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/pcre2_chartables.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/pcre2_chartables.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/pcre2_chartables.c
+[  440s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  443s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  443s] [  3%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/crc32.c.o
+[  443s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/crc32.c.o -MF CMakeFiles/zlib.dir/zlib/crc32.c.o.d -o CMakeFiles/zlib.dir/zlib/crc32.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/crc32.c
+[  443s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  461s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  461s] [  0%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/affentry.cxx.o
+[  461s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/affentry.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/affentry.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/affentry.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affentry.cxx
+[  461s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  464s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  464s] [  3%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/deflate.c.o
+[  464s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/deflate.c.o -MF CMakeFiles/zlib.dir/zlib/deflate.c.o.d -o CMakeFiles/zlib.dir/zlib/deflate.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/deflate.c
+[  464s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  467s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  467s] [  4%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/gzclose.c.o
+[  467s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/gzclose.c.o -MF CMakeFiles/zlib.dir/zlib/gzclose.c.o.d -o CMakeFiles/zlib.dir/zlib/gzclose.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/gzclose.c
+[  467s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  474s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  474s] [  4%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/gzlib.c.o
+[  474s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/gzlib.c.o -MF CMakeFiles/zlib.dir/zlib/gzlib.c.o.d -o CMakeFiles/zlib.dir/zlib/gzlib.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/gzlib.c
+[  474s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  482s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  482s] [  4%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/gzread.c.o
+[  482s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/gzread.c.o -MF CMakeFiles/zlib.dir/zlib/gzread.c.o.d -o CMakeFiles/zlib.dir/zlib/gzread.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/gzread.c
+[  482s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  487s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  487s] [  3%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/char_ref.c.o
+[  487s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/char_ref.c.o -MF CMakeFiles/sigilgumbo.dir/char_ref.c.o.d -o CMakeFiles/sigilgumbo.dir/char_ref.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/char_ref.c
+[  487s] char_ref.rl: In function 'consume_named_ref':
+[  487s] char_ref.rl:2493:12: warning: unused variable 'matched' [-Wunused-variable]
+[  487s]  2493 |       assert(matched);
+[  487s]       |            ^~~~~~~
+[  487s] char_ref.rl:2507:12: warning: unused variable 'matched' [-Wunused-variable]
+[  487s]  2507 |       assert(matched);
+[  487s]       |            ^~~~~~~
+[  487s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  489s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  489s] [  4%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/gzwrite.c.o
+[  489s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/gzwrite.c.o -MF CMakeFiles/zlib.dir/zlib/gzwrite.c.o.d -o CMakeFiles/zlib.dir/zlib/gzwrite.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/gzwrite.c
+[  489s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  492s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  492s] [  4%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/error.c.o
+[  492s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/error.c.o -MF CMakeFiles/sigilgumbo.dir/error.c.o.d -o CMakeFiles/sigilgumbo.dir/error.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/error.c
+[  492s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  494s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  494s] [  5%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/foreign_attrs.c.o
+[  494s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/foreign_attrs.c.o -MF CMakeFiles/sigilgumbo.dir/foreign_attrs.c.o.d -o CMakeFiles/sigilgumbo.dir/foreign_attrs.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/foreign_attrs.c
+[  494s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  499s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  499s] [  6%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/gumbo_edit.c.o
+[  499s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/gumbo_edit.c.o -MF CMakeFiles/sigilgumbo.dir/gumbo_edit.c.o.d -o CMakeFiles/sigilgumbo.dir/gumbo_edit.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/gumbo_edit.c
+[  499s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  512s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  512s] [  5%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/inflate.c.o
+[  512s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/inflate.c.o -MF CMakeFiles/zlib.dir/zlib/inflate.c.o.d -o CMakeFiles/zlib.dir/zlib/inflate.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/inflate.c
+[  512s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  522s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  522s] [  6%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/infback.c.o
+[  522s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/infback.c.o -MF CMakeFiles/zlib.dir/zlib/infback.c.o.d -o CMakeFiles/zlib.dir/zlib/infback.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/infback.c
+[  522s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  525s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  525s] [  3%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_compile.c.o
+[  525s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_compile.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_compile.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_compile.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_compile.c
+[  525s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  528s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  528s] [  6%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_config.c.o
+[  528s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_config.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_config.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_config.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_config.c
+[  528s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  529s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  529s] [  6%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/inftrees.c.o
+[  529s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/inftrees.c.o -MF CMakeFiles/zlib.dir/zlib/inftrees.c.o.d -o CMakeFiles/zlib.dir/zlib/inftrees.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/inftrees.c
+[  529s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  534s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  534s] [  7%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_context.c.o
+[  534s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_context.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_context.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_context.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_context.c
+[  534s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  536s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  536s] [  7%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/inffast.c.o
+[  536s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/inffast.c.o -MF CMakeFiles/zlib.dir/zlib/inffast.c.o.d -o CMakeFiles/zlib.dir/zlib/inffast.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/inffast.c
+[  536s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  542s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  542s] [  6%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/parser.c.o
+[  542s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/parser.c.o -MF CMakeFiles/sigilgumbo.dir/parser.c.o.d -o CMakeFiles/sigilgumbo.dir/parser.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/parser.c
+[  542s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  547s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  547s] [  8%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/string_buffer.c.o
+[  547s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/string_buffer.c.o -MF CMakeFiles/sigilgumbo.dir/string_buffer.c.o.d -o CMakeFiles/sigilgumbo.dir/string_buffer.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/string_buffer.c
+[  547s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  550s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  550s] [  8%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/string_piece.c.o
+[  550s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/string_piece.c.o -MF CMakeFiles/sigilgumbo.dir/string_piece.c.o.d -o CMakeFiles/sigilgumbo.dir/string_piece.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/string_piece.c
+[  550s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  552s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  552s] [  7%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_convert.c.o
+[  552s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_convert.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_convert.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_convert.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_convert.c
+[  552s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  552s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  552s] [  8%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/trees.c.o
+[  552s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/trees.c.o -MF CMakeFiles/zlib.dir/zlib/trees.c.o.d -o CMakeFiles/zlib.dir/zlib/trees.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/trees.c
+[  552s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  553s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  553s] [  9%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/svg_attrs.c.o
+[  553s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/svg_attrs.c.o -MF CMakeFiles/sigilgumbo.dir/svg_attrs.c.o.d -o CMakeFiles/sigilgumbo.dir/svg_attrs.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/svg_attrs.c
+[  553s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  555s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  555s] [  9%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/uncompr.c.o
+[  555s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/uncompr.c.o -MF CMakeFiles/zlib.dir/zlib/uncompr.c.o.d -o CMakeFiles/zlib.dir/zlib/uncompr.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/uncompr.c
+[  555s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  556s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  556s] [  9%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/svg_tags.c.o
+[  556s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/svg_tags.c.o -MF CMakeFiles/sigilgumbo.dir/svg_tags.c.o.d -o CMakeFiles/sigilgumbo.dir/svg_tags.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/svg_tags.c
+[  556s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  558s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  558s] [  9%] Building C object 3rdparty/CMakeFiles/zlib.dir/zlib/zutil.c.o
+[  558s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG  -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H -fno-lto -MD -MT 3rdparty/CMakeFiles/zlib.dir/zlib/zutil.c.o -MF CMakeFiles/zlib.dir/zlib/zutil.c.o.d -o CMakeFiles/zlib.dir/zlib/zutil.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib/zutil.c
+[  558s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  559s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  559s] [ 10%] Linking C static library ../lib/libzlib.a
+[  559s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cmake -P CMakeFiles/zlib.dir/cmake_clean_target.cmake
+[  559s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cmake -E cmake_link_script CMakeFiles/zlib.dir/link.txt --verbose=1
+[  559s] /usr/bin/ar qc ../lib/libzlib.a CMakeFiles/zlib.dir/zlib/adler32.c.o CMakeFiles/zlib.dir/zlib/compress.c.o CMakeFiles/zlib.dir/zlib/crc32.c.o CMakeFiles/zlib.dir/zlib/deflate.c.o CMakeFiles/zlib.dir/zlib/gzclose.c.o CMakeFiles/zlib.dir/zlib/gzlib.c.o CMakeFiles/zlib.dir/zlib/gzread.c.o CMakeFiles/zlib.dir/zlib/gzwrite.c.o CMakeFiles/zlib.dir/zlib/inflate.c.o CMakeFiles/zlib.dir/zlib/infback.c.o CMakeFiles/zlib.dir/zlib/inftrees.c.o CMakeFiles/zlib.dir/zlib/inffast.c.o CMakeFiles/zlib.dir/zlib/trees.c.o CMakeFiles/zlib.dir/zlib/uncompr.c.o CMakeFiles/zlib.dir/zlib/zutil.c.o
+[  559s] /usr/bin/ranlib ../lib/libzlib.a
+[  559s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  559s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  559s] [ 10%] Built target zlib
+[  559s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  560s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  560s] [  9%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/tag.c.o
+[  560s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/tag.c.o -MF CMakeFiles/sigilgumbo.dir/tag.c.o.d -o CMakeFiles/sigilgumbo.dir/tag.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/tag.c
+[  560s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  565s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  565s] [ 11%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/utf8.c.o
+[  565s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/utf8.c.o -MF CMakeFiles/sigilgumbo.dir/utf8.c.o.d -o CMakeFiles/sigilgumbo.dir/utf8.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/utf8.c
+[  565s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  568s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  568s] [ 11%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/util.c.o
+[  568s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/util.c.o -MF CMakeFiles/sigilgumbo.dir/util.c.o.d -o CMakeFiles/sigilgumbo.dir/util.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/util.c
+[  568s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  572s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  572s] [ 11%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/vector.c.o
+[  572s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/vector.c.o -MF CMakeFiles/sigilgumbo.dir/vector.c.o.d -o CMakeFiles/sigilgumbo.dir/vector.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/vector.c
+[  572s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  572s] /usr/bin/make  -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
+[  572s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  572s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/CMakeFiles/main.dir/DependInfo.cmake --color=
+[  572s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  572s] /usr/bin/make  -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+[  573s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  573s] [ 11%] Generating main.rcc
+[  573s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src && /usr/lib64/qt5/bin/rcc --binary --name main --output /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/main.rcc /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/Resource_Files/main/main.qrc
+[  573s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  573s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  573s] [ 11%] Built target main
+[  573s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  573s] /usr/bin/make  -f src/CMakeFiles/fluent.dir/build.make src/CMakeFiles/fluent.dir/depend
+[  574s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  574s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/CMakeFiles/fluent.dir/DependInfo.cmake --color=
+[  574s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  574s] /usr/bin/make  -f src/CMakeFiles/fluent.dir/build.make src/CMakeFiles/fluent.dir/build
+[  574s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  574s] [ 11%] Generating fluent.rcc
+[  574s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src && /usr/lib64/qt5/bin/rcc --binary --name fluent --output /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/fluent.rcc /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/Resource_Files/fluent/fluent.qrc
+[  574s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  574s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  574s] [ 11%] Built target fluent
+[  574s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  574s] /usr/bin/make  -f src/CMakeFiles/material.dir/build.make src/CMakeFiles/material.dir/depend
+[  575s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  575s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/CMakeFiles/material.dir/DependInfo.cmake --color=
+[  575s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  575s] /usr/bin/make  -f src/CMakeFiles/material.dir/build.make src/CMakeFiles/material.dir/build
+[  575s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  575s] [ 11%] Generating material.rcc
+[  575s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src && /usr/lib64/qt5/bin/rcc --binary --name material --output /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/material.rcc /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/src/Resource_Files/material/material.qrc
+[  575s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  576s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  576s] [ 11%] Built target material
+[  576s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  576s] /usr/bin/make  -f 3rdparty/CMakeFiles/minizip.dir/build.make 3rdparty/CMakeFiles/minizip.dir/depend
+[  576s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  576s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30 /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/CMakeFiles/minizip.dir/DependInfo.cmake --color=
+[  576s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  576s] /usr/bin/make  -f 3rdparty/CMakeFiles/minizip.dir/build.make 3rdparty/CMakeFiles/minizip.dir/build
+[  581s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  581s] [ 11%] Building C object 3rdparty/CMakeFiles/minizip.dir/minizip/ioapi.c.o
+[  581s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fno-lto -MD -MT 3rdparty/CMakeFiles/minizip.dir/minizip/ioapi.c.o -MF CMakeFiles/minizip.dir/minizip/ioapi.c.o.d -o CMakeFiles/minizip.dir/minizip/ioapi.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip/ioapi.c
+[  581s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  583s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  583s] [ 10%] Building C object internal/gumbo/CMakeFiles/sigilgumbo.dir/tokenizer.c.o
+[  583s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cc -Dsigilgumbo_EXPORTS  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT internal/gumbo/CMakeFiles/sigilgumbo.dir/tokenizer.c.o -MF CMakeFiles/sigilgumbo.dir/tokenizer.c.o.d -o CMakeFiles/sigilgumbo.dir/tokenizer.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo/tokenizer.c
+[  583s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  585s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  585s] [ 12%] Linking C shared library ../../lib/libsigilgumbo.so
+[  585s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/internal/gumbo && /usr/bin/cmake -E cmake_link_script CMakeFiles/sigilgumbo.dir/link.txt --verbose=1
+[  585s] /usr/bin/cc -fPIC -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c99 -O3 -DNDEBUG -shared -Wl,-soname,libsigilgumbo.so -o ../../lib/libsigilgumbo.so CMakeFiles/sigilgumbo.dir/attribute.c.o CMakeFiles/sigilgumbo.dir/char_ref.c.o CMakeFiles/sigilgumbo.dir/error.c.o CMakeFiles/sigilgumbo.dir/foreign_attrs.c.o CMakeFiles/sigilgumbo.dir/gumbo_edit.c.o CMakeFiles/sigilgumbo.dir/parser.c.o CMakeFiles/sigilgumbo.dir/string_buffer.c.o CMakeFiles/sigilgumbo.dir/string_piece.c.o CMakeFiles/sigilgumbo.dir/svg_attrs.c.o CMakeFiles/sigilgumbo.dir/svg_tags.c.o CMakeFiles/sigilgumbo.dir/tag.c.o CMakeFiles/sigilgumbo.dir/tokenizer.c.o CMakeFiles/sigilgumbo.dir/utf8.c.o CMakeFiles/sigilgumbo.dir/util.c.o CMakeFiles/sigilgumbo.dir/vector.c.o 
+[  585s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  586s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  586s] [ 12%] Built target sigilgumbo
+[  586s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  586s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  586s] [ 12%] Building C object 3rdparty/CMakeFiles/minizip.dir/minizip/mztools.c.o
+[  586s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fno-lto -MD -MT 3rdparty/CMakeFiles/minizip.dir/minizip/mztools.c.o -MF CMakeFiles/minizip.dir/minizip/mztools.c.o.d -o CMakeFiles/minizip.dir/minizip/mztools.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip/mztools.c
+[  586s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  600s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  600s] [  9%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_dfa_match.c.o
+[  600s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_dfa_match.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_dfa_match.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_dfa_match.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_dfa_match.c
+[  600s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  600s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  600s] [ 12%] Building C object 3rdparty/CMakeFiles/minizip.dir/minizip/unzip.c.o
+[  600s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fno-lto -MD -MT 3rdparty/CMakeFiles/minizip.dir/minizip/unzip.c.o -MF CMakeFiles/minizip.dir/minizip/unzip.c.o.d -o CMakeFiles/minizip.dir/minizip/unzip.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip/unzip.c
+[  600s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  604s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  604s] [ 12%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_error.c.o
+[  604s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_error.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_error.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_error.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_error.c
+[  604s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  605s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  605s] [ 13%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_extuni.c.o
+[  605s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_extuni.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_extuni.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_extuni.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_extuni.c
+[  605s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  606s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  606s] [ 12%] Building C object 3rdparty/CMakeFiles/minizip.dir/minizip/zip.c.o
+[  606s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc  -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/zlib -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fno-lto -MD -MT 3rdparty/CMakeFiles/minizip.dir/minizip/zip.c.o -MF CMakeFiles/minizip.dir/minizip/zip.c.o.d -o CMakeFiles/minizip.dir/minizip/zip.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip/zip.c
+[  606s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip/zip.c: In function 'zip64local_SearchCentralDir':
+[  606s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip/zip.c:521:5: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+[  606s]   521 |     for (i=(int)uReadSize-3; (i--)>0;)
+[  606s]       |     ^~~
+[  606s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/minizip/zip.c:529:7: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+[  606s]   529 |       if (uPosFound!=0)
+[  606s]       |       ^~
+[  606s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  607s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  607s] [ 13%] Linking C static library ../lib/libminizip.a
+[  607s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cmake -P CMakeFiles/minizip.dir/cmake_clean_target.cmake
+[  607s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cmake -E cmake_link_script CMakeFiles/minizip.dir/link.txt --verbose=1
+[  607s] /usr/bin/ar qc ../lib/libminizip.a CMakeFiles/minizip.dir/minizip/ioapi.c.o CMakeFiles/minizip.dir/minizip/mztools.c.o CMakeFiles/minizip.dir/minizip/unzip.c.o CMakeFiles/minizip.dir/minizip/zip.c.o
+[  607s] /usr/bin/ranlib ../lib/libminizip.a
+[  607s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  607s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  607s] [ 13%] Built target minizip
+[  607s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  607s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  607s] [ 13%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_find_bracket.c.o
+[  607s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_find_bracket.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_find_bracket.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_find_bracket.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_find_bracket.c
+[  607s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  612s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  612s] [ 13%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_maketables.c.o
+[  612s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_maketables.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_maketables.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_maketables.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_maketables.c
+[  612s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  616s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  616s] [ 14%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match_data.c.o
+[  616s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match_data.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match_data.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match_data.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_match_data.c
+[  616s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  616s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  616s] [ 13%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_jit_compile.c.o
+[  616s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_jit_compile.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_jit_compile.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_jit_compile.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c:82:2: error: #error Unsupported architecture
+[  616s]    82 | #error Unsupported architecture
+[  616s]       |  ^~~~~
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c: In function 'pcre2_jit_compile_16':
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c:14205:15: warning: implicit declaration of function 'SLJIT_MALLOC_EXEC'; did you mean 'SLJIT_MALLOC'? [-Wimplicit-function-declaration]
+[  616s] 14205 |   void *ptr = SLJIT_MALLOC_EXEC(32, NULL);
+[  616s]       |               ^~~~~~~~~~~~~~~~~
+[  616s]       |               SLJIT_MALLOC
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c:14205:15: warning: initialization of 'void *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c:14211:5: warning: implicit declaration of function 'SLJIT_FREE_EXEC'; did you mean 'SLJIT_FREE'? [-Wimplicit-function-declaration]
+[  616s] 14211 |     SLJIT_FREE_EXEC(((sljit_u8*)(ptr)) + SLJIT_EXEC_OFFSET(ptr), NULL);
+[  616s]       |     ^~~~~~~~~~~~~~~
+[  616s]       |     SLJIT_FREE
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c:14211:42: warning: implicit declaration of function 'SLJIT_EXEC_OFFSET'; did you mean 'SLJIT_FUNC_OFFSET'? [-Wimplicit-function-declaration]
+[  616s] 14211 |     SLJIT_FREE_EXEC(((sljit_u8*)(ptr)) + SLJIT_EXEC_OFFSET(ptr), NULL);
+[  616s]       |                                          ^~~~~~~~~~~~~~~~~
+[  616s]       |                                          SLJIT_FUNC_OFFSET
+[  616s] In file included from /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c:14257:
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_misc.c: In function 'pcre2_jit_free_unused_memory_16':
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_misc.c:113:1: warning: implicit declaration of function 'sljit_free_unused_memory_exec'; did you mean 'pcre2_jit_free_unused_memory_32'? [-Wimplicit-function-declaration]
+[  616s]   113 | sljit_free_unused_memory_exec();
+[  616s]       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  616s]       | pcre2_jit_free_unused_memory_32
+[  616s] In file included from /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/sljit/sljitLir.c:27,
+[  616s]                  from /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_jit_compile.c:79:
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/sljit/sljitLir.h: At top level:
+[  616s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/sljit/sljitLir.h:1506:36: warning: 'sljit_get_float_register_index' declared 'static' but never defined [-Wunused-function]
+[  616s]  1506 | SLJIT_API_FUNC_ATTRIBUTE sljit_s32 sljit_get_float_register_index(sljit_s32 reg);
+[  616s]       |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  616s] make[2]: *** [3rdparty/CMakeFiles/pcre2-16.dir/build.make:216: 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_jit_compile.c.o] Error 1
+[  616s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  616s] make[2]: *** Waiting for unfinished jobs....
+[  619s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  619s] [ 14%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_newline.c.o
+[  619s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_newline.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_newline.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_newline.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_newline.c
+[  619s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  623s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  623s] [  3%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/affixmgr.cxx.o
+[  623s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/affixmgr.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/affixmgr.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/affixmgr.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx: In member function 'int AffixMgr::cpdpat_check(const std::string&, int, hentry*, hentry*, char)':
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1340:51: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+[  623s]  1340 |            ((len = i.pattern.size()) != 0) && len <= pos &&
+[  623s]       |                                               ~~~~^~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx: In member function 'hentry* AffixMgr::compound_check(const std::string&, short int, short int, short int, short int, hentry**, hentry**, char, char, int*)':
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1634:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1634 |                   i > word.size() ||
+[  623s]       |                   ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1659:15: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1659 |         if (i > st.size())
+[  623s]       |             ~~^~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1829:63: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1829 |                (checkcompoundcase && scpd == 0 && !words && i < word.size() &&
+[  623s]       |                                                             ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1864:37: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1864 |               } else if (i > 2 && i <= word.size() && word[i - 1] == word[i - 2])
+[  623s]       |                                   ~~^~~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1935:24: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1935 |                     (i < word.size() && !cpdpat_check(word, i, rv_first, rv, 0))) &&
+[  623s]       |                      ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1955:53: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1955 |             rv = (compoundflag && !onlycpdrule && i < word.size())
+[  623s]       |                                                   ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1962:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1962 |               if (i < word.size())
+[  623s]       |                   ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:1967:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  1967 |               if (i < word.size())
+[  623s]       |                   ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:2015:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  2015 |               if (i < word.size()) {
+[  623s]       |                   ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:2088:53: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  2088 |               if (rv && !checkcpdtable.empty() && i < word.size() &&
+[  623s]       |                                                   ~~^~~~~~~~~~~~~
+[  623s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/affixmgr.cxx:2110:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::__cxx11::basic_string<char>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[  623s]  2110 |                 if (i < word.size() && word.compare(i, rv->blen, rv->word, rv->blen) == 0) {
+[  623s]       |                     ~~^~~~~~~~~~~~~
+[  623s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  636s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  636s] [ 15%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/filemgr.cxx.o
+[  636s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/filemgr.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/filemgr.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/filemgr.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/filemgr.cxx
+[  636s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  675s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  675s] [ 15%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/csutil.cxx.o
+[  675s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/csutil.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/csutil.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/csutil.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/csutil.cxx
+[  675s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  682s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  682s] [ 15%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/hashmgr.cxx.o
+[  682s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/hashmgr.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/hashmgr.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/hashmgr.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/hashmgr.cxx
+[  682s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/hashmgr.cxx: In member function 'int HashMgr::hash(const char*, size_t) const':
+[  682s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/hashmgr.cxx:693:21: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+[  682s]   693 |   while (i < 4 && i < len)
+[  682s]       |                   ~~^~~~~
+[  682s] /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/hashmgr.cxx:695:12: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+[  682s]   695 |   while (i < len) {
+[  682s]       |          ~~^~~~~
+[  682s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  706s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  706s] [ 16%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunzip.cxx.o
+[  706s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunzip.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunzip.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunzip.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/hunzip.cxx
+[  706s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  710s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  710s] [ 16%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/phonet.cxx.o
+[  710s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/phonet.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/phonet.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/phonet.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/phonet.cxx
+[  710s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  735s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  735s] [ 14%] Building C object 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match.c.o
+[  735s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cc -DPCRE2_CODE_UNIT_WIDTH=16 -DPCRE2_STATIC -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2 -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -O3 -DNDEBUG -fPIC -DHAVE_CONFIG_H -fno-lto -MD -MT 3rdparty/CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match.c.o -MF CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match.c.o.d -o CMakeFiles/pcre2-16.dir/pcre2/src/pcre2_match.c.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/pcre2/src/pcre2_match.c
+[  735s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  735s] make[1]: *** [CMakeFiles/Makefile2:251: 3rdparty/CMakeFiles/pcre2-16.dir/all] Error 2
+[  735s] make[1]: *** Waiting for unfinished jobs....
+[  741s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  741s] [ 16%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/replist.cxx.o
+[  741s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/replist.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/replist.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/replist.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/replist.cxx
+[  741s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  753s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  753s] [ 15%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunspell.cxx.o
+[  753s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunspell.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunspell.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunspell.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/hunspell.cxx
+[  753s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  809s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  809s] [ 16%] Building CXX object 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/suggestmgr.cxx.o
+[  809s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/c++ -Dhunspell_EXPORTS -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell -I/home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -fPIC -fno-lto -MD -MT 3rdparty/CMakeFiles/hunspell.dir/hunspell/src/hunspell/suggestmgr.cxx.o -MF CMakeFiles/hunspell.dir/hunspell/src/hunspell/suggestmgr.cxx.o.d -o CMakeFiles/hunspell.dir/hunspell/src/hunspell/suggestmgr.cxx.o -c /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty/hunspell/src/hunspell/suggestmgr.cxx
+[  809s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  814s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  814s] [ 17%] Linking CXX shared library ../lib/libhunspell.so
+[  814s] cd /home/abuild/rpmbuild/BUILD/Sigil-1.9.30/3rdparty && /usr/bin/cmake -E cmake_link_script CMakeFiles/hunspell.dir/link.txt --verbose=1
+[  814s] /usr/bin/c++ -fPIC -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -std=c++11 -O3 -DNDEBUG -shared -Wl,-soname,libhunspell.so -o ../lib/libhunspell.so CMakeFiles/hunspell.dir/hunspell/src/hunspell/affentry.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/affixmgr.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/csutil.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/filemgr.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/hashmgr.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunspell.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/hunzip.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/phonet.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/replist.cxx.o CMakeFiles/hunspell.dir/hunspell/src/hunspell/suggestmgr.cxx.o 
+[  814s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  814s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  814s] [ 17%] Built target hunspell
+[  814s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/Sigil-1.9.30'
+[  814s] make: *** [Makefile:136: all] Error 2
+[  814s] error: Bad exit status from /var/tmp/rpm-tmp.ogHCtw (%build)
+[  814s] 
+[  814s] RPM build errors:
+[  814s]     Bad exit status from /var/tmp/rpm-tmp.ogHCtw (%build)
+[  815s] ### VM INTERACTION START ###
+[  815s] [  780.020581][    T1] sysrq: Power Off
+[  815s] [  780.022465][   T77] reboot: Power down
+[  815s] ### VM INTERACTION END ###
+[  815s] 
+[  815s] cloud122 failed "build sigil.spec" at Thu Mar 16 22:17:05 UTC 2023.
+[  815s] 

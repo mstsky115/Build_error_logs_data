@@ -1,0 +1,1392 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_15/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_15/root
+[    0s] 
+[    0s] 
+[    0s] old-cirrus3 started "build python-jupyter-client7.spec" at Fri Apr 14 21:42:34 UTC 2023.
+[    0s] 
+[    0s] Building python-jupyter-client7:test for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'db8f188b34837a4e4e52709e05feeb12'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_15/.build-srcdir/python-jupyter-client7.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_15/.build-srcdir/python-jupyter-client7.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/15/build/configs --cachedir /var/cache/build --prepare --buildflavor test --clean --rpmlist /var/cache/obs/worker/root_15/.build.rpmlist /var/cache/obs/worker/root_15/.build-srcdir/python-jupyter-client7.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [6497ef864720a0b40b7b22f4c5ccfaa4]
+[    4s] 
+[    4s] copying packages...
+[    5s] reordering...done
+[    5s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_15/.mount/boot/kernel -initrd /var/cache/obs/worker/root_15/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_15/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_15/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_15/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   12s] Linux version: 6.2.10-1-default #1 SMP PREEMPT_DYNAMIC Thu Apr 6 10:36:55 UTC 2023 (ba7816e)
+[   12s] Increasing log level from now on...
+[   12s] [    4.656763][  T369] sysrq: Changing Loglevel
+[   12s] [    4.657030][  T369] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   12s] no label, UUID=18092566-b34a-44c1-bc83-20245d9ba10a
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   12s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/python-jupyter-client7.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor test /.build-srcdir/python-jupyter-client7.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   46s] [1/298] preinstalled aaa_base-84.87+git20230329.b39efbc-1.1
+[   46s] [2/298] preinstalled aaa_base-malloccheck-84.87+git20230329.b39efbc-1.1
+[   46s] [3/298] preinstalled attr-2.5.1-1.1
+[   46s] [4/298] preinstalled bash-5.2.15-8.1
+[   46s] [5/298] preinstalled bash-sh-5.2.15-8.1
+[   46s] [6/298] preinstalled binutils-2.40-4.1
+[   46s] [7/298] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   46s] [8/298] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   46s] [9/298] preinstalled build-mkbaselibs-20230314-1.1
+[   46s] [10/298] preinstalled bzip2-1.0.8-5.1
+[   46s] [11/298] preinstalled chkstat-1599_20230217-1.1
+[   46s] [12/298] preinstalled compat-usrmerge-build-84.87-5.1
+[   46s] [13/298] preinstalled compat-usrmerge-tools-84.87-5.1
+[   46s] [14/298] preinstalled coreutils-9.2-2.1
+[   46s] [15/298] preinstalled cpio-2.13-5.1
+[   46s] [16/298] preinstalled cpp-13-1.1
+[   46s] [17/298] preinstalled cpp13-13.0.1+git6995-8.1
+[   46s] [18/298] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   46s] [19/298] preinstalled debugedit-5.0-5.1
+[   46s] [20/298] preinstalled diffutils-3.9-1.1
+[   46s] [21/298] preinstalled dwz-0.15-2.1
+[   46s] [22/298] preinstalled elfutils-0.189-2.1
+[   46s] [23/298] cumulate fdupes-2.2.1-1.1
+[   46s] [24/298] preinstalled file-5.44-1.3
+[   46s] [25/298] preinstalled file-magic-5.44-1.3
+[   46s] [26/298] preinstalled filesystem-84.87-12.1
+[   46s] [27/298] preinstalled fillup-1.42-279.1
+[   46s] [28/298] preinstalled findutils-4.9.0-2.1
+[   46s] [29/298] preinstalled gawk-5.2.1-2.1
+[   46s] [30/298] preinstalled gcc-13-1.1
+[   46s] [31/298] preinstalled gcc-PIE-13-1.1
+[   46s] [32/298] preinstalled gcc13-13.0.1+git6995-8.1
+[   46s] [33/298] preinstalled gcc13-PIE-13.0.1+git6995-8.1
+[   46s] [34/298] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   46s] [35/298] preinstalled gettext-tools-mini-0.21.1-1.1
+[   46s] [36/298] preinstalled glibc-2.37-3.1
+[   46s] [37/298] preinstalled glibc-devel-2.37-3.1
+[   46s] [38/298] preinstalled glibc-locale-base-2.37-3.1
+[   46s] [39/298] preinstalled grep-3.9-1.1
+[   46s] [40/298] preinstalled gzip-1.12-3.1
+[   46s] [41/298] preinstalled kernel-obs-build-6.2.10-1.1
+[   46s] [42/298] preinstalled libacl1-2.3.1-2.1
+[   46s] [43/298] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   46s] [44/298] preinstalled libasan8-13.0.1+git6995-8.1
+[   46s] [45/298] preinstalled libasm1-0.189-2.1
+[   46s] [46/298] preinstalled libatomic1-13.0.1+git6995-8.1
+[   46s] [47/298] preinstalled libattr1-2.5.1-1.1
+[   46s] [48/298] preinstalled libaudit1-3.0.9-1.1
+[   46s] [49/298] preinstalled libblkid1-2.38.1-12.1
+[   46s] [50/298] preinstalled libbz2-1-1.0.8-5.1
+[   46s] [51/298] preinstalled libcap-ng0-0.8.3-1.1
+[   46s] [52/298] preinstalled libcap2-2.68-1.1
+[   46s] [53/298] preinstalled libcrypt1-4.4.33-3.1
+[   46s] [54/298] preinstalled libctf-nobfd0-2.40-4.1
+[   46s] [55/298] preinstalled libctf0-2.40-4.1
+[   46s] [56/298] preinstalled libdb-4_8-4.8.30-40.1
+[   46s] [57/298] preinstalled libdw1-0.189-2.1
+[   46s] [58/298] preinstalled libeconf0-0.5.2-1.1
+[   46s] [59/298] preinstalled libelf1-0.189-2.1
+[   46s] [60/298] preinstalled libexpat1-2.5.0-2.1
+[   46s] [61/298] preinstalled libfdisk1-2.38.1-12.1
+[   46s] [62/298] preinstalled libffi8-3.4.4-1.1
+[   46s] [63/298] preinstalled libgcc_s1-13.0.1+git6995-8.1
+[   46s] [64/298] preinstalled libgcrypt20-1.10.2-1.1
+[   46s] [65/298] preinstalled libgdbm6-1.23-1.1
+[   46s] [66/298] preinstalled libgdbm_compat4-1.23-1.1
+[   46s] [67/298] preinstalled libgmp10-6.2.1-4.1
+[   46s] [68/298] preinstalled libgomp1-13.0.1+git6995-8.1
+[   46s] [69/298] preinstalled libgpg-error0-1.47-1.1
+[   46s] [70/298] preinstalled libisl23-0.26-1.1
+[   46s] [71/298] preinstalled libitm1-13.0.1+git6995-8.1
+[   46s] [72/298] preinstalled liblua5_4-5-5.4.4-10.1
+[   46s] [73/298] preinstalled liblzma5-5.4.2-2.1
+[   46s] [74/298] preinstalled libmagic1-5.44-1.3
+[   46s] [75/298] preinstalled libmount1-2.38.1-12.1
+[   46s] [76/298] preinstalled libmpc3-1.3.1-1.2
+[   46s] [77/298] preinstalled libmpdec3-2.5.1-2.1
+[   46s] [78/298] preinstalled libmpfr6-4.2.0-1.1
+[   46s] [79/298] preinstalled libncurses6-6.4.20230408-9.1
+[   46s] [80/298] preinstalled libopenssl3-3.0.8-2.1
+[   46s] [81/298] preinstalled libpcre2-8-0-10.42-3.2
+[   46s] [82/298] preinstalled libpkgconf3-1.8.0-2.1
+[   46s] [83/298] preinstalled libpopt0-1.19-1.1
+[   46s] [84/298] preinstalled libpython3_10-1_0-3.10.10-2.1
+[   46s] [85/298] preinstalled libpython3_11-1_0-3.11.2-1.2
+[   46s] [86/298] preinstalled libpython3_9-1_0-3.9.16-5.1
+[   46s] [87/298] preinstalled libreadline8-8.2-2.1
+[   46s] [88/298] preinstalled librpmbuild9-4.18.0-4.2
+[   46s] [89/298] preinstalled libseccomp2-2.5.4-2.1
+[   46s] [90/298] preinstalled libselinux1-3.5-1.1
+[   46s] [91/298] preinstalled libsemanage-conf-3.5-1.2
+[   46s] [92/298] preinstalled libsemanage2-3.5-1.2
+[   46s] [93/298] preinstalled libsepol2-3.5-1.1
+[   46s] [94/298] preinstalled libsmartcols1-2.38.1-12.1
+[   46s] [95/298] cumulate libsodium23-1.0.18-2.2
+[   46s] [96/298] cumulate libsqlite3-0-3.41.2-1.1
+[   46s] [97/298] preinstalled libstdc++6-13.0.1+git6995-8.1
+[   46s] [98/298] preinstalled libsubid4-4.13-4.1
+[   46s] [99/298] cumulate libsystemd0-mini-253.3-1.1
+[   46s] [100/298] preinstalled libubsan1-13.0.1+git6995-8.1
+[   46s] [101/298] cumulate libunwind8-1.6.2-4.1
+[   46s] [102/298] preinstalled libutempter0-1.2.0-3.2
+[   46s] [103/298] preinstalled libuuid1-2.38.1-12.1
+[   46s] [104/298] preinstalled libxcrypt-devel-4.4.33-3.1
+[   46s] [105/298] preinstalled libz1-1.2.13-3.1
+[   46s] [106/298] preinstalled libzstd1-1.5.4-2.1
+[   46s] [107/298] preinstalled linux-glibc-devel-6.2-1.1
+[   46s] [108/298] preinstalled login_defs-4.13-4.1
+[   46s] [109/298] preinstalled lua54-5.4.4-10.1
+[   46s] [110/298] preinstalled make-4.4.1-2.1
+[   46s] [111/298] preinstalled ncurses-utils-6.4.20230408-9.1
+[   46s] [112/298] preinstalled pam-1.5.2-14.1
+[   46s] [113/298] preinstalled patch-2.7.6-6.1
+[   46s] [114/298] preinstalled perl-5.36.0-4.1
+[   46s] [115/298] preinstalled perl-base-5.36.0-4.1
+[   46s] [116/298] preinstalled permissions-1599_20230217-1.1
+[   46s] [117/298] preinstalled permissions-config-1599_20230217-1.1
+[   46s] [118/298] preinstalled pkgconf-1.8.0-2.1
+[   46s] [119/298] preinstalled pkgconf-m4-1.8.0-2.1
+[   46s] [120/298] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   46s] [121/298] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   46s] [122/298] preinstalled post-build-checks-84.87+git20230328.de7e9df-1.1
+[   46s] [123/298] preinstalled python-rpm-macros-20230403.29b58f8-1.1
+[   46s] [124/298] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   46s] [125/298] cumulate python310-attrs-22.2.0-1.3
+[   46s] [126/298] cumulate python310-backcall-0.2.0-1.9
+[   46s] [127/298] preinstalled python310-base-3.10.10-2.1
+[   46s] [128/298] cumulate python310-debugpy-1.6.6-3.2
+[   46s] [129/298] cumulate python310-decorator-5.1.1-1.4
+[   46s] [130/298] cumulate python310-editables-0.3-1.4
+[   46s] [131/298] cumulate python310-entrypoints-0.4-1.3
+[   46s] [132/298] cumulate python310-exceptiongroup-1.1.1-1.2
+[   46s] [133/298] cumulate python310-executing-1.2.0-4.3
+[   46s] [134/298] cumulate python310-flaky-3.7.0-2.8
+[   46s] [135/298] cumulate python310-iniconfig-2.0.0-1.2
+[   46s] [136/298] cumulate python310-jedi-0.18.2-4.3
+[   46s] [137/298] cumulate python310-nest-asyncio-1.5.6-1.3
+[   46s] [138/298] preinstalled python310-packaging-23.0-2.1
+[   46s] [139/298] cumulate python310-parso-0.8.3-2.3
+[   46s] [140/298] cumulate python310-pathspec-0.11.1-1.2
+[   46s] [141/298] cumulate python310-pickleshare-0.7.5-4.3
+[   46s] [142/298] cumulate python310-platformdirs-3.2.0-1.1
+[   46s] [143/298] cumulate python310-pluggy-1.0.0-1.6
+[   46s] [144/298] cumulate python310-ptyprocess-0.7.0-1.7
+[   46s] [145/298] cumulate python310-pure-eval-0.2.2-1.3
+[   46s] [146/298] preinstalled python310-setuptools-67.6.0-1.2
+[   46s] [147/298] cumulate python310-six-1.16.0-2.6
+[   46s] [148/298] cumulate python310-tomli-2.0.1-1.4
+[   46s] [149/298] cumulate python310-traitlets-5.9.0-1.3
+[   46s] [150/298] cumulate python310-wcwidth-0.2.6-1.3
+[   46s] [151/298] cumulate python310-zipp-3.8.1-1.3
+[   46s] [152/298] cumulate python311-attrs-22.2.0-1.3
+[   46s] [153/298] cumulate python311-backcall-0.2.0-1.9
+[   46s] [154/298] preinstalled python311-base-3.11.2-1.2
+[   46s] [155/298] cumulate python311-debugpy-1.6.6-3.2
+[   46s] [156/298] cumulate python311-decorator-5.1.1-1.4
+[   46s] [157/298] cumulate python311-editables-0.3-1.4
+[   46s] [158/298] cumulate python311-entrypoints-0.4-1.3
+[   46s] [159/298] cumulate python311-exceptiongroup-1.1.1-1.2
+[   46s] [160/298] cumulate python311-executing-1.2.0-4.3
+[   46s] [161/298] cumulate python311-flaky-3.7.0-2.8
+[   46s] [162/298] cumulate python311-iniconfig-2.0.0-1.2
+[   46s] [163/298] cumulate python311-jedi-0.18.2-4.3
+[   46s] [164/298] cumulate python311-nest-asyncio-1.5.6-1.3
+[   46s] [165/298] cumulate python311-packaging-23.0-2.2
+[   46s] [166/298] cumulate python311-parso-0.8.3-2.3
+[   46s] [167/298] cumulate python311-pathspec-0.11.1-1.2
+[   46s] [168/298] cumulate python311-pickleshare-0.7.5-4.3
+[   46s] [169/298] cumulate python311-platformdirs-3.2.0-1.1
+[   46s] [170/298] cumulate python311-pluggy-1.0.0-1.6
+[   46s] [171/298] cumulate python311-ptyprocess-0.7.0-1.7
+[   46s] [172/298] cumulate python311-pure-eval-0.2.2-1.3
+[   46s] [173/298] preinstalled python311-setuptools-67.6.0-1.2
+[   46s] [174/298] cumulate python311-six-1.16.0-2.6
+[   46s] [175/298] cumulate python311-tomli-2.0.1-1.4
+[   46s] [176/298] cumulate python311-traitlets-5.9.0-1.3
+[   46s] [177/298] cumulate python311-wcwidth-0.2.6-1.3
+[   46s] [178/298] cumulate python311-zipp-3.8.1-1.3
+[   46s] [179/298] cumulate python39-attrs-22.2.0-1.3
+[   46s] [180/298] cumulate python39-backcall-0.2.0-1.9
+[   46s] [181/298] preinstalled python39-base-3.9.16-5.1
+[   46s] [182/298] cumulate python39-debugpy-1.6.6-3.2
+[   46s] [183/298] cumulate python39-decorator-5.1.1-1.4
+[   46s] [184/298] cumulate python39-editables-0.3-1.4
+[   46s] [185/298] cumulate python39-entrypoints-0.4-1.3
+[   46s] [186/298] cumulate python39-exceptiongroup-1.1.1-1.2
+[   46s] [187/298] cumulate python39-executing-1.2.0-4.3
+[   46s] [188/298] cumulate python39-flaky-3.7.0-2.8
+[   46s] [189/298] cumulate python39-iniconfig-2.0.0-1.2
+[   46s] [190/298] cumulate python39-jedi-0.18.2-4.3
+[   46s] [191/298] cumulate python39-nest-asyncio-1.5.6-1.3
+[   46s] [192/298] cumulate python39-packaging-23.0-2.2
+[   46s] [193/298] cumulate python39-parso-0.8.3-2.3
+[   46s] [194/298] cumulate python39-pathspec-0.11.1-1.2
+[   46s] [195/298] cumulate python39-pickleshare-0.7.5-4.3
+[   46s] [196/298] cumulate python39-platformdirs-3.2.0-1.1
+[   46s] [197/298] cumulate python39-pluggy-1.0.0-1.6
+[   46s] [198/298] cumulate python39-ptyprocess-0.7.0-1.7
+[   46s] [199/298] cumulate python39-pure-eval-0.2.2-1.3
+[   46s] [200/298] preinstalled python39-setuptools-67.6.0-1.2
+[   46s] [201/298] cumulate python39-six-1.16.0-2.6
+[   46s] [202/298] cumulate python39-tomli-2.0.1-1.4
+[   46s] [203/298] cumulate python39-traitlets-5.9.0-1.3
+[   46s] [204/298] cumulate python39-typing_extensions-4.5.0-1.2
+[   46s] [205/298] cumulate python39-wcwidth-0.2.6-1.3
+[   46s] [206/298] cumulate python39-zipp-3.8.1-1.3
+[   46s] [207/298] preinstalled qemu-linux-user-7.1.0-58.1
+[   46s] [208/298] preinstalled rpm-4.18.0-4.2
+[   46s] [209/298] preinstalled rpm-build-4.18.0-4.2
+[   46s] [210/298] preinstalled rpm-build-perl-4.18.0-4.2
+[   46s] [211/298] preinstalled rpm-config-SUSE-20220926-1.1
+[   46s] [212/298] preinstalled rpmlint-mini-2.4.0+git20230403.7ce263c-10.5
+[   46s] [213/298] preinstalled rpmlint-strict-2.4.0+git20230411.8f9c3d4-1.1
+[   46s] [214/298] preinstalled sed-4.9-2.1
+[   46s] [215/298] preinstalled shadow-4.13-4.1
+[   46s] [216/298] preinstalled system-group-hardware-20170617-24.1
+[   46s] [217/298] preinstalled system-user-root-20190513-2.1
+[   46s] [218/298] preinstalled systemd-rpm-macros-20-1.1
+[   46s] [219/298] preinstalled sysuser-shadow-3.1-5.1
+[   46s] [220/298] preinstalled tar-1.34-10.1
+[   46s] [221/298] preinstalled terminfo-base-6.4.20230408-9.1
+[   46s] [222/298] preinstalled update-alternatives-1.21.8-1.1
+[   46s] [223/298] preinstalled util-linux-2.38.1-12.1
+[   46s] [224/298] preinstalled which-2.21-5.1
+[   46s] [225/298] preinstalled xz-5.4.2-2.1
+[   46s] [226/298] cumulate alts-1.2+3.b848aad-3.1
+[   46s] [227/298] cumulate libprocps8-3.3.17-12.1
+[   46s] [228/298] cumulate python310-3.10.10-2.1
+[   46s] [229/298] cumulate python310-asttokens-2.2.1-1.3
+[   46s] [230/298] cumulate python310-comm-0.1.3-1.1
+[   46s] [231/298] cumulate python310-importlib-metadata-6.1.0-2.1
+[   46s] [232/298] cumulate python310-matplotlib-inline-0.1.6-1.3
+[   46s] [233/298] cumulate python310-pexpect-4.8.0-9.1
+[   46s] [234/298] cumulate python310-prompt_toolkit-3.0.38-1.1
+[   46s] [235/298] cumulate python310-python-dateutil-2.8.2-1.6
+[   46s] [236/298] cumulate python311-3.11.2-1.1
+[   46s] [237/298] cumulate python311-asttokens-2.2.1-1.3
+[   46s] [238/298] cumulate python311-comm-0.1.3-1.1
+[   46s] [239/298] cumulate python311-importlib-metadata-6.1.0-2.1
+[   46s] [240/298] cumulate python311-matplotlib-inline-0.1.6-1.3
+[   46s] [241/298] cumulate python311-pexpect-4.8.0-9.1
+[   46s] [242/298] cumulate python311-prompt_toolkit-3.0.38-1.1
+[   46s] [243/298] cumulate python311-python-dateutil-2.8.2-1.6
+[   46s] [244/298] cumulate python39-3.9.16-5.1
+[   46s] [245/298] cumulate python39-asttokens-2.2.1-1.3
+[   46s] [246/298] cumulate python39-comm-0.1.3-1.1
+[   46s] [247/298] cumulate python39-importlib-metadata-6.1.0-2.1
+[   46s] [248/298] cumulate python39-matplotlib-inline-0.1.6-1.3
+[   46s] [249/298] cumulate python39-pexpect-4.8.0-9.1
+[   46s] [250/298] cumulate python39-prompt_toolkit-3.0.38-1.1
+[   46s] [251/298] cumulate python39-python-dateutil-2.8.2-1.6
+[   46s] [252/298] cumulate libzmq5-4.3.4-4.1
+[   46s] [253/298] cumulate python310-hatchling-1.13.0-1.3
+[   46s] [254/298] cumulate python311-hatchling-1.13.0-1.3
+[   46s] [255/298] cumulate python39-hatchling-1.13.0-1.3
+[   46s] [256/298] cumulate procps-3.3.17-12.1
+[   46s] [257/298] cumulate python310-Pygments-2.14.0-1.3
+[   46s] [258/298] cumulate python310-pip-22.3.1-1.3
+[   46s] [259/298] cumulate python310-pyzmq-24.0.1-3.3
+[   46s] [260/298] cumulate python310-tornado6-6.2-5.3
+[   46s] [261/298] cumulate python311-Pygments-2.14.0-1.3
+[   46s] [262/298] cumulate python311-pip-22.3.1-1.3
+[   46s] [263/298] cumulate python311-pyzmq-24.0.1-3.3
+[   46s] [264/298] cumulate python311-tornado6-6.2-5.3
+[   46s] [265/298] cumulate python39-Pygments-2.14.0-1.3
+[   46s] [266/298] cumulate python39-pip-22.3.1-1.3
+[   46s] [267/298] cumulate python39-pyzmq-24.0.1-3.3
+[   46s] [268/298] cumulate python39-tornado6-6.2-5.3
+[   46s] [269/298] cumulate python310-jupyter-core-5.3.0-1.2
+[   46s] [270/298] cumulate python310-stack-data-0.2.0-2.3
+[   46s] [271/298] cumulate python311-jupyter-core-5.3.0-1.2
+[   46s] [272/298] cumulate python311-stack-data-0.2.0-2.3
+[   46s] [273/298] cumulate python39-jupyter-core-5.3.0-1.2
+[   46s] [274/298] cumulate python39-stack-data-0.2.0-2.3
+[   46s] [275/298] cumulate python310-pytest-7.2.0-3.2
+[   46s] [276/298] cumulate python311-pytest-7.2.0-3.2
+[   46s] [277/298] cumulate python39-pytest-7.2.0-3.2
+[   46s] [278/298] cumulate python310-psutil-5.9.4-2.3
+[   46s] [279/298] cumulate python310-pytest-asyncio-0.20.3-1.3
+[   46s] [280/298] cumulate python310-pytest-timeout-2.1.0-5.3
+[   46s] [281/298] cumulate python310-tornado-6.2-15.6
+[   46s] [282/298] cumulate python311-psutil-5.9.4-2.3
+[   46s] [283/298] cumulate python311-pytest-asyncio-0.20.3-1.3
+[   46s] [284/298] cumulate python311-pytest-timeout-2.1.0-5.3
+[   46s] [285/298] cumulate python311-tornado-6.2-15.6
+[   46s] [286/298] cumulate python39-psutil-5.9.4-2.3
+[   46s] [287/298] cumulate python39-pytest-asyncio-0.20.3-1.3
+[   46s] [288/298] cumulate python39-pytest-timeout-2.1.0-5.3
+[   46s] [289/298] cumulate python39-tornado-6.2-15.6
+[   46s] [290/298] cumulate python310-ipython-8.12.0-1.1
+[   46s] [291/298] cumulate python311-ipython-8.12.0-1.1
+[   46s] [292/298] cumulate python39-ipython-8.12.0-1.1
+[   46s] [293/298] cumulate python310-jupyter-client7-7.4.9-2.1
+[   46s] [294/298] cumulate python311-jupyter-client7-7.4.9-2.1
+[   46s] [295/298] cumulate python39-jupyter-client7-7.4.9-2.1
+[   47s] [296/298] cumulate python310-ipykernel-6.22.0-1.1
+[   47s] [297/298] cumulate python311-ipykernel-6.22.0-1.1
+[   47s] [298/298] cumulate python39-ipykernel-6.22.0-1.1
+[   47s] now installing cumulated packages
+[   48s] Preparing...                          ########################################
+[   48s] Updating / installing...
+[   48s] python39-traitlets-5.9.0-1.3          ########################################
+[   49s] python311-traitlets-5.9.0-1.3         ########################################
+[   49s] python310-traitlets-5.9.0-1.3         ########################################
+[   49s] python39-packaging-23.0-2.2           ########################################
+[   49s] python311-packaging-23.0-2.2          ########################################
+[   49s] libsqlite3-0-3.41.2-1.1               ########################################
+[   49s] python310-matplotlib-inline-0.1.6-1.3 ########################################
+[   49s] python311-matplotlib-inline-0.1.6-1.3 ########################################
+[   49s] python39-matplotlib-inline-0.1.6-1.3  ########################################
+[   49s] python39-tomli-2.0.1-1.4              ########################################
+[   49s] python39-six-1.16.0-2.6               ########################################
+[   49s] python39-pluggy-1.0.0-1.6             ########################################
+[   49s] python39-nest-asyncio-1.5.6-1.3       ########################################
+[   50s] python311-six-1.16.0-2.6              ########################################
+[   50s] python311-pluggy-1.0.0-1.6            ########################################
+[   50s] python311-nest-asyncio-1.5.6-1.3      ########################################
+[   50s] python310-tomli-2.0.1-1.4             ########################################
+[   50s] python310-six-1.16.0-2.6              ########################################
+[   50s] python310-pluggy-1.0.0-1.6            ########################################
+[   50s] python310-nest-asyncio-1.5.6-1.3      ########################################
+[   50s] python310-asttokens-2.2.1-1.3         ########################################
+[   50s] python310-python-dateutil-2.8.2-1.6   ########################################
+[   50s] python311-asttokens-2.2.1-1.3         ########################################
+[   50s] python311-python-dateutil-2.8.2-1.6   ########################################
+[   50s] python39-asttokens-2.2.1-1.3          ########################################
+[   50s] python39-python-dateutil-2.8.2-1.6    ########################################
+[   50s] python310-comm-0.1.3-1.1              ########################################
+[   50s] python311-comm-0.1.3-1.1              ########################################
+[   50s] python39-comm-0.1.3-1.1               ########################################
+[   50s] python39-zipp-3.8.1-1.3               ########################################
+[   50s] python39-importlib-metadata-6.1.0-2.1 ########################################
+[   50s] python39-wcwidth-0.2.6-1.3            ########################################
+[   50s] python39-typing_extensions-4.5.0-1.2  ########################################
+[   50s] python39-pure-eval-0.2.2-1.3          ########################################
+[   51s] python39-ptyprocess-0.7.0-1.7         ########################################
+[   51s] python39-pexpect-4.8.0-9.1            ########################################
+[   51s] python39-platformdirs-3.2.0-1.1       ########################################
+[   51s] python39-pickleshare-0.7.5-4.3        ########################################
+[   51s] python39-pathspec-0.11.1-1.2          ########################################
+[   51s] python39-parso-0.8.3-2.3              ########################################
+[   52s] python39-jedi-0.18.2-4.3              ########################################
+[   52s] python39-iniconfig-2.0.0-1.2          ########################################
+[   52s] python39-executing-1.2.0-4.3          ########################################
+[   52s] python39-exceptiongroup-1.1.1-1.2     ########################################
+[   52s] python39-entrypoints-0.4-1.3          ########################################
+[   52s] python39-editables-0.3-1.4            ########################################
+[   52s] python39-decorator-5.1.1-1.4          ########################################
+[   54s] python39-debugpy-1.6.6-3.2            ########################################
+[   54s] python39-backcall-0.2.0-1.9           ########################################
+[   54s] python39-attrs-22.2.0-1.3             ########################################
+[   54s] python311-zipp-3.8.1-1.3              ########################################
+[   54s] python311-importlib-metadata-6.1.0-2.1########################################
+[   54s] python311-wcwidth-0.2.6-1.3           ########################################
+[   54s] python311-tomli-2.0.1-1.4             ########################################
+[   54s] python311-pure-eval-0.2.2-1.3         ########################################
+[   54s] python311-ptyprocess-0.7.0-1.7        ########################################
+[   54s] python311-pexpect-4.8.0-9.1           ########################################
+[   54s] python311-platformdirs-3.2.0-1.1      ########################################
+[   54s] python311-pickleshare-0.7.5-4.3       ########################################
+[   54s] python311-pathspec-0.11.1-1.2         ########################################
+[   54s] python311-parso-0.8.3-2.3             ########################################
+[   56s] python311-jedi-0.18.2-4.3             ########################################
+[   56s] python311-iniconfig-2.0.0-1.2         ########################################
+[   56s] python311-executing-1.2.0-4.3         ########################################
+[   56s] python311-exceptiongroup-1.1.1-1.2    ########################################
+[   56s] python311-entrypoints-0.4-1.3         ########################################
+[   56s] python311-editables-0.3-1.4           ########################################
+[   56s] python311-decorator-5.1.1-1.4         ########################################
+[   57s] python311-debugpy-1.6.6-3.2           ########################################
+[   57s] python311-backcall-0.2.0-1.9          ########################################
+[   57s] python311-attrs-22.2.0-1.3            ########################################
+[   57s] python310-zipp-3.8.1-1.3              ########################################
+[   57s] python310-importlib-metadata-6.1.0-2.1########################################
+[   57s] python310-wcwidth-0.2.6-1.3           ########################################
+[   57s] python310-pure-eval-0.2.2-1.3         ########################################
+[   57s] python310-ptyprocess-0.7.0-1.7        ########################################
+[   57s] python310-pexpect-4.8.0-9.1           ########################################
+[   57s] python310-platformdirs-3.2.0-1.1      ########################################
+[   57s] python310-pickleshare-0.7.5-4.3       ########################################
+[   57s] python310-pathspec-0.11.1-1.2         ########################################
+[   58s] python310-parso-0.8.3-2.3             ########################################
+[   59s] python310-jedi-0.18.2-4.3             ########################################
+[   59s] python310-iniconfig-2.0.0-1.2         ########################################
+[   59s] python310-executing-1.2.0-4.3         ########################################
+[   59s] python310-exceptiongroup-1.1.1-1.2    ########################################
+[   59s] python310-entrypoints-0.4-1.3         ########################################
+[   59s] python310-editables-0.3-1.4           ########################################
+[   59s] python310-decorator-5.1.1-1.4         ########################################
+[   60s] python310-debugpy-1.6.6-3.2           ########################################
+[   60s] python310-backcall-0.2.0-1.9          ########################################
+[   60s] python310-attrs-22.2.0-1.3            ########################################
+[   60s] libunwind8-1.6.2-4.1                  ########################################
+[   61s] libsystemd0-mini-253.3-1.1            ########################################
+[   61s] libprocps8-3.3.17-12.1                ########################################
+[   61s] procps-3.3.17-12.1                    ########################################
+[   61s] python310-psutil-5.9.4-2.3            ########################################
+[   61s] python311-psutil-5.9.4-2.3            ########################################
+[   62s] python39-psutil-5.9.4-2.3             ########################################
+[   62s] libsodium23-1.0.18-2.2                ########################################
+[   62s] libzmq5-4.3.4-4.1                     ########################################
+[   62s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   62s] alts-1.2+3.b848aad-3.1                ########################################
+[   63s] python310-Pygments-2.14.0-1.3         ########################################
+[   65s] python311-Pygments-2.14.0-1.3         ########################################
+[   67s] python39-Pygments-2.14.0-1.3          ########################################
+[   67s] python310-pytest-7.2.0-3.2            ########################################
+[   68s] python311-pytest-7.2.0-3.2            ########################################
+[   69s] python39-pytest-7.2.0-3.2             ########################################
+[   69s] python39-stack-data-0.2.0-2.3         ########################################
+[   69s] python311-stack-data-0.2.0-2.3        ########################################
+[   69s] python310-stack-data-0.2.0-2.3        ########################################
+[   69s] python39-prompt_toolkit-3.0.38-1.1    ########################################
+[   70s] python311-prompt_toolkit-3.0.38-1.1   ########################################
+[   71s] python310-prompt_toolkit-3.0.38-1.1   ########################################
+[   73s] python310-pip-22.3.1-1.3              ########################################
+[   73s] python310-3.10.10-2.1                 ########################################
+[   74s] python310-tornado6-6.2-5.3            ########################################
+[   74s] python310-pyzmq-24.0.1-3.3            ########################################
+[   74s] python310-jupyter-client7-7.4.9-2.1   ########################################
+[   75s] python310-jupyter-core-5.3.0-1.2      ########################################
+[   75s] python310-ipykernel-6.22.0-1.1        ########################################
+[   76s] python310-ipython-8.12.0-1.1          ########################################
+[   79s] python311-pip-22.3.1-1.3              ########################################
+[   79s] python311-3.11.2-1.1                  ########################################
+[   79s] python311-tornado6-6.2-5.3            ########################################
+[   80s] python311-pyzmq-24.0.1-3.3            ########################################
+[   80s] python311-jupyter-client7-7.4.9-2.1   ########################################
+[   80s] python311-jupyter-core-5.3.0-1.2      ########################################
+[   81s] python311-ipykernel-6.22.0-1.1        ########################################
+[   82s] python311-ipython-8.12.0-1.1          ########################################
+[   84s] python39-pip-22.3.1-1.3               ########################################
+[   85s] python39-3.9.16-5.1                   ########################################
+[   85s] python39-tornado6-6.2-5.3             ########################################
+[   85s] python39-pyzmq-24.0.1-3.3             ########################################
+[   85s] python39-jupyter-client7-7.4.9-2.1    ########################################
+[   86s] python39-jupyter-core-5.3.0-1.2       ########################################
+[   86s] python39-ipykernel-6.22.0-1.1         ########################################
+[   87s] python39-ipython-8.12.0-1.1           ########################################
+[   87s] python39-tornado-6.2-15.6             ########################################
+[   87s] python311-tornado-6.2-15.6            ########################################
+[   87s] python310-tornado-6.2-15.6            ########################################
+[   88s] python39-pytest-asyncio-0.20.3-1.3    ########################################
+[   88s] python39-pytest-timeout-2.1.0-5.3     ########################################
+[   88s] python311-pytest-asyncio-0.20.3-1.3   ########################################
+[   88s] python311-pytest-timeout-2.1.0-5.3    ########################################
+[   88s] python310-pytest-asyncio-0.20.3-1.3   ########################################
+[   88s] python310-pytest-timeout-2.1.0-5.3    ########################################
+[   88s] python310-hatchling-1.13.0-1.3        ########################################
+[   88s] python311-hatchling-1.13.0-1.3        ########################################
+[   88s] python39-hatchling-1.13.0-1.3         ########################################
+[   89s] python39-flaky-3.7.0-2.8              ########################################
+[   89s] python311-flaky-3.7.0-2.8             ########################################
+[   89s] python310-flaky-3.7.0-2.8             ########################################
+[   89s] fdupes-2.2.1-1.1                      ########################################
+[   97s] now finalizing build dir...
+[   97s] ... running 01-add_abuild_user_to_trusted_group
+[   97s] ... running 02-set_timezone_to_utc
+[   98s] ... running 03-set-permissions-secure
+[   98s] ... running 11-hack_uname_version_to_kernel_version
+[  106s] -----------------------------------------------------------------
+[  106s] I have the following modifications for python-jupyter-client7.spec:
+[  106s] 19c19
+[  106s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  106s] ---
+[  106s] > %global flavor test%{nil}
+[  106s] 30c30
+[  106s] < Release:        0
+[  106s] ---
+[  106s] > Release:        2.1
+[  113s] build target is riscv64-suse-linux
+[  113s] -----------------------------------------------------------------
+[  113s] ----- building python-jupyter-client7.spec (user abuild)
+[  113s] -----------------------------------------------------------------
+[  113s] -----------------------------------------------------------------
+[  117s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/db8f188b34837a4e4e52709e05feeb12-python-jupyter-client7:test' /home/abuild/rpmbuild/SOURCES/python-jupyter-client7.spec
+[  162s] Building target platforms: riscv64-suse-linux
+[  162s] Building for target riscv64-suse-linux
+[  162s] setting SOURCE_DATE_EPOCH=1681430400
+[  162s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.drWYsX
+[  162s] + umask 022
+[  162s] + cd /home/abuild/rpmbuild/BUILD
+[  162s] + cd /home/abuild/rpmbuild/BUILD
+[  162s] + rm -rf jupyter_client-7.4.9
+[  162s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/jupyter_client-7.4.9.tar.gz
+[  163s] + STATUS=0
+[  163s] + '[' 0 -ne 0 ']'
+[  163s] + cd jupyter_client-7.4.9
+[  163s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  163s] + sed -i s/--color=yes// pyproject.toml
+[  163s] + RPM_EC=0
+[  163s] ++ jobs -p
+[  163s] + exit 0
+[  163s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.ucya8h
+[  163s] + umask 022
+[  163s] + cd /home/abuild/rpmbuild/BUILD
+[  163s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-jupyter-client7-test-7.4.9-2.1.riscv64
+[  163s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-jupyter-client7-test-7.4.9-2.1.riscv64
+[  163s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  163s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-jupyter-client7-test-7.4.9-2.1.riscv64
+[  164s] + cd jupyter_client-7.4.9
+[  164s] + ref=/usr/lib/rpm
+[  164s] + mints=0
+[  164s] + case $(uname -m) in
+[  164s] ++ uname -m
+[  164s] + mints=20160911
+[  164s] + for s in guess sub
+[  164s] ++ find -maxdepth 8 -name config.guess
+[  164s] + for s in guess sub
+[  164s] ++ find -maxdepth 8 -name config.sub
+[  164s] ++ '[' -f _current_flavor ']'
+[  164s] ++ true
+[  164s] + last_flavor=
+[  164s] + '[' -z '' ']'
+[  164s] + last_flavor=tmp
+[  164s] + '[' tmp '!=' python39 ']'
+[  164s] + '[' -d build ']'
+[  164s] + '[' -d _build.python39 ']'
+[  164s] + echo python39
+[  164s] + python_flavor=python39
+[  164s] + myargs=
+[  164s] + '[' -f './dist/*-none-any.whl' ']'
+[  164s] + /usr/bin/python3.9 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  171s] Processing /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9
+[  171s]   Preparing metadata (pyproject.toml): started
+[  171s]   Running command Preparing metadata (pyproject.toml)
+[  174s]   Preparing metadata (pyproject.toml): finished with status 'done'
+[  174s] Building wheels for collected packages: jupyter_client
+[  174s]   Building wheel for jupyter_client (pyproject.toml): started
+[  174s]   Running command Building wheel for jupyter_client (pyproject.toml)
+[  175s]   Building wheel for jupyter_client (pyproject.toml): finished with status 'done'
+[  175s]   Created wheel for jupyter_client: filename=jupyter_client-7.4.9-py3-none-any.whl size=133491 sha256=ac5bf5b0d28c8f303f9cb4d1b33154b10297ca6c5c69c11f53851ac09916e5d8
+[  175s]   Stored in directory: /home/abuild/.cache/pip/wheels/3e/a7/5c/361de9302e4d4a282e40bff282b557f206a8df8f895dc99830
+[  175s] Successfully built jupyter_client
+[  176s] + '[' -f ./build/jupyter_client-7.4.9-py3-none-any.whl ']'
+[  176s] + mkdir -p ./dist
+[  176s] + cp ./build/jupyter_client-7.4.9-py3-none-any.whl ./dist/
+[  176s] ++ '[' -f _current_flavor ']'
+[  176s] ++ cat _current_flavor
+[  176s] + last_flavor=python39
+[  176s] + '[' -z python39 ']'
+[  176s] + '[' python39 '!=' python311 ']'
+[  176s] + '[' -d build ']'
+[  176s] + mv build _build.python39
+[  176s] + '[' -d _build.python311 ']'
+[  176s] + echo python311
+[  176s] + python_flavor=python311
+[  176s] + myargs=
+[  176s] + '[' -f ./dist/jupyter_client-7.4.9-py3-none-any.whl ']'
+[  176s] + echo 'Already found a compatible wheel in ./dist'
+[  176s] Already found a compatible wheel in ./dist
+[  176s] + mkdir -p ./build
+[  176s] + cp ./dist/jupyter_client-7.4.9-py3-none-any.whl ./build/
+[  176s] ++ '[' -f _current_flavor ']'
+[  176s] ++ cat _current_flavor
+[  176s] + last_flavor=python311
+[  176s] + '[' -z python311 ']'
+[  176s] + '[' python311 '!=' python310 ']'
+[  176s] + '[' -d build ']'
+[  176s] + mv build _build.python311
+[  176s] + '[' -d _build.python310 ']'
+[  176s] + echo python310
+[  176s] + python_flavor=python310
+[  176s] + myargs=
+[  176s] + '[' -f ./dist/jupyter_client-7.4.9-py3-none-any.whl ']'
+[  176s] + echo 'Already found a compatible wheel in ./dist'
+[  176s] Already found a compatible wheel in ./dist
+[  176s] + mkdir -p ./build
+[  176s] + cp ./dist/jupyter_client-7.4.9-py3-none-any.whl ./build/
+[  176s] + RPM_EC=0
+[  176s] ++ jobs -p
+[  176s] + exit 0
+[  177s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.kyJHWY
+[  177s] + umask 022
+[  177s] + cd /home/abuild/rpmbuild/BUILD
+[  177s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-jupyter-client7-test-7.4.9-2.1.riscv64
+[  177s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  177s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-jupyter-client7-test-7.4.9-2.1.riscv64
+[  177s] + cd jupyter_client-7.4.9
+[  177s] + /usr/lib/rpm/find-debuginfo -j4 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9
+[  178s] + /usr/lib/rpm/brp-compress
+[  178s] + /usr/lib/rpm/brp-suse
+[  178s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  178s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  178s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  178s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  179s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  179s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.i3i9pj
+[  179s] + umask 022
+[  179s] + cd /home/abuild/rpmbuild/BUILD
+[  179s] + cd jupyter_client-7.4.9
+[  179s] + pushd jupyter_client/tests
+[  179s] ~/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests ~/rpmbuild/BUILD/jupyter_client-7.4.9
+[  179s] + set +x
+[  179s] Using libalternatives variant 39 for ipython in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  179s] Using libalternatives variant 39 for ipython3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  179s] Using libalternatives variant 39 for jupyter in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using libalternatives variant 39 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using libalternatives variant 39 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using libalternatives variant 39 for pygmentize in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  180s] Using alternative hatchling-3.9 for hatchling in ./build/flavorbin during Python 3.9 expansions.
+[  181s] Using alternative jupyter-kernel-3.9 for jupyter-kernel in ./build/flavorbin during Python 3.9 expansions.
+[  181s] Using alternative jupyter-kernelspec-3.9 for jupyter-kernelspec in ./build/flavorbin during Python 3.9 expansions.
+[  181s] Using alternative jupyter-run-3.9 for jupyter-run in ./build/flavorbin during Python 3.9 expansions.
+[  182s] Using libalternatives variant 311 for ipython in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  182s] Using libalternatives variant 311 for ipython3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  182s] Using libalternatives variant 311 for jupyter in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using libalternatives variant 311 for jupyter-migrate in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using libalternatives variant 311 for jupyter-troubleshoot in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using libalternatives variant 311 for pygmentize in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  183s] Using alternative hatchling-3.11 for hatchling in ./build/flavorbin during Python 3.11 expansions.
+[  184s] Using alternative jupyter-kernel-3.11 for jupyter-kernel in ./build/flavorbin during Python 3.11 expansions.
+[  184s] Using alternative jupyter-kernelspec-3.11 for jupyter-kernelspec in ./build/flavorbin during Python 3.11 expansions.
+[  184s] Using alternative jupyter-run-3.11 for jupyter-run in ./build/flavorbin during Python 3.11 expansions.
+[  186s] Using alternative hatchling-3.10 for hatchling in ./build/flavorbin during Python 3.10 expansions.
+[  186s] Using alternative jupyter-kernel-3.10 for jupyter-kernel in ./build/flavorbin during Python 3.10 expansions.
+[  186s] Using alternative jupyter-kernelspec-3.10 for jupyter-kernelspec in ./build/flavorbin during Python 3.10 expansions.
+[  187s] Using alternative jupyter-run-3.10 for jupyter-run in ./build/flavorbin during Python 3.10 expansions.
+[  187s] + export PATH=/home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  187s] + PATH=/home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  187s] ++ '[' -f _current_flavor ']'
+[  187s] ++ cat _current_flavor
+[  187s] + last_flavor=python310
+[  187s] + '[' -z python310 ']'
+[  187s] + '[' python310 '!=' python39 ']'
+[  187s] + '[' -d build ']'
+[  187s] + mv build _build.python310
+[  187s] + '[' -d _build.python39 ']'
+[  187s] + mv _build.python39 build
+[  187s] + echo python39
+[  187s] + python_flavor=python39
+[  187s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-jupyter-client7-test-7.4.9-2.1.riscv64/usr/lib/python3.9/site-packages
+[  187s] + PYTHONDONTWRITEBYTECODE=1
+[  187s] + pytest-3.9 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v --force-flaky --max-runs=3 --no-success-flaky-report
+[  194s] ============================= test session starts ==============================
+[  194s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  194s] cachedir: .pytest_cache
+[  194s] rootdir: /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9, configfile: pyproject.toml
+[  194s] plugins: asyncio-0.20.3, timeout-2.1.0, flaky-3.7.0
+[  194s] asyncio: mode=auto
+[  194s] timeout: 300.0s
+[  194s] timeout method: signal
+[  194s] timeout func_only: False
+[  208s] collecting ... collected 184 items
+[  208s] 
+[  208s] test_adapter.py::test_default_version PASSED                             [  0%]
+[  208s] test_adapter.py::test_code_to_line_no_code PASSED                        [  1%]
+[  208s] test_adapter.py::V4toV5TestCase::test_complete_reply PASSED              [  1%]
+[  208s] test_adapter.py::V4toV5TestCase::test_complete_request PASSED            [  2%]
+[  208s] test_adapter.py::V4toV5TestCase::test_display_data PASSED                [  2%]
+[  208s] test_adapter.py::V4toV5TestCase::test_execute_reply PASSED               [  3%]
+[  208s] test_adapter.py::V4toV5TestCase::test_execute_request PASSED             [  3%]
+[  208s] test_adapter.py::V4toV5TestCase::test_input_request PASSED               [  4%]
+[  208s] test_adapter.py::V4toV5TestCase::test_kernel_info_reply PASSED           [  4%]
+[  208s] test_adapter.py::V4toV5TestCase::test_no_adapt PASSED                    [  5%]
+[  209s] test_adapter.py::V4toV5TestCase::test_object_info_reply PASSED           [  5%]
+[  209s] test_adapter.py::V4toV5TestCase::test_object_info_reply_not_found PASSED [  6%]
+[  209s] test_adapter.py::V4toV5TestCase::test_object_info_request PASSED         [  7%]
+[  209s] test_adapter.py::V4toV5TestCase::test_rename_type PASSED                 [  7%]
+[  209s] test_adapter.py::V4toV5TestCase::test_same_version PASSED                [  8%]
+[  209s] test_adapter.py::V5toV4TestCase::test_complete_reply PASSED              [  8%]
+[  209s] test_adapter.py::V5toV4TestCase::test_complete_request PASSED            [  9%]
+[  209s] test_adapter.py::V5toV4TestCase::test_display_data PASSED                [  9%]
+[  209s] test_adapter.py::V5toV4TestCase::test_execute_request PASSED             [ 10%]
+[  209s] test_adapter.py::V5toV4TestCase::test_input_request PASSED               [ 10%]
+[  209s] test_adapter.py::V5toV4TestCase::test_inspect_reply PASSED               [ 11%]
+[  209s] test_adapter.py::V5toV4TestCase::test_inspect_request PASSED             [ 11%]
+[  209s] test_adapter.py::V5toV4TestCase::test_inspect_request_token PASSED       [ 12%]
+[  209s] test_adapter.py::V5toV4TestCase::test_kernel_info_reply PASSED           [ 13%]
+[  209s] test_adapter.py::V5toV4TestCase::test_no_adapt PASSED                    [ 13%]
+[  209s] test_adapter.py::V5toV4TestCase::test_rename_type PASSED                 [ 14%]
+[  209s] test_adapter.py::V5toV4TestCase::test_same_version PASSED                [ 14%]
+[  219s] test_client.py::TestKernelClient::test_comm_info PASSED                  [ 15%]
+[  238s] test_client.py::TestKernelClient::test_complete PASSED                   [ 15%]
+[  248s] test_client.py::TestKernelClient::test_execute_interactive PASSED        [ 16%]
+[  258s] test_client.py::TestKernelClient::test_history PASSED                    [ 16%]
+[  268s] test_client.py::TestKernelClient::test_inspect PASSED                    [ 17%]
+[  277s] test_client.py::TestKernelClient::test_kernel_info PASSED                [ 17%]
+[  286s] test_client.py::TestKernelClient::test_shutdown PASSED                   [ 18%]
+[  296s] test_client.py::TestKernelClient::test_shutdown_id PASSED                [ 19%]
+[  296s] test_connect.py::test_write_connection_file PASSED                       [ 19%]
+[  296s] test_connect.py::test_load_connection_file_session PASSED                [ 20%]
+[  296s] test_connect.py::test_load_connection_file_session_with_kn PASSED        [ 20%]
+[  296s] test_connect.py::test_app_load_connection_file PASSED                    [ 21%]
+[  297s] test_connect.py::test_load_connection_info PASSED                        [ 21%]
+[  297s] test_connect.py::test_find_connection_file PASSED                        [ 22%]
+[  297s] test_connect.py::test_find_connection_file_local PASSED                  [ 22%]
+[  297s] test_connect.py::test_find_connection_file_relative PASSED               [ 23%]
+[  297s] test_connect.py::test_find_connection_file_abspath PASSED                [ 23%]
+[  297s] test_connect.py::test_mixin_record_random_ports PASSED                   [ 24%]
+[  297s] test_connect.py::test_mixin_cleanup_random_ports PASSED                  [ 25%]
+[  297s] test_connect.py::test_reconcile_connection_info[True-True] PASSED        [ 25%]
+[  297s] test_connect.py::test_reconcile_connection_info[True-False] PASSED       [ 26%]
+[  297s] test_connect.py::test_reconcile_connection_info[False-True] PASSED       [ 26%]
+[  297s] test_connect.py::test_reconcile_connection_info[False-False] PASSED      [ 27%]
+[  297s] test_jsonutil.py::test_extract_date_from_naive PASSED                    [ 27%]
+[  297s] test_jsonutil.py::test_extract_dates PASSED                              [ 28%]
+[  297s] test_jsonutil.py::test_parse_ms_precision PASSED                         [ 28%]
+[  297s] test_jsonutil.py::test_json_default_date PASSED                          [ 29%]
+[  297s] test_jsonutil.py::test_json_default PASSED                               [ 29%]
+[  306s] test_kernelapp.py::test_kernelapp_lifecycle PASSED                       [ 30%]
+[  317s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_signal_kernel_subprocesses[signaltest-_install_kernel-_ShutdownStatus.ShutdownRequest] PASSED [ 30%]
+[  330s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_signal_kernel_subprocesses[signaltest-no-shutdown-install_kernel_dont_shutdown-_ShutdownStatus.SigtermRequest] PASSED [ 31%]
+[  346s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_signal_kernel_subprocesses[signaltest-no-terminate-install_kernel_dont_terminate-_ShutdownStatus.SigkillRequest] PASSED [ 32%]
+[  356s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_async_signal_kernel_subprocesses[signaltest-_install_kernel-_ShutdownStatus.ShutdownRequest] PASSED [ 32%]
+[  368s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_async_signal_kernel_subprocesses[signaltest-no-shutdown-install_kernel_dont_shutdown-_ShutdownStatus.SigtermRequest] PASSED [ 33%]
+[  383s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_async_signal_kernel_subprocesses[signaltest-no-terminate-install_kernel_dont_terminate-_ShutdownStatus.SigkillRequest] PASSED [ 33%]
+[  384s] test_kernelmanager.py::TestKernelManager::test_lifecycle[tcp] PASSED     [ 34%]
+[  384s] test_kernelmanager.py::TestKernelManager::test_lifecycle[ipc] PASSED     [ 34%]
+[  384s] test_kernelmanager.py::TestKernelManager::test_get_connect_info[tcp] PASSED [ 35%]
+[  384s] test_kernelmanager.py::TestKernelManager::test_get_connect_info[ipc] PASSED [ 35%]
+[  397s] test_kernelmanager.py::TestKernelManager::test_signal_kernel_subprocesses PASSED [ 36%]
+[  408s] test_kernelmanager.py::TestKernelManager::test_start_new_kernel PASSED   [ 36%]
+[  419s] test_kernelmanager.py::TestKernelManager::test_templated_kspec_env PASSED [ 37%]
+[  419s] test_kernelmanager.py::TestKernelManager::test_cleanup_context[tcp] PASSED [ 38%]
+[  419s] test_kernelmanager.py::TestKernelManager::test_cleanup_context[ipc] PASSED [ 38%]
+[  419s] test_kernelmanager.py::TestKernelManager::test_no_cleanup_shared_context PASSED [ 39%]
+[  419s] test_kernelmanager.py::TestKernelManager::test_subclass_callables[tcp] PASSED [ 39%]
+[  419s] test_kernelmanager.py::TestKernelManager::test_subclass_callables[ipc] PASSED [ 40%]
+[  515s] test_kernelmanager.py::TestParallel::test_start_sequence_kernels[tcp] PASSED [ 40%]
+[  655s] test_kernelmanager.py::TestParallel::test_start_sequence_kernels[ipc] PASSED [ 41%]
+[  751s] test_kernelmanager.py::TestParallel::test_start_parallel_thread_kernels[tcp] PASSED [ 41%]
+[  751s] test_kernelmanager.py::TestParallel::test_start_parallel_thread_kernels[ipc] SKIPPED [ 42%]
+[  843s] test_kernelmanager.py::TestParallel::test_start_parallel_process_kernels[tcp] PASSED [ 42%]
+[  843s] test_kernelmanager.py::TestParallel::test_start_parallel_process_kernels[ipc] SKIPPED [ 43%]
+[  928s] test_kernelmanager.py::TestParallel::test_start_sequence_process_kernels[tcp] PASSED [ 44%]
+[  928s] test_kernelmanager.py::TestParallel::test_start_sequence_process_kernels[ipc] SKIPPED [ 44%]
+[  929s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKernelManager-tcp] PASSED [ 45%]
+[  929s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKernelManager-ipc] PASSED [ 45%]
+[  929s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKMSubclass-tcp] PASSED [ 46%]
+[  929s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKMSubclass-ipc] PASSED [ 46%]
+[  929s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKernelManager-tcp] PASSED [ 47%]
+[  930s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKernelManager-ipc] PASSED [ 47%]
+[  930s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKMSubclass-tcp] PASSED [ 48%]
+[  930s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKMSubclass-ipc] PASSED [ 48%]
+[  954s] test_kernelmanager.py::TestAsyncKernelManager::test_signal_kernel_subprocesses PASSED [ 49%]
+[  976s] test_kernelmanager.py::TestAsyncKernelManager::test_start_new_async_kernel PASSED [ 50%]
+[  976s] test_kernelmanager.py::TestAsyncKernelManager::test_subclass_callables[tcp] PASSED [ 50%]
+[  976s] test_kernelmanager.py::TestAsyncKernelManager::test_subclass_callables[ipc] PASSED [ 51%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_allowed_kernel_names PASSED    [ 51%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_cant_install_kernel_spec PASSED [ 52%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_deprecated_whitelist PASSED    [ 52%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_find_all_specs PASSED          [ 53%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_find_kernel_specs PASSED       [ 53%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_get_kernel_spec PASSED         [ 54%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_install_kernel_spec PASSED     [ 54%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_install_kernel_spec_prefix PASSED [ 55%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_kernel_spec_priority PASSED    [ 55%]
+[  977s] test_kernelspec.py::KernelSpecTests::test_remove_kernel_spec PASSED      [ 56%]
+[  983s] test_kernelspec.py::KernelSpecTests::test_remove_kernel_spec_app PASSED  [ 57%]
+[  983s] test_kernelspec.py::KernelSpecTests::test_subclass PASSED                [ 57%]
+[  983s] test_kernelspec.py::KernelSpecTests::test_validate_kernel_name PASSED    [ 58%]
+[  983s] test_localinterfaces.py::test_load_ips PASSED                            [ 58%]
+[  984s] test_manager.py::test_connection_file_real_path PASSED                   [ 59%]
+[  984s] test_multikernelmanager.py::TestKernelManager::test_ipc_cinfo PASSED     [ 59%]
+[  984s] test_multikernelmanager.py::TestKernelManager::test_ipc_lifecycle PASSED [ 60%]
+[  984s] test_multikernelmanager.py::TestKernelManager::test_shutdown_all PASSED  [ 60%]
+[  985s] test_multikernelmanager.py::TestKernelManager::test_start_parallel_process_kernels PASSED [ 61%]
+[  985s] test_multikernelmanager.py::TestKernelManager::test_start_parallel_thread_kernels PASSED [ 61%]
+[  986s] test_multikernelmanager.py::TestKernelManager::test_start_sequence_ipc_kernels PASSED [ 62%]
+[  986s] test_multikernelmanager.py::TestKernelManager::test_start_sequence_tcp_kernels PASSED [ 63%]
+[  987s] test_multikernelmanager.py::TestKernelManager::test_subclass_callables PASSED [ 63%]
+[  987s] test_multikernelmanager.py::TestKernelManager::test_tcp_cinfo PASSED     [ 64%]
+[  987s] test_multikernelmanager.py::TestKernelManager::test_tcp_lifecycle PASSED [ 64%]
+[  987s] test_multikernelmanager.py::TestKernelManager::test_tcp_lifecycle_with_kernel_id PASSED [ 65%]
+[  988s] test_multikernelmanager.py::TestAsyncKernelManager::test_bad_kernelspec PASSED [ 65%]
+[  988s] test_multikernelmanager.py::TestAsyncKernelManager::test_bad_kernelspec_pending PASSED [ 66%]
+[  988s] test_multikernelmanager.py::TestAsyncKernelManager::test_ipc_cinfo PASSED [ 66%]
+[  988s] test_multikernelmanager.py::TestAsyncKernelManager::test_ipc_lifecycle PASSED [ 67%]
+[  988s] test_multikernelmanager.py::TestAsyncKernelManager::test_shutdown_all PASSED [ 67%]
+[  989s] test_multikernelmanager.py::TestAsyncKernelManager::test_shutdown_all_while_starting PASSED [ 68%]
+[  989s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_parallel_process_kernels PASSED [ 69%]
+[  989s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_parallel_thread_kernels PASSED [ 69%]
+[  990s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_sequence_ipc_kernels PASSED [ 70%]
+[  990s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_sequence_tcp_kernels PASSED [ 70%]
+[  991s] test_multikernelmanager.py::TestAsyncKernelManager::test_subclass_callables PASSED [ 71%]
+[  991s] test_multikernelmanager.py::TestAsyncKernelManager::test_tcp_cinfo PASSED [ 71%]
+[  991s] test_multikernelmanager.py::TestAsyncKernelManager::test_tcp_lifecycle PASSED [ 72%]
+[  991s] test_multikernelmanager.py::TestAsyncKernelManager::test_tcp_lifecycle_with_kernel_id PASSED [ 72%]
+[  991s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_after_shutdown_all PASSED [ 73%]
+[  992s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels PASSED [ 73%]
+[  992s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels_early_interrupt PASSED [ 74%]
+[  992s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels_early_restart PASSED [ 75%]
+[  992s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels_early_shutdown PASSED [ 75%]
+[  992s] test_provisioning.py::TestDiscovery::test_find_all_specs PASSED          [ 76%]
+[  992s] test_provisioning.py::TestDiscovery::test_get_missing PASSED             [ 76%]
+[  992s] test_provisioning.py::TestDiscovery::test_get_new PASSED                 [ 77%]
+[  993s] test_provisioning.py::TestRuntime::test_existing[no_provisioner] PASSED  [ 77%]
+[  993s] test_provisioning.py::TestRuntime::test_existing[default_provisioner] PASSED [ 78%]
+[  993s] test_provisioning.py::TestRuntime::test_existing[missing_provisioner] PASSED [ 78%]
+[  993s] test_provisioning.py::TestRuntime::test_existing[custom_provisioner] PASSED [ 79%]
+[  994s] test_provisioning.py::TestRuntime::test_existing[subclassed_provisioner] PASSED [ 79%]
+[  994s] test_provisioning.py::TestRuntime::test_new PASSED                       [ 80%]
+[  994s] test_provisioning.py::TestRuntime::test_custom_lifecycle PASSED          [ 80%]
+[  994s] test_provisioning.py::TestRuntime::test_default_provisioner_config PASSED [ 81%]
+[  994s] test_public_api.py::test_kms PASSED                                      [ 82%]
+[  994s] test_public_api.py::test_kcs PASSED                                      [ 82%]
+[  994s] test_public_api.py::test_launcher PASSED                                 [ 83%]
+[  994s] test_public_api.py::test_connect PASSED                                  [ 83%]
+[ 1016s] test_restarter.py::test_restart_check[tcp] PASSED                        [ 84%]
+[ 1038s] test_restarter.py::test_restart_check[ipc] PASSED                        [ 84%]
+[ 1062s] test_restarter.py::test_restarter_gives_up[tcp] PASSED                   [ 85%]
+[ 1087s] test_restarter.py::test_restarter_gives_up[ipc] PASSED                   [ 85%]
+[ 1109s] test_restarter.py::test_async_restart_check[tcp] PASSED                  [ 86%]
+[ 1131s] test_restarter.py::test_async_restart_check[ipc] PASSED                  [ 86%]
+[ 1176s] test_restarter.py::test_async_restarter_gives_up[tcp] PASSED             [ 87%]
+[ 1222s] test_restarter.py::test_async_restarter_gives_up[ipc] PASSED             [ 88%]
+[ 1222s] test_session.py::TestSession::test_args PASSED                           [ 88%]
+[ 1222s] test_session.py::TestSession::test_bad_pack PASSED                       [ 89%]
+[ 1222s] test_session.py::TestSession::test_bad_packer PASSED                     [ 89%]
+[ 1222s] test_session.py::TestSession::test_bad_roundtrip PASSED                  [ 90%]
+[ 1222s] test_session.py::TestSession::test_bad_unpack PASSED                     [ 90%]
+[ 1222s] test_session.py::TestSession::test_bad_unpacker PASSED                   [ 91%]
+[ 1222s] test_session.py::TestSession::test_clone PASSED                          [ 91%]
+[ 1222s] test_session.py::TestSession::test_cull_digest_history PASSED            [ 92%]
+[ 1222s] test_session.py::TestSession::test_datetimes PASSED                      [ 92%]
+[ 1222s] test_session.py::TestSession::test_datetimes_msgpack SKIPPED (could ...) [ 93%]
+[ 1222s] test_session.py::TestSession::test_datetimes_pickle PASSED               [ 94%]
+[ 1222s] test_session.py::TestSession::test_default_secure PASSED                 [ 94%]
+[ 1222s] test_session.py::TestSession::test_feed_identities PASSED                [ 95%]
+[ 1222s] test_session.py::TestSession::test_msg PASSED                            [ 95%]
+[ 1222s] test_session.py::TestSession::test_send PASSED                           [ 96%]
+[ 1222s] test_session.py::TestSession::test_send_raw PASSED                       [ 96%]
+[ 1222s] test_session.py::TestSession::test_serialize PASSED                      [ 97%]
+[ 1222s] test_session.py::TestSession::test_session_id PASSED                     [ 97%]
+[ 1223s] test_session.py::TestSession::test_tracking PASSED                       [ 98%]
+[ 1223s] test_session.py::TestSession::test_unique_msg_ids PASSED                 [ 98%]
+[ 1223s] test_session.py::TestSession::test_zero_digest_history PASSED            [ 99%]
+[ 1227s] test_ssh.py::test_random_ports PASSED                                    [100%]
+[ 1227s] 
+[ 1227s] =============================== warnings summary ===============================
+[ 1227s] ../connect.py:27
+[ 1227s]   /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/connect.py:27: DeprecationWarning: Jupyter is migrating its paths to use standard platformdirs
+[ 1227s]   given by the platformdirs library.  To remove this warning and
+[ 1227s]   see the appropriate new directories, set the environment variable
+[ 1227s]   `JUPYTER_PLATFORM_DIRS=1` and then run `jupyter --paths`.
+[ 1227s]   The use of platformdirs will be the default in `jupyter_core` v6
+[ 1227s]     from jupyter_core.paths import jupyter_data_dir
+[ 1227s] 
+[ 1227s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[ 1227s] ===Flaky Test Report===
+[ 1227s] 
+[ 1227s] test_start_sequence_kernels[tcp] failed (2 runs remaining out of 3).
+[ 1227s] 	<class 'Failed'>
+[ 1227s] 	Timeout >30.0s
+[ 1227s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:363>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:422>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:412>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:30>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:27>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:84>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:107>, <TracebackEntry /usr/lib64/python3.9/selectors.py:469>]
+[ 1227s] test_start_sequence_kernels[ipc] failed (2 runs remaining out of 3).
+[ 1227s] 	<class 'Failed'>
+[ 1227s] 	Timeout >30.0s
+[ 1227s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:363>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:422>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:412>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:30>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:27>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:84>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:107>, <TracebackEntry /usr/lib64/python3.9/selectors.py:469>]
+[ 1227s] test_start_sequence_kernels[ipc] failed (1 runs remaining out of 3).
+[ 1227s] 	<class 'RuntimeError'>
+[ 1227s] 	Kernel didn't respond in 30 seconds
+[ 1227s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:362>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:422>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:412>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:30>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:27>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:90>, <TracebackEntry /usr/lib64/python3.9/asyncio/futures.py:201>, <TracebackEntry /usr/lib64/python3.9/asyncio/tasks.py:256>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/client.py:206>]
+[ 1227s] test_start_parallel_thread_kernels[tcp] failed (2 runs remaining out of 3).
+[ 1227s] 	<class 'Failed'>
+[ 1227s] 	Timeout >40.0s
+[ 1227s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:375>, <TracebackEntry /usr/lib64/python3.9/concurrent/futures/_base.py:441>, <TracebackEntry /usr/lib64/python3.9/threading.py:312>]
+[ 1227s] test_start_parallel_process_kernels[tcp] failed (2 runs remaining out of 3).
+[ 1227s] 	<class 'Failed'>
+[ 1227s] 	Timeout >30.0s
+[ 1227s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:391>, <TracebackEntry /usr/lib64/python3.9/concurrent/futures/_base.py:441>, <TracebackEntry /usr/lib64/python3.9/threading.py:312>]
+[ 1227s] test_start_sequence_process_kernels[tcp] failed (2 runs remaining out of 3).
+[ 1227s] 	<class 'Failed'>
+[ 1227s] 	Timeout >30.0s
+[ 1227s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:405>, <TracebackEntry /usr/lib64/python3.9/concurrent/futures/_base.py:441>, <TracebackEntry /usr/lib64/python3.9/threading.py:312>]
+[ 1227s] test_signal_kernel_subprocesses failed (2 runs remaining out of 3).
+[ 1227s] 	<class 'Failed'>
+[ 1227s] 	Timeout >10.0s
+[ 1227s] 	[<TracebackEntry /usr/lib/python3.9/site-packages/pytest_asyncio/plugin.py:299>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:84>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:107>, <TracebackEntry /usr/lib64/python3.9/selectors.py:469>]
+[ 1227s] test_start_new_async_kernel failed (2 runs remaining out of 3).
+[ 1227s] 	<class 'Failed'>
+[ 1227s] 	Timeout >10.0s
+[ 1227s] 	[<TracebackEntry /usr/lib/python3.9/site-packages/pytest_asyncio/plugin.py:299>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:84>, <TracebackEntry /usr/lib/python3.9/site-packages/nest_asyncio.py:107>, <TracebackEntry /usr/lib64/python3.9/selectors.py:469>]
+[ 1227s] 
+[ 1227s] ===End Flaky Test Report===
+[ 1227s] ============================= slowest 10 durations =============================
+[ 1227s] 75.03s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_sequence_kernels[ipc]
+[ 1227s] 63.38s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_sequence_kernels[tcp]
+[ 1227s] 46.24s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_parallel_thread_kernels[tcp]
+[ 1227s] 45.52s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_parallel_process_kernels[tcp]
+[ 1227s] 45.20s call     jupyter_client/tests/test_restarter.py::test_async_restarter_gives_up[ipc]
+[ 1227s] 45.20s call     jupyter_client/tests/test_restarter.py::test_async_restarter_gives_up[tcp]
+[ 1227s] 42.45s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_sequence_process_kernels[tcp]
+[ 1227s] 24.16s call     jupyter_client/tests/test_restarter.py::test_restarter_gives_up[tcp]
+[ 1227s] 24.16s call     jupyter_client/tests/test_restarter.py::test_restarter_gives_up[ipc]
+[ 1227s] 22.37s call     jupyter_client/tests/test_restarter.py::test_async_restart_check[tcp]
+[ 1227s] =========================== short test summary info ============================
+[ 1227s] SKIPPED [1] test_kernelmanager.py:369: IPC transport is currently not working for this test!
+[ 1227s] SKIPPED [1] test_kernelmanager.py:385: IPC transport is currently not working for this test!
+[ 1227s] SKIPPED [1] test_kernelmanager.py:401: IPC transport is currently not working for this test!
+[ 1227s] SKIPPED [1] test_session.py:309: could not import 'msgpack': No module named 'msgpack'
+[ 1227s] ============ 180 passed, 4 skipped, 1 warning in 1032.98s (0:17:12) ============
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x406f9a7460>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.SUB) at 0x406f9a7ca0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x406f9a75e0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x406f9a1040>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.SUB) at 0x408a294460>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x400651ddc0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x404a8de040>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.SUB) at 0x404a8b64c0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x404a8b6160>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x4006724fa0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x40064d51c0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.SUB) at 0x400651d8e0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x40064d57c0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x40064d58e0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x406f9a7dc0>
+[ 1227s] Exception ignored in: <function Socket.__del__ at 0x4004550af0>
+[ 1227s] Traceback (most recent call last):
+[ 1227s]   File "/usr/lib64/python3.9/site-packages/zmq/sugar/socket.py", line 115, in __del__
+[ 1227s] ResourceWarning: Unclosed socket <zmq.asyncio.Socket(zmq.DEALER) at 0x404a8c6a60>
+[ 1228s] ++ '[' -f _current_flavor ']'
+[ 1228s] ++ cat _current_flavor
+[ 1228s] + last_flavor=python39
+[ 1228s] + '[' -z python39 ']'
+[ 1228s] + '[' python39 '!=' python311 ']'
+[ 1228s] + '[' -d build ']'
+[ 1228s] + mv build _build.python39
+[ 1228s] + '[' -d _build.python311 ']'
+[ 1228s] + mv _build.python311 build
+[ 1228s] + echo python311
+[ 1228s] + python_flavor=python311
+[ 1228s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-jupyter-client7-test-7.4.9-2.1.riscv64/usr/lib/python3.11/site-packages
+[ 1228s] + PYTHONDONTWRITEBYTECODE=1
+[ 1228s] + pytest-3.11 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v --force-flaky --max-runs=3 --no-success-flaky-report
+[ 1234s] ============================= test session starts ==============================
+[ 1234s] platform linux -- Python 3.11.2, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.11
+[ 1234s] cachedir: .pytest_cache
+[ 1234s] rootdir: /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9, configfile: pyproject.toml
+[ 1234s] plugins: asyncio-0.20.3, timeout-2.1.0, flaky-3.7.0
+[ 1234s] asyncio: mode=Mode.AUTO
+[ 1234s] timeout: 300.0s
+[ 1234s] timeout method: signal
+[ 1234s] timeout func_only: False
+[ 1245s] collecting ... collected 184 items
+[ 1245s] 
+[ 1245s] test_adapter.py::test_default_version PASSED                             [  0%]
+[ 1245s] test_adapter.py::test_code_to_line_no_code PASSED                        [  1%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_complete_reply PASSED              [  1%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_complete_request PASSED            [  2%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_display_data PASSED                [  2%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_execute_reply PASSED               [  3%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_execute_request PASSED             [  3%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_input_request PASSED               [  4%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_kernel_info_reply PASSED           [  4%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_no_adapt PASSED                    [  5%]
+[ 1245s] test_adapter.py::V4toV5TestCase::test_object_info_reply PASSED           [  5%]
+[ 1246s] test_adapter.py::V4toV5TestCase::test_object_info_reply_not_found PASSED [  6%]
+[ 1246s] test_adapter.py::V4toV5TestCase::test_object_info_request PASSED         [  7%]
+[ 1246s] test_adapter.py::V4toV5TestCase::test_rename_type PASSED                 [  7%]
+[ 1246s] test_adapter.py::V4toV5TestCase::test_same_version PASSED                [  8%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_complete_reply PASSED              [  8%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_complete_request PASSED            [  9%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_display_data PASSED                [  9%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_execute_request PASSED             [ 10%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_input_request PASSED               [ 10%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_inspect_reply PASSED               [ 11%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_inspect_request PASSED             [ 11%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_inspect_request_token PASSED       [ 12%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_kernel_info_reply PASSED           [ 13%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_no_adapt PASSED                    [ 13%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_rename_type PASSED                 [ 14%]
+[ 1246s] test_adapter.py::V5toV4TestCase::test_same_version PASSED                [ 14%]
+[ 1256s] test_client.py::TestKernelClient::test_comm_info PASSED                  [ 15%]
+[ 1274s] test_client.py::TestKernelClient::test_complete PASSED                   [ 15%]
+[ 1284s] test_client.py::TestKernelClient::test_execute_interactive PASSED        [ 16%]
+[ 1294s] test_client.py::TestKernelClient::test_history PASSED                    [ 16%]
+[ 1305s] test_client.py::TestKernelClient::test_inspect PASSED                    [ 17%]
+[ 1314s] test_client.py::TestKernelClient::test_kernel_info PASSED                [ 17%]
+[ 1324s] test_client.py::TestKernelClient::test_shutdown PASSED                   [ 18%]
+[ 1334s] test_client.py::TestKernelClient::test_shutdown_id PASSED                [ 19%]
+[ 1334s] test_connect.py::test_write_connection_file PASSED                       [ 19%]
+[ 1334s] test_connect.py::test_load_connection_file_session PASSED                [ 20%]
+[ 1334s] test_connect.py::test_load_connection_file_session_with_kn PASSED        [ 20%]
+[ 1334s] test_connect.py::test_app_load_connection_file PASSED                    [ 21%]
+[ 1334s] test_connect.py::test_load_connection_info PASSED                        [ 21%]
+[ 1334s] test_connect.py::test_find_connection_file PASSED                        [ 22%]
+[ 1334s] test_connect.py::test_find_connection_file_local PASSED                  [ 22%]
+[ 1334s] test_connect.py::test_find_connection_file_relative PASSED               [ 23%]
+[ 1334s] test_connect.py::test_find_connection_file_abspath PASSED                [ 23%]
+[ 1334s] test_connect.py::test_mixin_record_random_ports PASSED                   [ 24%]
+[ 1334s] test_connect.py::test_mixin_cleanup_random_ports PASSED                  [ 25%]
+[ 1335s] test_connect.py::test_reconcile_connection_info[True-True] PASSED        [ 25%]
+[ 1335s] test_connect.py::test_reconcile_connection_info[True-False] PASSED       [ 26%]
+[ 1335s] test_connect.py::test_reconcile_connection_info[False-True] PASSED       [ 26%]
+[ 1335s] test_connect.py::test_reconcile_connection_info[False-False] PASSED      [ 27%]
+[ 1335s] test_jsonutil.py::test_extract_date_from_naive PASSED                    [ 27%]
+[ 1335s] test_jsonutil.py::test_extract_dates PASSED                              [ 28%]
+[ 1335s] test_jsonutil.py::test_parse_ms_precision PASSED                         [ 28%]
+[ 1335s] test_jsonutil.py::test_json_default_date PASSED                          [ 29%]
+[ 1335s] test_jsonutil.py::test_json_default PASSED                               [ 29%]
+[ 1344s] test_kernelapp.py::test_kernelapp_lifecycle PASSED                       [ 30%]
+[ 1355s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_signal_kernel_subprocesses[signaltest-_install_kernel-_ShutdownStatus.ShutdownRequest] PASSED [ 30%]
+[ 1367s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_signal_kernel_subprocesses[signaltest-no-shutdown-install_kernel_dont_shutdown-_ShutdownStatus.SigtermRequest] PASSED [ 31%]
+[ 1382s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_signal_kernel_subprocesses[signaltest-no-terminate-install_kernel_dont_terminate-_ShutdownStatus.SigkillRequest] PASSED [ 32%]
+[ 1392s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_async_signal_kernel_subprocesses[signaltest-_install_kernel-_ShutdownStatus.ShutdownRequest] PASSED [ 32%]
+[ 1405s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_async_signal_kernel_subprocesses[signaltest-no-shutdown-install_kernel_dont_shutdown-_ShutdownStatus.SigtermRequest] PASSED [ 33%]
+[ 1420s] test_kernelmanager.py::TestKernelManagerShutDownGracefully::test_async_signal_kernel_subprocesses[signaltest-no-terminate-install_kernel_dont_terminate-_ShutdownStatus.SigkillRequest] PASSED [ 33%]
+[ 1420s] test_kernelmanager.py::TestKernelManager::test_lifecycle[tcp] PASSED     [ 34%]
+[ 1420s] test_kernelmanager.py::TestKernelManager::test_lifecycle[ipc] PASSED     [ 34%]
+[ 1420s] test_kernelmanager.py::TestKernelManager::test_get_connect_info[tcp] PASSED [ 35%]
+[ 1420s] test_kernelmanager.py::TestKernelManager::test_get_connect_info[ipc] PASSED [ 35%]
+[ 1434s] test_kernelmanager.py::TestKernelManager::test_signal_kernel_subprocesses PASSED [ 36%]
+[ 1444s] test_kernelmanager.py::TestKernelManager::test_start_new_kernel PASSED   [ 36%]
+[ 1455s] test_kernelmanager.py::TestKernelManager::test_templated_kspec_env PASSED [ 37%]
+[ 1455s] test_kernelmanager.py::TestKernelManager::test_cleanup_context[tcp] PASSED [ 38%]
+[ 1455s] test_kernelmanager.py::TestKernelManager::test_cleanup_context[ipc] PASSED [ 38%]
+[ 1455s] test_kernelmanager.py::TestKernelManager::test_no_cleanup_shared_context PASSED [ 39%]
+[ 1455s] test_kernelmanager.py::TestKernelManager::test_subclass_callables[tcp] PASSED [ 39%]
+[ 1456s] test_kernelmanager.py::TestKernelManager::test_subclass_callables[ipc] PASSED [ 40%]
+[ 1550s] test_kernelmanager.py::TestParallel::test_start_sequence_kernels[tcp] PASSED [ 40%]
+[ 1645s] test_kernelmanager.py::TestParallel::test_start_sequence_kernels[ipc] PASSED [ 41%]
+[ 1727s] test_kernelmanager.py::TestParallel::test_start_parallel_thread_kernels[tcp] PASSED [ 41%]
+[ 1727s] test_kernelmanager.py::TestParallel::test_start_parallel_thread_kernels[ipc] SKIPPED [ 42%]
+[ 1810s] test_kernelmanager.py::TestParallel::test_start_parallel_process_kernels[tcp] PASSED [ 42%]
+[ 1810s] test_kernelmanager.py::TestParallel::test_start_parallel_process_kernels[ipc] SKIPPED [ 43%]
+[ 1892s] test_kernelmanager.py::TestParallel::test_start_sequence_process_kernels[tcp] PASSED [ 44%]
+[ 1892s] test_kernelmanager.py::TestParallel::test_start_sequence_process_kernels[ipc] SKIPPED [ 44%]
+[ 1892s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKernelManager-tcp] PASSED [ 45%]
+[ 1892s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKernelManager-ipc] PASSED [ 45%]
+[ 1892s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKMSubclass-tcp] PASSED [ 46%]
+[ 1892s] test_kernelmanager.py::TestAsyncKernelManager::test_lifecycle[AsyncKMSubclass-ipc] PASSED [ 46%]
+[ 1892s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKernelManager-tcp] PASSED [ 47%]
+[ 1892s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKernelManager-ipc] PASSED [ 47%]
+[ 1893s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKMSubclass-tcp] PASSED [ 48%]
+[ 1893s] test_kernelmanager.py::TestAsyncKernelManager::test_get_connect_info[AsyncKMSubclass-ipc] PASSED [ 48%]
+[ 1919s] test_kernelmanager.py::TestAsyncKernelManager::test_signal_kernel_subprocesses PASSED [ 49%]
+[ 1929s] test_kernelmanager.py::TestAsyncKernelManager::test_start_new_async_kernel PASSED [ 50%]
+[ 1929s] test_kernelmanager.py::TestAsyncKernelManager::test_start_new_async_kernel ERROR [ 50%]
+[ 1930s] test_kernelmanager.py::TestAsyncKernelManager::test_subclass_callables[tcp] PASSED [ 50%]
+[ 1930s] test_kernelmanager.py::TestAsyncKernelManager::test_subclass_callables[ipc] PASSED [ 51%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_allowed_kernel_names PASSED    [ 51%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_cant_install_kernel_spec PASSED [ 52%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_deprecated_whitelist PASSED    [ 52%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_find_all_specs PASSED          [ 53%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_find_kernel_specs PASSED       [ 53%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_get_kernel_spec PASSED         [ 54%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_install_kernel_spec PASSED     [ 54%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_install_kernel_spec_prefix PASSED [ 55%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_kernel_spec_priority PASSED    [ 55%]
+[ 1930s] test_kernelspec.py::KernelSpecTests::test_remove_kernel_spec PASSED      [ 56%]
+[ 1936s] test_kernelspec.py::KernelSpecTests::test_remove_kernel_spec_app PASSED  [ 57%]
+[ 1936s] test_kernelspec.py::KernelSpecTests::test_subclass PASSED                [ 57%]
+[ 1936s] test_kernelspec.py::KernelSpecTests::test_validate_kernel_name PASSED    [ 58%]
+[ 1936s] test_localinterfaces.py::test_load_ips PASSED                            [ 58%]
+[ 1936s] test_manager.py::test_connection_file_real_path PASSED                   [ 59%]
+[ 1936s] test_multikernelmanager.py::TestKernelManager::test_ipc_cinfo PASSED     [ 59%]
+[ 1936s] test_multikernelmanager.py::TestKernelManager::test_ipc_lifecycle PASSED [ 60%]
+[ 1936s] test_multikernelmanager.py::TestKernelManager::test_shutdown_all PASSED  [ 60%]
+[ 1937s] test_multikernelmanager.py::TestKernelManager::test_start_parallel_process_kernels PASSED [ 61%]
+[ 1937s] test_multikernelmanager.py::TestKernelManager::test_start_parallel_thread_kernels PASSED [ 61%]
+[ 1938s] test_multikernelmanager.py::TestKernelManager::test_start_sequence_ipc_kernels PASSED [ 62%]
+[ 1939s] test_multikernelmanager.py::TestKernelManager::test_start_sequence_tcp_kernels PASSED [ 63%]
+[ 1939s] test_multikernelmanager.py::TestKernelManager::test_subclass_callables PASSED [ 63%]
+[ 1939s] test_multikernelmanager.py::TestKernelManager::test_tcp_cinfo PASSED     [ 64%]
+[ 1939s] test_multikernelmanager.py::TestKernelManager::test_tcp_lifecycle PASSED [ 64%]
+[ 1939s] test_multikernelmanager.py::TestKernelManager::test_tcp_lifecycle_with_kernel_id PASSED [ 65%]
+[ 1939s] test_multikernelmanager.py::TestAsyncKernelManager::test_bad_kernelspec PASSED [ 65%]
+[ 1940s] test_multikernelmanager.py::TestAsyncKernelManager::test_bad_kernelspec_pending PASSED [ 66%]
+[ 1940s] test_multikernelmanager.py::TestAsyncKernelManager::test_ipc_cinfo PASSED [ 66%]
+[ 1940s] test_multikernelmanager.py::TestAsyncKernelManager::test_ipc_lifecycle PASSED [ 67%]
+[ 1940s] test_multikernelmanager.py::TestAsyncKernelManager::test_shutdown_all PASSED [ 67%]
+[ 1940s] test_multikernelmanager.py::TestAsyncKernelManager::test_shutdown_all_while_starting PASSED [ 68%]
+[ 1941s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_parallel_process_kernels PASSED [ 69%]
+[ 1941s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_parallel_thread_kernels PASSED [ 69%]
+[ 1942s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_sequence_ipc_kernels PASSED [ 70%]
+[ 1943s] test_multikernelmanager.py::TestAsyncKernelManager::test_start_sequence_tcp_kernels PASSED [ 70%]
+[ 1943s] test_multikernelmanager.py::TestAsyncKernelManager::test_subclass_callables PASSED [ 71%]
+[ 1943s] test_multikernelmanager.py::TestAsyncKernelManager::test_tcp_cinfo PASSED [ 71%]
+[ 1943s] test_multikernelmanager.py::TestAsyncKernelManager::test_tcp_lifecycle PASSED [ 72%]
+[ 1943s] test_multikernelmanager.py::TestAsyncKernelManager::test_tcp_lifecycle_with_kernel_id PASSED [ 72%]
+[ 1944s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_after_shutdown_all PASSED [ 73%]
+[ 1944s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels PASSED [ 73%]
+[ 1944s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels_early_interrupt PASSED [ 74%]
+[ 1944s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels_early_restart PASSED [ 75%]
+[ 1944s] test_multikernelmanager.py::TestAsyncKernelManager::test_use_pending_kernels_early_shutdown PASSED [ 75%]
+[ 1944s] test_provisioning.py::TestDiscovery::test_find_all_specs PASSED          [ 76%]
+[ 1944s] test_provisioning.py::TestDiscovery::test_get_missing PASSED             [ 76%]
+[ 1944s] test_provisioning.py::TestDiscovery::test_get_new PASSED                 [ 77%]
+[ 1945s] test_provisioning.py::TestRuntime::test_existing[no_provisioner] PASSED  [ 77%]
+[ 1945s] test_provisioning.py::TestRuntime::test_existing[default_provisioner] PASSED [ 78%]
+[ 1945s] test_provisioning.py::TestRuntime::test_existing[missing_provisioner] PASSED [ 78%]
+[ 1945s] test_provisioning.py::TestRuntime::test_existing[custom_provisioner] PASSED [ 79%]
+[ 1945s] test_provisioning.py::TestRuntime::test_existing[subclassed_provisioner] PASSED [ 79%]
+[ 1946s] test_provisioning.py::TestRuntime::test_new PASSED                       [ 80%]
+[ 1946s] test_provisioning.py::TestRuntime::test_custom_lifecycle PASSED          [ 80%]
+[ 1946s] test_provisioning.py::TestRuntime::test_default_provisioner_config PASSED [ 81%]
+[ 1946s] test_public_api.py::test_kms PASSED                                      [ 82%]
+[ 1946s] test_public_api.py::test_kcs PASSED                                      [ 82%]
+[ 1946s] test_public_api.py::test_launcher PASSED                                 [ 83%]
+[ 1946s] test_public_api.py::test_connect PASSED                                  [ 83%]
+[ 1968s] test_restarter.py::test_restart_check[tcp] PASSED                        [ 84%]
+[ 1990s] test_restarter.py::test_restart_check[ipc] PASSED                        [ 84%]
+[ 2014s] test_restarter.py::test_restarter_gives_up[tcp] PASSED                   [ 85%]
+[ 2038s] test_restarter.py::test_restarter_gives_up[ipc] PASSED                   [ 85%]
+[ 2060s] test_restarter.py::test_async_restart_check[tcp] PASSED                  [ 86%]
+[ 2082s] test_restarter.py::test_async_restart_check[ipc] PASSED                  [ 86%]
+[ 2127s] test_restarter.py::test_async_restarter_gives_up[tcp] PASSED             [ 87%]
+[ 2172s] test_restarter.py::test_async_restarter_gives_up[ipc] PASSED             [ 88%]
+[ 2172s] test_session.py::TestSession::test_args PASSED                           [ 88%]
+[ 2172s] test_session.py::TestSession::test_bad_pack PASSED                       [ 89%]
+[ 2172s] test_session.py::TestSession::test_bad_packer PASSED                     [ 89%]
+[ 2172s] test_session.py::TestSession::test_bad_roundtrip PASSED                  [ 90%]
+[ 2172s] test_session.py::TestSession::test_bad_unpack PASSED                     [ 90%]
+[ 2172s] test_session.py::TestSession::test_bad_unpacker PASSED                   [ 91%]
+[ 2172s] test_session.py::TestSession::test_clone PASSED                          [ 91%]
+[ 2172s] test_session.py::TestSession::test_cull_digest_history PASSED            [ 92%]
+[ 2172s] test_session.py::TestSession::test_datetimes PASSED                      [ 92%]
+[ 2172s] test_session.py::TestSession::test_datetimes_msgpack SKIPPED (could ...) [ 93%]
+[ 2172s] test_session.py::TestSession::test_datetimes_pickle PASSED               [ 94%]
+[ 2173s] test_session.py::TestSession::test_default_secure PASSED                 [ 94%]
+[ 2173s] test_session.py::TestSession::test_feed_identities PASSED                [ 95%]
+[ 2173s] test_session.py::TestSession::test_msg PASSED                            [ 95%]
+[ 2173s] test_session.py::TestSession::test_send PASSED                           [ 96%]
+[ 2173s] test_session.py::TestSession::test_send_raw PASSED                       [ 96%]
+[ 2173s] test_session.py::TestSession::test_serialize PASSED                      [ 97%]
+[ 2173s] test_session.py::TestSession::test_session_id PASSED                     [ 97%]
+[ 2173s] test_session.py::TestSession::test_tracking PASSED                       [ 98%]
+[ 2173s] test_session.py::TestSession::test_unique_msg_ids PASSED                 [ 98%]
+[ 2173s] test_session.py::TestSession::test_zero_digest_history PASSED            [ 99%]
+[ 2176s] test_ssh.py::test_random_ports PASSED                                    [100%]
+[ 2176s] 
+[ 2176s] ==================================== ERRORS ====================================
+[ 2176s] ___ ERROR at teardown of TestAsyncKernelManager.test_start_new_async_kernel ____
+[ 2176s] 
+[ 2176s]     def finalizer() -> None:
+[ 2176s]         """Yield again, to finalize."""
+[ 2176s]     
+[ 2176s]         async def async_finalizer() -> None:
+[ 2176s]             try:
+[ 2176s]                 await gen_obj.__anext__()
+[ 2176s]             except StopAsyncIteration:
+[ 2176s]                 pass
+[ 2176s]             else:
+[ 2176s]                 msg = "Async generator fixture didn't stop."
+[ 2176s]                 msg += "Yield only once."
+[ 2176s]                 raise ValueError(msg)
+[ 2176s]     
+[ 2176s] >       event_loop.run_until_complete(async_finalizer())
+[ 2176s] 
+[ 2176s] /usr/lib/python3.11/site-packages/pytest_asyncio/plugin.py:297: 
+[ 2176s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[ 2176s] /usr/lib/python3.11/site-packages/nest_asyncio.py:84: in run_until_complete
+[ 2176s]     self._run_once()
+[ 2176s] /usr/lib/python3.11/site-packages/nest_asyncio.py:107: in _run_once
+[ 2176s]     event_list = self._selector.select(timeout)
+[ 2176s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[ 2176s] 
+[ 2176s] self = <selectors.EpollSelector object at 0x4007add190>, timeout = 0.1
+[ 2176s] 
+[ 2176s]     def select(self, timeout=None):
+[ 2176s]         if timeout is None:
+[ 2176s]             timeout = -1
+[ 2176s]         elif timeout <= 0:
+[ 2176s]             timeout = 0
+[ 2176s]         else:
+[ 2176s]             # epoll_wait() has a resolution of 1 millisecond, round away
+[ 2176s]             # from zero to wait *at least* timeout seconds.
+[ 2176s]             timeout = math.ceil(timeout * 1e3) * 1e-3
+[ 2176s]     
+[ 2176s]         # epoll_wait() expects `maxevents` to be greater than zero;
+[ 2176s]         # we want to make sure that `select()` can be called when no
+[ 2176s]         # FD is registered.
+[ 2176s]         max_ev = max(len(self._fd_to_key), 1)
+[ 2176s]     
+[ 2176s]         ready = []
+[ 2176s]         try:
+[ 2176s] >           fd_event_list = self._selector.poll(timeout, max_ev)
+[ 2176s] E           Failed: Timeout >10.0s
+[ 2176s] 
+[ 2176s] /usr/lib64/python3.11/selectors.py:468: Failed
+[ 2176s] ---------------------------- Captured stderr setup -----------------------------
+[ 2176s] 0.01s - Debugger warning: It seems that frozen modules are being used, which may
+[ 2176s] 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+[ 2176s] 0.00s - to python to disable frozen modules.
+[ 2176s] 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[ 2176s] --------------------------- Captured stderr teardown ---------------------------
+[ 2176s] 
+[ 2176s] +++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++
+[ 2176s] 
+[ 2176s] ~~~~~~~~~~~~~~~~~~~~~~ Stack of Thread-27 (276772557184) ~~~~~~~~~~~~~~~~~~~~~~~
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 995, in _bootstrap
+[ 2176s]     self._bootstrap_inner()
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 1038, in _bootstrap_inner
+[ 2176s]     self.run()
+[ 2176s]   File "/home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/channels.py", line 112, in run
+[ 2176s]     loop.run_until_complete(self._async_run())
+[ 2176s]   File "/usr/lib/python3.11/site-packages/nest_asyncio.py", line 84, in run_until_complete
+[ 2176s]     self._run_once()
+[ 2176s]   File "/usr/lib/python3.11/site-packages/nest_asyncio.py", line 120, in _run_once
+[ 2176s]     handle._run()
+[ 2176s]   File "/usr/lib64/python3.11/asyncio/events.py", line 80, in _run
+[ 2176s]     self._context.run(self._callback, *self._args)
+[ 2176s]   File "/usr/lib/python3.11/site-packages/nest_asyncio.py", line 196, in step
+[ 2176s]     step_orig(task, exc)
+[ 2176s]   File "/usr/lib64/python3.11/asyncio/tasks.py", line 267, in __step
+[ 2176s]     result = coro.send(None)
+[ 2176s]   File "/home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/channels.py", line 134, in _async_run
+[ 2176s]     self._exit.wait(self.time_to_dead)
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 622, in wait
+[ 2176s]     signaled = self._cond.wait(timeout)
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 324, in wait
+[ 2176s]     gotit = waiter.acquire(True, timeout)
+[ 2176s] 
+[ 2176s] ~~~~~~~~~~~~~~~~~~~~~~ Stack of Thread-22 (276150628736) ~~~~~~~~~~~~~~~~~~~~~~~
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 995, in _bootstrap
+[ 2176s]     self._bootstrap_inner()
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 1038, in _bootstrap_inner
+[ 2176s]     self.run()
+[ 2176s]   File "/home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/channels.py", line 112, in run
+[ 2176s]     loop.run_until_complete(self._async_run())
+[ 2176s]   File "/usr/lib/python3.11/site-packages/nest_asyncio.py", line 84, in run_until_complete
+[ 2176s]     self._run_once()
+[ 2176s]   File "/usr/lib/python3.11/site-packages/nest_asyncio.py", line 120, in _run_once
+[ 2176s]     handle._run()
+[ 2176s]   File "/usr/lib64/python3.11/asyncio/events.py", line 80, in _run
+[ 2176s]     self._context.run(self._callback, *self._args)
+[ 2176s]   File "/usr/lib/python3.11/site-packages/nest_asyncio.py", line 196, in step
+[ 2176s]     step_orig(task, exc)
+[ 2176s]   File "/usr/lib64/python3.11/asyncio/tasks.py", line 267, in __step
+[ 2176s]     result = coro.send(None)
+[ 2176s]   File "/home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/channels.py", line 134, in _async_run
+[ 2176s]     self._exit.wait(self.time_to_dead)
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 622, in wait
+[ 2176s]     signaled = self._cond.wait(timeout)
+[ 2176s]   File "/usr/lib64/python3.11/threading.py", line 324, in wait
+[ 2176s]     gotit = waiter.acquire(True, timeout)
+[ 2176s] 
+[ 2176s] +++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++
+[ 2176s] =============================== warnings summary ===============================
+[ 2176s] ../connect.py:27
+[ 2176s]   /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/connect.py:27: DeprecationWarning: Jupyter is migrating its paths to use standard platformdirs
+[ 2176s]   given by the platformdirs library.  To remove this warning and
+[ 2176s]   see the appropriate new directories, set the environment variable
+[ 2176s]   `JUPYTER_PLATFORM_DIRS=1` and then run `jupyter --paths`.
+[ 2176s]   The use of platformdirs will be the default in `jupyter_core` v6
+[ 2176s]     from jupyter_core.paths import jupyter_data_dir
+[ 2176s] 
+[ 2176s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[ 2176s] ===Flaky Test Report===
+[ 2176s] 
+[ 2176s] test_start_sequence_kernels[tcp] failed (2 runs remaining out of 3).
+[ 2176s] 	<class 'Failed'>
+[ 2176s] 	Timeout >30.0s
+[ 2176s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:363>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:422>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:412>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:30>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:27>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:84>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:107>, <TracebackEntry /usr/lib64/python3.11/selectors.py:468>]
+[ 2176s] test_start_sequence_kernels[ipc] failed (2 runs remaining out of 3).
+[ 2176s] 	<class 'Failed'>
+[ 2176s] 	Timeout >30.0s
+[ 2176s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:363>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:439>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:30>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:27>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:90>, <TracebackEntry /usr/lib64/python3.11/asyncio/futures.py:203>, <TracebackEntry /usr/lib64/python3.11/asyncio/tasks.py:267>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/manager.py:541>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:30>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:27>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:90>, <TracebackEntry /usr/lib64/python3.11/asyncio/futures.py:203>, <TracebackEntry /usr/lib64/python3.11/asyncio/tasks.py:267>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/manager.py:82>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/manager.py:498>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:30>, <TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/utils.py:27>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:84>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:107>, <TracebackEntry /usr/lib64/python3.11/selectors.py:468>]
+[ 2176s] test_start_parallel_thread_kernels[tcp] failed (2 runs remaining out of 3).
+[ 2176s] 	<class 'Failed'>
+[ 2176s] 	Timeout >40.0s
+[ 2176s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:375>, <TracebackEntry /usr/lib64/python3.11/concurrent/futures/_base.py:451>, <TracebackEntry /usr/lib64/python3.11/threading.py:320>]
+[ 2176s] test_start_parallel_process_kernels[tcp] failed (2 runs remaining out of 3).
+[ 2176s] 	<class 'Failed'>
+[ 2176s] 	Timeout >30.0s
+[ 2176s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:391>, <TracebackEntry /usr/lib64/python3.11/concurrent/futures/_base.py:451>, <TracebackEntry /usr/lib64/python3.11/threading.py:320>]
+[ 2176s] test_start_sequence_process_kernels[tcp] failed (2 runs remaining out of 3).
+[ 2176s] 	<class 'Failed'>
+[ 2176s] 	Timeout >30.0s
+[ 2176s] 	[<TracebackEntry /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/tests/test_kernelmanager.py:405>, <TracebackEntry /usr/lib64/python3.11/concurrent/futures/_base.py:451>, <TracebackEntry /usr/lib64/python3.11/threading.py:320>]
+[ 2176s] test_signal_kernel_subprocesses failed (2 runs remaining out of 3).
+[ 2176s] 	<class 'Failed'>
+[ 2176s] 	Timeout >10.0s
+[ 2176s] 	[<TracebackEntry /usr/lib/python3.11/site-packages/pytest_asyncio/plugin.py:478>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:84>, <TracebackEntry /usr/lib/python3.11/site-packages/nest_asyncio.py:107>, <TracebackEntry /usr/lib64/python3.11/selectors.py:468>]
+[ 2176s] 
+[ 2176s] ===End Flaky Test Report===
+[ 2176s] ============================= slowest 10 durations =============================
+[ 2176s] 63.43s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_sequence_kernels[ipc]
+[ 2176s] 62.92s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_sequence_kernels[tcp]
+[ 2176s] 45.20s call     jupyter_client/tests/test_restarter.py::test_async_restarter_gives_up[tcp]
+[ 2176s] 45.18s call     jupyter_client/tests/test_restarter.py::test_async_restarter_gives_up[ipc]
+[ 2176s] 40.70s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_parallel_process_kernels[tcp]
+[ 2176s] 40.47s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_parallel_thread_kernels[tcp]
+[ 2176s] 39.85s call     jupyter_client/tests/test_kernelmanager.py::TestParallel::test_start_sequence_process_kernels[tcp]
+[ 2176s] 24.16s call     jupyter_client/tests/test_restarter.py::test_restarter_gives_up[ipc]
+[ 2176s] 24.16s call     jupyter_client/tests/test_restarter.py::test_restarter_gives_up[tcp]
+[ 2176s] 21.87s call     jupyter_client/tests/test_restarter.py::test_restart_check[tcp]
+[ 2176s] =========================== short test summary info ============================
+[ 2176s] SKIPPED [1] test_kernelmanager.py:369: IPC transport is currently not working for this test!
+[ 2176s] SKIPPED [1] test_kernelmanager.py:385: IPC transport is currently not working for this test!
+[ 2176s] SKIPPED [1] test_kernelmanager.py:401: IPC transport is currently not working for this test!
+[ 2176s] SKIPPED [1] test_session.py:309: could not import 'msgpack': No module named 'msgpack'
+[ 2176s] ERROR test_kernelmanager.py::TestAsyncKernelManager::test_start_new_async_kernel
+[ 2176s] ======== 180 passed, 4 skipped, 1 warning, 1 error in 942.77s (0:15:42) ========
+[ 2177s] Task was destroyed but it is pending!
+[ 2177s] task: <Task pending name='Task-2269' coro=<KernelManager._async_wait() running at /home/abuild/rpmbuild/BUILD/jupyter_client-7.4.9/jupyter_client/manager.py:642> wait_for=<Future pending cb=[Task.__wakeup()]> cb=[_release_waiter(<Future pendi...k.__wakeup()]>)() at /usr/lib64/python3.11/asyncio/tasks.py:421]>
+[ 2177s] error: Bad exit status from /var/tmp/rpm-tmp.i3i9pj (%check)
+[ 2177s] 
+[ 2177s] RPM build errors:
+[ 2177s]     Bad exit status from /var/tmp/rpm-tmp.i3i9pj (%check)
+[ 2177s] ### VM INTERACTION START ###
+[ 2178s] [ 2170.851267][    T1] sysrq: Power Off
+[ 2178s] [ 2170.854200][   T18] reboot: Power down
+[ 2178s] ### VM INTERACTION END ###
+[ 2178s] 
+[ 2178s] old-cirrus3 failed "build python-jupyter-client7.spec" at Fri Apr 14 22:18:52 UTC 2023.
+[ 2178s] 

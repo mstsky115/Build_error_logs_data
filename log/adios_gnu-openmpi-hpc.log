@@ -1,0 +1,573 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] lamb71 started "build adios.spec" at Wed Mar 22 09:29:10 UTC 2023.
+[    0s] 
+[    0s] Building adios:gnu-openmpi-hpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '8328dcf950ff65186956c5be7e1df2d9'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/adios.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/adios.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --buildflavor gnu-openmpi-hpc --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/adios.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [6c787d53e9e0a0301c3756e0304cf3cc]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: libibverbs1 -> libibverbs -> libefa1
+[    3s]   breaking dependency libibverbs -> libefa1
+[    3s] cycle: libibverbs1 -> libibverbs
+[    3s]   breaking dependency libibverbs -> libibverbs1
+[    3s] cycle: libibverbs1 -> libibverbs -> libmlx4-1
+[    3s]   breaking dependency libibverbs -> libmlx4-1
+[    3s] cycle: libibverbs1 -> libibverbs -> libmlx5-1
+[    3s]   breaking dependency libmlx5-1 -> libibverbs1
+[    3s] cycle: libopenmpi_1_10_7-gnu-hpc -> openmpi_1_10_7-gnu-hpc
+[    3s]   breaking dependency libopenmpi_1_10_7-gnu-hpc -> openmpi_1_10_7-gnu-hpc
+[    3s] cycle: libpython3_10-1_0 -> python310-base
+[    3s]   breaking dependency python310-base -> libpython3_10-1_0
+[    3s] done
+[    3s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.2.6-1-default #1 SMP PREEMPT_DYNAMIC Mon Mar 13 10:57:27 UTC 2023 (fa1a4c6)
+[   10s] Increasing log level from now on...
+[   10s] [    5.137413][  T415] sysrq: Changing Loglevel
+[   10s] [    5.137797][  T415] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=997edc4f-b333-4651-97bb-6d46ccd8ad05
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/adios.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build --buildflavor gnu-openmpi-hpc /.build-srcdir/adios.spec build ...
+[   12s] initializing rpm db...
+[   13s] querying package ids...
+[   39s] [1/221] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   39s] [2/221] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   39s] [3/221] preinstalled attr-2.5.1-1.1
+[   39s] [4/221] preinstalled bash-5.2.15-8.1
+[   39s] [5/221] preinstalled bash-sh-5.2.15-8.1
+[   39s] [6/221] preinstalled binutils-2.40-2.1
+[   39s] [7/221] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   39s] [8/221] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   39s] [9/221] preinstalled build-mkbaselibs-20230314-1.1
+[   39s] [10/221] preinstalled bzip2-1.0.8-5.1
+[   39s] [11/221] preinstalled chkstat-1599_20230217-1.1
+[   39s] [12/221] preinstalled compat-usrmerge-build-84.87-5.1
+[   39s] [13/221] preinstalled compat-usrmerge-tools-84.87-5.1
+[   39s] [14/221] preinstalled coreutils-9.1-5.1
+[   39s] [15/221] preinstalled cpio-2.13-5.1
+[   39s] [16/221] preinstalled cpp-13-1.1
+[   39s] [17/221] preinstalled cpp13-13.0.1+git6669-7.1
+[   39s] [18/221] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   39s] [19/221] preinstalled debugedit-5.0-5.1
+[   39s] [20/221] preinstalled diffutils-3.9-1.1
+[   39s] [21/221] preinstalled dwz-0.15-2.1
+[   39s] [22/221] preinstalled elfutils-0.189-2.1
+[   39s] [23/221] cumulate fdupes-2.2.1-1.1
+[   39s] [24/221] preinstalled file-5.44-1.2
+[   39s] [25/221] preinstalled file-magic-5.44-1.2
+[   39s] [26/221] preinstalled filesystem-84.87-12.1
+[   39s] [27/221] preinstalled fillup-1.42-279.1
+[   39s] [28/221] preinstalled findutils-4.9.0-2.1
+[   39s] [29/221] preinstalled gawk-5.2.1-2.1
+[   39s] [30/221] preinstalled gcc-13-1.1
+[   39s] [31/221] preinstalled gcc-PIE-13-1.1
+[   39s] [32/221] preinstalled gcc13-13.0.1+git6669-7.1
+[   39s] [33/221] preinstalled gcc13-PIE-13.0.1+git6669-7.1
+[   39s] [34/221] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   39s] [35/221] preinstalled gettext-tools-mini-0.21.1-1.1
+[   39s] [36/221] preinstalled glibc-2.37-1.1
+[   39s] [37/221] preinstalled glibc-devel-2.37-1.1
+[   39s] [38/221] preinstalled glibc-locale-base-2.37-1.1
+[   39s] [39/221] preinstalled grep-3.9-1.1
+[   39s] [40/221] preinstalled gzip-1.12-3.1
+[   39s] [41/221] preinstalled kernel-obs-build-6.2.6-1.2
+[   39s] [42/221] preinstalled libacl1-2.3.1-2.1
+[   39s] [43/221] preinstalled libasan8-13.0.1+git6669-7.1
+[   39s] [44/221] preinstalled libasm1-0.189-2.1
+[   39s] [45/221] preinstalled libatomic1-13.0.1+git6669-7.1
+[   39s] [46/221] preinstalled libattr1-2.5.1-1.1
+[   39s] [47/221] preinstalled libaudit1-3.0.9-1.1
+[   39s] [48/221] preinstalled libblkid1-2.38.1-10.1
+[   40s] [49/221] cumulate libbrotlicommon1-1.0.9-3.1
+[   40s] [50/221] preinstalled libbz2-1-1.0.8-5.1
+[   40s] [51/221] cumulate libbz2-devel-1.0.8-5.1
+[   40s] [52/221] preinstalled libcap-ng0-0.8.3-1.1
+[   40s] [53/221] preinstalled libcap2-2.67-1.1
+[   40s] [54/221] cumulate libcom_err2-1.46.5-4.1
+[   40s] [55/221] preinstalled libcrypt1-4.4.33-2.1
+[   40s] [56/221] preinstalled libctf-nobfd0-2.40-2.1
+[   40s] [57/221] preinstalled libctf0-2.40-2.1
+[   40s] [58/221] preinstalled libdb-4_8-4.8.30-40.1
+[   40s] [59/221] preinstalled libdw1-0.189-2.1
+[   40s] [60/221] preinstalled libeconf0-0.5.1-1.1
+[   40s] [61/221] preinstalled libelf1-0.189-2.1
+[   40s] [62/221] cumulate libexpat1-2.5.0-2.1
+[   40s] [63/221] preinstalled libfdisk1-2.38.1-10.1
+[   40s] [64/221] cumulate libffi8-3.4.4-1.1
+[   40s] [65/221] preinstalled libgcc_s1-13.0.1+git6669-7.1
+[   40s] [66/221] preinstalled libgcrypt20-1.10.1-2.1
+[   40s] [67/221] preinstalled libgdbm6-1.23-1.1
+[   40s] [68/221] preinstalled libgdbm_compat4-1.23-1.1
+[   40s] [69/221] cumulate libgfortran5-13.0.1+git6669-7.1
+[   40s] [70/221] preinstalled libgmp10-6.2.1-4.1
+[   40s] [71/221] preinstalled libgomp1-13.0.1+git6669-7.1
+[   40s] [72/221] preinstalled libgpg-error0-1.46-1.1
+[   40s] [73/221] cumulate libibumad3-42.0-2.1
+[   40s] [74/221] preinstalled libisl23-0.25-1.1
+[   40s] [75/221] preinstalled libitm1-13.0.1+git6669-7.1
+[   40s] [76/221] cumulate libkeyutils1-1.6.3-5.1
+[   40s] [77/221] preinstalled liblua5_4-5-5.4.4-8.1
+[   40s] [78/221] cumulate liblz4-1-1.9.4-2.1
+[   40s] [79/221] preinstalled liblzma5-5.4.1-2.1
+[   40s] [80/221] preinstalled libmagic1-5.44-1.2
+[   40s] [81/221] preinstalled libmount1-2.38.1-10.1
+[   40s] [82/221] preinstalled libmpc3-1.3.1-1.2
+[   40s] [83/221] cumulate libmpdec3-2.5.1-2.1
+[   40s] [84/221] preinstalled libmpfr6-4.2.0-1.1
+[   40s] [85/221] preinstalled libncurses6-6.4.20230311-8.1
+[   40s] [86/221] cumulate libnghttp2-14-1.51.0-7.2
+[   40s] [87/221] cumulate libnl-config-3.7.0-1.1
+[   40s] [88/221] preinstalled libpcre2-8-0-10.42-3.2
+[   40s] [89/221] preinstalled libpkgconf3-1.8.0-2.1
+[   40s] [90/221] preinstalled libpopt0-1.19-1.1
+[   40s] [91/221] preinstalled libreadline8-8.2-2.1
+[   40s] [92/221] preinstalled librpmbuild9-4.18.0-4.1
+[   40s] [93/221] cumulate libsasl2-3-2.1.28-4.2
+[   40s] [94/221] preinstalled libseccomp2-2.5.4-2.1
+[   40s] [95/221] preinstalled libselinux1-3.5-1.1
+[   40s] [96/221] preinstalled libsemanage-conf-3.5-1.1
+[   40s] [97/221] preinstalled libsemanage2-3.5-1.1
+[   40s] [98/221] preinstalled libsepol2-3.5-1.1
+[   40s] [99/221] preinstalled libsmartcols1-2.38.1-10.1
+[   40s] [100/221] cumulate libsqlite3-0-3.41.0-2.1
+[   40s] [101/221] cumulate libssh-config-0.10.4-1.2
+[   40s] [102/221] preinstalled libstdc++6-13.0.1+git6669-7.1
+[   40s] [103/221] cumulate libstdc++6-devel-gcc13-13.0.1+git6669-7.1
+[   40s] [104/221] preinstalled libsubid4-4.13-4.1
+[   40s] [105/221] preinstalled libubsan1-13.0.1+git6669-7.1
+[   40s] [106/221] cumulate libunistring5-1.1-1.1
+[   40s] [107/221] preinstalled libutempter0-1.2.0-3.2
+[   40s] [108/221] preinstalled libuuid1-2.38.1-10.1
+[   40s] [109/221] cumulate libverto1-0.3.2-1.1
+[   40s] [110/221] preinstalled libxcrypt-devel-4.4.33-2.1
+[   40s] [111/221] cumulate libxml2-2-2.10.3-3.1
+[   40s] [112/221] preinstalled libz1-1.2.13-3.1
+[   40s] [113/221] preinstalled libzstd1-1.5.4-2.1
+[   40s] [114/221] preinstalled linux-glibc-devel-6.2-1.1
+[   40s] [115/221] preinstalled login_defs-4.13-4.1
+[   40s] [116/221] preinstalled lua54-5.4.4-8.1
+[   40s] [117/221] cumulate lua54-luafilesystem-1.8.0-6.1
+[   40s] [118/221] cumulate lua54-luaposix-35.1-2.1
+[   40s] [119/221] cumulate lua54-luaterm-0.07-8.1
+[   40s] [120/221] cumulate m4-1.4.18-7.1
+[   40s] [121/221] preinstalled make-4.4.1-1.1
+[   40s] [122/221] preinstalled ncurses-utils-6.4.20230311-8.1
+[   40s] [123/221] cumulate openmpi4-config-4.1.4-2.1
+[   40s] [124/221] preinstalled pam-1.5.2-13.1
+[   40s] [125/221] preinstalled patch-2.7.6-6.1
+[   40s] [126/221] preinstalled perl-5.36.0-4.1
+[   40s] [127/221] preinstalled perl-base-5.36.0-4.1
+[   40s] [128/221] preinstalled permissions-1599_20230217-1.1
+[   40s] [129/221] preinstalled permissions-config-1599_20230217-1.1
+[   40s] [130/221] preinstalled pkgconf-1.8.0-2.1
+[   40s] [131/221] preinstalled pkgconf-m4-1.8.0-2.1
+[   40s] [132/221] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   40s] [133/221] preinstalled polkit-default-privs-1550+20230307.7f42172-1.1
+[   40s] [134/221] preinstalled post-build-checks-84.87+git20230302.ff58c9e-1.1
+[   40s] [135/221] cumulate python-rpm-macros-20230304.050c1a4-1.1
+[   40s] [136/221] preinstalled qemu-linux-user-7.1.0-54.1
+[   40s] [137/221] preinstalled rpm-4.18.0-4.1
+[   40s] [138/221] preinstalled rpm-build-4.18.0-4.1
+[   40s] [139/221] preinstalled rpm-build-perl-4.18.0-4.1
+[   40s] [140/221] preinstalled rpm-config-SUSE-20220926-1.1
+[   40s] [141/221] preinstalled rpmlint-mini-2.4.0+git20230316.e10f602-9.19
+[   40s] [142/221] preinstalled rpmlint-strict-2.4.0+git20230316.e10f602-1.1
+[   40s] [143/221] preinstalled sed-4.9-2.1
+[   40s] [144/221] preinstalled shadow-4.13-4.1
+[   40s] [145/221] cumulate suse-hpc-0.5.20220525.fd76646-1.1
+[   40s] [146/221] cumulate suse-module-tools-16.0.30-1.1
+[   40s] [147/221] preinstalled system-group-hardware-20170617-24.1
+[   40s] [148/221] cumulate system-group-kvm-20170617-24.1
+[   40s] [149/221] preinstalled system-user-root-20190513-2.1
+[   40s] [150/221] cumulate systemd-mini-253.1-2.1
+[   40s] [151/221] preinstalled systemd-rpm-macros-19-1.1
+[   40s] [152/221] preinstalled sysuser-shadow-3.1-5.1
+[   40s] [153/221] preinstalled tar-1.34-10.1
+[   40s] [154/221] cumulate tcl-8.6.13-4.1
+[   40s] [155/221] preinstalled terminfo-base-6.4.20230311-8.1
+[   40s] [156/221] preinstalled update-alternatives-1.21.8-1.1
+[   40s] [157/221] preinstalled util-linux-2.38.1-10.1
+[   40s] [158/221] preinstalled which-2.21-5.1
+[   40s] [159/221] preinstalled xz-5.4.1-2.1
+[   40s] [160/221] cumulate zlib-devel-1.2.13-3.1
+[   40s] [161/221] cumulate autoconf-2.71-2.1
+[   40s] [162/221] cumulate gcc13-c++-13.0.1+git6669-7.1
+[   40s] [163/221] cumulate gcc13-fortran-13.0.1+git6669-7.1
+[   40s] [164/221] cumulate libbrotlidec1-1.0.9-3.1
+[   40s] [165/221] cumulate libibmad5-42.0-2.1
+[   40s] [166/221] cumulate libidn2-0-2.3.4-1.1
+[   40s] [167/221] cumulate liblz4-devel-1.9.4-2.1
+[   40s] [168/221] cumulate libnl3-200-3.7.0-1.1
+[   40s] [169/221] cumulate libopenssl3-3.0.8-2.1
+[   40s] [170/221] cumulate krb5-mini-1.20.1-4.1
+[   40s] [171/221] cumulate lua-lmod-8.7.17-2.1
+[   40s] [172/221] cumulate gcc-c++-13-1.1
+[   40s] [173/221] cumulate gcc-fortran-13-1.1
+[   40s] [174/221] cumulate gnu-compilers-hpc-1.4-10.2
+[   40s] [175/221] cumulate hdf5_1_12_2-gnu-openmpi1-hpc-module-1.12.2-5.1
+[   40s] [176/221] cumulate kmod-30-2.2
+[   40s] [177/221] cumulate libibnetdisc5-42.0-2.1
+[   40s] [178/221] cumulate libldap2-2.6.3-3.2
+[   40s] [179/221] cumulate libpsl5-0.21.2-1.1
+[   40s] [180/221] cumulate libssh4-0.10.4-1.2
+[   40s] [181/221] cumulate libhdf5_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [182/221] cumulate libhdf5_cpp_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [183/221] cumulate libhdf5_hl_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [184/221] cumulate libhdf5_hl_cpp_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [185/221] cumulate libhdf5_fortran_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [186/221] cumulate libhdf5hl_fortran_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [187/221] cumulate infiniband-diags-42.0-2.1
+[   40s] [188/221] cumulate udev-mini-253.1-2.1
+[   40s] [189/221] cumulate gnu-compilers-hpc-devel-1.4-10.2
+[   40s] [190/221] cumulate libcurl4-7.88.1-1.1
+[   40s] [191/221] cumulate gnu-compilers-hpc-macros-devel-1.4-10.2
+[   40s] [192/221] cumulate libcurl-devel-7.88.1-1.1
+[   40s] [193/221] cumulate libhdf5-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [194/221] cumulate libhdf5_hl-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [195/221] cumulate rdma-core-42.0-2.1
+[   40s] [196/221] cumulate libmlx5-1-42.0-2.1
+[   40s] [197/221] cumulate python310-base-3.10.10-2.1
+[   40s] [198/221] cumulate libpython3_10-1_0-3.10.10-2.1
+[   40s] [199/221] cumulate python310-packaging-23.0-2.1
+[   40s] [200/221] cumulate python310-3.10.10-2.1
+[   40s] [201/221] cumulate libibverbs-42.0-2.1
+[   40s] [202/221] cumulate libibverbs1-42.0-2.1
+[   40s] [203/221] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   40s] [204/221] cumulate libefa1-42.0-2.1
+[   40s] [205/221] cumulate libmlx4-1-42.0-2.1
+[   40s] [206/221] cumulate librdmacm1-42.0-2.1
+[   40s] [207/221] cumulate rsocket-42.0-2.1
+[   40s] [208/221] cumulate libopenmpi_1_10_7-gnu-hpc-1.10.7-7.2
+[   40s] [209/221] cumulate libopenmpi1-gnu-hpc-1.10.7-7.2
+[   40s] [210/221] cumulate openmpi_1_10_7-gnu-hpc-1.10.7-7.2
+[   40s] [211/221] cumulate rdma-core-devel-42.0-2.1
+[   40s] [212/221] cumulate openmpi_1_10_7-gnu-hpc-devel-1.10.7-7.2
+[   40s] [213/221] cumulate hdf5_1_12_2-gnu-openmpi1-hpc-1.12.2-5.1
+[   40s] [214/221] cumulate libnetcdf_4_9_0-gnu-openmpi1-hpc-4.9.0-1.1
+[   40s] [215/221] cumulate openmpi1-gnu-hpc-devel-1.10.7-7.2
+[   40s] [216/221] cumulate openmpi_1_10_7-gnu-hpc-macros-devel-1.10.7-7.2
+[   40s] [217/221] cumulate openmpi1-gnu-hpc-macros-devel-1.10.7-7.2
+[   40s] [218/221] cumulate hdf5_1_12_2-gnu-openmpi1-hpc-devel-1.12.2-5.1
+[   40s] [219/221] cumulate hdf5-gnu-openmpi1-hpc-devel-1.12.2-5.1
+[   40s] [220/221] cumulate netcdf_4_9_0-gnu-openmpi1-hpc-devel-4.9.0-1.1
+[   40s] [221/221] cumulate netcdf-gnu-openmpi1-hpc-devel-4.9.0-1.1
+[   40s] now installing cumulated packages
+[   41s] Preparing...                          ########################################
+[   41s] Updating / installing...
+[   41s] libibumad3-42.0-2.1                   ########################################
+[   41s] libgfortran5-13.0.1+git6669-7.1       ########################################
+[   50s] gcc13-fortran-13.0.1+git6669-7.1      ########################################
+[   50s] libibmad5-42.0-2.1                    ########################################
+[   50s] zlib-devel-1.2.13-3.1                 ########################################
+[   50s] systemd-mini-253.1-2.1                warning: group systemd-journal does not exist - using root
+[   51s] ########################################
+[   52s] Creating group 'systemd-journal' with GID 486.
+[   52s] Creating group 'systemd-timesync' with GID 485.
+[   52s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   52s] Running in chroot, ignoring command 'daemon-reexec'
+[   52s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   52s] All rules containing unresolvable specifiers will be skipped.
+[   53s] libxml2-2-2.10.3-3.1                  ########################################
+[   54s] libunistring5-1.1-1.1                 ########################################
+[   54s] libidn2-0-2.3.4-1.1                   ########################################
+[   54s] libpsl5-0.21.2-1.1                    ########################################
+[   54s] libibnetdisc5-42.0-2.1                ########################################
+[   54s] infiniband-diags-42.0-2.1             ########################################
+[   54s] gcc-fortran-13-1.1                    ########################################
+[   55s] tcl-8.6.13-4.1                        ########################################
+[   55s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/system-group-kvm.conf -
+[   56s] Creating group 'kvm' with GID 36.
+[   56s] system-group-kvm-20170617-24.1        ########################################
+[   56s] python-rpm-macros-20230304.050c1a4-1.1########################################
+[   56s] openmpi4-config-4.1.4-2.1             ########################################
+[   56s] m4-1.4.18-7.1                         ########################################
+[   56s] lua54-luaterm-0.07-8.1                ########################################
+[   56s] lua54-luaposix-35.1-2.1               ########################################
+[   56s] lua54-luafilesystem-1.8.0-6.1         ########################################
+[   56s] lua-lmod-8.7.17-2.1                   ########################################
+[   56s] hdf5_1_12_2-gnu-openmpi1-hpc-module-1.########################################
+[   56s] gnu-compilers-hpc-1.4-10.2            ########################################
+[   57s] libhdf5_1_12_2-gnu-openmpi1-hpc-1.12.2########################################
+[   57s] libhdf5_hl_1_12_2-gnu-openmpi1-hpc-1.1########################################
+[   57s] libhdf5_fortran_1_12_2-gnu-openmpi1-hp########################################
+[   57s] libhdf5hl_fortran_1_12_2-gnu-openmpi1-########################################
+[   57s] libhdf5_hl-gnu-openmpi1-hpc-1.12.2-5.1########################################
+[   57s] libhdf5-gnu-openmpi1-hpc-1.12.2-5.1   ########################################
+[   57s] libhdf5_cpp_1_12_2-gnu-openmpi1-hpc-1.########################################
+[   57s] libhdf5_hl_cpp_1_12_2-gnu-openmpi1-hpc########################################
+[   57s] libverto1-0.3.2-1.1                   ########################################
+[   70s] libstdc++6-devel-gcc13-13.0.1+git6669-########################################
+[   75s] gcc13-c++-13.0.1+git6669-7.1          ########################################
+[   75s] gcc-c++-13-1.1                        ########################################
+[   75s] gnu-compilers-hpc-devel-1.4-10.2      ########################################
+[   75s] libssh-config-0.10.4-1.2              ########################################
+[   75s] libsqlite3-0-3.41.0-2.1               ########################################
+[   75s] libsasl2-3-2.1.28-4.2                 ########################################
+[   75s] libnl-config-3.7.0-1.1                ########################################
+[   75s] libnl3-200-3.7.0-1.1                  ########################################
+[   75s] libnghttp2-14-1.51.0-7.2              ########################################
+[   76s] libmpdec3-2.5.1-2.1                   ########################################
+[   76s] liblz4-1-1.9.4-2.1                    ########################################
+[   76s] libkeyutils1-1.6.3-5.1                ########################################
+[   76s] libffi8-3.4.4-1.1                     ########################################
+[   76s] libexpat1-2.5.0-2.1                   ########################################
+[   76s] libcom_err2-1.46.5-4.1                ########################################
+[   77s] krb5-mini-1.20.1-4.1                  ########################################
+[   78s] Updating /etc/sysconfig/kadmind ...
+[   78s] Updating /etc/sysconfig/krb5kdc ...
+[   78s] libbrotlicommon1-1.0.9-3.1            ########################################
+[   78s] libbrotlidec1-1.0.9-3.1               ########################################
+[   78s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   79s] libopenssl3-3.0.8-2.1                 ########################################
+[   80s] libpython3_10-1_0-3.10.10-2.1         ########################################
+[   80s] python310-3.10.10-2.1                 ########################################
+[   84s] python310-base-3.10.10-2.1            ########################################
+[   85s] suse-module-tools-16.0.30-1.1         ########################################
+[   85s] kmod-30-2.2                           ########################################
+[   87s] udev-mini-253.1-2.1                   ########################################
+[   95s] Failed to preset unit, unit remote-cryptsetup.target does not exist.
+[   95s] rdma-core-42.0-2.1                    ########################################
+[   95s] libmlx5-1-42.0-2.1                    ########################################
+[   95s] libefa1-42.0-2.1                      ########################################
+[   96s] libmlx4-1-42.0-2.1                    ########################################
+[   96s] libibverbs1-42.0-2.1                  ########################################
+[   96s] libibverbs-42.0-2.1                   ########################################
+[   96s] librdmacm1-42.0-2.1                   ########################################
+[   96s] openmpi_1_10_7-gnu-hpc-1.10.7-7.2     ########################################
+[   97s] libopenmpi_1_10_7-gnu-hpc-1.10.7-7.2  ########################################
+[   97s] libopenmpi1-gnu-hpc-1.10.7-7.2        ########################################
+[   97s] hdf5_1_12_2-gnu-openmpi1-hpc-1.12.2-5.########################################
+[   97s] rsocket-42.0-2.1                      ########################################
+[   97s] rdma-core-devel-42.0-2.1              ########################################
+[   98s] openmpi_1_10_7-gnu-hpc-devel-1.10.7-7.########################################
+[   98s] openmpi1-gnu-hpc-devel-1.10.7-7.2     ########################################
+[   98s] hdf5_1_12_2-gnu-openmpi1-hpc-devel-1.1########################################
+[   98s] hdf5-gnu-openmpi1-hpc-devel-1.12.2-5.1########################################
+[   98s] openmpi_1_10_7-gnu-hpc-macros-devel-1.########################################
+[   98s] python310-packaging-23.0-2.1          ########################################
+[   98s] libldap2-2.6.3-3.2                    ########################################
+[   98s] libssh4-0.10.4-1.2                    ########################################
+[   98s] libcurl4-7.88.1-1.1                   ########################################
+[   99s] libcurl-devel-7.88.1-1.1              ########################################
+[   99s] libnetcdf_4_9_0-gnu-openmpi1-hpc-4.9.0########################################
+[   99s] netcdf_4_9_0-gnu-openmpi1-hpc-devel-4.########################################
+[   99s] netcdf-gnu-openmpi1-hpc-devel-4.9.0-1.########################################
+[   99s] python-rpm-packaging-20210526+a18ca48-########################################
+[   99s] openmpi1-gnu-hpc-macros-devel-1.10.7-7########################################
+[   99s] liblz4-devel-1.9.4-2.1                ########################################
+[   99s] gnu-compilers-hpc-macros-devel-1.4-10.########################################
+[   99s] autoconf-2.71-2.1                     ########################################
+[   99s] suse-hpc-0.5.20220525.fd76646-1.1     ########################################
+[   99s] libbz2-devel-1.0.8-5.1                ########################################
+[  100s] fdupes-2.2.1-1.1                      ########################################
+[  100s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  101s] regenerate-initrd-posttrans: dracut is not installed, not rebuilding the initrd
+[  105s] now finalizing build dir...
+[  105s] ... running 01-add_abuild_user_to_trusted_group
+[  106s] ... running 02-set_timezone_to_utc
+[  106s] ... running 03-set-permissions-secure
+[  106s] ... running 11-hack_uname_version_to_kernel_version
+[  109s] sh: line 1: /usr/bin/ps: No such file or directory
+[  114s] -----------------------------------------------------------------
+[  114s] I have the following modifications for adios.spec:
+[  114s] 21c21
+[  114s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  114s] ---
+[  114s] > %global flavor gnu-openmpi-hpc%{nil}
+[  114s] 363c363
+[  114s] < Release:        0
+[  114s] ---
+[  114s] > Release:        5.8
+[  120s] build target is riscv64-suse-linux
+[  120s] -----------------------------------------------------------------
+[  120s] ----- building adios.spec (user abuild)
+[  120s] -----------------------------------------------------------------
+[  120s] -----------------------------------------------------------------
+[  124s] sh: line 1: /usr/bin/ps: No such file or directory
+[  124s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/8328dcf950ff65186956c5be7e1df2d9-adios:gnu-openmpi-hpc' /home/abuild/rpmbuild/SOURCES/adios.spec
+[  124s] Building target platforms: riscv64-suse-linux
+[  124s] Building for target riscv64-suse-linux
+[  124s]  Building for gnu 
+[  124s]  hpc_gnu_init 
+[  125s] warning: extra tokens at the end of %else directive in line 384:  %else # hpc
+[  125s] 
+[  125s] warning: extra tokens at the end of %endif directive in line 391:  %endif  # ?hpc
+[  125s] 
+[  127s] warning: extra tokens at the end of %else directive in line 417:  %else # hpc
+[  127s] 
+[  127s] warning: extra tokens at the end of %endif directive in line 422:  %endif  # ?hpc
+[  127s] 
+[  133s] setting SOURCE_DATE_EPOCH=1612483200
+[  133s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.pBcYeZ
+[  133s] + umask 022
+[  133s] + cd /home/abuild/rpmbuild/BUILD
+[  133s] + cd /home/abuild/rpmbuild/BUILD
+[  133s] + rm -rf adios-1.13.1
+[  133s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/adios-1.13.1.tar.gz
+[  134s] + STATUS=0
+[  134s] + '[' 0 -ne 0 ']'
+[  134s] + cd adios-1.13.1
+[  134s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  134s] + echo 'Patch #0 (adios-correct-func-ret.patch):'
+[  134s] Patch #0 (adios-correct-func-ret.patch):
+[  134s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  134s] patching file src/core/adiosf.c
+[  134s] patching file tests/C/flexpath_tests/two_streams/writer.c
+[  134s] + echo 'Patch #1 (Fix-code-to-be-python3-compliant.patch):'
+[  134s] Patch #1 (Fix-code-to-be-python3-compliant.patch):
+[  134s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  134s] patching file utils/skel/bin/skel
+[  134s] patching file utils/skel/bin/skel_extract.py
+[  134s] patching file utils/skel/lib/adios.py
+[  134s] patching file utils/skel/lib/skel_bpls.py
+[  134s] patching file utils/skel/lib/skel_bpy.py
+[  134s] patching file utils/skel/lib/skel_makefile.py
+[  134s] patching file utils/skel/lib/skel_params.py
+[  134s] patching file utils/skel/lib/skel_replay.py
+[  134s] patching file utils/skel/lib/skel_settings.py
+[  134s] patching file utils/skel/lib/skel_source.py
+[  134s] patching file utils/skel/lib/skel_submit.py
+[  134s] patching file utils/skel/lib/skel_suite.py
+[  134s] patching file utils/skel/lib/skel_test_plan.py
+[  134s] patching file utils/skel/lib/skel_xml.py
+[  134s] patching file utils/skel/lib/skelconf.py
+[  134s] + RPM_EC=0
+[  134s] ++ jobs -p
+[  134s] + exit 0
+[  134s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.YDD8Th
+[  134s] + umask 022
+[  134s] + cd /home/abuild/rpmbuild/BUILD
+[  134s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/adios_1_13_1-gnu-openmpi1-hpc-1.13.1-5.8.riscv64
+[  135s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/adios_1_13_1-gnu-openmpi1-hpc-1.13.1-5.8.riscv64
+[  135s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  135s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/adios_1_13_1-gnu-openmpi1-hpc-1.13.1-5.8.riscv64
+[  135s] + cd adios-1.13.1
+[  135s] + ref=/usr/lib/rpm
+[  135s] + mints=0
+[  135s] + case $(uname -m) in
+[  135s] ++ uname -m
+[  135s] + mints=20160911
+[  135s] + for s in guess sub
+[  135s] ++ find -maxdepth 8 -name config.guess
+[  135s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  135s] + grep -q config-patches@ ./config/config.guess
+[  135s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config/config.guess
+[  135s] + timestamp=20170305
+[  135s] + test -n 20170305
+[  135s] + test 20170305 -ge 20160911
+[  135s] + for s in guess sub
+[  135s] ++ find -maxdepth 8 -name config.sub
+[  135s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  135s] + grep -q config-patches@ ./config/config.sub
+[  135s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config/config.sub
+[  135s] + timestamp=20170402
+[  135s] + test -n 20170402
+[  135s] + test 20170402 -ge 20160911
+[  135s] + module purge
+[  135s] + '[' -z '' ']'
+[  135s] + case "$-" in
+[  135s] + __lmod_sh_dbg=x
+[  135s] + '[' -n x ']'
+[  135s] + set +x
+[  135s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  136s] sh: line 1: /usr/bin/ps: No such file or directory
+[  136s] Shell debugging restarted
+[  136s] + unset __lmod_sh_dbg
+[  136s] + return 0
+[  136s] + export CC=gcc
+[  136s] + CC=gcc
+[  136s] + export CXX=g++
+[  136s] + CXX=g++
+[  136s] + export FC=gfortran
+[  136s] + FC=gfortran
+[  136s] + export F77=gfortran
+[  136s] + F77=gfortran
+[  136s] + module load gnu/13
+[  136s] + '[' -z '' ']'
+[  136s] + case "$-" in
+[  136s] + __lmod_sh_dbg=x
+[  136s] + '[' -n x ']'
+[  136s] + set +x
+[  136s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  137s] sh: line 1: /usr/bin/ps: No such file or directory
+[  138s] Shell debugging restarted
+[  138s] + unset __lmod_sh_dbg
+[  138s] + return 0
+[  138s] + module load openmpi
+[  138s] + '[' -z '' ']'
+[  138s] + case "$-" in
+[  138s] + __lmod_sh_dbg=x
+[  138s] + '[' -n x ']'
+[  138s] + set +x
+[  138s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  138s] sh: line 1: /usr/bin/ps: No such file or directory
+[  139s] Shell debugging restarted
+[  139s] + unset __lmod_sh_dbg
+[  139s] + return 0
+[  139s] + '[' -n 'phdf5 netcdf' ']'
+[  139s] + module load phdf5 netcdf
+[  139s] + '[' -z '' ']'
+[  139s] + case "$-" in
+[  139s] + __lmod_sh_dbg=x
+[  139s] + '[' -n x ']'
+[  139s] + set +x
+[  139s] Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+[  140s] sh: line 1: /usr/bin/ps: No such file or directory
+[  144s] Lmod has detected the following error: The following module(s) are unknown:
+[  144s] "netcdf"
+[  144s] 
+[  144s] Please check the spelling or version number. Also try "module spider ..."
+[  144s] It is also possible your cache file is out-of-date; it may help to try:
+[  144s]   $ module --ignore_cache load "netcdf"
+[  144s] 
+[  144s] Also make sure that all modulefiles written in TCL start with the string
+[  144s] #%Module
+[  144s] 
+[  144s] 
+[  144s] 
+[  144s] Shell debugging restarted
+[  144s] + unset __lmod_sh_dbg
+[  144s] + return 1
+[  144s] error: Bad exit status from /var/tmp/rpm-tmp.YDD8Th (%build)
+[  144s] 
+[  144s] RPM build warnings:
+[  144s]     extra tokens at the end of %else directive in line 384:  %else # hpc
+[  144s] 
+[  144s]     extra tokens at the end of %endif directive in line 391:  %endif  # ?hpc
+[  144s] 
+[  144s]     extra tokens at the end of %else directive in line 417:  %else # hpc
+[  144s] 
+[  144s]     extra tokens at the end of %endif directive in line 422:  %endif  # ?hpc
+[  144s] 
+[  144s] 
+[  144s] RPM build errors:
+[  144s]     Bad exit status from /var/tmp/rpm-tmp.YDD8Th (%build)
+[  144s] ### VM INTERACTION START ###
+[  145s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[  145s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[  145s] Powering off.
+[  145s] [  139.651080][ T3606] reboot: Power down
+[  145s] ### VM INTERACTION END ###
+[  145s] 
+[  145s] lamb71 failed "build adios.spec" at Wed Mar 22 09:31:35 UTC 2023.
+[  145s] 
